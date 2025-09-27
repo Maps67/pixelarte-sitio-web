@@ -1,0 +1,51 @@
+/* src/styles/global.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  /* Paleta de Colores - Versión 3.0 Sincronizada */
+  --color-fondo-claro: #F9FAFB;
+  --color-fondo-oscuro: #111827;
+  --color-texto-oscuro: #111827;
+  --color-texto-claro: #e6edf3;
+  --color-texto-secundario: #4b5563;
+  --color-acento: #2563EB; /* ✅ Púrpura cambiado a Azul Digital */
+  --color-borde-claro: #e5e7eb;
+  --color-borde: #30363d;
+}
+
+body {
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto-oscuro);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-acento);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-texto-oscuro);
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-sizing: border-box;
+}

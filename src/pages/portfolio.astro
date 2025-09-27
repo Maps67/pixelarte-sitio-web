@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projectsData = [
+  { title: 'Sistema Web de Pacientes', service: 'Aplicación Web a Medida', description: 'El Dr. Díaz necesitaba una forma eficiente de dar seguimiento a sus pacientes postoperatorios sin depender de llamadas o mensajes desorganizados.', mediaType: 'video' },
+  { title: 'Tarjeta Digital Médica', service: 'Identidad Digital', description: 'Conectar profesionalmente en congresos y eventos era un desafío con tarjetas de papel que se perdían o no mostraban su trabajo multimedia.', mediaType: 'image' },
+  { title: 'Tarjeta Digital Corporativa', service: 'Herramienta para Ventas', description: 'El equipo de ventas necesitaba una forma unificada y moderna de presentarse, compartir recursos y capturar leads de forma inmediata.', mediaType: 'image' }
+];
+
+const projects = projectsData.map(project => {
+    const slug = project.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9 -]/g, "").replace(/\s+/g, '-');
+    let href = '#';
+    if (project.title === 'Tarjeta Digital Médica') { href = 'https://drcarlosdiaza.com/'; }
+    else if (project.title === 'Tarjeta Digital Corporativa') { href = 'https://pixelartestudio.art/tarjeta-pixel.html'; }
+    else if (project.mediaType === 'video') { href = `/images/${slug}.mp4`; }
+    else { href = `/images/${slug}.webp`; }
+    return { ...project, slug, href };
+});
+
+const featuredProject = projects[0];
+const otherProjects = projects.slice(1);
+---
+
+<Layout title="Portafolio - Pixelarte Studio">
+    <div class="container">
+        <section class="page-header">
+            <h1>Casos de Éxito</h1>
+            <p>No solo creamos sitios web. Creamos soluciones que impulsan resultados.</p>
+        </section>
+
+        <section class="featured-project" id={featuredProject.slug}>
+            <ProjectCard {...featuredProject} isFeatured={true} enableLightbox={true} />
+        </section>
+
+        <section class="portfolio-grid">
+            {otherProjects.map(project => (
+                <div id={project.slug}>
+                    <ProjectCard {...project} enableLightbox={true} />
+                </div>
+            ))}
+        </section>
+    </div>
+</Layout>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Inicializador para la galería Lightbox
+        const lightbox = GLightbox({
+            selector: '.glightbox'
+        });
+
+        // Script para el desplazamiento suave
+        if (window.location.hash) {
+            const element = document.querySelector(window.location.hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    });
+</script>
+
+<style>
+    .container { padding: 0 2rem; max-width: 1200px; margin: 0 auto; }
+    .page-header { text-align: center; padding: 4rem 0; }
+    .page-header h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .page-header p { font-size: 1.25rem; color: #94a3b8; }
+    .featured-project { margin-bottom: 4rem; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; padding-bottom: 4rem; }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+    <div class="container">
+        <p>&copy; {year} Pixelarte Studio. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        /* ✅ Estilos actualizados para el tema oscuro */
+        background-color: var(--color-fondo);
+        border-top: 1px solid var(--color-borde);
+        color: var(--color-texto);
+        
+        padding: 2rem 0;
+        text-align: center;
+        margin-top: 4rem;
+        opacity: 0.8; /* Hacemos el texto un poco sutil */
+    }
+</style>

@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="¡Gracias! - Pixelarte Studio">
+    <div class="container">
+        <div class="thank-you-card">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+            <h1>¡Gracias por tu mensaje!</h1>
+            <p>Hemos recibido tu consulta correctamente. Nos pondremos en contacto contigo a la brevedad posible.</p>
+            <a href="/" class="cta-button">Regresar al Inicio</a>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 70vh;
+        padding: 2rem;
+    }
+    .thank-you-card {
+        background-color: #ffffff;
+        border: 1px solid var(--color-borde-claro);
+        border-radius: 0.75rem;
+        padding: 3rem;
+        text-align: center;
+        max-width: 500px;
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+    }
+    .icon {
+        color: var(--color-acento);
+        margin-bottom: 1.5rem;
+    }
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--color-texto-oscuro);
+    }
+    p {
+        color: var(--color-texto-secundario);
+        margin-bottom: 2rem;
+    }
+    .cta-button {
+        display: inline-block;
+        background-color: var(--color-acento);
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: opacity 0.2s ease;
+    }
+    .cta-button:hover {
+        opacity: 0.9;
+    }
+</style>

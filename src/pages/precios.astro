@@ -1,0 +1,232 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const plans = [
+    {
+        title: 'Profesional',
+        price: '$4,990',
+        priceSuffix: 'MXN',
+        description: 'Ideal para freelancers y profesionales que buscan una primera impresión impactante.',
+        features: [
+            'Tarjeta Digital Profesional',
+            'Branding 100% Personalizado',
+            'Galería Multimedia (Fotos/Videos)',
+            'Formulario de Contacto Directo',
+            'Enlaces a Redes, Proyectos, etc.'
+        ],
+        highlighted: false,
+        ctaText: 'Me Interesa'
+    },
+    {
+        title: 'Ecosistema',
+        price: '$7,990',
+        priceSuffix: 'MXN',
+        description: 'Perfecto para negocios que buscan crecer y generar leads de forma consistente.',
+        features: [
+            'Todo de la Solución Profesional, y:',
+            'Página Web Landing Page',
+            'Gestión de 1 Red Social*'
+        ],
+        highlighted: true,
+        ctaText: 'Activar mi Ecosistema'
+    },
+    {
+        title: 'Presencia Total',
+        price: '$12,990+',
+        priceSuffix: 'MXN',
+        description: 'La solución definitiva para empresas y marcas que buscan dominar su nicho.',
+        features: [
+            'Todo de la Solución Ecosistema, y:',
+            'Sitio Web Completo (multi-página)',
+            'Integración con Calendarios y Analíticas',
+            'Soporte Prioritario'
+        ],
+        highlighted: false,
+        ctaText: 'Solicitar Cotización'
+    }
+];
+---
+
+<Layout title="Planes y Precios - Pixelarte Studio">
+    <div class="container">
+        <section class="page-header">
+            <h1>Nuestras Soluciones</h1>
+            <p>Elige la solución que te llevará de estar presente a ser relevante en el mundo digital.</p>
+        </section>
+
+        <section class="pricing-grid">
+            {plans.map(plan => (
+                <div class:list={["plan-card", { highlighted: plan.highlighted }]}>
+                    {plan.highlighted && <div class="highlight-banner">MÁS POPULAR</div>}
+                    <div class="plan-header">
+                        <h3 class="plan-title">{plan.title}</h3>
+                        <p class="plan-price">
+                            {plan.price}
+                            {plan.priceSuffix && <span class="plan-price-suffix"> {plan.priceSuffix}</span>}
+                        </p>
+                        <p class="setup-fee">Setup inicial. Pago único.</p>
+                        <p class="plan-description">{plan.description}</p>
+                    </div>
+                    <ul class="plan-features">
+                        {plan.features.map(feature => (
+                            <li>{feature}</li>
+                        ))}
+                    </ul>
+                    <a href="/contacto" class="cta-button">{plan.ctaText}</a>
+                </div>
+            ))}
+        </section>
+        <div class="footnote-container">
+            <p class="footnote">* No incluye costos de pauta publicitaria.</p>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .container {
+        padding-bottom: 6rem;
+    }
+    .page-header {
+        text-align: center;
+        padding: 4rem 0;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .page-header h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .page-header p {
+        font-size: 1.25rem;
+        color: var(--color-texto-secundario);
+    }
+
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        align-items: stretch;
+        position: relative;
+    }
+
+    .plan-card {
+        background-color: #ffffff;
+        border: 1px solid var(--color-borde-claro);
+        border-radius: 0.75rem;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        position: relative;
+    }
+    .plan-header {
+        border-bottom: 1px solid var(--color-borde-claro);
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .plan-title {
+        font-size: 1.5rem; /* Usamos un título más grande y con la fuente Serif global */
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .plan-price {
+        font-family: 'Inter', sans-serif; /* El precio se ve mejor en Sans Serif */
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 0.25rem;
+        color: var(--color-texto-oscuro);
+    }
+    .plan-price-suffix {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--color-texto-secundario);
+    }
+    .setup-fee {
+        font-size: 0.875rem;
+        color: var(--color-texto-secundario);
+        margin-bottom: 1.5rem;
+    }
+    .plan-description {
+        color: var(--color-texto-secundario);
+        min-height: 100px;
+    }
+    .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem 0;
+        text-align: left;
+        flex-grow: 1;
+    }
+    .plan-features li {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: flex-start;
+        color: var(--color-texto-secundario);
+    }
+    .plan-features li::before {
+        content: '✔';
+        color: var(--color-acento);
+        margin-right: 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+    .cta-button {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+    
+    .highlight-banner {
+        background-color: var(--color-acento);
+        color: #fff;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        position: absolute;
+        top: -1.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
+    }
+    .plan-card.highlighted {
+        background-color: var(--color-fondo-oscuro);
+        border-color: var(--color-acento);
+        transform: scale(1.05);
+    }
+    .plan-card.highlighted .plan-title { color: #fff; }
+    .plan-card.highlighted .plan-price,
+    .plan-card.highlighted .plan-price-suffix,
+    .plan-card.highlighted .setup-fee,
+    .plan-card.highlighted .plan-description,
+    .plan-card.highlighted .plan-features li { color: var(--color-texto-claro); }
+    .plan-card.highlighted .plan-header { border-bottom-color: var(--color-borde); }
+    .plan-card.highlighted .cta-button { background-color: var(--color-acento); color: #fff; }
+    .plan-card.highlighted .cta-button:hover { opacity: 0.9; transform: scale(1.02); }
+    
+    .plan-card:not(.highlighted) .cta-button {
+        background-color: transparent;
+        border: 1px solid var(--color-acento);
+        color: var(--color-acento);
+    }
+    .plan-card:not(.highlighted) .cta-button:hover {
+        background-color: var(--color-acento);
+        color: #fff;
+    }
+
+    .footnote-container {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    .footnote {
+        font-size: 0.875rem;
+        color: var(--color-texto-secundario);
+    }
+</style>
