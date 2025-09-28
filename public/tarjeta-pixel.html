@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelArte Studio - Ecosistema de Crecimiento Digital</title>
-    <link rel="icon" type="image/png" href="imagenes/mi-logo.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
-    <!-- Meta Tags para Redes Sociales (Open Graph & Twitter Card) -->
     <meta property="og:title" content="PixelArte Studio - Ecosistema de Crecimiento Digital">
     <meta property="og:description" content="Tarjeta de Presentación Digital. Conecta con nosotros y descubre cómo podemos transformar tu presencia online.">
     <meta property="og:image" content="https://i.postimg.cc/XJRRM5hp/Logo.jpg">
@@ -18,7 +17,6 @@
     <meta name="twitter:description" content="Tarjeta de Presentación Digital. Conecta con nosotros y descubre cómo podemos transformar tu presencia online.">
     <meta name="twitter:image" content="https://i.postimg.cc/XJRRM5hp/Logo.jpg">
 
-    <!-- Dependencias Externas (CDNs) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -110,20 +108,17 @@
 
     <main class="w-full max-w-lg mx-auto bg-slate-800 rounded-2xl shadow-2xl overflow-hidden my-8 relative border border-slate-700">
         
-        <!-- Logo de la empresa -->
         <div class="absolute top-6 left-6 z-10">
-            <img src="imagenes/mi-logo.png" alt="Logo PixelArte Studio" class="h-12 w-auto">
+            <img src="/logo-transparente.png" alt="Logo PixelArte Studio" class="h-12 w-auto">
         </div>
         
-        <!-- Selector de Idioma -->
         <div class="absolute top-6 right-6 z-10 bg-slate-700/50 backdrop-blur-md p-1 rounded-full text-xs font-semibold text-slate-300 lang-switcher">
             <button id="lang-es" class="px-3 py-1 rounded-full active">ES</button>
             <button id="lang-en" class="px-3 py-1 rounded-full">EN</button>
         </div>
 
-        <!-- Sección de Perfil -->
         <div class="p-8 pt-24 text-center">
-            <img src="imagenes/profesionales.png" alt="Icono de PixelArte Studio" class="w-32 h-32 rounded-full mx-auto mb-4 ring-4 ring-offset-4 ring-offset-slate-800 ring-indigo-500 object-cover">
+            <img src="/profesionales.png" alt="Icono de PixelArte Studio" class="w-32 h-32 rounded-full mx-auto mb-4 ring-4 ring-offset-4 ring-offset-slate-800 ring-indigo-500 object-cover">
             <h1 class="text-4xl font-extrabold text-white" data-lang="studioName">PixelArte Studio</h1>
             <p class="text-lg text-indigo-400 mt-2 font-medium" data-lang="studioSlogan">Ecosistemas de Crecimiento Digital</p>
             <p class="text-sm text-slate-400 mt-2 max-w-xs mx-auto" data-lang="studioDesc">Transformamos tu presencia online en un motor de ventas.</p>
@@ -134,10 +129,8 @@
             </div>
         </div>
 
-        <!-- Sección de Iconos Interactivos -->
         <div class="p-8 bg-slate-700/50">
             <div class="grid grid-cols-3 gap-4">
-                <!-- Ícono 1: Servicios -->
                 <div class="icon-card" data-modal="modal-servicios">
                     <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#4f46e5"/><stop offset="50%" style="stop-color:#a855f7"/><stop offset="100%" style="stop-color:#14b8a6"/></linearGradient></defs>
@@ -147,7 +140,6 @@
                     </svg>
                     <p class="text-xs font-semibold" data-lang="servicesIcon">Servicios</p>
                 </div>
-                <!-- Ícono 2: Portafolio -->
                 <div class="icon-card" data-modal="modal-portafolio">
                     <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#4f46e5"/><stop offset="50%" style="stop-color:#a855f7"/><stop offset="100%" style="stop-color:#14b8a6"/></linearGradient></defs>
@@ -157,8 +149,7 @@
                     </svg>
                     <p class="text-xs font-semibold" data-lang="portfolioIcon">Portafolio</p>
                 </div>
-                <!-- Ícono 3: Proceso -->
-                 <div class="icon-card" data-modal="modal-proceso">
+                <div class="icon-card" data-modal="modal-proceso">
                     <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs><linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#4f46e5"/><stop offset="50%" style="stop-color:#a855f7"/><stop offset="100%" style="stop-color:#14b8a6"/></linearGradient></defs>
                         <path d="M6 3v12" stroke="url(#grad3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -168,7 +159,6 @@
                     </svg>
                     <p class="text-xs font-semibold" data-lang="processIcon">Proceso</p>
                 </div>
-                <!-- Ícono 4: Inicia tu Proyecto -->
                 <div class="icon-card col-span-2" data-modal="modal-contacto">
                     <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs><linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#4f46e5"/><stop offset="50%" style="stop-color:#a855f7"/><stop offset="100%" style="stop-color:#14b8a6"/></linearGradient></defs>
@@ -177,7 +167,6 @@
                     </svg>
                     <p class="text-xs font-semibold" data-lang="contactIcon">Inicia tu Proyecto</p>
                 </div>
-                <!-- Ícono 5: Guardar -->
                 <a id="saveContact" href="#" class="icon-card">
                     <svg class="w-10 h-10 mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                        <defs><linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#4f46e5"/><stop offset="50%" style="stop-color:#a855f7"/><stop offset="100%" style="stop-color:#14b8a6"/></linearGradient></defs>
@@ -190,7 +179,6 @@
             </div>
         </div>
 
-        <!-- Footer con QR -->
         <footer class="bg-slate-700 p-8 text-center">
             <h2 class="text-2xl font-bold text-white" data-lang="qrTitle">Comparte mi Tarjeta</h2>
             <p class="text-slate-300 mt-2 mb-4" data-lang="qrText">Escanea el QR para guardar o compartir mi perfil digital.</p>
@@ -200,7 +188,6 @@
         </footer>
     </main>
 
-    <!-- Modales de Contenido -->
     <div id="modal-servicios" class="modal-overlay">
         <div class="modal-content">
             <h2 class="text-2xl font-bold text-white mb-4" data-lang="servicesModalTitle">Nuestro Ecosistema Digital</h2>
@@ -220,12 +207,10 @@
         <div class="modal-content">
             <h2 class="text-2xl font-bold text-white mb-4" data-lang="portfolioModalTitle">Casos de Éxito</h2>
             <div class="space-y-4">
-                <!-- Ejemplo de Portafolio 1 -->
                 <a href="https://drcarlosdiaza.com/" target="_blank" class="block bg-slate-600 p-4 rounded-lg hover:bg-slate-500 transition-colors">
                     <p class="font-bold text-white" data-lang="portfolio1Title">Dr. Carlos Díaz Avelar</p>
                     <p class="text-sm text-slate-300" data-lang="portfolio1Desc">Tarjeta Digital para profesional de la salud con sistema de citas.</p>
                 </a>
-                <!-- Ejemplo de Portafolio 2 -->
                 <a href="https://www.pixelartestudio.art/#portafolio" target="_blank" class="block bg-slate-600 p-4 rounded-lg hover:bg-slate-500 transition-colors">
                     <p class="font-bold text-white" data-lang="portfolio2Title">Constructora XYZ</p>
                     <p class="text-sm text-slate-300" data-lang="portfolio2Desc">Sitio web y gestión de redes para posicionamiento en el sector inmobiliario.</p>
@@ -516,3 +501,4 @@ END:VCARD`;
     </script>
 </body>
 </html>
+}
