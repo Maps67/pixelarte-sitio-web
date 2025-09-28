@@ -2,25 +2,50 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
+// Data para la sección de servicios
 const servicesV3 = [
-    { title: 'Páginas Web Completas', description: 'Una presencia digital profesional y a medida que se convierte en tu principal herramienta de ventas.', imageUrl: '/images/servicio-paginas-web.webp' },
-    { title: 'Landing Pages de Alta Conversión', description: 'Páginas de aterrizaje diseñadas para una sola misión: maximizar tus resultados y capturar leads.', imageUrl: '/images/servicio-landing-pages.webp' },
-    { title: 'Tarjetas de Presentación Digitales', description: 'Tu identidad profesional en un enlace interactivo. Moderno, ecológico y siempre accesible.', imageUrl: '/images/servicio-tarjetas-digitales.webp', href: 'https://pixelartestudio.art/tarjeta-pixel.html' }
+    {
+        title: 'Páginas Web Completas',
+        description: 'Una presencia digital profesional y a medida que se convierte en tu principal herramienta de ventas.',
+        imageUrl: '/images/servicio-paginas-web.webp'
+    },
+    {
+        title: 'Landing Pages de Alta Conversión',
+        description: 'Páginas de aterrizaje diseñadas para una sola misión: maximizar tus resultados y capturar leads.',
+        imageUrl: '/images/servicio-landing-pages.webp'
+    },
+    {
+        title: 'Tarjetas de Presentación Digitales',
+        description: 'Tu identidad profesional en un enlace interactivo. Moderno, ecológico y siempre accesible.',
+        imageUrl: '/images/servicio-tarjetas-digitales.webp',
+        href: 'https://pixelartestudio.art/tarjeta-pixel.html'
+    }
 ];
 
+// Data para la sección de portafolio
 const featuredProjectsV3 = [
-    { title: 'Sistema Web de Pacientes', service: 'Aplicación Web a Medida', mediaType: 'video' },
-    { title: 'Tarjeta Digital Médica', service: 'Identidad Digital', mediaType: 'image' },
-    { title: 'Tarjeta Digital Corporativa', service: 'Herramienta para Ventas', mediaType: 'image' }
-].map(p => {
-    const slug = p.title
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-z0-9 -]/g, "")
-        .replace(/ /g, '-');
-    return { ...p, slug, href: `/portfolio#${p.slug}` };
-});
+    {
+        title: 'Sistema Web de Pacientes',
+        service: 'Aplicación Web a Medida',
+        slug: 'sistema-web-de-pacientes',
+        mediaType: 'video',
+        href: '/portfolio#sistema-web-de-pacientes'
+    },
+    {
+        title: 'Tarjeta Digital Médica',
+        service: 'Identidad Digital',
+        slug: 'tarjeta-digital-medica',
+        mediaType: 'image',
+        href: '/portfolio#tarjeta-digital-medica'
+    },
+    {
+        title: 'Tarjeta Digital Corporativa',
+        service: 'Herramienta para Ventas',
+        slug: 'tarjeta-digital-corporativa',
+        mediaType: 'image',
+        href: '/portfolio#tarjeta-digital-corporativa'
+    }
+];
 ---
 
 <Layout title="Pixelarte Studio - Diseño Web con Precisión Digital">
@@ -29,7 +54,9 @@ const featuredProjectsV3 = [
             <div class="container hero-container">
                 <div class="hero-content">
                     <h1 class="hero-title">Diseño Web que Convierte Visitantes en Clientes.</h1>
-                    <p class="hero-subtitle">Creamos ecosistemas digitales a medida que no solo se ven increíbles, sino que funcionan para impulsar tu crecimiento.</p>
+                    <p class="hero-subtitle">
+                        Creamos ecosistemas digitales a medida que no solo se ven increíbles, sino que funcionan para impulsar tu crecimiento.
+                    </p>
                     <a href="/contacto" class="cta-button">Hablemos de tu proyecto</a>
                 </div>
             </div>
@@ -39,19 +66,25 @@ const featuredProjectsV3 = [
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Soluciones Digitales de Alto Impacto</h2>
-                    <p class="section-subtitle">Nos enfocamos en tres áreas clave para construir y potenciar tu presencia en línea.</p>
+                    <p class="section-subtitle">
+                        Nos enfocamos en tres áreas clave para construir y potenciar tu presencia en línea.
+                    </p>
                 </div>
                 <div class="services-grid-v3">
                     {servicesV3.map(service => (
                         service.href ? (
                             <a href={service.href} target="_blank" rel="noopener noreferrer" class="service-card-v3 is-link">
-                                <div class="service-image-container"><img src={service.imageUrl} alt={`Imagen conceptual de ${service.title}`} loading="lazy" /></div>
+                                <div class="service-image-container">
+                                    <img src={service.imageUrl} alt={`Imagen conceptual de ${service.title}`} loading="lazy" />
+                                </div>
                                 <h3 class="service-title">{service.title}</h3>
                                 <p class="service-description">{service.description}</p>
                             </a>
                         ) : (
                             <div class="service-card-v3">
-                                <div class="service-image-container"><img src={service.imageUrl} alt={`Imagen conceptual de ${service.title}`} loading="lazy" /></div>
+                                <div class="service-image-container">
+                                    <img src={service.imageUrl} alt={`Imagen conceptual de ${service.title}`} loading="lazy" />
+                                </div>
                                 <h3 class="service-title">{service.title}</h3>
                                 <p class="service-description">{service.description}</p>
                             </div>
@@ -65,7 +98,9 @@ const featuredProjectsV3 = [
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Nuestro Trabajo Reciente</h2>
-                    <p class="section-subtitle">Nos enorgullece el resultado del trabajo en equipo con nuestros clientes.</p>
+                    <p class="section-subtitle">
+                        Nos enorgullece el resultado del trabajo en equipo con nuestros clientes.
+                    </p>
                 </div>
                 <div class="portfolio-grid-v3">
                      {featuredProjectsV3.map(project => (
@@ -78,31 +113,184 @@ const featuredProjectsV3 = [
 </Layout>
 
 <style>
-    .container { padding: 0 2rem; max-width: 1200px; margin: 0 auto; }
-    .page-wrapper > section + section { border-top: 1px solid var(--color-borde-claro); }
-    .portfolio-section-v3 { border-top: 1px solid var(--color-borde); }
-    .hero-section-v3 { background-color: var(--color-fondo-oscuro); padding: 8rem 0; text-align: center; position: relative; overflow: hidden; }
-    .hero-section-v3::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/images/hero-background.jpg'); background-size: cover; background-position: center; opacity: 0.05; z-index: 1; }
-    .hero-container { position: relative; z-index: 2; }
-    .hero-title { font-size: 3.5rem; font-weight: 800; color: var(--color-texto-claro); margin-bottom: 1.5rem; max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.2; }
-    .hero-subtitle { font-size: 1.25rem; color: #94a3b8; max-width: 600px; margin: 0 auto 2.5rem; }
-    .cta-button { display: inline-block; background-color: var(--color-acento); color: #fff; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; border-radius: 0.5rem; text-decoration: none; transition: transform 0.2s ease, opacity 0.2s ease; }
-    .cta-button:hover { transform: scale(1.05); opacity: 0.9; }
-    .section-header { text-align: center; margin-bottom: 4rem; }
-    .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
-    .section-subtitle { font-size: 1.125rem; max-width: 600px; margin: 0 auto; }
-    .services-section-v3 { background-color: var(--color-fondo-claro); padding: 6rem 0; }
-    .services-section-v3 .section-title { color: var(--color-texto-oscuro); }
-    .services-section-v3 .section-subtitle { color: var(--color-texto-secundario); }
-    .services-grid-v3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .service-card-v3 { background-color: #ffffff; border: 1px solid var(--color-borde-claro); border-radius: 0.75rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; }
-    .service-card-v3.is-link:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
-    .service-image-container { aspect-ratio: 16 / 9; background-color: #f3f4f6; }
-    .service-image-container img { width: 100%; height: 100%; object-fit: cover; }
-    .service-card-v3 h3 { font-size: 1.5rem; margin: 1.5rem 1.5rem 0.5rem; color: var(--color-texto-oscuro); }
-    .service-card-v3 p { color: var(--color-texto-secundario); padding: 0 1.5rem 1.5rem; line-height: 1.6; }
-    .portfolio-section-v3 { background-color: var(--color-fondo-oscuro); padding: 6rem 0; }
-    .portfolio-section-v3 .section-title { color: var(--color-texto-claro); }
-    .portfolio-section-v3 .section-subtitle { color: #94a3b8; }
-    .portfolio-grid-v3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .container {
+        padding: 0 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .page-wrapper > section + section {
+        border-top: 1px solid var(--color-borde-claro);
+    }
+    .portfolio-section-v3 {
+        border-top: 1px solid var(--color-borde);
+    }
+    .hero-section-v3 {
+        background-color: var(--color-fondo-oscuro);
+        padding: 6rem 1rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-section-v3::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/images/hero-background.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.05;
+        z-index: 1;
+    }
+    .hero-container {
+        position: relative;
+        z-index: 2;
+    }
+    .hero-title {
+        font-size: 2.5rem; /* Tamaño base para móvil */
+        font-weight: 800;
+        color: var(--color-texto-claro);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+    .hero-subtitle {
+        font-size: 1.125rem; /* Tamaño base para móvil */
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+    }
+    .cta-button {
+        display: inline-block;
+        background-color: var(--color-acento);
+        color: #fff;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .cta-button:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .section-title {
+        font-size: 2rem; /* Tamaño base para móvil */
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .section-subtitle {
+        font-size: 1rem; /* Tamaño base para móvil */
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .services-section-v3 {
+        background-color: var(--color-fondo-claro);
+        padding: 4rem 0;
+    }
+    .services-section-v3 .section-title {
+        color: var(--color-texto-oscuro);
+    }
+    .services-section-v3 .section-subtitle {
+        color: var(--color-texto-secundario);
+    }
+    .services-grid-v3 {
+        display: grid;
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 1.5rem;
+    }
+    .service-card-v3 {
+        background-color: #ffffff;
+        border: 1px solid var(--color-borde-claro);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+    }
+    .service-card-v3.is-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+    }
+    .service-image-container {
+        aspect-ratio: 16 / 9;
+        background-color: #f3f4f6;
+    }
+    .service-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .service-card-v3 h3 {
+        font-size: 1.25rem;
+        margin: 1.5rem 1.5rem 0.5rem;
+        color: var(--color-texto-oscuro);
+    }
+    .service-card-v3 p {
+        color: var(--color-texto-secundario);
+        padding: 0 1.5rem 1.5rem;
+        line-height: 1.6;
+    }
+    .portfolio-section-v3 {
+        background-color: var(--color-fondo-oscuro);
+        padding: 4rem 0;
+    }
+    .portfolio-section-v3 .section-title {
+        color: var(--color-texto-claro);
+    }
+    .portfolio-section-v3 .section-subtitle {
+        color: #94a3b8;
+    }
+    .portfolio-grid-v3 {
+        display: grid;
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 1.5rem;
+    }
+
+    /* ✅ INICIO: MEDIA QUERIES PARA PANTALLAS MÁS GRANDES */
+    @media (min-width: 768px) {
+        .container {
+            padding: 0 2rem;
+        }
+        .hero-section-v3 {
+            padding: 8rem 0;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+        }
+        .hero-subtitle {
+            font-size: 1.25rem;
+        }
+        .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+        .services-section-v3, .portfolio-section-v3 {
+            padding: 6rem 0;
+        }
+        .section-header {
+            margin-bottom: 4rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+        }
+        .section-subtitle {
+            font-size: 1.125rem;
+        }
+        .services-grid-v3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .portfolio-grid-v3 {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+    }
+    /* FIN: MEDIA QUERIES */
 </style>
