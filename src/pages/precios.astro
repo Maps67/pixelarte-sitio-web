@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// ✅ Data actualizada para incluir "+ IVA"
 const plans = [
     {
         title: 'Profesional',
         price: '$4,990',
-        priceSuffix: 'MXN',
+        priceSuffix: 'MXN + IVA',
         description: 'Ideal para freelancers y profesionales que buscan una primera impresión impactante.',
         features: [
             'Tarjeta Digital Profesional',
@@ -20,7 +21,7 @@ const plans = [
     {
         title: 'Ecosistema',
         price: '$7,990',
-        priceSuffix: 'MXN',
+        priceSuffix: 'MXN + IVA',
         description: 'Perfecto para negocios que buscan crecer y generar leads de forma consistente.',
         features: [
             'Todo de la Solución Profesional, y:',
@@ -33,7 +34,7 @@ const plans = [
     {
         title: 'Presencia Total',
         price: '$12,990+',
-        priceSuffix: 'MXN',
+        priceSuffix: 'MXN + IVA',
         description: 'La solución definitiva para empresas y marcas que buscan dominar su nicho.',
         features: [
             'Todo de la Solución Ecosistema, y:',
@@ -126,12 +127,12 @@ const plans = [
         margin-bottom: 1.5rem;
     }
     .plan-title {
-        font-size: 1.5rem; /* Usamos un título más grande y con la fuente Serif global */
+        font-size: 1.5rem;
         font-weight: 700;
         margin-bottom: 1rem;
     }
     .plan-price {
-        font-family: 'Inter', sans-serif; /* El precio se ve mejor en Sans Serif */
+        font-family: 'Inter', sans-serif;
         font-size: 2.5rem;
         font-weight: 800;
         margin-bottom: 0.25rem;
