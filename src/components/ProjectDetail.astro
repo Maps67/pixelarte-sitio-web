@@ -1,0 +1,84 @@
+---
+// src/components/ProjectDetail.astro
+import ProjectCard from './ProjectCard.astro';
+import type { HTMLAttributes } from 'astro/types';
+
+interface ProjectData extends HTMLAttributes<'a'> {
+    slug: string;
+    title: string;
+    service: string;
+    description?: string;
+    mediaType: 'image' | 'video';
+    href: string;
+}
+
+interface Props {
+    project: ProjectData;
+    challenge: string;
+    solution: string;
+    result: string;
+}
+
+const { project, challenge, solution, result } = Astro.props;
+---
+<section class="project-detail-section" id={project.slug}>
+    <div class="project-detail-grid">
+        <div class="project-media">
+            <ProjectCard {...project} enableLightbox={true} />
+        </div>
+        <div class="project-story">
+            <h2 class="project-story-title">{project.title}</h2>
+            <div class="story-block">
+                <h3>El Reto</h3>
+                <p>{challenge}</p>
+            </div>
+            <div class="story-block">
+                <h3>La Solución</h3>
+                <p>{solution}</p>
+            </div>
+            <div class="story-block">
+                <h3>El Resultado</h3>
+                <p>{result}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .project-detail-section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--color-borde);
+    }
+    .project-detail-section:last-of-type {
+        border-bottom: none;
+    }
+    .project-detail-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+    @media (min-width: 992px) {
+        .project-detail-grid {
+            grid-template-columns: 1.2fr 1fr;
+        }
+    }
+    .project-story-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: var(--color-texto-claro);
+        margin-bottom: 2rem;
+    }
+    .story-block h3 {
+        font-size: 1.25rem;
+        color: var(--color-acento);
+        margin-bottom: 0.5rem;
+    }
+    .story-block p {
+        color: #94a3b8;
+        line-height: 1.7;
+    }
+    .story-block + .story-block {
+        margin-top: 1.5rem;
+    }
+</style>

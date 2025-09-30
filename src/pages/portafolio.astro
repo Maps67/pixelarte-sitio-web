@@ -1,73 +1,92 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import ProjectDetail from '../components/ProjectDetail.astro'; // <-- NUEVO
 
+// Datos de los proyectos
 const projectsData = [
-  { title: 'Sistema Web de Pacientes', service: 'Aplicación Web a Medida', description: 'El Dr. Díaz necesitaba una forma eficiente de dar seguimiento a sus pacientes postoperatorios sin depender de llamadas o mensajes desorganizados.', mediaType: 'video' },
-  { title: 'Tarjeta Digital Médica', service: 'Identidad Digital', description: 'Conectar profesionalmente en congresos y eventos era un desafío con tarjetas de papel que se perdían o no mostraban su trabajo multimedia.', mediaType: 'image' },
-  { title: 'Tarjeta Digital Corporativa', service: 'Herramienta para Ventas', description: 'El equipo de ventas necesitaba una forma unificada y moderna de presentarse, compartir recursos y capturar leads de forma inmediata.', mediaType: 'image' }
+    { 
+        title: 'Sistema Web de Pacientes', 
+        service: 'Aplicación Web a Medida', 
+        mediaType: 'video',
+        // Historia del Proyecto
+        challenge: 'El Dr. Díaz necesitaba una forma eficiente de dar seguimiento a sus pacientes postoperatorios sin depender de llamadas o mensajes desorganizados, asegurando una recuperación óptima y una comunicación clara.',
+        solution: 'Diseñamos y desarrollamos una aplicación web privada donde los pacientes inician sesión para acceder a un plan de recuperación personalizado. Incluye videos de ejercicios, indicaciones de medicamentos y un chat directo con el doctor.',
+        result: 'Se redujo en un 70% el tiempo administrativo del doctor y se mejoró significativamente la adherencia de los pacientes a sus planes de recuperación, resultando en mejores resultados de salud.'
+    },
+    { 
+        title: 'Tarjeta Digital Médica', 
+        service: 'Identidad Digital', 
+        mediaType: 'image',
+        challenge: 'En congresos y eventos, conectar profesionalmente era un desafío. Las tarjetas de papel se perdían y no podían mostrar el trabajo multimedia (videos de cirugías, artículos) del doctor de forma efectiva.',
+        solution: 'Creamos una tarjeta de presentación digital accesible a través de un código QR. La tarjeta no solo contiene su contacto, sino también una galería de videos, enlaces a sus publicaciones y perfiles profesionales.',
+        result: 'La tarjeta digital se convirtió en su principal herramienta de networking, proyectando una imagen de innovación y permitiendo compartir su portafolio completo de forma instantánea y memorable.'
+    },
+    { 
+        title: 'Tarjeta Digital Corporativa', 
+        service: 'Herramienta para Ventas', 
+        mediaType: 'image',
+        challenge: 'El equipo de ventas de una empresa B2B necesitaba una forma unificada y moderna de presentarse, compartir recursos (PDFs, catálogos) y capturar leads de forma inmediata en reuniones y eventos.',
+        solution: 'Desarrollamos una tarjeta digital corporativa personalizable para cada vendedor. La tarjeta incluye su información, enlaces a catálogos de productos y un formulario de contacto directo que notifica al equipo de ventas.',
+        result: 'Se estandarizó la presentación del equipo de ventas, se eliminaron los costos de impresión de tarjetas y se incrementó la captura de leads en eventos en un 25% gracias al formulario integrado.'
+    }
 ];
 
+// Procesamiento para generar slugs y hrefs
 const projects = projectsData.map(project => {
     const slug = project.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9 -]/g, "").replace(/\s+/g, '-');
-    let href = '#';
+    let href = '#'; // El href se usará dentro de la tarjeta
     if (project.title === 'Tarjeta Digital Médica') { href = 'https://drcarlosdiaza.com/'; }
     else if (project.title === 'Tarjeta Digital Corporativa') { href = 'https://pixelartestudio.art/tarjeta-pixel.html'; }
     else if (project.mediaType === 'video') { href = `/images/${slug}.mp4`; }
     else { href = `/images/${slug}.webp`; }
     return { ...project, slug, href };
 });
-
-const featuredProject = projects[0];
-const otherProjects = projects.slice(1);
 ---
 
 <Layout title="Portafolio - Pixelarte Studio">
-    <div class="container">
+    <div class="page-container">
         <section class="page-header">
             <h1>Casos de Éxito</h1>
             <p>No solo creamos sitios web. Creamos soluciones que impulsan resultados.</p>
         </section>
 
-        <section class="featured-project" id={featuredProject.slug}>
-            <ProjectCard {...featuredProject} isFeatured={true} enableLightbox={true} />
-        </section>
-
-        <section class="portfolio-grid">
-            {otherProjects.map(project => (
-                <div id={project.slug}>
-                    <ProjectCard {...project} enableLightbox={true} />
-                </div>
-            ))}
-        </section>
+        <!-- Se itera sobre cada proyecto para mostrarlo como un caso de estudio -->
+        {projects.map(project => (
+            <ProjectDetail 
+                project={project}
+                challenge={project.challenge}
+                solution={project.solution}
+                result={project.result}
+            />
+        ))}
     </div>
 </Layout>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        // Inicializador para la galería Lightbox
-        const lightbox = GLightbox({
-            selector: '.glightbox'
-        });
-
-        // Script para el desplazamiento suave
-        if (window.location.hash) {
-            const element = document.querySelector(window.location.hash);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
-    });
-</script>
-
 <style>
-    .container { padding: 0 2rem; max-width: 1200px; margin: 0 auto; }
-    .page-header { text-align: center; padding: 4rem 0; }
-    .page-header h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .page-header p { font-size: 1.25rem; color: #94a3b8; }
-    .featured-project { margin-bottom: 4rem; }
-    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; padding-bottom: 4rem; }
+    .page-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    .page-header {
+        text-align: center;
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--color-borde);
+    }
+    .page-header h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-family: 'Playfair Display', serif;
+        color: var(--color-texto-claro);
+    }
+    .page-header p {
+        font-size: 1.25rem;
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto;
+    }
 </style>
+
 
 
 
