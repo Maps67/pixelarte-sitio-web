@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro'; // <-- IMPORTANTE
 
 // Data para la sección de servicios
 const servicesV3 = [
@@ -46,6 +47,23 @@ const featuredProjectsV3 = [
         href: '/portfolio#tarjeta-digital-corporativa'
     }
 ];
+
+// <-- INICIO: DATA PARA TESTIMONIOS -->
+const testimonials = [
+    {
+        quote: "El equipo de Pixelarte superó todas nuestras expectativas. Su enfoque estratégico y diseño impecable no solo nos dio un sitio web hermoso, sino que ha incrementado nuestras conversiones en un 40%.",
+        author: "Ana García",
+        title: "CEO de Soluciones Creativas",
+        avatarUrl: "https://placehold.co/96x96/E2E8F0/475569?text=AG"
+    },
+    {
+        quote: "Trabajar con Pixelarte Studio fue una experiencia increíblemente fluida. Entendieron nuestra visión a la perfección y la ejecutaron con una profesionalidad y atención al detalle que rara vez se ve.",
+        author: "Carlos Mendoza",
+        title: "Director de Marketing, InovaTech",
+        avatarUrl: "https://placehold.co/96x96/E2E8F0/475569?text=CM"
+    }
+];
+// <-- FIN: DATA PARA TESTIMONIOS -->
 ---
 
 <Layout title="Pixelarte Studio - Diseño Web con Precisión Digital">
@@ -63,7 +81,7 @@ const featuredProjectsV3 = [
         </section>
 
         <section class="services-section-v3">
-            <div class="container">
+             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Soluciones Digitales de Alto Impacto</h2>
                     <p class="section-subtitle">
@@ -104,7 +122,6 @@ const featuredProjectsV3 = [
                 </div>
                 <div class="portfolio-grid-v3">
                      {featuredProjectsV3.map(project => (
-                        // Asumimos que el componente ProjectCard tiene la clase .project-card en su raíz
                         <div class="project-card-wrapper">
                             <ProjectCard {...project} />
                         </div>
@@ -112,190 +129,90 @@ const featuredProjectsV3 = [
                 </div>
             </div>
         </section>
+
+        <!-- ✅ INICIO: SECCIÓN DE TESTIMONIOS -->
+        <section class="testimonials-section-v3">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Confían en Nosotros</h2>
+                    <p class="section-subtitle">
+                        Nos enorgullece construir relaciones duraderas y resultados que hablan por sí mismos.
+                    </p>
+                </div>
+                <div class="testimonials-grid-v3">
+                    {testimonials.map(testimonial => (
+                        <TestimonialCard {...testimonial} />
+                    ))}
+                </div>
+            </div>
+        </section>
+        <!-- FIN: SECCIÓN DE TESTIMONIOS -->
     </div>
 </Layout>
 
 <style>
-    .container {
-        padding: 0 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    .page-wrapper > section + section {
-        border-top: 1px solid var(--color-borde-claro);
-    }
-    .portfolio-section-v3 {
-        border-top: 1px solid var(--color-borde);
-    }
-    .hero-section-v3 {
-        background-color: var(--color-fondo-oscuro);
-        padding: 6rem 1rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-    .hero-section-v3::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('/images/hero-background.jpg');
-        background-size: cover;
-        background-position: center;
-        opacity: 0.05;
-        z-index: 1;
-    }
-    .hero-container {
-        position: relative;
-        z-index: 2;
-    }
-    .hero-title {
-        font-size: 2.5rem; /* Tamaño base para móvil */
-        font-weight: 800;
-        color: var(--color-texto-claro);
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-    }
-    .hero-subtitle {
-        font-size: 1.125rem; /* Tamaño base para móvil */
-        color: #94a3b8;
-        max-width: 600px;
-        margin: 0 auto 2.5rem;
-    }
-    .cta-button {
-        display: inline-block;
-        background-color: var(--color-acento);
-        color: #fff;
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
-        font-weight: 600;
-        border-radius: 0.5rem;
-        text-decoration: none;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    .cta-button:hover {
-        transform: scale(1.05);
-        opacity: 0.9;
-    }
-    .section-header {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-    .section-title {
-        font-size: 2rem; /* Tamaño base para móvil */
-        font-weight: 700;
-        margin-bottom: 1rem;
-    }
-    .section-subtitle {
-        font-size: 1rem; /* Tamaño base para móvil */
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    .services-section-v3 {
+    .container { padding: 0 1rem; max-width: 1200px; margin: 0 auto; }
+    .page-wrapper > section + section { border-top: 1px solid var(--color-borde-claro); }
+    .portfolio-section-v3 { border-top: 1px solid var(--color-borde); }
+    .hero-section-v3 { background-color: var(--color-fondo-oscuro); padding: 6rem 1rem; text-align: center; position: relative; overflow: hidden; }
+    .hero-section-v3::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/images/hero-background.jpg'); background-size: cover; background-position: center; opacity: 0.05; z-index: 1; }
+    .hero-container { position: relative; z-index: 2; }
+    .hero-title { font-size: 2.5rem; font-weight: 800; color: var(--color-texto-claro); margin-bottom: 1.5rem; line-height: 1.2; }
+    .hero-subtitle { font-size: 1.125rem; color: #94a3b8; max-width: 600px; margin: 0 auto 2.5rem; }
+    .cta-button { display: inline-block; background-color: var(--color-acento); color: #fff; padding: 1rem 1.5rem; font-size: 1rem; font-weight: 600; border-radius: 0.5rem; text-decoration: none; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .cta-button:hover { transform: scale(1.05); opacity: 0.9; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+    .section-subtitle { font-size: 1rem; max-width: 600px; margin: 0 auto; }
+    .services-section-v3 { background-color: var(--color-fondo-claro); padding: 4rem 0; }
+    .services-section-v3 .section-title { color: var(--color-texto-oscuro); }
+    .services-section-v3 .section-subtitle { color: var(--color-texto-secundario); }
+    .services-grid-v3 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .service-card-v3 { background-color: #ffffff; border: 1px solid var(--color-borde-claro); border-radius: 0.75rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; }
+    .service-card-v3.is-link:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); }
+    .service-image-container { aspect-ratio: 16 / 9; background-color: #f3f4f6; }
+    .service-image-container img { width: 100%; height: 100%; object-fit: cover; }
+    .service-card-v3 h3 { font-size: 1.25rem; margin: 1.5rem 1.5rem 0.5rem; color: var(--color-texto-oscuro); }
+    .service-card-v3 p { color: var(--color-texto-secundario); padding: 0 1.5rem 1.5rem; line-height: 1.6; }
+    .portfolio-section-v3 { background-color: var(--color-fondo-oscuro); padding: 4rem 0; }
+    .portfolio-section-v3 .section-title { color: var(--color-texto-claro); }
+    .portfolio-section-v3 .section-subtitle { color: #94a3b8; }
+    .portfolio-grid-v3 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+
+    /* ESTILOS PARA TESTIMONIOS */
+    .testimonials-section-v3 {
         background-color: var(--color-fondo-claro);
         padding: 4rem 0;
     }
-    .services-section-v3 .section-title {
+    .testimonials-section-v3 .section-title {
         color: var(--color-texto-oscuro);
     }
-    .services-section-v3 .section-subtitle {
+    .testimonials-section-v3 .section-subtitle {
         color: var(--color-texto-secundario);
     }
-    .services-grid-v3 {
+    .testimonials-grid-v3 {
         display: grid;
-        grid-template-columns: 1fr; /* Una columna en móvil */
+        grid-template-columns: 1fr;
         gap: 1.5rem;
-    }
-    .service-card-v3 {
-        background-color: #ffffff;
-        border: 1px solid var(--color-borde-claro);
-        border-radius: 0.75rem;
-        overflow: hidden;
-        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-decoration: none;
+        max-width: 900px; 
+        margin: 0 auto;
     }
 
-    /* ✅ INICIO: CAMBIO REALIZADO AQUÍ */
-    .service-card-v3.is-link:hover {
-        transform: translateY(-8px); /* Más elevación */
-        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); /* Sombra más profunda */
-    }
-    /* FIN: CAMBIO REALIZADO */
-
-    .service-image-container {
-        aspect-ratio: 16 / 9;
-        background-color: #f3f4f6;
-    }
-    .service-image-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .service-card-v3 h3 {
-        font-size: 1.25rem;
-        margin: 1.5rem 1.5rem 0.5rem;
-        color: var(--color-texto-oscuro);
-    }
-    .service-card-v3 p {
-        color: var(--color-texto-secundario);
-        padding: 0 1.5rem 1.5rem;
-        line-height: 1.6;
-    }
-    .portfolio-section-v3 {
-        background-color: var(--color-fondo-oscuro);
-        padding: 4rem 0;
-    }
-    .portfolio-section-v3 .section-title {
-        color: var(--color-texto-claro);
-    }
-    .portfolio-section-v3 .section-subtitle {
-        color: #94a3b8;
-    }
-    .portfolio-grid-v3 {
-        display: grid;
-        grid-template-columns: 1fr; /* Una columna en móvil */
-        gap: 1.5rem;
-    }
-
-    /* MEDIA QUERIES PARA PANTALLAS MÁS GRANDES */
+    /* MEDIA QUERIES */
     @media (min-width: 768px) {
-        .container {
-            padding: 0 2rem;
-        }
-        .hero-section-v3 {
-            padding: 8rem 0;
-        }
-        .hero-title {
-            font-size: 3.5rem;
-        }
-        .hero-subtitle {
-            font-size: 1.25rem;
-        }
-        .cta-button {
-            padding: 1rem 2rem;
-            font-size: 1.125rem;
-        }
-        .services-section-v3, .portfolio-section-v3 {
-            padding: 6rem 0;
-        }
-        .section-header {
-            margin-bottom: 4rem;
-        }
-        .section-title {
-            font-size: 2.5rem;
-        }
-        .section-subtitle {
-            font-size: 1.125rem;
-        }
-        .services-grid-v3 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .portfolio-grid-v3 {
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        .container { padding: 0 2rem; }
+        .hero-section-v3 { padding: 8rem 0; }
+        .hero-title { font-size: 3.5rem; }
+        .hero-subtitle { font-size: 1.25rem; }
+        .cta-button { padding: 1rem 2rem; font-size: 1.125rem; }
+        .services-section-v3, .portfolio-section-v3, .testimonials-section-v3 { padding: 6rem 0; } 
+        .section-header { margin-bottom: 4rem; }
+        .section-title { font-size: 2.5rem; }
+        .section-subtitle { font-size: 1.125rem; }
+        .services-grid-v3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .portfolio-grid-v3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .testimonials-grid-v3 {
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
         }
     }
@@ -306,23 +223,12 @@ const featuredProjectsV3 = [
     document.addEventListener("DOMContentLoaded", () => {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Animación para los títulos de las secciones
-        gsap.utils.toArray('.section-title').forEach(title => {
-            gsap.from(title, {
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: title,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                }
-            });
-        });
+        gsap.utils.toArray('.section-title').forEach(t => gsap.from(t, {y:50, opacity:0, duration:0.8, ease:"power3.out", scrollTrigger:{trigger:t, start:"top 85%", toggleActions:"play none none none"}}));
+        gsap.utils.toArray('.service-card-v3').forEach((c,i) => gsap.from(c, {y:50, opacity:0, duration:0.8, ease:"power3.out", delay:i*0.1, scrollTrigger:{trigger:c, start:"top 85%", toggleActions:"play none none none"}}));
+        gsap.utils.toArray('.project-card-wrapper').forEach((c,i) => gsap.from(c, {y:50, opacity:0, duration:0.8, ease:"power3.out", delay:i*0.1, scrollTrigger:{trigger:c, start:"top 85%", toggleActions:"play none none none"}}));
 
-        // Animación para las tarjetas de servicios
-        gsap.utils.toArray('.service-card-v3').forEach((card, index) => {
+        // ANIMACIÓN PARA TESTIMONIOS
+        gsap.utils.toArray('.testimonial-card').forEach((card, index) => {
             gsap.from(card, {
                 y: 50,
                 opacity: 0,
@@ -336,23 +242,9 @@ const featuredProjectsV3 = [
                 }
             });
         });
-
-        // Animación para las tarjetas de portafolio
-        gsap.utils.toArray('.project-card-wrapper').forEach((card, index) => {
-            gsap.from(card, {
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power3.out",
-                delay: index * 0.1, // Retraso escalonado
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                }
-            });
-        });
     });
 </script>
+
+
 
 
