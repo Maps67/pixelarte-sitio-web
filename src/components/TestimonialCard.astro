@@ -1,0 +1,71 @@
+---
+// src/components/TestimonialCard.astro
+interface Props {
+    quote: string;
+    author: string;
+    title: string;
+    avatarUrl: string;
+}
+const { quote, author, title, avatarUrl } = Astro.props;
+---
+<div class="testimonial-card">
+    <svg class="testimonial-quote-icon" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.981 19.167a2.53 2.53 0 0 1-2.529-2.529c0-1.4 1.13-2.529 2.529-2.529s2.529 1.13 2.529 2.529c0 1.399-1.13 2.529-2.529 2.529zm-7.452-9.11h4.949c.83 0 1.503.674 1.503 1.503v5.029c0 4.148-3.354 7.502-7.452 7.502v-2.501c2.73 0 4.949-2.219 4.949-4.949v-1.553H2.529v-5.029zm20 0h4.949c.83 0 1.503.674 1.503 1.503v5.029c0 4.148-3.354 7.502-7.452 7.502v-2.501c2.73 0 4.949-2.219 4.949-4.949v-1.553h-4.449v-5.029z"></path></svg>
+    <p class="testimonial-quote">{quote}</p>
+    <footer class="testimonial-footer">
+        <img class="testimonial-avatar" src={avatarUrl} alt={`Avatar de ${author}`} loading="lazy" />
+        <div class="testimonial-author-info">
+            <p class="testimonial-author">{author}</p>
+            <p class="testimonial-title">{title}</p>
+        </div>
+    </footer>
+</div>
+
+<style>
+    .testimonial-card {
+        background-color: #ffffff;
+        border: 1px solid var(--color-borde-claro);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        position: relative;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+    }
+    .testimonial-quote-icon {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        color: var(--color-acento);
+        opacity: 0.1;
+    }
+    .testimonial-quote {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.25rem;
+        line-height: 1.6;
+        color: var(--color-texto-oscuro);
+        margin: 1.5rem 0 2rem;
+        padding-top: 1rem;
+        font-style: italic;
+    }
+    .testimonial-footer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .testimonial-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .testimonial-author {
+        font-weight: 600;
+        color: var(--color-texto-oscuro);
+        margin: 0;
+    }
+    .testimonial-title {
+        color: var(--color-texto-secundario);
+        font-size: 0.875rem;
+        margin: 0;
+    }
+</style>
