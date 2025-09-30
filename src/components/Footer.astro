@@ -2,31 +2,32 @@
 const year = new Date().getFullYear();
 const socialLinks = {
     facebook: 'https://www.facebook.com/profile.php?id=61578631474398',
-    whatsapp: 'https://wa.me/5213347211199', // Formato para enlace de WhatsApp
+    whatsapp: 'https://wa.me/5213347211199',
     instagram: 'https://www.instagram.com/pixel.arte.studio/'
 };
 const contactEmail = 'contacto@pixelartestudio.art';
 ---
 
 <footer class="footer">
-    <div class="container">
+    <div class="container mx-auto px-6">
         <div class="footer-content">
             <div class="qr-section">
                 <h4>Prueba Nuestra Tarjeta Digital</h4>
                 <p>Escanea el QR para ver nuestro ecosistema en acción.</p>
                 <div class="qr-code">
-                    <img src="/qr-code.png" alt="Código QR para la tarjeta digital de Pixelarte Studio" />
+                    {/* He actualizado la ruta a la nueva imagen */}
+                    <img src="/qr-pixel.jpg" alt="Código QR para la tarjeta digital de Pixelarte Studio" />
                 </div>
             </div>
             <div class="links-section">
                 <div class="social-icons">
-                    <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer">
+                    <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
-                    <a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer">
+                    <a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.167 1.679zm6.247-3.13c.428.195 1.05.337 1.637.337 5.454 0 9.901-4.448 9.901-9.902 0-5.454-4.447-9.901-9.901-9.901-5.455 0-9.901 4.447-9.901 9.901 0 2.021.611 3.941 1.712 5.63l-.427 1.566 1.567-.427zm6.749-7.251c-.34.176-.732.266-1.12.284-.448.021-.99-.07-1.523-.425-.533-.355-1.023-.9-1.42-1.566-.4-.666-.801-1.431-.801-2.294s.39-1.523.8-2.293c.4-.765 1.023-1.21 1.42-1.566.4-.355.99-.446 1.523-.425.39.021.78.108 1.12.284.34.176.34.556.021.732l-1.59 2.12c-.319.176-.39.556-.021.732l2.12 1.59c.319.176.39.556.021.732l-2.12 1.59z"></path></svg>
                     </a>
-                    <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
+                    <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.66-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.273 0-3.692.012-4.988.07-4.404.201-6.448 2.245-6.648 6.648-.058 1.295-.069 1.714-.069 4.988s.011 3.692.069 4.988c.201 4.404 2.244 6.448 6.648 6.648 1.296.058 1.715.069 4.988.069s3.692-.011 4.988-.069c4.404-.2 6.448-2.244 6.648-6.648.058-1.296.069-1.715.069-4.988s-.011-3.692-.069-4.988c-.2-4.403-2.244-6.447-6.648-6.648-1.296-.058-1.714-.069-4.988-.069zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm4.865-11.822c-1.159 0-2.102.942-2.102 2.101s.943 2.102 2.102 2.102 2.102-.943 2.102-2.102-.943-2.101-2.102-2.101z"></path></svg>
                     </a>
                 </div>
@@ -43,6 +44,12 @@ const contactEmail = 'contacto@pixelartestudio.art';
 </footer>
 
 <style>
+    :root {
+        --color-fondo-oscuro: #111827;
+        --color-texto-claro: #F9FAFB;
+        --color-borde: #374151;
+    }
+
     .footer {
         background-color: var(--color-fondo-oscuro);
         color: #a0aec0; /* Un gris claro para el texto secundario */
@@ -54,19 +61,13 @@ const contactEmail = 'contacto@pixelartestudio.art';
         grid-template-columns: 1fr;
         gap: 3rem;
         text-align: center;
+        align-items: center;
     }
     @media (min-width: 768px) {
         .footer-content {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 2fr;
             text-align: left;
-        }
-    }
-    @media (min-width: 1024px) {
-        .footer-content {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .links-section {
-            grid-column: span 2 / span 2;
+            gap: 4rem;
         }
     }
     .qr-section h4 {
@@ -98,7 +99,7 @@ const contactEmail = 'contacto@pixelartestudio.art';
     .links-section {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
     @media (min-width: 768px) {
@@ -127,9 +128,10 @@ const contactEmail = 'contacto@pixelartestudio.art';
         }
     }
     .legal-links a {
+        display: block;
+        margin-top: 0.5rem;
         text-decoration: none;
         color: #a0aec0;
-        margin: 0 0.5rem;
     }
     .legal-links a:hover {
         color: var(--color-texto-claro);
@@ -159,3 +161,4 @@ const contactEmail = 'contacto@pixelartestudio.art';
         }
     }
 </style>
+
