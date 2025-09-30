@@ -104,7 +104,10 @@ const featuredProjectsV3 = [
                 </div>
                 <div class="portfolio-grid-v3">
                      {featuredProjectsV3.map(project => (
-                        <ProjectCard {...project} />
+                        // Asumimos que el componente ProjectCard tiene la clase .project-card en su raíz
+                        <div class="project-card-wrapper">
+                            <ProjectCard {...project} />
+                        </div>
                     ))}
                 </div>
             </div>
@@ -297,22 +300,20 @@ const featuredProjectsV3 = [
 
 <!-- ✅ INICIO: SCRIPT DE ANIMACIÓN CON GSAP -->
 <script>
-    // Se asegura de que el DOM esté completamente cargado antes de ejecutar el script
     document.addEventListener("DOMContentLoaded", () => {
-        // Registra el plugin ScrollTrigger con GSAP
         gsap.registerPlugin(ScrollTrigger);
 
         // Animación para los títulos de las secciones
         gsap.utils.toArray('.section-title').forEach(title => {
             gsap.from(title, {
-                y: 50, // Comienza 50px más abajo de su posición final
-                opacity: 0, // Comienza completamente transparente
-                duration: 0.8, // La animación dura 0.8 segundos
-                ease: "power3.out", // Un efecto de desaceleración suave
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out",
                 scrollTrigger: {
                     trigger: title,
-                    start: "top 85%", // La animación se dispara cuando el 85% superior del título entra en la pantalla
-                    toggleActions: "play none none none" // La animación solo se reproduce una vez
+                    start: "top 85%",
+                    toggleActions: "play none none none"
                 }
             });
         });
@@ -324,7 +325,24 @@ const featuredProjectsV3 = [
                 opacity: 0,
                 duration: 0.8,
                 ease: "power3.out",
-                delay: index * 0.1, // Añade un pequeño retraso escalonado a cada tarjeta
+                delay: index * 0.1,
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // ✅ NUEVO: Animación para las tarjetas de portafolio
+        // He envuelto cada <ProjectCard> en un <div class="project-card-wrapper"> para poder seleccionarlo
+        gsap.utils.toArray('.project-card-wrapper').forEach((card, index) => {
+            gsap.from(card, {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                delay: index * 0.1, // Retraso escalonado
                 scrollTrigger: {
                     trigger: card,
                     start: "top 85%",
@@ -335,3 +353,4 @@ const featuredProjectsV3 = [
     });
 </script>
 <!-- FIN: SCRIPT DE ANIMACIÓN -->
+
