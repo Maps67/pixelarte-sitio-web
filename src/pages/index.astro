@@ -217,10 +217,14 @@ const featuredProjectsV3 = [
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         text-decoration: none;
     }
+
+    /* ✅ INICIO: CAMBIO REALIZADO AQUÍ */
     .service-card-v3.is-link:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+        transform: translateY(-8px); /* Más elevación */
+        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); /* Sombra más profunda */
     }
+    /* FIN: CAMBIO REALIZADO */
+
     .service-image-container {
         aspect-ratio: 16 / 9;
         background-color: #f3f4f6;
@@ -256,7 +260,7 @@ const featuredProjectsV3 = [
         gap: 1.5rem;
     }
 
-    /* ✅ INICIO: MEDIA QUERIES PARA PANTALLAS MÁS GRANDES */
+    /* MEDIA QUERIES PARA PANTALLAS MÁS GRANDES */
     @media (min-width: 768px) {
         .container {
             padding: 0 2rem;
@@ -295,10 +299,9 @@ const featuredProjectsV3 = [
             gap: 2rem;
         }
     }
-    /* FIN: MEDIA QUERIES */
 </style>
 
-<!-- ✅ INICIO: SCRIPT DE ANIMACIÓN CON GSAP -->
+<!-- SCRIPT DE ANIMACIÓN CON GSAP -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         gsap.registerPlugin(ScrollTrigger);
@@ -334,8 +337,7 @@ const featuredProjectsV3 = [
             });
         });
 
-        // ✅ NUEVO: Animación para las tarjetas de portafolio
-        // He envuelto cada <ProjectCard> en un <div class="project-card-wrapper"> para poder seleccionarlo
+        // Animación para las tarjetas de portafolio
         gsap.utils.toArray('.project-card-wrapper').forEach((card, index) => {
             gsap.from(card, {
                 y: 50,
@@ -352,5 +354,5 @@ const featuredProjectsV3 = [
         });
     });
 </script>
-<!-- FIN: SCRIPT DE ANIMACIÓN -->
+
 
