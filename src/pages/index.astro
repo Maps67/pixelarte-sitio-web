@@ -294,3 +294,44 @@ const featuredProjectsV3 = [
     }
     /* FIN: MEDIA QUERIES */
 </style>
+
+<!-- ✅ INICIO: SCRIPT DE ANIMACIÓN CON GSAP -->
+<script>
+    // Se asegura de que el DOM esté completamente cargado antes de ejecutar el script
+    document.addEventListener("DOMContentLoaded", () => {
+        // Registra el plugin ScrollTrigger con GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animación para los títulos de las secciones
+        gsap.utils.toArray('.section-title').forEach(title => {
+            gsap.from(title, {
+                y: 50, // Comienza 50px más abajo de su posición final
+                opacity: 0, // Comienza completamente transparente
+                duration: 0.8, // La animación dura 0.8 segundos
+                ease: "power3.out", // Un efecto de desaceleración suave
+                scrollTrigger: {
+                    trigger: title,
+                    start: "top 85%", // La animación se dispara cuando el 85% superior del título entra en la pantalla
+                    toggleActions: "play none none none" // La animación solo se reproduce una vez
+                }
+            });
+        });
+
+        // Animación para las tarjetas de servicios
+        gsap.utils.toArray('.service-card-v3').forEach((card, index) => {
+            gsap.from(card, {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                delay: index * 0.1, // Añade un pequeño retraso escalonado a cada tarjeta
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+    });
+</script>
+<!-- FIN: SCRIPT DE ANIMACIÓN -->
