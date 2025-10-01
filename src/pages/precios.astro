@@ -124,7 +124,17 @@ const plans = [
         text-align: center;
         box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         position: relative;
+        /* ✅ INICIO: CAMBIO 1 - Transición suave para el efecto hover */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* FIN: CAMBIO 1 */
     }
+    /* ✅ INICIO: CAMBIO 2 - Efecto hover para tarjetas no destacadas */
+    .plan-card:not(.highlighted):hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+    }
+    /* FIN: CAMBIO 2 */
+
     .plan-header {
         border-bottom: 1px solid var(--color-borde-claro);
         padding-bottom: 1.5rem;
@@ -133,17 +143,15 @@ const plans = [
     .plan-title {
         font-size: 1.5rem;
         font-weight: 700;
-        margin-bottom: 0.5rem; /* Reducido para acercar al subtítulo */
+        margin-bottom: 0.5rem;
     }
-    /* ✅ INICIO: ESTILOS PARA EL NUEVO SUBTÍTULO */
     .plan-subtitle {
         font-size: 1rem;
         font-weight: 500;
         color: var(--color-acento);
         margin-bottom: 1.5rem;
-        min-height: 40px; /* Asegura alineación vertical */
+        min-height: 40px;
     }
-    /* FIN: ESTILOS PARA EL NUEVO SUBTÍTULO */
     .plan-price {
         font-family: 'Inter', sans-serif;
         font-size: 2.5rem;
@@ -163,7 +171,7 @@ const plans = [
     }
     .plan-description {
         color: var(--color-texto-secundario);
-        min-height: 80px; /* Ajustado para alineación */
+        min-height: 80px;
     }
     .plan-features {
         list-style: none;
@@ -183,7 +191,11 @@ const plans = [
         color: var(--color-acento);
         margin-right: 0.75rem;
         font-size: 1.25rem;
-        line-height: 1.5;
+        /* ✅ INICIO: CAMBIO 3 - Alineación perfecta del ícono */
+        line-height: 1.2; /* Alinea verticalmente con la primera línea de texto */
+        margin-top: 0.1rem; /* Pequeño ajuste para centrado perfecto */
+        flex-shrink: 0; /* Evita que el ícono se encoja */
+        /* FIN: CAMBIO 3 */
     }
     .cta-button {
         display: block;
@@ -216,7 +228,7 @@ const plans = [
         transform: scale(1.05);
     }
     .plan-card.highlighted .plan-title { color: #fff; }
-    .plan-card.highlighted .plan-subtitle { color: var(--color-acento); } /* Mantenemos el color de acento */
+    .plan-card.highlighted .plan-subtitle { color: var(--color-acento); }
     .plan-card.highlighted .plan-price,
     .plan-card.highlighted .plan-price-suffix,
     .plan-card.highlighted .setup-fee,
@@ -245,3 +257,5 @@ const plans = [
         color: var(--color-texto-secundario);
     }
 </style>
+
+
