@@ -1,49 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// ✅ Data actualizada para incluir "+ IVA"
 const plans = [
     {
-        title: 'Profesional',
+        title: 'Tarjeta Digital',
+        subtitle: 'Ideal para freelancers y profesionales.',
         price: '$4,990',
         priceSuffix: 'MXN + IVA',
-        description: 'Ideal para freelancers y profesionales que buscan una primera impresión impactante.',
+        description: 'Una primera impresión impactante que abre puertas y genera conexiones.',
         features: [
-            'Tarjeta Digital Profesional',
-            'Branding 100% Personalizado',
+            'Diseño 100% Personalizado',
             'Galería Multimedia (Fotos/Videos)',
             'Formulario de Contacto Directo',
             'Enlaces a Redes, Proyectos, etc.'
         ],
         highlighted: false,
-        ctaText: 'Me Interesa'
+        ctaText: 'Crear mi Tarjeta'
     },
     {
-        title: 'Ecosistema',
+        title: 'Sitio de Crecimiento',
+        subtitle: 'Para negocios que buscan generar clientes.',
         price: '$7,990',
         priceSuffix: 'MXN + IVA',
-        description: 'Perfecto para negocios que buscan crecer y generar leads de forma consistente.',
+        description: 'La herramienta perfecta para construir tu marca y capturar leads de forma consistente.',
         features: [
-            'Todo de la Solución Profesional, y:',
-            'Página Web Landing Page',
+            'Todo lo de la Tarjeta Digital, y:',
+            'Página Web Landing Page Profesional',
+            'Optimización para SEO inicial',
             'Gestión de 1 Red Social*'
         ],
         highlighted: true,
-        ctaText: 'Activar mi Ecosistema'
+        ctaText: 'Lanzar mi Sitio'
     },
     {
-        title: 'Presencia Total',
-        price: '$12,990+',
+        title: 'Solución a Medida',
+        subtitle: 'Para empresas con necesidades únicas.',
+        price: 'Desde $12,990',
         priceSuffix: 'MXN + IVA',
-        description: 'La solución definitiva para empresas y marcas que buscan dominar su nicho.',
+        description: 'El precio final se ajusta a la medida de la complejidad y las integraciones requeridas.',
         features: [
-            'Todo de la Solución Ecosistema, y:',
+            'Todo lo del Sitio de Crecimiento, y:',
             'Sitio Web Completo (multi-página)',
             'Integración con Calendarios y Analíticas',
+            'Blog o Sistema de Contenidos',
             'Soporte Prioritario'
         ],
         highlighted: false,
-        ctaText: 'Solicitar Cotización'
+        ctaText: 'Diseñar mi Solución'
     }
 ];
 ---
@@ -51,8 +54,8 @@ const plans = [
 <Layout title="Planes y Precios - Pixelarte Studio">
     <div class="container">
         <section class="page-header">
-            <h1>Nuestras Soluciones</h1>
-            <p>Elige la solución que te llevará de estar presente a ser relevante en el mundo digital.</p>
+            <h1>Soluciones para Cada Etapa de tu Negocio</h1>
+            <p>Elige el plan que te llevará de estar presente a ser relevante en el mundo digital.</p>
         </section>
 
         <section class="pricing-grid">
@@ -61,6 +64,7 @@ const plans = [
                     {plan.highlighted && <div class="highlight-banner">MÁS POPULAR</div>}
                     <div class="plan-header">
                         <h3 class="plan-title">{plan.title}</h3>
+                        <p class="plan-subtitle">{plan.subtitle}</p>
                         <p class="plan-price">
                             {plan.price}
                             {plan.priceSuffix && <span class="plan-price-suffix"> {plan.priceSuffix}</span>}
@@ -129,8 +133,17 @@ const plans = [
     .plan-title {
         font-size: 1.5rem;
         font-weight: 700;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem; /* Reducido para acercar al subtítulo */
     }
+    /* ✅ INICIO: ESTILOS PARA EL NUEVO SUBTÍTULO */
+    .plan-subtitle {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--color-acento);
+        margin-bottom: 1.5rem;
+        min-height: 40px; /* Asegura alineación vertical */
+    }
+    /* FIN: ESTILOS PARA EL NUEVO SUBTÍTULO */
     .plan-price {
         font-family: 'Inter', sans-serif;
         font-size: 2.5rem;
@@ -150,7 +163,7 @@ const plans = [
     }
     .plan-description {
         color: var(--color-texto-secundario);
-        min-height: 100px;
+        min-height: 80px; /* Ajustado para alineación */
     }
     .plan-features {
         list-style: none;
@@ -203,6 +216,7 @@ const plans = [
         transform: scale(1.05);
     }
     .plan-card.highlighted .plan-title { color: #fff; }
+    .plan-card.highlighted .plan-subtitle { color: var(--color-acento); } /* Mantenemos el color de acento */
     .plan-card.highlighted .plan-price,
     .plan-card.highlighted .plan-price-suffix,
     .plan-card.highlighted .setup-fee,
