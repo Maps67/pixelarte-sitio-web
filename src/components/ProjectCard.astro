@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 
+// ✅ PASO 1: AÑADIMOS 'href' DE NUEVO, PERO COMO OPCIONAL
 interface Props extends HTMLAttributes<'a'> {
     slug: string;
     title: string;
@@ -9,15 +10,14 @@ interface Props extends HTMLAttributes<'a'> {
     mediaType: 'image' | 'video';
     isFeatured?: boolean;
     enableLightbox?: boolean;
-    // 'href' ha sido eliminado de las props
+    href?: string; // <-- 'href' ahora es opcional
 }
 
-const { slug, title, service, description, mediaType, isFeatured, enableLightbox } = Astro.props;
+const { slug, title, service, description, mediaType, isFeatured, href, enableLightbox } = Astro.props;
 
-// ✅ INICIO: LÓGICA CORREGIDA
-// Se construye la URL correcta aquí, asegurando que siempre apunte a la página de portafolio con el ancla.
-const projectUrl = `/portafolio#${slug}`;
-// FIN: LÓGICA CORREGIDA
+// ✅ PASO 2: LÓGICA CONDICIONAL PARA LA URL
+// Si se proporciona un 'href', se usa. Si no, se construye la URL por defecto.
+const finalHref = href ? href : `/portafolio#${slug}`;
 
 const videoUrl = `/images/${slug}.mp4`;
 const posterUrl = `/images/${slug}-poster.webp`;
@@ -25,10 +25,11 @@ const imageUrl = `/images/${slug}.webp`;
 ---
 
 <a 
-    href={projectUrl} {/* Se usa la nueva URL construida */}
+    href={finalHref} {/* <-- Usamos la URL final y correcta */}
     class:list={[
         { 'featured-card': isFeatured, 'project-card': !isFeatured },
-        { 'glightbox': enableLightbox && mediaType !== 'video' } // Lightbox solo para imágenes
+        // Habilitamos glightbox si se pide Y si el enlace final no es un ancla
+        { 'glightbox': enableLightbox && !finalHref.includes('#') }
     ]}
     data-astro-prefetch="false"
 >
@@ -148,5 +149,6 @@ const imageUrl = `/images/${slug}.webp`;
     font-weight: 600;
 }
 </style>
+
 
 
