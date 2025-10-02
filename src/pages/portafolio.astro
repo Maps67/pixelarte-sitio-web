@@ -1,167 +1,72 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProjectDetail from '../components/ProjectDetail.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 
-// ... (El bloque de datos de 'projectsData' y 'projects' no cambia) ...
-const projectsData = [
-    { 
-        title: 'Sistema Web de Pacientes', 
-        service: 'Aplicación Web a Medida', 
+// Datos de proyectos
+const featuredProjectsV3 = [
+    {
+        title: 'Sistema Web de Pacientes',
+        service: 'Aplicación Web a Medida',
+        slug: 'sistema-web-de-pacientes',
         mediaType: 'video',
-        challenge: 'El Dr. Díaz necesitaba una forma eficiente de dar seguimiento a sus pacientes postoperatorios sin depender de llamadas o mensajes desorganizados, asegurando una recuperación óptima y una comunicación clara.',
-        solution: 'Diseñamos y desarrollamos una aplicación web privada donde los pacientes inician sesión para acceder a un plan de recuperación personalizado. Incluye videos de ejercicios, indicaciones de medicamentos y un chat directo con el doctor.',
-        result: 'Se redujo en un 70% el tiempo administrativo del doctor y se mejoró significativamente la adherencia de los pacientes a sus planes de recuperación, resultando en mejores resultados de salud.'
     },
-    { 
-        title: 'Tarjeta Digital Médica', 
-        service: 'Identidad Digital', 
+    {
+        title: 'Tarjeta Digital Médica',
+        service: 'Identidad Digital',
+        slug: 'tarjeta-digital-medica',
         mediaType: 'image',
-        challenge: 'En congresos y eventos, conectar profesionalmente era un desafío. Las tarjetas de papel se perdían y no podían mostrar el trabajo multimedia (videos de cirugías, artículos) del doctor de forma efectiva.',
-        solution: 'Creamos una tarjeta de presentación digital accesible a través de un código QR. La tarjeta no solo contiene su contacto, sino también una galería de videos, enlaces a sus publicaciones y perfiles profesionales.',
-        result: 'La tarjeta digital se convirtió en su principal herramienta de networking, proyectando una imagen de innovación y permitiendo compartir su portafolio completo de forma instantánea y memorable.'
     },
-    { 
-        title: 'Tarjeta Digital Corporativa', 
-        service: 'Herramienta para Ventas', 
+    {
+        title: 'Tarjeta Digital Corporativa',
+        service: 'Herramienta para Ventas',
+        slug: 'tarjeta-digital-corporativa',
         mediaType: 'image',
-        challenge: 'El equipo de ventas Pixel tenía una imagen anticuada y perdía oportunidades clave porque sus tarjetas de papel eran ineficaces para compartir catálogos o capturar el interés de clientes al instante. Necesitaban una solución digital para dejar de entregar un simple contacto y empezar a crear una experiencia de venta completa.',
-        solution: 'Creamos una tarjeta digital personalizable que funciona como un centro de negocios móvil para cada vendedor. Les permite compartir recursos al instante y capturar leads de forma inmediata a través de un formulario integrado que notifica al equipo en tiempo real.',
-        result: 'El resultado clave fue un aumento del 25% en la captura de leads, transformando conversaciones en oportunidades de negocio reales. La empresa ahora proyecta una imagen de marca innovadora, eliminó por completo los costos de impresión y convirtió la tarjeta en una inversión rentable.'
     }
 ];
-
-const projects = projectsData.map(project => {
-    const slug = project.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9 -]/g, "").replace(/\s+/g, '-');
-    let href = '#';
-    if (project.title === 'Tarjeta Digital Médica') { href = 'https://drcarlosdiaza.com/'; }
-    else if (project.title === 'Tarjeta Digital Corporativa') { href = 'https://pixelartestudio.art/tarjeta-pixel.html'; }
-    else if (project.mediaType === 'video') { href = `/images/${slug}.mp4`; }
-    else { href = `/images/${slug}.webp`; }
-    return { ...project, slug, href };
-});
 ---
 
-<Layout title="Portafolio - Pixelarte Studio">
-    <div class="page-container">
-        <section class="page-header">
-            <h1>Casos de Éxito</h1>
-            <p>No solo creamos sitios web. Creamos soluciones que impulsan resultados.</p>
-        </section>
-
-        {projects.map(project => (
-            <ProjectDetail 
-                project={project}
-                challenge={project.challenge}
-                solution={project.solution}
-                result={project.result}
-            />
-        ))}
-
-        <!-- ✅ INICIO: NUEVA SECCIÓN CTA -->
-        <section class="cta-section">
-            <h2>¿Listo para empezar tu proyecto?</h2>
-            <p>Hablemos de cómo podemos transformar tu visión en una realidad digital.</p>
-            <a href="/contacto" class="cta-button">Cotiza tu Proyecto</a>
-        </section>
-        <!-- FIN: NUEVA SECCIÓN CTA -->
-    </div>
+<Layout title="Portafolio - Nuestro Trabajo Reciente | PixelArte Studio">
+    <section class="portfolio-section-v3 standalone-page">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Nuestro Trabajo Reciente</h1>
+                <p class="section-subtitle">
+                    Nos enorgullece el resultado del trabajo en equipo con nuestros clientes. Aquí puedes ver una selección de los proyectos que hemos desarrollado.
+                </p>
+            </div>
+            <div class="portfolio-grid-v3">
+                 {featuredProjectsV3.map(project => (
+                    <div class="project-card-wrapper">
+                        <ProjectCard {...project} />
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
 </Layout>
 
 <style>
-    .page-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        background-color: var(--color-fondo-oscuro);
-    }
-    .page-header {
-        text-align: center;
+    /* Estilos adaptados de tu index.astro para esta página */
+    .container { padding: 0 1rem; max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+    .section-subtitle { font-size: 1rem; max-width: 600px; margin: 0 auto; }
+    
+    .portfolio-section-v3.standalone-page { 
+        background-color: var(--color-fondo-oscuro); 
         padding: 4rem 0;
-        border-bottom: 1px solid var(--color-borde);
+        min-height: 80vh;
     }
-    .page-header h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        font-family: 'Playfair Display', serif;
-        color: var(--color-texto-claro);
-    }
-    .page-header p {
-        font-size: 1.25rem;
-        color: #94a3b8;
-        max-width: 600px;
-        margin: 0 auto;
-    }
+    .portfolio-section-v3 .section-title { color: var(--color-texto-claro); }
+    .portfolio-section-v3 .section-subtitle { color: #94a3b8; }
+    .portfolio-grid-v3 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 
-    /* ✅ INICIO: ESTILOS PARA LA NUEVA SECCIÓN CTA */
-    .cta-section {
-        text-align: center;
-        padding: 4rem 1rem;
-        margin-top: 4rem;
-        border-top: 1px solid var(--color-borde);
+    @media (min-width: 768px) {
+        .container { padding: 0 2rem; }
+        .portfolio-section-v3.standalone-page { padding: 6rem 0; } 
+        .section-header { margin-bottom: 4rem; }
+        .section-title { font-size: 2.5rem; }
+        .section-subtitle { font-size: 1.125rem; }
+        .portfolio-grid-v3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
     }
-    .cta-section h2 {
-        font-size: 2.5rem;
-        font-family: 'Playfair Display', serif;
-        color: var(--color-texto-claro);
-        margin-bottom: 1rem;
-    }
-    .cta-section p {
-        font-size: 1.125rem;
-        color: #94a3b8;
-        max-width: 500px;
-        margin: 0 auto 2rem;
-    }
-    .cta-button {
-        display: inline-block;
-        background-color: var(--color-acento);
-        color: #fff;
-        padding: 1rem 2rem;
-        font-size: 1.125rem;
-        font-weight: 600;
-        border-radius: 0.5rem;
-        text-decoration: none;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    .cta-button:hover {
-        transform: scale(1.05);
-        opacity: 0.9;
-    }
-     /* FIN: ESTILOS PARA LA NUEVA SECCIÓN CTA */
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

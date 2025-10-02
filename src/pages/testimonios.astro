@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+
+// Data para testimonios
+const testimonials = [
+    {
+        quote: "Pixelarte superó por completo nuestras expectativas. Su enfoque no fue solo de diseño, sino estratégico. Transformaron nuestro sitio web en una herramienta fundamental para la práctica médica, mejorando drásticamente el control y la comunicación con mis pacientes a través del innovador sistema de guías interactivas. Son verdaderos socios tecnológicos.",
+        author: "Dr Carlos A. Díaz",
+        title: "Cirujano General",
+        avatarUrl: "https://placehold.co/96x96/E2E8F0/475569?text=AG"
+    },
+    {
+        quote: "Trabajar con Pixelarte Studio fue una experiencia increíblemente fluida. Entendieron nuestra visión a la perfección y la ejecutaron con una profesionalidad y atención al detalle que rara vez se ve.",
+        author: "Carlos Mendoza",
+        title: "Director de Marketing",
+        avatarUrl: "https://placehold.co/96x96/E2E8F0/475569?text=CM"
+    }
+];
+---
+
+<Layout title="Testimonios - Confían en Nosotros | PixelArte Studio">
+    <section class="testimonials-section-v3 standalone-page">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Confían en Nosotros</h1>
+                <p class="section-subtitle">
+                    Nos enorgullece construir relaciones duraderas y resultados que hablan por sí mismos. La satisfacción de nuestros clientes es nuestra mayor carta de presentación.
+                </p>
+            </div>
+            <div class="testimonials-grid-v3">
+                {testimonials.map(testimonial => (
+                    <TestimonialCard {...testimonial} />
+                ))}
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    /* Estilos adaptados de tu index.astro para esta página */
+    .container { padding: 0 1rem; max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+    .section-subtitle { font-size: 1rem; max-width: 600px; margin: 0 auto; }
+
+    .testimonials-section-v3.standalone-page {
+        background-color: var(--color-fondo-claro);
+        padding: 4rem 0;
+        min-height: 80vh;
+    }
+    .testimonials-section-v3 .section-title {
+        color: var(--color-texto-oscuro);
+    }
+    .testimonials-section-v3 .section-subtitle {
+        color: var(--color-texto-secundario);
+    }
+    .testimonials-grid-v3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 900px; 
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        .container { padding: 0 2rem; }
+        .testimonials-section-v3.standalone-page { padding: 6rem 0; } 
+        .section-header { margin-bottom: 4rem; }
+        .section-title { font-size: 2.5rem; }
+        .section-subtitle { font-size: 1.125rem; }
+        .testimonials-grid-v3 {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+    }
+</style>
