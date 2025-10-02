@@ -15,7 +15,6 @@ const contactEmail = 'contacto@pixelartestudio.art';
                 <h4>Prueba Nuestra Tarjeta Digital</h4>
                 <p>Escanea el QR para ver nuestro ecosistema en acción.</p>
                 <div class="qr-code">
-                    {/* CORRECCIÓN: Cambiado de .jpg a .png para que coincida con el archivo */}
                     <img src="/qr-pixel.png" alt="Código QR para la tarjeta digital de Pixelarte Studio" />
                 </div>
             </div>
@@ -34,7 +33,9 @@ const contactEmail = 'contacto@pixelartestudio.art';
                 <div class="legal-links">
                     <p class="copyright">&copy; {year} Pixelarte Studio. Todos los derechos reservados.</p>
                     <div class="divider"></div>
+                    <!-- ✅ INICIO: CAMBIO REALIZADO AQUÍ -->
                     <a href="/terminos-y-condiciones">Términos y Condiciones</a>
+                    <!-- FIN: CAMBIO REALIZADO -->
                     <a href="/aviso-de-privacidad">Aviso de Privacidad</a>
                     <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
                 </div>
@@ -44,6 +45,7 @@ const contactEmail = 'contacto@pixelartestudio.art';
 </footer>
 
 <style>
+    /* ... Tus estilos existentes no cambian ... */
     :root {
         --color-fondo-oscuro: #111827;
         --color-texto-claro: #F9FAFB;
@@ -161,6 +163,7 @@ const contactEmail = 'contacto@pixelartestudio.art';
         }
     }
 </style>
+
 
 
 
