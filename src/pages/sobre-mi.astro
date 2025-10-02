@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sobre Mí | Mi Metodología - PixelArte Studio">
+    <div class="about-section">
+        <div class="container">
+            <h1 class="about-title">Mi Metodología: Rigor y Estrategia Probados</h1>
+            <div class="about-content">
+                <p>
+                    Todo profesional de ventas sabe que la resiliencia y la estrategia son la base del éxito. En mis más de 30 años de carrera, tuve el privilegio de desarrollarme en uno de los campos más exigentes: el sector médico.
+                </p>
+                <p>
+                    Durante 20 años como representante, aprendí que para ganar la confianza de un especialista no basta con la simpatía. Se requiere una preparación impecable para presentar datos complejos, una disciplina férrea para conseguir 5 minutos en una agenda saturada, y una constancia absoluta para construir relaciones a largo plazo en un entorno escéptico por naturaleza.
+                </p>
+                <p>
+                    Esa es la mentalidad que traigo a PixelArte Studio. No solo construyo herramientas digitales; aplico ese mismo nivel de rigor y estrategia para asegurar que tu presencia en línea trabaje tan duro como tú lo haces.
+                </p>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .about-section {
+        padding: 4rem 1rem;
+        background-color: var(--color-fondo-claro); /* Usa tus colores existentes */
+        min-height: 70vh; /* Asegura que la página no se vea muy vacía */
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .about-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        color: var(--color-texto-oscuro); /* Usa tus colores existentes */
+        text-align: center;
+        line-height: 1.3;
+    }
+    .about-content p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: var(--color-texto-secundario); /* Usa tus colores existentes */
+        margin-bottom: 1.5rem;
+    }
+    /* Media Query para pantallas más grandes */
+    @media (min-width: 768px) {
+        .about-section {
+            padding: 6rem 0;
+        }
+        .about-title {
+            font-size: 3.5rem;
+        }
+    }
+</style>

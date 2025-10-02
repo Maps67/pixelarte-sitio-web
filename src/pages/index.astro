@@ -23,7 +23,7 @@ const servicesV3 = [
     }
 ];
 
-// ✅ INICIO: DATOS CORREGIDOS (sin la propiedad 'href')
+// Datos de proyectos
 const featuredProjectsV3 = [
     {
         title: 'Sistema Web de Pacientes',
@@ -44,7 +44,6 @@ const featuredProjectsV3 = [
         mediaType: 'image',
     }
 ];
-// FIN: DATOS CORREGIDOS
 
 // Data para testimonios
 const testimonials = [
@@ -77,6 +76,22 @@ const testimonials = [
             </div>
         </section>
 
+        <section id="estrategia-intro" class="estrategia-section">
+            <div class="container estrategia-container">
+                <div class="estrategia-image-wrapper">
+                    <div class="estrategia-image-placeholder">
+                        <span class="placeholder-name">Marco A. Portillo</span>
+                    </div>
+                </div>
+                <div class="estrategia-content">
+                    <h2 class="estrategia-title">Un Estratega Digital con 30 Años de Experiencia en Ventas</h2>
+                    <p class="estrategia-text">
+                        Tras 20 años como representante en el exigente sector médico, aprendí que la confianza se gana con rigor y estrategia. Hoy, aplico esa misma disciplina en PixelArte Studio, no para construir simples páginas web, sino para crear herramientas digitales que trabajan tan duro como mis clientes.
+                    </p>
+                    <a href="/sobre-mi" class="cta-button-estrategia">Descubre mi Metodología</a>
+                </div>
+            </div>
+        </section>
         <section class="services-section-v3">
              <div class="container">
                 <div class="section-header">
@@ -173,6 +188,74 @@ const testimonials = [
     .portfolio-section-v3 .section-title { color: var(--color-texto-claro); }
     .portfolio-section-v3 .section-subtitle { color: #94a3b8; }
     .portfolio-grid-v3 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    
+    /* ESTILOS PARA SECCIÓN ESTRATEGA */
+    .estrategia-section {
+        background-color: var(--color-fondo-claro);
+        padding: 4rem 1rem;
+    }
+    .estrategia-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    .estrategia-image-wrapper {
+        flex: 1;
+        max-width: 350px;
+        width: 100%;
+    }
+    /* NUEVO: Estilos para el bloque de nombre (Versión Elegante) */
+    .estrategia-image-placeholder {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 150px;
+    }
+    .placeholder-name {
+        font-family: serif;
+        font-size: 2.2rem;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--color-acento); /* Color azul de tu marca */
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd; /* Línea sutil debajo */
+    }
+    .estrategia-content {
+        flex: 2;
+    }
+    .estrategia-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--color-texto-oscuro);
+    }
+    .estrategia-text {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: var(--color-texto-secundario);
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cta-button-estrategia {
+        display: inline-block;
+        background-color: var(--color-acento);
+        color: #fff;
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .cta-button-estrategia:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
 
     /* ESTILOS PARA TESTIMONIOS */
     .testimonials-section-v3 {
@@ -200,7 +283,7 @@ const testimonials = [
         .hero-title { font-size: 3.5rem; }
         .hero-subtitle { font-size: 1.25rem; }
         .cta-button { padding: 1rem 2rem; font-size: 1.125rem; }
-        .services-section-v3, .portfolio-section-v3, .testimonials-section-v3 { padding: 6rem 0; } 
+        .services-section-v3, .portfolio-section-v3, .testimonials-section-v3, .estrategia-section { padding: 6rem 0; } 
         .section-header { margin-bottom: 4rem; }
         .section-title { font-size: 2.5rem; }
         .section-subtitle { font-size: 1.125rem; }
@@ -209,6 +292,25 @@ const testimonials = [
         .testimonials-grid-v3 {
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+        }
+        /* Estilos de Estratega para Desktop */
+        .estrategia-container {
+            flex-direction: row;
+            text-align: left;
+            gap: 4rem;
+        }
+        .estrategia-text {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .estrategia-title {
+            font-size: 2.5rem;
+        }
+        .estrategia-image-placeholder {
+            justify-content: flex-start;
+        }
+        .placeholder-name {
+            font-size: 2.8rem;
         }
     }
 </style>
