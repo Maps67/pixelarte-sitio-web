@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Data para servicios
+// ===== CAMBIO AQUÍ: Rutas actualizadas a .webp =====
 const servicesV3 = [
     {
         title: 'Páginas Web Completas',
         description: 'Creamos sitios web corporativos y personales, desde el concepto inicial hasta el lanzamiento. Tu presencia digital completa, profesional y a medida.',
-        imageUrl: '/icons/icon-web.png', // Usaremos las mismas imágenes que ya tienes
+        imageUrl: '/icons/icon-web.webp',
         features: [
             'Diseño 100% personalizado y responsivo',
             'Optimización SEO básica para Google',
@@ -17,7 +17,7 @@ const servicesV3 = [
     {
         title: 'Landing Pages de Alta Conversión',
         description: 'Páginas de aterrizaje enfocadas en un solo objetivo: capturar leads, vender un producto o promocionar un evento. Maximizamos tus resultados.',
-        imageUrl: '/icons/icon-landing.png',
+        imageUrl: '/icons/icon-landing.webp',
         features: [
             'Enfocadas en un llamado a la acción (CTA)',
             'Formularios de contacto integrados',
@@ -28,7 +28,7 @@ const servicesV3 = [
     {
         title: 'Tarjetas de Presentación Digitales',
         description: 'Tu tarjeta de presentación interactiva en un solo enlace. Comparte tu contacto, redes sociales y portafolio de forma moderna y ecológica.',
-        imageUrl: '/icons/icon-card.png',
+        imageUrl: '/icons/icon-card.webp',
         features: [
             'Código QR para fácil acceso',
             'Botones directos a WhatsApp, email y redes',
@@ -74,100 +74,28 @@ const servicesV3 = [
 </Layout>
 
 <style>
+    /* Estilos existentes... */
     .container { padding: 0 1rem; max-width: 1200px; margin: 0 auto; }
     .section-header { text-align: center; margin-bottom: 3rem; }
     .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
     .section-subtitle { font-size: 1rem; max-width: 600px; margin: 0 auto; }
-    
-    .services-section-v3.standalone-page { 
-        background-color: var(--color-fondo-claro); 
-        padding: 4rem 0; 
-        min-height: 80vh;
-    }
+    .services-section-v3.standalone-page { background-color: var(--color-fondo-claro); padding: 4rem 0; min-height: 80vh; }
     .services-section-v3 .section-title { color: var(--color-texto-oscuro); }
     .services-section-v3 .section-subtitle { color: var(--color-texto-secundario); }
-    
-    .services-grid-v3-detailed { 
-        display: grid; 
-        grid-template-columns: 1fr; 
-        gap: 1.5rem; 
-    }
-    
-    .service-card-v3-detailed {
-        background-color: #ffffff;
-        border: 1px solid var(--color-borde-claro);
-        border-radius: 0.75rem;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        overflow: hidden; /* Importante para que la imagen respete los bordes redondeados */
-    }
-    .service-card-v3-detailed:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
-    }
-    
-    /* === CAMBIOS PRINCIPALES AQUÍ === */
-    .service-image-container {
-        width: 100%;
-        aspect-ratio: 16 / 9; /* Proporción panorámica de banner */
-    }
-
-    .service-image-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
-    }
-
-    .service-content {
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
-    /* === FIN DE LOS CAMBIOS PRINCIPALES === */
-    
-    .service-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        color: var(--color-texto-oscuro);
-    }
-    
-    .service-description {
-        color: var(--color-texto-secundario);
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        flex-grow: 1; 
-    }
-
-    .features-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .feature-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.5rem;
-        color: var(--color-texto-secundario);
-        font-size: 0.95rem;
-    }
-
-    .feature-checkmark {
-        color: #22c55e; 
-        flex-shrink: 0;
-        margin-top: 2px;
-    }
-
+    .services-grid-v3-detailed { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .service-card-v3-detailed { background-color: #ffffff; border: 1px solid var(--color-borde-claro); border-radius: 0.75rem; display: flex; flex-direction: column; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; }
+    .service-card-v3-detailed:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); }
+    .service-image-container { width: 100%; aspect-ratio: 16 / 9; }
+    .service-image-container img { width: 100%; height: 100%; object-fit: cover; }
+    .service-content { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .service-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-texto-oscuro); }
+    .service-description { color: var(--color-texto-secundario); line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+    .features-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+    .feature-item { display: flex; align-items: flex-start; gap: 0.5rem; color: var(--color-texto-secundario); font-size: 0.95rem; }
+    .feature-checkmark { color: #22c55e; flex-shrink: 0; margin-top: 2px; }
     @media (min-width: 768px) {
         .container { padding: 0 2rem; }
-        .services-section-v3.standalone-page { padding: 6rem 0; } 
+        .services-section-v3.standalone-page { padding: 6rem 0; }
         .section-header { margin-bottom: 4rem; }
         .section-title { font-size: 2.5rem; }
         .section-subtitle { font-size: 1.125rem; }
