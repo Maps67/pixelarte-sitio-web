@@ -1,153 +1,151 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 
-// ✅ PASO 1: AÑADIMOS 'href' DE NUEVO, PERO COMO OPCIONAL
-interface Props extends HTMLAttributes<'a'> {
+interface Props extends HTMLAttributes<'div'> {
     slug: string;
     title: string;
     service: string;
-    description?: string;
     mediaType: 'image' | 'video';
-    isFeatured?: boolean;
-    enableLightbox?: boolean;
-    href?: string; // <-- 'href' ahora es opcional
+    problem?: string;
+    solution?: string;
+    externalUrl?: string;
+    ctaText: string;
 }
 
-const { slug, title, service, description, mediaType, isFeatured, href, enableLightbox } = Astro.props;
-
-// ✅ PASO 2: LÓGICA CONDICIONAL PARA LA URL
-// Si se proporciona un 'href', se usa. Si no, se construye la URL por defecto.
-const finalHref = href ? href : `/portafolio#${slug}`;
+const { slug, title, service, mediaType, problem, solution, externalUrl, ctaText } = Astro.props;
 
 const videoUrl = `/images/${slug}.mp4`;
 const posterUrl = `/images/${slug}-poster.webp`;
 const imageUrl = `/images/${slug}.webp`;
+
+// Lógica condicional para el enlace
+const linkHref = externalUrl ? externalUrl : `/portafolio/${slug}`;
+const linkTarget = externalUrl ? "_blank" : "_self";
+const linkRel = externalUrl ? "noopener noreferrer" : "";
 ---
 
-<a 
-    href={finalHref} {/* <-- Usamos la URL final y correcta */}
-    class:list={[
-        { 'featured-card': isFeatured, 'project-card': !isFeatured },
-        // Habilitamos glightbox si se pide Y si el enlace final no es un ancla
-        { 'glightbox': enableLightbox && !finalHref.includes('#') }
-    ]}
-    data-astro-prefetch="false"
->
-    <div class="project-image-container">
+<div class="project-card-case">
+    <div class="project-media">
         {mediaType === 'video' ? (
-            <video src={videoUrl} poster={posterUrl} autoplay loop muted playsinline controls />
+            <video src={videoUrl} poster={posterUrl} autoplay loop muted playsinline controls={false} />
         ) : (
             <img src={imageUrl} alt={`Imagen del proyecto ${title}`} loading="lazy" />
         )}
         <div class="project-service-tag">{service}</div>
     </div>
     <div class="project-info">
-        {isFeatured ? (
-            <>
-                <h2 class="project-title">{title}</h2>
-                <p class="project-description">{description}</p>
-                <span class="project-link">Explorar Proyecto &rarr;</span>
-            </>
-        ) : (
-            <>
-                <h3 class="project-title-small">{title}</h3>
-                <span class="project-link-small">Explorar &rarr;</span>
-            </>
+        <h3 class="project-title">{title}</h3>
+
+        {problem && solution && (
+            <div class="narrative-wrapper">
+                <div class="narrative-section">
+                    <h4>El Reto</h4>
+                    <p>{problem}</p>
+                </div>
+                <div class="narrative-section">
+                    <h4>La Solución</h4>
+                    <p>{solution}</p>
+                </div>
+            </div>
         )}
+        
+        <a href={linkHref} target={linkTarget} rel={linkRel} class="project-link">{ctaText} &rarr;</a>
     </div>
-</a>
+</div>
 
 <style>
-/* ... (Los estilos no han cambiado) ... */
-.featured-card, .project-card {
-    border: 1px solid var(--color-borde);
-    border-radius: 0.75rem;
-    overflow: hidden;
-    text-decoration: none;
-    display: block;
-    background-color: var(--color-superficie);
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
-    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.featured-card:hover, .project-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--color-acento);
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
-}
-
-.featured-card {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-@media (min-width: 768px) {
-    .featured-card {
-        grid-template-columns: 2fr 1fr;
+    .project-card-case {
+        border: 1px solid #334155;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        background-color: #1E293B;
+        display: flex;
+        flex-direction: column;
     }
-}
-.project-image-container {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 16 / 9;
-    background-color: var(--color-fondo-oscuro);
-}
-.project-image-container img, .project-image-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-.featured-card:hover .project-image-container img,
-.featured-card:hover .project-image-container video,
-.project-card:hover .project-image-container img,
-.project-card:hover .project-image-container video {
-    transform: scale(1.05);
-}
-.project-service-tag {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background-color: var(--color-acento);
-    color: #fff;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    z-index: 2;
-}
-.project-info {
-    padding: 1.5rem;
-}
-.featured-card .project-info {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.project-title {
-    font-size: 2rem;
-    color: var(--color-texto);
-    margin-bottom: 1rem;
-}
-.project-description {
-    color: #94a3b8;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-.project-link {
-    color: var(--color-acento);
-    font-weight: 600;
-    font-size: 1.125rem;
-}
-.project-title-small {
-    font-size: 1.5rem;
-    color: var(--color-texto-claro);
-    margin-bottom: 0.5rem;
-}
-.project-link-small {
-    color: var(--color-acento);
-    font-weight: 600;
-}
+
+    .project-media {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        background-color: #0F172A;
+    }
+    .project-media img, .project-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .project-service-tag {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background-color: var(--color-acento);
+        color: #fff;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        z-index: 2;
+    }
+    
+    .project-info {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+        color: var(--color-texto-claro);
+        margin-bottom: 1.5rem;
+    }
+
+    .narrative-wrapper {
+        border-top: 1px solid #334155;
+        padding-top: 1.5rem;
+    }
+
+    .narrative-section h4 {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: #94a3b8;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .narrative-section p {
+        color: #cbd5e1;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .project-link {
+        color: var(--color-acento);
+        font-weight: 600;
+        text-decoration: none;
+        margin-top: auto;
+    }
+
+    @media (min-width: 992px) {
+        .project-card-case {
+            flex-direction: row;
+        }
+
+        .project-card-case:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .project-media, .project-info {
+            width: 50%;
+            flex-shrink: 0;
+        }
+
+        .project-info {
+            padding: 2.5rem;
+        }
+    }
 </style>
 
 

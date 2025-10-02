@@ -1,0 +1,91 @@
+---
+// ===== INICIO DEL CAMBIO: Ruta de importación corregida =====
+import Layout from '../../layouts/Layout.astro';
+// ===== FIN DEL CAMBIO =====
+import ProjectCard from '../../components/ProjectCard.astro';
+
+// Datos de proyectos ampliados con Problema y Solución
+const featuredProjectsV3 = [
+    {
+        title: 'Sistema Web de Pacientes',
+        service: 'Aplicación Web a Medida',
+        slug: 'sistema-web-de-pacientes',
+        mediaType: 'video',
+        problem: 'Gestión manual de expedientes y seguimiento post-operatorio ineficiente, causando pérdida de información y comunicación deficiente con los pacientes.',
+        solution: 'Se desarrolló una aplicación web privada donde los pacientes acceden a guías de recuperación interactivas. El sistema automatiza recordatorios y centraliza la comunicación, permitiendo al doctor monitorear el progreso y reducir consultas innecesarias en un 30%.',
+        ctaText: 'Explorar Caso de Éxito'
+    },
+    {
+        title: 'Tarjeta Digital Médica',
+        service: 'Identidad Digital',
+        slug: 'tarjeta-digital-medica',
+        mediaType: 'image',
+        problem: 'Los profesionales de la salud necesitaban un método centralizado y moderno para compartir información de contacto, portafolio de servicios y enlaces a múltiples perfiles (Doctoralia, redes).',
+        solution: 'Se creó una tarjeta de presentación digital accesible vía QR. Su diseño adaptable y botones de acción directa (WhatsApp, agendar cita) han incrementado la tasa de contacto de nuevos pacientes en un 50% para los clientes que la utilizan.',
+        externalUrl: 'https://drcarlosdiaza.com/',
+        ctaText: 'Ver Proyecto en Vivo'
+    },
+    {
+        title: 'Tarjeta Digital Corporativa',
+        service: 'Herramienta para Ventas',
+        slug: 'tarjeta-digital-corporativa',
+        mediaType: 'image',
+        problem: 'Un equipo de ventas requería una herramienta para compartir catálogos y datos de contacto de forma rápida y medible durante eventos y visitas a clientes.',
+        solution: 'Se diseñó una tarjeta digital que integra un mini-catálogo y formulario de contacto. La implementación de analíticas permitió al equipo de ventas identificar los productos de mayor interés y optimizar su estrategia de seguimiento.',
+        externalUrl: 'https://pixelartestudio.art/tarjeta-pixel',
+        ctaText: 'Ver Proyecto en Vivo'
+    }
+];
+---
+
+<Layout title="Portafolio - Casos de Éxito | PixelArte Studio">
+    <section class="portfolio-section-v3 standalone-page">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Casos de Éxito</h1>
+                <p class="section-subtitle">
+                    No solo creamos diseños; construimos soluciones. Aquí puedes ver cómo hemos resuelto problemas reales para nuestros clientes.
+                </p>
+            </div>
+            <div class="portfolio-grid-v3">
+                 {featuredProjectsV3.map(project => (
+                    <ProjectCard {...project} />
+                ))}
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .container { padding: 0 1rem; max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+    .section-subtitle { font-size: 1rem; max-width: 700px; margin: 0 auto; }
+    
+    .portfolio-section-v3.standalone-page { 
+        background-color: var(--color-fondo-oscuro); 
+        padding: 4rem 0;
+        min-height: 80vh;
+    }
+    .portfolio-section-v3 .section-title { color: var(--color-texto-claro); }
+    .portfolio-section-v3 .section-subtitle { color: #94a3b8; }
+
+    .portfolio-grid-v3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .container { padding: 0 2rem; }
+        .portfolio-section-v3.standalone-page { padding: 6rem 0; } 
+        .section-header { margin-bottom: 4rem; }
+        .section-title { font-size: 2.5rem; }
+        .section-subtitle { font-size: 1.125rem; }
+    }
+</style>
+
+
+
+
+

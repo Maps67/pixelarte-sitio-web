@@ -1,0 +1,153 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Esta función es necesaria para las rutas dinámicas en Astro
+export async function getStaticPaths() {
+    const allProjects = [
+        {
+            title: 'Sistema Web de Pacientes',
+            service: 'Aplicación Web a Medida',
+            slug: 'sistema-web-de-pacientes',
+            mediaType: 'video',
+            problem: 'Gestión manual de expedientes y seguimiento post-operatorio ineficiente, causando pérdida de información y comunicación deficiente con los pacientes.',
+            solution: 'Se desarrolló una aplicación web privada donde los pacientes acceden a guías de recuperación interactivas. El sistema automatiza recordatorios y centraliza la comunicación, permitiendo al doctor monitorear el progreso y reducir consultas innecesarias en un 30%.'
+        },
+        {
+            title: 'Tarjeta Digital Médica',
+            service: 'Identidad Digital',
+            slug: 'tarjeta-digital-medica',
+            mediaType: 'image',
+            problem: 'Los profesionales de la salud necesitaban un método centralizado y moderno para compartir información de contacto, portafolio de servicios y enlaces a múltiples perfiles (Doctoralia, redes).',
+            solution: 'Se creó una tarjeta de presentación digital accesible vía QR. Su diseño adaptable y botones de acción directa (WhatsApp, agendar cita) han incrementado la tasa de contacto de nuevos pacientes en un 50% para los clientes que la utilizan.'
+        },
+        {
+            title: 'Tarjeta Digital Corporativa',
+            service: 'Herramienta para Ventas',
+            slug: 'tarjeta-digital-corporativa',
+            mediaType: 'image',
+            problem: 'Un equipo de ventas requería una herramienta para compartir catálogos y datos de contacto de forma rápida y medible durante eventos y visitas a clientes.',
+            solution: 'Se diseñó una tarjeta digital que integra un mini-catálogo y formulario de contacto. La implementación de analíticas permitió al equipo de ventas identificar los productos de mayor interés y optimizar su estrategia de seguimiento.'
+        }
+    ];
+
+    return allProjects.map(project => ({
+        params: { slug: project.slug },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+
+const videoUrl = `/images/${project.slug}.mp4`;
+const posterUrl = `/images/${project.slug}-poster.webp`;
+const imageUrl = `/images/${project.slug}.webp`;
+---
+
+<Layout title={`${project.title} - Caso de Éxito | PixelArte Studio`}>
+    <div class="project-detail-page">
+        <div class="container">
+            
+            <header class="project-header">
+                <p class="project-service">{project.service}</p>
+                <h1 class="project-title">{project.title}</h1>
+            </header>
+
+            <div class="project-media">
+                {project.mediaType === 'video' ? (
+                    <video src={videoUrl} poster={posterUrl} autoplay loop muted playsinline controls />
+                ) : (
+                    <img src={imageUrl} alt={`Imagen del proyecto ${project.title}`} loading="lazy" />
+                )}
+            </div>
+
+            <div class="project-narrative">
+                <div class="narrative-section">
+                    <h2>El Reto</h2>
+                    <p>{project.problem}</p>
+                </div>
+                <div class="narrative-section">
+                    <h2>La Solución</h2>
+                    <p>{project.solution}</p>
+                </div>
+            </div>
+
+             <div class="back-link-container">
+                <a href="/portafolio" class="back-link">&larr; Volver al Portafolio</a>
+            </div>
+
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .project-detail-page {
+        background-color: var(--color-fondo-oscuro);
+        color: var(--color-texto-claro);
+        padding: 4rem 0;
+    }
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .project-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .project-service {
+        color: var(--color-acento);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    .project-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .project-media {
+        margin-bottom: 3rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        border: 1px solid #334155;
+    }
+    .project-media img, .project-media video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .project-narrative {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+    .narrative-section h2 {
+        font-size: 1.5rem;
+        color: #94a3b8;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #334155;
+        padding-bottom: 0.5rem;
+    }
+    .narrative-section p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: #cbd5e1;
+        margin-bottom: 2.5rem;
+    }
+    .back-link-container {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    .back-link {
+        color: var(--color-acento);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    @media (min-width: 768px) {
+        .project-detail-page {
+            padding: 6rem 0;
+        }
+        .project-title {
+            font-size: 3.5rem;
+        }
+    }
+</style>
