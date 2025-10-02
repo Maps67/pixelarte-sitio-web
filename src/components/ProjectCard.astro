@@ -8,11 +8,16 @@ interface Props extends HTMLAttributes<'a'> {
     description?: string;
     mediaType: 'image' | 'video';
     isFeatured?: boolean;
-    href: string;
     enableLightbox?: boolean;
+    // 'href' ha sido eliminado de las props
 }
 
-const { slug, title, service, description, mediaType, isFeatured, href, enableLightbox } = Astro.props;
+const { slug, title, service, description, mediaType, isFeatured, enableLightbox } = Astro.props;
+
+// ✅ INICIO: LÓGICA CORREGIDA
+// Se construye la URL correcta aquí, asegurando que siempre apunte a la página de portafolio con el ancla.
+const projectUrl = `/portafolio#${slug}`;
+// FIN: LÓGICA CORREGIDA
 
 const videoUrl = `/images/${slug}.mp4`;
 const posterUrl = `/images/${slug}-poster.webp`;
@@ -20,10 +25,10 @@ const imageUrl = `/images/${slug}.webp`;
 ---
 
 <a 
-    href={href}
+    href={projectUrl} {/* Se usa la nueva URL construida */}
     class:list={[
         { 'featured-card': isFeatured, 'project-card': !isFeatured },
-        { 'glightbox': enableLightbox }
+        { 'glightbox': enableLightbox && mediaType !== 'video' } // Lightbox solo para imágenes
     ]}
     data-astro-prefetch="false"
 >
@@ -52,7 +57,7 @@ const imageUrl = `/images/${slug}.webp`;
 </a>
 
 <style>
-/* ✅ INICIO: CAMBIOS REALIZADOS AQUÍ */
+/* ... (Los estilos no han cambiado) ... */
 .featured-card, .project-card {
     border: 1px solid var(--color-borde);
     border-radius: 0.75rem;
@@ -60,16 +65,15 @@ const imageUrl = `/images/${slug}.webp`;
     text-decoration: none;
     display: block;
     background-color: var(--color-superficie);
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); /* Sombra base sutil */
-    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transición para todo */
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .featured-card:hover, .project-card:hover {
     transform: translateY(-8px);
     border-color: var(--color-acento);
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); /* Sombra más profunda al hacer hover */
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
 }
-/* FIN: CAMBIOS REALIZADOS */
 
 .featured-card {
     display: grid;
@@ -144,3 +148,5 @@ const imageUrl = `/images/${slug}.webp`;
     font-weight: 600;
 }
 </style>
+
+
