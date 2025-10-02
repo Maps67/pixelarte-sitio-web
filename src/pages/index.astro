@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import TestimonialCard from '../components/TestimonialCard.astro'; // <-- IMPORTANTE
+import TestimonialCard from '../components/TestimonialCard.astro';
 
 // Data para la sección de servicios
 const servicesV3 = [
@@ -48,7 +48,7 @@ const featuredProjectsV3 = [
     }
 ];
 
-// <-- INICIO: DATA PARA TESTIMONIOS -->
+// Data para testimonios
 const testimonials = [
     {
         quote: "Pixelarte superó por completo nuestras expectativas. Su enfoque no fue solo de diseño, sino estratégico. Transformaron nuestro sitio web en una herramienta fundamental para la práctica médica, mejorando drásticamente el control y la comunicación con mis pacientes a través del innovador sistema de guías interactivas. Son verdaderos socios tecnológicos.",
@@ -63,7 +63,6 @@ const testimonials = [
         avatarUrl: "https://placehold.co/96x96/E2E8F0/475569?text=CM"
     }
 ];
-// <-- FIN: DATA PARA TESTIMONIOS -->
 ---
 
 <Layout title="Pixelarte Studio - Diseño Web con Precisión Digital">
@@ -130,7 +129,6 @@ const testimonials = [
             </div>
         </section>
 
-        <!-- ✅ INICIO: SECCIÓN DE TESTIMONIOS -->
         <section class="testimonials-section-v3">
             <div class="container">
                 <div class="section-header">
@@ -146,7 +144,6 @@ const testimonials = [
                 </div>
             </div>
         </section>
-        <!-- FIN: SECCIÓN DE TESTIMONIOS -->
     </div>
 </Layout>
 
@@ -218,32 +215,6 @@ const testimonials = [
     }
 </style>
 
-<!-- SCRIPT DE ANIMACIÓN CON GSAP -->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.utils.toArray('.section-title').forEach(t => gsap.from(t, {y:50, opacity:0, duration:0.8, ease:"power3.out", scrollTrigger:{trigger:t, start:"top 85%", toggleActions:"play none none none"}}));
-        gsap.utils.toArray('.service-card-v3').forEach((c,i) => gsap.from(c, {y:50, opacity:0, duration:0.8, ease:"power3.out", delay:i*0.1, scrollTrigger:{trigger:c, start:"top 85%", toggleActions:"play none none none"}}));
-        gsap.utils.toArray('.project-card-wrapper').forEach((c,i) => gsap.from(c, {y:50, opacity:0, duration:0.8, ease:"power3.out", delay:i*0.1, scrollTrigger:{trigger:c, start:"top 85%", toggleActions:"play none none none"}}));
-
-        // ANIMACIÓN PARA TESTIMONIOS
-        gsap.utils.toArray('.testimonial-card').forEach((card, index) => {
-            gsap.from(card, {
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power3.out",
-                delay: index * 0.1,
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                }
-            });
-        });
-    });
-</script>
 
 
 
