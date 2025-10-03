@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GuiaMedica from '../../components/Guias/GuiaMedica.astro';
+---
+<Layout title="Guía Estratégica para el Paciente Digital - Pixelarte Studio">
+    <div class="page-wrapper">
+        <GuiaMedica />
+    </div>
+</Layout>
+
+<style>
+    .page-wrapper {
+        padding: 2rem 0;
+        background-color: #f1f5f9; /* Un fondo gris muy suave para la página contenedora */
+    }
+    @media (min-width: 768px) {
+        .page-wrapper {
+            padding: 4rem 0;
+        }
+    }
+</style>
