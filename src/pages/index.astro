@@ -2,16 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Pixelarte Studio - Diseño Web con Precisión Digital">
+<Layout title="Pixelarte Studio - Soluciones Digitales para el Sector Médico">
     <div class="page-wrapper">
         <section class="hero-section-v3">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Diseño Web que Convierte Visitantes en Clientes.</h1>
+                    {/* ===== INICIO DEL CAMBIO ===== */}
+                    <h1 class="hero-title">Más que una web, tu recepcionista digital 24/7.</h1>
                     <p class="hero-subtitle">
-                        Creamos ecosistemas digitales a medida que no solo se ven increíbles, sino que funcionan para impulsar tu crecimiento.
+                        Ayudamos a clínicas y consultorios a convertir visitantes online en pacientes reales.
                     </p>
-                    <a href="/contacto" class="cta-button">Hablemos de tu proyecto</a>
+                    <a href="/contacto" class="cta-button">Optimizar mi Práctica Digital</a>
+                    {/* ===== FIN DEL CAMBIO ===== */}
                 </div>
             </div>
         </section>
@@ -24,9 +26,9 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                 </div>
                 <div class="estrategia-content">
-                    <h2 class="estrategia-title">Un Estratega Digital con 30 Años de Experiencia en Ventas</h2>
+                    <h2 class="estrategia-title">Un Estratega Digital con 20 Años de Experiencia en el Sector Médico</h2>
                     <p class="estrategia-text">
-                        Tras 20 años como representante en el exigente sector médico, aprendí que la confianza se gana con rigor y estrategia. Hoy, aplico esa misma disciplina en PixelArte Studio, no para construir simples páginas web, sino para crear herramientas digitales que trabajan tan duro como mis clientes.
+                        Tras dos décadas como representante en el exigente sector médico, observé una y otra vez cómo profesionales de la salud perdían pacientes por tener una presencia digital débil. Fundé Pixelarte Studio con una misión: aplicar mi conocimiento interno del sector para crear soluciones digitales que realmente entienden los desafíos de una práctica médica.
                     </p>
                     <a href="/sobre-mi" class="cta-button-estrategia">Descubre mi Metodología</a>
                 </div>
@@ -67,37 +69,24 @@ import Layout from '../layouts/Layout.astro';
     </div>
 </Layout>
 
-{/* ===== INICIO DEL CAMBIO: Script para el envío asíncrono del formulario ===== */}
 <script>
     const form = document.getElementById('sib-form');
     if (form) {
         form.addEventListener('submit', function(event) {
-            // 1. Prevenir el envío normal del formulario
             event.preventDefault();
-
-            // 2. Crear los datos del formulario para enviar
             const formData = new FormData(form);
             const actionUrl = form.getAttribute('action');
-
-            // 3. Enviar los datos en segundo plano
             fetch(actionUrl, {
                 method: 'POST',
                 body: formData,
-                mode: 'no-cors' // Necesario para evitar errores de CORS con este tipo de envío
+                mode: 'no-cors'
             })
-            .then(() => {
-                // 4. Redirigir a la página de gracias, independientemente de la respuesta
-                window.location.href = '/gracias';
-            })
-            .catch(error => {
-                console.error('Error al enviar el formulario:', error);
-                // En caso de error, también redirigimos para que el usuario no se quede atascado
+            .finally(() => {
                 window.location.href = '/gracias';
             });
         });
     }
 </script>
-{/* ===== FIN DEL CAMBIO ===== */}
 
 
 <style>
@@ -148,3 +137,4 @@ import Layout from '../layouts/Layout.astro';
         .lead-magnet-section .section-subtitle { font-size: 1.125rem; }
     }
 </style>
+
