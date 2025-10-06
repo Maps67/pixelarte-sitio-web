@@ -128,6 +128,7 @@ const linkRel = externalUrl ? "noopener noreferrer" : "";
         margin-top: auto;
     }
 
+    /* ===== INICIO DE LA CORRECCIÓN ===== */
     @media (min-width: 992px) {
         .project-card-case {
             flex-direction: row;
@@ -137,16 +138,20 @@ const linkRel = externalUrl ? "noopener noreferrer" : "";
             flex-direction: row-reverse;
         }
 
-        .project-media, .project-info {
-            width: 50%;
-            flex-shrink: 0;
+        .project-media {
+            flex: 1 0 50%; /* Ocupa el 50% y no se encoge */
         }
-
+        
         .project-info {
+            flex: 1 1 50%; /* Ocupa el 50% pero puede encogerse si es necesario */
+            min-width: 0; /* Permite que el contenedor se encoja y el texto se ajuste */
             padding: 2.5rem;
         }
     }
+    /* ===== FIN DE LA CORRECCIÓN ===== */
 </style>
+
+
 
 
 
