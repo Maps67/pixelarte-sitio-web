@@ -83,9 +83,24 @@ const plans = [
                 </div>
             ))}
         </section>
+        
         <div class="footnote-container">
             <p class="footnote">* No incluye costos de pauta publicitaria.</p>
         </div>
+
+        {/* ===== INICIO DEL CAMBIO: Nueva sección bilingüe ===== */}
+        <section class="bilingual-offer">
+            <div class="offer-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3 class="offer-title">Expande tu Práctica: Soluciones Bilingües (Español / Inglés)</h3>
+            <p class="offer-description">
+                Atrae al turismo médico y a pacientes internacionales. Ofrecemos todos nuestros servicios con traducciones profesionales y optimización para el mercado de habla inglesa.
+            </p>
+            <a href="/contacto" class="cta-button-secondary">Cotizar Proyecto Bilingüe</a>
+        </section>
+        {/* ===== FIN DEL CAMBIO ===== */}
+
     </div>
 </Layout>
 
@@ -238,13 +253,10 @@ const plans = [
     .plan-card.highlighted .plan-features li { color: var(--color-texto-claro); }
     .plan-card.highlighted .plan-header { border-bottom-color: var(--color-borde); }
     
-    /* ===== INICIO DEL CAMBIO ===== */
-    /* El botón destacado ahora hereda el tamaño automático, pero mantiene su color */
     .plan-card.highlighted .cta-button { 
         background-color: var(--color-acento); 
         color: #fff; 
     }
-    /* ===== FIN DEL CAMBIO ===== */
     .plan-card.highlighted .cta-button:hover { opacity: 0.9; transform: scale(1.02); }
     
     .plan-card:not(.highlighted) .cta-button {
@@ -265,6 +277,50 @@ const plans = [
         font-size: 0.875rem;
         color: var(--color-texto-secundario);
     }
+
+    /* ===== INICIO: Estilos para la nueva sección bilingüe ===== */
+    .bilingual-offer {
+        background-color: #F9FAFB;
+        border: 1px solid var(--color-borde-claro);
+        border-radius: 0.75rem;
+        padding: 2.5rem;
+        text-align: center;
+        margin-top: 4rem;
+    }
+    .offer-icon {
+        color: var(--color-acento);
+        margin-bottom: 1rem;
+    }
+    .offer-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--color-texto-oscuro);
+    }
+    .offer-description {
+        color: var(--color-texto-secundario);
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        font-size: 1.125rem;
+    }
+    .cta-button-secondary {
+        display: inline-block;
+        background-color: transparent;
+        border: 1px solid var(--color-acento);
+        color: var(--color-acento);
+        padding: 0.875rem 1.75rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+    .cta-button-secondary:hover {
+        background-color: var(--color-acento);
+        color: #fff;
+    }
+    /* ===== FIN: Estilos para la nueva sección bilingüe ===== */
 </style>
+
+
 
 
