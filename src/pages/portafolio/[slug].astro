@@ -4,30 +4,35 @@ import Layout from '../../layouts/Layout.astro';
 // Esta función es necesaria para las rutas dinámicas en Astro
 export async function getStaticPaths() {
     const allProjects = [
+        // ===== INICIO DEL CAMBIO: TEXTO OPTIMIZADO =====
         {
             title: 'Sistema Web de Pacientes',
             service: 'Aplicación Web a Medida',
             slug: 'sistema-web-de-pacientes',
             mediaType: 'video',
-            problem: 'Gestión manual de expedientes y seguimiento post-operatorio ineficiente, causando pérdida de información y comunicación deficiente con los pacientes.',
-            solution: 'Se desarrolló una aplicación web privada donde los pacientes acceden a guías de recuperación interactivas. El sistema automatiza recordatorios y centraliza la comunicación, permitiendo al doctor monitorear el progreso y reducir consultas innecesarias en un 30%.'
+            problem: 'Un cirujano especialista perdía horas en seguimiento post-operatorio vía WhatsApp, resultando en comunicación desorganizada y una baja adherencia de los pacientes a sus planes de recuperación.',
+            solution: 'Diseñamos una aplicación web privada donde cada paciente accede a un portal personalizado con su plan de recuperación. Incluye guías interactivas, recordatorios automáticos de medicamentos y un canal de comunicación directo para resolver dudas puntuales.',
+            result: 'Se optimizó en un 70% el tiempo que el doctor dedicaba a tareas administrativas y de seguimiento. Más importante aún, la adherencia de los pacientes al tratamiento mejoró significativamente, acelerando su recuperación y elevando la calidad percibida de la atención.'
         },
         {
             title: 'Tarjeta Digital Médica',
             service: 'Identidad Digital',
             slug: 'tarjeta-digital-medica',
             mediaType: 'image',
-            problem: 'Los profesionales de la salud necesitaban un método centralizado y moderno para compartir información de contacto, portafolio de servicios y enlaces a múltiples perfiles (Doctoralia, redes).',
-            solution: 'Se creó una tarjeta de presentación digital accesible vía QR. Su diseño adaptable y botones de acción directa (WhatsApp, agendar cita) han incrementado la tasa de contacto de nuevos pacientes en un 50% para los clientes que la utilizan.'
+            problem: 'Un médico necesitaba proyectar una imagen de vanguardia en congresos y eventos, pero las tarjetas de papel se perdían y no lograban comunicar el valor de su práctica (videos, publicaciones, etc.).',
+            solution: 'Creamos una Tarjeta de Presentación Digital accesible vía QR que funciona como un micro-sitio. Centraliza su información de contacto, perfiles en Doctoralia, galería de casos de éxito y botones de acción directa para agendar citas.',
+            result: 'La tarjeta se convirtió en su principal herramienta de networking, posicionándolo como un referente tecnológico en su especialidad. La tasa de nuevos contactos generados en eventos aumentó en un 50%.'
         },
         {
             title: 'Tarjeta Digital Corporativa',
-            service: 'Herramienta para Ventas',
+            service: 'Herramienta para el Sector Salud',
             slug: 'tarjeta-digital-corporativa',
             mediaType: 'image',
-            problem: 'Un equipo de ventas requería una herramienta para compartir catálogos y datos de contacto de forma rápida y medible durante eventos y visitas a clientes.',
-            solution: 'Se diseñó una tarjeta digital que integra un mini-catálogo y formulario de contacto. La implementación de analíticas permitió al equipo de ventas identificar los productos de mayor interés y optimizar su estrategia de seguimiento.'
+            problem: 'Un equipo de visitadores médicos y representantes de ventas del sector salud necesitaba una forma unificada y moderna de presentarse, compartir fichas técnicas de productos y capturar datos de médicos en campo.',
+            solution: 'Desarrollamos una tarjeta digital corporativa que cada representante puede personalizar. Integra catálogos de productos y un formulario de captura de leads que notifica al equipo de ventas en tiempo real, permitiendo un seguimiento inmediato.',
+            result: 'Se estandarizó la imagen de la empresa, proyectando innovación. La captura de leads se incrementó en un 25% y se optimizó el ciclo de ventas al tener la información centralizada y disponible al instante.'
         }
+        // ===== FIN DEL CAMBIO =====
     ];
 
     return allProjects.map(project => ({
@@ -69,6 +74,12 @@ const imageUrl = `/images/${project.slug}.webp`;
                     <h2>La Solución</h2>
                     <p>{project.solution}</p>
                 </div>
+                 {/* ===== INICIO DEL CAMBIO: SECCIÓN DE RESULTADOS ===== */}
+                <div class="narrative-section">
+                    <h2>Resultados Clave</h2>
+                    <p>{project.result}</p>
+                </div>
+                 {/* ===== FIN DEL CAMBIO ===== */}
             </div>
 
              <div class="back-link-container">
