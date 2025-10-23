@@ -1,6 +1,6 @@
 ---
 // src/pages/aplicar.astro
-// VERSIÓN LIMPIA (SIN <style>)
+// VERSIÓN FORMSpree (Definitiva)
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout 
@@ -24,14 +24,9 @@ import Layout from '../layouts/Layout.astro';
       </p>
 
       <form 
-        name="aplicacion-estrategica" 
-        method="POST" 
-        data-netlify="true"
-        action="/gracias/"  
+        action="https://formspree.io/f/xanprqnv" method="POST" 
         class="text-left"
       >
-        <input type="hidden" name="form-name" value="aplicacion-estrategica" />
-
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label for="nombre" class="form-label">Nombre Completo</label>
