@@ -1,23 +1,17 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-  trailingSlash: 'always',
+  // El adaptador de Netlify gestiona esto.
+  // Es posible que el instalador haya añadido "output: 'server'" o "output: 'hybrid'", 
+  // lo cual es correcto. Si no, el adaptador lo manejará.
+  output: 'server', 
+  
+  // El adaptador oficial que repara las rutas 404
+  adapter: netlify(),
 
-  // ===== INICIO DE LA REPARACIÓN CRÍTICA (FINAL) =====
-  // Le decimos a Astro que incluya explícitamente estas páginas,
-  // ya que no puede descubrirlas siguiendo los enlaces <a>.
-  // Esto soluciona el 404 de las páginas huérfanas.
-  vite: {
-    build: {
-      rollupOptions: {
-        input: [
-          '/src/pages/aplicar.astro',
-          '/src/pages/gracias.astro'
-        ]
-      }
-    }
-  }
-  // ===== FIN DE LA REPARACIÓN CRÍTICA =====
+  // Mantenemos esta regla para consistencia
+  trailingSlash: 'always',
 });
