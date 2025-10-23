@@ -1,48 +1,68 @@
 ---
 // src/pages/blog/[slug].astro
 import Layout from '../../layouts/Layout.astro';
-import { CollectionEntry, getCollection } from 'astro:content'; // Usa Collections si tienes configurado /src/content/
+// Importa CollectionEntry y getCollection de astro:content
+import { CollectionEntry, getCollection } from 'astro:content';
 
-// Si usas Astro.glob directamente (sin Collections API):
-// Obtener todos los posts
-const allPosts = await Astro.glob('../../content/blog/*.md'); 
-
-// 1. Función getStaticPaths para generar cada página
+// 1. Función getStaticPaths para generar cada página estática
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../content/blog/*.md'); // Obtener posts de nuevo aquí
+  // Obtiene todas las entradas de la colección 'blog'
+  const posts = await getCollection('blog');
+  // Mapea cada post al formato requerido por Astro
   return posts.map(post => ({
-    params: { slug: post.frontmatter.slug || post.file.split('/').pop().replace('.md', '') },
-    props: { post },
+    params: { slug: post.slug }, // Astro genera el slug desde el nombre de archivo
+    props: { post },           // Pasa el objeto completo del post como prop
   }));
 }
 
-// 2. Obtener el post actual de las props
-const { post } = Astro.props;
-const { Content } = await post.render(); // Obtener el componente de contenido renderizado
-const { title, description, pubDate, author, image } = post.frontmatter;
+// 2. Obtiene el objeto 'post' actual desde las props, con el tipo correcto
+const { post } = Astro.props as { post: CollectionEntry<'blog'> }; // Tipo explícito para seguridad
+
+// 3. Renderiza el contenido Markdown del post a HTML
+const { Content } = await post.render();
+
+// 4. Extrae las propiedades del frontmatter usando post.data
+//    Gracias al esquema en config.ts, Astro valida estos datos
+const { title, description, pubDate, author, image } = post.data;
 ---
+
+{/* Usa el Layout principal, pasando título y descripción específicos */}
 <Layout title={`${title} | Blog Pixelarte Studio`} description={description}>
+  {/* Contenedor principal del artículo */}
   <article class="bg-claro py-16 md:py-24">
     <div class="container max-w-3xl mx-auto px-4">
       
-      <header class="mb-10 text-center">
+      {/* Cabecera del artículo */}
+      <header class="mb-10 text-center border-b border-borde-claro pb-6">
         <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
-          {title}
+          {title} {/* Muestra el título del post */}
         </h1>
         <p class="text-secundario">
+          {/* Muestra el autor y la fecha de publicación formateada */}
           Por {author} | Publicado el {new Date(pubDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
         </p>
       </header>
 
-      {image && (
-        <img src={image.url} alt={image.alt} class="rounded-lg mb-10 w-full" />
+      {/* Muestra la imagen de portada si está definida en el frontmatter */}
+      {image && image.url && (
+        <img 
+          src={image.url} 
+          alt={image.alt || ''} 
+          class="rounded-lg mb-10 w-full aspect-video object-cover shadow-md" 
+          width="800" 
+          height="450"
+          loading="lazy" /* Mejora rendimiento */
+          decoding="async" /* Mejora rendimiento */
+        />
       )}
 
+      {/* Renderiza el contenido principal del archivo Markdown */}
       <div class="prose max-w-none">
-        <Content /> 
+        <Content /> {/* Aquí se inyecta el HTML del Markdown */}
       </div>
 
-       <div class="text-center mt-10">
+       {/* Enlace para volver al índice del blog */}
+       <div class="text-center mt-10 pt-6 border-t border-borde-claro">
           <a href="/blog/" class="btn-primary">&larr; Volver al Blog</a>
        </div>
 
@@ -50,22 +70,24 @@ const { title, description, pubDate, author, image } = post.frontmatter;
   </article>
 </Layout>
 
+{/* Estilos globales para dar formato al contenido HTML generado desde Markdown */}
 <style is:global>
-  /* Estos estilos se aplicarán al contenido generado por Markdown (<Content />) */
   .prose {
-    font-size: 1.125rem;
+    font-size: 1.125rem; /* ~18px */
     line-height: 1.8;
     color: var(--color-texto-secundario);
   }
   .prose h2 {
-    font-size: 1.875rem; /* text-3xl */
+    font-size: 1.875rem; /* ~30px */
     color: var(--color-texto-oscuro);
     margin-top: 2.5em;
     margin-bottom: 1em;
     font-family: 'Playfair Display', serif;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--color-borde-claro);
   }
   .prose h3 {
-    font-size: 1.5rem; /* text-2xl */
+    font-size: 1.5rem; /* ~24px */
     color: var(--color-texto-oscuro);
     margin-top: 2em;
     margin-bottom: 1em;
@@ -77,6 +99,10 @@ const { title, description, pubDate, author, image } = post.frontmatter;
   .prose a {
     color: var(--color-acento);
     text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  .prose a:hover {
+    color: #1D4ED8; /* Azul más oscuro al pasar el ratón */
   }
   .prose strong {
     font-weight: 700;
@@ -85,8 +111,12 @@ const { title, description, pubDate, author, image } = post.frontmatter;
   .prose ul, .prose ol {
     margin-left: 1.5em;
     margin-bottom: 1.25em;
+    padding-left: 1em; 
   }
-  .prose li > p { /* Evita margen extra en párrafos dentro de listas */
+  .prose li {
+    margin-bottom: 0.5em; 
+  }
+  .prose li > p { 
       margin-bottom: 0.5em;
   }
   .prose blockquote {
@@ -96,12 +126,38 @@ const { title, description, pubDate, author, image } = post.frontmatter;
     margin-right: 0;
     font-style: italic;
     color: var(--color-texto-secundario);
+    background-color: #f9fafb; 
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
   }
   .prose img {
       max-width: 100%;
       height: auto;
-      border-radius: 0.5rem; /* rounded-lg */
+      border-radius: 0.5rem; 
       margin-top: 2em;
       margin-bottom: 2em;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra sutil */
+  }
+   .prose code { 
+    background-color: #e5e7eb; /* Gris claro */
+    color: var(--color-texto-oscuro);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    font-family: monospace; /* Fuente monoespaciada */
+  }
+  .prose pre { 
+    background-color: var(--color-oscuro-contraste); /* Fondo oscuro */
+    color: var(--color-texto-claro); /* Texto claro */
+    padding: 1em;
+    border-radius: 0.5rem;
+    overflow-x: auto; /* Scroll horizontal si es necesario */
+    font-family: monospace;
+  }
+  .prose pre code { /* Estilo específico para código dentro de <pre> */
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+      font-size: inherit;
   }
 </style>
