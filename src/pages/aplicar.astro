@@ -1,0 +1,76 @@
+---
+// src/pages/aplicar.astro
+// VERSIÓN LIMPIA (SIN <style>)
+import Layout from '../layouts/Layout.astro';
+---
+<Layout 
+  title="Aplicar para Sesión Estratégica | Pixelarte Studio"
+  description="Complete esta aplicación para ser considerado para una sesión estratégica confidencial con nuestro fundador."
+>
+  
+  <section class="bg-claro py-16 md:py-24">
+    <div class="container max-w-3xl mx-auto px-4 text-center">
+
+      <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
+        Aplicación para Sesión Estratégica
+      </h1>
+
+      <p class="text-lg text-secundario max-w-2xl mx-auto mb-10">
+        Basado en su interés en nuestro "Cuadro de Mando", entendemos que se toma en serio el crecimiento de su clínica.
+        <br/><br/>
+        Cada mes, nuestro fundador, Marco A. Portillo, revisa personalmente un <strong>número limitado</strong> de cuadros de mando para proporcionar un análisis estratégico confidencial.
+        <br/><br/>
+        Si desea que su práctica sea <strong>considerada</strong> para una de estas sesiones, por favor, complete la siguiente breve aplicación.
+      </p>
+
+      <form 
+        name="aplicacion-estrategica" 
+        method="POST" 
+        data-netlify="true"
+        action="/gracias"  
+        class="text-left"
+      >
+        <input type="hidden" name="form-name" value="aplicacion-estrategica" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label for="nombre" class="form-label">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" class="form-input" required />
+          </div>
+          <div>
+            <label for="email" class="form-label">Email Profesional</label>
+            <input type="email" id="email" name="email" class="form-input" required />
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="website" class="form-label">Sitio Web de la Clínica</label>
+          <input type="url" id="website" name="website" class="form-input" placeholder="https://..." required />
+        </div>
+
+        <div class="mb-6">
+          <label for="reto" class="form-label">¿Cuál es su principal reto de crecimiento actual?</label>
+          <textarea id="reto" name="reto" rows="4" class="form-input" placeholder="Ej: 'No recibimos suficientes pacientes calificados', 'Mi competencia aparece más en Google', etc."></textarea>
+        </div>
+
+        <div class="mb-6">
+          <label for="presupuesto" class="form-label">¿Qué presupuesto mensual tiene asignado para marketing?</label>
+          <select id="presupuesto" name="presupuesto" class="form-input" required>
+            <option value="" disabled selected>Seleccione un rango...</option>
+            <option value="menos-de-1000">Menos de $1,000 USD</option>
+            <option value="1000-2500">$1,000 - $2,500 USD</option>
+            <option value="2500-5000">$2,500 - $5,000 USD</option>
+            <option value="5000-mas">$5,000 USD o más</option>
+          </select>
+        </div>
+
+        <div class="text-center mt-10">
+          <button type="submit" class="btn-primary">
+            Enviar Aplicación
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+</Layout>
