@@ -1,138 +1,150 @@
 ---
+// src/pages/proceso.astro
 import Layout from '../layouts/Layout.astro';
 
-const processSteps = [
-  {
-    step: '01',
-    title: 'Descubrimiento y Estrategia',
-    description: 'Comenzamos con una reunión para entender a fondo tus objetivos, tu audiencia y tus necesidades. Definimos juntos el alcance del proyecto y creamos un plan de acción estratégico para asegurar el éxito.',
-    icon: 'compass'
-  },
-  {
-    step: '02',
-    title: 'Diseño UI/UX',
-    description: 'Creamos prototipos visuales y wireframes de tu sitio web. Nos enfocamos en una experiencia de usuario intuitiva y un diseño de interfaz atractivo que refleje la identidad de tu marca y conecte con tus clientes.',
-    icon: 'draft'
-  },
-  {
-    step: '03',
-    title: 'Desarrollo y Programación',
-    description: 'Es hora de escribir el código. Utilizamos tecnologías modernas y las mejores prácticas para construir un sitio web rápido, seguro y perfectamente funcional en todos los dispositivos.',
-    icon: 'code'
-  },
-  {
-    step: '04',
-    title: 'Lanzamiento y Soporte',
-    description: 'Una vez aprobado, desplegamos tu sitio web en el servidor y lo hacemos público. Ofrecemos soporte continuo y planes de mantenimiento para garantizar que tu sitio web siga funcionando a la perfección.',
-    icon: 'rocket'
-  }
+// ===== INICIO DEL CAMBIO: Contenido 100% alineado con servicios.astro =====
+const fasesDelSistema = [
+  {
+    step: '01',
+    title: 'Fase 1: Diagnóstico Insider',
+    description: 'Usamos el "Manual del Insider" para auditar su presencia digital. Analizamos su flujo de pacientes, su marco de autoridad y el de su competencia para encontrar las "fugas de rentabilidad" que otros ignoran.',
+    icon: 'diagnostico'
+  },
+  {
+    step: '02',
+    title: 'Fase 2: Marco de Autoridad',
+    description: 'Demolemos su "folleto digital" y construimos una máquina de autoridad. Cada activo (web, perfiles, contenidos) se rediseña para establecer su estatus, generar intriga y posicionarlo como el "premio" de su mercado.',
+    icon: 'autoridad'
+  },
+  {
+    step: '03',
+    title: 'Fase 3: Activación y Dominancia',
+    description: 'Activamos el embudo de "prizing" y el motor de contenido de "intriga". Dejamos de perseguir "leads" y comenzamos a atraer y filtrar prospectos de alto valor que deben *calificar* para trabajar con usted.',
+    icon: 'dominancia'
+  }
 ];
 
+// Iconos 100% alineados con servicios.astro
 const icons = {
-  compass: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>`,
-  draft: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>`,
-  code: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`,
-  rocket: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.3.05-3.05-.64-.75-2.17-.8-3.05-.05zm9-9c1.5-1.26 2-5 2-5s-3.74.5-5 2c-.71.84-.7 2.3-.05 3.05.64.75 2.17.8 3.05.05z"></path><line x1="22" y1="2" x2="11" y2="13"></line><line x1="2" y1="22" x2="13" y2="11"></line></svg>`
+  diagnostico: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5z" /></svg>`,
+  autoridad: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.017h-.008v-.017z" /></svg>`,
+  dominancia: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V5.75A2.25 2.25 0 0018 3.5H6A2.25 2.25 0 003.75 5.75v12.5A2.25 2.25 0 006 20.25z" /></svg>`
 };
+// ===== FIN DEL CAMBIO =====
 ---
 
-<Layout title="Nuestro Proceso - Pixelarte Studio">
+<Layout 
+  title="Nuestro Sistema (El Proceso) | Pixelarte Studio"
+  description="Aplicamos un sistema probado de 3 fases para lograr la dominancia de mercado."
+>
+  
+  <div class="bg-oscuro">
     <div class="container">
-        <section class="page-header">
-            <h1>Nuestro Proceso</h1>
-            <p>Un enfoque estructurado para garantizar resultados de alta calidad en cada proyecto.</p>
-        </section>
+      <section class="page-header">
+        <h1>Nuestro Sistema: El Proceso</h1>
+        <p>Un enfoque estructurado de 3 fases para convertir su reputación en resultados.</p>
+      </section>
 
-        <section class="process-timeline">
-            {processSteps.map((item) => (
-                <div class="timeline-item">
-                    <div class="timeline-icon" set:html={icons[item.icon]} />
-                    <div class="timeline-content">
-                        <span class="timeline-step">{item.step}</span>
-                        <h3 class="timeline-title">{item.title}</h3>
-                        <p class="timeline-description">{item.description}</p>
-                    </div>
-                </div>
-            ))}
-        </section>
+      <section class="process-timeline">
+        {fasesDelSistema.map((item) => (
+          <div class="timeline-item">
+            <div class="timeline-icon" set:html={icons[item.icon]} />
+            <div class="timeline-content">
+              <span class="timeline-step">{item.step}</span>
+              <h3 class="timeline-title">{item.title}</h3>
+              <p class="timeline-description">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </section>
+
+       <section class="text-center py-16">
+        <a href="/aplicar" class="btn-primary">Aplicar para Sesión Estratégica</a>
+      </section>
     </div>
+  </div>
 </Layout>
 
 <style>
-    .container {
-        padding: 0 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    .page-header {
-        text-align: center;
-        padding: 4rem 0;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .page-header h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-    }
-    .page-header p {
-        font-size: 1.25rem;
-        color: #94a3b8;
-    }
-    .process-timeline {
-        max-width: 800px;
-        margin: 0 auto 4rem;
-        position: relative;
-    }
-    .timeline-item {
-        display: flex;
-        align-items: flex-start;
-        position: relative;
-        padding-bottom: 3rem;
-    }
-    .timeline-item:not(:last-child)::before {
-        content: '';
-        position: absolute;
-        left: 24px;
-        top: 48px;
-        width: 2px;
-        height: calc(100% - 24px);
-        background-color: var(--color-borde); /* ✅ Actualizado */
-        transform: translateX(-50%);
-    }
-    .timeline-icon {
-        background-color: var(--color-acento); /* ✅ Actualizado */
-        color: white;
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        z-index: 10;
-        border: 4px solid var(--color-fondo); /* ✅ Actualizado */
-    }
-    .timeline-content {
-        margin-left: 1.5rem;
-    }
-    .timeline-step {
-        background-color: var(--color-superficie); /* ✅ Actualizado */
-        color: var(--color-acento); /* ✅ Actualizado */
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        font-size: 0.875rem;
-        font-weight: 600;
-    }
-    .timeline-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--color-texto); /* ✅ Actualizado */
-        margin: 0.75rem 0;
-    }
-    .timeline-description {
-        color: #94a3b8; /* Usamos un color secundario para legibilidad */
-        line-height: 1.6;
-    }
+  .container {
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .page-header {
+    text-align: center;
+    padding: 4rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-texto-claro); /* REPARADO */
+  }
+  .page-header p {
+    font-size: 1.25rem;
+    color: var(--color-texto-secundario-claro); /* REPARADO */
+  }
+  .process-timeline {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    position: relative;
+  }
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 3rem;
+  }
+  .timeline-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 48px;
+    width: 2px;
+    height: calc(100% - 24px);
+    background-color: var(--color-borde); /* Correcto */
+    transform: translateX(-50%);
+  }
+  .timeline-icon {
+    background-color: var(--color-acento); /* Correcto */
+    color: white;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 10;
+    border: 4px solid var(--color-fondo-oscuro); /* REPARADO */
+  }
+  .timeline-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  .timeline-content {
+    margin-left: 1.5rem;
+  }
+  .timeline-step {
+    background-color: var(--color-oscuro-contraste); /* REPARADO */
+    color: var(--color-acento); /* Correcto */
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  .timeline-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-texto-claro); /* REPARADO */
+    margin: 0.75rem 0;
+  }
+  .timeline-description {
+    color: var(--color-texto-secundario-claro); /* REPARADO */
+    line-height: 1.6;
+  }
 </style>
 

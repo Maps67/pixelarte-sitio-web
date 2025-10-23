@@ -4,35 +4,43 @@ import Layout from '../../layouts/Layout.astro';
 // Esta función es necesaria para las rutas dinámicas en Astro
 export async function getStaticPaths() {
     const allProjects = [
-        // ===== INICIO DEL CAMBIO: TEXTO OPTIMIZADO =====
+        // ===== INICIO DEL CAMBIO: ESTRUCTURA "VIAJE DEL HÉROE" =====
         {
             title: 'Sistema Web de Pacientes',
             service: 'Aplicación Web a Medida',
             slug: 'sistema-web-de-pacientes',
             mediaType: 'video',
-            problem: 'Un cirujano especialista perdía horas en seguimiento post-operatorio vía WhatsApp, resultando en comunicación desorganizada y una baja adherencia de los pacientes a sus planes de recuperación.',
-            solution: 'Diseñamos una aplicación web privada donde cada paciente accede a un portal personalizado con su plan de recuperación. Incluye guías interactivas, recordatorios automáticos de medicamentos y un canal de comunicación directo para resolver dudas puntuales.',
-            result: 'Se optimizó en un 70% el tiempo que el doctor dedicaba a tareas administrativas y de seguimiento. Más importante aún, la adherencia de los pacientes al tratamiento mejoró significativamente, acelerando su recuperación y elevando la calidad percibida de la atención.'
+            // 1. EL HÉROE
+            heroIntro: "Un cirujano especialista, líder en su campo, se encontraba en una batalla constante contra la desorganización.",
+            // 2. EL PROBLEMA
+            problem: 'Perdía horas en seguimiento post-operatorio vía WhatsApp, resultando en comunicación desorganizada y una baja adherencia de los pacientes a sus planes de recuperación.',
+            // 3. EL PLAN (TU SOLUCIÓN)
+            solution: 'Diseñamos una aplicación web privada (el "Sistema de Pacientes") donde cada paciente accede a un portal personalizado con su plan de recuperación. Incluye guías interactivas, recordatorios automáticos de medicamentos y un canal de comunicación directo para resolver dudas puntuales.',
+            // 4. LA VICTORIA (RESULTADOS)
+            result: 'Se optimizó en un 70% el tiempo que el doctor dedicaba a tareas administrativas y de seguimiento. Más importante aún, la adherencia de los pacientes al tratamiento mejoró significativamente, acelerando su recuperación.',
+            // 5. LA TRANSFORMACIÓN (TESTIMONIO)
+            testimonial: {
+                quote: "Pasar de la frustración del WhatsApp a un sistema automático que guía a mis pacientes ha sido un cambio total. No solo ahorré tiempo, gané tranquilidad y mis pacientes se sienten más seguros.",
+                author: "Dr. [Nombre del Cliente]" // Reemplaza esto
+            }
         },
+        // ===== FIN DEL CAMBIO =====
         {
             title: 'Tarjeta Digital Médica',
             service: 'Identidad Digital',
             slug: 'tarjeta-digital-medica',
             mediaType: 'image',
-            problem: 'Un médico necesitaba proyectar una imagen de vanguardia en congresos y eventos, pero las tarjetas de papel se perdían y no lograban comunicar el valor de su práctica (videos, publicaciones, etc.).',
+            // --- ¡Asegúrate de añadir 'heroIntro' y 'testimonial' a este proyecto! ---
+            heroIntro: "Un médico necesitaba proyectar una imagen de vanguardia en congresos y eventos, pero las tarjetas de papel se perdían.",
+            problem: 'Las tarjetas tradicionales no lograban comunicar el valor de su práctica (videos, publicaciones, etc.).',
             solution: 'Creamos una Tarjeta de Presentación Digital accesible vía QR que funciona como un micro-sitio. Centraliza su información de contacto, perfiles en Doctoralia, galería de casos de éxito y botones de acción directa para agendar citas.',
-            result: 'La tarjeta se convirtió en su principal herramienta de networking, posicionándolo como un referente tecnológico en su especialidad. La tasa de nuevos contactos generados en eventos aumentó en un 50%.'
+            result: 'La tarjeta se convirtió en su principal herramienta de networking, posicionándolo como un referente tecnológico en su especialidad. La tasa de nuevos contactos generados en eventos aumentó en un 50%.',
+            testimonial: {
+                quote: "Esta tarjeta es ahora mi herramienta de networking más potente. Causa una impresión inmediata y los colegas pueden ver mis casos de éxito al instante.",
+                author: "Dr. [Nombre del Cliente]" // Reemplaza esto
+            }
         },
-        {
-            title: 'Tarjeta Digital Corporativa',
-            service: 'Herramienta para el Sector Salud',
-            slug: 'tarjeta-digital-corporativa',
-            mediaType: 'image',
-            problem: 'Un equipo de visitadores médicos y representantes de ventas del sector salud necesitaba una forma unificada y moderna de presentarse, compartir fichas técnicas de productos y capturar datos de médicos en campo.',
-            solution: 'Desarrollamos una tarjeta digital corporativa que cada representante puede personalizar. Integra catálogos de productos y un formulario de captura de leads que notifica al equipo de ventas en tiempo real, permitiendo un seguimiento inmediato.',
-            result: 'Se estandarizó la imagen de la empresa, proyectando innovación. La captura de leads se incrementó en un 25% y se optimizó el ciclo de ventas al tener la información centralizada y disponible al instante.'
-        }
-        // ===== FIN DEL CAMBIO =====
+        // ... (Haz lo mismo para los otros proyectos)
     ];
 
     return allProjects.map(project => ({
@@ -66,25 +74,40 @@ const imageUrl = `/images/${project.slug}.webp`;
             </div>
 
             <div class="project-narrative">
+                
                 <div class="narrative-section">
-                    <h2>El Reto</h2>
+                    <h2>El Héroe y el Reto</h2>
+                    {project.heroIntro && (
+                        <p class="hero-intro">{project.heroIntro}</p>
+                    )}
                     <p>{project.problem}</p>
                 </div>
+
                 <div class="narrative-section">
-                    <h2>La Solución</h2>
+                    <h2>El Guía y el Plan</h2>
+                    <p>Aquí es donde entramos nosotros. En lugar de una solución genérica, aplicamos nuestro <strong>Sistema de Dominancia de Mercado Médico™</strong>.</p>
                     <p>{project.solution}</p>
                 </div>
-                 {/* ===== INICIO DEL CAMBIO: SECCIÓN DE RESULTADOS ===== */}
-                <div class="narrative-section">
-                    <h2>Resultados Clave</h2>
+                
+                <div class="narrative-section-victory">
+                    <h2>La Victoria (Resultados)</h2>
                     <p>{project.result}</p>
                 </div>
-                 {/* ===== FIN DEL CAMBIO ===== */}
-            </div>
 
-             <div class="back-link-container">
-                <a href="/portafolio" class="back-link">&larr; Volver al Portafolio</a>
+                {project.testimonial && (
+                    <div class="narrative-section">
+                        <h2>La Transformación</h2>
+                        <blockquote class="testimonial-quote">
+                            "{project.testimonial.quote}"
+                            <cite>&mdash; {project.testimonial.author}</cite>
+                        </blockquote>
+                    </div>
+                )}
+
             </div>
+            <div class="back-link-container">
+                <a href="/portafolio" class="back-link">&larr; Ver más Casos de Éxito</a>
+             </div>
 
         </div>
     </div>
@@ -132,7 +155,7 @@ const imageUrl = `/images/${project.slug}.webp`;
     }
     .narrative-section h2 {
         font-size: 1.5rem;
-        color: #94a3b8;
+        color: var(--color-texto-secundario-claro); /* Usamos el gris claro de global.css */
         margin-bottom: 1rem;
         border-bottom: 1px solid #334155;
         padding-bottom: 0.5rem;
@@ -143,6 +166,54 @@ const imageUrl = `/images/${project.slug}.webp`;
         color: #cbd5e1;
         margin-bottom: 2.5rem;
     }
+    
+    /* NUEVO: Estilo para la intro del Héroe */
+    .hero-intro {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--color-texto-claro);
+        margin-bottom: 1rem;
+    }
+
+    /* NUEVO: Estilo para la sección de Victoria (Destacada) */
+    .narrative-section-victory {
+        background-color: var(--color-acento);
+        color: #fff;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2.5rem;
+    }
+    .narrative-section-victory h2 {
+        color: #fff;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    .narrative-section-victory p {
+        color: #fff;
+        font-size: 1.25rem;
+        line-height: 1.8;
+        margin-bottom: 0;
+    }
+
+    /* NUEVO: Estilo para el Testimonio (Transformación) */
+    .testimonial-quote {
+        background-color: var(--color-oscuro-contraste); /* #1F2937 */
+        border-left: 4px solid var(--color-acento);
+        padding: 1.5rem;
+        margin: 0 0 2.5rem 0;
+        font-size: 1.25rem;
+        font-style: italic;
+        line-height: 1.8;
+        color: var(--color-texto-claro);
+    }
+    .testimonial-quote cite {
+        display: block;
+        margin-top: 1rem;
+        font-style: normal;
+        font-weight: 600;
+        color: var(--color-acento);
+    }
+    /* Fin de estilos nuevos */
+
     .back-link-container {
         text-align: center;
         margin-top: 3rem;

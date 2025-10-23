@@ -1,144 +1,111 @@
 ---
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Pixelarte Studio - Soluciones Digitales para el Sector Médico">
-    <div class="page-wrapper">
-        <section class="hero-section-v3">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Más que una web, tu recepcionista digital 24/7.</h1>
-                    <p class="hero-subtitle">
-                        Ayudamos a clínicas y consultorios a convertir visitantes online en pacientes reales.
-                    </p>
-                    {/* ===== INICIO DEL CAMBIO ===== */}
-                    <a href="/contacto" class="cta-button">Solicita tu Diagnóstico Gratuito</a>
-                    {/* ===== FIN DEL CAMBIO ===== */}
-                </div>
-            </div>
-        </section>
+<Layout 
+  title="Pixelarte Studio - Dominancia de Mercado para Prácticas Médicas"
+  description="Dejamos de vender marketing. Aplicamos un sistema de 20 años de experiencia 'insider' para convertir su reputación clínica en dominancia de mercado."
+>
 
-        <section id="estrategia-intro" class="estrategia-section">
-            <div class="container estrategia-container">
-                <div class="estrategia-image-wrapper">
-                    <div class="estrategia-image-placeholder">
-                        <span class="placeholder-name">Marco A. Portillo</span>
-                    </div>
-                </div>
-                <div class="estrategia-content">
-                    <h2 class="estrategia-title">De Representante Médico a Estratega Digital</h2>
-                    <p class="estrategia-text">
-                        Tras 20 años como representante en el sector médico, observé una y otra vez cómo profesionales de la salud excepcionales perdían pacientes por tener una presencia digital débil o inexistente.
-                    </p>
-                    <p class="estrategia-text">
-                        Fundé Pixelarte Studio con una misión clara: aplicar mi conocimiento interno del sector para crear soluciones digitales que realmente entienden los desafíos de una práctica médica moderna, desde la captación de pacientes hasta la optimización de la consulta.
-                    </p>
-                    <a href="/sobre-mi" class="cta-button-estrategia">Descubre mi Metodología</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="lead-magnet-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">¿Su consultorio está cerrado para el paciente digital?</h2>
-                    <p class="section-subtitle">
-                        Descargue el diagnóstico gratuito y descubra las 5 oportunidades que está perdiendo por no tener una página web profesional.
-                    </p>
-                </div>
-                
-                <div class="form-wrapper">
-                    <form id="sib-form" method="POST" action="https://865c1ae9.sibforms.com/serve/MUIFAPBzPjW-sRQwCmjTxrGGyWmuChS1IRwsZaS1VrXLUh61rxwFNgs_0Su9IC6R0ejjgtZWBN0W7JIBvdLDMBgrJPqrsTn9HBzzPSXF5ZcHVEh9iuYhNmkyp9MLh7PllQJeL8TyOGNgdTnNu3g6Wsvxq8rwWQ1M8YjY6eRgXdtCAhK1AqBHoJkOBinZDpBsjyD0ykA8WhfCT_iI" class="lead-magnet-form">
-                        <div class="form-group">
-                            <label for="NOMBRE">Nombre</label>
-                            <input class="input" type="text" id="NOMBRE" name="NOMBRE" autocomplete="off" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="EMAIL">Correo Electrónico</label>
-                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" required />
-                        </div>
-                        <div class="form-group">
-                            <button class="cta-button" type="submit">
-                                Recibir Diagnóstico Gratuito
-                            </button>
-                        </div>
-                        <input type="text" name="email_address_check" value="" class="hidden">
-                        <input type="hidden" name="locale" value="es">
-                        <input type="hidden" name="html_type" value="simple">
-                    </form>
-                </div>
-            </div>
-        </section>
+  <section class="bg-oscuro py-24">
+    <div class="container max-w-3xl mx-auto px-4 text-center">
+      
+      <h1 class="hero-title text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
+        Para Médicos que ya son los mejores, pero siguen perdiendo pacientes ante competidores inferiores.
+      </h1>
+      
+      <p class="text-lg text-secundario-claro max-w-2xl mx-auto mb-10">
+        Dejamos de "vender marketing". Aplicamos un sistema de 20 años de experiencia <em>insider</em> para convertir su reputación clínica en dominancia de mercado.
+      </p>
+      
+      <a href="/aplicar" class="btn-primary">
+        Aplicar para Sesión Estratégica
+      </a>
+      
     </div>
+  </section>
+
+  <section class="bg-claro py-16 md:py-24">
+    <div class="container grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      
+      <div class="text-center md:text-left">
+        <span class="font-playfair text-4xl text-acento" style="font-style: italic; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+          Marco A. Portillo
+        </span>
+      </div>
+      
+      <div class="text-center md:text-left">
+        <h2 class="text-4xl font-playfair font-bold text-oscuro mb-6">
+          De Representante Médico a Estratega Digital
+        </h2>
+        <p class="text-lg text-secundario mb-6">
+          Tras 20 años como representante en el sector médico, observé una y otra vez cómo profesionales de la salud excepcionales perdían pacientes por tener una presencia digital débil o inexistente.
+        </p>
+        <p class="text-lg text-secundario">
+          Fundé Pixelarte Studio con una misión clara: aplicar mi conocimiento interno del sector para crear soluciones digitales que realmente entienden los desafíos de una práctica médica moderna.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-oscuro py-16 md:py-24">
+    <div class="container px-4">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-4xl font-playfair font-bold text-claro mb-6">
+          El Campo de Batalla Ha Cambiado
+        </h2>
+        <p class="text-lg text-secundario-claro">
+          Las fuerzas del mercado han creado una ventana de oportunidad única. El marketing digital genérico (SEO, redes sociales) ha dejado de ser efectivo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
+          <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Económico</h3>
+          <p class="text-secundario-claro">La creciente competencia de grandes grupos médicos y los costos de adquisición de pacientes están exprimiendo los márgenes de las prácticas privadas como nunca antes.</p>
+        </div>
+        
+        <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
+          <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Social</h3>
+          <p class="text-secundario-claro">Los pacientes de hoy ya no confían ciegamente en las referencias. 'Compran' a sus médicos en línea, basando su decisión en señales digitales de autoridad y confianza.</p>
+        </div>
+        
+        <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
+          <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Tecnológico</h3>
+          <p class="text-secundario-claro">El campo de batalla se ha trasladado a los sistemas integrados de flujo de pacientes. Las prácticas que no se adapten a la optimización de este flujo se volverán invisibles.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <section class="bg-claro py-16 md:py-24">
+    <div class="container max-w-3xl mx-auto px-4 text-center">
+      
+      <h2 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-6">
+        Su próximo paso no es "más marketing".
+      </h2>
+      
+      <p class="text-lg text-secundario max-w-2xl mx-auto mb-10">
+        Es implementar un sistema. Aplicamos un número limitado de sesiones estratégicas por mes para prácticas que se toman en serio su dominancia de mercado.
+      </p>
+      
+      <a href="/aplicar" class="btn-primary">
+        Vea si Califica para una Sesión
+      </a>
+      
+    </div>
+  </section>
+
 </Layout>
 
-<script>
-    const form = document.getElementById('sib-form');
-    if (form) {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(form);
-            const actionUrl = form.getAttribute('action');
-            fetch(actionUrl, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            })
-            .finally(() => {
-                window.location.href = '/gracias';
-            });
-        });
-    }
-</script>
-
-
 <style>
-/* Estilos existentes... */
-    .container { padding: 0 1rem; max-width: 1200px; margin: 0 auto; }
-    .page-wrapper > section + section { border-top: 1px solid var(--color-borde-claro); }
-    .hero-section-v3 { background-color: var(--color-fondo-oscuro); padding: 6rem 1rem; text-align: center; position: relative; overflow: hidden; }
-    .hero-section-v3::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/images/hero-bg.webp'); background-size: cover; background-position: center; opacity: 0.05; z-index: 1; }
-    .hero-container { position: relative; z-index: 2; }
-    .hero-title { font-size: 2.5rem; font-weight: 800; color: var(--color-texto-claro); margin-bottom: 1.5rem; line-height: 1.2; }
-    .hero-subtitle { font-size: 1.125rem; color: #94a3b8; max-width: 600px; margin: 0 auto 2.5rem; }
-    .cta-button { display: inline-block; background-color: var(--color-acento); color: #fff; padding: 1rem 1.5rem; font-size: 1rem; font-weight: 600; border-radius: 0.5rem; text-decoration: none; transition: transform 0.2s ease, opacity 0.2s ease; border: none; cursor: pointer;}
-    .cta-button:hover { transform: scale(1.05); opacity: 0.9; }
-    .estrategia-section { background-color: var(--color-fondo-claro); padding: 4rem 1rem; }
-    .estrategia-container { display: flex; align-items: center; flex-direction: column; gap: 2rem; text-align: center; }
-    .estrategia-image-wrapper { flex: 1; max-width: 350px; width: 100%; }
-    .estrategia-image-placeholder { width: 100%; display: flex; align-items: center; justify-content: center; min-height: 150px; }
-    .placeholder-name { font-family: serif; font-size: 2.2rem; font-weight: 400; font-style: italic; color: var(--color-acento); padding-bottom: 10px; border-bottom: 1px solid #ddd; }
-    .estrategia-content { flex: 2; }
-    .estrategia-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--color-texto-oscuro); }
-    .estrategia-text { font-size: 1.125rem; line-height: 1.6; margin-bottom: 2rem; color: var(--color-texto-secundario); max-width: 650px; margin-left: auto; margin-right: auto; }
-    .cta-button-estrategia { display: inline-block; background-color: var(--color-acento); color: #fff; padding: 0.875rem 1.75rem; font-size: 1rem; font-weight: 600; border-radius: 0.5rem; text-decoration: none; transition: transform 0.2s ease, opacity 0.2s ease; }
-    .cta-button-estrategia:hover { transform: scale(1.05); opacity: 0.9; }
-    .lead-magnet-section { background-color: var(--color-fondo-oscuro); padding: 4rem 1rem; }
-    .lead-magnet-section .section-header { text-align: center; margin-bottom: 3rem; }
-    .lead-magnet-section .section-title { color: var(--color-texto-claro); font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
-    .lead-magnet-section .section-subtitle { color: #94a3b8; font-size: 1rem; max-width: 600px; margin: 0 auto; }
-    .form-wrapper { max-width: 500px; margin: 0 auto; }
-    .lead-magnet-form .form-group { margin-bottom: 1.5rem; }
-    .lead-magnet-form .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.875rem; color: #cbd5e1; text-align: left; }
-    .lead-magnet-form .form-group .input { width: 100%; padding: 0.75rem 1rem; border: 1px solid #475569; background-color: #1E293B; color: var(--color-texto-claro); border-radius: 0.5rem; font-size: 1rem; box-sizing: border-box; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
-    .lead-magnet-form .form-group .input:focus { outline: none; border-color: var(--color-acento); box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.25); }
-    .lead-magnet-form .cta-button { width: 100%; padding: 1rem; }
-    .hidden { display: none; }
-    @media (min-width: 768px) {
-        .container { padding: 0 2rem; }
-        .hero-section-v3 { padding: 8rem 0; }
-        .hero-title { font-size: 3.5rem; }
-        .hero-subtitle { font-size: 1.25rem; }
-        .cta-button { padding: 1rem 2rem; font-size: 1.125rem; }
-        .estrategia-section, .lead-magnet-section { padding: 6rem 0; }
-        .estrategia-container { flex-direction: row; text-align: left; gap: 4rem; }
-        .estrategia-text { margin-left: 0; margin-right: 0; }
-        .estrategia-title { font-size: 2.5rem; }
-        .estrategia-image-placeholder { justify-content: flex-start; }
-        .placeholder-name { font-size: 2.8rem; }
-        .lead-magnet-section .section-title { font-size: 2.5rem; }
-        .lead-magnet-section .section-subtitle { font-size: 1.125rem; }
-    }
+  .hero-title {
+    line-height: 1.3; /* Le da más espacio entre líneas al titular "Alfa" */
+  }
 </style>
 
 

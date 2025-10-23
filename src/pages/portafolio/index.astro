@@ -1,7 +1,6 @@
 ---
-// ===== INICIO DEL CAMBIO: Ruta de importación corregida =====
+// src/pages/portafolio/index.astro
 import Layout from '../../layouts/Layout.astro';
-// ===== FIN DEL CAMBIO =====
 import ProjectCard from '../../components/ProjectCard.astro';
 
 // Datos de proyectos ampliados con Problema y Solución
@@ -38,52 +37,32 @@ const featuredProjectsV3 = [
 ];
 ---
 
-<Layout title="Portafolio - Casos de Éxito | PixelArte Studio">
-    <section class="portfolio-section-v3 standalone-page">
-        <div class="container">
-            <div class="section-header">
-                <h1 class="section-title">Casos de Éxito</h1>
-                <p class="section-subtitle">
-                    No solo creamos diseños; construimos soluciones. Aquí puedes ver cómo hemos resuelto problemas reales para nuestros clientes.
-                </p>
-            </div>
-            <div class="portfolio-grid-v3">
-                 {featuredProjectsV3.map(project => (
-                    <ProjectCard {...project} />
-                ))}
-            </div>
-        </div>
-    </section>
+<Layout 
+  title="Casos de Éxito | Pixelarte Studio"
+  description="No solo creamos diseños; construimos soluciones. Vea cómo hemos resuelto problemas reales para prácticas médicas."
+>
+  
+  <section class="bg-oscuro py-16 md:py-24">
+    <div class="container px-4">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h1 class="text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
+          Casos de Éxito
+        </h1>
+        <p class="text-lg text-secundario-claro">
+          No solo creamos diseños; construimos soluciones. Aquí puedes ver cómo hemos resuelto problemas reales para nuestros clientes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {featuredProjectsV3.map(project => (
+              <ProjectCard {...project} />
+          ))}
+      </div>
+
+    </div>
+  </section>
 </Layout>
-
-<style>
-    .container { padding: 0 1rem; max-width: 1200px; margin: 0 auto; }
-    .section-header { text-align: center; margin-bottom: 3rem; }
-    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
-    .section-subtitle { font-size: 1rem; max-width: 700px; margin: 0 auto; }
-    
-    .portfolio-section-v3.standalone-page { 
-        background-color: var(--color-fondo-oscuro); 
-        padding: 4rem 0;
-        min-height: 80vh;
-    }
-    .portfolio-section-v3 .section-title { color: var(--color-texto-claro); }
-    .portfolio-section-v3 .section-subtitle { color: #94a3b8; }
-
-    .portfolio-grid-v3 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    @media (min-width: 768px) {
-        .container { padding: 0 2rem; }
-        .portfolio-section-v3.standalone-page { padding: 6rem 0; } 
-        .section-header { margin-bottom: 4rem; }
-        .section-title { font-size: 2.5rem; }
-        .section-subtitle { font-size: 1.125rem; }
-    }
-</style>
 
 
 
