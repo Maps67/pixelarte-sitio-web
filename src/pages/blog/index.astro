@@ -1,0 +1,59 @@
+---
+// src/pages/blog/index.astro
+import Layout from '../../layouts/Layout.astro';
+
+// 1. Obtener todos los posts del blog usando Astro.glob
+//    Asegúrate de que la ruta coincida con donde guardaste los .md
+const allPosts = await Astro.glob('../../content/blog/*.md');
+
+// 2. Ordenar posts por fecha (más reciente primero)
+allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+---
+<Layout 
+  title="Blog | Pixelarte Studio"
+  description="Artículos y perspectivas 'insider' sobre marketing digital para el sector médico."
+>
+  <section class="bg-claro py-16 md:py-24">
+    <div class="container max-w-3xl mx-auto px-4">
+      
+      <header class="text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
+          Blog del Insider
+        </h1>
+        <p class="text-lg text-secundario">
+          Perspectivas y estrategias probadas del sector médico.
+        </p>
+      </header>
+
+      <ul class="space-y-6 list-none p-0 m-0">
+        {allPosts.map((post) => (
+          <li class="bg-oscuro-contraste p-6 rounded-lg">
+            <a href={`/blog/${post.frontmatter.slug || post.file.split('/').pop().replace('.md', '')}/`} class="block group"> 
+              <h2 class="text-2xl font-playfair font-bold text-claro group-hover:text-acento mb-2">
+                {post.frontmatter.title}
+              </h2>
+              <p class="text-secundario-claro mb-3">
+                {post.frontmatter.description}
+              </p>
+              <span class="text-acento font-semibold group-hover:underline">Leer artículo &rarr;</span>
+            </a>
+            <p class="text-sm text-secundario-claro mt-4">
+              Publicado el: {new Date(post.frontmatter.pubDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Puedes añadir estilos específicos aquí o usar clases globales */
+  .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.5rem; /* similar a space-y-6 de Tailwind */
+  }
+  .list-none { list-style: none; }
+  .p-0 { padding: 0; }
+  .m-0 { margin: 0; }
+</style>

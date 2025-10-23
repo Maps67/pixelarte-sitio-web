@@ -1,0 +1,107 @@
+---
+// src/pages/blog/[slug].astro
+import Layout from '../../layouts/Layout.astro';
+import { CollectionEntry, getCollection } from 'astro:content'; // Usa Collections si tienes configurado /src/content/
+
+// Si usas Astro.glob directamente (sin Collections API):
+// Obtener todos los posts
+const allPosts = await Astro.glob('../../content/blog/*.md'); 
+
+// 1. Función getStaticPaths para generar cada página
+export async function getStaticPaths() {
+  const posts = await Astro.glob('../../content/blog/*.md'); // Obtener posts de nuevo aquí
+  return posts.map(post => ({
+    params: { slug: post.frontmatter.slug || post.file.split('/').pop().replace('.md', '') },
+    props: { post },
+  }));
+}
+
+// 2. Obtener el post actual de las props
+const { post } = Astro.props;
+const { Content } = await post.render(); // Obtener el componente de contenido renderizado
+const { title, description, pubDate, author, image } = post.frontmatter;
+---
+<Layout title={`${title} | Blog Pixelarte Studio`} description={description}>
+  <article class="bg-claro py-16 md:py-24">
+    <div class="container max-w-3xl mx-auto px-4">
+      
+      <header class="mb-10 text-center">
+        <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
+          {title}
+        </h1>
+        <p class="text-secundario">
+          Por {author} | Publicado el {new Date(pubDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </p>
+      </header>
+
+      {image && (
+        <img src={image.url} alt={image.alt} class="rounded-lg mb-10 w-full" />
+      )}
+
+      <div class="prose max-w-none">
+        <Content /> 
+      </div>
+
+       <div class="text-center mt-10">
+          <a href="/blog/" class="btn-primary">&larr; Volver al Blog</a>
+       </div>
+
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  /* Estos estilos se aplicarán al contenido generado por Markdown (<Content />) */
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-texto-secundario);
+  }
+  .prose h2 {
+    font-size: 1.875rem; /* text-3xl */
+    color: var(--color-texto-oscuro);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    font-family: 'Playfair Display', serif;
+  }
+  .prose h3 {
+    font-size: 1.5rem; /* text-2xl */
+    color: var(--color-texto-oscuro);
+    margin-top: 2em;
+    margin-bottom: 1em;
+     font-family: 'Playfair Display', serif;
+  }
+  .prose p {
+    margin-bottom: 1.25em;
+  }
+  .prose a {
+    color: var(--color-acento);
+    text-decoration: underline;
+  }
+  .prose strong {
+    font-weight: 700;
+    color: var(--color-texto-oscuro);
+  }
+  .prose ul, .prose ol {
+    margin-left: 1.5em;
+    margin-bottom: 1.25em;
+  }
+  .prose li > p { /* Evita margen extra en párrafos dentro de listas */
+      margin-bottom: 0.5em;
+  }
+  .prose blockquote {
+    border-left: 4px solid var(--color-acento);
+    padding-left: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    color: var(--color-texto-secundario);
+  }
+  .prose img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem; /* rounded-lg */
+      margin-top: 2em;
+      margin-bottom: 2em;
+  }
+</style>
