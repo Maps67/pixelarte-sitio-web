@@ -4,10 +4,20 @@ import Layout from '../../layouts/Layout.astro';
 // Importa CollectionEntry y getCollection de astro:content
 import { CollectionEntry, getCollection } from 'astro:content';
 
+// --- Debugging Logs Start ---
+console.log('--- Start rendering [slug].astro ---'); // <-- ADD 1
+// --- Debugging Logs End ---
+
 // 1. Función getStaticPaths para generar cada página estática
 export async function getStaticPaths() {
+  // --- Debugging Logs Start ---
+  console.log('--- Running getStaticPaths ---'); // <-- ADD 2
+  // --- Debugging Logs End ---
   // Obtiene todas las entradas de la colección 'blog'
   const posts = await getCollection('blog');
+  // --- Debugging Logs Start ---
+  console.log(`--- Found ${posts.length} posts for paths ---`); // <-- ADD 3
+  // --- Debugging Logs End ---
   // Mapea cada post al formato requerido por Astro
   return posts.map(post => ({
     params: { slug: post.slug }, // Astro genera el slug desde el nombre de archivo
@@ -17,13 +27,42 @@ export async function getStaticPaths() {
 
 // 2. Obtiene el objeto 'post' actual desde las props, con el tipo correcto
 const { post } = Astro.props as { post: CollectionEntry<'blog'> }; // Tipo explícito para seguridad
+// --- Debugging Logs Start ---
+console.log(`--- Rendering post with slug: ${post.slug} ---`); // <-- ADD 4
+// --- Debugging Logs End ---
 
-// 3. Renderiza el contenido Markdown del post a HTML
-const { Content } = await post.render();
+// 3. Renderiza el contenido Markdown del post a HTML (Moved inside try...catch)
 
 // 4. Extrae las propiedades del frontmatter usando post.data
 //    Gracias al esquema en config.ts, Astro valida estos datos
 const { title, description, pubDate, author, image } = post.data;
+// --- Debugging Logs Start ---
+console.log(`--- Post data loaded: Title - ${title} ---`); // <-- ADD 5
+console.log(`--- Image data: ${JSON.stringify(image)} ---`); // <-- ADD 6 (Check image object)
+// --- Debugging Logs End ---
+
+// --- Try...Catch Block for Rendering ---
+let Content; // Declare Content outside the try block
+try {
+  // --- Debugging Logs Start ---
+  console.log('--- Attempting post.render() ---'); // <-- ADD 7
+  // --- Debugging Logs End ---
+  const rendered = await post.render(); // Renderiza el contenido Markdown
+  Content = rendered.Content; // Asigna el componente renderizado
+  // --- Debugging Logs Start ---
+  console.log('--- post.render() successful ---'); // <-- ADD 8
+  // --- Debugging Logs End ---
+} catch (renderError) {
+  // --- Debugging Logs Start ---
+  console.error('--- ERROR during post.render(): ---', renderError); // <-- ADD 9 (Catch render error)
+  // --- Debugging Logs End ---
+  // Decide cómo manejar el error:
+  // Opción 1: Lanzar el error para mostrar un error 500 (lo que está pasando ahora)
+  throw renderError;
+  // Opción 2: No hacer nada y confiar en el fallback en el HTML
+  // Content permanecerá 'undefined'
+}
+// --- End Try...Catch Block ---
 ---
 
 {/* Usa el Layout principal, pasando título y descripción específicos */}
@@ -31,7 +70,7 @@ const { title, description, pubDate, author, image } = post.data;
   {/* Contenedor principal del artículo */}
   <article class="bg-claro py-16 md:py-24">
     <div class="container max-w-3xl mx-auto px-4">
-      
+
       {/* Cabecera del artículo */}
       <header class="mb-10 text-center border-b border-borde-claro pb-6">
         <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
@@ -43,13 +82,13 @@ const { title, description, pubDate, author, image } = post.data;
         </p>
       </header>
 
-      {/* Muestra la imagen de portada si está definida en el frontmatter */}
+      {/* Muestra la imagen de portada si está definida y tiene URL */}
       {image && image.url && (
-        <img 
-          src={image.url} 
-          alt={image.alt || ''} 
-          class="rounded-lg mb-10 w-full aspect-video object-cover shadow-md" 
-          width="800" 
+        <img
+          src={image.url}
+          alt={image.alt || ''}
+          class="rounded-lg mb-10 w-full aspect-video object-cover shadow-md"
+          width="800"
           height="450"
           loading="lazy" /* Mejora rendimiento */
           decoding="async" /* Mejora rendimiento */
@@ -58,7 +97,8 @@ const { title, description, pubDate, author, image } = post.data;
 
       {/* Renderiza el contenido principal del archivo Markdown */}
       <div class="prose max-w-none">
-        <Content /> {/* Aquí se inyecta el HTML del Markdown */}
+        {/* Verifica si Content existe antes de intentar renderizarlo */}
+        {Content ? <Content /> : <p class="text-red-600 font-bold">Error: No se pudo renderizar el contenido del post.</p>} {/* Fallback si Content falló */}
       </div>
 
        {/* Enlace para volver al índice del blog */}
@@ -111,12 +151,12 @@ const { title, description, pubDate, author, image } = post.data;
   .prose ul, .prose ol {
     margin-left: 1.5em;
     margin-bottom: 1.25em;
-    padding-left: 1em; 
+    padding-left: 1em;
   }
   .prose li {
-    margin-bottom: 0.5em; 
+    margin-bottom: 0.5em;
   }
-  .prose li > p { 
+  .prose li > p {
       margin-bottom: 0.5em;
   }
   .prose blockquote {
@@ -126,19 +166,19 @@ const { title, description, pubDate, author, image } = post.data;
     margin-right: 0;
     font-style: italic;
     color: var(--color-texto-secundario);
-    background-color: #f9fafb; 
+    background-color: #f9fafb;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
   }
   .prose img {
       max-width: 100%;
       height: auto;
-      border-radius: 0.5rem; 
+      border-radius: 0.5rem;
       margin-top: 2em;
       margin-bottom: 2em;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra sutil */
   }
-   .prose code { 
+   .prose code {
     background-color: #e5e7eb; /* Gris claro */
     color: var(--color-texto-oscuro);
     padding: 0.2em 0.4em;
@@ -146,7 +186,7 @@ const { title, description, pubDate, author, image } = post.data;
     font-size: 0.9em;
     font-family: monospace; /* Fuente monoespaciada */
   }
-  .prose pre { 
+  .prose pre {
     background-color: var(--color-oscuro-contraste); /* Fondo oscuro */
     color: var(--color-texto-claro); /* Texto claro */
     padding: 1em;
@@ -160,4 +200,7 @@ const { title, description, pubDate, author, image } = post.data;
       padding: 0;
       font-size: inherit;
   }
+  /* Estilo para el mensaje de error de renderizado */
+  .text-red-600 { color: #dc2626; }
+  .font-bold { font-weight: 700; }
 </style>
