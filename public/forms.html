@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Definición de Formulario Netlify</title>
+  </head>
+  <body>
+    <form 
+      name="aplicacion-estrategica" 
+      method="POST" 
+      data-netlify="true"
+      hidden
+    >
+      <label>Nombre Completo: <input type="text" name="nombre" /></label>
+      <label>Email Profesional: <input type="email" name="email" /></label>
+      <label>Sitio Web: <input type="url" name="website" /></label>
+      <label>Reto: <textarea name="reto"></textarea></label>
+      <label>Presupuesto: <select name="presupuesto">
+        <option value=""></option>
+      </select></label>
+    </form>
+  </body>
+</html>
