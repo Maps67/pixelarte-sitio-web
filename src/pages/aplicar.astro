@@ -1,10 +1,10 @@
 ---
 // src/pages/aplicar.astro
-// VERSIÓN FORMSpree (Definitiva)
+// VERSIÓN FORMSpree con AJAX (Definitiva y Gratuita)
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout 
-  title="Aplicar para Sesión Estratégica | Pixelarte Studio"
+  title="Aplicar para Sesión Estrategica | Pixelarte Studio"
   description="Complete esta aplicación para ser considerado para una sesión estratégica confidencial con nuestro fundador."
 >
   
@@ -24,7 +24,8 @@ import Layout from '../layouts/Layout.astro';
       </p>
 
       <form 
-        action="https://formspree.io/f/xanprqnv" method="POST" 
+        id="aplicacion-form" action="https://formspree.io/f/xanprqnv" 
+        method="POST" 
         class="text-left"
       >
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -37,17 +38,14 @@ import Layout from '../layouts/Layout.astro';
             <input type="email" id="email" name="email" class="form-input" required />
           </div>
         </div>
-
         <div class="mb-6">
           <label for="website" class="form-label">Sitio Web de la Clínica</label>
           <input type="url" id="website" name="website" class="form-input" placeholder="https://..." required />
         </div>
-
         <div class="mb-6">
           <label for="reto" class="form-label">¿Cuál es su principal reto de crecimiento actual?</label>
           <textarea id="reto" name="reto" rows="4" class="form-input" placeholder="Ej: 'No recibimos suficientes pacientes calificados', 'Mi competencia aparece más en Google', etc."></textarea>
         </div>
-
         <div class="mb-6">
           <label for="presupuesto" class="form-label">¿Qué presupuesto mensual tiene asignado para marketing?</label>
           <select id="presupuesto" name="presupuesto" class="form-input" required>
@@ -58,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
             <option value="5000-mas">$5,000 USD o más</option>
           </select>
         </div>
-
+        
         <div class="text-center mt-10">
           <button type="submit" class="btn-primary">
             Enviar Aplicación
@@ -66,6 +64,89 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </form>
 
-    </div>
+      <div id="form-status" class="mt-10" style="display: none;"> 
+          {/* */}
+      </div>
+      </div>
   </section>
 </Layout>
+
+<script>
+  const form = document.getElementById('aplicacion-form');
+  const statusDiv = document.getElementById('form-status');
+
+  async function handleSubmit(event) {
+    event.preventDefault(); // Evita que el navegador envíe el form de forma tradicional
+    const formData = new FormData(event.target);
+    
+    // Muestra un mensaje de "Enviando..."
+    statusDiv.style.display = 'block';
+    statusDiv.innerHTML = '<p class="text-lg text-secundario">Enviando aplicación...</p>';
+    statusDiv.classList.remove('success', 'error'); // Limpia clases previas
+
+    try {
+      const response = await fetch(event.target.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+            'Accept': 'application/json' // Le dice a Formspree que responda con JSON
+        }
+      });
+
+      if (response.ok) {
+        // ÉXITO: Muestra el mensaje "Alfa" con el enlace a LinkedIn
+        statusDiv.innerHTML = `
+          <div class="success-message">
+            <h2 class="text-2xl font-playfair font-bold text-oscuro mb-4">¡Aplicación Recibida!</h2>
+            <p class="text-lg text-secundario mb-6">
+              Nuestro equipo revisará sus respuestas. Si determinamos que existe potencial, <strong>nos pondremos en contacto</strong> en 24-48 horas hábiles.
+            </p>
+            <a 
+              href="https://www.linkedin.com/in/marcoportillo-pixelarte/" 
+              class="btn-primary" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Conectar con Marco A. Portillo en LinkedIn
+            </a>
+          </div>
+        `;
+        statusDiv.classList.add('success'); // Añade clase para posible estilo futuro
+        form.reset(); // Limpia el formulario
+        form.style.display = 'none'; // Oculta el formulario después del éxito
+      } else {
+        // ERROR: Muestra un mensaje genérico
+        response.json().then(data => {
+          let errorMessage = "Oops! Hubo un problema al enviar tu aplicación.";
+          if (data.errors) {
+            errorMessage += `<br/> ${data.errors.map(error => error.message).join('<br/>')}`;
+          }
+          statusDiv.innerHTML = `<p class="error-message">${errorMessage}</p>`;
+          statusDiv.classList.add('error'); // Añade clase para posible estilo futuro
+        })
+      }
+    } catch (error) {
+      // ERROR DE RED: Muestra un mensaje genérico
+      statusDiv.innerHTML = '<p class="error-message">Oops! Hubo un problema de conexión. Por favor, inténtalo de nuevo.</p>';
+      statusDiv.classList.add('error'); // Añade clase para posible estilo futuro
+    }
+  }
+
+  form.addEventListener("submit", handleSubmit);
+</script>
+<style>
+  .success-message {
+    border: 2px solid #22c55e; /* Verde */
+    background-color: #f0fdf4;
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+  .error-message {
+    color: #dc2626; /* Rojo */
+    font-weight: bold;
+    border: 2px solid #dc2626;
+    background-color: #fef2f2;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+</style>
