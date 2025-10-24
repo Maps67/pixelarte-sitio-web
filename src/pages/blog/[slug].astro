@@ -1,34 +1,40 @@
 ---
-// src/pages/blog/[slug].astro (Corrected Full Version)
+// src/pages/blog/[slug].astro (Fetch Inside Version)
 import Layout from '../../layouts/Layout.astro';
-import { CollectionEntry, getCollection } from 'astro:content';
+// Import getCollection for getStaticPaths, and getEntryBySlug for fetching the specific post
+import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
 
-// 1. getStaticPaths remains the same - it works during build
+// 1. getStaticPaths: Only needs to generate the slugs now
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => ({
     params: { slug: post.slug },
-    props: { post },
+    // No longer passing the full 'post' object as props here
   }));
 }
 
-// 2. Access props robustly
-// We directly get 'post' from Astro.props and assert its type
-const { post } = Astro.props as { post: CollectionEntry<'blog'> };
+// 2. Get the slug from URL parameters
+const { slug } = Astro.params;
 
-// --- Add a check here just in case ---
+// 3. Fetch the specific post using getEntryBySlug
+//    Make sure 'slug' is defined before fetching
+const post = slug ? await getEntryBySlug('blog', slug) : undefined;
+
+// --- CRITICAL CHECK ---
 if (!post) {
-  console.error(`Error: Post data not found for slug in props!`);
-  // You might want to return a 404 or a specific error page here
-  // For now, we'll throw an error to see it in logs if this happens
-  throw new Error("Post data missing in props"); 
+  // If post is not found for this slug, return a 404 response
+  console.error(`Post not found for slug: ${slug}`);
+  return new Response(null, {
+    status: 404,
+    statusText: 'Not Found'
+  });
 }
-// --- End check ---
+// --- END CRITICAL CHECK ---
 
-// 3. Render the content (this should now work)
+// 4. Render the content (Now 'post' should be defined)
 const { Content } = await post.render();
 
-// 4. Extract data using post.data
+// 5. Extract data using post.data
 const { title, description, pubDate, author, image } = post.data;
 ---
 
