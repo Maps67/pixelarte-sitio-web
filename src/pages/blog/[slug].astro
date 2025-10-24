@@ -1,88 +1,50 @@
 ---
-// src/pages/blog/[slug].astro
+// src/pages/blog/[slug].astro (Corrected Full Version)
 import Layout from '../../layouts/Layout.astro';
-// Importa CollectionEntry y getCollection de astro:content
 import { CollectionEntry, getCollection } from 'astro:content';
 
-// --- Debugging Logs Start ---
-console.log('--- Start rendering [slug].astro ---'); // <-- ADD 1
-// --- Debugging Logs End ---
-
-// 1. Función getStaticPaths para generar cada página estática
+// 1. getStaticPaths remains the same - it works during build
 export async function getStaticPaths() {
-  // --- Debugging Logs Start ---
-  console.log('--- Running getStaticPaths ---'); // <-- ADD 2
-  // --- Debugging Logs End ---
-  // Obtiene todas las entradas de la colección 'blog'
   const posts = await getCollection('blog');
-  // --- Debugging Logs Start ---
-  console.log(`--- Found ${posts.length} posts for paths ---`); // <-- ADD 3
-  // --- Debugging Logs End ---
-  // Mapea cada post al formato requerido por Astro
   return posts.map(post => ({
-    params: { slug: post.slug }, // Astro genera el slug desde el nombre de archivo
-    props: { post },           // Pasa el objeto completo del post como prop
+    params: { slug: post.slug },
+    props: { post },
   }));
 }
 
-// 2. Obtiene el objeto 'post' actual desde las props, con el tipo correcto
-const { post } = Astro.props as { post: CollectionEntry<'blog'> }; // Tipo explícito para seguridad
-// --- Debugging Logs Start ---
-console.log(`--- Rendering post with slug: ${post.slug} ---`); // <-- ADD 4
-// --- Debugging Logs End ---
+// 2. Access props robustly
+// We directly get 'post' from Astro.props and assert its type
+const { post } = Astro.props as { post: CollectionEntry<'blog'> };
 
-// 3. Renderiza el contenido Markdown del post a HTML (Moved inside try...catch)
-
-// 4. Extrae las propiedades del frontmatter usando post.data
-//    Gracias al esquema en config.ts, Astro valida estos datos
-const { title, description, pubDate, author, image } = post.data;
-// --- Debugging Logs Start ---
-console.log(`--- Post data loaded: Title - ${title} ---`); // <-- ADD 5
-console.log(`--- Image data: ${JSON.stringify(image)} ---`); // <-- ADD 6 (Check image object)
-// --- Debugging Logs End ---
-
-// --- Try...Catch Block for Rendering ---
-let Content; // Declare Content outside the try block
-try {
-  // --- Debugging Logs Start ---
-  console.log('--- Attempting post.render() ---'); // <-- ADD 7
-  // --- Debugging Logs End ---
-  const rendered = await post.render(); // Renderiza el contenido Markdown
-  Content = rendered.Content; // Asigna el componente renderizado
-  // --- Debugging Logs Start ---
-  console.log('--- post.render() successful ---'); // <-- ADD 8
-  // --- Debugging Logs End ---
-} catch (renderError) {
-  // --- Debugging Logs Start ---
-  console.error('--- ERROR during post.render(): ---', renderError); // <-- ADD 9 (Catch render error)
-  // --- Debugging Logs End ---
-  // Decide cómo manejar el error:
-  // Opción 1: Lanzar el error para mostrar un error 500 (lo que está pasando ahora)
-  throw renderError;
-  // Opción 2: No hacer nada y confiar en el fallback en el HTML
-  // Content permanecerá 'undefined'
+// --- Add a check here just in case ---
+if (!post) {
+  console.error(`Error: Post data not found for slug in props!`);
+  // You might want to return a 404 or a specific error page here
+  // For now, we'll throw an error to see it in logs if this happens
+  throw new Error("Post data missing in props"); 
 }
-// --- End Try...Catch Block ---
+// --- End check ---
+
+// 3. Render the content (this should now work)
+const { Content } = await post.render();
+
+// 4. Extract data using post.data
+const { title, description, pubDate, author, image } = post.data;
 ---
 
-{/* Usa el Layout principal, pasando título y descripción específicos */}
 <Layout title={`${title} | Blog Pixelarte Studio`} description={description}>
-  {/* Contenedor principal del artículo */}
   <article class="bg-claro py-16 md:py-24">
     <div class="container max-w-3xl mx-auto px-4">
 
-      {/* Cabecera del artículo */}
       <header class="mb-10 text-center border-b border-borde-claro pb-6">
         <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
-          {title} {/* Muestra el título del post */}
+          {title}
         </h1>
         <p class="text-secundario">
-          {/* Muestra el autor y la fecha de publicación formateada */}
           Por {author} | Publicado el {new Date(pubDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
         </p>
       </header>
 
-      {/* Muestra la imagen de portada si está definida y tiene URL */}
       {image && image.url && (
         <img
           src={image.url}
@@ -90,18 +52,15 @@ try {
           class="rounded-lg mb-10 w-full aspect-video object-cover shadow-md"
           width="800"
           height="450"
-          loading="lazy" /* Mejora rendimiento */
-          decoding="async" /* Mejora rendimiento */
+          loading="lazy"
+          decoding="async"
         />
       )}
 
-      {/* Renderiza el contenido principal del archivo Markdown */}
       <div class="prose max-w-none">
-        {/* Verifica si Content existe antes de intentar renderizarlo */}
-        {Content ? <Content /> : <p class="text-red-600 font-bold">Error: No se pudo renderizar el contenido del post.</p>} {/* Fallback si Content falló */}
+        <Content />
       </div>
 
-       {/* Enlace para volver al índice del blog */}
        <div class="text-center mt-10 pt-6 border-t border-borde-claro">
           <a href="/blog/" class="btn-primary">&larr; Volver al Blog</a>
        </div>
@@ -110,15 +69,15 @@ try {
   </article>
 </Layout>
 
-{/* Estilos globales para dar formato al contenido HTML generado desde Markdown */}
+{/* Your <style is:global> remains the same */}
 <style is:global>
   .prose {
-    font-size: 1.125rem; /* ~18px */
+    font-size: 1.125rem;
     line-height: 1.8;
     color: var(--color-texto-secundario);
   }
   .prose h2 {
-    font-size: 1.875rem; /* ~30px */
+    font-size: 1.875rem;
     color: var(--color-texto-oscuro);
     margin-top: 2.5em;
     margin-bottom: 1em;
@@ -127,7 +86,7 @@ try {
     border-bottom: 1px solid var(--color-borde-claro);
   }
   .prose h3 {
-    font-size: 1.5rem; /* ~24px */
+    font-size: 1.5rem;
     color: var(--color-texto-oscuro);
     margin-top: 2em;
     margin-bottom: 1em;
