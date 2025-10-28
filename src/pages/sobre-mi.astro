@@ -10,6 +10,18 @@ import Layout from '../layouts/Layout.astro';
   
   <section class="bg-claro py-16 md:py-24">
     <div class="container max-w-3xl mx-auto px-4">
+
+      {/* ===== INICIO DEL CAMBIO: FOTO AÑADIDA ===== */}
+      <div class="text-center mb-10">
+        <img 
+          src="/images/marco.png" 
+          alt="Marco A. Portillo, Fundador de Pixelarte Studio" 
+          class="inline-block rounded-full w-48 h-48 md:w-64 md:h-64 object-cover shadow-lg border-4 border-white"
+          width="256"
+          height="256"
+        />
+      </div>
+      {/* ===== FIN DEL CAMBIO ===== */}
       
       <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-10 text-center">
         Mi Metodología: Rigor y Estrategia Probados
@@ -30,30 +42,43 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  {/* --- Sección CTA Final (Sin cambios) --- */}
   <section class="bg-oscuro py-16 md:py-24">
-    <div class="container max-w-3xl mx-auto px-4 text-center">
-      
+    {/* ... (contenido sin cambios) ... */}
+     <div class="container max-w-3xl mx-auto px-4 text-center">
       <h2 class="text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
         ¿Listo para aplicar esta estrategia?
       </h2>
-      
       <p class="text-lg text-secundario-claro max-w-2xl mx-auto mb-10">
         Mi sistema no es para todos. Es para prácticas médicas que están listas para dejar de competir y empezar a dominar.
       </p>
-      
-      <a href="/aplicar" class="btn-primary">
+      <a href="/aplicar/" class="btn-primary">
         Aplicar para Sesión Estratégica
       </a>
-      
     </div>
   </section>
 </Layout>
 
+{/* --- Estilos Prose + Imagen (Combinados) --- */}
 <style>
   .prose p {
     font-size: 1.125rem; /* text-lg */
     line-height: 1.8;
     color: var(--color-texto-secundario);
     margin-bottom: 1.5rem;
+  }
+  /* Estilos para la imagen */
+  .rounded-full { border-radius: 50%; }
+  .w-48 { width: 12rem; } /* 192px */
+  .h-48 { height: 12rem; }
+  .object-cover { object-fit: cover; }
+  .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+  .border-4 { border-width: 4px; }
+  .border-white { border-color: #fff; }
+  .inline-block { display: inline-block; }
+
+  @media (min-width: 768px) {
+    .md\:w-64 { width: 16rem; } /* 256px */
+    .md\:h-64 { height: 16rem; }
   }
 </style>
