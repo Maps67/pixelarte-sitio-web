@@ -1,132 +1,69 @@
 ---
-// src/pages/index.astro
-import Layout from '../layouts/Layout.astro';
+// src/pages/portafolio/index.astro
+// ===== INICIO DE LA CORRECCIÓN =====
+import Layout from '../../layouts/Layout.astro'; // <-- RUTA CORREGIDA (../../)
+// ===== FIN DE LA CORRECCIÓN =====
+import ProjectCard from '../../components/ProjectCard.astro';
+
+// Datos de proyectos (sin cambios)
+const featuredProjectsV3 = [
+    {
+        title: 'Sistema Web de Pacientes',
+        service: 'Aplicación Web a Medida',
+        slug: 'sistema-web-de-pacientes',
+        mediaType: 'video',
+        problem: 'Gestión manual de expedientes y seguimiento post-operatorio ineficiente, causando pérdida de información y comunicación deficiente con los pacientes.',
+        solution: 'Se desarrolló una aplicación web privada donde los pacientes acceden a guías de recuperación interactivas. El sistema automatiza recordatorios y centraliza la comunicación, permitiendo al doctor monitorear el progreso y reducir consultas innecesarias en un 30%.',
+        ctaText: 'Explorar Caso de Éxito'
+    },
+    {
+        title: 'Tarjeta Digital Médica',
+        service: 'Identidad Digital',
+        slug: 'tarjeta-digital-medica',
+        mediaType: 'image',
+        problem: 'Los profesionales de la salud necesitaban un método centralizado y moderno para compartir información de contacto, portafolio de servicios y enlaces a múltiples perfiles (Doctoralia, redes).',
+        solution: 'Se creó una tarjeta de presentación digital accesible vía QR. Su diseño adaptable y botones de acción directa (WhatsApp, agendar cita) han incrementado la tasa de contacto de nuevos pacientes en un 50% para los clientes que la utilizan.',
+        externalUrl: 'https://drcarlosdiaza.com/',
+        ctaText: 'Ver Proyecto en Vivo'
+    },
+    {
+        title: 'Tarjeta Digital Corporativa',
+        service: 'Herramienta para Ventas',
+        slug: 'tarjeta-digital-corporativa',
+        mediaType: 'image',
+        problem: 'Un equipo de ventas requería una herramienta para compartir catálogos y datos de contacto de forma rápida y medible durante eventos y visitas a clientes.',
+        solution: 'Se diseñó una tarjeta digital que integra un mini-catálogo y formulario de contacto. La implementación de analíticas permitió al equipo de ventas identificar los productos de mayor interés y optimizar su estrategia de seguimiento.',
+        externalUrl: 'https://pixelartestudio.art/tarjeta-pixel/', // Añadida barra al final
+        ctaText: 'Ver Proyecto en Vivo'
+    }
+];
 ---
 
-<Layout 
-  title="Pixelarte Studio - Dominancia de Mercado para Prácticas Médicas"
-  description="Dejamos de vender marketing. Aplicamos un sistema de 20 años de experiencia 'insider' para convertir su reputación clínica en dominancia de mercado."
+<Layout
+  title="Casos de Éxito | Pixelarte Studio"
+  description="No solo creamos diseños; construimos soluciones. Vea cómo hemos resuelto problemas reales para prácticas médicas."
 >
-
-  {/* --- Sección Hero (Sin cambios) --- */}
-  <section class="bg-oscuro py-24">
-    <div class="container max-w-3xl mx-auto px-4 text-center">
-      <h1 class="hero-title text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
-        Para Médicos que ya son los mejores, pero siguen perdiendo pacientes ante competidores inferiores.
-      </h1>
-      <p class="text-lg text-secundario-claro max-w-2xl mx-auto mb-10">
-        Dejamos de "vender marketing". Aplicamos un sistema de 20 años de experiencia <em>insider</em> para convertir su reputación clínica en dominancia de mercado.
-      </p>
-      <a href="/aplicar/" class="btn-primary">
-        Aplicar para Sesión Estratégica
-      </a>
-    </div>
-  </section>
-
-  {/* --- Sección Intro "Insider" (CON FOTO) --- */}
-  <section class="bg-claro py-16 md:py-24">
-    <div class="container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"> {/* Aumentado el gap */}
-      
-      {/* ===== INICIO DEL CAMBIO: FOTO AÑADIDA ===== */}
-      <div class="text-center md:text-left">
-        <img 
-          src="/images/marco.png" 
-          alt="Marco A. Portillo, Fundador de Pixelarte Studio" 
-          class="inline-block rounded-full w-48 h-48 md:w-64 md:h-64 object-cover shadow-lg border-4 border-white mx-auto md:mx-0"
-          width="256"
-          height="256"
-        />
-      </div>
-      {/* ===== FIN DEL CAMBIO ===== */}
-      
-      <div class="text-center md:text-left">
-        <h2 class="text-4xl font-playfair font-bold text-oscuro mb-6">
-          De Representante Médico a Estratega Digital
-        </h2>
-        <p class="text-lg text-secundario mb-6">
-          Tras 20 años como representante en el sector médico, observé una y otra vez cómo profesionales de la salud excepcionales perdían pacientes por tener una presencia digital débil o inexistente.
-        </p>
-        <p class="text-lg text-secundario">
-          Fundé Pixelarte Studio con una misión clara: aplicar mi conocimiento interno del sector para crear soluciones digitales que realmente entienden los desafíos de una práctica médica moderna.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  {/* --- Sección "¿Por Qué Ahora?" (Sin cambios) --- */}
   <section class="bg-oscuro py-16 md:py-24">
-    {/* ... (contenido sin cambios) ... */}
-     <div class="container px-4">
+    <div class="container px-4">
       <div class="text-center max-w-3xl mx-auto mb-10">
-        <h2 class="text-4xl font-playfair font-bold text-claro mb-6">
-          El Campo de Batalla Ha Cambiado
-        </h2>
+        <h1 class="text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
+          Casos de Éxito
+        </h1>
         <p class="text-lg text-secundario-claro">
-          Las fuerzas del mercado han creado una ventana de oportunidad única. El marketing digital genérico (SEO, redes sociales) ha dejado de ser efectivo.
+          No solo creamos diseños; construimos soluciones. Aquí puedes ver cómo hemos resuelto problemas reales para nuestros clientes.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-         <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
-          <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Económico</h3>
-          <p class="text-secundario-claro">La creciente competencia de grandes grupos médicos y los costos de adquisición de pacientes están exprimiendo los márgenes de las prácticas privadas como nunca antes.</p>
-        </div>
-        <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
-          <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Social</h3>
-          <p class="text-secundario-claro">Los pacientes de hoy ya no confían ciegamente en las referencias. 'Compran' a sus médicos en línea, basando su decisión en señales digitales de autoridad y confianza.</p>
-        </div>
-        <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
-          <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Tecnológico</h3>
-          <p class="text-secundario-claro">El campo de batalla se ha trasladado a los sistemas integrados de flujo de pacientes. Las prácticas que no se adapten a la optimización de este flujo se volverán invisibles.</p>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {featuredProjectsV3.map(project => (
+              // Asegúrate que ProjectCard esté importado correctamente arriba
+              <ProjectCard {...project} />
+          ))}
       </div>
     </div>
   </section>
-  
-  {/* --- Sección CTA Final (Sin cambios) --- */}
-  <section class="bg-claro py-16 md:py-24">
-    {/* ... (contenido sin cambios) ... */}
-     <div class="container max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-6">
-        Su próximo paso no es "más marketing".
-      </h2>
-      <p class="text-lg text-secundario max-w-2xl mx-auto mb-10">
-        Es implementar un sistema. Aplicamos un número limitado de sesiones estratégicas por mes para prácticas que se toman en serio su dominancia de mercado.
-      </p>
-      <a href="/aplicar/" class="btn-primary">
-        Vea si Califica para una Sesión
-      </a>
-    </div>
-  </section>
-
-  {/* --- Enlaces Crawler (Sin cambios) --- */}
-  <div style="display: none;" aria-hidden="true">
-    <a href="/aplicar/">Enlace para aplicar</a>
-    <a href="/gracias/">Enlace de gracias</a>
-  </div>
 </Layout>
 
-{/* --- Estilo Hero (Sin cambios) --- */}
-<style>
-  .hero-title {
-    line-height: 1.3;
-  }
-  /* Estilos adicionales para la imagen */
-  .rounded-full { border-radius: 50%; }
-  .w-48 { width: 12rem; } /* 192px */
-  .h-48 { height: 12rem; }
-  .object-cover { object-fit: cover; }
-  .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
-  .border-4 { border-width: 4px; }
-  .border-white { border-color: #fff; }
-  .inline-block { display: inline-block; }
-  .mx-auto { margin-left: auto; margin-right: auto; }
-
-  @media (min-width: 768px) {
-    .md\:w-64 { width: 16rem; } /* 256px */
-    .md\:h-64 { height: 16rem; }
-    .md\:mx-0 { margin-left: 0; margin-right: 0; }
-  }
-</style>
+{/* No se necesita <style> aquí si usas clases globales */}
 
 
 
