@@ -8,31 +8,36 @@ import Layout from '../layouts/Layout.astro';
   description="Dejamos de vender marketing. Aplicamos un sistema de 20 años de experiencia 'insider' para convertir su reputación clínica en dominancia de mercado."
 >
 
+  {/* --- Sección Hero (Sin cambios) --- */}
   <section class="bg-oscuro py-24">
     <div class="container max-w-3xl mx-auto px-4 text-center">
-      
       <h1 class="hero-title text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
         Para Médicos que ya son los mejores, pero siguen perdiendo pacientes ante competidores inferiores.
       </h1>
-      
       <p class="text-lg text-secundario-claro max-w-2xl mx-auto mb-10">
         Dejamos de "vender marketing". Aplicamos un sistema de 20 años de experiencia <em>insider</em> para convertir su reputación clínica en dominancia de mercado.
       </p>
-      
       <a href="/aplicar/" class="btn-primary">
         Aplicar para Sesión Estratégica
       </a>
-      </div>
+    </div>
   </section>
 
+  {/* --- Sección Intro "Insider" (CON FOTO) --- */}
   <section class="bg-claro py-16 md:py-24">
-    <div class="container grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+    <div class="container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"> {/* Aumentado el gap */}
       
+      {/* ===== INICIO DEL CAMBIO: FOTO AÑADIDA ===== */}
       <div class="text-center md:text-left">
-        <span class="font-playfair text-4xl text-acento" style="font-style: italic; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
-          Marco A. Portillo
-        </span>
+        <img 
+          src="/images/marco.png" 
+          alt="Marco A. Portillo, Fundador de Pixelarte Studio" 
+          class="inline-block rounded-full w-48 h-48 md:w-64 md:h-64 object-cover shadow-lg border-4 border-white mx-auto md:mx-0"
+          width="256"
+          height="256"
+        />
       </div>
+      {/* ===== FIN DEL CAMBIO ===== */}
       
       <div class="text-center md:text-left">
         <h2 class="text-4xl font-playfair font-bold text-oscuro mb-6">
@@ -48,9 +53,10 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  {/* --- Sección "¿Por Qué Ahora?" (Sin cambios) --- */}
   <section class="bg-oscuro py-16 md:py-24">
-    <div class="container px-4">
-      
+    {/* ... (contenido sin cambios) ... */}
+     <div class="container px-4">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <h2 class="text-4xl font-playfair font-bold text-claro mb-6">
           El Campo de Batalla Ha Cambiado
@@ -59,54 +65,66 @@ import Layout from '../layouts/Layout.astro';
           Las fuerzas del mercado han creado una ventana de oportunidad única. El marketing digital genérico (SEO, redes sociales) ha dejado de ser efectivo.
         </p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
+         <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
           <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Económico</h3>
           <p class="text-secundario-claro">La creciente competencia de grandes grupos médicos y los costos de adquisición de pacientes están exprimiendo los márgenes de las prácticas privadas como nunca antes.</p>
         </div>
-        
         <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
           <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Social</h3>
           <p class="text-secundario-claro">Los pacientes de hoy ya no confían ciegamente en las referencias. 'Compran' a sus médicos en línea, basando su decisión en señales digitales de autoridad y confianza.</p>
         </div>
-        
         <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
           <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Tecnológico</h3>
           <p class="text-secundario-claro">El campo de batalla se ha trasladado a los sistemas integrados de flujo de pacientes. Las prácticas que no se adapten a la optimización de este flujo se volverán invisibles.</p>
         </div>
-
       </div>
     </div>
   </section>
   
+  {/* --- Sección CTA Final (Sin cambios) --- */}
   <section class="bg-claro py-16 md:py-24">
-    <div class="container max-w-3xl mx-auto px-4 text-center">
-      
+    {/* ... (contenido sin cambios) ... */}
+     <div class="container max-w-3xl mx-auto px-4 text-center">
       <h2 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-6">
         Su próximo paso no es "más marketing".
       </h2>
-      
       <p class="text-lg text-secundario max-w-2xl mx-auto mb-10">
         Es implementar un sistema. Aplicamos un número limitado de sesiones estratégicas por mes para prácticas que se toman en serio su dominancia de mercado.
       </p>
-      
       <a href="/aplicar/" class="btn-primary">
         Vea si Califica para una Sesión
       </a>
-      </div>
+    </div>
   </section>
 
+  {/* --- Enlaces Crawler (Sin cambios) --- */}
   <div style="display: none;" aria-hidden="true">
     <a href="/aplicar/">Enlace para aplicar</a>
     <a href="/gracias/">Enlace de gracias</a>
   </div>
-  </Layout>
+</Layout>
 
+{/* --- Estilo Hero (Sin cambios) --- */}
 <style>
   .hero-title {
-    line-height: 1.3; /* Le da más espacio entre líneas al titular "Alfa" */
+    line-height: 1.3;
+  }
+  /* Estilos adicionales para la imagen */
+  .rounded-full { border-radius: 50%; }
+  .w-48 { width: 12rem; } /* 192px */
+  .h-48 { height: 12rem; }
+  .object-cover { object-fit: cover; }
+  .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+  .border-4 { border-width: 4px; }
+  .border-white { border-color: #fff; }
+  .inline-block { display: inline-block; }
+  .mx-auto { margin-left: auto; margin-right: auto; }
+
+  @media (min-width: 768px) {
+    .md\:w-64 { width: 16rem; } /* 256px */
+    .md\:h-64 { height: 16rem; }
+    .md\:mx-0 { margin-left: 0; margin-right: 0; }
   }
 </style>
 
