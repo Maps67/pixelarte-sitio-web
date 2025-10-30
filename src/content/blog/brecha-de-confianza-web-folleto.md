@@ -2,11 +2,11 @@
 # src/content/blog/brecha-de-confianza-web-folleto.md
 
 title: "Tu Web es un Folleto, No un Consultor: La Brecha de Confianza que Cuesta Cirugías"
-pubDate: 2025-10-30 # <-- Fecha de hoy
+pubDate: 2025-10-30
 description: "Por qué las webs médicas genéricas fallan en atraer pacientes de alto valor (ortopedia, bariatría) y cómo construir un 'Ecosistema de Confianza' en su lugar."
 author: "Marco A. Portillo"
 image:
-    url: "/images/blog/brecha-confianza-cover.webp" # <-- Necesitarás crear esta imagen
+    url: "/images/blog/brecha-confianza-cover.webp"
     alt: "Un médico explicando un procedimiento a un paciente, generando confianza"
 tags: ["Marketing Médico", "Confianza del Paciente", "Cirugía Alto Valor", "Estrategia Digital"]
 ---
@@ -49,21 +49,20 @@ Tu blog es tu consultorio digital. Deja de escribir sobre noticias genéricas y 
 ### 2. Guías de Decisión (Tu Lead Magnet)
 El paciente temeroso necesita una guía. Ofréceles un PDF descargable de alto valor a cambio de su contacto.
 * **Ejemplo:** "Las 5 Preguntas Cruciales que Debes Hacerle a tu Cirujano Bariátrico (Antes de decidir)".
-* Esto te posiciona como el "Guía" (Marco Alfa) que ayuda al paciente a navegar su decisión, generando confianza y capturando un lead calificado.
+* Esto te posiciona como el "Guía" que ayuda al paciente a navegar su decisión, generando confianza y capturando un lead calificado.
 
 ### 3. Videos de Pacientes (Tu Prueba Social Real)
 Los testimonios de texto están bien. Los videos de pacientes reales son oro puro. Pero no pidas un simple "¡5 estrellas!".
-* Pídeles que hablen del **proceso**:
+
+Pídeles que hablen del **proceso**:
 * *"Tenía pánico de..."*
 * *"El Dr. [Tu Nombre] y su equipo me explicaron..."*
 * *"El proceso de recuperación fue..."*
 * *"Ahora mi vida es..."*
 
-Esto es lo que el "Marco Alfa" llama la "Transformación" en el Viaje del Héroe.
-
 ## Conclusión: Deja de Vender Cirugía, Empieza a Vender Certeza
 
-El marketing genérico vende procedimientos. La estrategia "Insider" vende **certeza, seguridad y confianza**.
+El marketing genérico vende procedimientos. La estrategia "Insider" vende **certeza, seguridad y confianza.**
 
 Cuando tu presencia digital deja de ser un folleto y se convierte en un consultor de confianza, dejas de competir por precio y empiezas a atraer a los pacientes de alto valor que *realmente* quieres.
 
