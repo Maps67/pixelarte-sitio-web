@@ -4,9 +4,11 @@ const socialLinks = {
     facebook: 'https://www.facebook.com/profile.php?id=61578631474398',
     whatsapp: 'https://wa.me/5213347211199',
     instagram: 'https://www.instagram.com/pixel.arte.studio/',
-    // ✅ INICIO: CORRECCIÓN REALIZADA AQUÍ
-    linkedin: 'https://www.linkedin.com/company/pixelarte-studio'
-    // FIN: CORRECCIÓN REALIZADA
+    
+    // ===== INICIO DE LA CORRECCIÓN ESTRATÉGICA (ALFA) =====
+    // Apuntamos al perfil personal, no al de la compañía
+    linkedin: 'https://www.linkedin.com/in/marcoportillo-pixelarte/'
+    // ===== FIN DE LA CORRECCIÓN ESTRATÉGICA =====
 };
 const contactEmail = 'contacto@pixelartestudio.art';
 ---
@@ -41,8 +43,8 @@ const contactEmail = 'contacto@pixelartestudio.art';
                 <div class="legal-links">
                     <p class="copyright">&copy; {year} Pixelarte Studio. Todos los derechos reservados.</p>
                     <div class="divider"></div>
-                    <a href="/terminos-y-condiciones">Términos y Condiciones</a>
-                    <a href="/aviso-de-privacidad">Aviso de Privacidad</a>
+                    <a href="/terminos-y-condiciones/">Términos y Condiciones</a>
+                    <a href="/aviso-de-privacidad/">Aviso de Privacidad</a>
                     <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
                 </div>
             </div>
@@ -51,7 +53,7 @@ const contactEmail = 'contacto@pixelartestudio.art';
 </footer>
 
 <style>
-    /* ... Tus estilos existentes no cambian ... */
+    /* ... Tus estilos existentes ... */
     :root {
         --color-fondo-oscuro: #111827;
         --color-texto-claro: #F9FAFB;
