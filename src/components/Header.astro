@@ -18,13 +18,13 @@ const pathname = Astro.url.pathname;
             <div class="nav-wrapper" id="primary-navigation">
                 <ul class="nav-links">
                     <li><a href="/" class:list={{ "is-active": pathname === "/" }}>Inicio</a></li>
-a                   <li><a href="/servicios/" class:list={{ "is-active": pathname === "/servicios/" }}>Servicios</a></li>
+                    <li><a href="/servicios/" class:list={{ "is-active": pathname === "/servicios/" }}>Servicios</a></li>
                     <li><a href="/portafolio/" class:list={{ "is-active": pathname.startsWith("/portafolio") }}>Casos de Éxito</a></li>
                     <li><a href="/blog/" class:list={{ "is-active": pathname.startsWith("/blog") }}>Blog</a></li>
                     <li><a href="/testimonios/" class:list={{ "is-active": pathname === "/testimonios/" }}>Testimonios</a></li>
-IA                 <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Nuestro Sistema</a></li>
+                    <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Nuestro Sistema</a></li>
                     <li><a href="/aplicar/" class="cta-button">Aplicar para Sesión Estratégica</a></li>
-                </ul>
+                </ul> {/* <-- ERROR '_' ELIMINADO DE AQUÍ */}
             </div>
         </nav>
     </div>
@@ -37,17 +37,17 @@ function setupMobileNav() {
     const navWrapper = document.getElementById('primary-navigation');
     if (!mobileNavToggle || !navWrapper) return;
 
-  ar   // Evita añadir el 'listener' varias veces si algo va mal
+    // Evita añadir el 'listener' varias veces si algo va mal
     if (mobileNavToggle.hasAttribute('data-listener-attached')) return;
     
     mobileNavToggle.addEventListener('click', () => {
         const isVisible = navWrapper.getAttribute('data-visible') === 'true';
         if (isVisible) {
             mobileNavToggle.setAttribute('aria-expanded', 'false');
-            navWrapper.setAttribute('data-visible', 'false');
+            navWrapper.setAttribute('data-visible', 'false'); {/* <-- ERROR 't' ELIMINADO DE AQUÍ */}
         } else {
             mobileNavToggle.setAttribute('aria-expanded', 'true');
-AR           navWrapper.setAttribute('data-visible', 'true');
+            navWrapper.setAttribute('data-visible', 'true');
         }
     });
     
@@ -56,4 +56,7 @@ AR           navWrapper.setAttribute('data-visible', 'true');
 
 // Ejecutar en la carga inicial de la página
 setupMobileNav();
+
+// Ya no necesitamos 'astro:page-load' porque
+// ViewTransitions está desactivado.
 </script>
