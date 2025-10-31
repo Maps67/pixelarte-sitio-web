@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
 :root {
-  /* Paleta de Colores - Versión 3.0 Sincronizada */
   --color-fondo-claro: #F9FAFB;
   --color-fondo-oscuro: #111827;
   --color-texto-oscuro: #111827;
@@ -39,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-texto-oscuro);
     font-weight: 700;
     font-family: 'Playfair Display', serif;
+    margin: 0;
 }
 
 .container {
@@ -46,8 +46,8 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1.5rem; /* Ajustado para móvil */
+    padding-right: 1.5rem; /* Ajustado para móvil */
     box-sizing: border-box;
 }
 
@@ -65,7 +65,6 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     font-size: 1rem;
 }
-
 .btn-primary:hover {
     background-color: #1D4ED8;
     color: #fff !important;
@@ -82,7 +81,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: var(--color-texto-oscuro);
 }
-
 .form-input {
   display: block;
   width: 100%;
@@ -94,7 +92,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
 }
-
 .form-input:focus {
   outline: none;
   border-color: var(--color-acento);
@@ -102,8 +99,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 3. CLASES DE UTILIDAD (Como Tailwind) */
-
-/* Fondos y Texto */
 .bg-claro { background-color: var(--color-fondo-claro); }
 .bg-oscuro { background-color: var(--color-fondo-oscuro); }
 .bg-oscuro-contraste { background-color: #1F2937; }
@@ -112,14 +107,22 @@ h1, h2, h3, h4, h5, h6 {
 .text-secundario { color: var(--color-texto-secundario); }
 .text-secundario-claro { color: var(--color-texto-secundario-claro); }
 .text-acento { color: var(--color-acento); }
-
-/* Tipografía (Versión Desktop Original) */
 .font-playfair { font-family: 'Playfair Display', serif; }
 .font-bold { font-weight: 700; }
-.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-.text-2xl { font-size: 1.5rem; line-height: 2rem; }
-.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-.text-5xl { font-size: 3rem; line-height: 1; }
+
+/* ================================================= */
+/* ===== INICIO DE LA REPARACIÓN MOBILE-FIRST ===== */
+/* ================================================= */
+
+/* Tipografía (Valores base para MÓVIL) */
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; } /* 18px */
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }     /* 24px */
+.text-4xl { font-size: 1.875rem; line-height: 2.25rem; } /* 30px (Tamaño base/móvil) */
+.text-5xl { font-size: 2.25rem; line-height: 2.5rem; }   /* 36px (Tamaño base/móvil) */
+
+/* ================================================= */
+/* ===== FIN DE LA REPARACIÓN MOBILE-FIRST ===== */
+/* ================================================= */
 
 /* Espaciado (Padding) */
 .p-6 { padding: 1.5rem; }
@@ -145,10 +148,26 @@ h1, h2, h3, h4, h5, h6 {
 .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
 .gap-6 { gap: 1.5rem; }
 
-/* Responsivo (Versión Desktop Original) */
+/* ================================================= */
+/* ===== INICIO DE LA REPARACIÓN RESPONSIVE ===== */
+/* ================================================= */
+
 @media (min-width: 768px) {
-  .md\:text-5xl { font-size: 3rem; line-height: 1; }
+  
+  .container {
+    padding-left: 2rem; /* Restaurado para desktop */
+    padding-right: 2rem; /* Restaurado para desktop */
+  }
+  
+  /* Tamaños de fuente GRANDES (Desktop) para clases de utilidad */
+  .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+  .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; } /* 36px */
+  .md\:text-5xl { font-size: 3rem; line-height: 1; }      /* 48px */
+  
   .md\:py-24 { padding-top: 6rem; padding-bottom: 6rem; }
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+/* ================================================= */
+/* ===== FIN DE LA REPARACIÓN RESPONSIVE ===== */
+/* ================================================= */

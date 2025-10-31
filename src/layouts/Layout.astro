@@ -9,9 +9,6 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description: string;
-  // Usaremos 'ogImage' solo para la imagen estática por defecto
-  ogImage?: string; 
-  ogImageAlt?: string;
   canonicalUrl?: string;
 }
 
@@ -22,11 +19,10 @@ const {
 } = Astro.props;
 
 const siteUrl = Astro.site; 
-
 const pageTitle = `${title} | Pixelarte Studio`;
 const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 
-// Usamos la imagen de fallback 'social-cover-default.png' para TODAS las páginas
+// Imagen de fallback por defecto para TODAS las páginas
 const socialImageUrl = new URL('/images/social-cover-default.png', siteUrl).href;
 const socialImageAlt = 'Pixelarte Studio - Estrategia Digital Insider';
 ---
