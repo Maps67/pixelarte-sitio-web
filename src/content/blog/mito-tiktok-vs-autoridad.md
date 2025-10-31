@@ -1,6 +1,6 @@
 ---
 title: "El Mito de TikTok: Por Qué 'Likes' no Pagan Facturas (y 'Autoridad' Sí)"
-pubDate: 2025-10-30
+pubDate: "2025-10-31"
 description: "Análisis 'Insider': Por qué los médicos que solo se enfocan en TikTok/Instagram fracasan en atraer pacientes de alto valor y cómo construir un sistema de autoridad real."
 author: "Marco A. Portillo"
 image:
