@@ -15,7 +15,7 @@ const allPosts = await getCollection('blog', ({ data }) => {
     <div class="container max-w-3xl mx-auto px-4">
       
       <header class="text-center mb-10">
-        {/* Este H1 ahora usará los estilos 'h1' de global.css */}
+        {/* Este H1 usará los estilos 'h1' de global.css */}
         <h1 class="font-playfair font-bold text-oscuro mb-4">
           Blog del Insider
         </h1>
@@ -43,7 +43,7 @@ const allPosts = await getCollection('blog', ({ data }) => {
               </div>
             )}
             <div class="card-content">
-              {/* Este H2 ahora usará los estilos 'h2' de global.css */}
+              {/* Este H2 usará los estilos 'h2' de global.css */}
               <h2 class="font-playfair font-bold text-claro group-hover:text-acento mb-2 transition-colors duration-200">
                 {post.data.title}
               </h2>
@@ -63,7 +63,7 @@ const allPosts = await getCollection('blog', ({ data }) => {
   </section>
 </Layout>
 
-{/* ===== INICIO DEL CAMBIO: Estilos locales simplificados ===== */}
+{/* Estilos locales para las tarjetas (sin tamaños de fuente) */}
 <style>
   .blog-list-container {
     display: grid;
@@ -115,4 +115,3 @@ const allPosts = await getCollection('blog', ({ data }) => {
     text-decoration: underline;
   }
 </style>
-{/* ===== FIN DEL CAMBIO ===== */}

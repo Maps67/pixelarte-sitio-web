@@ -56,6 +56,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
         />
       )}
       
+      {/* Añadimos la clase .prose al contenedor del contenido 
+        para que los estilos de 'global.css' no lo afecten directamente
+      */}
       <div class="prose max-w-none">
         <Content /> 
       </div>
@@ -68,7 +71,10 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
   </article>
 </Layout>
 
-{/* ===== INICIO DEL CAMBIO: Estilos locales simplificados ===== */}
+{/* Los estilos del 'prose' (contenido) SÍ los dejamos aquí,
+  porque son específicos de esta plantilla y usan 'is:global' 
+  para dar estilo al H2 y H3 *dentro* del Markdown.
+*/}
 <style is:global>
   .prose {
     font-size: 1.125rem;
@@ -76,10 +82,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
     color: var(--color-texto-secundario);
   }
   
-  /* Los tamaños de H2 y H3 ahora son manejados por global.css */
-  /* Solo definimos estilos específicos del .prose */
-  
+  /* H2 y H3 dentro de .prose */
   .prose h2 {
+    font-size: 1.5rem; /* 24px - Móvil */
     color: var(--color-texto-oscuro);
     margin-top: 2.5em;
     margin-bottom: 1em;
@@ -89,13 +94,23 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
   }
   
   .prose h3 {
+    font-size: 1.25rem; /* 20px - Móvil */
     color: var(--color-texto-oscuro);
     margin-top: 2em;
     margin-bottom: 1em;
      font-family: 'Playfair Display', serif;
   }
+
+  /* Tamaños de Desktop para H2 y H3 en .prose */
+  @media (min-width: 768px) {
+    .prose h2 {
+      font-size: 1.875rem; /* 30px */
+    }
+    .prose h3 {
+      font-size: 1.5rem; /* 24px */
+    }
+  }
   
-  /* ... (Resto de estilos .prose sin cambios) ... */
   .prose p { margin-bottom: 1.25em; word-wrap: break-word; }
   .prose a { color: var(--color-acento); text-decoration: underline; transition: color 0.2s ease; }
   .prose a:hover { color: #1D4ED8; }
@@ -109,4 +124,3 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
   .prose pre { background-color: var(--color-oscuro-contraste); color: var(--color-texto-claro); padding: 1em; border-radius: 0.5rem; overflow-x: auto; font-family: monospace; }
   .prose pre code { background-color: transparent; color: inherit; padding: 0; font-size: inherit; }
 </style>
-{/* ===== FIN DEL CAMBIO ===== */}
