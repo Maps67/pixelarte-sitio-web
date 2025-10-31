@@ -3,14 +3,14 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-// ===== ESTA LÍNEA ES LA QUE REPARA TU SITIO =====
+// ===== ¡ESTA LÍNEA ES LA QUE REPARA TU SITIO! =====
 import '../styles/global.css';
 
 interface Props {
 	title: string;
 	description: string;
-  ogImage?: string; 
-  ogImageAlt?: string;
+  ogImage?: string; // Para la imagen del post
+  ogImageAlt?: string; // Para el alt de la imagen
   canonicalUrl?: string;
 }
 
@@ -22,11 +22,13 @@ const {
   canonicalUrl
 } = Astro.props;
 
+// Asumimos que 'site' está en astro.config.mjs
 const siteUrl = Astro.site; 
 
+// Lógica de OG Image Estática: Usa la imagen del post O la de fallback
 const socialImageUrl = ogImage 
   ? new URL(ogImage, siteUrl).href 
-  : new URL('/images/social-cover-default.png', siteUrl).href;
+  : new URL('/images/social-cover-default.png', siteUrl).href; 
 
 const socialImageAlt = ogImageAlt || 'Pixelarte Studio - Blog del Insider';
 const pageTitle = `${title} | Pixelarte Studio`;
@@ -45,7 +47,8 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    {/* --- Etiquetas SEO y Open Graph --- */}
+    
+    {/* --- Etiquetas SEO y Open Graph (Completas) --- */}
     <link rel="canonical" href={currentUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
