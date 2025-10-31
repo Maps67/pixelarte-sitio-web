@@ -30,7 +30,6 @@ const pathname = Astro.url.pathname;
 <script>
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const navWrapper = document.getElementById('primary-navigation');
-
     mobileNavToggle.addEventListener('click', () => {
         const isVisible = navWrapper.getAttribute('data-visible') === 'true';
         if (isVisible) {
@@ -44,6 +43,7 @@ const pathname = Astro.url.pathname;
 </script>
 
 <style>
+    /* Tus estilos de Header */
     .header { background-color: #ffffff; border-bottom: 1px solid var(--color-borde-claro); padding: 0.5rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
     .navigation { display: flex; justify-content: space-between; align-items: center; height: 60px; }

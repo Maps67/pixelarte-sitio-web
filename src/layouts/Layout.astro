@@ -9,7 +9,7 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description: string;
-  canonicalUrl?: string;
+    canonicalUrl?: string;
 }
 
 const { 
@@ -18,7 +18,9 @@ const {
   canonicalUrl
 } = Astro.props;
 
+// Asumimos que 'site' está en astro.config.mjs
 const siteUrl = Astro.site; 
+
 const pageTitle = `${title} | Pixelarte Studio`;
 const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 
