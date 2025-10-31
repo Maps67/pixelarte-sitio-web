@@ -3,6 +3,10 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
+// ===== INICIO DE LA REPARACIÓN: Importar el CSS global =====
+import '../styles/global.css';
+// ===== FIN DE LA REPARACIÓN =====
+
 interface Props {
 	title: string;
 	description: string;
@@ -19,12 +23,13 @@ const {
   canonicalUrl
 } = Astro.props;
 
+// Asumimos que 'site' está en astro.config.mjs
 const siteUrl = Astro.site; 
 
-// LÓGICA CLAVE: Usa la imagen del post (ogImage) O la imagen por defecto
+// Lógica de OG Image (sin cambios)
 const socialImageUrl = ogImage 
   ? new URL(ogImage, siteUrl).href 
-  : new URL('/images/social-cover-default.png', siteUrl).href; // Tu imagen de fallback
+  : new URL('/images/social-cover-default.png', siteUrl).href;
 
 const socialImageAlt = ogImageAlt || 'Pixelarte Studio - Blog del Insider';
 const pageTitle = `${title} | Pixelarte Studio`;
@@ -40,9 +45,10 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="stylesheet" href="/styles/global.css" />
+    {/* --- Estilos Globales --- */}
+    {/* (Astro los inyectará aquí gracias al 'import' de arriba) */}
 
-    {/* --- Etiquetas SEO y Open Graph --- */}
+    {/* --- Etiquetas SEO y Open Graph (sin cambios) --- */}
     <link rel="canonical" href={currentUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
