@@ -1,76 +1,63 @@
----
-// src/layouts/Layout.astro
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+// src/pages/api/og/[slug].png.ts
+import type { APIRoute } from 'astro';
+import { getEntryBySlug } from 'astro:content';
+import { satori } from 'astro:satori';
+import { html } from 'satori-html';
+import sharp from 'sharp';
+import BlogOGImage from '../../../components/BlogOGImage.astro';
 
-// Definimos las props que CUALQUIER página puede pasar
-interface Props {
-	title: string;
-	description: string;
-  // Props opcionales para SEO y Tarjetas Sociales
-  ogImage?: string; // URL de la imagen de vista previa
-  ogImageAlt?: string; // Texto alternativo
-  canonicalUrl?: string; // URL canónica
+// ===== INICIO DE LA CORRECCIÓN: Usar 'fs' y 'url' para leer archivos =====
+import { readFile } from 'fs/promises';
+import { fileURLToPath } from 'url';
+
+// Función CORREGIDA para leer fuentes
+async function readFont(fontPath: string): Promise<ArrayBuffer> {
+  const url = new URL(fontPath, import.meta.url);
+  return await readFile(fileURLToPath(url));
 }
+// ===== FIN DE LA CORRECCIÓN =====
 
-const { 
-  title, 
-  description, 
-  ogImage,
-  ogImageAlt,
-  canonicalUrl
-} = Astro.props;
+export const GET: APIRoute = async ({ params }) => {
+  const slug = params.slug;
+  if (!slug) {
+    return new Response('Slug no encontrado', { status: 404 });
+  }
 
-// Construir la URL completa de la imagen (necesaria para og:image)
-const siteUrl = Astro.site; // (Asegúrate que 'site' esté en astro.config.mjs)
+  const post = await getEntryBySlug('blog', slug);
+  if (!post) {
+    return new Response(`Post no encontrado: ${slug}`, { status: 404 });
+  }
 
-// Usamos la imagen dinámica O la imagen estática de fallback
-const socialImageUrl = ogImage 
-  ? new URL(ogImage, siteUrl).href 
-  : new URL('/images/social-cover-default.png', siteUrl).href;
+  // Cargar fuentes usando la función CORREGIDA
+  const [playfairData, interData] = await Promise.all([
+    readFont('../../../public/fonts/PlayfairDisplay-Bold.ttf'),
+    readFont('../../../public/fonts/Inter-Regular.ttf')
+  ]);
 
-const socialImageAlt = ogImageAlt || 'Logo de Pixelarte Studio';
-const pageTitle = `${title} | Pixelarte Studio`;
-const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
----
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+  // Renderizar componente a HTML
+  const markup = html((await BlogOGImage({ title: post.data.title })).toString());
 
-    <link rel="stylesheet" href="/styles/global.css" />
+  // Generar SVG
+  const svg = await satori(markup, {
+    width: 1200,
+    height: 630,
+    fonts: [
+      { name: 'Playfair Display', data: playfairData, weight: 700, style: 'normal' },
+      { name: 'Inter', data: interData, weight: 400, style: 'normal' },
+    ],
+  });
 
-    <link rel="canonical" href={currentUrl} />
+  // Convertir SVG a PNG
+  const png = await sharp(Buffer.from(svg)).png().toBuffer();
 
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={currentUrl} />
-    <meta property="og:site_name" content="Pixelarte Studio" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content={socialImageUrl} />
-    <meta property="og:image:alt" content={socialImageAlt} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="es_MX" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={socialImageUrl} />
-    <meta name="twitter:image:alt" content={socialImageAlt} />
-    </head>
-<body>
-    <Header />
-    <main>
-        <slot /> </main>
-    <Footer />
-</body>
-</html>
-
+  // Devolver la imagen PNG
+  return new Response(png, {
+    status: 200,
+    headers: {
+      'Content-Type': 'image/png',
+      'Cache-Control': 'public, max-age=604800, immutable', // Cache por 1 semana
+    },
+  });
+};
 
 
