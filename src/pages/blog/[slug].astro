@@ -3,34 +3,41 @@
 import Layout from '../../layouts/Layout.astro';
 import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
 
+// ===== INICIO DE LA REPARACIÓN (Prerender) =====
+export const prerender = true; 
+// ===== FIN DE LA REPARACIÓN =====
+
+// 1. getStaticPaths: Genera las rutas en el build
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => ({
     params: { slug: post.slug },
-    props: { post },
+    // No pasamos 'post' en props, lo buscaremos abajo
   }));
 }
 
-const { post } = Astro.props as { post: CollectionEntry<'blog'> };
+// 2. Get slug (Astro.params funciona bien en prerender)
+const { slug } = Astro.params;
 
-// --- Si 'post' es undefined, astro 404 ---
+// 3. Fetch (Esto ahora se ejecuta en el build)
+const post = slug ? await getEntryBySlug('blog', slug) : undefined;
+
 if (!post) {
+  // Si no hay post, redirige a 404
   return Astro.redirect('/404/');
 }
 
+// 4. Render
 const { Content } = await post.render();
+
+// 5. Extract data
 const { title, description, pubDate, author, image } = post.data;
 
-// ===== INICIO DEL CAMBIO: Definir URL de OG Image =====
+// 6. Definir la URL de la OG Image (¡Importante!)
 const ogImageUrl = `/api/og/${post.slug}.png`;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
-// ===== FIN DEL CAMBIO =====
 ---
 
-{/* Pasamos los nuevos meta-tags al Layout.
-  Usamos la imagen de portada (image.url) como fallback 
-  si la imagen dinámica falla.
-*/}
 <Layout 
   title={`${title} | Blog Pixelarte Studio`} 
   description={description}
@@ -75,5 +82,92 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 </Layout>
 
 <style is:global>
-  /* ... (Tus estilos .prose no cambian) ... */
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-texto-secundario);
+  }
+  .prose h2 {
+    font-size: 1.875rem;
+    color: var(--color-texto-oscuro);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    font-family: 'Playfair Display', serif;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--color-borde-claro);
+  }
+  .prose h3 {
+    font-size: 1.5rem;
+    color: var(--color-texto-oscuro);
+    margin-top: 2em;
+    margin-bottom: 1em;
+     font-family: 'Playfair Display', serif;
+  }
+  .prose p {
+    margin-bottom: 1.25em;
+  }
+  .prose a {
+    color: var(--color-acento);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  .prose a:hover {
+    color: #1D4ED8;
+  }
+  .prose strong {
+    font-weight: 700;
+    color: var(--color-texto-oscuro);
+  }
+  .prose ul, .prose ol {
+    margin-left: 1.5em;
+    margin-bottom: 1.25em;
+    padding-left: 1em;
+  }
+  .prose li {
+    margin-bottom: 0.5em;
+  }
+  .prose li > p {
+      margin-bottom: 0.5em;
+  }
+  .prose blockquote {
+    border-left: 4px solid var(--color-acento);
+    padding-left: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    color: var(--color-texto-secundario);
+    background-color: #f9fafb;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  .prose img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+   .prose code {
+    background-color: #e5e7eb;
+    color: var(--color-texto-oscuro);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    font-family: monospace;
+  }
+  .prose pre {
+    background-color: var(--color-oscuro-contraste);
+    color: var(--color-texto-claro);
+    padding: 1em;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    font-family: monospace;
+  }
+  .prose pre code {
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+      font-size: inherit;
+  }
 </style>

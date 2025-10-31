@@ -1,7 +1,7 @@
 // src/pages/api/og/[slug].png.ts
 import type { APIRoute } from 'astro';
-import { getEntryBySlug } from 'astro:content';
-import { satori } from 'astro:satori'; // <-- Este import AHORA SÍ funcionará
+import { getCollection, getEntryBySlug } from 'astro:content';
+import { satori } from 'astro:satori'; // Este import AHORA SÍ funcionará
 import { html } from 'satori-html';
 import sharp from 'sharp';
 import BlogOGImage from '../../../components/BlogOGImage.astro';
@@ -9,6 +9,18 @@ import BlogOGImage from '../../../components/BlogOGImage.astro';
 // Usar 'fs' y 'path' para leer archivos de forma síncrona
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
+
+// ===== INICIO DE LA REPARACIÓN (Prerender) =====
+export const prerender = true;
+
+// 1. getStaticPaths: Le dice a Astro qué imágenes generar en el build
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+  }));
+}
+// ===== FIN DE LA REPARACIÓN =====
 
 /**
  * Lee un archivo de fuente desde la carpeta /public/ de forma síncrona.
@@ -19,6 +31,7 @@ function readFont(fontName: string): ArrayBuffer {
   return readFileSync(fontPath);
 }
 
+// 2. La función GET ahora se ejecuta en el build para cada slug
 export const GET: APIRoute = async ({ params }) => {
   const slug = params.slug;
   if (!slug) {

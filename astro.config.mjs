@@ -1,17 +1,14 @@
 // astro.config.mjs
 import { defineConfig } from 'astro/config';
-import netlify from '@astrojs/netlify';
-import satori from 'astro-satori'; // <-- 1. IMPORTAR LA INTEGRACIÓN
+import satori from 'astro-satori'; // 1. IMPORTAR LA INTEGRACIÓN
 
 export default defineConfig({
   site: 'https://pixelartestudio.art',
-  output: 'server', 
-  adapter: netlify(),
+  // output: 'static', // 'static' es el modo por defecto, no es necesario declararlo.
   trailingSlash: 'always',
   
-  // ===== INICIO DE LA REPARACIÓN DEFINITIVA =====
+  // 2. ACTIVAR LA INTEGRACIÓN
   integrations: [
-    satori() // <-- 2. ACTIVAR LA INTEGRACIÓN
+    satori() 
   ]
-  // ===== FIN DE LA REPARACIÓN DEFINITIVA =====
 });
