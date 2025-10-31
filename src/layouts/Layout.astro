@@ -1,6 +1,6 @@
 ---
-// ⬇️ --- ARREGLO #1: Asegurarse de que esta línea esté presente --- ⬇️
-import '../styles/global.css';
+// 🔴 ¡IMPORTANTE! HEMOS ELIMINADO LA LÍNEA 'import ../styles/global.css;' DE AQUÍ.
+// 🔴 Ya no es necesaria en esta sección.
 
 // Importar otros componentes necesarios, como Header y Footer
 import Header from '../components/Header.astro';
@@ -27,16 +27,18 @@ const { title, description } = Astro.props;
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
 		<link
-			href="https://fonts.googleapis.com/css2?family=FontName1:wght@400;700&family=FontName2:wght@900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=FontName1&display=swap"
 			rel="stylesheet"
 		/>
+
+		<link rel="stylesheet" href="/src/styles/global.css" />
 		</head>
 	<body>
 		<Header />
 		<main>
-			<slot /> </main>
+			<slot />
+		</main>
 		<Footer />
 	</body>
 </html>
