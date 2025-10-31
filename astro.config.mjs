@@ -1,9 +1,9 @@
 // astro.config.mjs
 import { defineConfig } from 'astro/config';
 
+// NO MÁS satori, NO MÁS adapter
 export default defineConfig({
-  site: 'https://pixelartestudio.art', // <-- ESTA LÍNEA REPARA EL ERROR
-  // output: 'static', (es el modo por defecto)
+  // Esta es la única línea que necesitamos para el layout
+  site: 'https://pixelartestudio.art',
   trailingSlash: 'always',
-  // Eliminamos 'integrations' y 'adapter' (esto es correcto)
 });

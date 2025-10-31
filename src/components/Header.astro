@@ -20,6 +20,9 @@ const pathname = Astro.url.pathname;
                     <li><a href="/" class:list={{ "is-active": pathname === "/" }}>Inicio</a></li>
                     <li><a href="/servicios/" class:list={{ "is-active": pathname === "/servicios/" }}>Servicios</a></li>
                     <li><a href="/portafolio/" class:list={{ "is-active": pathname.startsWith("/portafolio") }}>Casos de Éxito</a></li>
+                    {/* ===== INICIO DE LA REVERSIÓN: Enlace de Blog Eliminado ===== */}
+                    {/* <li><a href="/blog/" class:list={{ "is-active": pathname.startsWith("/blog") }}>Blog</a></li> */}
+                    {/* ===== FIN DE LA REVERSIÓN ===== */}
                     <li><a href="/testimonios/" class:list={{ "is-active": pathname === "/testimonios/" }}>Testimonios</a></li>
                     <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Nuestro Sistema</a></li>
                     <li><a href="/aplicar/" class="cta-button">Aplicar para Sesión Estratégica</a></li>
@@ -30,10 +33,22 @@ const pathname = Astro.url.pathname;
 </header>
 
 <script>
-    // Tu script de navegación móvil (sin cambios)
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navWrapper = document.getElementById('primary-navigation');
+
+    mobileNavToggle.addEventListener('click', () => {
+        const isVisible = navWrapper.getAttribute('data-visible') === 'true';
+        if (isVisible) {
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+            navWrapper.setAttribute('data-visible', 'false');
+        } else {
+            mobileNavToggle.setAttribute('aria-expanded', 'true');
+            navWrapper.setAttribute('data-visible', 'true');
+        }
+    });
 </script>
 
 <style>
-    /* Tus estilos de Header (sin cambios) */
+    /* ... (Tus estilos de Header no cambian) ... */
 </style>
 
