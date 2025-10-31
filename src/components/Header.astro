@@ -1,5 +1,5 @@
 ---
-// src/components/Header.astro (VERSIÓN 100% VERIFICADA)
+// src/components/Header.astro (VERSIÓN 100% LIMPIA Y FINAL)
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
@@ -32,12 +32,13 @@ const pathname = Astro.url.pathname;
 </header>
 
 <script is:inline>
-// Script de navegación móvil, 100% verificado
+// SCRIPT DE NAVEGACIÓN MÓVIL (SIN 'astro:page-load')
 function setupMobileNav() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const navWrapper = document.getElementById('primary-navigation');
     if (!mobileNavToggle || !navWrapper) return;
 
+    // Previene doble 'listener'
     if (mobileNavToggle.hasAttribute('data-listener-attached')) return;
     
     mobileNavToggle.addEventListener('click', () => {
@@ -54,7 +55,7 @@ function setupMobileNav() {
     mobileNavToggle.setAttribute('data-listener-attached', 'true');
 }
 
+// Ejecutar en la carga inicial de la página.
+// Esto es todo lo que necesitamos ya que ViewTransitions está apagado.
 setupMobileNav();
-// Vuelve a añadir el listener en las transiciones del navegador
-document.addEventListener('astro:page-load', setupMobileNav);
 </script>
