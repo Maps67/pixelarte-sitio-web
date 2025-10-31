@@ -1,17 +1,17 @@
-// @ts-check
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
+import satori from 'astro-satori'; // <-- 1. IMPORTAR LA INTEGRACIÓN
 
-// https://astro.build/config
 export default defineConfig({
-  // El adaptador de Netlify gestiona esto.
-  // Es posible que el instalador haya añadido "output: 'server'" o "output: 'hybrid'", 
-  // lo cual es correcto. Si no, el adaptador lo manejará.
+  site: 'https://pixelartestudio.art',
   output: 'server', 
-  
-  // El adaptador oficial que repara las rutas 404
   adapter: netlify(),
-
-  // Mantenemos esta regla para consistencia
   trailingSlash: 'always',
+  
+  // ===== INICIO DE LA REPARACIÓN DEFINITIVA =====
+  integrations: [
+    satori() // <-- 2. ACTIVAR LA INTEGRACIÓN
+  ]
+  // ===== FIN DE LA REPARACIÓN DEFINITIVA =====
 });

@@ -1,25 +1,23 @@
 // src/pages/api/og/[slug].png.ts
 import type { APIRoute } from 'astro';
 import { getEntryBySlug } from 'astro:content';
-import { satori } from 'astro:satori';
+import { satori } from 'astro:satori'; // <-- Este import AHORA SÍ funcionará
 import { html } from 'satori-html';
 import sharp from 'sharp';
 import BlogOGImage from '../../../components/BlogOGImage.astro';
 
-// ===== INICIO DE LA CORRECCIÓN v3 (Síncrono) =====
+// Usar 'fs' y 'path' para leer archivos de forma síncrona
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
 /**
  * Lee un archivo de fuente desde la carpeta /public/ de forma síncrona.
- * Resuelve la ruta desde la raíz del proyecto.
  */
 function readFont(fontName: string): ArrayBuffer {
   // process.cwd() nos da la raíz del proyecto
   const fontPath = resolve(process.cwd(), `public/fonts/${fontName}`);
   return readFileSync(fontPath);
 }
-// ===== FIN DE LA CORRECCIÓN v3 =====
 
 export const GET: APIRoute = async ({ params }) => {
   const slug = params.slug;
@@ -32,7 +30,7 @@ export const GET: APIRoute = async ({ params }) => {
     return new Response(`Post no encontrado: ${slug}`, { status: 404 });
   }
 
-  // Cargar fuentes usando la función SÍNCRONA (ya no se usa await/Promise.all)
+  // Cargar fuentes
   const playfairData = readFont('PlayfairDisplay-Bold.ttf');
   const interData = readFont('Inter-Regular.ttf');
 
@@ -57,7 +55,7 @@ export const GET: APIRoute = async ({ params }) => {
     status: 200,
     headers: {
       'Content-Type': 'image/png',
-      'Cache-Control': 'public, max-age=604800, immutable', // Cache por 1 semana
+      'Cache-Control': 'public, max-age=604800, immutable',
     },
   });
 };
