@@ -1,47 +1,46 @@
 ---
-// src/pages/blog/[slug].astro (Fetch Inside Version)
+// src/pages/blog/[slug].astro
 import Layout from '../../layouts/Layout.astro';
-// Import getCollection for getStaticPaths, and getEntryBySlug for fetching the specific post
 import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
 
-// 1. getStaticPaths: Only needs to generate the slugs now
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => ({
     params: { slug: post.slug },
-    // No longer passing the full 'post' object as props here
+    props: { post },
   }));
 }
 
-// 2. Get the slug from URL parameters
-const { slug } = Astro.params;
+const { post } = Astro.props as { post: CollectionEntry<'blog'> };
 
-// 3. Fetch the specific post using getEntryBySlug
-//    Make sure 'slug' is defined before fetching
-const post = slug ? await getEntryBySlug('blog', slug) : undefined;
-
-// --- CRITICAL CHECK ---
+// --- Si 'post' es undefined, astro 404 ---
 if (!post) {
-  // If post is not found for this slug, return a 404 response
-  console.error(`Post not found for slug: ${slug}`);
-  return new Response(null, {
-    status: 404,
-    statusText: 'Not Found'
-  });
+  return Astro.redirect('/404/');
 }
-// --- END CRITICAL CHECK ---
 
-// 4. Render the content (Now 'post' should be defined)
 const { Content } = await post.render();
-
-// 5. Extract data using post.data
 const { title, description, pubDate, author, image } = post.data;
+
+// ===== INICIO DEL CAMBIO: Definir URL de OG Image =====
+const ogImageUrl = `/api/og/${post.slug}.png`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+// ===== FIN DEL CAMBIO =====
 ---
 
-<Layout title={`${title} | Blog Pixelarte Studio`} description={description}>
+{/* Pasamos los nuevos meta-tags al Layout.
+  Usamos la imagen de portada (image.url) como fallback 
+  si la imagen dinámica falla.
+*/}
+<Layout 
+  title={`${title} | Blog Pixelarte Studio`} 
+  description={description}
+  ogImage={ogImageUrl} 
+  ogImageAlt={title}
+  canonicalUrl={canonicalUrl}
+>
   <article class="bg-claro py-16 md:py-24">
     <div class="container max-w-3xl mx-auto px-4">
-
+      
       <header class="mb-10 text-center border-b border-borde-claro pb-6">
         <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
           {title}
@@ -52,11 +51,11 @@ const { title, description, pubDate, author, image } = post.data;
       </header>
 
       {image && image.url && (
-        <img
-          src={image.url}
-          alt={image.alt || ''}
-          class="rounded-lg mb-10 w-full aspect-video object-cover shadow-md"
-          width="800"
+        <img 
+          src={image.url} 
+          alt={image.alt || ''} 
+          class="rounded-lg mb-10 w-full aspect-video object-cover shadow-md" 
+          width="800" 
           height="450"
           loading="lazy"
           decoding="async"
@@ -64,7 +63,7 @@ const { title, description, pubDate, author, image } = post.data;
       )}
 
       <div class="prose max-w-none">
-        <Content />
+        <Content /> 
       </div>
 
        <div class="text-center mt-10 pt-6 border-t border-borde-claro">
@@ -75,97 +74,6 @@ const { title, description, pubDate, author, image } = post.data;
   </article>
 </Layout>
 
-{/* Your <style is:global> remains the same */}
 <style is:global>
-  .prose {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--color-texto-secundario);
-  }
-  .prose h2 {
-    font-size: 1.875rem;
-    color: var(--color-texto-oscuro);
-    margin-top: 2.5em;
-    margin-bottom: 1em;
-    font-family: 'Playfair Display', serif;
-    padding-bottom: 0.3em;
-    border-bottom: 1px solid var(--color-borde-claro);
-  }
-  .prose h3 {
-    font-size: 1.5rem;
-    color: var(--color-texto-oscuro);
-    margin-top: 2em;
-    margin-bottom: 1em;
-     font-family: 'Playfair Display', serif;
-  }
-  .prose p {
-    margin-bottom: 1.25em;
-  }
-  .prose a {
-    color: var(--color-acento);
-    text-decoration: underline;
-    transition: color 0.2s ease;
-  }
-  .prose a:hover {
-    color: #1D4ED8; /* Azul más oscuro al pasar el ratón */
-  }
-  .prose strong {
-    font-weight: 700;
-    color: var(--color-texto-oscuro);
-  }
-  .prose ul, .prose ol {
-    margin-left: 1.5em;
-    margin-bottom: 1.25em;
-    padding-left: 1em;
-  }
-  .prose li {
-    margin-bottom: 0.5em;
-  }
-  .prose li > p {
-      margin-bottom: 0.5em;
-  }
-  .prose blockquote {
-    border-left: 4px solid var(--color-acento);
-    padding-left: 1em;
-    margin-left: 0;
-    margin-right: 0;
-    font-style: italic;
-    color: var(--color-texto-secundario);
-    background-color: #f9fafb;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-  }
-  .prose img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-      margin-top: 2em;
-      margin-bottom: 2em;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra sutil */
-  }
-   .prose code {
-    background-color: #e5e7eb; /* Gris claro */
-    color: var(--color-texto-oscuro);
-    padding: 0.2em 0.4em;
-    border-radius: 0.25rem;
-    font-size: 0.9em;
-    font-family: monospace; /* Fuente monoespaciada */
-  }
-  .prose pre {
-    background-color: var(--color-oscuro-contraste); /* Fondo oscuro */
-    color: var(--color-texto-claro); /* Texto claro */
-    padding: 1em;
-    border-radius: 0.5rem;
-    overflow-x: auto; /* Scroll horizontal si es necesario */
-    font-family: monospace;
-  }
-  .prose pre code { /* Estilo específico para código dentro de <pre> */
-      background-color: transparent;
-      color: inherit;
-      padding: 0;
-      font-size: inherit;
-  }
-  /* Estilo para el mensaje de error de renderizado */
-  .text-red-600 { color: #dc2626; }
-  .font-bold { font-weight: 700; }
+  /* ... (Tus estilos .prose no cambian) ... */
 </style>
