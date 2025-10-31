@@ -35,10 +35,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
     <div class="container max-w-3xl mx-auto px-4">
       
       <header class="mb-10 text-center border-b border-borde-claro pb-6">
-        {/* Este H1 usará los estilos 'h1' de global.css */}
-        <h1 class="font-playfair font-bold text-oscuro mb-4">
+        {/* ===== INICIO DE LA RESTAURACIÓN ===== */}
+        <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
           {title}
         </h1>
+        {/* ===== FIN DE LA RESTAURACIÓN ===== */}
         <p class="text-secundario">
           Por {author} | Publicado el {new Date(pubDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
         </p>
@@ -56,9 +57,6 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
         />
       )}
       
-      {/* Añadimos la clase .prose al contenedor del contenido 
-        para que los estilos de 'global.css' no lo afecten directamente
-      */}
       <div class="prose max-w-none">
         <Content /> 
       </div>
@@ -71,10 +69,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
   </article>
 </Layout>
 
-{/* Los estilos del 'prose' (contenido) SÍ los dejamos aquí,
-  porque son específicos de esta plantilla y usan 'is:global' 
-  para dar estilo al H2 y H3 *dentro* del Markdown.
-*/}
+{/* Estilos del 'prose' (Móvil-first, estos SÍ estaban correctos) */}
 <style is:global>
   .prose {
     font-size: 1.125rem;

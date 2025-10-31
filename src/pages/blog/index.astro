@@ -15,10 +15,11 @@ const allPosts = await getCollection('blog', ({ data }) => {
     <div class="container max-w-3xl mx-auto px-4">
       
       <header class="text-center mb-10">
-        {/* Este H1 usará los estilos 'h1' de global.css */}
-        <h1 class="font-playfair font-bold text-oscuro mb-4">
+        {/* ===== INICIO DE LA RESTAURACIÓN ===== */}
+        <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
           Blog del Insider
         </h1>
+        {/* ===== FIN DE LA RESTAURACIÓN ===== */}
         <p class="text-lg text-secundario">
           Perspectivas y estrategias probadas del sector médico.
         </p>
@@ -43,10 +44,11 @@ const allPosts = await getCollection('blog', ({ data }) => {
               </div>
             )}
             <div class="card-content">
-              {/* Este H2 usará los estilos 'h2' de global.css */}
-              <h2 class="font-playfair font-bold text-claro group-hover:text-acento mb-2 transition-colors duration-200">
+              {/* ===== INICIO DE LA RESTAURACIÓN ===== */}
+              <h2 class="text-2xl font-playfair font-bold text-claro group-hover:text-acento mb-2 transition-colors duration-200">
                 {post.data.title}
               </h2>
+              {/* ===== FIN DE LA RESTAURACIÓN ===== */}
               <p class="text-secundario-claro mb-3">
                 {post.data.description}
               </p>
@@ -63,7 +65,6 @@ const allPosts = await getCollection('blog', ({ data }) => {
   </section>
 </Layout>
 
-{/* Estilos locales para las tarjetas (sin tamaños de fuente) */}
 <style>
   .blog-list-container {
     display: grid;
