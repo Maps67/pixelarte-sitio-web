@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 .text-lg { font-size: 1.125rem; line-height: 1.75rem; } /* 18px */
 .text-2xl { font-size: 1.5rem; line-height: 2rem; }     /* 24px */
 .text-4xl { font-size: 1.875rem; line-height: 2.25rem; } /* 30px (Tamaño base/móvil) */
-.text-5xl { font-size: 2.25rem; line-height: 2.5rem; }   /* 36px (Tamaño base/móvil) */
+.text-5xl { font-size: 2.25rem; line-height: 2.5rem; }   /* 36px (Tamamaño base/móvil) */
 
 /* Espaciado (Padding) */
 .p-6 { padding: 1.5rem; }
