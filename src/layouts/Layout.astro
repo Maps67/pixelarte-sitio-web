@@ -1,12 +1,10 @@
 ---
-// src/layouts/Layout.astro (SIN VIEW TRANSITIONS)
+// src/layouts/Layout.astro (CORREGIDO)
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 // ===== ¡ESTA LÍNEA ES LA QUE REPARA TU SITIO! =====
 import '../styles/global.css';
-
-// Ya no importamos 'ViewTransitions'
 
 interface Props {
     title: string;
@@ -51,12 +49,12 @@ const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-        <link rel="canonical" href={currentUrl} />
+    <link rel="canonical" href={currentUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={currentUrl} />
     <meta property="og:site_name" content="Pixelarte Studio" />
-  m   <meta property="og:type" content="website" />
+    <meta property="og:type" content="website" /> {/* <-- ERROR 'm' ELIMINADO DE AQUÍ */}
     <meta property="og:image" content={finalSocialImageUrl} />
     <meta property="og:image:alt" content={finalSocialImageAlt} />
     <meta property="og:image:width" content="1200" />
