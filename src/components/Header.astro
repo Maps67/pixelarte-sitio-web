@@ -1,5 +1,5 @@
 ---
-// src/components/Header.astro (VERSIÓN 100% LIMPIA Y FINAL)
+// src/components/Header.astro (VERSIÓN FINAL LIMPIA)
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
@@ -32,7 +32,7 @@ const pathname = Astro.url.pathname;
 </header>
 
 <script is:inline>
-// SCRIPT DE NAVEGACIÓN MÓVIL (SIN 'astro:page-load')
+// SCRIPT DE NAVEGACIÓN MÓVIL (LIMPIO)
 function setupMobileNav() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const navWrapper = document.getElementById('primary-navigation');
@@ -56,6 +56,5 @@ function setupMobileNav() {
 }
 
 // Ejecutar en la carga inicial de la página.
-// Esto es todo lo que necesitamos ya que ViewTransitions está apagado.
 setupMobileNav();
 </script>
