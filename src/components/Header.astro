@@ -1,5 +1,5 @@
 ---
-// src/components/Header.astro (SCRIPT SIMPLIFICADO)
+// src/components/Header.astro (SIN ESTILOS)
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
@@ -9,7 +9,7 @@ const pathname = Astro.url.pathname;
                 <img src="/logo-transparente.png" alt="Pixelarte Studio Logo" class="logo-img" />
             </a>
 
-                        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                  S       <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
                 <span class="sr-only">Menú</span>
                 <svg class="icon-hamburger" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 <svg class="icon-close" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -24,39 +24,37 @@ const pathname = Astro.url.pathname;
                     <li><a href="/testimonios/" class:list={{ "is-active": pathname === "/testimonios/" }}>Testimonios</a></li>
                     <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Nuestro Sistema</a></li>
                     <li><a href="/aplicar/" class="cta-button">Aplicar para Sesión Estratégica</a></li>
-            _   </ul>
+                </ul>
             </div>
         </nav>
     </div>
 </header>
 
 <script is:inline>
-// SCRIPT SIMPLIFICADO: Se ejecuta una vez por carga de página.
+// Script robustecido para que funcione con la navegación de Astro
 function setupMobileNav() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const navWrapper = document.getElementById('primary-navigation');
     if (!mobileNavToggle || !navWrapper) return;
 
-    // Evita añadir el 'listener' varias veces si algo va mal
+    // Prevenir doble 'listener' si el script se carga de nuevo
     if (mobileNavToggle.hasAttribute('data-listener-attached')) return;
     
     mobileNavToggle.addEventListener('click', () => {
         const isVisible = navWrapper.getAttribute('data-visible') === 'true';
         if (isVisible) {
             mobileNavToggle.setAttribute('aria-expanded', 'false');
-          t navWrapper.setAttribute('data-visible', 'false');
+            navWrapper.setAttribute('data-visible', 'false');
         } else {
             mobileNavToggle.setAttribute('aria-expanded', 'true');
             navWrapper.setAttribute('data-visible', 'true');
         }
     });
-    
+    // Marcar que el listener ya fue añadido
     mobileNavToggle.setAttribute('data-listener-attached', 'true');
 }
-
-// Ejecutar en la carga inicial de la página
 setupMobileNav();
-
-// Ya no necesitamos 'astro:page-load' porque
-// ViewTransitions está desactivado.
+// 'astro:page-load' es crucial para que el script se re-ejecute
+// en cada navegación si usas View Transitions (que tu inspector SÍ muestra)
+document.addEventListener('astro:page-load', setupMobileNav);
 </script>
