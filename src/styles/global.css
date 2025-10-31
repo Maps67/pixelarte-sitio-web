@@ -1,6 +1,4 @@
-/* src/styles/global.css (CON HEADER INCLUIDO) */
-
-/* --- @import de fuentes ELIMINADO de aquí --- */
+/* src/styles/global.css (CORREGIDO Y SIN ERRORES) */
 
 :root {
   --color-fondo-claro: #F9FAFB;
@@ -15,7 +13,7 @@
 }
 
 body {
-DE   background-color: var(--color-fondo-claro);
+  background-color: var(--color-fondo-claro);
   color: var(--color-texto-oscuro);
   font-family: 'Inter', system-ui, sans-serif;
   margin: 0;
@@ -152,9 +150,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
-/* El .container en el header necesita su propio padding
- para alinear el logo y el botón de hamburguesa.
-*/
 .header .container {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -276,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem; /* Tamaño normal */
   }
   .nav-links a:hover {
-Z     color: var(--color-acento);
+    color: var(--color-acento);
   }
   .nav-links a.is-active {
     color: var(--color-acento);
