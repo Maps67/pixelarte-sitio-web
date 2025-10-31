@@ -3,10 +3,9 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-// ===== INICIO DE LA REPARACIÓN DEFINITIVA =====
-// RESTAURAMOS EL IMPORT DE CSS GLOBAL
+// ===== IMPORTACIÓN CRÍTICA DE CSS =====
 import '../styles/global.css';
-// ===== FIN DE LA REPARACIÓN DEFINITIVA =====
+// =====================================
 
 interface Props {
 	title: string;
@@ -27,7 +26,6 @@ const {
 // Asumimos que 'site' está en astro.config.mjs
 const siteUrl = Astro.site; 
 
-// Lógica de OG Image (sin cambios)
 const socialImageUrl = ogImage 
   ? new URL(ogImage, siteUrl).href 
   : new URL('/images/social-cover-default.png', siteUrl).href;
@@ -46,10 +44,7 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    {/* La etiqueta <link global.css> se elimina. 
-        Astro la inyectará aquí gracias al 'import' de arriba. */}
-
-    {/* --- Etiquetas SEO y Open Graph (sin cambios) --- */}
+    {/* --- Etiquetas SEO y Open Graph --- */}
     <link rel="canonical" href={currentUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
