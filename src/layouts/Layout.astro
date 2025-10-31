@@ -1,25 +1,27 @@
 ---
-// src/layouts/Layout.astro (CORREGIDO)
+// src/layouts/Layout.astro (SIN VIEW TRANSITIONS)
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 // ===== ¡ESTA LÍNEA ES LA QUE REPARA TU SITIO! =====
 import '../styles/global.css';
 
+// Ya no importamos 'ViewTransitions'
+
 interface Props {
     title: string;
     description: string;
     canonicalUrl?: string;
-    ogImage?: string; // <-- AÑADIDO: Para la imagen de portada del post
-    ogImageAlt?: string; // <-- AÑADIDO: Para el alt de la imagen del post
+    ogImage?: string; // <-- Para la imagen de portada del post
+    ogImageAlt?: string; // <-- Para el alt de la imagen del post
 }
 
 const { 
   title, 
   description,
   canonicalUrl,
-  ogImage, // <-- AÑADIDO
-  ogImageAlt // <-- AÑADIDO
+  ogImage, 
+  ogImageAlt 
 } = Astro.props;
 
 // Asumimos que 'site' está en astro.config.mjs
@@ -29,14 +31,10 @@ const pageTitle = `${title} | Pixelarte Studio`;
 const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 
 // --- Lógica de Imagen Social (Corregida) ---
-// 1. Empezamos con el fallback por defecto
 const fallbackImageUrl = new URL('/images/social-cover-default.png', siteUrl).href;
 const fallbackImageAlt = 'Pixelarte Studio - Estrategia Digital Insider';
 
-// 2. Si la página (ej. un post del blog) pasa una imagen específica, la usamos
 const finalSocialImageUrl = ogImage ? new URL(ogImage, siteUrl).href : fallbackImageUrl;
-
-// 3. Si la página pasa un texto 'alt' específico, lo usamos
 const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
 ---
 <!DOCTYPE html>
@@ -53,15 +51,14 @@ const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-    {/* --- Etiquetas SEO (Versión Estable Corregida) --- */}
-    <link rel="canonical" href={currentUrl} />
+        <link rel="canonical" href={currentUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={currentUrl} />
     <meta property="og:site_name" content="Pixelarte Studio" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content={finalSocialImageUrl} /> {/* <-- CORREGIDO */}
-    <meta property="og:image:alt" content={finalSocialImageAlt} /> {/* <-- CORREGIDO */}
+  m   <meta property="og:type" content="website" />
+    <meta property="og:image" content={finalSocialImageUrl} />
+    <meta property="og:image:alt" content={finalSocialImageAlt} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="es_MX" />
@@ -69,8 +66,8 @@ const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={finalSocialImageUrl} /> {/* <-- CORREGIDO */}
-    <meta name="twitter:image:alt" content={finalSocialImageAlt} /> {/* <-- CORREGIDO */}
+    <meta name="twitter:image" content={finalSocialImageUrl} />
+    <meta name="twitter:image:alt" content={finalSocialImageAlt} />
 </head>
 <body>
     <Header />
