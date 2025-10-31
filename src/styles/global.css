@@ -5,7 +5,6 @@
 :root {
   --color-fondo-claro: #F9FAFB;
   --color-fondo-oscuro: #111827;
-  /* ... (el resto de tus variables de :root) ... */
   --color-texto-oscuro: #111827;
   --color-texto-claro: #e6edf3;
   --color-texto-secundario: #4b5563;
@@ -39,16 +38,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     font-family: 'Playfair Display', serif; /* Fallback a Playfair */
     margin: 0;
+    word-wrap: break-word; /* Añadido para móvil */
     line-height: 1.2;
-    word-wrap: break-word; 
 }
 
-/* ... (El resto de tu global.css - .container, .btn-primary, .text-4xl, @media, etc. - 
-   copia y pega el resto de tu ÚLTIMA versión buena de global.css aquí.
-   La versión que te di en "Paso 1: Reemplaza global.css (La Corrección Definitiva)"
-   es la correcta.) ... */
-
-/* Pegando el resto de la versión estable de global.css: */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -59,6 +52,7 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
 }
 
+/* 1. BOTONES "ALFA" */
 .btn-primary {
     display: inline-block;
     background-color: var(--color-acento);
@@ -80,6 +74,8 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
     text-decoration: none;
 }
+
+/* 2. ESTILOS DE FORMULARIO */
 .form-label {
   display: block;
   margin-bottom: 0.5rem;
@@ -102,6 +98,8 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-acento);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
+
+/* 3. CLASES DE UTILIDAD (Como Tailwind) */
 .bg-claro { background-color: var(--color-fondo-claro); }
 .bg-oscuro { background-color: var(--color-fondo-oscuro); }
 .bg-oscuro-contraste { background-color: #1F2937; }
@@ -112,19 +110,27 @@ h1, h2, h3, h4, h5, h6 {
 .text-acento { color: var(--color-acento); }
 .font-playfair { font-family: 'Playfair Display', serif; }
 .font-bold { font-weight: 700; }
-.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-.text-2xl { font-size: 1.5rem; line-height: 2rem; }
-.text-4xl { font-size: 1.875rem; line-height: 2.25rem; }
-.text-5xl { font-size: 2.25rem; line-height: 2.5rem; }
+
+/* Tipografía (Valores base para MÓVIL) */
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; } /* 18px */
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }     /* 24px */
+.text-4xl { font-size: 1.875rem; line-height: 2.25rem; } /* 30px (Tamaño base/móvil) */
+.text-5xl { font-size: 2.25rem; line-height: 2.5rem; }   /* 36px (Tamaño base/móvil) */
+
+/* Espaciado (Padding) */
 .p-6 { padding: 1.5rem; }
 .px-4 { padding-left: 1rem; padding-right: 1rem; }
 .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
 .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+
+/* Espaciado (Margin) */
 .mx-auto { margin-left: auto; margin-right: auto; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
 .mb-10 { margin-bottom: 2.5rem; }
 .mt-10 { margin-top: 2.5rem; }
+
+/* Layout y Rejilla (Grid) */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .items-center { align-items: center; }
@@ -135,14 +141,19 @@ h1, h2, h3, h4, h5, h6 {
 .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
 .gap-6 { gap: 1.5rem; }
 
+/* Responsivo (Media Queries) */
 @media (min-width: 768px) {
+  
   .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 2rem; /* Restaurado para desktop */
+    padding-right: 2rem; /* Restaurado para desktop */
   }
+  
+  /* Tamaños de fuente GRANDES (Desktop) para clases de utilidad */
   .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
-  .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-  .md\:text-5xl { font-size: 3rem; line-height: 1; }
+  .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; } /* 36px */
+  .md\:text-5xl { font-size: 3rem; line-height: 1; }      /* 48px */
+  
   .md\:py-24 { padding-top: 6rem; padding-bottom: 6rem; }
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }

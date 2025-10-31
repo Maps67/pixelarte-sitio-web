@@ -9,8 +9,7 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description: string;
-  canonicalUrl?: string;
-  // Eliminamos las props ogImage que venían del blog
+    canonicalUrl?: string;
 }
 
 const { 
@@ -19,7 +18,8 @@ const {
   canonicalUrl
 } = Astro.props;
 
-const siteUrl = Astro.site; // Asumimos que 'site' está en astro.config.mjs
+// Asumimos que 'site' está en astro.config.mjs
+const siteUrl = Astro.site; 
 
 const pageTitle = `${title} | Pixelarte Studio`;
 const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
@@ -41,6 +41,7 @@ const socialImageAlt = 'Pixelarte Studio - Estrategia Digital Insider';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     {/* --- Etiquetas SEO (Versión Estable Revertida) --- */}
     <link rel="canonical" href={currentUrl} />
     <meta property="og:title" content={pageTitle} />
