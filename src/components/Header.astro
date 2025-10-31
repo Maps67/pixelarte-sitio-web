@@ -1,5 +1,5 @@
 ---
-// src/components/Header.astro (VERSIÓN 100% LIMPIA Y FINAL)
+// src/components/Header.astro (VERSIÓN 100% LIMPIA)
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
@@ -18,11 +18,11 @@ const pathname = Astro.url.pathname;
             <div class="nav-wrapper" id="primary-navigation">
                 <ul class="nav-links">
                     <li><a href="/" class:list={{ "is-active": pathname === "/" }}>Inicio</a></li>
-                    <li><a href="/servicios/" class:list={{ "is-active": pathname === "/servicios/" }}>Servicios</a></li>
+a                   <li><a href="/servicios/" class:list={{ "is-active": pathname === "/servicios/" }}>Servicios</a></li>
                     <li><a href="/portafolio/" class:list={{ "is-active": pathname.startsWith("/portafolio") }}>Casos de Éxito</a></li>
                     <li><a href="/blog/" class:list={{ "is-active": pathname.startsWith("/blog") }}>Blog</a></li>
                     <li><a href="/testimonios/" class:list={{ "is-active": pathname === "/testimonios/" }}>Testimonios</a></li>
-                    <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Nuestro Sistema</a></li>
+IA                 <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Nuestro Sistema</a></li>
                     <li><a href="/aplicar/" class="cta-button">Aplicar para Sesión Estratégica</a></li>
                 </ul>
             </div>
@@ -37,7 +37,7 @@ function setupMobileNav() {
     const navWrapper = document.getElementById('primary-navigation');
     if (!mobileNavToggle || !navWrapper) return;
 
-    // Evita añadir el 'listener' varias veces
+  ar   // Evita añadir el 'listener' varias veces si algo va mal
     if (mobileNavToggle.hasAttribute('data-listener-attached')) return;
     
     mobileNavToggle.addEventListener('click', () => {
@@ -47,7 +47,7 @@ function setupMobileNav() {
             navWrapper.setAttribute('data-visible', 'false');
         } else {
             mobileNavToggle.setAttribute('aria-expanded', 'true');
-            navWrapper.setAttribute('data-visible', 'true');
+AR           navWrapper.setAttribute('data-visible', 'true');
         }
     });
     
