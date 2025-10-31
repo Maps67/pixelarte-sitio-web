@@ -1,13 +1,16 @@
 ---
 // src/pages/blog/index.astro
 import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
-// 1. Obtener todos los posts del blog usando Astro.glob
-//    Asegúrate de que la ruta coincida con donde guardaste los .md
-const allPosts = await Astro.glob('../../content/blog/*.md');
-
-// 2. Ordenar posts por fecha (más reciente primero)
-allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+// Obtiene todos los posts de la colección 'blog'
+const allPosts = await getCollection('blog', ({ data }) => {
+  // Filtra borradores (drafts) si estás en producción
+  return import.meta.env.PROD ? data.draft !== true : true; 
+}).then(posts => 
+  // Ordena los posts por fecha, el más reciente primero
+  posts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+);
 ---
 <Layout 
   title="Blog | Pixelarte Studio"
@@ -25,35 +28,108 @@ allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.f
         </p>
       </header>
 
-      <ul class="space-y-6 list-none p-0 m-0">
+      {/* Usamos un div simple para el layout de la lista */}
+      <div class="blog-list-container">
         {allPosts.map((post) => (
-          <li class="bg-oscuro-contraste p-6 rounded-lg">
-            <a href={`/blog/${post.frontmatter.slug || post.file.split('/').pop().replace('.md', '')}/`} class="block group"> 
-              <h2 class="text-2xl font-playfair font-bold text-claro group-hover:text-acento mb-2">
-                {post.frontmatter.title}
+          // Cada post ahora es una tarjeta completa (un enlace)
+          <a 
+            href={`/blog/${post.slug}/`} 
+            class="blog-card group"
+          >
+            {/* ===== INICIO DE LA ACTUALIZACIÓN: IMAGEN CON ASPECT RATIO ===== */}
+            {post.data.image && post.data.image.url && (
+              <div class="card-image-wrapper">
+                <img 
+                  src={post.data.image.url} 
+                  alt={post.data.image.alt || ''} 
+                  class="card-image"
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            {/* ===== FIN DE LA ACTUALIZACIÓN ===== */}
+
+            {/* Contenido de texto del post */}
+            <div class="card-content">
+              <h2 class="text-2xl font-playfair font-bold text-claro group-hover:text-acento mb-2 transition-colors duration-200">
+                {post.data.title}
               </h2>
               <p class="text-secundario-claro mb-3">
-                {post.frontmatter.description}
+                {post.data.description}
               </p>
               <span class="text-acento font-semibold group-hover:underline">Leer artículo &rarr;</span>
-            </a>
-            <p class="text-sm text-secundario-claro mt-4">
-              Publicado el: {new Date(post.frontmatter.pubDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
-            </p>
-          </li>
+              <p class="text-sm text-secundario-claro mt-4">
+                Publicado el: {new Date(post.data.pubDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </p>
+            </div>
+          </a>
         ))}
-      </ul>
+      </div>
 
     </div>
   </section>
 </Layout>
 
 <style>
-  /* Puedes añadir estilos específicos aquí o usar clases globales */
-  .space-y-6 > :not([hidden]) ~ :not([hidden]) {
-    margin-top: 1.5rem; /* similar a space-y-6 de Tailwind */
+  /* Contenedor de la lista de posts */
+  .blog-list-container {
+    display: grid;
+    gap: 2rem; /* Espacio entre tarjetas, similar a space-y-8 */
   }
-  .list-none { list-style: none; }
-  .p-0 { padding: 0; }
-  .m-0 { margin: 0; }
+  
+  /* Estilo de la tarjeta del blog */
+  .blog-card {
+    display: block;
+    background-color: var(--color-oscuro-contraste); /* #1F2937 */
+    border-radius: 0.5rem; /* 8px */
+    overflow: hidden; /* Asegura que la imagen no se salga */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none; /* Quita subrayado del enlace */
+  }
+  .blog-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    transform: translateY(-4px); /* Efecto de elevación */
+  }
+
+  /* ===== ESTILOS PARA FORZAR EL ASPECT RATIO 16:9 ===== */
+  .card-image-wrapper {
+    position: relative;
+    width: 100%;
+    /* Define la relación de aspecto 16:9 (alto / ancho * 100%) */
+    padding-top: 56.25%; /* (9 / 16) * 100% */ 
+    overflow: hidden;
+    background-color: #334155; /* Color de fondo mientras carga */
+  }
+  
+  .card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    object-fit: cover; 
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .blog-card:hover .card-image {
+    transform: scale(1.05); /* Sutil efecto de zoom al pasar el ratón */
+  }
+  /* ================================================ */
+
+  /* Contenido de texto de la tarjeta */
+  .card-content {
+    padding: 1.5rem; /* 24px */
+  }
+  
+  /* Estilos de 'hover' para efectos de grupo (ya definidos en global.css, pero los duplicamos por si acaso) */
+  .group:hover .group-hover\:text-acento {
+    color: var(--color-acento);
+  }
+  .group:hover .group-hover\:underline {
+    text-decoration: underline;
+  }
 </style>
