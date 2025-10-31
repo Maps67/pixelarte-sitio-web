@@ -6,12 +6,10 @@ import { html } from 'satori-html';
 import sharp from 'sharp';
 import BlogOGImage from '../../../components/BlogOGImage.astro';
 
-// Usar 'fs' y 'path' para leer archivos de forma síncrona
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
-// ===== INICIO DE LA REPARACIÓN (Prerender) =====
-export const prerender = true;
+export const prerender = true; // <-- AÑADIDO
 
 // 1. getStaticPaths: Le dice a Astro qué imágenes generar en el build
 export async function getStaticPaths() {
@@ -20,13 +18,8 @@ export async function getStaticPaths() {
     params: { slug: post.slug },
   }));
 }
-// ===== FIN DE LA REPARACIÓN =====
 
-/**
- * Lee un archivo de fuente desde la carpeta /public/ de forma síncrona.
- */
 function readFont(fontName: string): ArrayBuffer {
-  // process.cwd() nos da la raíz del proyecto
   const fontPath = resolve(process.cwd(), `public/fonts/${fontName}`);
   return readFileSync(fontPath);
 }
@@ -43,14 +36,11 @@ export const GET: APIRoute = async ({ params }) => {
     return new Response(`Post no encontrado: ${slug}`, { status: 404 });
   }
 
-  // Cargar fuentes
   const playfairData = readFont('PlayfairDisplay-Bold.ttf');
   const interData = readFont('Inter-Regular.ttf');
 
-  // Renderizar componente a HTML
   const markup = html((await BlogOGImage({ title: post.data.title })).toString());
 
-  // Generar SVG
   const svg = await satori(markup, {
     width: 1200,
     height: 630,
@@ -60,10 +50,8 @@ export const GET: APIRoute = async ({ params }) => {
     ],
   });
 
-  // Convertir SVG a PNG
   const png = await sharp(Buffer.from(svg)).png().toBuffer();
 
-  // Devolver la imagen PNG
   return new Response(png, {
     status: 200,
     headers: {
