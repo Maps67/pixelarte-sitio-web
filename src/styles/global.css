@@ -1,60 +1,160 @@
-/* 🔴 IMPORTANTE:
-   Asegúrate de que NO haya ninguna línea @import url('https://fonts.googleapis.com/...') 
-   al inicio de este archivo.
-*/
+/* src/styles/global.css */
+
+/* --- @import de fuentes ELIMINADO de aquí --- */
 
 :root {
-  /* ... (tus variables de color y otras variables root) ... */
+  --color-fondo-claro: #F9FAFB;
+  --color-fondo-oscuro: #111827;
+  --color-texto-oscuro: #111827;
+  --color-texto-claro: #e6edf3;
+  --color-texto-secundario: #4b5563;
+  --color-texto-secundario-claro: #9CA3AF;
+  --color-acento: #2563EB;
+  --color-borde-claro: #e5e7eb;
+  --color-borde: #30363d;
 }
 
 body {
-  /* ... (tus estilos base de body) ... */
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto-oscuro);
+  font-family: 'Inter', system-ui, sans-serif; /* Fallback a Inter */
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Clases de Utilidad */
+a {
+  color: var(--color-acento);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
 
-.max-w-xl { max-width: 36rem; }
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-texto-oscuro);
+    font-weight: 700;
+    font-family: 'Playfair Display', serif; /* Fallback a Playfair */
+    margin: 0;
+    line-height: 1.2;
+    word-wrap: break-word; /* Importante para móvil */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem; /* Ajustado para móvil */
+    padding-right: 1.5rem; /* Ajustado para móvil */
+    box-sizing: border-box;
+}
+
+/* 1. BOTONES "ALFA" */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-acento);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    border: 1px solid var(--color-acento);
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn-primary:hover {
+    background-color: #1D4ED8;
+    color: #fff !important;
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    text-decoration: none;
+}
+
+/* 2. ESTILOS DE FORMULARIO */
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--color-texto-oscuro);
+}
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 0.375rem;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* 3. CLASES DE UTILIDAD (Como Tailwind) */
+.bg-claro { background-color: var(--color-fondo-claro); }
+.bg-oscuro { background-color: var(--color-fondo-oscuro); }
+.bg-oscuro-contraste { background-color: #1F2937; }
+.text-oscuro { color: var(--color-texto-oscuro); }
+.text-claro { color: var(--color-texto-claro); }
+.text-secundario { color: var(--color-texto-secundario); }
+.text-secundario-claro { color: var(--color-texto-secundario-claro); }
+.text-acento { color: var(--color-acento); }
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-bold { font-weight: 700; }
+
+/* Tipografía (Valores base para MÓVIL) */
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; } /* 18px */
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }     /* 24px */
+.text-4xl { font-size: 1.875rem; line-height: 2.25rem; } /* 30px (Tamaño base/móvil) */
+.text-5xl { font-size: 2.25rem; line-height: 2.5rem; }   /* 36px (Tamaño base/móvil) */
+
+/* Espaciado (Padding) */
+.p-6 { padding: 1.5rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+
+/* Espaciado (Margin) */
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+.mt-10 { margin-top: 2.5rem; }
+
+/* Layout y Rejilla (Grid) */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.items-center { align-items: center; }
+.rounded-lg { border-radius: 0.5rem; }
 .max-w-2xl { max-width: 42rem; }
 .max-w-3xl { max-width: 48rem; }
-.max-w-4xl { max-width: 56rem; }
-
 .grid { display: grid; }
 .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-.gap { gap: 1.5rem; }
+.gap-6 { gap: 1.5rem; }
 
-/* ... (otras clases de utilidad como .container, .padding-left, etc.) ... */
-.container {
-  /* ... */
-  padding-left: 2rem; /* Restaurado para desktop */
-  padding-right: 2rem; /* Restaurado para desktop */
-}
-
-
-/* ⬇️ --- ARREGLO DE TIPOGRAFÍA --- ⬇️ */
-
-/* Tamaños de fuente BASE (Mobile-First) */
-/* Estos son los tamaños por defecto para móviles */
-
-.text-2xl { font-size: 1.5rem; line-height: 2rem; } /* 24px */
-.text-4xl { font-size: 1.875rem; line-height: 2.25rem; } /* 30px (Móvil) */
-.text-5xl { font-size: 2.25rem; line-height: 2.5rem; }  /* 36px (Móvil) */
-
-
-/* Clases de utilidad que solo aplican en Desktop */
-.md\:py-24 { padding-top: 6rem; padding-bottom: 6rem; }
-.md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-
-/* Responsive (Media Queries) */
+/* Responsivo (Media Queries) */
 @media (min-width: 768px) {
-
-  /* ... (otras clases responsivas como .container si es necesario) ... */
   
-  /* Tamaños de fuente GRANDES (Desktop) */
-  /* Sobreescribimos las clases base con prefijo 'md:' */
+  .container {
+    padding-left: 2rem; /* Restaurado para desktop */
+    padding-right: 2rem; /* Restaurado para desktop */
+  }
   
-  .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; } /* 24px */
-  .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; } /* 36px (Desktop) */
-  .md\:text-5xl { font-size: 3rem; line-height: 1; }      /* 48px (Desktop) */
+  /* Tamaños de fuente GRANDES (Desktop) para clases de utilidad */
+  .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+  .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; } /* 36px */
+  .md\:text-5xl { font-size: 3rem; line-height: 1; }      /* 48px */
+  
+  .md\:py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

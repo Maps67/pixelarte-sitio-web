@@ -1,44 +1,71 @@
 ---
-// 🔴 ¡IMPORTANTE! HEMOS ELIMINADO LA LÍNEA 'import ../styles/global.css;' DE AQUÍ.
-// 🔴 Ya no es necesaria en esta sección.
-
-// Importar otros componentes necesarios, como Header y Footer
+// src/layouts/Layout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-// ... (resto de tus props e importaciones) ...
-export interface Props {
+// ===== ¡ESTA LÍNEA ES LA QUE REPARA TU SITIO! =====
+import '../styles/global.css';
+
+interface Props {
 	title: string;
 	description: string;
+    canonicalUrl?: string;
 }
 
-const { title, description } = Astro.props;
+const { 
+  title, 
+  description,
+  canonicalUrl
+} = Astro.props;
+
+// Asumimos que 'site' está en astro.config.mjs
+const siteUrl = Astro.site; 
+
+const pageTitle = `${title} | Pixelarte Studio`;
+const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
+
+// Imagen de fallback por defecto para TODAS las páginas
+const socialImageUrl = new URL('/images/social-cover-default.png', siteUrl).href;
+const socialImageAlt = 'Pixelarte Studio - Estrategia Digital Insider';
 ---
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=FontName1&display=swap"
-			rel="stylesheet"
-		/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    {/* --- Etiquetas SEO (Versión Estable Revertida) --- */}
+    <link rel="canonical" href={currentUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:site_name" content="Pixelarte Studio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_MX" />
 
-		<link rel="stylesheet" href="/src/styles/global.css" />
-		</head>
-	<body>
-		<Header />
-		<main>
-			<slot />
-		</main>
-		<Footer />
-	</body>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
+</head>
+<body>
+    <Header />
+    <main>
+        <slot />
+    </main>
+    <Footer />
+</body>
 </html>
