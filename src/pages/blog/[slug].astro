@@ -1,0 +1,92 @@
+---
+// src/pages/blog/[slug].astro
+import Layout from '../../layouts/Layout.astro';
+import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
+
+export const prerender = true; // <-- Importante para el modo estático
+
+// 1. getStaticPaths
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+  }));
+}
+
+// 2. Get slug y Fetch
+const { slug } = Astro.params;
+const post = slug ? await getEntryBySlug('blog', slug) : undefined;
+
+if (!post) {
+  return Astro.redirect('/404/');
+}
+
+// 3. Render
+const { Content } = await post.render();
+
+// 4. Extract data
+const { title, description, pubDate, author, image } = post.data;
+
+// 5. Definir la URL de la OG Image
+const ogImageUrl = image?.url; // La URL estática del frontmatter
+const ogImageAlt = image?.alt;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<Layout 
+  title={`${title} | Blog Pixelarte Studio`} 
+  description={description}
+  ogImage={ogImageUrl} 
+  ogImageAlt={ogImageAlt} 
+  canonicalUrl={canonicalUrl}
+>
+  <article class="bg-claro py-16 md:py-24">
+    <div class="container max-w-3xl mx-auto px-4">
+      
+      <header class="mb-10 text-center border-b border-borde-claro pb-6">
+        <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
+          {title}
+        </h1>
+        <p class="text-secundario">
+          Por {author} | Publicado el {new Date(pubDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </p>
+      </header>
+
+      {image && image.url && (
+        <img 
+          src={image.url} 
+          alt={image.alt || ''} 
+          class="rounded-lg mb-10 w-full aspect-video object-cover shadow-md" 
+          width="800" 
+          height="450"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+      
+      <div class="prose max-w-none">
+        <Content /> 
+      </div>
+
+       <div class="text-center mt-10 pt-6 border-t border-borde-claro">
+          <a href="/blog/" class="btn-primary">&larr; Volver al Blog</a>
+       </div>
+
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  /* Estilos .prose mobile-first (CORRECTOS) */
+  .prose { font-size: 1.125rem; line-height: 1.8; color: var(--color-texto-secundario); }
+  .prose h2 { font-size: 1.5rem; color: var(--color-texto-oscuro); margin-top: 2.5em; margin-bottom: 1em; font-family: 'Playfair Display', serif; padding-bottom: 0.3em; border-bottom: 1px solid var(--color-borde-claro); }
+  .prose h3 { font-size: 1.25rem; color: var(--color-texto-oscuro); margin-top: 2em; margin-bottom: 1em; font-family: 'Playfair Display', serif; }
+  @media (min-width: 768px) {
+    .prose h2 { font-size: 1.875rem; }
+    .prose h3 { font-size: 1.5rem; }
+  }
+  .prose p { margin-bottom: 1.25em; word-wrap: break-word; }
+  .prose a { color: var(--color-acento); text-decoration: underline; transition: color 0.2s ease; }
+  .prose a:hover { color: #1D4ED8; }
+  /* ... (y el resto de tus estilos .prose) ... */
+</style>
