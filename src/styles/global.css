@@ -38,12 +38,31 @@ a:hover {
   text-decoration: underline;
 }
 
+/* ================================================= */
+/* ===== INICIO DE LA REPARACIÓN MOBILE-FIRST ===== */
+/* ================================================= */
+
 h1, h2, h3, h4, h5, h6 {
-    /* ... (Sin cambios) ... */
     color: var(--color-texto-oscuro);
     font-weight: 700;
     font-family: 'Playfair Display', serif;
+    margin-top: 0; /* Añadimos reseteo de margen */
+    margin-bottom: 1rem; /* Añadimos margen base */
+    line-height: 1.2; /* Añadimos interlineado base */
 }
+
+/* Tamaños de fuente BASE (Mobile-First) */
+h1 { font-size: 2.25rem; } /* 36px */
+h2 { font-size: 1.875rem; } /* 30px */
+h3 { font-size: 1.5rem; }   /* 24px */
+h4 { font-size: 1.25rem; } /* 20px */
+h5 { font-size: 1.125rem; } /* 18px */
+h6 { font-size: 1rem; }     /* 16px */
+
+/* ================================================= */
+/* ===== FIN DE LA REPARACIÓN MOBILE-FIRST ===== */
+/* ================================================= */
+
 
 .container {
     /* ... (Sin cambios) ... */
@@ -56,12 +75,7 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
 }
 
-/* =======================================
-   INICIO DE CÓDIGO AÑADIDO (MARCO ALFA)
-   ======================================= */
-
 /* ... (Botones y Formularios - Sin cambios) ... */
-/* 1. BOTONES "ALFA" */
 .btn-primary {
     display: inline-block;
     background-color: var(--color-acento);
@@ -83,7 +97,6 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
     text-decoration: none;
 }
-/* 2. ESTILOS DE FORMULARIO */
 .form-label {
   display: block;
   margin-bottom: 0.5rem;
@@ -121,19 +134,14 @@ h1, h2, h3, h4, h5, h6 {
 .text-acento { color: var(--color-acento); } 
 
 
-/* ===== INICIO DE LA CORRECCIÓN RESPONSIVE ===== */
-
 /* Tipografía (Valores base para MÓVIL) */
 .font-playfair { font-family: 'Playfair Display', serif; }
 .font-bold { font-weight: 700; }
 
 .text-lg { font-size: 1.125rem; line-height: 1.75rem; } /* 18px */
 .text-2xl { font-size: 1.5rem; line-height: 2rem; }     /* 24px */
-.text-4xl { font-size: 1.875rem; line-height: 2.25rem; } /* 30px (Era 2.25rem) */
-.text-5xl { font-size: 2.25rem; line-height: 2.5rem; }   /* 36px (Era 3rem) */
-
-/* ===== FIN DE LA CORRECCIÓN ===== */
-
+.text-4xl { font-size: 1.875rem; line-height: 2.25rem; } /* 30px */
+.text-5xl { font-size: 2.25rem; line-height: 2.5rem; }   /* 36px */
 
 /* Espaciado (Padding) (Sin cambios) */
 .p-6 { padding: 1.5rem; } 
@@ -159,12 +167,18 @@ h1, h2, h3, h4, h5, h6 {
 .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
 .gap-6 { gap: 1.5rem; }
 
-/* ===== INICIO DE LA CORRECCIÓN RESPONSIVE ===== */
+/* ================================================= */
+/* ===== INICIO DE LA REPARACIÓN RESPONSIVE ===== */
+/* ================================================= */
 
-/* Responsivo (Media Queries) */
 @media (min-width: 768px) {
   
-  /* Aquí definimos los tamaños GRANDES para desktop */
+  /* Tamaños de fuente GRANDES (Desktop) para etiquetas H */
+  h1 { font-size: 3rem; }    /* 48px */
+  h2 { font-size: 2.25rem; } /* 36px */
+  h3 { font-size: 1.875rem; } /* 30px */
+  
+  /* Tamaños de fuente GRANDES (Desktop) para clases de utilidad */
   .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; } /* 24px */
   .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; } /* 36px */
   .md\:text-5xl { font-size: 3rem; line-height: 1; }      /* 48px */
@@ -173,5 +187,6 @@ h1, h2, h3, h4, h5, h6 {
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-
-/* ===== FIN DE LA CORRECCIÓN ===== */
+/* ================================================= */
+/* ===== FIN DE LA REPARACIÓN RESPONSIVE ===== */
+/* ================================================= */

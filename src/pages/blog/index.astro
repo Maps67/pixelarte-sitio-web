@@ -15,11 +15,10 @@ const allPosts = await getCollection('blog', ({ data }) => {
     <div class="container max-w-3xl mx-auto px-4">
       
       <header class="text-center mb-10">
-        {/* ===== INICIO DEL CAMBIO: Título Responsivo ===== */}
-        <h1 class="blog-title font-playfair font-bold text-oscuro mb-4">
+        {/* Este H1 ahora usará los estilos 'h1' de global.css */}
+        <h1 class="font-playfair font-bold text-oscuro mb-4">
           Blog del Insider
         </h1>
-        {/* ===== FIN DEL CAMBIO ===== */}
         <p class="text-lg text-secundario">
           Perspectivas y estrategias probadas del sector médico.
         </p>
@@ -44,11 +43,10 @@ const allPosts = await getCollection('blog', ({ data }) => {
               </div>
             )}
             <div class="card-content">
-              {/* ===== INICIO DEL CAMBIO: Título Responsivo ===== */}
-              <h2 class="card-title font-playfair font-bold text-claro group-hover:text-acento mb-2 transition-colors duration-200">
+              {/* Este H2 ahora usará los estilos 'h2' de global.css */}
+              <h2 class="font-playfair font-bold text-claro group-hover:text-acento mb-2 transition-colors duration-200">
                 {post.data.title}
               </h2>
-              {/* ===== FIN DEL CAMBIO ===== */}
               <p class="text-secundario-claro mb-3">
                 {post.data.description}
               </p>
@@ -65,31 +63,8 @@ const allPosts = await getCollection('blog', ({ data }) => {
   </section>
 </Layout>
 
-{/* ===== INICIO DEL CAMBIO: Estilos Mobile-First ===== */}
+{/* ===== INICIO DEL CAMBIO: Estilos locales simplificados ===== */}
 <style>
-  /* Título principal H1 */
-  .blog-title {
-    font-size: 2.25rem; /* 36px - Tamaño base para móvil */
-    line-height: 1.2;
-  }
-  
-  /* Títulos H2 de las tarjetas */
-  .card-title {
-    font-size: 1.5rem; /* 24px - Tamaño base para móvil */
-    line-height: 1.3;
-  }
-
-  /* Media Query para Desktop */
-  @media (min-width: 768px) {
-    .blog-title {
-      font-size: 3rem; /* 48px - Tamaño desktop */
-    }
-    .card-title {
-      font-size: 1.75rem; /* 28px - Tamaño desktop */
-    }
-  }
-
-  /* ... (Resto de tus estilos para .blog-list-container, .blog-card, etc.) ... */
   .blog-list-container {
     display: grid;
     gap: 2rem;
@@ -128,6 +103,10 @@ const allPosts = await getCollection('blog', ({ data }) => {
   }
   .card-content {
     padding: 1.5rem;
+  }
+  /* Ajuste para que los h2 de las tarjetas usen el color claro */
+  .card-content h2 {
+    color: var(--color-texto-claro);
   }
   .group:hover .group-hover\:text-acento {
     color: var(--color-acento);

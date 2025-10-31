@@ -5,29 +5,20 @@ import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
 
 export const prerender = true; 
 
-// 1. getStaticPaths (Sin cambios)
+// ... (Resto del frontmatter sin cambios) ...
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => ({
     params: { slug: post.slug },
   }));
 }
-
-// 2. Get slug y Fetch
 const { slug } = Astro.params;
 const post = slug ? await getEntryBySlug('blog', slug) : undefined;
-
 if (!post) {
   return Astro.redirect('/404/');
 }
-
-// 3. Render
 const { Content } = await post.render();
-
-// 4. Extract data
 const { title, description, pubDate, author, image } = post.data;
-
-// 5. Definir la URL de la OG Image
 const ogImageUrl = image?.url; 
 const ogImageAlt = image?.alt;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
@@ -44,8 +35,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
     <div class="container max-w-3xl mx-auto px-4">
       
       <header class="mb-10 text-center border-b border-borde-claro pb-6">
-        {/* Título principal del post */}
-        <h1 class="blog-title font-playfair font-bold text-oscuro mb-4">
+        {/* Este H1 usará los estilos 'h1' de global.css */}
+        <h1 class="font-playfair font-bold text-oscuro mb-4">
           {title}
         </h1>
         <p class="text-secundario">
@@ -64,8 +55,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
           decoding="async"
         />
       )}
-
-      {/* Contenido del post */}
+      
       <div class="prose max-w-none">
         <Content /> 
       </div>
@@ -78,24 +68,18 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
   </article>
 </Layout>
 
-{/* ===== INICIO DEL CAMBIO: Estilos Mobile-First CORREGIDOS ===== */}
+{/* ===== INICIO DEL CAMBIO: Estilos locales simplificados ===== */}
 <style is:global>
-  /* Título principal H1 */
-  .blog-title {
-    font-size: 2.25rem; /* 36px - Tamaño base para móvil (CORREGIDO) */
-    line-height: 1.2;
-    word-wrap: break-word; /* Asegura que el texto se rompa si es necesario */
-  }
-  
   .prose {
     font-size: 1.125rem;
     line-height: 1.8;
     color: var(--color-texto-secundario);
   }
   
-  /* Subtítulos H2 */
+  /* Los tamaños de H2 y H3 ahora son manejados por global.css */
+  /* Solo definimos estilos específicos del .prose */
+  
   .prose h2 {
-    font-size: 1.5rem; /* 24px - Tamaño base para móvil */
     color: var(--color-texto-oscuro);
     margin-top: 2.5em;
     margin-bottom: 1em;
@@ -104,26 +88,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
     border-bottom: 1px solid var(--color-borde-claro);
   }
   
-  /* Subtítulos H3 */
   .prose h3 {
-    font-size: 1.25rem; /* 20px - Tamaño base para móvil */
     color: var(--color-texto-oscuro);
     margin-top: 2em;
     margin-bottom: 1em;
      font-family: 'Playfair Display', serif;
-  }
-
-  /* Estilos Desktop: Hacemos los títulos más grandes solo en pantallas > 768px */
-  @media (min-width: 768px) {
-    .blog-title {
-      font-size: 3rem; /* 48px - Tamaño desktop original */
-    }
-    .prose h2 {
-      font-size: 1.875rem; /* 30px - Tamaño desktop */
-    }
-    .prose h3 {
-      font-size: 1.5rem; /* 24px - Tamaño desktop */
-    }
   }
   
   /* ... (Resto de estilos .prose sin cambios) ... */
