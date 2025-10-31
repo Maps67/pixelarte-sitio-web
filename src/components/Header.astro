@@ -1,5 +1,5 @@
 ---
-// src/components/Header.astro (CORREGIDO)
+// src/components/Header.astro (CORREGIDO Y REFORZADO)
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
@@ -18,8 +18,8 @@ const pathname = Astro.url.pathname;
                     <li><a href="/" class:list={{ "is-active": pathname === "/" }}>Inicio</a></li>
                     <li><a href="/servicios/" class:list={{ "is-active": pathname === "/servicios/" }}>Servicios</a></li>
                     <li><a href="/portafolio/" class:list={{ "is-active": pathname.startsWith("/portafolio") }}>Casos de Éxito</a></li>
-                                        <li><a href="/blog/" class:list={{ "is-active": pathname.startsWith("/blog") }}>Blog</a></li>
-                                        <li><a href="/testimonios/" class:list={{ "is-active": pathname === "/testimonios/" }}>Testimonios</a></li>
+                    <li><a href="/blog/" class:list={{ "is-active": pathname.startsWith("/blog") }}>Blog</a></li>
+                    <li><a href="/testimonios/" class:list={{ "is-active": pathname === "/testimonios/" }}>Testimonios</a></li>
                     <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Nuestro Sistema</a></li>
                     <li><a href="/aplicar/" class="cta-button">Aplicar para Sesión Estratégica</a></li>
                 </ul>
@@ -27,9 +27,14 @@ const pathname = Astro.url.pathname;
         </nav>
     </div>
 </header>
-<script>
+<script is:inline>
+function setupMobileNav() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const navWrapper = document.getElementById('primary-navigation');
+
+    // Si no encontramos los elementos (ej. en otra página), no hacer nada
+    if (!mobileNavToggle || !navWrapper) return;
+
     mobileNavToggle.addEventListener('click', () => {
         const isVisible = navWrapper.getAttribute('data-visible') === 'true';
         if (isVisible) {
@@ -40,7 +45,13 @@ const pathname = Astro.url.pathname;
             navWrapper.setAttribute('data-visible', 'true');
         }
     });
+}
+// Ejecutar la función en la carga inicial
+setupMobileNav();
+// Ejecutar la función en cada cambio de página (navegación de Astro)
+document.addEventListener('astro:page-load', setupMobileNav);
 </script>
+
 <style>
     .header { background-color: #ffffff; border-bottom: 1px solid var(--color-borde-claro); padding: 0.5rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
@@ -55,10 +66,32 @@ const pathname = Astro.url.pathname;
     .mobile-nav-toggle { display: none; background: transparent; border: 0; cursor: pointer; padding: 0.5rem; z-index: 1001; }
     .mobile-nav-toggle .icon-close { display: none; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    
     @media (max-width: 1024px) {
-        .nav-wrapper { position: fixed; z-index: 999; inset: 0 0 0 30%; background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px); display: flex; flex-direction: column; justify-content: center; align-items: center; transform: translateX(100%); transition: transform 350ms ease-out; }
-        .nav-wrapper[data-visible="true"] { transform: translateX(0%); }
-        .nav-links { flex-direction: column; gap: 2.5rem; }
+        /*           CSS CORREGIDO: 
+          Usamos el ID '#primary-navigation' en lugar de la clase '.nav-wrapper'
+          para asegurar que estos estilos se apliquen (mayor especificidad).
+        */
+        #primary-navigation { 
+            position: fixed; 
+            z-index: 999; 
+            inset: 0 0 0 30%; /* top:0, bottom:0, right:0, left:30% */
+            background-color: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(8px); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            transform: translateX(100%); 
+            transition: transform 350ms ease-out; 
+        }
+        #primary-navigation[data-visible="true"] { 
+            transform: translateX(0%); 
+        }
+        .nav-links { 
+            flex-direction: column; 
+            gap: 2.5rem; 
+        }
         .mobile-nav-toggle { display: block; }
         .mobile-nav-toggle[aria-expanded="true"] .icon-hamburger { display: none; }
         .mobile-nav-toggle[aria-expanded="true"] .icon-close { display: block; }
