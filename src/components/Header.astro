@@ -1,5 +1,5 @@
 ---
-// src/components/Header.astro (SCRIPT SIMPLIFICADO)
+// src/components/Header.astro (VERSIÓN 100% LIMPIA)
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
@@ -9,13 +9,13 @@ const pathname = Astro.url.pathname;
                 <img src="/logo-transparente.png" alt="Pixelarte Studio Logo" class="logo-img" />
             </a>
 
-                        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
                 <span class="sr-only">Menú</span>
                 <svg class="icon-hamburger" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 <svg class="icon-close" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </button>
 
-                        <div class="nav-wrapper" id="primary-navigation">
+            <div class="nav-wrapper" id="primary-navigation">
                 <ul class="nav-links">
                     <li><a href="/" class:list={{ "is-active": pathname === "/" }}>Inicio</a></li>
                     <li><a href="/servicios/" class:list={{ "is-active": pathname === "/servicios/" }}>Servicios</a></li>
@@ -24,7 +24,7 @@ const pathname = Astro.url.pathname;
                     <li><a href="/testimonios/" class:list={{ "is-active": pathname === "/testimonios/" }}>Testimonios</a></li>
                     <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Nuestro Sistema</a></li>
                     <li><a href="/aplicar/" class="cta-button">Aplicar para Sesión Estratégica</a></li>
-            _   </ul>
+                </ul>
             </div>
         </nav>
     </div>
@@ -44,7 +44,7 @@ function setupMobileNav() {
         const isVisible = navWrapper.getAttribute('data-visible') === 'true';
         if (isVisible) {
             mobileNavToggle.setAttribute('aria-expanded', 'false');
-          t navWrapper.setAttribute('data-visible', 'false');
+            navWrapper.setAttribute('data-visible', 'false');
         } else {
             mobileNavToggle.setAttribute('aria-expanded', 'true');
             navWrapper.setAttribute('data-visible', 'true');
