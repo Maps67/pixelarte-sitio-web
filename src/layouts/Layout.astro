@@ -3,9 +3,10 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-// ===== INICIO DE LA REPARACIÓN: Importar el CSS global =====
+// ===== INICIO DE LA REPARACIÓN DEFINITIVA =====
+// RESTAURAMOS EL IMPORT DE CSS GLOBAL
 import '../styles/global.css';
-// ===== FIN DE LA REPARACIÓN =====
+// ===== FIN DE LA REPARACIÓN DEFINITIVA =====
 
 interface Props {
 	title: string;
@@ -45,8 +46,8 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    {/* --- Estilos Globales --- */}
-    {/* (Astro los inyectará aquí gracias al 'import' de arriba) */}
+    {/* La etiqueta <link global.css> se elimina. 
+        Astro la inyectará aquí gracias al 'import' de arriba. */}
 
     {/* --- Etiquetas SEO y Open Graph (sin cambios) --- */}
     <link rel="canonical" href={currentUrl} />
