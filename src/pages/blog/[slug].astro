@@ -5,7 +5,7 @@ import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
 
 export const prerender = true; 
 
-// 1. getStaticPaths
+// 1. getStaticPaths (Sin cambios)
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => ({
@@ -28,7 +28,7 @@ const { Content } = await post.render();
 const { title, description, pubDate, author, image } = post.data;
 
 // 5. Definir la URL de la OG Image
-const ogImageUrl = image?.url; // La URL estática del frontmatter
+const ogImageUrl = image?.url; 
 const ogImageAlt = image?.alt;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 ---
@@ -44,9 +44,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
     <div class="container max-w-3xl mx-auto px-4">
       
       <header class="mb-10 text-center border-b border-borde-claro pb-6">
-        <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-4">
+        {/* ===== INICIO DEL CAMBIO: Clase de título actualizada ===== */}
+        <h1 class="blog-title font-playfair font-bold text-oscuro mb-4">
           {title}
         </h1>
+        {/* ===== FIN DEL CAMBIO ===== */}
         <p class="text-secundario">
           Por {author} | Publicado el {new Date(pubDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
         </p>
@@ -76,10 +78,54 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
   </article>
 </Layout>
 
+{/* ===== INICIO DEL CAMBIO: Estilos Mobile-First ===== */}
 <style is:global>
-  .prose { font-size: 1.125rem; line-height: 1.8; color: var(--color-texto-secundario); }
-  .prose h2 { font-size: 1.875rem; color: var(--color-texto-oscuro); margin-top: 2.5em; margin-bottom: 1em; font-family: 'Playfair Display', serif; padding-bottom: 0.3em; border-bottom: 1px solid var(--color-borde-claro); }
-  .prose h3 { font-size: 1.5rem; color: var(--color-texto-oscuro); margin-top: 2em; margin-bottom: 1em; font-family: 'Playfair Display', serif; }
+  /* Estilo 'Mobile-First' para el título principal */
+  .blog-title {
+    font-size: 2.25rem; /* 36px - Tamaño base para móvil */
+    line-height: 1.2;
+  }
+  
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-texto-secundario);
+  }
+  
+  /* Estilo 'Mobile-First' para H2 */
+  .prose h2 {
+    font-size: 1.5rem; /* 24px - Tamaño base para móvil */
+    color: var(--color-texto-oscuro);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    font-family: 'Playfair Display', serif;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--color-borde-claro);
+  }
+  
+  /* Estilo 'Mobile-First' para H3 */
+  .prose h3 {
+    font-size: 1.25rem; /* 20px - Tamaño base para móvil */
+    color: var(--color-texto-oscuro);
+    margin-top: 2em;
+    margin-bottom: 1em;
+     font-family: 'Playfair Display', serif;
+  }
+
+  /* Estilos Desktop: Hacemos los títulos más grandes solo en pantallas > 768px */
+  @media (min-width: 768px) {
+    .blog-title {
+      font-size: 3rem; /* 48px - Tamaño 'md:text-5xl' original */
+    }
+    .prose h2 {
+      font-size: 1.875rem; /* 30px - Tamaño desktop */
+    }
+    .prose h3 {
+      font-size: 1.5rem; /* 24px - Tamaño desktop */
+    }
+  }
+  
+  /* ... (Resto de estilos .prose sin cambios) ... */
   .prose p { margin-bottom: 1.25em; }
   .prose a { color: var(--color-acento); text-decoration: underline; transition: color 0.2s ease; }
   .prose a:hover { color: #1D4ED8; }
@@ -93,3 +139,4 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
   .prose pre { background-color: var(--color-oscuro-contraste); color: var(--color-texto-claro); padding: 1em; border-radius: 0.5rem; overflow-x: auto; font-family: monospace; }
   .prose pre code { background-color: transparent; color: inherit; padding: 0; font-size: inherit; }
 </style>
+{/* ===== FIN DEL CAMBIO ===== */}
