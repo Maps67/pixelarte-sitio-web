@@ -1,14 +1,13 @@
 // astro.config.mjs
 import { defineConfig } from 'astro/config';
-import satori from 'astro-satori'; // 1. IMPORTAR LA INTEGRACIÓN
+
+// NO importamos 'satori'
+// NO importamos 'netlify' (usaremos el modo estático)
 
 export default defineConfig({
   site: 'https://pixelartestudio.art',
-  // output: 'static', // 'static' es el modo por defecto. Lo dejamos así.
+  // output: 'static', // 'static' es el modo por defecto, no es necesario declararlo.
   trailingSlash: 'always',
   
-  // 2. ACTIVAR LA INTEGRACIÓN (Esto es lo que falta)
-  integrations: [
-    satori() 
-  ]
+  // Eliminamos el array de 'integrations' que contenía satori()
 });

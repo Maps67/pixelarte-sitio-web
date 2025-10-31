@@ -3,9 +3,10 @@
 import Layout from '../../layouts/Layout.astro';
 import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
 
-export const prerender = true; // <-- AÑADIDO
+// Prerender es bueno para el modo estático
+export const prerender = true; 
 
-// 1. getStaticPaths: Genera las rutas en el build
+// 1. getStaticPaths (Sin cambios)
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => ({
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
 // 2. Get slug
 const { slug } = Astro.params;
 
-// 3. Fetch (Esto ahora se ejecuta en el build)
+// 3. Fetch
 const post = slug ? await getEntryBySlug('blog', slug) : undefined;
 
 if (!post) {
@@ -29,16 +30,19 @@ const { Content } = await post.render();
 // 5. Extract data
 const { title, description, pubDate, author, image } = post.data;
 
-// 6. Definir la URL de la OG Image
-const ogImageUrl = `/api/og/${post.slug}.png`;
+// ===== INICIO DE LA REPARACIÓN DEFINITIVA =====
+// Obtenemos la URL y el ALT de la imagen de portada ESTATICA
+const ogImageUrl = image?.url; // Ej: "/images/blog/mi-cover.webp"
+const ogImageAlt = image?.alt; // Ej: "Una descripción"
+// ===== FIN DE LA REPARACIÓN DEFINITIVA =====
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <Layout 
   title={`${title} | Blog Pixelarte Studio`} 
   description={description}
-  ogImage={ogImageUrl} 
-  ogImageAlt={title}
+  ogImage={ogImageUrl}  {/* <-- Pasamos la imagen estática al layout */}
+  ogImageAlt={ogImageAlt} {/* <-- Pasamos el alt estático al layout */}
   canonicalUrl={canonicalUrl}
 >
   <article class="bg-claro py-16 md:py-24">
@@ -78,6 +82,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 </Layout>
 
 <style is:global>
+  /* ... (Tus estilos .prose no cambian) ... */
   .prose { font-size: 1.125rem; line-height: 1.8; color: var(--color-texto-secundario); }
   .prose h2 { font-size: 1.875rem; color: var(--color-texto-oscuro); margin-top: 2.5em; margin-bottom: 1em; font-family: 'Playfair Display', serif; padding-bottom: 0.3em; border-bottom: 1px solid var(--color-borde-claro); }
   .prose h3 { font-size: 1.5rem; color: var(--color-texto-oscuro); margin-top: 2em; margin-bottom: 1em; font-family: 'Playfair Display', serif; }
