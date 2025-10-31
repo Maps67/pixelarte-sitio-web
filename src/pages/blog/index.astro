@@ -1,0 +1,78 @@
+---
+// src/pages/blog/index.astro (RECONSTRUIDO)
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 1. Obtener todos los posts de la colección 'blog'
+const allPosts = await getCollection('blog');
+
+// 2. Ordenarlos por fecha (el más nuevo primero)
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// 3. Definir metadatos para esta página específica
+const pageTitle = "Blog Estratégico";
+const pageDescription = "Análisis 'Insider' sobre estrategia digital, marketing médico y dominancia de mercado. Artículos por Marco A. Portillo.";
+---
+<Layout title={pageTitle} description={pageDescription}>
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto max-w-3xl">
+      
+      <header class="text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-playfair mb-4">Blog Estratégico</h1>
+        <p class="text-lg text-secundario max-w-2xl mx-auto">
+          {pageDescription}
+        </p>
+      </header>
+
+      <div class="space-y-10">
+        {posts.map(post => (
+          <article>
+            <a href={`/blog/${post.slug}/`} class="block group">
+              
+              <img 
+                src={post.data.image.url} 
+                alt={post.data.image.alt} 
+                width="1200" 
+                height="630" 
+                class="rounded-lg w-full aspect-video object-cover mb-4" 
+              />
+              
+              <h2 class="text-2xl md:text-4xl font-playfair mb-2 group-hover:text-acento">
+                {post.data.title}
+              </h2>
+
+              <p class="text-secundario mb-4">
+                {post.data.description}
+              </p>
+
+              <span class="font-bold text-acento">
+                Leer artículo completo &rarr;
+              </span>
+            </a>
+          </article>
+        ))}
+
+        {posts.length === 0 && (
+          <p class="text-center text-secundario">
+            Aún no hay artículos publicados. (Verifica que los archivos .md estén en 'src/content/blog/').
+          </p>
+        )}
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .space-y-10 > * + * {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-borde-claro);
+  }
+  a.block.group {
+    text-decoration: none;
+  }
+  a.block.group:hover h2 {
+    text-decoration: none;
+  }
+</style>

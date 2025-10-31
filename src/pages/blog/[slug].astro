@@ -1,0 +1,119 @@
+---
+// src/pages/blog/[slug].astro (RECONSTRUIDO)
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// 1. Esta función le dice a Astro qué páginas debe construir
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  
+  return allPosts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+// 2. Obtener el post específico para esta página
+const { post } = Astro.props;
+const { Content } = await post.render(); // Obtiene el HTML del .md
+---
+<Layout 
+  title={post.data.title} 
+  description={post.data.description}
+  ogImage={post.data.image.url}
+  ogImageAlt={post.data.image.alt}
+>
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto max-w-3xl">
+
+      <header class="text-left mb-10">
+        <h1 class="text-4xl md:text-5xl font-playfair mb-4">
+          {post.data.title}
+        </h1>
+        <p class="text-lg text-secundario">
+          Publicado por {post.data.author} el 
+          {new Date(post.data.pubDate).toLocaleDateString('es-MX', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </p>
+      </header>
+
+      <img 
+        src={post.data.image.url} 
+        alt={post.data.image.alt} 
+        width="1200"
+        height="630"
+        class="rounded-lg w-full aspect-video object-cover mb-10"
+      />
+
+      <div class="prose max-w-none">
+        <Content />
+      </div>
+
+      <footer class="mt-10 pt-10 border-t border-borde-claro text-center">
+        <h2 class="text-2xl md:text-4xl font-playfair mb-4">¿Tu presencia digital está construyendo confianza?</h2>
+        <p class="text-lg text-secundario mb-6">Implementa un sistema que te posicione como la autoridad indiscutible.</p>
+        <a href="/aplicar/" class="btn-primary">
+          Aplica para tu Sesión Estratégica
+        </a>
+      </footer>
+
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .prose {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75;
+    color: var(--color-texto-oscuro);
+  }
+  .prose p {
+    margin-bottom: 1.5rem;
+  }
+  .prose h2 {
+    font-size: 1.875rem; /* 30px */
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .prose h3 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.4;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.75rem;
+  }
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+  .prose blockquote {
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--color-acento);
+    font-style: italic;
+    color: var(--color-texto-secundario);
+    margin: 1.5rem 0;
+  }
+  .prose a {
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  .prose a:hover {
+    color: #1D4ED8;
+  }
+  .prose strong {
+    font-weight: 700;
+  }
+  .prose img {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: auto;
+  }
+</style>
