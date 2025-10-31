@@ -18,7 +18,6 @@ const {
   canonicalUrl
 } = Astro.props;
 
-// Asumimos que 'site' está en astro.config.mjs
 const siteUrl = Astro.site; 
 
 const pageTitle = `${title} | Pixelarte Studio`;
@@ -41,7 +40,6 @@ const socialImageAlt = 'Pixelarte Studio - Estrategia Digital Insider';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
     {/* --- Etiquetas SEO (Versión Estable Revertida) --- */}
     <link rel="canonical" href={currentUrl} />
     <meta property="og:title" content={pageTitle} />

@@ -38,8 +38,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     font-family: 'Playfair Display', serif; /* Fallback a Playfair */
     margin: 0;
-    word-wrap: break-word; /* Añadido para móvil */
     line-height: 1.2;
+    word-wrap: break-word; /* Importante para móvil */
 }
 
 .container {
