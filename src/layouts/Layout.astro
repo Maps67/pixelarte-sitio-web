@@ -1,10 +1,10 @@
 ---
-// src/layouts/Layout.astro (VERSIÓN DE PRUEBA DE DIAGNÓSTICO)
+// src/layouts/Layout.astro (VERSIÓN FINAL RESTAURADA)
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-// 1. HEMOS COMENTADO LA IMPORTACIÓN ROTA
-// import '../styles/global.css';
+// 1. HEMOS VUELTO A ACTIVAR TU CSS GLOBAL
+import '../styles/global.css';
 
 interface Props {
     title: string;
@@ -42,16 +42,6 @@ const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-        <style>
-        body {
-            background-color: red !important;
-            /* Si vemos un fondo rojo, sabemos que este <style> cargó */
-        }
-        .header {
-            border: 5px solid blue; 
-            /* Si vemos un borde azul, sabemos que el componente <Header> cargó */
-        }
-    </style>
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
