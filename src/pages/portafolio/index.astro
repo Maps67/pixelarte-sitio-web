@@ -1,11 +1,10 @@
 ---
 // src/pages/portafolio/index.astro
-// ===== INICIO DE LA CORRECCIÓN =====
-import Layout from '../../layouts/Layout.astro'; // <-- RUTA CORREGIDA (../../)
-// ===== FIN DE LA CORRECCIÓN =====
+// ===== INICIO DE LA REPARACIÓN (Import Corregido) =====
+import Layout from '../../layouts/Layout.astro';
+// ===== FIN DE LA REPARACIÓN =====
 import ProjectCard from '../../components/ProjectCard.astro';
 
-// Datos de proyectos (sin cambios)
 const featuredProjectsV3 = [
     {
         title: 'Sistema Web de Pacientes',
@@ -33,18 +32,20 @@ const featuredProjectsV3 = [
         mediaType: 'image',
         problem: 'Un equipo de ventas requería una herramienta para compartir catálogos y datos de contacto de forma rápida y medible durante eventos y visitas a clientes.',
         solution: 'Se diseñó una tarjeta digital que integra un mini-catálogo y formulario de contacto. La implementación de analíticas permitió al equipo de ventas identificar los productos de mayor interés y optimizar su estrategia de seguimiento.',
-        externalUrl: 'https://pixelartestudio.art/tarjeta-pixel/', // Añadida barra al final
+        externalUrl: 'https://pixelartestudio.art/tarjeta-pixel/',
         ctaText: 'Ver Proyecto en Vivo'
     }
 ];
 ---
 
-<Layout
+<Layout 
   title="Casos de Éxito | Pixelarte Studio"
   description="No solo creamos diseños; construimos soluciones. Vea cómo hemos resuelto problemas reales para prácticas médicas."
 >
+  
   <section class="bg-oscuro py-16 md:py-24">
     <div class="container px-4">
+      
       <div class="text-center max-w-3xl mx-auto mb-10">
         <h1 class="text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
           Casos de Éxito
@@ -53,17 +54,16 @@ const featuredProjectsV3 = [
           No solo creamos diseños; construimos soluciones. Aquí puedes ver cómo hemos resuelto problemas reales para nuestros clientes.
         </p>
       </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {featuredProjectsV3.map(project => (
-              // Asegúrate que ProjectCard esté importado correctamente arriba
               <ProjectCard {...project} />
           ))}
       </div>
+
     </div>
   </section>
 </Layout>
-
-{/* No se necesita <style> aquí si usas clases globales */}
 
 
 
