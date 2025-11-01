@@ -1,18 +1,17 @@
 ---
-// src/pages/index.astro (VERSIÓN REPARADA CON CSS VANILLA)
+// src/pages/index.astro (VERSIÓN ESTABLE)
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout 
   title="Pixelarte Studio - Dominancia de Mercado para Prácticas Médicas"
   description="Dejamos de vender marketing. Aplicamos un sistema de 20 años de experiencia 'insider' para convertir su reputación clínica en dominancia de mercado."
 >
-  <!-- 1. Sección Héroe -->
-  <section class="hero-section bg-oscuro">
-    <div class="container hero-content">
-      <h1 class="hero-title text-4xl md:text-5xl">
+  <section class="bg-oscuro py-24">
+    <div class="container max-w-3xl mx-auto px-4 text-center">
+      <h1 class="hero-title text-5xl md:text-5xl font-playfair font-bold text-claro mb-6">
         Para Médicos que ya son los mejores, pero siguen perdiendo pacientes ante competidores inferiores.
       </h1>
-      <p class="hero-description text-lg">
+      <p class="text-lg text-secundario-claro max-w-2xl mx-auto mb-10">
         Dejamos de "vender marketing". Aplicamos un sistema de 20 años de experiencia <em>insider</em> para convertir su reputación clínica en dominancia de mercado.
       </p>
       <a href="/aplicar/" class="btn-primary">
@@ -20,68 +19,62 @@ import Layout from '../layouts/Layout.astro';
       </a>
     </div>
   </section>
-
-  <!-- 2. Sección "De Representante..." (Sobre Mi) -->
-  <section class="about-section bg-claro">
-    <div class="container about-grid">
-      <div class="about-image-wrapper">
+  <section class="bg-claro py-16 md:py-24">
+    <div class="container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="text-center md:text-left">
         <img 
           src="/images/marco.png" 
           alt="Marco A. Portillo, Fundador de Pixelarte Studio" 
-          class="about-image"
+          class="inline-block rounded-full w-48 h-48 md:w-64 md:h-64 object-cover shadow-lg border-4 border-white mx-auto md:mx-0"
           width="256"
           height="256"
         />
       </div>
-      <div class="about-content">
-        <h2 class="about-title text-4xl md:text-5xl">
+      <div class="text-center md:text-left">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-6">
           De Representante Médico a Estratega Digital
         </h2>
-        <p class="about-description text-lg">
+        <p class="text-lg text-secundario mb-6">
           Tras 20 años como representante en el sector médico, observé una y otra vez cómo profesionales de la salud excepcionales perdían pacientes por tener una presencia digital débil o inexistente.
         </p>
-        <p class="about-description text-lg">
+        <p class="text-lg text-secundario">
           Fundé Pixelarte Studio con una misión clara: aplicar mi conocimiento interno del sector para crear soluciones digitales que realmente entienden los desafíos de una práctica médica moderna.
         </p>
       </div>
     </div>
   </section>
-
-  <!-- 3. Sección "Campo de Batalla" (Características) -->
-  <section class="features-section bg-oscuro">
-     <div class="container">
-      <div class="features-header">
-        <h2 class="features-title text-4xl md:text-5xl">
+  <section class="bg-oscuro py-16 md:py-24">
+     <div class="container px-4">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
           El Campo de Batalla Ha Cambiado
         </h2>
-        <p class="features-subtitle text-lg">
+        <p class="text-lg text-secundario-claro">
           Las fuerzas del mercado han creado una ventana de oportunidad única. El marketing digital genérico (SEO, redes sociales) ha dejado de ser efectivo.
         </p>
       </div>
-      <div class="features-grid">
-        <div class="feature-card bg-oscuro-contraste">
-          <h3 class="feature-card-title text-2xl">Cambio Económico</h3>
-          <p class="feature-card-description">La creciente competencia de grandes grupos médicos y los costos de adquisición de pacientes están exprimiendo los márgenes de las prácticas privadas como nunca antes.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+         <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
+          <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Económico</h3>
+          <p class="text-secundario-claro">La creciente competencia de grandes grupos médicos y los costos de adquisición de pacientes están exprimiendo los márgenes de las prácticas privadas como nunca antes.</p>
         </div>
-        <div class="feature-card bg-oscuro-contraste">
-          <h3 class="feature-card-title text-2xl">Cambio Social</h3>
-          <p class="feature-card-description">Los pacientes de hoy ya no confían ciegamente en las referencias. 'Compran' a sus médicos en línea, basando su decisión en señales digitales de autoridad y confianza.</p>
+         <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
+          <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Social</h3>
+          <p class="text-secundario-claro">Los pacientes de hoy ya no confían ciegamente en las referencias. 'Compran' a sus médicos en línea, basando su decisión en señales digitales de autoridad y confianza.</p>
         </div>
-        <div class="feature-card bg-oscuro-contraste">
-          <h3 class="feature-card-title text-2xl">Cambio Tecnológico</h3>
-          <p class="feature-card-description">El campo de batalla se ha trasladado a los sistemas integrados de flujo de pacientes. Las prácticas que no se adapten a la optimización de este flujo se volverán invisibles.</p>
+         <div class="bg-oscuro-contraste p-6 rounded-lg text-left">
+          <h3 class="text-2xl font-playfair font-bold text-claro mb-4">Cambio Tecnológico</h3>
+          <p class="text-secundario-claro">El campo de batalla se ha trasladado a los sistemas integrados de flujo de pacientes. Las prácticas que no se adapten a la optimización de este flujo se volverán invisibles.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- 4. Sección CTA "Próximo paso" -->
-  <section class="cta-section bg-claro">
-     <div class="container cta-content">
-      <h2 class="cta-title text-4xl md:text-5xl">
+  <section class="bg-claro py-16 md:py-24">
+     <div class="container max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-6">
         Su próximo paso no es "más marketing".
       </h2>
-      <p class="cta-description text-lg">
+      <p class="text-lg text-secundario max-w-2xl mx-auto mb-10">
         Es implementar un sistema. Aplicamos un número limitado de sesiones estratégicas por mes para prácticas que se toman en serio su dominancia de mercado.
       </p>
       <a href="/aplicar/" class="btn-primary">
@@ -89,181 +82,30 @@ import Layout from '../layouts/Layout.astro';
       </a>
     </div>
   </section>
-  
-  <!-- Enlaces ocultos para SEO/crawlers -->
   <div style="display: none;" aria-hidden="true">
     <a href="/aplicar/">Enlace para aplicar</a>
     <a href="/gracias/">Enlace de gracias</a>
   </div>
 </Layout>
-
-<!-- 
-  ESTILOS PARA LA PÁGINA DE INICIO (CSS VANILLA)
-  Estas clases reemplazan a Tailwind y usan tus variables de global.css
--->
 <style>
-  /* --- 1. Sección Héroe --- */
-  .hero-section {
-    padding-top: 6rem; /* 96px */
-    padding-bottom: 6rem; /* 96px */
-    color: var(--color-texto-claro); /* ¡LA CORRECCIÓN CLAVE! */
-  }
-  .hero-content {
-    max-width: 56rem; /* 896px */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    margin-bottom: 1.5rem; /* 24px */
-    line-height: 1.3;
-  }
-  .hero-description {
-    color: var(--color-texto-secundario-claro); /* ¡LA CORRECCIÓN CLAVE! */
-    max-width: 42rem; /* 672px */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2.5rem; /* 40px */
-  }
-
-  /* --- 2. Sección Sobre Mi --- */
-  .about-section {
-    padding-top: 4rem; /* 64px */
-    padding-bottom: 4rem; /* 64px */
-  }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Móvil */
-    gap: 3rem; /* 48px */
-    align-items: center;
-  }
-  .about-image-wrapper {
-    text-align: center;
-  }
-  .about-image {
-    display: inline-block;
-    border-radius: 50%; /* rounded-full */
-    width: 12rem; /* 192px */
-    height: 12rem; /* 192px */
-    object-fit: cover;
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-    border: 4px solid #fff;
-  }
-  .about-content {
-    text-align: center;
-  }
-  .about-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--color-texto-oscuro);
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  .about-description {
-    color: var(--color-texto-secundario);
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  /* Quitar margen extra del último párrafo */
-  .about-description:last-of-type {
-    margin-bottom: 0;
-  }
-
-  /* --- 3. Sección "Campo de Batalla" --- */
-  .features-section {
-    padding-top: 4rem; /* 64px */
-    padding-bottom: 6rem; /* 96px */
-    color: var(--color-texto-claro); /* ¡LA CORRECCIÓN CLAVE! */
-  }
-  .features-header {
-    text-align: center;
-    max-width: 56rem; /* 896px */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2.5rem; /* 40px */
-  }
-  .features-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  .features-subtitle {
-    color: var(--color-texto-secundario-claro); /* ¡LA CORRECCIÓN CLAVE! */
-  }
-  .features-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Móvil */
-    gap: 1.5rem; /* 24px */
-  }
-  .feature-card {
-    background-color: var(--color-oscuro-contraste);
-    padding: 1.5rem; /* 24px */
-    border-radius: 0.5rem; /* 8px */
-    text-align: left;
-  }
-  .feature-card-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--color-texto-claro);
-    margin-bottom: 1rem; /* 16px */
-  }
-  .feature-card-description {
-    color: var(--color-texto-secundario-claro); /* ¡LA CORRECCIÓN CLAVE! */
-  }
-
-  /* --- 4. Sección CTA "Próximo paso" --- */
-  .cta-section {
-    padding-top: 4rem; /* 64px */
-    padding-bottom: 6rem; /* 96px */
-  }
-  .cta-content {
-    max-width: 56rem; /* 896px */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .cta-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--color-texto-oscuro);
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  .cta-description {
-    color: var(--color-texto-secundario);
-    max-width: 42rem; /* 672px */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2.5rem; /* 40px */
-  }
-  
-  /* --- Media Queries (Responsivo) --- */
+  .hero-title { line-height: 1.3; }
+  .rounded-full { border-radius: 50%; }
+  .w-48 { width: 12rem; }
+  .h-48 { height: 12rem; }
+  .object-cover { object-fit: cover; }
+  .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+  .border-4 { border-width: 4px; }
+  .border-white { border-color: #fff; }
+  .inline-block { display: inline-block; }
+  .mx-auto { margin-left: auto; margin-right: auto; }
   @media (min-width: 768px) {
-    .hero-section, .features-section, .cta-section {
-      padding-top: 6rem; /* 96px */
-      padding-bottom: 6rem; /* 96px */
-    }
-    .about-section {
-      padding-top: 6rem; /* 96px */
-      padding-bottom: 6rem; /* 96px */
-    }
-    .about-grid {
-      grid-template-columns: repeat(2, 1fr); /* 2 columnas en desktop */
-    }
-    .about-image-wrapper {
-      text-align: right;
-    }
-    .about-image {
-      width: 16rem; /* 256px */
-      height: 16rem; /* 256px */
-    }
-    .about-content {
-      text-align: left;
-    }
-    .features-grid {
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
-    }
+    .md\:w-64 { width: 16rem; }
+    .md\:h-64 { height: 16rem; }
+    .md\:mx-0 { margin-left: 0; margin-right: 0; }
   }
 </style>
+
+
 
 
 

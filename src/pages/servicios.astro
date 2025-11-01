@@ -1,5 +1,5 @@
 ---
-// src/pages/servicios.astro (VERSIÓN REPARADA CON CSS VANILLA)
+// src/pages/servicios.astro
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout 
@@ -7,13 +7,14 @@ import Layout from '../layouts/Layout.astro';
   description="No vendemos servicios. Aplicamos un sistema de 3 fases para convertir la reputación clínica en un flujo de pacientes predecible y de alto valor."
 >
 
-  <!-- 1. Sección Héroe -->
-  <section class="hero-section bg-claro">
-    <div class="container hero-content">
-      <h1 class="hero-title text-4xl md:text-5xl">
+  <section class="bg-claro py-16 md:py-24">
+    <div class="container max-w-3xl mx-auto px-4 text-center">
+      
+      <h1 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-6">
         El Sistema de Dominancia de Mercado Médico™
       </h1>
-      <p class="hero-description text-lg">
+      
+      <p class="text-lg text-secundario max-w-2xl mx-auto mb-10">
         El éxito en el sector médico no proviene de "servicios" sueltos como SEO o un sitio web. Proviene de un sistema integrado.
         <br/><br/>
         Hemos destilado 20 años de experiencia "insider" en un proceso de 3 fases diseñado para convertir su reputación clínica en un flujo de pacientes predecible.
@@ -21,62 +22,58 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- 2. Sección de Fases (Oscura) -->
-  <section class="features-section bg-oscuro">
-    <div class="container">
+  <section class="bg-oscuro py-16 md:py-24">
+    <div class="container px-4">
       
-      <div class="features-header">
-        <h2 class="features-title text-4xl md:text-5xl">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
           Un Proceso de 3 Fases Hacia la Dominancia
         </h2>
-        <p class="features-subtitle text-lg">
+        <p class="text-lg text-secundario-claro">
           Así es como lo logramos.
         </p>
       </div>
 
-      <div class="features-grid">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         
-        <!-- Fase 1 -->
-        <div class="feature-card bg-oscuro-contraste">
-          <div class="feature-card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <div class="bg-oscuro-contraste p-6 rounded-lg text-left flex flex-col">
+          <div class="icon-wrapper text-acento">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5z" />
             </svg>
           </div>
-          <h3 class="feature-card-title text-2xl">
+          <h3 class="text-2xl font-playfair font-bold text-claro mt-4 mb-4">
             <span class="text-acento">Fase 1:</span> Diagnóstico Insider
           </h3>
-          <p class="feature-card-description">
+          <p class="text-secundario-claro">
             Usamos el "Manual del Insider" para auditar su presencia digital. Analizamos su flujo de pacientes, su marco de autoridad y el de su competencia para encontrar las "fugas de rentabilidad" que otros ignoran.
           </p>
         </div>
         
-        <!-- Fase 2 -->
-        <div class="feature-card bg-oscuro-contraste">
-          <div class="feature-card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <div class="bg-oscuro-contraste p-6 rounded-lg text-left flex flex-col">
+          <div class="icon-wrapper text-acento">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.017h-.008v-.017z" />
             </svg>
           </div>
-          <h3 class="feature-card-title text-2xl">
+          <h3 class="text-2xl font-playfair font-bold text-claro mt-4 mb-4">
             <span class="text-acento">Fase 2:</span> Marco de Autoridad
           </h3>
-          <p class="feature-card-description">
+          <p class="text-secundario-claro">
             Demolemos su "folleto digital" y construimos una máquina de autoridad. Cada activo (web, perfiles, contenidos) se rediseña para establecer su estatus, generar intriga y posicionarlo como el "premio" de su mercado.
           </p>
         </div>
         
-        <!-- Fase 3 -->
-        <div class="feature-card bg-oscuro-contraste">
-          <div class="feature-card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <div class="bg-oscuro-contraste p-6 rounded-lg text-left flex flex-col">
+          <div class="icon-wrapper text-acento">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
               <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V5.75A2.25 2.25 0 0018 3.5H6A2.25 2.25 0 003.75 5.75v12.5A2.25 2.25 0 006 20.25z" />
             </svg>
           </div>
-          <h3 class="feature-card-title text-2xl">
+          <h3 class="text-2xl font-playfair font-bold text-claro mt-4 mb-4">
             <span class="text-acento">Fase 3:</span> Activación y Dominancia
           </h3>
-          <p class="feature-card-description">
+          <p class="text-secundario-claro">
             Activamos el embudo de "prizing" y el motor de contenido de "intriga". Dejamos de perseguir "leads" y comenzamos a atraer y filtrar prospectos de alto valor que deben *calificar* para trabajar con usted.
           </p>
         </div>
@@ -84,30 +81,29 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- 3. Sección "No es para todos" -->
-  <section class="dispo-section bg-claro">
-    <div class="container dispo-content">
+  <section class="bg-claro py-16 md:py-24">
+    <div class="container max-w-3xl mx-auto px-4 text-center">
       
-      <h2 class="dispo-title text-4xl md:text-5xl">
+      <h2 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-6">
         Este sistema no es para todos.
       </h2>
       
-      <p class="dispo-description text-lg">
+      <p class="text-lg text-secundario max-w-2xl mx-auto mb-10">
         No somos una agencia de "tareas". No competimos por precio. Somos un socio estratégico para prácticas que se toman en serio la dominancia de su mercado.
       </p>
 
-      <div class="dispo-list">
-        <h4>No somos el socio adecuado si usted busca:</h4>
-        <ul>
-          <li>
+      <div class="disqualification-list text-left max-w-lg mx-auto">
+        <h4 class="text-lg font-bold text-oscuro mb-4">No somos el socio adecuado si usted busca:</h4>
+        <ul class="list-none p-0 m-0 space-y-3">
+          <li class="flex items-center">
             <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             <span>La página web o el logo "más barato".</span>
           </li>
-          <li>
+          <li class="flex items-center">
             <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             <span>Resultados mágicos sin un sistema.</span>
           </li>
-          <li>
+          <li class="flex items-center">
             <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             <span>Alguien que solo reciba órdenes.</span>
           </li>
@@ -117,208 +113,51 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
   
-  <!-- 4. Sección CTA Final (Oscura) -->
-  <section class="cta-section bg-oscuro">
-    <div class="container cta-content">
-      <h2 class="cta-title text-4xl md:text-5xl">
+  <section class="bg-oscuro py-16 md:py-24">
+    <div class="container max-w-3xl mx-auto px-4 text-center">
+      
+      <h2 class="text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
         ¿Listo para implementar un sistema?
       </h2>
-      <p class="cta-description text-lg">
+      
+      <p class="text-lg text-secundario-claro max-w-2xl mx-auto mb-10">
         Si está listo para dejar de competir por precio y empezar a dominar su mercado local, el primer paso es ver si calificamos mutuamente.
       </p>
+      
       <a href="/aplicar/" class="btn-primary">
         Aplicar para Sesión Estratégica
       </a>
+      
     </div>
   </section>
 </Layout>
 
-<!-- 
-  ESTILOS PARA LA PÁGINA DE SERVICIOS (CSS VANILLA)
-  Estas clases reemplazan a Tailwind y usan tus variables de global.css
--->
 <style>
-  /* --- 1. Sección Héroe --- */
-  .hero-section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-  .hero-content {
-    max-width: 56rem; /* 896px */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--color-texto-oscuro);
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  .hero-description {
-    color: var(--color-texto-secundario);
-    max-width: 42rem; /* 672px */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2.5rem; /* 40px */
-  }
-
-  /* --- 2. Sección de Fases --- */
-  .features-section {
-    padding-top: 4rem;
-    padding-bottom: 6rem;
-    color: var(--color-texto-claro); /* ¡LA CORRECCIÓN CLAVE! */
-  }
-  .features-header {
-    text-align: center;
-    max-width: 56rem; /* 896px */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2.5rem; /* 40px */
-  }
-  .features-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  .features-subtitle {
-    color: var(--color-texto-secundario-claro); /* ¡LA CORRECCIÓN CLAVE! */
-  }
-  .features-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Móvil */
-    gap: 1.5rem; /* 24px */
-    max-width: 80rem; /* 1280px */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .feature-card {
-    background-color: var(--color-oscuro-contraste);
-    padding: 1.5rem; /* 24px */
-    border-radius: 0.5rem; /* 8px */
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-  }
-  .feature-card-icon {
-    color: var(--color-acento);
+  .icon-wrapper {
     display: inline-flex;
     padding: 0.5rem;
     border-radius: 0.375rem;
     background-color: rgba(37, 99, 235, 0.1);
   }
-  .feature-card-icon svg {
-    width: 3rem;
-    height: 3rem;
-  }
-  .feature-card-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--color-texto-claro);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-  .feature-card-title span {
-    color: var(--color-acento);
-  }
-  .feature-card-description {
-    color: var(--color-texto-secundario-claro); /* ¡LA CORRECCIÓN CLAVE! */
-  }
-
-  /* --- 3. Sección "No es para todos" --- */
-  .dispo-section {
-    padding-top: 4rem;
-    padding-bottom: 6rem;
-  }
-  .dispo-content {
-    max-width: 56rem; /* 896px */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .dispo-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--color-texto-oscuro);
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  .dispo-description {
-    color: var(--color-texto-secundario);
-    max-width: 42rem; /* 672px */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2.5rem; /* 40px */
-  }
-  .dispo-list {
-    text-align: left;
-    max-width: 36rem; /* 576px */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .dispo-list h4 {
-    font-size: 1.125rem; /* 18px */
-    font-weight: 700;
-    color: var(--color-texto-oscuro);
-    margin-bottom: 1rem; /* 16px */
-  }
-  .dispo-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .dispo-list li {
-    display: flex;
-    align-items: center;
-    margin-top: 0.75rem; /* 12px */
-  }
-  .dispo-list li:first-child {
-    margin-top: 0;
-  }
-  .dispo-list .icon-x {
+  .w-12 { width: 3rem; }
+  .h-12 { height: 3rem; }
+  .disqualification-list .icon-x {
     width: 1.25rem;
     height: 1.25rem;
     color: #EF4444; /* Rojo */
     margin-right: 0.75rem;
     flex-shrink: 0;
   }
-  .dispo-list span {
+  .disqualification-list span {
     color: var(--color-texto-secundario);
     font-size: 1.125rem;
   }
-
-  /* --- 4. Sección CTA Final --- */
-  .cta-section {
-    padding-top: 4rem;
-    padding-bottom: 6rem;
-    color: var(--color-texto-claro); /* ¡LA CORRECCIÓN CLAVE! */
-  }
-  .cta-content {
-    max-width: 56rem; /* 896px */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .cta-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  .cta-description {
-    color: var(--color-texto-secundario-claro); /* ¡LA CORRECCIÓN CLAVE! */
-    max-width: 42rem; /* 672px */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2.5rem; /* 40px */
-  }
-  
-  /* --- Media Queries (Responsivo) --- */
-  @media (min-width: 768px) {
-    .hero-section, .features-section, .dispo-section, .cta-section {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
-    }
-    .features-grid {
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
-    }
+  .flex { display: flex; }
+  .flex-col { flex-direction: column; }
+  .items-center { align-items: center; }
+  .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.75rem;
   }
 </style>
+
+
