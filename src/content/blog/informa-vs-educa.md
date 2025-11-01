@@ -1,4 +1,15 @@
-# ¿Su sitio web "Informa" o "Educa"? El error estratégico que le está costando pacientes de alto valor.
+---
+# src/content/blog/informa-vs-educa.md
+
+title: "¿Su sitio web 'Informa' o 'Educa'? El error estratégico que le está costando pacientes de alto valor."
+pubDate: 2025-10-31 # <-- ¡Fecha de hoy!
+description: "Descubre la diferencia entre 'informar' (un catálogo de servicios) y 'educar' (crear autoridad y urgencia). Un análisis 'Insider' de 20 años."
+author: "Marco A. Portillo"
+image:
+    url: "/images/blog/su-sitio-web-no-educa-solo-informa.webp" # <-- Esta es la imagen de tu captura (image_b629eb.png)
+    alt: "Un médico informando (gris) vs. un médico educando (brillante)"
+tags: ["Marketing Médico", "Autoridad Digital", "Estrategia de Contenidos", "Marco Alfa"]
+---
 
 En mis 20 años como "Insider" en el sector médico, he visto a cientos de especialistas excelentes cometer el mismo error estratégico: su presencia digital "informa", pero no "educa".
 
@@ -38,4 +49,4 @@ Debe hacer el triaje, "educar" al paciente sobre el verdadero riesgo de su condi
 >
 > Si está listo para dejar de ser un catálogo y convertirse en una autoridad estratégica, aplique para una Sesión.
 >
-> [**Aplica aquí para tu Sesión Estratégica**](https://pixelartestudio.art/)
+> [**Aplica aquí para tu Sesión Estratégica**](https://pixelartestudio.art/aplicar/)
