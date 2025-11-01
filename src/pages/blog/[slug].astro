@@ -1,5 +1,5 @@
 ---
-// src/pages/blog/[slug].astro (VERSIÓN 100% VERIFICADA)
+// src/pages/blog/[slug].astro (VERSIÓN CORREGIDA CON CSS VANILLA)
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
@@ -14,6 +14,15 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+// Función para formatear la fecha
+function formatDate(date: Date) {
+  return new Date(date).toLocaleDateString('es-ES', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
 ---
 <Layout 
   title={post.data.title} 
@@ -21,20 +30,15 @@ const { Content } = await post.render();
   ogImage={post.data.image.url}
   ogImageAlt={post.data.image.alt}
 >
-  <section class="py-16 md:py-24">
-    <div class="container mx-auto max-w-3xl">
+  <article class="post-section">
+    <div class="container post-container">
 
-      <header class="text-left mb-10">
-        <h1 class="text-4xl md:text-5xl font-playfair mb-4">
+      <header class="post-header">
+        <h1 class="text-4xl md:text-5xl">
           {post.data.title}
         </h1>
-        <p class="text-lg text-secundario">
-          Publicado por {post.data.author} el 
-          {new Date(post.data.pubDate).toLocaleDateString('es-MX', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
+        <p class="post-meta">
+          Publicado por {post.data.author} el {formatDate(post.data.pubDate)}
         </p>
       </header>
 
@@ -43,25 +47,87 @@ const { Content } = await post.render();
         alt={post.data.image.alt} 
         width="1200"
         height="630"
-        class="rounded-lg w-full aspect-video object-cover mb-10 shadow-lg"
+        class="post-image"
       />
 
-      <div class="prose max-w-none">
+      <!-- Aquí se renderiza el contenido del Markdown -->
+      <div class="prose">
         <Content />
       </div>
 
-      <footer class="mt-10 pt-10 border-t border-borde-claro text-center">
-        <h2 class="text-2xl md:text-4xl font-playfair mb-4">¿Tu presencia digital está construyendo confianza?</h2>
-        <p class="text-lg text-secundario mb-6">Implementa un sistema que te posicione como la autoridad indiscutible.</p>
+      <footer class="post-footer">
+        <h2 class="text-2xl md:text-4xl">¿Tu presencia digital está construyendo confianza?</h2>
+        <p>Implementa un sistema que te posicione como la autoridad indiscutible.</p>
         <a href="/aplicar/" class="btn-primary">
           Aplica para tu Sesión Estratégica
         </a>
       </footer>
 
     </div>
-  </section>
+  </article>
 </Layout>
 
+<!-- 
+  ESTILOS PARA LA ESTRUCTURA DE LA PÁGINA (Layout)
+  Estos son los estilos que reemplazan a las clases de Tailwind.
+-->
+<style>
+  .post-section {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+  .post-container {
+    max-width: 56rem; /* 896px */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .post-header {
+    margin-bottom: 2.5rem; /* 40px */
+    text-align: left;
+  }
+  .post-header h1 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem; /* 16px */
+  }
+  .post-meta {
+    font-size: 1.125rem; /* 18px */
+    color: var(--color-texto-secundario);
+    line-height: 1.75rem;
+  }
+  .post-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.5rem; /* 8px */
+    margin-bottom: 2.5rem; /* 40px */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+  .post-footer {
+    margin-top: 2.5rem; /* 40px */
+    padding-top: 2.5rem; /* 40px */
+    border-top: 1px solid var(--color-borde-claro);
+    text-align: center;
+  }
+  .post-footer h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem; /* 16px */
+  }
+  .post-footer p {
+    font-size: 1.125rem; /* 18px */
+    color: var(--color-texto-secundario);
+    margin-bottom: 1.5rem; /* 24px */
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+<!-- 
+  ESTILOS PARA EL CONTENIDO DEL MARKDOWN (.prose)
+  Este bloque es el tuyo original. Lo dejamos tal cual 
+  porque es necesario para formatear el <Content />.
+-->
 <style is:global>
   .prose {
     font-family: 'Inter', sans-serif;
