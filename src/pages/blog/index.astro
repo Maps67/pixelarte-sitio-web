@@ -1,5 +1,5 @@
 ---
-// src/pages/blog/index.astro (VERSIÓN 100% VERIFICADA)
+// src/pages/blog/index.astro (VERSIÓN CORREGIDA CON CSS VANILLA)
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
@@ -8,48 +8,63 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.
 
 const pageTitle = "Blog Estratégico";
 const pageDescription = "Análisis 'Insider' sobre estrategia digital, marketing médico y dominancia de mercado. Artículos por Marco A. Portillo.";
+
+// Función para formatear la fecha (Opcional, pero recomendado)
+function formatDate(date: Date) {
+  return new Date(date).toLocaleDateString('es-ES', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
 ---
 <Layout title={pageTitle} description={pageDescription}>
-  <section class="py-16 md:py-24">
-    <div class="container mx-auto max-w-3xl">
+  <section class="blog-section">
+    <div class="container blog-container">
       
-      <header class="text-center mb-10">
-        <h1 class="text-4xl md:text-5xl font-playfair mb-4">Blog Estratégico</h1>
-        <p class="text-lg text-secundario max-w-2xl mx-auto">
+      <header class="blog-header">
+        <h1 class="text-4xl md:text-5xl">Blog Estratégico</h1>
+        <p class="blog-description">
           {pageDescription}
         </p>
       </header>
 
-      <div class="space-y-10">
+      <div class="post-list">
         {posts.map(post => (
-          <article>
-            <a href={`/blog/${post.slug}/`} class="block group">
+          <article class="post-item">
+            <a href={`/blog/${post.slug}/`} class="post-link-wrapper">
               
               <img 
                 src={post.data.image.url} 
                 alt={post.data.image.alt} 
                 width="1200" 
                 height="630" 
-                class="rounded-lg w-full aspect-video object-cover mb-4 shadow-lg" 
+                class="post-image"
               />
               
-              <h2 class="text-2xl md:text-4xl font-playfair mb-2 group-hover:text-acento">
-                {post.data.title}
-              </h2>
+              <div class="post-content">
+                <h2 class="post-title text-2xl md:text-4xl">
+                  {post.data.title}
+                </h2>
 
-              <p class="text-secundario mb-4">
-                {post.data.description}
-              </p>
+                <p class="post-meta">
+                  Por {post.data.author} • {formatDate(post.data.pubDate)}
+                </p>
 
-              <span class="font-bold text-acento">
-                Leer artículo completo &rarr;
-              </span>
+                <p class="post-description">
+                  {post.data.description}
+                </p>
+
+                <span class="post-read-more">
+                  Leer artículo completo &rarr;
+                </span>
+              </div>
             </a>
           </article>
         ))}
 
         {posts.length === 0 && (
-          <p class="text-center text-secundario">
+          <p class="text-center" style="color: var(--color-texto-secundario);">
             Aún no hay artículos publicados.
           </p>
         )}
@@ -60,15 +75,101 @@ const pageDescription = "Análisis 'Insider' sobre estrategia digital, marketing
 </Layout>
 
 <style>
-  .space-y-10 > * + * {
-    margin-top: 2.5rem;
-    padding-top: 2.5rem;
+  .blog-section {
+    padding-top: 4rem; /* 64px (reemplaza py-16) */
+    padding-bottom: 6rem; /* 96px (reemplaza md:py-24) */
+  }
+
+  .blog-container {
+    max-width: 56rem; /* 896px (reemplaza max-w-3xl) */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .blog-header {
+    text-align: center;
+    margin-bottom: 4rem; /* 64px (reemplaza mb-10) */
+  }
+
+  .blog-header h1 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem; /* 16px (reemplaza mb-4) */
+  }
+
+  .blog-description {
+    font-size: 1.125rem; /* 18px (reemplaza text-lg) */
+    line-height: 1.75rem;
+    color: var(--color-texto-secundario);
+    max-width: 42rem; /* 672px (reemplaza max-w-2xl) */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- Lista de Posts --- */
+  .post-list {
+    display: grid;
+    gap: 3.5rem; /* 56px (reemplaza space-y-10) */
+  }
+  
+  /* Separador de posts */
+  .post-item + .post-item {
+    margin-top: 3.5rem;
+    padding-top: 3.5rem;
     border-top: 1px solid var(--color-borde-claro);
   }
-  a.block.group {
+
+  .post-link-wrapper {
+    display: block;
+    text-decoration: none;
+    color: var(--color-texto-oscuro);
+  }
+
+  .post-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Reemplaza aspect-video */
+    object-fit: cover; /* Reemplaza object-cover */
+    border-radius: 0.5rem; /* 8px (reemplaza rounded-lg) */
+    margin-bottom: 2rem; /* 32px (reemplaza mb-4) */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08); /* Reemplaza shadow-lg */
+  }
+
+  .post-content {
+    /* Contenedor para el texto */
+  }
+
+  .post-title {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.75rem; /* 12px (reemplaza mb-2) */
+    transition: color 0.2s ease;
+  }
+  
+  .post-link-wrapper:hover .post-title {
+    color: var(--color-acento); /* Reemplaza group-hover:text-acento */
+    text-decoration: none; /* Evita subrayado de h2 */
+  }
+
+  .post-meta {
+    font-size: 0.9rem;
+    color: var(--color-texto-secundario-claro);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .post-description {
+    color: var(--color-texto-secundario);
+    margin-bottom: 1.5rem; /* 24px (reemplaza mb-4) */
+    line-height: 1.7;
+  }
+
+  .post-read-more {
+    font-weight: 700; /* Reemplaza font-bold */
+    color: var(--color-acento); /* Reemplaza text-acento */
     text-decoration: none;
   }
-  a.block.group:hover h2 {
-    text-decoration: none;
+
+  .post-link-wrapper:hover .post-read-more {
+    text-decoration: underline;
   }
+
 </style>
