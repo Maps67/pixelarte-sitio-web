@@ -1,6 +1,6 @@
 ---
 title: "Por qué el 90% del 'SEO para Médicos' Falla (y qué hacer en su lugar)"
-pubDate: 2025-10-23
+pubDate: "2025-10-23"
 description: "Descubre la razón oculta por la que las estrategias SEO genéricas no funcionan para clínicas y cuál es el enfoque 'insider' que sí genera pacientes."
 author: "Marco A. Portillo"
 image:

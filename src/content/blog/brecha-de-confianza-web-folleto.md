@@ -1,6 +1,6 @@
 ---
 title: "Tu Web es un Folleto, No un Consultor: La Brecha de Confianza que Cuesta Cirugías"
-pubDate: 2025-10-30
+pubDate: "2025-10-30"
 description: "Por qué las webs médicas genéricas fallan en atraer pacientes de alto valor (ortopedia, bariatría) y cómo construir un 'Ecosistema de Confianza' en su lugar."
 author: "Marco A. Portillo"
 image:
