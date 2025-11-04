@@ -1,12 +1,10 @@
 ---
-# src/content/blog/pilar-3-honestidad-brutal.md
-
 title: "El Pilar #3 de la Confianza: Por qué la 'Honestidad Brutal' es su mejor Cierre de Ventas"
-pubDate: 2025-11-03 # <-- Fecha de hoy
+pubDate: 2025-11-03
 description: "El marketing 'Beta' vende fantasías. El 'Alfa' establece expectativas realistas. Por qué la honestidad es su mejor filtro y herramienta de cierre."
 author: "Marco A. Portillo"
 image:
-    url: "/images/blog/honestidad-vs-fantasia-cover.webp" # <-- Imagen que necesitarás crear
+    url: "/images/blog/honestidad-vs-fantasia-cover.jpg" # <-- CORREGIDO a .jpg
     alt: "Gráfico mostrando la expectativa idealista vs. la curva de recuperación realista"
 tags: ["Marketing Médico", "Marco Alfa", "Confianza del Paciente", "Ventas", "Cirugía Alto Valor"]
 ---
