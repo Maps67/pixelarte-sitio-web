@@ -33,6 +33,8 @@ En el momento en que el paciente agenda la cita, el sistema dispara una secuenci
 1.  **Educación Visual (Pilar 2.2):** Envía un enlace a una animación 3D simple del procedimiento (sea una manga gástrica o una hernioplastia). Un paciente que *visualiza* su cirugía tiene menos ansiedad y mejores preguntas.
 2.  **Instrucciones Claras:** Envía las guías de preparación (ayuno, medicamentos) en un formato claro y móvil.
 3.  **Formularios Digitales:** Permite que el paciente llene su historial médico en línea, desde su casa, un día antes.
+    
+    Esto no es una simple comodidad. Es una estrategia de eficiencia. Un [estudio sobre evaluación preoperatoria digital](https://isanidad.com/338337/un-modelo-de-evaluacion-preoperatoria-mejora-la-eficiencia-y-reduce-cancelaciones-quirurgicas/) (que analizó 40,233 cirugías) encontró que este método redujo las cancelaciones el día de la cirugía en casi un 40% y **redujo el tiempo de evaluación del anestesiólogo a la mitad**, ahorrando 716 horas-persona al año. El sistema prepara al paciente *para* usted.
 
 **Conclusión:**
 Cuando el paciente se sienta frente a usted, la conversación cambia. Ya no es: "¿Qué me va a hacer?".
