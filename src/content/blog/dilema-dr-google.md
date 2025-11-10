@@ -15,7 +15,9 @@ Un estudio reciente es demoledor: el **83% de los pacientes modifica su perspect
 
 No llegan buscando respuestas. Llegan buscando confirmar sus peores miedos.
 
-Este fenómeno tiene un nombre: **Cibercondría**. Como lo detalla mi **"Informe Estratégico: Cibercondría"**, es un **"círculo vicioso"** psicológico donde un paciente busca alivio, pero solo encuentra resultados alarmistas que multiplican su ansiedad. De hecho, el 80% de los usuarios reporta sentirse *más* ansioso después de buscar sus síntomas.
+Este fenómeno tiene un nombre: **Cibercondría**. Como lo detalla mi **"Informe Estratégico: Cibercondría"**, es un **"círculo vicioso"** psicológico donde un paciente busca alivio, pero solo encuentra resultados alarmistas que multiplican su ansiedad.
+
+No es su imaginación. Mi investigación estratégica lo confirma: el **[80% de los usuarios que buscan síntomas experimentan un AUMENTO de la ansiedad](https://www.saludonnet.com/blog/cibercondria-cuando-internet-asusta-mas-de-lo-que-ayuda/)** tras la consulta.
 
 El problema es simple: los algoritmos no están diseñados para la *calma*. El sistema aprende que el pánico genera clics. Por eso, escalan la atención del paciente a una **"tasa desproporcionadamente alta de explicaciones estadísticamente improbables"**.
 
