@@ -1,64 +1,99 @@
 ---
-// src/pages/proceso.astro
+// src/pages/proceso.astro (VERSIÓN ACTUALIZADA A 4 PASOS)
 import Layout from '../layouts/Layout.astro';
 
-// ===== INICIO DEL CAMBIO: Contenido 100% alineado con servicios.astro =====
-const fasesDelSistema = [
+// ===== INICIO DE LA MODIFICACIÓN (NUEVO PROCESO DE 4 PASOS) =====
+const pasosDeImplementacion = [
   {
     step: '01',
-    title: 'Fase 1: Diagnóstico Insider',
-    description: 'Usamos el "Manual del Insider" para auditar su presencia digital. Analizamos su flujo de pacientes, su marco de autoridad y el de su competencia para encontrar las "fugas de rentabilidad" que otros ignoran.',
-    icon: 'diagnostico'
+    title: 'Paso 1: Mapeo y Configuración del Flujo de Trabajo',
+    description: 'No instalamos un software genérico. Primero, nos reunimos (virtualmente) con tu equipo para entender tu flujo de trabajo actual.',
+    bullets: [
+      '<strong>Análisis:</strong> ¿Cómo agendan citas hoy? ¿Cómo documentan? ¿Cómo dan seguimiento?',
+      '<strong>Configuración:</strong> Personalizamos los 3 motores (Escriba, Gestión y Adherencia) para que se adapten a tu especialidad y tu forma de trabajar.',
+      '<strong>Integración:</strong> Conectamos el sistema a tus herramientas existentes (Calendario, EMR si es compatible, etc.).'
+    ],
+    icon: 'configuracion'
   },
   {
     step: '02',
-    title: 'Fase 2: Marco de Autoridad',
-    description: 'Demolemos su "folleto digital" y construimos una máquina de autoridad. Cada activo (web, perfiles, contenidos) se rediseña para establecer su estatus, generar intriga y posicionarlo como el "premio" de su mercado.',
-    icon: 'autoridad'
+    title: 'Paso 2: Calibración del Motor 1 (El Escriba de IA)',
+    description: 'Aquí ocurre la magia. Hacemos la primera consulta "sombra" contigo.',
+    bullets: [
+      '<strong>Prueba en Vivo:</strong> Usas el "Conector Humano" (Escriba de IA) mientras atiendes a un paciente (con su total consentimiento).',
+      '<strong>Ajuste Fino:</strong> Revisamos juntos la primera nota SOAP generada por la IA. Calibramos la IA para que aprenda tu estilo personal.',
+      '<strong>El "Clic" Mental:</strong> Este es el paso donde dejas de mirar el teclado y confías 100% en el sistema.'
+    ],
+    icon: 'calibracion'
   },
   {
     step: '03',
-    title: 'Fase 3: Activación y Dominancia',
-    description: 'Activamos el embudo de "prizing" y el motor de contenido de "intriga". Dejamos de perseguir "leads" y comenzamos a atraer y filtrar prospectos de alto valor que deben *calificar* para trabajar con usted.',
-    icon: 'dominancia'
+    title: 'Paso 3: Activación de los Motores 2 y 3',
+    description: 'Una vez que el Motor 1 está calibrado, "encendemos" la automatización completa.',
+    bullets: [
+      '<strong>Motor 2 (Gestión):</strong> Activamos la agenda inteligente 24/7 y los recordatorios automáticos por WhatsApp/SMS. Tu equipo sentirá el alivio administrativo ese mismo día.',
+      '<strong>Motor 3 (Adherencia):</strong> Cargamos tus protocolos de seguimiento. El sistema ahora sabe qué enviar a cada paciente con "Diagnóstico X".'
+    ],
+    icon: 'activacion'
+  },
+  {
+    step: '04',
+    title: 'Paso 4: El "Partner" (Soporte Continuo)',
+    description: 'Este no es un proyecto que "entregamos y nos vamos".',
+    bullets: [
+      '<strong>Soporte SaaS:</strong> Como tu Partner Health-Tech, te damos soporte mensual continuo como parte de la suscripción.',
+      '<strong>Optimización:</strong> Revisamos métricas clave contigo: ¿Cuántas horas has ahorrado? ¿Cómo va la tasa de adherencia del paciente?',
+      '<strong>Evolución:</strong> El "Practice Co-Pilot" evoluciona. Cuando surjan nuevas tecnologías de IA, tu sistema se actualizará.'
+    ],
+    icon: 'soporte'
   }
 ];
 
-// Iconos 100% alineados con servicios.astro
+// Nuevos iconos para los 4 pasos
 const icons = {
-  diagnostico: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5z" /></svg>`,
-  autoridad: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.017h-.008v-.017z" /></svg>`,
-  dominancia: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V5.75A2.25 2.25 0 0018 3.5H6A2.25 2.25 0 003.75 5.75v12.5A2.25 2.25 0 006 20.25z" /></svg>`
+  configuracion: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a.75.75 0 0 0 .75.75h13.5a.75.75 0 0 0 0-1.5H5.25a.75.75 0 0 0-.75.75Zm0 0A2.25 2.25 0 1 0 5.25 9.75a2.25 2.25 0 0 0-1.5 2.25Zm13.5 0a2.25 2.25 0 1 0-.75-2.25 2.25 2.25 0 0 0 .75 2.25Z" /></svg>`,
+  calibracion: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h3.75" /></svg>`,
+  activacion: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" /></svg>`,
+  soporte: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.22-.1.447-.1.664 0 .414.158.79.41 1.06.252.27.603.428 1.002.428.398 0 .75-.158 1.002-.428.252-.27.41-.646.41-1.06 0-.217-.035-.444-.1-.664m-1.313 0h.01m-1.313 0c-.065.22-.1.447-.1.664 0 .414.158.79.41 1.06.252.27.603.428 1.002.428.398 0 .75-.158 1.002-.428.252-.27.41-.646.41-1.06 0-.217-.035-.444-.1-.664m5.168 4.34A9.75 9.75 0 1 0 4.5 12a9.75 9.75 0 0 0 13.718 8.164m-1.313-1.313a.375.375 0 0 1 0 .53m-1.313-1.313a.375.375 0 0 1 0 .53m-1.313-1.313a.375.375 0 0 1 0 .53m-1.313-1.313a.375.375 0 0 1 0 .53m0-1.06a.375.375 0 0 0 0 .53m0 0a.375.375 0 0 1 0 .53m0 0a.375.375 0 0 0 0 .53m0 0a.375.375 0 0 1 0 .53m-1.313-1.313a.375.375 0 0 0 0 .53m-1.313-1.313a.375.375 0 0 1 0 .53m-1.313-1.313a.375.375 0 0 0 0 .53m-1.313-1.313a.375.375 0 0 1 0 .53" /></svg>`
 };
-// ===== FIN DEL CAMBIO =====
+// ===== FIN DE LA MODIFICACIÓN =====
 ---
 
 <Layout 
-  title="Nuestro Sistema (El Proceso) | Pixelarte Studio"
-  description="Aplicamos un sistema probado de 3 fases para lograr la dominancia de mercado."
+  title="Nuestro Proceso de Implementación | Pixelarte Studio"
+  description="De la Demo a la Automatización en 4 Pasos. Implementar el 'Practice Co-Pilot' es un onboarding tecnológico para médicos."
 >
   
   <div class="bg-oscuro">
     <div class="container">
+      
       <section class="page-header">
-        <h1>Nuestro Sistema: El Proceso</h1>
-        <p>Un enfoque estructurado de 3 fases para convertir su reputación en resultados.</p>
+        <h1>Nuestro Proceso de Implementación</h1>
+        <p>De la Demo a la Automatización en 4 Pasos. Implementar el "Practice Co-Pilot" no es un proyecto de marketing; es un onboarding tecnológico diseñado por médicos, para médicos. Te llevamos de la mano en un proceso claro y rápido para transformar tu consultorio.</p>
       </section>
-
       <section class="process-timeline">
-        {fasesDelSistema.map((item) => (
+        {pasosDeImplementacion.map((item) => (
           <div class="timeline-item">
             <div class="timeline-icon" set:html={icons[item.icon]} />
             <div class="timeline-content">
               <span class="timeline-step">{item.step}</span>
               <h3 class="timeline-title">{item.title}</h3>
               <p class="timeline-description">{item.description}</p>
+              
+              <ul class="timeline-bullets">
+                {item.bullets.map(bullet => (
+                  <li set:html={bullet} />
+                ))}
+              </ul>
+
             </div>
           </div>
         ))}
       </section>
-
-       <section class="text-center py-16">
+      <section class="text-center py-16">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-claro mb-10">
+          ¿Listo para implementar el sistema?
+        </h2>
         <a href="/aplicar" class="btn-primary">Aplicar para Sesión Estratégica</a>
       </section>
     </div>
@@ -66,6 +101,20 @@ const icons = {
 </Layout>
 
 <style>
+  /* ===== INICIO DE LA MODIFICACIÓN (AÑADIR CLASES DE TAILWIND QUE FALTABAN) ===== */
+  /* Estas clases las usamos en el H2 del CTA, pero no están en el CSS global */
+  .text-4xl { font-size: 2.25rem; }
+  .md\:text-5xl {
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+  .font-playfair { font-family: 'Playfair Display', serif; } /* Asumiendo que esta es la fuente */
+  .font-bold { font-weight: 700; }
+  .text-claro { color: var(--color-texto-claro); }
+  .mb-10 { margin-bottom: 2.5rem; }
+  /* ===== FIN DE LA MODIFICACIÓN ===== */
+
   .container {
     padding: 0 2rem;
     max-width: 1200px;
@@ -81,11 +130,12 @@ const icons = {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--color-texto-claro); /* REPARADO */
+    color: var(--color-texto-claro);
   }
   .page-header p {
     font-size: 1.25rem;
-    color: var(--color-texto-secundario-claro); /* REPARADO */
+    color: var(--color-texto-secundario-claro);
+    line-height: 1.6; /* Añadido para mejor legibilidad */
   }
   .process-timeline {
     max-width: 800px;
@@ -105,11 +155,11 @@ const icons = {
     top: 48px;
     width: 2px;
     height: calc(100% - 24px);
-    background-color: var(--color-borde); /* Correcto */
+    background-color: var(--color-borde);
     transform: translateX(-50%);
   }
   .timeline-icon {
-    background-color: var(--color-acento); /* Correcto */
+    background-color: var(--color-acento);
     color: white;
     border-radius: 50%;
     width: 48px;
@@ -119,7 +169,7 @@ const icons = {
     justify-content: center;
     flex-shrink: 0;
     z-index: 10;
-    border: 4px solid var(--color-fondo-oscuro); /* REPARADO */
+    border: 4px solid var(--color-fondo-oscuro);
   }
   .timeline-icon svg {
     width: 28px;
@@ -129,8 +179,8 @@ const icons = {
     margin-left: 1.5rem;
   }
   .timeline-step {
-    background-color: var(--color-oscuro-contraste); /* REPARADO */
-    color: var(--color-acento); /* Correcto */
+    background-color: var(--color-oscuro-contraste);
+    color: var(--color-acento);
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.875rem;
@@ -139,12 +189,38 @@ const icons = {
   .timeline-title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--color-texto-claro); /* REPARADO */
+    color: var(--color-texto-claro);
     margin: 0.75rem 0;
   }
   .timeline-description {
-    color: var(--color-texto-secundario-claro); /* REPARADO */
+    color: var(--color-texto-secundario-claro);
     line-height: 1.6;
   }
+
+  /* ===== INICIO DE LA MODIFICACIÓN (NUEVO CSS PARA BULLETS) ===== */
+  .timeline-bullets {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+    color: var(--color-texto-secundario-claro);
+  }
+  .timeline-bullets li {
+    position: relative;
+    padding-left: 1.75rem; /* Espacio para el check */
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+  .timeline-bullets li::before {
+    content: '✓'; /* Checkmark */
+    position: absolute;
+    left: 0;
+    top: 0.1rem; /* Ajuste fino vertical */
+    color: var(--color-acento);
+    font-weight: 700;
+  }
+  .timeline-bullets li strong {
+    color: var(--color-texto-claro); /* Resaltar los strong */
+  }
+  /* ===== FIN DE LA MODIFICACIÓN ===== */
 </style>
 
