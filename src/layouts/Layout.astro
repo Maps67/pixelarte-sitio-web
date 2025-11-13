@@ -1,8 +1,8 @@
 ---
-// src/layouts/Layout.astro (VERSIÓN CON SCRIPT DE MÓDULO)
+// src/layouts/Layout.astro (VERSIÓN LIMPIA - SIN TOAST)
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ToastNotification from '../components/ToastNotification.astro';
+// Se ha eliminado la importación de ToastNotification
 
 import '../styles/global.css';
 
@@ -71,15 +71,5 @@ const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
     </main>
     <Footer />
 
-    <ToastNotification />
-
-    <script type="module">
-        import { initToast } from '/js/toast.js';
-        
-        // Ejecutamos la función.
-        // Se ejecuta automáticamente después de que el HTML esté listo (defer).
-        initToast();
-    </script>
-
-</body>
+    </body>
 </html>
