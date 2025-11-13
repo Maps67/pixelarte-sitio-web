@@ -1,12 +1,12 @@
 ---
-// src/components/Header.astro (VERSIÓN: FORZAR DESPLAZAMIENTO VISUAL)
+// src/components/Header.astro (VERSIÓN: POSICIONAMIENTO RELATIVO FORZADO)
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
     <div class="container">
         <nav class="navigation">
             
-            <a href="/" class="logo-link transform -translate-x-4 lg:-translate-x-8">
+            <a href="/" class="logo-link force-logo-left">
                 <img src="/logo-copilot-transparente.webp" alt="Pixelarte Studios - Automatización Médica Logo" class="logo-img" />
             </a>
 
@@ -60,3 +60,21 @@ function setupMobileNav() {
 
 setupMobileNav();
 </script>
+
+<style>
+    /* ESTILOS DE FORZADO DE POSICIÓN 
+       Esto anula cualquier restricción de Flexbox.
+    */
+    .force-logo-left {
+        position: relative; /* Permite moverlo sin afectar el flujo de los vecinos */
+        left: -20px; /* Movimiento suave en Móvil */
+        z-index: 10;
+    }
+
+    @media (min-width: 1024px) {
+        .force-logo-left {
+            /* Aumenta este número negativo si quieres moverlo AÚN más a la izquierda */
+            left: -70px; 
+        }
+    }
+</style>
