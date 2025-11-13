@@ -1,46 +1,46 @@
 ---
-// src/pages/portafolio/index.astro
-// ===== INICIO DE LA REPARACIÓN (Import Corregido) =====
+// src/pages/portafolio/index.astro (VERSIÓN CO-PILOT)
 import Layout from '../../layouts/Layout.astro';
-// ===== FIN DE LA REPARACIÓN =====
 import ProjectCard from '../../components/ProjectCard.astro';
 
+// ===== INICIO DE LA MODIFICACIÓN (DESCRIPCIONES DE PROYECTOS) =====
 const featuredProjectsV3 = [
-    {
-        title: 'Sistema Web de Pacientes',
-        service: 'Aplicación Web a Medida',
-        slug: 'sistema-web-de-pacientes',
-        mediaType: 'video',
-        problem: 'Gestión manual de expedientes y seguimiento post-operatorio ineficiente, causando pérdida de información y comunicación deficiente con los pacientes.',
-        solution: 'Se desarrolló una aplicación web privada donde los pacientes acceden a guías de recuperación interactivas. El sistema automatiza recordatorios y centraliza la comunicación, permitiendo al doctor monitorear el progreso y reducir consultas innecesarias en un 30%.',
-        ctaText: 'Explorar Caso de Éxito'
-    },
-    {
-        title: 'Tarjeta Digital Médica',
-        service: 'Identidad Digital',
-        slug: 'tarjeta-digital-medica',
-        mediaType: 'image',
-        problem: 'Los profesionales de la salud necesitaban un método centralizado y moderno para compartir información de contacto, portafolio de servicios y enlaces a múltiples perfiles (Doctoralia, redes).',
-        solution: 'Se creó una tarjeta de presentación digital accesible vía QR. Su diseño adaptable y botones de acción directa (WhatsApp, agendar cita) han incrementado la tasa de contacto de nuevos pacientes en un 50% para los clientes que la utilizan.',
-        externalUrl: 'https://drcarlosdiaza.com/',
-        ctaText: 'Ver Proyecto en Vivo'
-    },
-    {
-        title: 'Tarjeta Digital Corporativa',
-        service: 'Herramienta para Ventas',
-        slug: 'tarjeta-digital-corporativa',
-        mediaType: 'image',
-        problem: 'Un equipo de ventas requería una herramienta para compartir catálogos y datos de contacto de forma rápida y medible durante eventos y visitas a clientes.',
-        solution: 'Se diseñó una tarjeta digital que integra un mini-catálogo y formulario de contacto. La implementación de analíticas permitió al equipo de ventas identificar los productos de mayor interés y optimizar su estrategia de seguimiento.',
-        externalUrl: 'https://pixelartestudio.art/tarjeta-pixel/',
-        ctaText: 'Ver Proyecto en Vivo'
-    }
+  {
+    title: 'Sistema Web de Pacientes',
+    service: 'Aplicación Web a Medida',
+    slug: 'sistema-web-de-pacientes',
+    mediaType: 'video',
+    problem: 'Gestión manual de expedientes y seguimiento post-operatorio ineficiente, causando pérdida de información y comunicación deficiente con los pacientes.',
+    solution: "Este proyecto fue el precursor de nuestro Motor 3 (Adherencia). Hoy, implementamos esta misma funcionalidad (seguimiento de pacientes y guías de cuidado) de forma más rápida y potente a través de nuestro modelo de 'Consultor Afiliado', conectándolo además con el Motor 1 (Escriba de IA) para una automatización completa.",
+    ctaText: 'Explorar Caso de Éxito'
+  },
+  {
+    title: 'Tarjeta Digital Médica',
+    service: 'Identidad Digital',
+    slug: 'tarjeta-digital-medica',
+    mediaType: 'image',
+    problem: 'Los profesionales de la salud necesitaban un método centralizado y moderno para compartir información de contacto, portafolio de servicios y enlaces a múltiples perfiles (Doctoralia, redes).',
+    solution: "Esta Tarjeta Digital actúa como la 'llave de acceso' al ecosistema Co-Pilot. El botón 'Agendar Cita' se conecta directamente al Motor 2 (Gestión) , permitiendo agendamiento 24/7. El botón 'Portal de Paciente' se conecta al Motor 3 (Adherencia) , donde ven su seguimiento.",
+    externalUrl: 'https://drcarlosdiaza.com/',
+    ctaText: 'Ver Proyecto en Vivo'
+  },
+  {
+    title: 'Tarjeta Digital Corporativa',
+    service: 'Herramienta para Ventas',
+    slug: 'tarjeta-digital-corporativa',
+    mediaType: 'image',
+    problem: 'Un equipo de ventas requería una herramienta para compartir catálogos y datos de contacto de forma rápida y medible durante eventos y visitas a clientes.',
+    solution: 'Se diseñó una tarjeta digital que integra un mini-catálogo y formulario de contacto. La implementación de analíticas permitió al equipo de ventas identificar los productos de mayor interés y optimizar su estrategia de seguimiento.',
+    externalUrl: 'https://pixelartestudio.art/tarjeta-pixel/',
+    ctaText: 'Ver Proyecto en Vivo'
+  }
 ];
+// ===== FIN DE LA MODIFICACIÓN =====
 ---
 
 <Layout 
-  title="Casos de Éxito | Pixelarte Studio"
-  description="No solo creamos diseños; construimos soluciones. Vea cómo hemos resuelto problemas reales para prácticas médicas."
+  title="Portafolio | Pixelarte Studio"
+  description="Cada proyecto es la interfaz visible del Practice Co-Pilot, conectando pacientes a los motores de automatización, gestión y adherencia."
 >
   
   <section class="bg-oscuro py-16 md:py-24">
@@ -48,13 +48,12 @@ const featuredProjectsV3 = [
       
       <div class="text-center max-w-3xl mx-auto mb-10">
         <h1 class="text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
-          Casos de Éxito
+          Más que Diseño: Son la Puerta de Entrada a su Sistema
         </h1>
         <p class="text-lg text-secundario-claro">
-          No solo creamos diseños; construimos soluciones. Aquí puedes ver cómo hemos resuelto problemas reales para nuestros clientes.
+          Cada proyecto en nuestro portafolio es más que un sitio web o una tarjeta digital; es la interfaz visible del Practice Co-Pilot. Las herramientas de diseño que creamos son la 'Puerta de Entrada Digital' que conecta a sus pacientes directamente con los motores de automatización, gestión y adherencia.
         </p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {featuredProjectsV3.map(project => (
               <ProjectCard {...project} />
