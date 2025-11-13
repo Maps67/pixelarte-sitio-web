@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Tipografía (Valores base para MÓVIL) */
 .text-lg { font-size: 1.125rem; line-height: 1.75rem; } /* 18px */
-.text-2xl { font-size: 1.5rem; line-height: 2rem; }     /* 24px */
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }    /* 24px */
 .text-4xl { font-size: 1.875rem; line-height: 2.25rem; } /* 30px (MÓVIL) */
 .text-5xl { font-size: 2.25rem; line-height: 2.5rem; }   /* 36px (MÓVIL) */
 
@@ -142,11 +142,14 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   height: 60px;
 }
+/* ===== INICIO DE LA MODIFICACIÓN (LOGO +20%) ===== */
 .logo-img {
-  width: 150px;
+  width: 180px; /* Aumentado de 150px a 180px */
   height: auto;
   z-index: 1001;
 }
+/* ===== FIN DE LA MODIFICACIÓN ===== */
+
 /* Botón de Hamburguesa (Móvil) */
 .mobile-nav-toggle {
   display: block; /* Visible en móvil por defecto */
@@ -224,7 +227,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Tamaños de fuente GRANDES (Desktop) */
   .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
   .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; } /* 36px */
-  .md\:text-5xl { font-size: 3rem; line-height: 1; }      /* 48px */
+  .md\:text-5xl { font-size: 3rem; line-height: 1; }       /* 48px */
   
   .md\:py-24 { padding-top: 6rem; padding-bottom: 6rem; }
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
