@@ -1,5 +1,5 @@
 ---
-// src/layouts/Layout.astro (VERSIÓN CON CORRECCIÓN CHARSET)
+// src/layouts/Layout.astro (VERSIÓN LIMPIA CONFIRMADA)
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ToastNotification from '../components/ToastNotification.astro'; // Componente importado
@@ -35,7 +35,8 @@ const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
