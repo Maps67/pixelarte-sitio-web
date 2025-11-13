@@ -4,7 +4,7 @@ pubDate: 2025-11-12
 description: "Por qué Pixelarte Studio deja de vender 'marketing médico' y presenta 'Practice Co-Pilot', nuestro nuevo servicio Health-Tech."
 author: "Marco A. Portillo"
 image:
-    url: "/images/blog/evolucion-pixelarte.webp"
+    url: "/images/blog/TEST-imagen.webp"
     alt: "Pixelarte Studio ha evolucionado"
 tags: ["Pixelarte Studio", "Practice Co-Pilot", "Marco Alfa", "Health-Tech", "Burnout Médico"]
 ---
