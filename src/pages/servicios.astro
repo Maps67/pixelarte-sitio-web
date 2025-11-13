@@ -1,5 +1,5 @@
 ---
-// src/pages/servicios.astro (VERSIÓN CON AJUSTES DE SIMETRÍA)
+// src/pages/servicios.astro (VERSIÓN OPTIMIZADA MOBILE/DESKTOP)
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout 
@@ -11,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       
       <div class="text-center md:text-left">
-        <h1 class="text-5xl md:text-6xl font-playfair font-bold text-oscuro mb-6">
+        <h1 class="text-4xl md:text-6xl font-playfair font-bold text-oscuro mb-6">
           Presentamos el "Practice Co&#8209;Pilot"
         </h1>
         <p class="text-2xl md:text-3xl text-secundario font-playfair mb-8">
@@ -46,7 +46,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         
-        <div class="bg-oscuro-contraste p-6 rounded-lg text-left flex flex-col">
+        <div class="bg-oscuro-contraste p-6 rounded-lg text-left flex flex-col h-full">
           <div class="icon-wrapper text-acento">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0l-4.5 16.5" />
@@ -55,8 +55,7 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="text-xl font-playfair font-bold text-claro mt-4 mb-4">
             <span class="text-acento">Motor 1:</span> (Escriba) El Conector Humano
           </h3>
-          <p class="text-secundario-claro">
-            Recupera la conexión visual. Habla con tu paciente, no con tu computadora. Aquí gana el paciente, sintiéndose visto y verdaderamente comprendido.
+          <p class="text-secundario-claro flex-grow"> Recupera la conexión visual. Habla con tu paciente, no con tu computadora. Aquí gana el paciente, sintiéndose visto y verdaderamente comprendido.
             <br/><br/>
             Mientras tanto, nuestra IA escucha la consulta (con permiso) y genera tus notas SOAP estructuradas en segundos, listas para tu expediente.
             <br/><br/>
@@ -64,7 +63,7 @@ import Layout from '../layouts/Layout.astro';
           </p>
         </div>
         
-        <div class="bg-oscuro-contraste p-6 rounded-lg text-left flex flex-col">
+        <div class="bg-oscuro-contraste p-6 rounded-lg text-left flex flex-col h-full">
           <div class="icon-wrapper text-acento">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0l-4.5 16.5" />
@@ -76,14 +75,14 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-secundario-claro mb-4">
             El 'Co-Pilot' no solo documenta el pasado, gestiona el futuro. Automatiza las tareas repetitivas que ahogan a tu equipo.
           </p>
-          <ul class="list-none p-0 m-0 space-y-3 text-secundario-claro">
+          <ul class="list-none p-0 m-0 space-y-3 text-secundario-claro flex-grow">
             <li><strong>Agenda Inteligente 24/7:</strong> Permite a los pacientes agendar en línea en cualquier momento.</li>
             <li><strong>Reducción de Inasistencias:</strong> Envía recordatorios automáticos por WhatsApp/SMS para confirmar citas.</li>
             <li><strong>Blindaje de Reputación:</strong> Solicita reseñas automáticamente solo a los pacientes satisfechos, protegiendo tu reputación.</li>
           </ul>
         </div>
         
-        <div class="bg-oscuro-contraste p-6 rounded-lg text-left flex flex-col">
+        <div class="bg-oscuro-contraste p-6 rounded-lg text-left flex flex-col h-full">
           <div class="icon-wrapper text-acento">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0l-4.5 16.5" />
@@ -95,9 +94,9 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-secundario-claro mb-4">
             La consulta termina, el cuidado continúa. Aquí es donde creamos lealtad y mejores resultados clínicos. Basado en el diagnóstico del "Escriba", el sistema activa automáticamente el seguimiento post-consulta:
           </p>
-           <ul class="list-none p-0 m-0 space-y-3 text-secundario-claro">
+           <ul class="list-none p-0 m-0 space-y-3 text-secundario-claro flex-grow">
             <li><strong>Educación Personalizada:</strong> Envía material educativo (videos, guías) sobre la patología del paciente.</li>
-            <li><strong>Gamificación:</strong> Activa programas de "juegos serios" que motivan al paciente a cumplir su tratamiento (diabetes, salud mental, fisioterapia).</li>
+            <li><strong>Gamificación:</strong> Activa programas de "juegos serios" que motivan al paciente a cumplir su tratamiento.</li>
             <li class="pt-2"><strong>Resultados: Mejora la adherencia y fideliza al paciente de por vida.</strong></li>
           </ul>
         </div>
@@ -119,16 +118,16 @@ import Layout from '../layouts/Layout.astro';
       <div class="disqualification-list text-left max-w-lg mx-auto">
         <h4 class="text-lg font-bold text-oscuro mb-4">No somos el socio adecuado si usted busca:</h4>
         <ul class="list-none p-0 m-0 space-y-3">
-          <li class="flex items-center">
-            <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          <li class="flex items-start">
+            <svg class="icon-x mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             <span>La página web o el logo "más barato".</span>
           </li>
-          <li class="flex items-center">
-            <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          <li class="flex items-start">
+            <svg class="icon-x mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             <span>Resultados mágicos sin un sistema.</span>
           </li>
-          <li class="flex items-center">
-            <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          <li class="flex items-start">
+            <svg class="icon-x mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             <span>Alguien que solo reciba órdenes.</span>
           </li>
         </ul>
@@ -165,27 +164,30 @@ import Layout from '../layouts/Layout.astro';
   }
   .w-12 { width: 3rem; }
   .h-12 { height: 3rem; }
+  
   .disqualification-list .icon-x {
     width: 1.25rem;
     height: 1.25rem;
     color: #EF4444; /* Rojo */
     margin-right: 0.75rem;
     flex-shrink: 0;
+    /* Se agrega margen superior si usamos items-start en el flex padre */
   }
+  
   .disqualification-list span {
     color: var(--color-texto-secundario);
     font-size: 1.125rem;
+    line-height: 1.5; /* Mejora de legibilidad */
   }
+  
   .flex { display: flex; }
   .flex-col { flex-direction: column; }
-  .items-center { align-items: center; }
+  /* .items-center removido globalmente, usamos clases de tailwind especificas */
+  
   .space-y-3 > :not([hidden]) ~ :not([hidden]) {
     margin-top: 0.75rem;
   }
-  /* Estilos para listas en tarjetas (nuevos) */
   .list-none { list-style-type: none; }
-  .space-y-3 li { margin-bottom: 0.75rem; }
-  .space-y-3 li:last-child { margin-bottom: 0; }
 </style>
 
 
