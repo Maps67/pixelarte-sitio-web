@@ -1,5 +1,5 @@
 ---
-// src/pages/index.astro (VERSIÓN CON TAMAÑO DE HERO AJUSTADO)
+// src/pages/index.astro (VERSIÓN CON SALTO DE LÍNEA)
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout 
@@ -15,7 +15,7 @@ import Layout from '../layouts/Layout.astro';
       </h1>
       
       <p class="text-6xl md:text-7xl font-playfair text-acento mb-6">
-        Menos Teclado. Más Paciente.
+        Menos Teclado.<br> Más Paciente.
       </p>
       <p class="text-lg text-secundario-claro max-w-2xl mx-auto mb-10">
         Deja de teclear, recupera tu tiempo. Permite que tu paciente se sienta visto y comprendido. Un sistema integral de IA que reduce el burnout del médico, automatiza la documentación clínica y fideliza el seguimiento post-consulta.
@@ -111,19 +111,17 @@ import Layout from '../layouts/Layout.astro';
   .inline-block { display: inline-block; }
   .mx-auto { margin-left: auto; margin-right: auto; }
   
-  /* ===== INICIO DE LA MODIFICACIÓN (NUEVAS DEFINICIONES) ===== */
   /* Tamaños más proporcionales */
   .text-6xl {
     font-size: 3.75rem; /* 60px */
-    line-height: 1;
+    line-height: 1.2; /* Ligeramente más alto para el salto de línea */
   }
   @media (min-width: 768px) {
     .md\:text-7xl {
       font-size: 4.5rem; /* 72px */
-      line-height: 1;
+      line-height: 1.2; /* Ligeramente más alto para el salto de línea */
     }
   }
-  /* ===== FIN DE LA MODIFICACIÓN ===== */
 
   @media (min-width: 768px) {
     .md\:w-64 { width: 16rem; }
