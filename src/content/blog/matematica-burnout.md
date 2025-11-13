@@ -3,7 +3,9 @@ title: "La Matemática del Burnout: El Costo Oculto del Teclado"
 description: "¿Cuánto te cuesta realmente ser tu propio escriba? Analizamos las 500 horas anuales que pierdes frente a la pantalla y cómo el Motor 1 del Co-Pilot invierte la ecuación."
 pubDate: "2023-11-15"
 author: "Marco A. Portillo"
-image: "/images/blog/burnout-calculo.webp"
+image:
+  url: "/images/blog/burnout-calculo.webp"
+  alt: "Médico analizando datos de eficiencia en computadora, simbolizando el burnout"
 tags: ["Eficiencia", "Automatización", "Motor 1"]
 slug: "matematica-burnout"
 ---
