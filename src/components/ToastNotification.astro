@@ -1,6 +1,6 @@
 ---
-// src/components/ToastNotification.astro (VERSIÓN CON CLIENT:LOAD)
-import { clientLoad } from 'astro/client';
+// src/components/ToastNotification.astro (VERSIÓN LIMPIA)
+// Se ha eliminado "import { clientLoad }"
 ---
 
 <div id="toast-notification" class="fixed bottom-6 right-6 z-50 max-w-sm p-4 bg-white rounded-lg shadow-2xl transition-all duration-500 ease-out opacity-0 translate-y-2 transform">
@@ -18,29 +18,25 @@ import { clientLoad } from 'astro/client';
 </div>
 
 <script is:inline>
-  // SOLUCIÓN: Forzamos a Astro a ejecutar este script en el cliente.
-  clientLoad(() => {
-    
-    // (Hemos quitado el setTimeout(..., 100) que envolvía todo,
-    // ya que clientLoad maneja el timing de ejecución).
-
+  // Usamos el setTimeout de 100ms para evitar la "carrera"
+  setTimeout(() => {
     const TOAST_ID = 'toast_matematica_burnout'; 
     const toastElement = document.getElementById('toast-notification');
     const closeButton = document.getElementById('toast-close-btn');
 
     if (!toastElement || !closeButton) {
-      console.error('Astro client:load Error: Elementos del Toast no encontrados.');
+      console.error('Error: Elementos del Toast no encontrados en el DOM.');
       return; 
     }
 
     const isDismissed = localStorage.getItem(TOAST_ID);
 
     if (!isDismissed) {
-      // Este setTimeout es la *espera* de 1.5s antes de mostrar (esto se queda)
+      // Espera de 1.5s antes de mostrar
       setTimeout(() => {
         toastElement.classList.remove('opacity-0', 'translate-y-2');
         toastElement.classList.add('opacity-100', 'translate-y-0');
-      }, 1500); 
+      }, 1500);
     }
 
     closeButton.addEventListener('click', () => {
@@ -52,5 +48,5 @@ import { clientLoad } from 'astro/client';
         toastElement.style.display = 'none';
       }, 500); 
     });
-  });
+  }, 100); // 100ms de retraso
 </script>
