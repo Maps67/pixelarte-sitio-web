@@ -13,14 +13,14 @@
 </div>
 
 <script is:inline>
-  // Envolvemos la función entre paréntesis y la llamamos de inmediato con () al final.
-  (function setupToastNotification() {
+  // AJUSTE: Envolvemos toda la lógica en un setTimeout para asegurar
+  // que el DOM esté 100% "pintado" antes de que el script se ejecute.
+  setTimeout(() => {
     const TOAST_ID = 'toast_matematica_burnout'; 
     const toastElement = document.getElementById('toast-notification');
     const closeButton = document.getElementById('toast-close-btn');
 
     if (!toastElement || !closeButton) {
-      // Si esto falla, ahora lo sabremos por la consola del navegador
       console.error('Error: Elementos del Toast no encontrados en el DOM.');
       return; 
     }
@@ -28,10 +28,11 @@
     const isDismissed = localStorage.getItem(TOAST_ID);
 
     if (!isDismissed) {
+      // Este segundo setTimeout es para la animación (esperar 1.5s)
       setTimeout(() => {
         toastElement.classList.remove('opacity-0', 'translate-y-2');
         toastElement.classList.add('opacity-100', 'translate-y-0');
-      }, 1500); // 1.5 segundos de espera
+      }, 1500);
     }
 
     closeButton.addEventListener('click', () => {
@@ -43,5 +44,5 @@
         toastElement.style.display = 'none';
       }, 500); 
     });
-  })(); // <-- Estos paréntesis () ejecutan la función inmediatamente
+  }, 100); // 100ms de retraso para ganar la "carrera"
 </script>
