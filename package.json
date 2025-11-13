@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^6.6.0",
+    "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.14.1",
     "astro-satori": "^0.1.6",
     "gsap": "^3.13.0",
     "satori-html": "^0.3.2",
-    "sharp": "^0.34.4"
+    "sharp": "^0.34.4",
+    "tailwindcss": "^4.1.17"
   }
 }
