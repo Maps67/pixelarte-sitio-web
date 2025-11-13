@@ -1,5 +1,5 @@
 ---
-// src/layouts/Layout.astro (VERSIÓN CON CLIENT:LOAD)
+// src/layouts/Layout.astro (VERSIÓN FINAL LIMPIA - SIN CLIENT:LOAD)
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ToastNotification from '../components/ToastNotification.astro'; // Componente importado
@@ -71,7 +71,7 @@ const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
     </main>
     <Footer />
 
-    <ToastNotification client:load />
+    <ToastNotification />
 
 </body>
 </html>
