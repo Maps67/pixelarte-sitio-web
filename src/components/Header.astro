@@ -1,5 +1,5 @@
 ---
-// src/components/Header.astro (VERSIÓN FINAL + COMENTARIO PARA ROMPER CACHÉ)
+// src/components/Header.astro (VERSIÓN CON ENLACES CORREGIDOS)
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
@@ -23,7 +23,10 @@ const pathname = Astro.url.pathname;
                     
                     <li><a href="/blog/" class:list={{ "is-active": pathname.startsWith("/blog") }}>Blog</a></li>
                     <li><a href="/testimonios/" class:list={{ "is-active": pathname === "/testimonios/" }}>Testimonios</a></li>
-                    <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Nuestro Sistema</a></li>
+                    
+                    <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Proceso</a></li>
+                    
+                    <li><a href="/nuestro-sistema/" class:list={{ "is-active": pathname === "/nuestro-sistema/" }}>Nuestro Sistema</a></li>
                     <li><a href="/aplicar/" class="cta-button">Aplicar para Sesión Estratégica</a></li>
                 </ul>
             </div>
