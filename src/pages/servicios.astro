@@ -1,5 +1,5 @@
 ---
-// src/pages/servicios.astro (VERSIÓN OPTIMIZADA MOBILE/DESKTOP)
+// src/pages/servicios.astro (VERSIÓN CON CORRECCIÓN DE IMAGEN)
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout 
@@ -26,8 +26,7 @@ import Layout from '../layouts/Layout.astro';
         <img 
           src="/images/medico-copilot.webp" 
           alt="Doctor sonriendo, representando el sistema Practice Co-Pilot"
-          class="rounded-lg shadow-xl w-full mx-auto"
-          width="400"
+          class="rounded-lg shadow-xl w-full h-auto mx-auto" width="400"
           height="400"
         />
         </div>
@@ -55,7 +54,8 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="text-xl font-playfair font-bold text-claro mt-4 mb-4">
             <span class="text-acento">Motor 1:</span> (Escriba) El Conector Humano
           </h3>
-          <p class="text-secundario-claro flex-grow"> Recupera la conexión visual. Habla con tu paciente, no con tu computadora. Aquí gana el paciente, sintiéndose visto y verdaderamente comprendido.
+          <p class="text-secundario-claro flex-grow">
+            Recupera la conexión visual. Habla con tu paciente, no con tu computadora. Aquí gana el paciente, sintiéndose visto y verdaderamente comprendido.
             <br/><br/>
             Mientras tanto, nuestra IA escucha la consulta (con permiso) y genera tus notas SOAP estructuradas en segundos, listas para tu expediente.
             <br/><br/>
@@ -171,18 +171,16 @@ import Layout from '../layouts/Layout.astro';
     color: #EF4444; /* Rojo */
     margin-right: 0.75rem;
     flex-shrink: 0;
-    /* Se agrega margen superior si usamos items-start en el flex padre */
   }
   
   .disqualification-list span {
     color: var(--color-texto-secundario);
     font-size: 1.125rem;
-    line-height: 1.5; /* Mejora de legibilidad */
+    line-height: 1.5; 
   }
   
   .flex { display: flex; }
   .flex-col { flex-direction: column; }
-  /* .items-center removido globalmente, usamos clases de tailwind especificas */
   
   .space-y-3 > :not([hidden]) ~ :not([hidden]) {
     margin-top: 0.75rem;
