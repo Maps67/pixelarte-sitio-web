@@ -1,12 +1,12 @@
 ---
-// src/components/Header.astro (VERSIÓN CON AJUSTE DE LOGO IZQUIERDA)
+// src/components/Header.astro (VERSIÓN: FORZAR DESPLAZAMIENTO VISUAL)
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
     <div class="container">
         <nav class="navigation">
             
-            <a href="/" class="logo-link -ml-4 lg:-ml-10">
+            <a href="/" class="logo-link transform -translate-x-4 lg:-translate-x-8">
                 <img src="/logo-copilot-transparente.webp" alt="Pixelarte Studios - Automatización Médica Logo" class="logo-img" />
             </a>
 
@@ -36,13 +36,12 @@ const pathname = Astro.url.pathname;
 </header>
 
 <script is:inline>
-// SCRIPT DE NAVEGACIÓN MÓVIL (LIMPIO)
+// SCRIPT DE NAVEGACIÓN MÓVIL
 function setupMobileNav() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const navWrapper = document.getElementById('primary-navigation');
     if (!mobileNavToggle || !navWrapper) return;
 
-    // Previene doble 'listener'
     if (mobileNavToggle.hasAttribute('data-listener-attached')) return;
     
     mobileNavToggle.addEventListener('click', () => {
@@ -59,6 +58,5 @@ function setupMobileNav() {
     mobileNavToggle.setAttribute('data-listener-attached', 'true');
 }
 
-// Ejecutar en la carga inicial de la página.
 setupMobileNav();
 </script>
