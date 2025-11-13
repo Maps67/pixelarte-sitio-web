@@ -1,40 +1,8 @@
 ---
-// src/layouts/Layout.astro (VERSIÓN CON TOAST DE NOTIFICACIÓN)
+// src/layouts/Layout.astro (VERSIÓN CORREGIDA CON COMPONENTE)
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-
-import '../styles/global.css';
-
-interface Props {
-    title: string;
-    description: string;
-    canonicalUrl?: string;
-    ogImage?: string; 
-    ogImageAlt?: string;
-}
-
-const { 
-    title, 
-    description,
-    canonicalUrl,
-    ogImage, 
-    ogImageAlt 
-} = Astro.props;
-
-const siteUrl = Astro.site; 
-const pageTitle = `${title} | Pixelarte Studio`;
-const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
-
-const fallbackImageUrl = new URL('/images/social-cover-default.png', siteUrl).href;
-const fallbackImageAlt = 'Pixelarte Studio - Estrategia Digital Insider';
-
-const finalSocialImageUrl = ogImage ? new URL(ogImage, siteUrl).href : fallbackImageUrl;
-const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
----
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-M" />
+import ToastNotification from '../components/ToastNotification.astro'; // <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
@@ -70,66 +38,5 @@ const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
     </main>
     <Footer />
 
-    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 max-w-sm p-4 bg-white rounded-lg shadow-2xl transition-all duration-500 ease-out opacity-0 translate-y-2 transform">
-      <div class="flex items-start justify-between">
-        <div class="flex-grow">
-          <p class="font-bold text-oscuro">Nuevo en el Blog</p>
-          <a href="/blog/matematica-burnout/" class="text-sm text-acento hover:underline">
-            La Matemática del Burnout: El Costo Oculto del Teclado
-          </a>
-        </div>
-        <button id="toast-close-btn" class="ml-3 p-1 text-secundario hover:text-oscuro" aria-label="Cerrar">
-          <svg class_="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-      </div>
-    </div>
-
-    <script is:inline>
-      function setupToastNotification() {
-        // --- ¡IMPORTANTE! ---
-        // ID único para este post. Cuando publiques un NUEVO artículo,
-        // solo tendrás que cambiar este ID (ej: 'toast_proximo_articulo')
-        const TOAST_ID = 'toast_matematica_burnout'; 
-        
-        const toastElement = document.getElementById('toast-notification');
-        const closeButton = document.getElementById('toast-close-btn');
-
-        if (!toastElement || !closeButton) {
-          return; // Salir si algo falla
-        }
-
-        // Revisar si el usuario YA vio y cerró este toast específico
-        const isDismissed = localStorage.getItem(TOAST_ID);
-
-        // 1. Lógica para MOSTRAR el toast
-        if (!isDismissed) {
-          // Esperar 1.5 segundos después de que cargue la página
-          setTimeout(() => {
-            // Activar la animación de entrada (fade in + slide up)
-            toastElement.classList.remove('opacity-0', 'translate-y-2');
-            toastElement.classList.add('opacity-100', 'translate-y-0');
-          }, 1500);
-        }
-
-        // 2. Lógica para CERRAR y GUARDAR
-        closeButton.addEventListener('click', () => {
-          // Ocultar con animación de salida
-          toastElement.classList.remove('opacity-100', 'translate-y-0');
-          toastElement.classList.add('opacity-0', 'translate-y-2');
-          
-          // Guardar en localStorage para que no se muestre de nuevo
-          localStorage.setItem(TOAST_ID, 'true');
-          
-          // Opcional: remover del DOM después de la animación
-          setTimeout(() => {
-            toastElement.style.display = 'none';
-          }, 500); // Coincide con duration-500
-        });
-      }
-
-      // Ejecutar el script cuando el DOM esté listo
-      document.addEventListener('DOMContentLoaded', setupToastNotification);
-    </script>
-    
-    </body>
+    <ToastNotification /> </body>
 </html>
