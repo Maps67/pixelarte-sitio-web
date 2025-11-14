@@ -1,4 +1,5 @@
 ---
+// src/pages/testimonios.astro (VERSIÓN CON ENFOQUE PROFESIONAL)
 import Layout from '../layouts/Layout.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
 
@@ -8,20 +9,36 @@ const testimonials = [
         quote: "Pixelarte superó por completo nuestras expectativas. Su enfoque no fue solo de diseño, sino estratégico. Transformaron nuestro sitio web en una herramienta fundamental para la práctica médica, mejorando drásticamente el control y la comunicación con mis pacientes a través del innovador sistema de guías interactivas. Son verdaderos socios tecnológicos.",
         author: "Dr. Carlos A. Díaz",
         title: "Cirujano General",
-        // Asegúrate de que esta imagen exista en tu carpeta public/images/
-        // Si no tienes la foto aún, usa: "https://placehold.co/150x150/E2E8F0/475569?text=CD"
-        avatarUrl: "/images/dr-carlos-diaz.webp" 
+        avatarUrl: "/images/dr-carlos-diaz.webp"
     }
 ];
 ---
 
 <Layout title="Testimonios - Confían en Nosotros | PixelArte Studio">
-    <section class="testimonials-section-v3 standalone-page">
-        <div class="container">
-            <div class="section-header">
-                <h1 class="section-title">Confían en Nosotros</h1>
-                <p class="section-subtitle">
-                    Nos enorgullece construir relaciones duraderas y resultados que hablan por sí mismos.
+
+    <section class="bg-oscuro py-16 md:py-24">
+        <div class="container max-w-3xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-playfair font-bold text-claro mb-6">
+                Confían en Nosotros
+            </h1>
+            <p class="text-lg text-secundario-claro max-w-2xl mx-auto">
+                Nos enorgullece construir relaciones duraderas y resultados que hablan por sí mismos. No buscamos clientes, construimos alianzas estratégicas.
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-claro py-16 md:py-24">
+        <div class="container max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-playfair font-bold text-oscuro mb-6">
+                    Partner Destacado
+                </h2>
+                <p class="text-lg text-secundario">
+                    La transición de una práctica tradicional a una operación Health-Tech requiere una confianza absoluta.
+                </p>
+                <p class="text-lg text-secundario mt-4">
+                    El Dr. Díaz comparte su experiencia al implementar el sistema "Practice Co-Pilot" para automatizar su práctica y reducir la carga administrativa.
                 </p>
             </div>
             
@@ -35,47 +52,27 @@ const testimonials = [
 </Layout>
 
 <style>
-    .container { padding: 0 1rem; max-width: 1200px; margin: 0 auto; }
-    
-    .section-header { text-align: center; margin-bottom: 3rem; }
-    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-texto-oscuro, #1a202c); }
-    .section-subtitle { font-size: 1rem; max-width: 600px; margin: 0 auto; color: var(--color-texto-secundario, #4a5568); }
-
-    .testimonials-section-v3.standalone-page {
-        background-color: var(--color-fondo-claro, #f7fafc); /* Fallback color si la variable falla */
-        padding: 4rem 0;
-        min-height: 80vh;
-    }
-
-    /* Wrapper Flexible:
-       En lugar de Grid forzado, usamos Flexbox para centrar el único elemento.
-       Cuando agregues más testimonios, esto se adaptará (wrap).
+    /* Reutilizamos el 'wrapper' del código anterior.
+      Este CSS asegura que la tarjeta se mantenga centrada
+      y con el ancho correcto dentro de la columna de la cuadrícula.
     */
     .testimonials-wrapper {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center; /* Centra la tarjeta horizontalmente */
+        justify-content: center;
         gap: 2rem;
-        max-width: 1000px; 
-        margin: 0 auto;
+        width: 100%;
     }
 
-    /* Ajuste del ancho de la tarjeta para que no se estire demasiado al estar sola */
     :global(.testimonial-card) {
         flex: 0 1 100%;
-        max-width: 600px; /* Ancho máximo de lectura cómoda */
+        max-width: 600px;
     }
 
     @media (min-width: 768px) {
-        .container { padding: 0 2rem; }
-        .testimonials-section-v3.standalone-page { padding: 6rem 0; } 
-        .section-header { margin-bottom: 4rem; }
-        .section-title { font-size: 2.5rem; }
-        .section-subtitle { font-size: 1.125rem; }
-        
-        /* Si en el futuro son 2 tarjetas, ocuparán el 45-48% c/u */
         :global(.testimonial-card) {
-            flex: 0 1 calc(50% - 1rem); 
+            /* Permite que la tarjeta ocupe todo el espacio de su columna */
+            flex: 0 1 100%; 
         }
     }
 </style>
