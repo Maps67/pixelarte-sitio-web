@@ -1,5 +1,5 @@
 ---
-// src/pages/servicios.astro (VERSIÓN CON CORRECCIÓN DE IMAGEN)
+// src/pages/servicios.astro (VERSIÓN FINAL CON PRIVACY SHIELD)
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout 
@@ -26,7 +26,8 @@ import Layout from '../layouts/Layout.astro';
         <img 
           src="/images/medico-copilot.webp" 
           alt="Doctor sonriendo, representando el sistema Practice Co-Pilot"
-          class="rounded-lg shadow-xl w-full h-auto mx-auto" width="400"
+          class="rounded-lg shadow-xl w-full h-auto mx-auto"
+          width="400"
           height="400"
         />
         </div>
@@ -104,6 +105,69 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <section class="py-16 md:py-24" style="background: #ffffff;">
+    <div class="container max-w-5xl mx-auto px-4">
+      
+      <div class="text-center mb-10">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-oscuro mb-6">
+          Seguridad: PixelArte Privacy Shield™
+        </h2>
+        <p class="text-lg text-acento font-bold">
+          Potenciamos su marketing sin arriesgar su licencia.
+        </p>
+      </div>
+
+      <div class="shield-diagram-container" style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin: 2rem 0; flex-wrap: wrap;">
+        
+        <div class="flow-step" style="text-align: center; opacity: 0.7;">
+          <div style="font-size: 3rem; margin-bottom: 0.5rem;">📄</div>
+          <div style="background: #fff5f5; color: #c53030; padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid #feb2b2; font-size: 0.9rem; font-weight: bold;">
+            Nota Clínica Real<br>(Datos Sensibles)
+          </div>
+        </div>
+
+        <div style="font-size: 2rem; color: #cbd5e0;">➝</div>
+
+        <div class="flow-step shield-core" style="text-align: center; position: relative; z-index: 10;">
+          <div style="background: linear-gradient(135deg, #2b6cb0 0%, #2c5282 100%); width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 25px rgba(44, 82, 130, 0.4);">
+            <div style="font-size: 3.5rem;">🛡️</div>
+          </div>
+          <div style="margin-top: 1rem; color: #2c5282; font-weight: 800; font-size: 1.2rem;">
+            IA de Anonimización<br>HIPAA
+          </div>
+        </div>
+
+        <div style="font-size: 2rem; color: #cbd5e0;">➝</div>
+
+        <div class="flow-step" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 0.5rem;">📢</div>
+          <div style="background: #f0fff4; color: #2f855a; padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid #9ae6b4; font-size: 0.9rem; font-weight: bold;">
+            Caso de Éxito<br>(Listo para Publicar)
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pivot-box text-center max-w-3xl mx-auto" style="margin-top: 3rem;">
+        <h3 class="font-bold text-xl mb-2 text-oscuro">¿Qué es?</h3>
+        <p class="text-secundario">Un microservicio de IA exclusivo que intercepta y "lava" los datos médicos. Detecta nombres y fechas sensibles y los reemplaza instantáneamente, manteniendo el contexto clínico intacto.</p>
+      </div>
+
+      <div class="impact-grid grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto" style="margin-top: 2rem;">
+        <div class="impact-box p-6 rounded-lg" style="background: #f7fafc; color: #2d3748; border: 1px solid #e2e8f0;">
+          <div class="icon" style="font-size: 2rem; margin-bottom: 0.5rem;">⚖️</div>
+          <h3 class="font-bold text-lg" style="color: #2d3748;">Cero Riesgo Legal</h3>
+          <p class="text-sm" style="margin-top: 0.5rem;">Cumplimiento total HIPAA/GDPR. Sus bases de datos nunca tocan servidores públicos.</p>
+        </div>
+        <div class="impact-box p-6 rounded-lg" style="background: #f7fafc; color: #2d3748; border: 1px solid #e2e8f0;">
+          <div class="icon" style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+          <h3 class="font-bold text-lg" style="color: #2d3748;">Marketing Seguro</h3>
+          <p class="text-sm" style="margin-top: 0.5rem;">Convierta una historia clínica en un post de blog o red social en 3 segundos.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
   <section class="bg-claro py-16 md:py-24">
     <div class="container max-w-3xl mx-auto px-4 text-center">
       
