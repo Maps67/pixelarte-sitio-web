@@ -1,5 +1,5 @@
 ---
-// src/components/Header.astro (VERSIÓN FINAL CON MEDISCRIBE)
+// src/components/Header.astro
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
@@ -27,7 +27,7 @@ const pathname = Astro.url.pathname;
                     <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Proceso</a></li>
                     
                     <li>
-                        <a href="/producto" class:list={[{ "is-active": pathname === "/producto" }, "flex items-center gap-2 group"]}>
+                        <a href="/mediscribe/" class:list={[{ "is-active": pathname.startsWith("/mediscribe") }, "flex items-center gap-2 group"]}>
                             MediScribe AI
                             <span class="inline-flex items-center rounded-md bg-teal-50 px-2 py-1 text-xs font-medium text-teal-700 ring-1 ring-inset ring-teal-600/20 group-hover:bg-teal-100 transition-colors">Nuevo</span>
                         </a>

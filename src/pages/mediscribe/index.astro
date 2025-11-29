@@ -1,10 +1,8 @@
 ---
-// Archivo: src/pages/mediscribe.astro
-import Layout from '../layouts/Layout.astro';
+// Archivo: src/pages/mediscribe/index.astro
+import Layout from '../../layouts/Layout.astro'; // Nota: subimos dos niveles ahora
 
-// Metadatos para SEO
 const title = "MediScribe AI | Asistente Médico Inteligente - Pixelarte Studio";
-const description = "Elimina el burnout médico. IA Ambiental que escucha tu consulta y redacta el expediente clínico automáticamente. Tecnología Anti-Eco y Cumplimiento NOM.";
 ---
 
 <Layout title={title}>
@@ -69,7 +67,7 @@ const description = "Elimina el burnout médico. IA Ambiental que escucha tu con
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
           </div>
           <h3 class="text-xl font-bold text-slate-900 mb-3">Privacidad Blindada</h3>
-          <p class="text-slate-600">Arquitectura "Single Tenant" lógica. Tus datos de paciente están aislados con políticas de seguridad RLS (Row Level Security) desde el núcleo.</p>
+          <p class="text-slate-600">Arquitectura "Single Tenant" lógica. Tus datos de paciente están aislados con políticas de seguridad RLS desde el núcleo.</p>
         </div>
       </div>
     </div>
