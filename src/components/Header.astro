@@ -1,5 +1,5 @@
 ---
-// src/components/Header.astro (VERSIÓN: POSICIONAMIENTO RELATIVO FORZADO)
+// src/components/Header.astro (VERSIÓN FINAL CON MEDISCRIBE)
 const pathname = Astro.url.pathname;
 ---
 <header class="header">
@@ -24,9 +24,15 @@ const pathname = Astro.url.pathname;
                     
                     <li><a href="/blog/" class:list={{ "is-active": pathname.startsWith("/blog") }}>Blog</a></li>
                     <li><a href="/testimonios/" class:list={{ "is-active": pathname === "/testimonios/" }}>Testimonios</a></li>
-                    
                     <li><a href="/proceso/" class:list={{ "is-active": pathname === "/proceso/" }}>Proceso</a></li>
                     
+                    <li>
+                        <a href="/producto" class:list={[{ "is-active": pathname === "/producto" }, "flex items-center gap-2 group"]}>
+                            MediScribe AI
+                            <span class="inline-flex items-center rounded-md bg-teal-50 px-2 py-1 text-xs font-medium text-teal-700 ring-1 ring-inset ring-teal-600/20 group-hover:bg-teal-100 transition-colors">Nuevo</span>
+                        </a>
+                    </li>
+
                     <li><a href="/nuestro-sistema/" class:list={{ "is-active": pathname === "/nuestro-sistema/" }}>Nuestro Sistema</a></li>
                     <li><a href="/aplicar/" class="cta-button">Aplicar para Sesión Estratégica</a></li>
                 </ul>
