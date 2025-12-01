@@ -1,0 +1,136 @@
+---
+// Archivo: src/pages/pitch.astro
+import Layout from '../layouts/Layout.astro';
+
+const title = "MediScribe AI | Recupera tu Vida";
+const APP_URL = "https://app.pixelartestudio.art/auth"; // Enlace directo al registro
+---
+
+<Layout title={title}>
+  <main class="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-slate-950 text-white no-scrollbar">
+    
+    <section class="h-screen w-full snap-center relative flex flex-col justify-center items-center text-center p-6 overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-teal-900/40 via-slate-950 to-slate-950"></div>
+      
+      <div class="relative z-10 animate-fade-in-up">
+        <span class="inline-block py-1 px-3 rounded-full bg-teal-500/20 text-teal-300 text-xs font-bold uppercase tracking-wider mb-6 border border-teal-500/30">
+          Para Médicos Privados
+        </span>
+        <h1 class="text-5xl font-black mb-4 leading-tight">
+          ¿A qué hora vas a <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-300">cenar hoy</span>?
+        </h1>
+        <p class="text-xl text-slate-300 max-w-xs mx-auto leading-relaxed">
+          La tecnología prometió ayudarte, pero terminó encadenándote al escritorio.
+        </p>
+      </div>
+
+      <div class="absolute bottom-10 animate-bounce">
+        <p class="text-xs text-slate-500 uppercase tracking-widest mb-2">Desliza</p>
+        <svg class="w-6 h-6 text-white mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+      </div>
+    </section>
+
+    <section class="h-screen w-full snap-center relative flex flex-col justify-center items-center p-6 bg-slate-900">
+      <div class="max-w-md w-full text-center">
+        <h2 class="text-3xl font-bold mb-8">No estudiaste medicina para ser <span class="text-red-400">capturista de datos</span>.</h2>
+        
+        <div class="relative h-64 w-8 bg-slate-800 rounded-full mx-auto mb-8 overflow-hidden border border-slate-700">
+           <div class="absolute bottom-0 w-full bg-red-500 h-[70%] animate-pulse flex items-center justify-center">
+              <span class="text-xs font-bold -rotate-90 text-white whitespace-nowrap">Burocracia (70%)</span>
+           </div>
+           <div class="absolute top-0 w-full bg-teal-500 h-[30%] flex items-center justify-center">
+              <span class="text-xs font-bold -rotate-90 text-slate-900 whitespace-nowrap">Pacientes (30%)</span>
+           </div>
+        </div>
+
+        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
+           <p class="text-lg font-bold text-white">2.5 Horas Perdidas</p>
+           <p class="text-sm text-slate-400">Diarias redactando expedientes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="h-screen w-full snap-center relative flex flex-col justify-center items-center bg-black">
+      <div class="absolute inset-0 w-full h-full">
+        <video 
+          class="w-full h-full object-cover opacity-60" 
+          src="/demo.mp4" 
+          autoplay 
+          loop 
+          muted 
+          playsinline>
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
+      </div>
+
+      <div class="relative z-10 text-center p-6 mt-auto mb-20">
+        <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(20,184,166,0.6)] animate-pulse">
+           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
+        </div>
+        <h2 class="text-4xl font-black mb-2">Tecnología Invisible</h2>
+        <p class="text-xl text-slate-200">Tú hablas. <br/>MediScribe escribe.</p>
+      </div>
+    </section>
+
+    <section class="h-screen w-full snap-center relative flex flex-col justify-center items-center p-6 bg-slate-900">
+      <div class="w-full max-w-sm bg-gradient-to-b from-slate-800 to-slate-900 p-8 rounded-3xl border border-slate-700 shadow-2xl text-center">
+         <p class="text-sm font-bold text-teal-400 uppercase tracking-widest mb-4">Plan Profesional</p>
+         
+         <div class="flex justify-center items-baseline mb-2">
+            <span class="text-6xl font-black text-white">$899</span>
+            <span class="text-xl text-slate-400 ml-2">MXN</span>
+         </div>
+         <p class="text-slate-500 text-sm mb-8">Al mes. Menos que un café diario.</p>
+
+         <ul class="text-left space-y-4 mb-8 text-slate-300">
+            <li class="flex items-center gap-3">
+               <div class="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400">✓</div>
+               <span>Consultas Ilimitadas</span>
+            </li>
+            <li class="flex items-center gap-3">
+               <div class="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400">✓</div>
+               <span>Recetas Automáticas</span>
+            </li>
+            <li class="flex items-center gap-3">
+               <div class="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400">✓</div>
+               <span>Formato NOM-004</span>
+            </li>
+            <li class="flex items-center gap-3">
+               <div class="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400">✓</div>
+               <span>App Móvil + Web</span>
+            </li>
+         </ul>
+      </div>
+    </section>
+
+    <section class="h-screen w-full snap-center relative flex flex-col justify-center items-center p-8 bg-gradient-to-br from-teal-900 to-slate-950 text-center">
+      <h2 class="text-4xl font-bold mb-6">Recupera tu vida hoy mismo.</h2>
+      <p class="text-slate-300 mb-10 text-lg">Únete al programa piloto exclusivo para colegas.</p>
+      
+      <a href={APP_URL} class="w-full max-w-xs py-5 bg-white text-slate-900 font-black text-xl rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:scale-105 transition-transform flex items-center justify-center gap-3">
+         <span>Iniciar Prueba Gratis</span>
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+      </a>
+
+      <p class="mt-6 text-sm text-teal-200/60">
+         15 Días de Regalo • Sin tarjeta de crédito
+      </p>
+
+      <div class="mt-auto mb-4 opacity-50">
+         <img src="/logo-copilot-transparente.webp" alt="Pixelarte" class="h-8 mx-auto grayscale" />
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  /* Ocultar scrollbar para experiencia nativa */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
