@@ -2,8 +2,8 @@
 // Archivo: src/pages/mediscribe/index.astro
 import Layout from '../../layouts/Layout.astro';
 
-const title = "MediScribe AI | Automatización Clínica - Pixelarte Studio";
-const APP_URL = "https://app.pixelartestudio.art/";
+const title = "VitalScribe AI | El Asistente Clínico Definitivo - Pixelarte Studio";
+const APP_URL = "https://vitalscribeai.com/";
 ---
 
 <Layout title={title}>
@@ -18,24 +18,24 @@ const APP_URL = "https://app.pixelartestudio.art/";
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
         </span>
-        Tecnología v3.2 Disponible
+        Motor Neural Clínico v4.0 Activo
       </div>
 
       <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
-        Domina tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-200">Práctica Clínica</span>
+        Recupera tu tiempo con <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-200">Inteligencia Clínica</span>
       </h1>
       
       <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-        Olvídate de transcribir. MediScribe escucha tu consulta, separa las voces y redacta el expediente estructurado (NOM-004) mientras tú miras a los ojos a tu paciente.
+        VitalScribe no solo transcribe; estructura, analiza y redacta tu nota médica bajo norma NOM-004 en segundos. Enfócate en el paciente, nosotros cuidamos el expediente.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a href={APP_URL} target="_blank" class="w-full sm:w-auto px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(20,184,166,0.3)] flex items-center justify-center gap-2 hover:-translate-y-1">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>
-            Iniciar Prueba Gratuita
+            Probar Gratis Ahora
         </a>
         <a href="#demo-funcional" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/10 text-white font-medium rounded-xl transition-all backdrop-blur-sm">
-          Ver cómo funciona
+          Ver demostración
         </a>
       </div>
     </div>
@@ -46,29 +46,30 @@ const APP_URL = "https://app.pixelartestudio.art/";
       
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl shadow-sm mb-6">🎙️</div>
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">La IA entiende contexto, no solo palabras.</h2>
+          <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl shadow-sm mb-6">🧠</div>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Comprensión Médica Profunda</h2>
           <p class="text-lg text-slate-600 mb-8">
-            Nuestro motor no es un simple dictado. Entiende la diferencia entre una charla casual y una instrucción clínica.
+            Nuestra IA distingue entre síntomas, diagnósticos y plan terapéutico. Transforma una conversación natural en un documento legal estructurado.
           </p>
 
           <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-lg relative overflow-hidden">
             <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
             <div class="flex gap-4">
               <div class="flex-1">
-                <p class="text-xs font-bold text-slate-400 uppercase mb-2">Lo que tú dices:</p>
-                <p class="text-slate-800 italic mb-4">"Voy a recetar Paracetamol de 500mg cada 8 horas por 3 días."</p>
+                <p class="text-xs font-bold text-slate-400 uppercase mb-2">Tu Dictado Natural:</p>
+                <p class="text-slate-800 italic mb-4">"Paciente con dolor lumbar de 3 días, EVA 7/10. Vamos a iniciar Ketorolaco sublingual y reposo relativo..."</p>
                 
                 <div class="h-px bg-slate-100 w-full my-4"></div>
 
                 <p class="text-xs font-bold text-teal-600 uppercase mb-2 flex items-center gap-1">
                   <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                  Lo que MediScribe escribe:
+                  Estructura VitalScribe (SOAP):
                 </p>
-                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 font-mono text-sm text-slate-700">
-                  <span class="text-blue-600 font-bold">PLAN/TRATAMIENTO:</span><br/>
-                  - Paracetamol 500mg<br/>
-                  - Posología: C/8hrs x 3 días.
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 font-mono text-xs md:text-sm text-slate-700">
+                  <span class="text-blue-600 font-bold">SUBJETIVO:</span> Lumbalgia aguda (3 días evol), EVA 7/10.<br/>
+                  <span class="text-blue-600 font-bold">PLAN:</span><br/>
+                  1. Farmacológico: Ketorolaco (SL)<br/>
+                  2. Medidas Generales: Reposo relativo.
                 </div>
               </div>
             </div>
@@ -77,15 +78,15 @@ const APP_URL = "https://app.pixelartestudio.art/";
 
         <div class="relative">
            <div class="absolute inset-0 bg-gradient-to-tr from-teal-500 to-indigo-500 rounded-3xl transform rotate-3 opacity-20 blur-lg"></div>
-           <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Doctor usando IA" class="relative rounded-3xl shadow-2xl border-4 border-white transform -rotate-2 hover:rotate-0 transition-all duration-500">
+           <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Doctor usando IA VitalScribe" class="relative rounded-3xl shadow-2xl border-4 border-white transform -rotate-2 hover:rotate-0 transition-all duration-500">
            
            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce-slow">
              <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
              </div>
              <div>
-               <p class="text-xs text-slate-500 font-bold uppercase">Estado</p>
-               <p class="text-sm font-bold text-slate-900">Nota Guardada</p>
+               <p class="text-xs text-slate-500 font-bold uppercase">Cumplimiento</p>
+               <p class="text-sm font-bold text-slate-900">NOM-004 Válida</p>
              </div>
            </div>
         </div>
@@ -96,56 +97,56 @@ const APP_URL = "https://app.pixelartestudio.art/";
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900">Un Sistema Operativo Médico Completo</h2>
-        <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Más allá de la transcripción. Gestiona toda tu práctica desde una sola pantalla.</p>
+        <h2 class="text-3xl font-bold text-slate-900">Tu Consultorio, Potenciado por IA</h2>
+        <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Diseñado por médicos y desarrolladores para eliminar la burocracia digital.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         
         <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:border-teal-200 transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl shadow-sm mb-6 group-hover:scale-110 transition-transform">📊</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Hub Profesional</h3>
-          <p class="text-slate-600 leading-relaxed mb-6">Tu centro de mando. Visualiza pacientes activos, tiempos de consulta promedio y estadísticas vitales en tiempo real.</p>
+          <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl shadow-sm mb-6 group-hover:scale-110 transition-transform">📈</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Inteligencia de Negocio</h3>
+          <p class="text-slate-600 leading-relaxed mb-6">No vueles a ciegas. VitalScribe analiza tus tiempos, retención de pacientes y flujo de citas para optimizar tu rentabilidad.</p>
           <ul class="space-y-2">
             <li class="flex items-center gap-2 text-sm text-slate-500">
               <svg class="w-4 h-4 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Estadísticas de ocupación
+              Métricas de consulta en tiempo real
             </li>
             <li class="flex items-center gap-2 text-sm text-slate-500">
               <svg class="w-4 h-4 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Asistente de Voz para Agenda
+              Reportes de productividad
             </li>
           </ul>
         </div>
 
         <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:border-teal-200 transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl shadow-sm mb-6 group-hover:scale-110 transition-transform">📅</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Sincronización Total</h3>
-          <p class="text-slate-600 leading-relaxed mb-6">No abandones tu calendario actual. MediScribe se conecta bidireccionalmente para que nunca pierdas una cita.</p>
+          <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl shadow-sm mb-6 group-hover:scale-110 transition-transform">🔗</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Agenda Unificada</h3>
+          <p class="text-slate-600 leading-relaxed mb-6">Evita conflictos de horario. El sistema se fusiona con tu calendario personal y profesional para una gestión sin errores.</p>
           <div class="flex gap-3">
              <div class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-slate-200 text-xs font-bold text-slate-600 shadow-sm">
-                <span class="w-2 h-2 bg-blue-500 rounded-full"></span> Google
+                <span class="w-2 h-2 bg-blue-500 rounded-full"></span> G-Cal
              </div>
              <div class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-slate-200 text-xs font-bold text-slate-600 shadow-sm">
-                <span class="w-2 h-2 bg-gray-800 rounded-full"></span> Apple
+                <span class="w-2 h-2 bg-gray-800 rounded-full"></span> iCal
              </div>
           </div>
         </div>
 
         <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:border-teal-200 transition-all group relative overflow-hidden">
           <div class="absolute top-0 right-0 w-20 h-20 bg-orange-100 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-150"></div>
-          <div class="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl shadow-sm mb-6 relative z-10 group-hover:scale-110 transition-transform">📂</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 relative z-10">Gestión "Auto-Sanitize"</h3>
+          <div class="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl shadow-sm mb-6 relative z-10 group-hover:scale-110 transition-transform">🗂️</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 relative z-10">Organización Automática</h3>
           <p class="text-slate-600 leading-relaxed mb-4 relative z-10">
-            Olvídate de renombrar archivos. El sistema limpia nombres complejos automáticamente para evitar errores.
+            Sube estudios o fotos y deja que la IA los renombre, clasifique y asigne al expediente correcto automáticamente.
           </p>
           
           <div class="bg-slate-900 p-3 rounded-lg font-mono text-[10px] text-slate-300 relative z-10">
             <div class="flex items-center gap-2 opacity-50 mb-1">
-               <span class="text-red-400">x</span> examen_corazón_ñ.pdf
+               <span class="text-red-400">x</span> IMG_2024_01.jpg
             </div>
             <div class="flex items-center gap-2 text-teal-400 font-bold">
-               <span class="text-green-400">✓</span> 1704-examen-corazon.pdf
+               <span class="text-green-400">✓</span> Lab_Biometria_04-24.pdf
             </div>
           </div>
         </div>
@@ -156,18 +157,18 @@ const APP_URL = "https://app.pixelartestudio.art/";
 
   <section class="py-20 bg-slate-900 border-t border-slate-800">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">¿Listo para dejar de teclear?</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Únete a la Medicina del Futuro</h2>
       <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
-        Únete a los médicos que ya terminan su consulta a tiempo. Tienes 15 días de acceso total sin compromiso.
+        Prueba VitalScribe AI sin riesgos. 15 días de acceso total para que experimentes la libertad de no escribir.
       </p>
       
       <a href={APP_URL} target="_blank" class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-slate-900 transition-all duration-200 bg-teal-400 rounded-xl hover:bg-teal-300 hover:scale-105 shadow-[0_0_30px_rgba(45,212,191,0.4)] gap-3">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" /></svg>
-        Crear mi cuenta y Acceder
+        Comenzar Prueba Gratuita
       </a>
       
       <p class="mt-6 text-sm text-slate-500">
-        No se requiere tarjeta de crédito • Cancelación automática
+        Cumplimiento NOM-004 • Seguridad Encriptada • Soporte 24/7
       </p>
     </div>
   </section>
