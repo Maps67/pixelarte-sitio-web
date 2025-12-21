@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Términos y Condiciones de Uso | VitalScribe AI";
+const lastUpdate = "20 de Diciembre de 2024";
+---
+
+<Layout title={title}>
+  <main class="bg-white min-h-screen pt-24 pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12 border-b border-slate-200 pb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Términos y Condiciones de Uso</h1>
+        <p class="text-slate-500">
+          Última actualización: <span class="font-medium text-slate-900">{lastUpdate}</span>
+        </p>
+      </div>
+
+      <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-8">
+        
+        <p class="font-medium text-lg text-slate-900">
+          Bienvenido a VitalScribe AI.
+        </p>
+
+        <p>
+          Estos Términos y Condiciones ("Términos") regulan el acceso y uso de la plataforma de software como servicio (SaaS) <strong>VitalScribe AI</strong> ("el Servicio"), propiedad y operada por <strong>Pixelarte Studio</strong> ("el Proveedor", "Nosotros"), con domicilio en Jalisco, México.
+        </p>
+
+        <p>
+          Al registrarse, acceder o utilizar nuestros Servicios, usted ("el Usuario", "el Profesional de la Salud") acepta estar legalmente vinculado por estos Términos. Si no está de acuerdo, no debe utilizar el Servicio.
+        </p>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+            <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded text-sm">1</span> Definición del Servicio
+          </h2>
+          <p>
+            VitalScribe AI es una herramienta de asistencia tecnológica basada en Inteligencia Artificial (IA) diseñada para escuchar, transcribir y estructurar conversaciones clínicas en formatos médicos estándar (como notas SOAP).
+          </p>
+        </section>
+
+        <section class="bg-red-50 p-6 rounded-xl border border-red-100">
+          <h2 class="text-xl font-bold text-red-800 mb-3 flex items-center gap-2">
+            <span class="bg-red-200 text-red-800 px-2 py-1 rounded text-sm">2</span> Descargo de Responsabilidad Médica
+          </h2>
+          <ul class="list-disc pl-5 space-y-2 text-red-900/80">
+            <li>
+              <strong>Herramienta de Asistencia, No de Decisión:</strong> El Usuario reconoce y acepta que VitalScribe AI es una herramienta de apoyo administrativo y de documentación. <strong>NO es un dispositivo médico, no ofrece diagnósticos, ni sustituye el juicio clínico profesional.</strong>
+            </li>
+            <li>
+              <strong>Responsabilidad de Validación:</strong> La IA puede cometer errores de interpretación o inexactitudes. <strong>Es responsabilidad exclusiva e intransferible del Usuario revisar, corregir, editar y validar</strong> la exactitud de cualquier texto, receta o documento generado por el Servicio antes de incorporarlo a un expediente clínico real o entregarlo a un paciente.
+            </li>
+            <li>
+              <strong>Liberación de Responsabilidad:</strong> Pixelarte Studio no se hace responsable por daños, negligencias médicas, errores en prescripciones o diagnósticos derivados del uso de la información generada por la plataforma sin la debida supervisión humana.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+            <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded text-sm">3</span> Privacidad y Seguridad de Datos
+          </h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>
+              <strong>Infraestructura Segura:</strong> El Servicio opera sobre la infraestructura de <strong>Google Cloud Vertex AI</strong>, utilizando encriptación de grado bancario (AES-256) tanto en tránsito como en reposo.
+            </li>
+            <li>
+              <strong>Política "Zero-Training":</strong> Garantizamos que los datos de audio y texto de sus pacientes <strong>NO son utilizados para entrenar modelos de inteligencia artificial públicos</strong>. Su información permanece privada y aislada.
+            </li>
+            <li>
+              <strong>Cumplimiento Normativo:</strong> El Usuario declara que cuenta con el consentimiento de sus pacientes para el uso de herramientas de procesamiento de datos, en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y normativas locales aplicables.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+            <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded text-sm">4</span> Propiedad de los Datos
+          </h2>
+          <p>
+            <strong>4.1 Datos del Paciente:</strong> El Usuario conserva todos los derechos, títulos e intereses sobre los datos de los pacientes que cargue o genere en el Servicio. VitalScribe AI actúa únicamente como "Encargado" del tratamiento de datos.
+          </p>
+          <p class="mt-2">
+            <strong>4.2 Portabilidad:</strong> En caso de terminar la suscripción, el Usuario tiene derecho a exportar su información. Pixelarte Studio se compromete a eliminar los datos de sus servidores tras un periodo de gracia de 30 días posteriores a la cancelación definitiva.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+            <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded text-sm">5</span> Suscripciones y Pagos
+          </h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>
+              <strong>Periodo de Prueba:</strong> Se ofrece un periodo de prueba gratuito de 15 días. Al finalizar, el Usuario deberá contratar un plan de pago para continuar usando el Servicio.
+            </li>
+            <li>
+              <strong>Cancelación:</strong> El Usuario puede cancelar su suscripción en cualquier momento desde su panel de control. El servicio permanecerá activo hasta el final del ciclo de facturación pagado. No se realizan reembolsos por periodos parciales no utilizados.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+            <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded text-sm">6</span> Uso Prohibido
+          </h2>
+          <p>Queda estrictamente prohibido:</p>
+          <ul class="list-disc pl-5 space-y-1 mt-2">
+            <li>Compartir sus credenciales de acceso con terceros (una cuenta = un médico).</li>
+            <li>Utilizar el Servicio para fines ilícitos o fraudulentos.</li>
+            <li>Intentar realizar ingeniería inversa, copiar o vulnerar la seguridad de la plataforma.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+            <span class="bg-slate-100 text-slate-600 px-2 py-1 rounded text-sm">7</span> Jurisdicción
+          </h2>
+          <p>
+            Estos Términos se rigen por las leyes vigentes en los Estados Unidos Mexicanos. Para cualquier controversia, las partes se someten a la jurisdicción de los tribunales competentes en la ciudad de <strong>Guadalajara, Jalisco</strong>, renunciando a cualquier otro fuero que pudiera corresponderles.
+          </p>
+        </section>
+
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-slate-200 text-center">
+        <a href="/" class="inline-flex items-center text-teal-600 hover:text-teal-700 font-bold transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Volver al Inicio
+        </a>
+      </div>
+
+    </div>
+  </main>
+</Layout>
