@@ -2,7 +2,7 @@
 // Archivo: src/pages/vitalscribe/index.astro
 import Layout from '../../layouts/Layout.astro';
 
-const title = "VitalScribe AI | El Asistente Clínico Definitivo - Pixelarte Studio";
+const title = "VitalScribe AI | Inteligencia Clínica con Vertex AI - Pixelarte Studio";
 const APP_URL = "https://vitalscribeai.com/";
 ---
 
@@ -18,75 +18,98 @@ const APP_URL = "https://vitalscribeai.com/";
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
         </span>
-        Motor Neural Clínico v4.0 Activo
+        Impulsado por Gemini 2.0 Flash
       </div>
 
       <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
-        Recupera tu tiempo con <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-200">Inteligencia Clínica</span>
+        Recupere el <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-200">Arte de la Medicina</span>
       </h1>
       
       <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-        VitalScribe no solo transcribe; estructura, analiza y redacta tu nota médica bajo norma NOM-004 en segundos. Enfócate en el paciente, nosotros cuidamos el expediente.
+        Deje de ser el capturista de su propia clínica. VitalScribe es su "Residente Experto Invisible", diseñado sobre la infraestructura empresarial de Google Cloud Vertex AI para asumir la carga documental en tiempo real.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a href={APP_URL} target="_blank" class="w-full sm:w-auto px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(20,184,166,0.3)] flex items-center justify-center gap-2 hover:-translate-y-1">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>
-            Probar Gratis Ahora
+            Solicitar Demo
         </a>
-        <a href="#demo-funcional" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/10 text-white font-medium rounded-xl transition-all backdrop-blur-sm">
-          Ver demostración
+        <a href="#proceso" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/10 text-white font-medium rounded-xl transition-all backdrop-blur-sm">
+          Ver cómo funciona
         </a>
       </div>
     </div>
   </section>
 
-  <section id="demo-funcional" class="py-24 bg-slate-50 relative">
+  <section id="proceso" class="py-24 bg-slate-50 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-slate-900">Su Voz es el Único Comando</h2>
+        <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Un flujo de trabajo tan natural como su consulta. Olvídese de comandos robóticos.</p>
+      </div>
+
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl shadow-sm mb-6">🧠</div>
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Comprensión Médica Profunda</h2>
-          <p class="text-lg text-slate-600 mb-8">
-            Nuestra IA distingue entre síntomas, diagnósticos y plan terapéutico. Transforma una conversación natural en un documento legal estructurado.
-          </p>
-
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-lg relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
-            <div class="flex gap-4">
-              <div class="flex-1">
-                <p class="text-xs font-bold text-slate-400 uppercase mb-2">Tu Dictado Natural:</p>
-                <p class="text-slate-800 italic mb-4">"Paciente con dolor lumbar de 3 días, EVA 7/10. Vamos a iniciar Ketorolaco sublingual y reposo relativo..."</p>
-                
-                <div class="h-px bg-slate-100 w-full my-4"></div>
-
-                <p class="text-xs font-bold text-teal-600 uppercase mb-2 flex items-center gap-1">
-                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                  Estructura VitalScribe (SOAP):
-                </p>
-                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 font-mono text-xs md:text-sm text-slate-700">
-                  <span class="text-blue-600 font-bold">SUBJETIVO:</span> Lumbalgia aguda (3 días evol), EVA 7/10.<br/>
-                  <span class="text-blue-600 font-bold">PLAN:</span><br/>
-                  1. Farmacológico: Ketorolaco (SL)<br/>
-                  2. Medidas Generales: Reposo relativo.
-                </div>
-              </div>
+        <div class="space-y-8">
+          
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 font-bold">1</div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Active la Escucha</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">
+                La consulta comienza con un clic. Deje el dispositivo a un lado y dedique el 100% de su atención al paciente. La tecnología se vuelve invisible.
+              </p>
             </div>
           </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 font-bold">2</div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Converse Naturalmente</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">
+                Realice su anamnesis como siempre. La IA escucha discretamente y diferencia entre lo que refiere el paciente (Subjetivo) y sus hallazgos médicos (Objetivo).
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold">3</div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">Genere al Instante</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">
+                Gracias a la latencia ultrabaja de Gemini 2.0, su Nota SOAP y Receta Médica aparecen en segundos, listas para validar.
+              </p>
+            </div>
+          </div>
+
         </div>
 
         <div class="relative">
            <div class="absolute inset-0 bg-gradient-to-tr from-teal-500 to-indigo-500 rounded-3xl transform rotate-3 opacity-20 blur-lg"></div>
-           <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Doctor usando IA VitalScribe" class="relative rounded-3xl shadow-2xl border-4 border-white transform -rotate-2 hover:rotate-0 transition-all duration-500">
-           
-           <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce-slow">
-             <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-             </div>
-             <div>
-               <p class="text-xs text-slate-500 font-bold uppercase">Cumplimiento</p>
-               <p class="text-sm font-bold text-slate-900">NOM-004 Válida</p>
+           <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xl relative overflow-hidden">
+             <div class="absolute top-0 right-0 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">LIVE PROCESSING</div>
+             <p class="text-xs font-bold text-slate-400 uppercase mb-4">Análisis Clínico en Tiempo Real:</p>
+             
+             <div class="space-y-3">
+               <div class="flex gap-2 items-start">
+                 <div class="w-1 h-full min-h-[40px] bg-blue-400 rounded-full"></div>
+                 <div class="text-sm">
+                   <p class="text-slate-500 text-xs">Audio Detectado:</p>
+                   <p class="text-slate-800 italic">"...tiene hipertensión diagnosticada hace 5 años, toma losartan..."</p>
+                 </div>
+               </div>
+               
+               <div class="flex justify-center my-2">
+                  <svg class="w-4 h-4 text-slate-300 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+               </div>
+
+               <div class="bg-slate-50 p-3 rounded border border-slate-100">
+                 <p class="text-xs font-bold text-teal-600 mb-1">Extracción Estructurada:</p>
+                 <div class="font-mono text-xs text-slate-600">
+                   APP: <span class="bg-yellow-100 px-1">HAS (+5 años)</span><br/>
+                   Tx Actual: <span class="bg-green-100 px-1">Losartan</span>
+                 </div>
+               </div>
              </div>
            </div>
         </div>
@@ -97,95 +120,55 @@ const APP_URL = "https://vitalscribeai.com/";
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900">Tu Consultorio, Potenciado por IA</h2>
-        <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Diseñado por médicos y desarrolladores para eliminar la burocracia digital.</p>
+        <h2 class="text-3xl font-bold text-slate-900">Blindaje Legal y Tecnológico</h2>
+        <p class="text-slate-500 mt-4 max-w-2xl mx-auto">
+          Al operar sobre Google Cloud Vertex AI, ofrecemos un nivel de privacidad que las apps de consumo no pueden garantizar.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         
         <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:border-teal-200 transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl shadow-sm mb-6 group-hover:scale-110 transition-transform">📈</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Inteligencia de Negocio</h3>
-          <p class="text-slate-600 leading-relaxed mb-6">No vueles a ciegas. VitalScribe analiza tus tiempos, retención de pacientes y flujo de citas para optimizar tu rentabilidad.</p>
-          <ul class="space-y-2">
-            <li class="flex items-center gap-2 text-sm text-slate-500">
-              <svg class="w-4 h-4 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Métricas de consulta en tiempo real
-            </li>
-            <li class="flex items-center gap-2 text-sm text-slate-500">
-              <svg class="w-4 h-4 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Reportes de productividad
-            </li>
+          <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl shadow-sm mb-6">🛡️</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Política "Zero-Training"</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            A diferencia de IAs gratuitas, Google tiene prohibido por contrato usar sus datos para entrenar modelos.
+          </p>
+          <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs font-bold text-indigo-800 flex items-center gap-2">
+             <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+             Lo que pasa en su consultorio, se queda ahí.
+          </div>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:border-teal-200 transition-all group">
+          <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl shadow-sm mb-6">🩺</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Criterio Clínico Adaptativo</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            No es transcripción plana. El sistema adapta la estructura de la nota según su especialidad.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-500">
+             <li class="flex items-center gap-2"><span class="text-red-400">❤</span> <b>Cardiología:</b> Prioriza hemodinamia.</li>
+             <li class="flex items-center gap-2"><span class="text-orange-400">💊</span> <b>Dermatología:</b> Descripción morfológica.</li>
+             <li class="flex items-center gap-2"><span class="text-blue-400">👶</span> <b>Pediatría:</b> Hitos del desarrollo.</li>
           </ul>
         </div>
 
         <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:border-teal-200 transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl shadow-sm mb-6 group-hover:scale-110 transition-transform">🔗</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Agenda Unificada</h3>
-          <p class="text-slate-600 leading-relaxed mb-6">Evita conflictos de horario. El sistema se fusiona con tu calendario personal y profesional para una gestión sin errores.</p>
-          <div class="flex gap-3">
-             <div class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-slate-200 text-xs font-bold text-slate-600 shadow-sm">
-                <span class="w-2 h-2 bg-blue-500 rounded-full"></span> G-Cal
-             </div>
-             <div class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-slate-200 text-xs font-bold text-slate-600 shadow-sm">
-                <span class="w-2 h-2 bg-gray-800 rounded-full"></span> iCal
-             </div>
-          </div>
-        </div>
-
-        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:border-teal-200 transition-all group relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-20 h-20 bg-orange-100 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-150"></div>
-          <div class="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl shadow-sm mb-6 relative z-10 group-hover:scale-110 transition-transform">🗂️</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 relative z-10">Organización Automática</h3>
-          <p class="text-slate-600 leading-relaxed mb-4 relative z-10">
-            Sube estudios o fotos y deja que la IA los renombre, clasifique y asigne al expediente correcto automáticamente.
+          <div class="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl shadow-sm mb-6">⚖️</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Cumplimiento NOM-004</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            Documentos generados bajo estricto apego a requisitos de COFEPRIS/SSA.
           </p>
-          
-          <div class="bg-slate-900 p-3 rounded-lg font-mono text-[10px] text-slate-300 relative z-10">
-            <div class="flex items-center gap-2 opacity-50 mb-1">
-               <span class="text-red-400">x</span> IMG_2024_01.jpg
+          <div class="bg-slate-900 p-3 rounded-lg font-mono text-[10px] text-slate-300">
+            <div class="flex items-center gap-2 text-teal-400 font-bold mb-1">
+               <span class="text-green-400">✓</span> Encriptación AES-256
             </div>
             <div class="flex items-center gap-2 text-teal-400 font-bold">
-               <span class="text-green-400">✓</span> Lab_Biometria_04-24.pdf
+               <span class="text-green-400">✓</span> Alertas de Interacciones
             </div>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900">Diseñado para la realidad del médico moderno</h2>
-        <p class="text-slate-500 mt-4">Enfrentamos los tres retos más grandes de tu práctica diaria.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:border-teal-200 transition-all">
-          <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-2xl mb-6">⏰</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Cero "Burnout" Digital</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Deja de llevar expedientes a casa. Nuestra meta es que termines la nota clínica antes de que el paciente cruce la puerta de salida.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:border-teal-200 transition-all">
-          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-2xl mb-6">⚖️</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Escudo NOM-004</h3>
-          <p class="text-slate-600 leading-relaxed">
-            No más preocupaciones por auditorías. La IA estructura cada apartado (Subjetivo, Objetivo, Análisis, Plan) siguiendo la normativa vigente.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:border-teal-200 transition-all">
-          <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl mb-6">👁️</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Conexión Real</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Vuelve a mirar a los ojos a tus pacientes. VitalScribe captura la información mientras tú te dedicas a lo que mejor sabes hacer: cuidar.
-          </p>
-        </div>
       </div>
     </div>
   </section>
@@ -199,37 +182,37 @@ const APP_URL = "https://vitalscribeai.com/";
       <div class="space-y-4">
         <details class="group bg-slate-50 p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿Mis datos y los de mis pacientes están seguros?
+            ¿Es realmente seguro usar IA con datos de pacientes?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            Absolutamente. Utilizamos encriptación de grado bancario (AES-256) y cumplimos con los estándares de protección de datos personales en posesión de particulares. Tú eres el único dueño de tu información.
+            Sí. VitalScribe utiliza <strong>Google Vertex AI</strong>, lo que garantiza que sus datos están encriptados (AES-256) y, lo más importante, <strong>jamás se utilizan para re-entrenar a la inteligencia artificial</strong>. Es una bóveda digital privada.
           </p>
         </details>
 
         <details class="group bg-slate-50 p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿Funciona si hay ruido o si hablo rápido?
+            ¿Funciona con acentos y terminología compleja?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            Sí. Nuestro modelo "Whisper-Medical" está entrenado para aislar la voz del médico incluso con ruido ambiental y entiende acentos latinos y terminología médica compleja a la perfección.
+            El motor <strong>Gemini 2.0 Flash</strong> tiene capacidades multimodales superiores. Entiende la diferencia entre una charla casual y una instrucción clínica, y maneja perfectamente nombres de medicamentos y dosis.
           </p>
         </details>
 
         <details class="group bg-slate-50 p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿Qué pasa cuando terminen mis 15 días gratis?
+            ¿Qué pasa al finalizar la prueba?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            Nada se te cobrará automáticamente. Podrás decidir si continuar con uno de nuestros planes profesionales o exportar todos tus datos y cerrar tu cuenta sin penalizaciones.
+            Usted mantiene el control total. Puede exportar sus datos y cerrar su cuenta, o elegir un plan profesional. No hay cobros automáticos sorpresa.
           </p>
         </details>
       </div>
@@ -240,7 +223,7 @@ const APP_URL = "https://vitalscribeai.com/";
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Únete a la Medicina del Futuro</h2>
       <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
-        Prueba VitalScribe AI sin riesgos. 15 días de acceso total para que experimentes la libertad de no escribir.
+        Prueba VitalScribe AI sin riesgos. 15 días de acceso total con la potencia de Gemini 2.0.
       </p>
       
       <a href={APP_URL} target="_blank" class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-slate-900 transition-all duration-200 bg-teal-400 rounded-xl hover:bg-teal-300 hover:scale-105 shadow-[0_0_30px_rgba(45,212,191,0.4)] gap-3">
@@ -249,7 +232,7 @@ const APP_URL = "https://vitalscribeai.com/";
       </a>
       
       <p class="mt-6 text-sm text-slate-500">
-        Cumplimiento NOM-004 • Seguridad Encriptada • Soporte 24/7
+        Vertex AI Infrastructure • Seguridad Encriptada • Soporte 24/7
       </p>
     </div>
   </section>
