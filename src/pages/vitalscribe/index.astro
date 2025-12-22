@@ -5,21 +5,18 @@ import Layout from '../../layouts/Layout.astro';
 // ==========================================
 // CONFIGURACIÓN Y METADATOS
 // ==========================================
-const title = "VitalScribe | Gestión Clínica con IA y Seguridad Bancaria";
-const description = "La primera plataforma de gestión clínica en México impulsada por Google Gemini. Notas SOAP, alertas de riesgo y seguridad NOM-004.";
+const title = "VitalScribe | Medicina de Precisión con Vertex AI y Gemini 2.0";
+const description = "Plataforma clínica impulsada por Google Gemini 2.0 Flash. Notas instantáneas, detección de riesgos y seguridad Enterprise Vertex AI.";
 const APP_URL = "https://vitalscribeai.com/";
 
 // ==========================================
-// IMÁGENES DE STOCK (Optimized URLs - Verificadas)
+// IMÁGENES DE STOCK (Optimized URLs)
+// Seleccionadas para evocar: Velocidad, Tecnología Médica y Seguridad
 // ==========================================
-// Hero: Médico con tablet en entorno moderno (Tonos oscuros/azules)
-const HERO_IMG = "https://images.unsplash.com/photo-1551076882-68b47d190267?auto=format&fit=crop&q=80&w=2000";
-// Feature A: IA / Cerebro Digital
-const AI_FEATURE_IMG = "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000";
-// Feature B: Dashboard / Gestión
-const DASHBOARD_IMG = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000";
-// Security: Concepto de Bóveda/Seguridad
-const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e8529437217?auto=format&fit=crop&q=80&w=1000";
+const HERO_IMG = "https://images.unsplash.com/photo-1551076882-68b47d190267?auto=format&fit=crop&q=80&w=2000"; // Tech Medical Background
+const SPEED_IMG = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000"; // Abstract Speed/Network
+const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1000"; // Bóveda/Lock
+const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1000"; // Doctor with Tablet
 ---
 
 <Layout title={title}>
@@ -29,39 +26,39 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
     <div class="absolute inset-0 z-0">
       <img 
         src={HERO_IMG} 
-        alt="Consultorio médico tecnológico de fondo" 
-        class="w-full h-full object-cover opacity-40 filter blur-[6px] scale-105"
+        alt="Tecnología médica avanzada" 
+        class="w-full h-full object-cover opacity-40 filter blur-[8px] scale-105"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/60"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/50"></div>
     </div>
 
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500 rounded-full mix-blend-overlay filter blur-[120px] opacity-20 animate-pulse-slow pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-500 rounded-full mix-blend-overlay filter blur-[120px] opacity-20 animate-pulse-slow pointer-events-none"></div>
     <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20 pointer-events-none"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg shadow-teal-900/20">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/60 border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg">
         <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
-        v5.5 Stable • Powered by Google Gemini
+        Powered by Vertex AI • Gemini 2.0 Flash
       </div>
 
-      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
-        Dedícate a curar. <br class="hidden md:block" />
-        Deja que la IA se encargue de <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-300">escribir.</span>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
+        Medicina de Precisión a la <br class="hidden md:block" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400">Velocidad de la Luz.</span>
       </h1>
 
       <p class="text-xl md:text-2xl text-slate-200 max-w-4xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
-        La primera plataforma de gestión clínica en México impulsada por <strong>Google Gemini</strong>. Genera notas SOAP en segundos, detecta riesgos automáticamente y blinda tus expedientes con seguridad bancaria (NOM-004).
+        La primera plataforma de gestión clínica en México impulsada por el nuevo motor <strong>Google Gemini 2.0 Flash</strong> sobre infraestructura empresarial. Escribe notas clínicas en segundos, detecta riesgos automáticamente y blinda tu consulta con seguridad NOM-004.
       </p>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
         <a 
           href={APP_URL} 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="w-full sm:w-auto px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold text-lg rounded-xl transition-all shadow-[0_0_20px_rgba(20,184,166,0.4)] flex items-center justify-center gap-2 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(20,184,166,0.6)]"
+          class="w-full sm:w-auto px-10 py-5 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-lg rounded-xl transition-all shadow-[0_0_30px_rgba(20,184,166,0.4)] flex items-center justify-center gap-3 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(20,184,166,0.6)]"
         >
-          Empieza Gratis Hoy
+          Iniciar Prueba Blindada
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
           </svg>
@@ -69,56 +66,55 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
         
         <a 
           href="#demo" 
-          class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-lg rounded-xl transition-all backdrop-blur-sm flex items-center justify-center gap-2"
+          class="w-full sm:w-auto px-10 py-5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-lg rounded-xl transition-all backdrop-blur-sm flex items-center justify-center gap-3"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
-          Ver Demo en Video
+          Ver la IA en Acción
         </a>
       </div>
     </div>
   </section>
 
-  <section class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.1)]">
+  <section class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.2)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid md:grid-cols-3 gap-12">
         
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group hover:border-teal-100">
-          <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
+        <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-teal-200 transition-all duration-300">
+          <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Velocidad Sobrenatural</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">Velocidad "Flash" (Gemini 2.0)</h3>
           <p class="text-slate-600 leading-relaxed">
-            No más horas extra llenando expedientes. Nuestra IA redacta, estructura y resume por ti en segundos.
+            Usamos la tecnología de IA más rápida del mercado (2025). Tus notas y resúmenes no "cargan", aparecen instantáneamente.
           </p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group hover:border-indigo-100">
-          <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
+        <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-indigo-200 transition-all duration-300">
+          <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Seguridad "Zero Trust"</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">Privacidad Enterprise</h3>
           <p class="text-slate-600 leading-relaxed">
-            Tus datos están encriptados de extremo a extremo. Ni nosotros podemos ver lo que escribes.
+            Corremos sobre la nube privada <strong>Google Vertex AI</strong>. Tus datos clínicos NUNCA se usan para entrenar a la IA pública. Lo que pasa en tu consultorio, se queda ahí.
           </p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group hover:border-pink-100">
-          <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
+        <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-pink-200 transition-all duration-300">
+          <div class="w-16 h-16 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Diseño para Humanos</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-pink-600 transition-colors">Tu Clínica en el Bolsillo</h3>
           <p class="text-slate-600 leading-relaxed">
-            Una interfaz tan limpia e intuitiva que no necesitas manual de usuario. Si sabes usar un correo, sabes usar VitalScribe.
+            Diseño 100% responsivo. Empieza la nota en tu Laptop y termínala en tu iPad o celular mientras caminas a la siguiente sala.
           </p>
         </div>
 
@@ -126,213 +122,175 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
     </div>
   </section>
 
-  <section class="py-20 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
       
       <div class="flex flex-col lg:flex-row gap-16 items-center">
         <div class="lg:w-1/2">
           <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-teal-600 uppercase bg-teal-100 rounded-full">
-            Powered by Gemini
+            🧠 El Cerebro
           </div>
           <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Asistente Clínico Inteligente</h2>
-          <p class="text-lg text-slate-600 mb-8">
-            No es un simple autocompletado. Es un residente virtual que nunca se cansa.
-          </p>
-          <ul class="space-y-6">
+          <p class="text-lg text-slate-600 mb-8 font-medium">Tu copiloto que nunca duerme.</p>
+          
+          <ul class="space-y-8">
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white mt-1">✓</div>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-teal-200">1</div>
               <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Transcripción Estructurada</h4>
-                <p class="text-slate-500">Convierte notas rápidas en formatos clínicos estándar (SOAP, Historia Clínica).</p>
+                <h4 class="text-lg font-bold text-slate-900">Redacción Estructurada</h4>
+                <p class="text-slate-500 mt-1">Convierte dictados rápidos o ideas sueltas en notas SOAP, Historias Clínicas y Notas de Evolución con formato médico perfecto.</p>
               </div>
             </li>
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white mt-1">!</div>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-red-200">2</div>
               <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Detección de Riesgos Activa</h4>
-                <p class="text-slate-500">El sistema "lee" tus notas en tiempo real. Si detecta parámetros fuera de rango (ej. Hipertensión Crítica), genera una alerta visual inmediata.</p>
+                <h4 class="text-lg font-bold text-slate-900">Monitor de Riesgos en Vivo</h4>
+                <p class="text-slate-500 mt-1">Si detecta combinaciones peligrosas (ej. Alergia a Penicilina + Amoxicilina), lanza una <span class="text-red-600 font-bold bg-red-50 px-1 rounded">Alerta Visual Roja</span> al instante.</p>
               </div>
             </li>
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white mt-1">✓</div>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-teal-200">3</div>
               <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Resúmenes de Evolución</h4>
-                <p class="text-slate-500">¿Paciente complejo? La IA analiza las últimas 5 consultas y te da un resumen ejecutivo en 3 segundos.</p>
+                <h4 class="text-lg font-bold text-slate-900">Resumen de Paciente "Flash"</h4>
+                <p class="text-slate-500 mt-1">Antes de que el paciente se siente, la IA lee las últimas 10 consultas y te da un resumen de 3 líneas con lo vital.</p>
               </div>
             </li>
           </ul>
         </div>
         <div class="lg:w-1/2 relative">
-          <div class="absolute inset-0 bg-teal-500 blur-3xl opacity-20 rounded-full"></div>
-          <img src={AI_FEATURE_IMG} alt="IA Analizando datos médicos" class="relative rounded-2xl shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-tr from-teal-400 to-indigo-500 blur-3xl opacity-20 rounded-full"></div>
+          <img src={SPEED_IMG} alt="IA procesando datos a velocidad flash" class="relative rounded-2xl shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500 object-cover h-[500px] w-full" />
         </div>
       </div>
 
       <div class="flex flex-col lg:flex-row-reverse gap-16 items-center">
         <div class="lg:w-1/2">
           <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-indigo-600 uppercase bg-indigo-100 rounded-full">
-            Sin Fricción
+            🛡️ Blindaje v2.0
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Gestión de Pacientes</h2>
-          <p class="text-lg text-slate-600 mb-8">
-            Centraliza toda la información en una sola vista panorámica diseñada para la velocidad.
-          </p>
-          <ul class="space-y-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Seguridad de Grado Bancario</h2>
+          <p class="text-lg text-slate-600 mb-8 font-medium">Protegemos tu cédula y a tus pacientes.</p>
+          
+          <ul class="space-y-8">
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-white mt-1">✓</div>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
               <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Expediente Clínico Digital</h4>
-                <p class="text-slate-500">Antecedentes, alergias, notas y archivos adjuntos en un solo lugar.</p>
+                <h4 class="text-lg font-bold text-slate-900">Arquitectura "Zero Trust"</h4>
+                <p class="text-slate-500 mt-1">Construido sobre Supabase con seguridad a nivel de fila (RLS). Solo tu llave digital puede descifrar los expedientes.</p>
               </div>
             </li>
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-white mt-1">✓</div>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
               <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Etiquetado Inteligente</h4>
-                <p class="text-slate-500">Organiza pacientes por estado, diagnóstico o nivel de riesgo con Tags visuales.</p>
+                <h4 class="text-lg font-bold text-slate-900">Cumplimiento NOM-004</h4>
+                <p class="text-slate-500 mt-1">Todos los campos y formatos cumplen estrictamente con la normativa mexicana del Expediente Clínico Electrónico.</p>
               </div>
             </li>
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-white mt-1">✓</div>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
               <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Búsqueda Instantánea</h4>
-                <p class="text-slate-500">Encuentra a cualquier paciente en milisegundos por nombre, fecha o padecimiento.</p>
+                <h4 class="text-lg font-bold text-slate-900">Encriptación Militar</h4>
+                <p class="text-slate-500 mt-1">Tus datos viajan cifrados (TLS) y descansan cifrados (AES-256) en bóvedas digitales.</p>
               </div>
             </li>
           </ul>
         </div>
         <div class="lg:w-1/2 relative">
-          <div class="absolute inset-0 bg-indigo-500 blur-3xl opacity-20 rounded-full"></div>
-          <img src={DASHBOARD_IMG} alt="Dashboard de VitalScribe" class="relative rounded-2xl shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-tl from-indigo-400 to-pink-500 blur-3xl opacity-20 rounded-full"></div>
+          <img src={SECURITY_IMG} alt="Bóveda digital de seguridad" class="relative rounded-2xl shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500 object-cover h-[500px] w-full" />
         </div>
-      </div>
-
-      <div class="bg-slate-900 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden shadow-2xl">
-        <div class="relative z-10">
-          <h3 class="text-2xl font-bold text-white mb-4">Soporte Técnico Automatizado 24/7</h3>
-          <p class="text-slate-300 max-w-2xl mx-auto mb-6">
-            <strong class="text-teal-400">VitalScribe Bot:</strong> ¿No sabes cómo editar una nota o cambiar tu contraseña? Nuestro Asistente Técnico integrado te guía paso a paso dentro de la app, sin esperar correos de soporte.
-          </p>
-        </div>
-        <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500 rounded-full mix-blend-overlay filter blur-[60px] opacity-20 animate-pulse"></div>
       </div>
 
     </div>
   </section>
 
-  <section class="py-24 bg-slate-900 relative overflow-hidden border-t border-slate-800">
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+  <section class="py-24 bg-slate-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold uppercase tracking-wider mb-4">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-          Seguridad Grado Bancario
-        </div>
-        <h2 class="text-4xl font-bold text-white mb-6">Tus datos, en una Bóveda Digital.</h2>
-        <p class="text-xl text-slate-400 max-w-3xl mx-auto">
-          Entendemos que la privacidad de tus pacientes es sagrada. Por eso, VitalScribe no solo "cumple", sino que excede los estándares de la industria.
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Para el Departamento de TI</h2>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+          Si un hospital te pregunta "qué tecnología usas", esta es la ficha técnica de tu infraestructura.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 text-center">
-        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-teal-500/50 transition-colors">
-          <div class="text-4xl mb-4">🛡️</div>
-          <h3 class="text-xl font-bold text-white mb-2">Arquitectura Blindada (v2.0)</h3>
-          <p class="text-slate-400 text-sm">
-            Construido sobre Supabase con tecnología RLS (Row Level Security). Cada dato tiene una llave digital única que solo tú posees.
-          </p>
-        </div>
-        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-teal-500/50 transition-colors">
-          <div class="text-4xl mb-4">⚖️</div>
-          <h3 class="text-xl font-bold text-white mb-2">Cumplimiento Normativo</h3>
-          <p class="text-slate-400 text-sm">
-            Estructura de base de datos diseñada para cumplir rigurosamente con la <strong>NOM-004-SSA3-2012</strong> del Expediente Clínico Electrónico en México.
-          </p>
-        </div>
-        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-teal-500/50 transition-colors">
-          <div class="text-4xl mb-4">🔒</div>
-          <h3 class="text-xl font-bold text-white mb-2">Encriptación Total</h3>
-          <p class="text-slate-400 text-sm">
-            Datos cifrados con AES-256 en reposo (servidor) y TLS 1.3 en tránsito (mientras viajan por internet).
-          </p>
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 text-left">
+          
+          <div class="hidden md:contents bg-slate-900 text-slate-400 font-mono text-xs uppercase tracking-wider">
+            <div class="p-6 border-b border-slate-700">Componente</div>
+            <div class="p-6 border-b border-slate-700">Tecnología</div>
+            <div class="p-6 border-b border-slate-700">Beneficio Clínico/Técnico</div>
+          </div>
+
+          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Infraestructura Cloud</div>
+          <div class="p-6 border-b border-slate-700 text-white font-mono">Google Cloud Vertex AI</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Estabilidad empresarial (99.9% Uptime) y Privacidad de Datos garantizada.</div>
+
+          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Modelo de IA</div>
+          <div class="p-6 border-b border-slate-700 text-white font-mono">Gemini 2.0 Flash</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Latencia ultra-baja (<500ms) y razonamiento médico avanzado de última generación.</div>
+
+          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Base de Datos</div>
+          <div class="p-6 border-b border-slate-700 text-white font-mono">Supabase (PostgreSQL)</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Integridad relacional robusta y políticas de seguridad RLS (Row Level Security).</div>
+
+          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Frontend</div>
+          <div class="p-6 border-b border-slate-700 text-white font-mono">React + Astro</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Experiencia de usuario fluida (SPA) sin recargas lentas de página.</div>
+
+          <div class="p-6 md:bg-slate-800/50 text-teal-400 font-bold">Hosting</div>
+          <div class="p-6 text-white font-mono">Netlify Global CDN</div>
+          <div class="p-6 text-slate-300 text-sm">Acceso rápido y redundante desde cualquier ubicación en México.</div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900">Tu consulta, simplificada.</h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        
-        <div class="relative flex flex-col items-center text-center group">
-          <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center text-2xl font-bold text-teal-600 mb-6 z-10 relative group-hover:scale-110 transition-transform">1</div>
-          <div class="absolute top-8 left-1/2 w-full h-1 bg-slate-100 -z-0 hidden md:block"></div> <h3 class="text-xl font-bold text-slate-900 mb-2">Registro Rápido</h3>
-          <p class="text-slate-600">Crea tu cuenta y configura tu perfil médico en 2 minutos.</p>
-        </div>
-
-        <div class="relative flex flex-col items-center text-center group">
-          <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center text-2xl font-bold text-indigo-600 mb-6 z-10 relative group-hover:scale-110 transition-transform">2</div>
-          <div class="absolute top-8 left-1/2 w-full h-1 bg-slate-100 -z-0 hidden md:block"></div> <h3 class="text-xl font-bold text-slate-900 mb-2">Consulta Asistida</h3>
-          <p class="text-slate-600">Atiende a tu paciente. Escribe o dicta ideas clave. La IA estructura la nota formal por ti.</p>
-        </div>
-
-        <div class="relative flex flex-col items-center text-center group">
-          <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center text-2xl font-bold text-pink-600 mb-6 z-10 relative group-hover:scale-110 transition-transform">3</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Gestión y Seguimiento</h3>
-          <p class="text-slate-600">Revisa el dashboard, monitorea alertas de riesgo y accede desde cualquier dispositivo.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 bg-slate-50 border-t border-slate-200">
+  <section class="py-24 bg-slate-50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-slate-900">Preguntas Frecuentes</h2>
-        <p class="text-slate-500 mt-2">Rompiendo objeciones comunes</p>
+        <p class="text-slate-500 mt-2">Rompiendo miedos tecnológicos</p>
       </div>
 
       <div class="space-y-4">
         
         <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿Necesito instalar algo en mi computadora?
+            ¿Google lee los datos de mis pacientes?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            No. VitalScribe es <strong>100% en la nube (SaaS)</strong>. Accedes desde tu navegador seguro (Chrome, Safari, Edge) sin instalaciones complejas.
+            <strong>No.</strong> Al utilizar la infraestructura <em>Vertex AI Enterprise</em>, VitalScribe opera bajo un contrato de privacidad estricto donde Google actúa solo como procesador. Tus datos no se almacenan en sus servidores públicos ni entrenan a sus modelos comerciales.
           </p>
         </details>
 
         <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿Qué pasa si se va mi internet?
+            ¿Qué tan rápido es "Flash"?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            La tecnología React permite una carga ultra-rápida y el sistema guarda <strong>borradores automáticos</strong> localmente para minimizar pérdidas de información hasta que recuperes la conexión.
+            Gemini 2.0 Flash es, actualmente, uno de los modelos más rápidos del mundo. Generar una nota clínica completa toma <strong>menos tiempo del que tardas en tomar un sorbo de café</strong>.
           </p>
         </details>
 
         <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿La IA sustituye mi criterio médico?
+            ¿Necesito una computadora potente?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            Nunca. La IA es tu <strong>copiloto administrativo</strong>; tú eres el capitán clínico. Tú validas, corriges y firmas cada nota antes de que se guarde en el expediente.
+            No. Toda la potencia de procesamiento ocurre en nuestra nube. Puedes usar VitalScribe en cualquier computadora básica, tablet o celular que tenga un navegador de internet actualizado (Chrome, Safari, Edge).
           </p>
         </details>
 
@@ -343,15 +301,19 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
   <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
-        <div class="mb-4 md:mb-0">
-          <h2 class="text-2xl font-bold text-white tracking-tighter">VitalScribe<span class="text-teal-400">.</span></h2>
-          <p class="text-slate-500 text-sm mt-1">Donde la intuición médica se encuentra con la precisión artificial.</p>
+      <div class="flex flex-col md:flex-row justify-between items-start mb-12">
+        <div class="mb-8 md:mb-0 max-w-sm">
+          <h2 class="text-2xl font-bold text-white tracking-tighter">VitalScribe<span class="text-teal-400">AI</span></h2>
+          <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+            La evolución de la práctica médica. Potenciando a los doctores de México con inteligencia artificial segura y eficiente.
+          </p>
         </div>
-        <div class="flex gap-6 text-slate-400 text-sm font-medium">
-          <a href="#" class="hover:text-white transition-colors">Aviso de Privacidad</a>
-          <a href="#" class="hover:text-white transition-colors">Términos de Servicio</a>
-          <a href="#" class="hover:text-white transition-colors">Soporte</a>
+        
+        <div class="flex flex-col gap-4 text-right">
+            <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Tecnología</span>
+            <span class="text-slate-300 text-sm">Powered by Google Vertex AI</span>
+            <span class="text-slate-300 text-sm">Gemini 2.0 Flash Engine</span>
+            <span class="text-slate-300 text-sm">Supabase Secure Cloud</span>
         </div>
       </div>
 
@@ -359,13 +321,10 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
         <p class="text-slate-500 text-xs">
           © 2025 VitalScribe. Todos los derechos reservados.
         </p>
-        <div class="flex items-center gap-4">
-          <span class="px-2 py-1 bg-slate-800 rounded border border-slate-700 text-[10px] text-slate-400 font-mono">
-            Secured by Supabase
-          </span>
-          <span class="px-2 py-1 bg-slate-800 rounded border border-slate-700 text-[10px] text-slate-400 font-mono">
-            Powered by Google Gemini
-          </span>
+        <div class="flex gap-6 text-slate-500 text-xs font-medium">
+          <a href="#" class="hover:text-teal-400 transition-colors">Cumplimiento NOM-004</a>
+          <a href="#" class="hover:text-teal-400 transition-colors">Aviso de Privacidad</a>
+          <a href="#" class="hover:text-teal-400 transition-colors">Términos de Servicio</a>
         </div>
       </div>
 
