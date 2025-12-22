@@ -10,10 +10,10 @@ const description = "La primera plataforma de gestión clínica en México impul
 const APP_URL = "https://vitalscribeai.com/";
 
 // ==========================================
-// IMÁGENES DE STOCK (Optimized URLs)
+// IMÁGENES DE STOCK (Optimized URLs - Verificadas)
 // ==========================================
-// Hero: Médico moderno con tecnología
-const HERO_IMG = "https://images.unsplash.com/photo-1576091160550-217358c7db81?auto=format&fit=crop&q=80&w=2070";
+// Hero: Médico con tablet en entorno moderno (Tonos oscuros/azules)
+const HERO_IMG = "https://images.unsplash.com/photo-1551076882-68b47d190267?auto=format&fit=crop&q=80&w=2000";
 // Feature A: IA / Cerebro Digital
 const AI_FEATURE_IMG = "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000";
 // Feature B: Dashboard / Gestión
@@ -29,28 +29,28 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
     <div class="absolute inset-0 z-0">
       <img 
         src={HERO_IMG} 
-        alt="Consultorio médico moderno" 
-        class="w-full h-full object-cover opacity-20"
+        alt="Consultorio médico tecnológico de fondo" 
+        class="w-full h-full object-cover opacity-40 filter blur-[6px] scale-105"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/60"></div>
     </div>
 
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500 rounded-full mix-blend-overlay filter blur-[120px] opacity-20 animate-pulse-slow"></div>
-    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20"></div>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500 rounded-full mix-blend-overlay filter blur-[120px] opacity-20 animate-pulse-slow pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20 pointer-events-none"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg shadow-teal-900/20">
         <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
         v5.5 Stable • Powered by Google Gemini
       </div>
 
-      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
         Dedícate a curar. <br class="hidden md:block" />
         Deja que la IA se encargue de <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-300">escribir.</span>
       </h1>
 
-      <p class="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-10 leading-relaxed font-light">
+      <p class="text-xl md:text-2xl text-slate-200 max-w-4xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
         La primera plataforma de gestión clínica en México impulsada por <strong>Google Gemini</strong>. Genera notas SOAP en segundos, detecta riesgos automáticamente y blinda tus expedientes con seguridad bancaria (NOM-004).
       </p>
 
@@ -59,7 +59,7 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
           href={APP_URL} 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="w-full sm:w-auto px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold text-lg rounded-xl transition-all shadow-[0_0_20px_rgba(20,184,166,0.4)] flex items-center justify-center gap-2 hover:-translate-y-1"
+          class="w-full sm:w-auto px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold text-lg rounded-xl transition-all shadow-[0_0_20px_rgba(20,184,166,0.4)] flex items-center justify-center gap-2 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(20,184,166,0.6)]"
         >
           Empieza Gratis Hoy
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -81,13 +81,13 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
     </div>
   </section>
 
-  <section class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem]">
+  <section class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.1)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid md:grid-cols-3 gap-12">
         
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group">
-          <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group hover:border-teal-100">
+          <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
@@ -98,8 +98,8 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
           </p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group">
-          <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group hover:border-indigo-100">
+          <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
@@ -110,8 +110,8 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
           </p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group">
-          <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group hover:border-pink-100">
+          <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
@@ -207,21 +207,21 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
         </div>
       </div>
 
-      <div class="bg-slate-900 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+      <div class="bg-slate-900 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden shadow-2xl">
         <div class="relative z-10">
           <h3 class="text-2xl font-bold text-white mb-4">Soporte Técnico Automatizado 24/7</h3>
           <p class="text-slate-300 max-w-2xl mx-auto mb-6">
             <strong class="text-teal-400">VitalScribe Bot:</strong> ¿No sabes cómo editar una nota o cambiar tu contraseña? Nuestro Asistente Técnico integrado te guía paso a paso dentro de la app, sin esperar correos de soporte.
           </p>
         </div>
-        <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500 rounded-full mix-blend-overlay filter blur-[60px] opacity-20"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500 rounded-full mix-blend-overlay filter blur-[60px] opacity-20 animate-pulse"></div>
       </div>
 
     </div>
   </section>
 
-  <section class="py-24 bg-slate-900 relative overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+  <section class="py-24 bg-slate-900 relative overflow-hidden border-t border-slate-800">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-16">
@@ -236,21 +236,21 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
       </div>
 
       <div class="grid md:grid-cols-3 gap-8 text-center">
-        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-teal-500/50 transition-colors">
           <div class="text-4xl mb-4">🛡️</div>
           <h3 class="text-xl font-bold text-white mb-2">Arquitectura Blindada (v2.0)</h3>
           <p class="text-slate-400 text-sm">
             Construido sobre Supabase con tecnología RLS (Row Level Security). Cada dato tiene una llave digital única que solo tú posees.
           </p>
         </div>
-        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-teal-500/50 transition-colors">
           <div class="text-4xl mb-4">⚖️</div>
           <h3 class="text-xl font-bold text-white mb-2">Cumplimiento Normativo</h3>
           <p class="text-slate-400 text-sm">
             Estructura de base de datos diseñada para cumplir rigurosamente con la <strong>NOM-004-SSA3-2012</strong> del Expediente Clínico Electrónico en México.
           </p>
         </div>
-        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-teal-500/50 transition-colors">
           <div class="text-4xl mb-4">🔒</div>
           <h3 class="text-xl font-bold text-white mb-2">Encriptación Total</h3>
           <p class="text-slate-400 text-sm">
@@ -269,20 +269,20 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1614064641938-3e85294372
 
       <div class="grid md:grid-cols-3 gap-8">
         
-        <div class="relative flex flex-col items-center text-center">
-          <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center text-2xl font-bold text-teal-600 mb-6 z-10 relative">1</div>
+        <div class="relative flex flex-col items-center text-center group">
+          <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center text-2xl font-bold text-teal-600 mb-6 z-10 relative group-hover:scale-110 transition-transform">1</div>
           <div class="absolute top-8 left-1/2 w-full h-1 bg-slate-100 -z-0 hidden md:block"></div> <h3 class="text-xl font-bold text-slate-900 mb-2">Registro Rápido</h3>
           <p class="text-slate-600">Crea tu cuenta y configura tu perfil médico en 2 minutos.</p>
         </div>
 
-        <div class="relative flex flex-col items-center text-center">
-          <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center text-2xl font-bold text-indigo-600 mb-6 z-10 relative">2</div>
+        <div class="relative flex flex-col items-center text-center group">
+          <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center text-2xl font-bold text-indigo-600 mb-6 z-10 relative group-hover:scale-110 transition-transform">2</div>
           <div class="absolute top-8 left-1/2 w-full h-1 bg-slate-100 -z-0 hidden md:block"></div> <h3 class="text-xl font-bold text-slate-900 mb-2">Consulta Asistida</h3>
           <p class="text-slate-600">Atiende a tu paciente. Escribe o dicta ideas clave. La IA estructura la nota formal por ti.</p>
         </div>
 
-        <div class="relative flex flex-col items-center text-center">
-          <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center text-2xl font-bold text-pink-600 mb-6 z-10 relative">3</div>
+        <div class="relative flex flex-col items-center text-center group">
+          <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center text-2xl font-bold text-pink-600 mb-6 z-10 relative group-hover:scale-110 transition-transform">3</div>
           <h3 class="text-xl font-bold text-slate-900 mb-2">Gestión y Seguimiento</h3>
           <p class="text-slate-600">Revisa el dashboard, monitorea alertas de riesgo y accede desde cualquier dispositivo.</p>
         </div>
