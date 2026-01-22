@@ -1,22 +1,23 @@
 ---
 // Archivo: src/pages/vitalscribe/index.astro
+// PROTOCOLO VITALSCRIBE v5.4: INTEGRIDAD VISUAL + ACTUALIZACIÓN A GEMINI 3.0 FLASH
+// ESTADO: PRODUCCIÓN
+
 import Layout from '../../layouts/Layout.astro';
 
 // ==========================================
 // CONFIGURACIÓN Y METADATOS
 // ==========================================
-const title = "VitalScribe | Medicina de Precisión con Vertex AI y Gemini 2.0";
-const description = "Plataforma clínica impulsada por Google Gemini 2.0 Flash. Notas instantáneas, detección de riesgos y seguridad Enterprise Vertex AI.";
+const title = "VitalScribe | Medicina de Precisión con Vertex AI y Gemini 3.0";
+const description = "Plataforma clínica impulsada por Google Gemini 3.0 Flash. Notas instantáneas, detección de riesgos y seguridad Enterprise Vertex AI.";
 const APP_URL = "https://vitalscribeai.com/";
 
 // ==========================================
-// IMÁGENES DE STOCK (Optimized URLs)
-// Seleccionadas para evocar: Velocidad, Tecnología Médica y Seguridad
+// IMÁGENES (Optimizadas)
 // ==========================================
-const HERO_IMG = "https://images.unsplash.com/photo-1551076882-68b47d190267?auto=format&fit=crop&q=80&w=2000"; // Tech Medical Background
-const SPEED_IMG = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000"; // Abstract Speed/Network
-const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1000"; // Bóveda/Lock
-const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1000"; // Doctor with Tablet
+const HERO_IMG = "https://images.unsplash.com/photo-1551076882-68b47d190267?auto=format&fit=crop&q=80&w=2000";
+const SPEED_IMG = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000";
+const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1000";
 ---
 
 <Layout title={title}>
@@ -27,28 +28,32 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
       <img 
         src={HERO_IMG} 
         alt="Tecnología médica avanzada" 
+        width="2000" 
+        height="1333"
+        fetchpriority="high"
+        loading="eager"
         class="w-full h-full object-cover opacity-40 filter blur-[8px] scale-105"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/50"></div>
     </div>
 
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-500 rounded-full mix-blend-overlay filter blur-[120px] opacity-20 animate-pulse-slow pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20 pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-500 rounded-full mix-blend-overlay filter blur-[120px] opacity-20 animate-pulse-slow pointer-events-none will-change-transform"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20 pointer-events-none will-change-transform"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/60 border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg">
         <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
-        Powered by Vertex AI • Gemini 2.0 Flash
+        Powered by Vertex AI • Gemini 3.0 Flash
       </div>
 
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
+      <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
         Medicina de Precisión a la <br class="hidden md:block" />
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400">Velocidad de la Luz.</span>
       </h1>
 
-      <p class="text-xl md:text-2xl text-slate-200 max-w-4xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
-        La primera plataforma de gestión clínica en México impulsada por el nuevo motor <strong>Google Gemini 2.0 Flash</strong> sobre infraestructura empresarial. Escribe notas clínicas en segundos, detecta riesgos automáticamente y blinda tu consulta con seguridad NOM-004.
+      <p class="text-lg md:text-2xl text-slate-200 max-w-4xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
+        La primera plataforma de gestión clínica en México impulsada por el nuevo motor <strong>Google Gemini 3.0 Flash</strong>. Notas instantáneas, detección de riesgos y seguridad Enterprise.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
@@ -56,16 +61,16 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
           href={APP_URL} 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="w-full sm:w-auto px-10 py-5 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-lg rounded-xl transition-all shadow-[0_0_30px_rgba(20,184,166,0.4)] flex items-center justify-center gap-3 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(20,184,166,0.6)]"
+          class="group w-full sm:w-auto px-10 py-5 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-lg rounded-xl transition-all shadow-[0_0_30px_rgba(20,184,166,0.4)] flex items-center justify-center gap-3 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(20,184,166,0.6)]"
         >
           Iniciar Prueba Blindada
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
           </svg>
         </a>
         
         <a 
-          href="#demo" 
+          href="#features" 
           class="w-full sm:w-auto px-10 py-5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-lg rounded-xl transition-all backdrop-blur-sm flex items-center justify-center gap-3"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,7 +82,7 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
     </div>
   </section>
 
-  <section class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.2)]">
+  <section id="features" class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.2)] scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid md:grid-cols-3 gap-12">
@@ -88,9 +93,9 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">Velocidad "Flash" (Gemini 2.0)</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">Velocidad "Flash"</h3>
           <p class="text-slate-600 leading-relaxed">
-            Usamos la tecnología de IA más rápida del mercado (2025). Tus notas y resúmenes no "cargan", aparecen instantáneamente.
+            Potenciado por <strong>Gemini 3.0</strong>. Tus notas y resúmenes clínicos no "cargan", aparecen instantáneamente. Cero latencia en consulta.
           </p>
         </div>
 
@@ -102,7 +107,7 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
           </div>
           <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">Privacidad Enterprise</h3>
           <p class="text-slate-600 leading-relaxed">
-            Corremos sobre la nube privada <strong>Google Vertex AI</strong>. Tus datos clínicos NUNCA se usan para entrenar a la IA pública. Lo que pasa en tu consultorio, se queda ahí.
+            Corremos sobre la nube privada <strong>Google Vertex AI</strong>. Tus datos clínicos NUNCA se usan para entrenar a la IA pública. Aislamiento total.
           </p>
         </div>
 
@@ -138,28 +143,35 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-teal-200">1</div>
               <div class="ml-4">
                 <h4 class="text-lg font-bold text-slate-900">Redacción Estructurada</h4>
-                <p class="text-slate-500 mt-1">Convierte dictados rápidos o ideas sueltas en notas SOAP, Historias Clínicas y Notas de Evolución con formato médico perfecto.</p>
+                <p class="text-slate-500 mt-1">Convierte dictados rápidos o ideas sueltas en notas SOAP con formato médico perfecto.</p>
               </div>
             </li>
             <li class="flex items-start">
               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-red-200">2</div>
               <div class="ml-4">
                 <h4 class="text-lg font-bold text-slate-900">Monitor de Riesgos en Vivo</h4>
-                <p class="text-slate-500 mt-1">Si detecta combinaciones peligrosas (ej. Alergia a Penicilina + Amoxicilina), lanza una <span class="text-red-600 font-bold bg-red-50 px-1 rounded">Alerta Visual Roja</span> al instante.</p>
+                <p class="text-slate-500 mt-1">Detecta combinaciones peligrosas (ej. Alergias cruzadas) y lanza una <span class="text-red-600 font-bold bg-red-50 px-1 rounded">Alerta Visual</span>.</p>
               </div>
             </li>
             <li class="flex items-start">
               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-teal-200">3</div>
               <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Resumen de Paciente "Flash"</h4>
-                <p class="text-slate-500 mt-1">Antes de que el paciente se siente, la IA lee las últimas 10 consultas y te da un resumen de 3 líneas con lo vital.</p>
+                <h4 class="text-lg font-bold text-slate-900">Resumen "Flash"</h4>
+                <p class="text-slate-500 mt-1">Antes de que el paciente se siente, la IA lee el historial y te da un resumen de 3 líneas con lo vital.</p>
               </div>
             </li>
           </ul>
         </div>
         <div class="lg:w-1/2 relative">
           <div class="absolute inset-0 bg-gradient-to-tr from-teal-400 to-indigo-500 blur-3xl opacity-20 rounded-full"></div>
-          <img src={SPEED_IMG} alt="IA procesando datos a velocidad flash" class="relative rounded-2xl shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500 object-cover h-[500px] w-full" />
+          <img 
+            src={SPEED_IMG} 
+            alt="IA procesando datos" 
+            width="1000" height="600"
+            loading="lazy"
+            decoding="async"
+            class="relative rounded-2xl shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500 object-cover h-[500px] w-full" 
+          />
         </div>
       </div>
 
@@ -169,21 +181,14 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
             🛡️ Blindaje v2.0
           </div>
           <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Seguridad de Grado Bancario</h2>
-          <p class="text-lg text-slate-600 mb-8 font-medium">Protegemos tu cédula y a tus pacientes.</p>
+          <p class="text-lg text-slate-600 mb-8 font-medium">Protegemos tu cédula y a tus pacientes bajo normativa NOM-004.</p>
           
           <ul class="space-y-8">
             <li class="flex items-start">
               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
               <div class="ml-4">
                 <h4 class="text-lg font-bold text-slate-900">Arquitectura "Zero Trust"</h4>
-                <p class="text-slate-500 mt-1">Construido sobre Supabase con seguridad a nivel de fila (RLS). Solo tu llave digital puede descifrar los expedientes.</p>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
-              <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Cumplimiento NOM-004</h4>
-                <p class="text-slate-500 mt-1">Todos los campos y formatos cumplen estrictamente con la normativa mexicana del Expediente Clínico Electrónico.</p>
+                <p class="text-slate-500 mt-1">Seguridad a nivel de fila (RLS). Solo tu llave digital única puede descifrar tus expedientes.</p>
               </div>
             </li>
             <li class="flex items-start">
@@ -197,7 +202,14 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
         </div>
         <div class="lg:w-1/2 relative">
           <div class="absolute inset-0 bg-gradient-to-tl from-indigo-400 to-pink-500 blur-3xl opacity-20 rounded-full"></div>
-          <img src={SECURITY_IMG} alt="Bóveda digital de seguridad" class="relative rounded-2xl shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500 object-cover h-[500px] w-full" />
+          <img 
+            src={SECURITY_IMG} 
+            alt="Bóveda digital de seguridad" 
+            width="1000" height="600"
+            loading="lazy"
+            decoding="async"
+            class="relative rounded-2xl shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500 object-cover h-[500px] w-full" 
+          />
         </div>
       </div>
 
@@ -209,9 +221,9 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Para el Departamento de TI</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ficha Técnica de Infraestructura</h2>
         <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-          Si un hospital te pregunta "qué tecnología usas", esta es la ficha técnica de tu infraestructura.
+          Especificaciones para departamentos de TI y auditorías de seguridad.
         </p>
       </div>
 
@@ -224,25 +236,21 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
             <div class="p-6 border-b border-slate-700">Beneficio Clínico/Técnico</div>
           </div>
 
-          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Infraestructura Cloud</div>
+          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Cloud IA</div>
           <div class="p-6 border-b border-slate-700 text-white font-mono">Google Cloud Vertex AI</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Estabilidad empresarial (99.9% Uptime) y Privacidad de Datos garantizada.</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Privacidad de Datos garantizada por contrato Enterprise.</div>
 
-          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Modelo de IA</div>
-          <div class="p-6 border-b border-slate-700 text-white font-mono">Gemini 2.0 Flash</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Latencia ultra-baja (<500ms) y razonamiento médico avanzado de última generación.</div>
+          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Modelo LLM</div>
+          <div class="p-6 border-b border-slate-700 text-white font-mono">Gemini 3.0 Flash</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Latencia ultra-baja y razonamiento médico avanzado de nueva generación.</div>
 
           <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Base de Datos</div>
           <div class="p-6 border-b border-slate-700 text-white font-mono">Supabase (PostgreSQL)</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Integridad relacional robusta y políticas de seguridad RLS (Row Level Security).</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Integridad relacional y políticas de seguridad RLS.</div>
 
-          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Frontend</div>
-          <div class="p-6 border-b border-slate-700 text-white font-mono">React + Astro</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Experiencia de usuario fluida (SPA) sin recargas lentas de página.</div>
-
-          <div class="p-6 md:bg-slate-800/50 text-teal-400 font-bold">Hosting</div>
-          <div class="p-6 text-white font-mono">Netlify Global CDN</div>
-          <div class="p-6 text-slate-300 text-sm">Acceso rápido y redundante desde cualquier ubicación en México.</div>
+          <div class="p-6 md:bg-slate-800/50 text-teal-400 font-bold">Frontend</div>
+          <div class="p-6 text-white font-mono">React + Astro</div>
+          <div class="p-6 text-slate-300 text-sm">Experiencia de usuario fluida (SPA) sin recargas.</div>
 
         </div>
       </div>
@@ -253,7 +261,7 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-slate-900">Preguntas Frecuentes</h2>
-        <p class="text-slate-500 mt-2">Rompiendo miedos tecnológicos</p>
+        <p class="text-slate-500 mt-2">Tecnología explicada de forma sencilla.</p>
       </div>
 
       <div class="space-y-4">
@@ -266,31 +274,31 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>No.</strong> Al utilizar la infraestructura <em>Vertex AI Enterprise</em>, VitalScribe opera bajo un contrato de privacidad estricto donde Google actúa solo como procesador. Tus datos no se almacenan en sus servidores públicos ni entrenan a sus modelos comerciales.
+            <strong>No.</strong> VitalScribe opera bajo un contrato de privacidad Enterprise. Google actúa solo como procesador ciego; tus datos no se almacenan en sus servidores públicos ni entrenan a sus modelos.
           </p>
         </details>
 
         <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿Qué tan rápido es "Flash"?
+            ¿Qué tan rápido es?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            Gemini 2.0 Flash es, actualmente, uno de los modelos más rápidos del mundo. Generar una nota clínica completa toma <strong>menos tiempo del que tardas en tomar un sorbo de café</strong>.
+            <strong>Gemini 3.0 Flash</strong> es extremadamente veloz. Generar una nota clínica completa toma menos tiempo del que tardas en tomar un sorbo de café.
           </p>
         </details>
 
         <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿Necesito una computadora potente?
+            ¿Necesito un equipo potente?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            No. Toda la potencia de procesamiento ocurre en nuestra nube. Puedes usar VitalScribe en cualquier computadora básica, tablet o celular que tenga un navegador de internet actualizado (Chrome, Safari, Edge).
+            No. Todo el procesamiento pesado ocurre en nuestra nube. Funciona perfecto en cualquier laptop básica, tablet o celular con navegador actualizado.
           </p>
         </details>
 
@@ -312,7 +320,7 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
         <div class="flex flex-col gap-4 text-right">
             <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Tecnología</span>
             <span class="text-slate-300 text-sm">Powered by Google Vertex AI</span>
-            <span class="text-slate-300 text-sm">Gemini 2.0 Flash Engine</span>
+            <span class="text-slate-300 text-sm">Gemini 3.0 Flash Engine</span>
             <span class="text-slate-300 text-sm">Supabase Secure Cloud</span>
         </div>
       </div>
@@ -324,7 +332,6 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
         <div class="flex gap-6 text-slate-500 text-xs font-medium">
           <a href="#" class="hover:text-teal-400 transition-colors">Cumplimiento NOM-004</a>
           <a href="#" class="hover:text-teal-400 transition-colors">Aviso de Privacidad</a>
-          <a href="#" class="hover:text-teal-400 transition-colors">Términos de Servicio</a>
         </div>
       </div>
 
@@ -334,6 +341,11 @@ const MOBILE_IMG = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d
 </Layout>
 
 <style>
+    /* Habilita el scroll suave para los enlaces ancla */
+    html {
+        scroll-behavior: smooth;
+    }
+
     @keyframes pulse-slow {
         0%, 100% { opacity: 0.2; transform: scale(1); }
         50% { opacity: 0.15; transform: scale(1.1); }
