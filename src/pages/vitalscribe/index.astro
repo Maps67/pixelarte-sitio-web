@@ -1,59 +1,226 @@
 ---
 // Archivo: src/pages/vitalscribe/index.astro
-// PROTOCOLO VITALSCRIBE v5.4: CORRECCIÓN DE TYPESCRIPT + GEMINI 3.0
-// ESTADO: PRODUCCIÓN (Sin errores de compilación)
+// PROTOCOLO VITALSCRIBE v5.4: INTEGRACIÓN COMPLETA DE PRESENTACIÓN v11.0 CON AJUSTES REGULATORIOS Y MATRIZ DE PRECIOS
+// ESTADO: PRODUCCIÓN (Estricto, Saneado, Monolítico, Libre de Alertas de COFEPRIS/DGIS)
 
 import Layout from '../../layouts/Layout.astro';
 
 // ==========================================
-// CONFIGURACIÓN Y METADATOS
+// CONFIGURACIÓN Y METADATOS (Elevados a v11.0 con Alineación Normativa)
 // ==========================================
-const title = "VitalScribe | Medicina de Precisión con Vertex AI y Gemini 3.0";
-const description = "Plataforma clínica impulsada por Google Gemini 3.0 Flash. Notas instantáneas, detección de riesgos y seguridad Enterprise Vertex AI.";
+const title = "VitalScribe AI v11.0 | Clinical Decision Support System & Identity Shield";
+const description = "Arquitectura Omni-Sentinel: El único CDSS con Verificación Federal en Vivo (SEP, CURP, e.firma) y alineación arquitectónica con las normas NOM-004, NOM-006 y NOM-024.";
 const APP_URL = "https://vitalscribeai.com/";
 
 // ==========================================
-// IMÁGENES (Optimizadas)
+// IMÁGENES DE ALTA ENTRÓPÍA Y PRECISIÓN
 // ==========================================
-const HERO_IMG = "https://images.unsplash.com/photo-1551076882-68b47d190267?auto=format&fit=crop&q=80&w=2000";
+const HERO_IMG = "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000";
 const SPEED_IMG = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000";
-const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1000";
+const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=2000";
+
+// ==========================================
+// DATA DE PRESENTACIÓN CORPORATIVA (Mapeada para Render Dinámico)
+// ==========================================
+const slides = [
+  {
+    id: "intro",
+    type: "hero",
+    title: "VitalScribe AI v11.0", 
+    subtitle: "Clinical Decision Support System (CDSS) & Identity Shield",
+    content: "Arquitectura Omni-Sentinel: El único ecosistema de Blindaje Forense y Seguridad Activa con Verificación Federal en Vivo ante la SEP, CURP e Infraestructura de Firma Avanzada y Autógrafa.",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000", 
+    meta: { gradient: "from-teal-600 to-slate-900" }
+  },
+  {
+    id: "moat",
+    type: "split",
+    title: "Cerebro Clínico vs. Agenda Digital",
+    content: [
+      "Marketplaces: Optimizan el marketing y la cita. Son repositorios de datos pasivos.",
+      "VitalScribe AI: Optimiza la vida del paciente y el blindaje del doctor. Es un socio cognitivo activo.",
+      "Transición: Del trabajo clerical al contacto visual empático mediante Inteligencia Ambiental."
+    ],
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=2000",
+  },
+  {
+    id: "problem",
+    type: "split",
+    title: "La Trampa del Error y el Burnout",
+    content: [
+      "Fatiga Cognitiva: Causa del 40% de omisiones en interacciones farmacológicas.",
+      "Indefensión Jurídica: Notas ambiguas que facilitan reclamos por mala praxis.",
+      "Fuga de Datos: Sistemas multi-inquilino sin aislamiento real (RLS) en bases de datos."
+    ],
+    image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=2000",
+  },
+  {
+    id: "engine",
+    type: "grid",
+    title: "Pilar 1: Integridad Documental (CDI)",
+    content: "Más que transcripción: Un sistema de auditoría antialucinación constante.",
+    items: [
+      { icon: "🛡️", title: "Balance 360°", text: "Auditoría retrospectiva que detecta brechas diagnósticas y omisiones críticas en la nota." },
+      { icon: "🎙️", title: "Ambient Intelligence", text: "Escucha asistida activada bajo estricta autorización y firma de consentimiento expreso del paciente." },
+      { icon: "📈", title: "Vital Snapshot", text: "Resumen ejecutivo inmediato. Conozca al paciente y sus riesgos antes de saludar." },
+      { icon: "🔒", title: "Determinismo IA", text: "Parámetros de temperatura 0.0 en Búnker IA para evitar variabilidad diagnóstica." }
+    ]
+  },
+  {
+    id: "anesthesia",
+    type: "grid",
+    title: "Anestesiología: La 'Caja Negra'",
+    content: "Cumplimiento milimétrico de la NOM-006-SSA3-2011.",
+    items: [
+      { icon: "📊", title: "Triple Registro", text: "Segmentación forense: Valoración Pre, Registro Trans y Recuperación UCPA." },
+      { icon: "🔒", title: "Asistencia en Recuperación", text: "Soporte en Aldrete Score: Asistencia visual para la evaluación de criterios de alta a piso post-quirúrgico." },
+      { icon: "⚡", title: "Cronometría Médica", text: "Trazabilidad exacta de inducción, incisión y eventos transoperatorios críticos." },
+      { icon: "🛡️", title: "Defensa Activa", text: "Documentación inexpugnable ante eventos adversos para blindar la responsabilidad." }
+    ]
+  },
+  {
+    id: "surgical",
+    type: "grid",
+    title: "Cirugía y Riesgo Perioperatorio",
+    content: "Matemática médica integrada para el consentimiento informado.",
+    items: [
+      { icon: "🧮", title: "Doble Validation", text: "Cálculo simultáneo de Gupta MICA (NSQIP) y RCRI de Lee para precisión estadística." },
+      { icon: "✂️", title: "Op-Scribe", text: "Extracción automática de técnica quirúrgica, hallazgos e insumos desde el dictado." },
+      { icon: "✍️", title: "Blindaje Legal Qx", text: "Generación de notas post-operatorias bajo el rigor de la NOM-004." },
+      { icon: "📸", title: "Evidencia Fotográfica", text: "Incapacidad médica vinculada a fotos intraoperatorias para soporte de peritaje." }
+    ]
+  },
+  {
+    id: "nutrition",
+    type: "grid",
+    title: "Nutrición Clínica Multimodal",
+    content: "Fusión de visión computacional y dietética basada en evidencia.",
+    items: [
+      { icon: "👁️", title: "OCR Vision (InBody)", text: "Lectura inteligente de tickets de bioimpedancia. Extracción inmediata de masa y grasa." },
+      { icon: "🧮", title: "Cálculo USDA", text: "Suma de macros y kilocalorías automáticas basadas en bases de datos globales." },
+      { icon: "⚠️", title: "Filtro de Alérgenos", text: "Alerta asistida de alérgenos en planes dietéticos basado en historial clínico estructurado en formato JSON." },
+      { icon: "🍽️", title: "Anexo Dietético", text: "Generación de menús personalizados vinculados legalmente a la receta oficial." }
+    ]
+  },
+  {
+    id: "omni_sentinel",
+    type: "split",
+    title: "Omni-Sentinel: El Firewall Humano",
+    content: [
+      "Asistencia Proactiva: Interrupción Segura Asistida para fármacos nefrotóxicos basados en TFG dictada.",
+      "Triangulación de Datos: Cruza laboratorios, antecedentes y alergias en milisegundos.",
+      "Sanitización Documental: El PDF final solo muestra fármacos validados por el motor de seguridad."
+    ],
+    image: "https://images.unsplash.com/photo-1583912267550-d44d7a125e7e?auto=format&fit=crop&q=80&w=2000",
+  },
+  {
+    id: "security_slide",
+    type: "split",
+    title: "Aislamiento Criptográfico y Dualidad de Firma",
+    content: [
+      "Row Level Security (RLS): Cada médico es el dueño unívoco de su bóveda de datos con aislamiento perimetral estricto.",
+      "Búnker Edge IA: Código y algoritmos de Inteligencia Ambiental ejecutados de manera aislada en Edge Functions (Deno) para máxima privacidad de datos PHI.",
+      "Bóveda de Firma Criptográfica (SAT): Integración de la e.firma (FIEL). Procesamiento estricto en el lado del cliente (Local Web Sandbox), garantizando el No Repudio.",
+      "Firma Autógrafa/Manual Digitalizada: Captura y vectorización directa de la rúbrica manual del médico con estampado cronológico vinculante bajo la NOM-151."
+    ],
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=2070"
+  },
+  {
+    id: "interoperability",
+    type: "split",
+    title: "Pasarela Criptográfica, Identidad Federal y CURP",
+    content: [
+      "Autoverificación RNP-SEP en Vivo: Interconexión directa con el Registro Nacional de Profesionistas para validar la cédula en el alta.",
+      "Validación de Identidad CURP Directa: Consulta en tiempo real ante el Padrón Nacional de Población (RENAPO) mediante APIMarket.",
+      "Cloudflare Turnstile (Modo Gestionado): Escudo anti-bots perimetral que emite tokens criptográficos asíncronos.",
+      "Acreditación NOM-024 Obligatoria: Bloqueo de identidades sintéticas y exportación universal legible por máquinas en formato HL7 CDA R2."
+    ],
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=2000"
+  },
+  {
+    id: "legal_prob",
+    type: "grid",
+    title: "Medicina Defensiva (NOM-004)",
+    content: "Transformamos el expediente en una fortaleza jurídica.",
+    items: [
+      { icon: "⚖️", title: "Lenguaje Probabilístico", text: "Mapeo de sospecha médica a términos forenses (ej. 'Compatible con...') para protección legal." },
+      { icon: "👤", title: "Bitácora Inmutable", text: "Registro de auditoría (Append-only) por base de datos con Inactivación Lógica (Soft-Delete) para cumplimiento GIIS-A004." },
+      { icon: "🛡️", title: "Soporte de Decisiones", text: "Clasificado como Sistema de Soporte de Decisiones Clínicas (CDSS). La última palabra diagnóstica y terapéutica recae en el médico." },
+      { icon: "📄", title: "Motor Dual CIE-11 Nativo", text: "Búsqueda asíncrona directa conectada a la API de la OMS con almacenamiento Bearer dinámico." }
+    ]
+  },
+  {
+    id: "admin_gatekeeper",
+    type: "grid",
+    title: "Pasarela Edge Functions y Control de Integridad",
+    content: "Orquestación de microservicios públicos regulados en Supabase e inyección de secretos.",
+    items: [
+      { icon: "🗄️", title: "Bypass JWT Control", text: "Despliegue estructural con la directiva 'verify_jwt = false' en la nube para permitir consultas pre-registro seguras." },
+      { icon: "🔑", title: "Inyección Vault Terminal", text: "Almacenamiento inexpugnable de secretos de producción (TURNSTILE_SECRET_KEY) directo en el clúster de Supabase." },
+      { icon: "🔒", title: "CORS Anti-DeDoS Patched", text: "Filtro de orígenes cruzados que tolera handshakes emulados en localhost y restricciones rígidas." },
+      { icon: "👁️", title: "Preservación NOM-004", text: "Estatus remotos dinámicos ('read_only', 'active') sincronizados para auditorías sin pérdida de datos." }
+    ]
+  },
+  {
+    id: "roadmap",
+    type: "grid",
+    title: "V12.0: El Futuro de la Precisión",
+    content: "Hacia la hiper-personalización y el modelado bibliográfico avanzado.",
+    items: [
+      { icon: "🕸️", title: "Mapeo Farmacológico", text: "Mapeo de interacciones complejas en polifarmacia referenciando bases de datos de farmacovigilancia internacional." },
+      { icon: "👥", title: "Espejos Fisiológicos", text: "Espejos Fisiológicos de referencia para ilustrar escenarios de riesgo clínico basados en Guías de Práctica Clínica." },
+      { icon: "🧠", title: "Investigación Delegada", text: "Agentes de Investigación Delegada (RAG) para rastreo, lectura y síntesis de literatura médica bajo demanda." },
+      { icon: "🔬", title: "Alertas Genómicas", text: "Integración de alertas fármaco-genómicas que exponen consideraciones de dosificación para cada fenotipo." }
+    ]
+  },
+  {
+    id: "closing",
+    type: "hero",
+    title: "VitalScribe AI: Inteligencia que Defiende.",
+    subtitle: "v11.0 Global Sentinel Shielded", 
+    content: "Arquitectura inspirada en la Clínica Mayo. Autoverificación de identidad profesional (SEP, CURP), doble firma (e.firma, Autógrafa), cumplimiento normativo y resguardo patrimonial. El nuevo estándar de oro en salud digital.",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=1964",
+    meta: { gradient: "from-teal-600 to-blue-900" }
+  }
+];
 ---
 
 <Layout title={title} description={description}>
 
-  <section class="relative overflow-hidden bg-slate-900 min-h-screen flex items-center pt-20 pb-20">
+  <!-- HERO PRINCIPAL (ELEVACIÓN V11.0 OMNI-SENTINEL) -->
+  <section class="relative overflow-hidden bg-slate-900 min-h-screen flex items-center pt-24 pb-20">
     
     <div class="absolute inset-0 z-0">
       <img 
         src={HERO_IMG} 
-        alt="Tecnología médica avanzada" 
+        alt="Tecnología médica avanzada de grado militar" 
         width="2000" 
         height="1333"
         fetchpriority="high"
         loading="eager"
-        class="w-full h-full object-cover opacity-40 filter blur-[8px] scale-105"
+        class="w-full h-full object-cover opacity-30 filter blur-[10px] scale-105"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/60"></div>
     </div>
 
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-500 rounded-full mix-blend-overlay filter blur-[120px] opacity-20 animate-pulse-slow pointer-events-none will-change-transform"></div>
-    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20 pointer-events-none will-change-transform"></div>
+    <!-- Orbes de luz de fondo con propiedades aceleradas por GPU -->
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-500 rounded-full mix-blend-overlay filter blur-[140px] opacity-15 animate-pulse-slow pointer-events-none will-change-transform"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500 rounded-full mix-blend-overlay filter blur-[120px] opacity-15 pointer-events-none will-change-transform"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/60 border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg">
-        <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
-        Powered by Vertex AI • Gemini 3.0 Flash
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-teal-500/40 text-teal-300 text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg">
+        <span class="w-2.5 h-2.5 rounded-full bg-teal-400 animate-ping"></span>
+        SECURED WITH CLOUDFLARE TURNSTILE & SEP/CURP V11.0 LIVE
       </div>
 
       <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
         Medicina de Precisión a la <br class="hidden md:block" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400">Velocidad de la Luz.</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400">Velocidad del Pensamiento.</span>
       </h1>
 
       <p class="text-lg md:text-2xl text-slate-200 max-w-4xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
-        La primera plataforma de gestión clínica en México impulsada por el nuevo motor <strong>Google Gemini 3.0 Flash</strong>. Notas instantáneas, detección de riesgos y seguridad Enterprise.
+        VitalScribe AI es el único <strong>Clinical Decision Support System (CDSS)</strong> en México equipado con Verificación Federal en Vivo, doble firma criptográfica NOM-151 y protección perimetral contra mala praxis.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
@@ -70,23 +237,347 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
         </a>
         
         <a 
-          href="#features" 
+          href="#presentation-hub" 
           class="w-full sm:w-auto px-10 py-5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-lg rounded-xl transition-all backdrop-blur-sm flex items-center justify-center gap-3"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
-          Ver la IA en Acción
+          Explorar Presentación v11.0
         </a>
       </div>
     </div>
   </section>
 
-  <section id="features" class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.2)] scroll-mt-20">
+  <!-- NÚCLEO INTERACTIVO DE LA PRESENTACIÓN CORPORATIVA (V11.0 DATASHIELD) -->
+  <section id="presentation-hub" class="py-24 bg-slate-950 relative border-t border-slate-850 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(20,184,166,0.07),transparent_70%)]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16">
+        <span class="px-3 py-1 text-xs font-semibold tracking-wider text-teal-300 uppercase bg-teal-950/80 border border-teal-500/30 rounded-full">
+          CONSOLA DE PRESENTACIÓN ACTIVA
+        </span>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
+          Manifiesto de Arquitectura e Integridad v11.0
+        </h2>
+        <p class="text-slate-400 text-lg max-w-3xl mx-auto mt-4">
+          Navegue por el búnker tecnológico y legal de VitalScribe AI. Diapositivas interactivas extraídas directamente de los Core Services del sistema.
+        </p>
+      </div>
+
+      <!-- DESPLIEGUE DEL NAVEGADOR DE PRESENTACIÓN -->
+      <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[550px]">
+        
+        <!-- Sidebar de Diapositivas (Selectores) -->
+        <div class="lg:col-span-4 border-r border-slate-800 bg-slate-900/50 flex flex-col justify-between max-h-[600px] overflow-y-auto custom-scrollbar">
+          <div class="p-4 border-b border-slate-800 bg-slate-950/30">
+            <span class="text-xs font-mono text-slate-500">ÍNDICE DE ARQUITECTURA (CDSS)</span>
+          </div>
+          <div class="p-2 space-y-1 flex-1">
+            {slides.map((slide, index) => (
+              <button 
+                class={`slide-tab w-full text-left p-3.5 rounded-xl transition-all flex items-center gap-3 border ${index === 0 ? 'bg-teal-950/40 text-teal-300 border-teal-500/30' : 'text-slate-400 border-transparent hover:bg-slate-800/50 hover:text-white'}`}
+                data-slide-id={slide.id}
+                data-index={index}
+              >
+                <span class="font-mono text-xs text-teal-400/70 bg-slate-950/60 w-6 h-6 rounded-md flex items-center justify-center font-bold">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <div class="truncate">
+                  <p class="font-bold text-sm leading-none truncate">{slide.title}</p>
+                  <p class="text-[10px] text-slate-500 font-mono mt-1 capitalize">{slide.type} Slide</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Contenedor Dinámico de Diapositivas (Viewer) -->
+        <div class="lg:col-span-8 p-8 md:p-12 flex flex-col justify-between bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 relative">
+          
+          <!-- Orbe luminoso sutil en la esquina del visor -->
+          <div class="absolute top-4 right-4 w-40 h-40 bg-teal-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <!-- SLIDE VIEWER INTERFACES (Render de todos, ocultos por JS para máxima compatibilidad SEO) -->
+          <div class="flex-1 flex flex-col justify-center">
+            {slides.map((slide, index) => (
+              <div 
+                id={`viewer-${slide.id}`} 
+                class={`slide-pane flex-col justify-between transition-opacity duration-300 ${index === 0 ? 'flex' : 'hidden opacity-0'}`}
+              >
+                <!-- Render según tipo de Diapositiva (Hero, Split, Grid) -->
+                {slide.type === 'hero' && (
+                  <div class="space-y-6">
+                    <span class="text-xs font-mono tracking-widest text-teal-400 bg-teal-950/60 px-3 py-1 rounded border border-teal-500/20 w-fit">
+                      {slide.subtitle}
+                    </span>
+                    <h3 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                      {slide.title}
+                    </h3>
+                    <p class="text-slate-300 text-lg leading-relaxed font-light">
+                      {slide.content}
+                    </p>
+                    {slide.image && (
+                      <div class="rounded-xl overflow-hidden border border-slate-800 h-44 w-full relative mt-4 shadow-inner">
+                        <img src={slide.image} alt={slide.title} class="w-full h-full object-cover opacity-60" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {slide.type === 'split' && (
+                  <div class="space-y-6">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-white flex items-center gap-2">
+                      <span class="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
+                      {slide.title}
+                    </h3>
+                    {Array.isArray(slide.content) && (
+                      <ul class="space-y-4">
+                        {slide.content.map((bullet) => {
+                          const [header, ...rest] = bullet.split(':');
+                          return (
+                            <li class="flex items-start gap-3 bg-slate-900/60 p-3 rounded-lg border border-slate-800/60">
+                              <span class="text-teal-400 mt-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                              </span>
+                              <p class="text-slate-300 text-sm">
+                                <strong class="text-white">{header}:</strong>{rest.join(':')}
+                              </p>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                    {slide.image && (
+                      <div class="rounded-xl overflow-hidden border border-slate-800 h-32 w-full mt-4">
+                        <img src={slide.image} alt={slide.title} class="w-full h-full object-cover opacity-50" />
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {slide.type === 'grid' && (
+                  <div class="space-y-6">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-white flex items-center gap-2">
+                      <span class="w-1.5 h-6 bg-teal-500 rounded-full"></span>
+                      {slide.title}
+                    </h3>
+                    <p class="text-slate-400 text-sm italic">{slide.content}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                      {slide.items?.map((item) => (
+                        <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 hover:border-teal-500/30 transition-all">
+                          <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xl">{item.icon}</span>
+                            <h4 class="font-bold text-teal-300 text-sm">{item.title}</h4>
+                          </div>
+                          <p class="text-slate-400 text-xs leading-relaxed">{item.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                    {slide.meta?.legalClosing && (
+                      <p class="text-[10px] text-slate-500 bg-slate-950 p-2.5 rounded border border-slate-900 font-mono leading-relaxed mt-4">
+                        ⚠️ <strong>AVISO LEGAL:</strong> {slide.meta.legalClosing}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <!-- Botones de Navegación del visualizador -->
+          <div class="flex items-center justify-between border-t border-slate-800 pt-6 mt-8">
+            <button 
+              id="prev-slide-btn"
+              class="px-5 py-2.5 bg-slate-950 hover:bg-slate-800 text-slate-300 hover:text-white rounded-lg text-xs font-mono border border-slate-800 transition-all flex items-center gap-2"
+            >
+              ← ANTERIOR
+            </button>
+            <span id="slide-counter-badge" class="text-xs font-mono text-slate-500">
+              SLIDE 1 DE {slides.length}
+            </span>
+            <button 
+              id="next-slide-btn"
+              class="px-5 py-2.5 bg-teal-500 hover:bg-teal-400 text-slate-950 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(20,184,166,0.3)]"
+            >
+              SIGUIENTE →
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE PRECIOS PREMIUM BASADA EN MEDICINA DEFENSIVA Y EL EFECTO SEÑUELO -->
+  <section id="pricing-bunker" class="py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(20,184,166,0.05),transparent_60%)]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16">
+        <span class="px-3 py-1 text-xs font-semibold tracking-wider text-teal-300 uppercase bg-teal-950/80 border border-teal-500/30 rounded-full">
+          PLANES DE PROTECCIÓN ACTIVA
+        </span>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
+          Asegura tu Práctica Profesional
+        </h2>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto mt-4">
+          Protege tu cédula, tu patrimonio y tu tiempo por menos del costo de una sola consulta privada al mes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
+        
+        <!-- Plan Inicial -->
+        <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between relative backdrop-blur-sm">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-xl font-bold text-slate-300">Plan Inicial</h3>
+              <span class="text-[10px] font-bold bg-slate-800 text-slate-400 px-2.5 py-1 rounded-full uppercase tracking-wider">Base</span>
+            </div>
+            <p class="text-slate-500 text-sm mb-6">Organización esencial para consultorios de bajo volumen.</p>
+            <div class="mb-6">
+              <span class="text-4xl font-black text-white">$1,499</span>
+              <span class="text-slate-500 text-sm font-medium ml-1">MXN / mes</span>
+              <span class="text-[10px] text-slate-500 block mt-1">+ IVA • Facturación Mensual</span>
+            </div>
+            <ul class="space-y-4 border-t border-slate-800/80 pt-6">
+              <li class="flex items-start gap-3 text-sm text-slate-400">
+                <span class="text-slate-600 mt-0.5">✓</span>
+                <span>Volumen estrictamente limitado de consultas al mes</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-400">
+                <span class="text-slate-600 mt-0.5">✓</span>
+                <span>Organización mediante Agenda Nativa Soberana</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-400">
+                <span class="text-slate-600 mt-0.5">✓</span>
+                <span>Procesamiento de Dictado Clínico Básico</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-500 line-through">
+                <span class="text-slate-600 mt-0.5">×</span>
+                <span>Sin validaciones periciales de identidad federada</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5213347211199?text=Hola,%20quiero%20más%20información%20del%20Plan%20Inicial" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-center font-bold text-sm rounded-xl transition-all mt-8">
+            Adquirir Plan Base
+          </a>
+        </div>
+
+        <!-- Plan Profesional (Señuelo / Recomendado) -->
+        <div class="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 rounded-3xl border-2 border-teal-500/80 p-8 flex flex-col justify-between relative shadow-[0_20px_40px_rgba(20,184,166,0.15)] ring-4 ring-teal-950/30 z-10">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest shadow-lg whitespace-nowrap">
+            RECOMENDADO POR LANZAMIENTO
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-4 mt-2">
+              <h3 class="text-2xl font-black text-white">Plan Profesional</h3>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">Automatización SOAP integral con blindaje forense completo.</p>
+            
+            <div class="mb-6 bg-teal-950/40 border border-teal-500/30 rounded-2xl p-4 text-xs leading-relaxed text-teal-200">
+              <div class="flex items-center gap-2 font-black text-teal-400 tracking-wide uppercase">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                🎁 BENEFICIO DE FUNDADOR ACTIVO
+              </div>
+              <p class="mt-1.5 text-slate-300 font-medium">
+                Los primeros 15 médicos reciben acceso permanente e ilimitado al módulo de <strong class="text-white font-bold">Auditoría Clínica Balance 360°</strong> sin costo adicional.
+              </p>
+              <div class="mt-3 flex items-center gap-3">
+                <div class="flex-1 bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                  <div class="bg-gradient-to-r from-teal-500 to-emerald-400 h-full w-[73%] rounded-full"></div>
+                </div>
+                <span class="font-mono font-bold text-red-400 shrink-0">Solo quedan 4 lugares</span>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <span class="text-5xl font-black text-white tracking-tight">$2,199</span>
+              <span class="text-slate-400 text-base font-bold ml-1.5">MXN / mes</span>
+              <span class="text-[10px] text-slate-500 block mt-1">+ IVA • Uso y Notas Ilimitadas</span>
+            </div>
+            
+            <ul class="space-y-4 border-t border-teal-950 pt-6">
+              <li class="flex items-start gap-3 text-sm text-slate-200 font-medium">
+                <span class="text-teal-400 font-black">✓</span>
+                <span>Consultas y Notas Clínicas SOAP Ilimitadas</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-200 font-medium">
+                <span class="text-teal-400 font-black">✓</span>
+                <span>Asistente de IA Avanzado entrenado por Especialidad</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-200 font-medium">
+                <span class="text-teal-400 font-black">✓</span>
+                <span>Verificación de Identidad Federal en Vivo (CURP y SEP)</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-teal-300 font-bold animate-pulse">
+                <span class="text-teal-400 font-black">★</span>
+                <span>Módulo Balance 360° Incluido de por vida (Bono)</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5213347211199?text=Hola,%20quiero%20reclamar%20el%20Bono%20de%20Fundador%20del%20Plan%20Profesional" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-8 flex items-center justify-center gap-2">
+            Activar Mi búnker Clínico
+          </a>
+        </div>
+
+        <!-- Plan Búnker Quirúrgico -->
+        <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between relative backdrop-blur-sm">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-xl font-bold text-slate-300">Búnker Qx</h3>
+              <span class="text-[10px] font-bold bg-indigo-950 text-indigo-400 px-2.5 py-1 rounded-full uppercase tracking-wider">Máximo Blindaje</span>
+            </div>
+            <p class="text-slate-500 text-sm mb-6">Diseñado para cirujanos y médicos que prescriben fármacos regulados.</p>
+            <div class="mb-6">
+              <span class="text-4xl font-black text-white">$3,499</span>
+              <span class="text-slate-500 text-sm font-medium ml-1">MXN / mes</span>
+              <span class="text-[10px] text-slate-500 block mt-1">+ IVA • Firma Avanzada Remota</span>
+            </div>
+            <ul class="space-y-4 border-t border-slate-800/80 pt-6">
+              <li class="flex items-start gap-3 text-sm text-slate-400">
+                <span class="text-indigo-400 mt-0.5">✓</span>
+                <span>Integración de Firma Criptográfica e.firma SAT</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-400">
+  <span class="text-indigo-400 mt-0.5">✓</span>
+  <span>Recetas Electrónicas Validadas para Fármacos Controlados (Fracción II y III)</span>
+</li>
+              <li class="flex items-start gap-3 text-sm text-slate-400">
+                <span class="text-indigo-400 mt-0.5">✓</span>
+                <span>Módulo Automático de Auditoría Retrospectiva 360°</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-400">
+                <span class="text-indigo-400 mt-0.5">✓</span>
+                <span>Reportes Quirúrgicos y Anestésicos bajo la NOM-006</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5213347211199?text=Hola,%20requiero%20información%20sobre%20el%20Plan%20Bunker%20Qx" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-center font-bold text-sm rounded-xl transition-all mt-8">
+            Solicitar Alta Quirúrgica
+          </a>
+        </div>
+
+      </div>
+
+      <p class="text-center text-xs text-slate-500 max-w-md mx-auto">
+        Sin plazos forzosos en modalidad mensual. Cancela o migra de nivel cuando quieras. Precios expresados en Moneda Nacional (MXN).
+      </p>
+    </div>
+  </section>
+
+  <!-- CARACTERÍSTICAS DESTACADAS DE LA PLATAFORMA (PERMANENCIA UX) -->
+  <section id="features" class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.25)] scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid md:grid-cols-3 gap-12">
         
+        <!-- Velocidad Flash -->
         <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-teal-200 transition-all duration-300">
           <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,10 +586,11 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
           </div>
           <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">Velocidad "Flash"</h3>
           <p class="text-slate-600 leading-relaxed">
-            Potenciado por <strong>Gemini 3.0</strong>. Tus notas y resúmenes clínicos no "cargan", aparecen instantáneamente. Cero latencia en consulta.
+            Potenciado por el nuevo motor <strong>Google Gemini 3.0 Flash</strong> de Vertex AI. Tus notas y resúmenes clínicos no "cargan", aparecen instantáneamente. Cero latencia en consulta.
           </p>
         </div>
 
+        <!-- Privacidad Enterprise -->
         <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-indigo-200 transition-all duration-300">
           <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -107,10 +599,11 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
           </div>
           <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">Privacidad Enterprise</h3>
           <p class="text-slate-600 leading-relaxed">
-            Corremos sobre la nube privada <strong>Google Vertex AI</strong>. Tus datos clínicos NUNCA se usan para entrenar a la IA pública. Aislamiento total.
+            Corremos sobre la nube privada con aislamiento criptográfico de datos de salud (PHI). Tus datos clínicos NUNCA se usan para entrenar a la IA pública.
           </p>
         </div>
 
+        <!-- Tu Clínica en el Bolsillo -->
         <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-pink-200 transition-all duration-300">
           <div class="w-16 h-16 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,7 +612,7 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
           </div>
           <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-pink-600 transition-colors">Tu Clínica en el Bolsillo</h3>
           <p class="text-slate-600 leading-relaxed">
-            Diseño 100% responsivo. Empieza la nota en tu Laptop y termínala en tu iPad o celular mientras caminas a la siguiente sala.
+            Diseño 100% responsivo y adaptivo. Empieza la nota en tu Laptop y termínala en tu iPad o celular mientras caminas a la siguiente sala con sincronización en tiempo real.
           </p>
         </div>
 
@@ -127,9 +620,11 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
     </div>
   </section>
 
+  <!-- SECCIÓN: EL CEREBRO CLÍNICO Y SEGURIDAD BANCO -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
       
+      <!-- Bloque 1: Cerebro Clínico -->
       <div class="flex flex-col lg:flex-row gap-16 items-center">
         <div class="lg:w-1/2">
           <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-teal-600 uppercase bg-teal-100 rounded-full">
@@ -143,21 +638,21 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-teal-200">1</div>
               <div class="ml-4">
                 <h4 class="text-lg font-bold text-slate-900">Redacción Estructurada</h4>
-                <p class="text-slate-500 mt-1">Convierte dictados rápidos o ideas sueltas en notas SOAP con formato médico perfecto.</p>
+                <p class="text-slate-500 mt-1">Convierte dictados rápidos o ideas sueltas en notas SOAP con formato médico perfecto bajo estándares internacionales.</p>
               </div>
             </li>
             <li class="flex items-start">
               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-red-200">2</div>
               <div class="ml-4">
                 <h4 class="text-lg font-bold text-slate-900">Monitor de Riesgos en Vivo</h4>
-                <p class="text-slate-500 mt-1">Detecta combinaciones peligrosas (ej. Alergias cruzadas) y lanza una <span class="text-red-600 font-bold bg-red-50 px-1 rounded">Alerta Visual</span>.</p>
+                <p class="text-slate-500 mt-1">Detecta combinaciones peligrosas (ej. Alergias cruzadas) y lanza una <span class="text-red-600 font-bold bg-red-50 px-1 rounded">Alerta Visual</span> instantánea.</p>
               </div>
             </li>
             <li class="flex items-start">
               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-teal-200">3</div>
               <div class="ml-4">
                 <h4 class="text-lg font-bold text-slate-900">Resumen "Flash"</h4>
-                <p class="text-slate-500 mt-1">Antes de que el paciente se siente, la IA lee el historial y te da un resumen de 3 líneas con lo vital.</p>
+                <p class="text-slate-500 mt-1">Antes de que el paciente se siente, la IA lee el historial y te da un resumen de 3 líneas con lo verdaderamente vital.</p>
               </div>
             </li>
           </ul>
@@ -175,27 +670,35 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
         </div>
       </div>
 
+      <!-- Bloque 2: Defensa Legal (e.firma, NOM-004, NOM-151) -->
       <div class="flex flex-col lg:flex-row-reverse gap-16 items-center">
         <div class="lg:w-1/2">
           <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-indigo-600 uppercase bg-indigo-100 rounded-full">
-            🛡️ Blindaje v2.0
+            🛡️ Blindaje v11.0 SECURED
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Seguridad de Grado Bancario</h2>
-          <p class="text-lg text-slate-600 mb-8 font-medium">Protegemos tu cédula y a tus pacientes bajo normativa NOM-004.</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Seguridad Legal de Grado Bancario</h2>
+          <p class="text-lg text-slate-600 mb-8 font-medium">Protegemos tu cédula y a tus pacientes bajo normativa federal NOM-004 y NOM-151.</p>
           
           <ul class="space-y-8">
             <li class="flex items-start">
               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
               <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Arquitectura "Zero Trust"</h4>
-                <p class="text-slate-500 mt-1">Seguridad a nivel de fila (RLS). Solo tu llave digital única puede descifrar tus expedientes.</p>
+                <h4 class="text-lg font-bold text-slate-900">Dualidad de Firma e.firma + Autógrafa</h4>
+                <p class="text-slate-500 mt-1">Soporte para rúbrica táctil manual digitalizada y la e.firma oficial del SAT. Cero archivos confidenciales viajan a la red: todo se procesa en un Sandbox local en tu navegador.</p>
               </div>
             </li>
             <li class="flex items-start">
               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
               <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Encriptación Militar</h4>
-                <p class="text-slate-500 mt-1">Tus datos viajan cifrados (TLS) y descansan cifrados (AES-256) en bóvedas digitales.</p>
+                <h4 class="text-lg font-bold text-slate-900">Arquitectura "Zero Trust" & Supabase RLS</h4>
+                <p class="text-slate-500 mt-1">Seguridad a nivel de fila (Row Level Security). Solo tu clave digital única tiene permisos para descifrar tus expedientes en la base de datos.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
+              <div class="ml-4">
+                <h4 class="text-lg font-bold text-slate-900">Validación Federal en Vivo ante la SEP y RENAPO</h4>
+                <p class="text-slate-500 mt-1">Bloqueo automático de usurpaciones mediante conexión directa en tiempo real al Padrón de Profesionistas y consulta ante la API oficial de la CURP.</p>
               </div>
             </li>
           </ul>
@@ -204,7 +707,7 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
           <div class="absolute inset-0 bg-gradient-to-tl from-indigo-400 to-pink-500 blur-3xl opacity-20 rounded-full"></div>
           <img 
             src={SECURITY_IMG} 
-            alt="Bóveda digital de seguridad" 
+            alt="Bóveda digital de seguridad y firmas" 
             width="1000" height="600"
             loading="lazy"
             decoding="async"
@@ -216,14 +719,18 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
     </div>
   </section>
 
+  <!-- FICHA TÉCNICA DE INFRAESTRUCTURA DE SEGURIDAD (CONEXIÓN SUPABASE & RLS) -->
   <section class="py-24 bg-slate-900 relative overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ficha Técnica de Infraestructura</h2>
+        <span class="px-3 py-1 text-xs font-semibold tracking-wider text-teal-400 uppercase bg-teal-950/80 border border-teal-500/20 rounded-full">
+          MÓDULO AUDITABLE DE TI
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-4">Ficha Técnica de Infraestructura</h2>
         <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-          Especificaciones para departamentos de TI y auditorías de seguridad.
+          Especificaciones de grado bancario para departamentos de TI, jurídicos y auditorías reguladas.
         </p>
       </div>
 
@@ -232,73 +739,90 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
           
           <div class="hidden md:contents bg-slate-900 text-slate-400 font-mono text-xs uppercase tracking-wider">
             <div class="p-6 border-b border-slate-700">Componente</div>
-            <div class="p-6 border-b border-slate-700">Tecnología</div>
-            <div class="p-6 border-b border-slate-700">Beneficio Clínico/Técnico</div>
+            <div class="p-6 border-b border-slate-700">Tecnología Soportada</div>
+            <div class="p-6 border-b border-slate-700">Garantía / Beneficio</div>
           </div>
 
-          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Cloud IA</div>
-          <div class="p-6 border-b border-slate-700 text-white font-mono">Google Cloud Vertex AI</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Privacidad de Datos garantizada por contrato Enterprise.</div>
+          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Autoverificación Federal</div>
+          <div class="p-6 border-b border-slate-700 text-white font-mono">SEP RNP API + RENAPO (CURP API)</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Validación biométrica e identitaria en tiempo real para nulidad de usurpaciones médicas.</div>
 
-          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Modelo LLM</div>
-          <div class="p-6 border-b border-slate-700 text-white font-mono">Gemini 3.0 Flash</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Latencia ultra-baja y razonamiento médico avanzado de nueva generación.</div>
+          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Cloud IA & CDSS</div>
+          <div class="p-6 border-b border-slate-700 text-white font-mono">Google Cloud Vertex AI (Gemini 3.0 Flash)</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Privacidad empresarial por contrato. Latencia inferior a 800ms por consulta diagnóstica.</div>
 
           <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Base de Datos</div>
-          <div class="p-6 border-b border-slate-700 text-white font-mono">Supabase (PostgreSQL)</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Integridad relacional y políticas de seguridad RLS.</div>
+          <div class="p-6 border-b border-slate-700 text-white font-mono">Supabase PostgreSQL RLS Shielded</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Políticas estrictas Row Level Security. Cada médico posee una clave simétrica única para aislar sus expedientes.</div>
 
-          <div class="p-6 md:bg-slate-800/50 text-teal-400 font-bold">Frontend</div>
-          <div class="p-6 text-white font-mono">React + Astro</div>
-          <div class="p-6 text-slate-300 text-sm">Experiencia de usuario fluida (SPA) sin recargas.</div>
+          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Infraestructura Edge</div>
+          <div class="p-6 border-b border-slate-700 text-white font-mono">Deno Edge Functions + Turnstile Shield</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Llamadas remotas con directiva 'verify_jwt = false' para validaciones públicas con secretos cifrados en Vault de Supabase.</div>
+
+          <div class="p-6 md:bg-slate-800/50 text-teal-400 font-bold">Estándar de Interoperabilidad</div>
+          <div class="p-6 text-white font-mono">NOM-004-SSA3, NOM-006 & NOM-024 HL7 CDA</div>
+          <div class="p-6 text-slate-300 text-sm">Estructura de datos preparada para interoperabilidad clínica mediante bitácora Append-only (Inmutable) y desactivación lógica para auditorías.</div>
 
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PREGUNTAS FRECUENTES (ELEVACIÓN DE DETALLES) -->
   <section class="py-24 bg-slate-50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900">Preguntas Frecuentes</h2>
-        <p class="text-slate-500 mt-2">Tecnología explicada de forma sencilla.</p>
+        <h2 class="text-3xl font-bold text-slate-900 font-sans">Preguntas Frecuentes</h2>
+        <p class="text-slate-500 mt-2">Respuestas técnicas y regulatorias de primer nivel.</p>
       </div>
 
       <div class="space-y-4">
         
         <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿Google lee los datos de mis pacientes?
+            ¿Es seguro cargar mi firma electrónica (e.firma SAT) en el sistema?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>No.</strong> VitalScribe opera bajo un contrato de privacidad Enterprise. Google actúa solo como procesador ciego; tus datos no se almacenan en sus servidores públicos ni entrenan a sus modelos.
+            <strong>Sí, es 100% seguro.</strong> VitalScribe implementa un Sandbox Web local en tu navegador. Tus llaves privadas (`.key`), certificados (`.cer`) y contraseñas NUNCA se transmiten a internet ni a nuestros servidores. La firma y el cifrado ocurren estrictamente de manera local antes de subir el documento firmado.
           </p>
         </details>
 
         <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿Qué tan rápido es?
+            ¿Cómo se cumple con la NOM-024-SSA3 y exportación de datos?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>Gemini 3.0 Flash</strong> es extremadamente veloz. Generar una nota clínica completa toma menos tiempo del que tardas en tomar un sorbo de café.
+            El sistema está programado para estructurar los datos del paciente según la arquitectura estándar HL7 CDA R2, permitiendo la interoperabilidad requerida por la Secretaría de Salud y el correcto intercambio clínico de información entre instituciones.
           </p>
         </details>
 
         <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
           <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-            ¿Necesito un equipo potente?
+            ¿Qué hace el módulo Omni-Sentinel para evitar errores de medicación?
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            No. Todo el procesamiento pesado ocurre en nuestra nube. Funciona perfecto en cualquier laptop básica, tablet o celular con navegador actualizado.
+            Actúa como una barrera de farmacovigilancia preventiva. Si el médico prescribe un fármaco nefrotóxico y la última Tasa de Filtración Glomerular registrada es baja, el sistema emite una alerta visual de seguridad y asiste en la interrupción segura del proceso, requiriendo que el médico valide y confirme la acción manualmente en pantalla para continuar.
+          </p>
+        </details>
+
+        <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
+          <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+            ¿Google o VitalScribe leen los datos de mis pacientes?
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            <strong>Bajo ninguna circunstancia.</strong> Contamos con un búnker de IA privado en Google Vertex AI corporativo. Google tiene prohibido contractualmente utilizar tus datos para entrenamiento. Del mismo modo, el cifrado RLS de base de datos asegura que solo el médico en posesión de su contraseña puede descifrar los registros médicos.
           </p>
         </details>
 
@@ -306,6 +830,7 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
     </div>
   </section>
 
+  <!-- FOOTER OFICIAL CON ACENTUACIONES DE LA NOM-004 -->
   <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -313,25 +838,31 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
         <div class="mb-8 md:mb-0 max-w-sm">
           <h2 class="text-2xl font-bold text-white tracking-tighter">VitalScribe<span class="text-teal-400">AI</span></h2>
           <p class="text-slate-400 text-sm mt-4 leading-relaxed">
-            La evolución de la práctica médica. Potenciando a los doctores de México con inteligencia artificial segura y eficiente.
+            Sistemas de Soporte de Decisiones Clínicas (CDSS) con protección de identidad forense federal. El nuevo estándar de oro en salud digital y medicina defensiva en México.
           </p>
         </div>
         
-        <div class="flex flex-col gap-4 text-right">
-            <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Tecnología</span>
-            <span class="text-slate-300 text-sm">Powered by Google Vertex AI</span>
-            <span class="text-slate-300 text-sm">Gemini 3.0 Flash Engine</span>
-            <span class="text-slate-300 text-sm">Supabase Secure Cloud</span>
+        <div class="flex flex-col gap-3 text-left md:text-right w-full md:w-auto shrink-0 border-t md:border-t-0 border-slate-800 pt-6 md:pt-0">
+          <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Nodos de Red y Seguridad</span>
+          <span class="text-slate-300 text-sm font-medium">Plataforma Cloud secured by Google Vertex AI</span>
+          <span class="text-slate-300 text-sm font-medium">Gemini 3.0 Flash Cognitive Engine</span>
+          <span class="text-slate-300 text-sm font-medium">Supabase Enterprise Database with RLS</span>
+          <span class="text-slate-300 text-sm font-mono text-[11px] text-teal-400 font-bold">Verificación Federal SEP/CURP Live v11.0</span>
+          <div class="mt-2 pt-2 border-t border-slate-800/80 text-xs text-slate-400">
+            <span class="block text-slate-500 font-mono text-[10px] uppercase">Contacto Oficial:</span>
+            <a href="mailto:soporte@vitalscribeai.com" class="text-teal-400 hover:underline font-semibold font-mono">soporte@vitalscribeai.com</a>
+          </div>
         </div>
       </div>
 
       <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-slate-500 text-xs">
-          © 2025 VitalScribe. Todos los derechos reservados.
+          © 2026 VitalScribe. Todos los derechos reservados.
         </p>
         <div class="flex gap-6 text-slate-500 text-xs font-medium">
-          <a href="#" class="hover:text-teal-400 transition-colors">Cumplimiento NOM-004</a>
-          <a href="#" class="hover:text-teal-400 transition-colors">Aviso de Privacidad</a>
+          <a href="#" class="hover:text-teal-400 transition-colors">Cumplimiento NOM-004-SSA3</a>
+          <a href="#" class="hover:text-teal-400 transition-colors">Aviso de Privacidad Ley Federal de Datos</a>
+          <a href="#" class="hover:text-teal-400 transition-colors">Cumplimiento NOM-024</a>
         </div>
       </div>
 
@@ -341,16 +872,151 @@ const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575
 </Layout>
 
 <style>
-    /* Habilita el scroll suave para los enlaces ancla */
-    html {
-        scroll-behavior: smooth;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.1; transform: scale(1.08); }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 8s infinite ease-in-out;
+  }
+
+  /* Ocultación de Scrollbar para un look Premium */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(71, 85, 105, 0.5);
+    border-radius: 9999px;
+  }
+</style>
+
+<!-- SCRIPT CLIENT-SIDE NATIVO DE ASTRO PARA LA PRESENTACIÓN INTERACTIVA -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Referencias a los elementos del Dom
+    const tabs = document.querySelectorAll('.slide-tab');
+    const panes = document.querySelectorAll('.slide-pane');
+    const prevBtn = document.getElementById('prev-slide-btn');
+    const nextBtn = document.getElementById('next-slide-btn');
+    const counterBadge = document.getElementById('slide-counter-badge');
+    
+    let activeIndex = 0;
+    const totalSlides = tabs.length;
+
+    // Función para actualizar el visualizador
+    function updateViewer(index) {
+      if (index < 0 || index >= totalSlides) return;
+      
+      activeIndex = index;
+
+      // Actualizar Tabs de la lista
+      tabs.forEach((tab, idx) => {
+        if (idx === index) {
+          tab.classList.add('bg-teal-950/40', 'text-teal-300', 'border-teal-500/30');
+          tab.classList.remove('text-slate-400', 'border-transparent');
+          // Desplazar suavemente el elemento en móviles para mantenerlo visible
+          tab.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          tab.classList.remove('bg-teal-950/40', 'text-teal-300', 'border-teal-500/30');
+          tab.classList.add('text-slate-400', 'border-transparent');
+        }
+      });
+
+      // Actualizar Visibilidad de las Diapositivas
+      panes.forEach((pane, idx) => {
+        if (idx === index) {
+          pane.classList.remove('hidden', 'opacity-0');
+          pane.classList.add('flex');
+          // Pequeño timeout para activar transición de entrada
+          setTimeout(() => {
+            pane.style.opacity = '1';
+          }, 50);
+        } else {
+          pane.classList.add('hidden', 'opacity-0');
+          pane.classList.remove('flex');
+          pane.style.opacity = '0';
+        }
+      });
+
+      // Actualizar Contador y Botones de Navegación
+      counterBadge.textContent = `SLIDE ${index + 1} DE ${totalSlides}`;
+      
+      // Control de estados de botones
+      if (index === 0) {
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.pointerEvents = 'none';
+      } else {
+        prevBtn.style.opacity = '1';
+        prevBtn.style.pointerEvents = 'auto';
+      }
+
+      if (index === totalSlides - 1) {
+        nextBtn.textContent = 'REINICIAR ↺';
+      } else {
+        nextBtn.textContent = 'SIGUIENTE →';
+      }
     }
 
-    @keyframes pulse-slow {
-        0%, 100% { opacity: 0.2; transform: scale(1); }
-        50% { opacity: 0.15; transform: scale(1.1); }
+    // Eventos para Tabs individuales
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        updateViewer(index);
+      });
+    });
+
+    // Eventos de botones
+    prevBtn.addEventListener('click', () => {
+      if (activeIndex > 0) {
+        updateViewer(activeIndex - 1);
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (activeIndex < totalSlides - 1) {
+        updateViewer(activeIndex + 1);
+      } else {
+        // Reiniciar al primer slide al llegar al final
+        updateViewer(0);
+      }
+    });
+
+    // Soporte para gestos Swipe en dispositivos táctiles en el visor de diapositivas
+    const viewerContainer = document.getElementById('presentation-hub');
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    viewerContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    viewerContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchStartX - touchEndX > swipeThreshold) {
+        // Desplazar a la derecha (Siguiente)
+        if (activeIndex < totalSlides - 1) {
+          updateViewer(activeIndex + 1);
+        }
+      } else if (touchEndX - touchStartX > swipeThreshold) {
+        // Desplazar a la izquierda (Anterior)
+        if (activeIndex > 0) {
+          updateViewer(activeIndex - 1);
+        }
+      }
     }
-    .animate-pulse-slow {
-        animation: pulse-slow 8s infinite ease-in-out;
-    }
-</style>
+
+    // Inicializar visualizador en la primera posición
+    updateViewer(0);
+  });
+</script>
