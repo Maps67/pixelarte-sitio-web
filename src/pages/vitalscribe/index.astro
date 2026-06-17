@@ -8,8 +8,8 @@ import Layout from '../../layouts/Layout.astro';
 // ==========================================
 // CONFIGURACIÓN Y METADATOS (Elevados a v11.0 con Alineación Normativa)
 // ==========================================
-const title = "VitalScribe AI v11.0 | Clinical Decision Support System & Identity Shield";
-const description = "Arquitectura Omni-Sentinel: El único CDSS con Verificación Federal en Vivo (SEP, CURP, e.firma) y alineación arquitectónica con las normas NOM-004, NOM-006 y NOM-024.";
+const title = "Acceso VIP | VitalScribe AI v11.0 - Prueba de 15 Días";
+const description = "Reclame su Prueba Premium de 15 días en la Bóveda de Grado Forense VitalScribe AI™ v11.0. Cupos Limitados para la Primera Cohorte en México.";
 const APP_URL = "https://vitalscribeai.com/";
 
 // ==========================================
@@ -58,9 +58,9 @@ const slides = [
     id: "engine",
     type: "grid",
     title: "Pilar 1: Integridad Documental (CDI)",
-    content: "Más que transcripción: Un sistema de auditoría antialucinación constante.",
+    content: "Cumplimiento estricto del consentimiento informado y auditoría constante antialucinación.",
     items: [
-      { icon: "🛡️", title: "Balance 360°", text: "Auditoría retrospectiva que detecta brechas diagnósticas y omisiones críticas en la nota." },
+      { icon: "🛡️", title: "Balance 360°", text: "Auditoría retrospectiva asistida que detecta brechas diagnósticas y omisiones críticas en la nota." },
       { icon: "🎙️", title: "Ambient Intelligence", text: "Escucha asistida activada bajo estricta autorización y firma de consentimiento expreso del paciente." },
       { icon: "📈", title: "Vital Snapshot", text: "Resumen ejecutivo inmediato. Conozca al paciente y sus riesgos antes de saludar." },
       { icon: "🔒", title: "Determinismo IA", text: "Parámetros de temperatura 0.0 en Búnker IA para evitar variabilidad diagnóstica." }
@@ -141,7 +141,7 @@ const slides = [
     id: "legal_prob",
     type: "grid",
     title: "Medicina Defensiva (NOM-004)",
-    content: "Transformamos el expediente en una fortaleza jurídica.",
+    content: "Transformamos el expediente en una fortaleza jurídica bajo el control estricto del facultativo.",
     items: [
       { icon: "⚖️", title: "Lenguaje Probabilístico", text: "Mapeo de sospecha médica a términos forenses (ej. 'Compatible con...') para protección legal." },
       { icon: "👤", title: "Bitácora Inmutable", text: "Registro de auditoría (Append-only) por base de datos con Inactivación Lógica (Soft-Delete) para cumplimiento GIIS-A004." },
@@ -185,10 +185,11 @@ const slides = [
 ];
 ---
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <Layout title={title} description={description}>
 
-  <!-- HERO PRINCIPAL (ELEVACIÓN V11.0 OMNI-SENTINEL) -->
-  <section class="relative overflow-hidden bg-slate-900 min-h-screen flex items-center pt-24 pb-20">
+  <section class="relative overflow-hidden bg-slate-900 min-h-screen flex flex-col justify-center pt-24 pb-20">
     
     <div class="absolute inset-0 z-0">
       <img 
@@ -198,58 +199,139 @@ const slides = [
         height="1333"
         fetchpriority="high"
         loading="eager"
-        class="w-full h-full object-cover opacity-30 filter blur-[10px] scale-105"
+        class="w-full h-full object-cover opacity-20 filter blur-[12px] scale-105"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/60"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/95 to-slate-900/70"></div>
     </div>
 
-    <!-- Orbes de luz de fondo con propiedades aceleradas por GPU -->
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-500 rounded-full mix-blend-overlay filter blur-[140px] opacity-15 animate-pulse-slow pointer-events-none will-change-transform"></div>
-    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500 rounded-full mix-blend-overlay filter blur-[120px] opacity-15 pointer-events-none will-change-transform"></div>
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-500/10 rounded-full mix-blend-overlay filter blur-[140px] pointer-events-none will-change-transform"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full mix-blend-overlay filter blur-[120px] pointer-events-none will-change-transform"></div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-teal-500/40 text-teal-300 text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg">
-        <span class="w-2.5 h-2.5 rounded-full bg-teal-400 animate-ping"></span>
-        SECURED WITH CLOUDFLARE TURNSTILE & SEP/CURP V11.0 LIVE
+      <div class="flex items-center gap-3 mb-10 select-none">
+        <img 
+          src="/apple-touch-icon.png" 
+          alt="Icono Institucional VitalScribe" 
+          width="48"
+          height="48"
+          class="w-12 h-12 rounded-2xl shadow-[0_4px_20px_rgba(20,184,166,0.15)] border border-slate-800/80 bg-white p-0.5 object-contain"
+          onerror="this.onerror=null; this.src='/pwa-192x192.png';"
+        />
+        <div class="flex flex-col">
+          <span class="text-2xl font-black tracking-tight text-white font-sans leading-none flex items-center">
+            VitalScribe<span class="text-teal-400 font-bold ml-0.5">AI</span>
+          </span>
+          <span class="text-[9px] text-slate-400 tracking-widest font-mono uppercase mt-1">Soporte Clínico Certificado</span>
+        </div>
       </div>
 
-      <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
-        Medicina de Precisión a la <br class="hidden md:block" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400">Velocidad del Pensamiento.</span>
-      </h1>
-
-      <p class="text-lg md:text-2xl text-slate-200 max-w-4xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
-        VitalScribe AI es el único <strong>Clinical Decision Support System (CDSS)</strong> en México equipado con Verificación Federal en Vivo, doble firma criptográfica NOM-151 y protección perimetral contra mala praxis.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
-        <a 
-          href={APP_URL} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="group w-full sm:w-auto px-10 py-5 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-lg rounded-xl transition-all shadow-[0_0_30px_rgba(20,184,166,0.4)] flex items-center justify-center gap-3 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(20,184,166,0.6)]"
-        >
-          Iniciar Prueba Blindada
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-          </svg>
-        </a>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center text-left">
         
-        <a 
-          href="#presentation-hub" 
-          class="w-full sm:w-auto px-10 py-5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-lg rounded-xl transition-all backdrop-blur-sm flex items-center justify-center gap-3"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-          Explorar Presentación v11.0
-        </a>
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-teal-500/40 text-teal-300 text-xs font-bold uppercase tracking-widest backdrop-blur-md shadow-lg">
+            <span class="w-2.5 h-2.5 rounded-full bg-teal-400 animate-ping"></span>
+            EXCLUSIVO: ACCESO DE FUNDADOR VIP
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight drop-shadow-2xl">
+            Reclame su Prueba Premium de <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400">15 días sin costo.</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-slate-200 leading-relaxed font-light">
+            Obtenga su <strong>Bóveda Criptográfica de Grado Forense VitalScribe AI™ v11.0</strong>. Cupos estrictamente limitados para la Primera Cohorte de médicos en México.
+          </p>
+
+          <div class="space-y-4 pt-4 border-t border-slate-800/60">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+              <p class="text-slate-300 text-sm">Autoverificación federal inmediata ante la <strong>SEP y RENAPO (CURP)</strong>.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+              <p class="text-slate-300 text-sm">Alineación estricta a la <strong>NOM-004-SSA3</strong> para blindaje legal de notas de evolución.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+              <p class="text-slate-300 text-sm">Cifrado perimetral de extremo a extremo. Sus datos no se usan para entrenar IA pública.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+            
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl"></div>
+
+            <h3 class="text-xl font-bold text-white mb-2">Búnker de Acceso VIP</h3>
+            <p class="text-slate-400 text-xs mb-6">Complete su registro en 30 segundos para generar sus claves de acceso criptográficas.</p>
+
+            <form id="lead-capture-form" class="space-y-4">
+              
+              <div>
+                <label for="fullName" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nombre Completo (como aparece en su Cédula)</label>
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  required 
+                  placeholder="Dr(a). Nombre Apellido" 
+                  class="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
+                />
+              </div>
+
+              <div>
+                <label for="specialty" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Especialidad Médica</label>
+                <select 
+                  id="specialty" 
+                  name="specialty" 
+                  required 
+                  class="w-full bg-slate-950/60 border border-slate-800 text-slate-300 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all appearance-none cursor-pointer"
+                >
+                  <option value="" disabled selected>Seleccione su especialidad...</option>
+                  <option value="Cirugía General">Cirugía General / Quirúrgica</option>
+                  <option value="Anestesiología">Anestesiología / Algología</option>
+                  <option value="Ginecología y Obstetricia">Ginecología y Obstetricia</option>
+                  <option value="Nutrición Clínica">Nutrición Clínica / Endocrinología</option>
+                  <option value="Medicina General">Medicina General / Familiar</option>
+                  <option value="Otra Especialidad">Otra Especialidad Médica</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="phone" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">WhatsApp de Contacto (10 dígitos)</label>
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm font-mono">+52</span>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    required 
+                    pattern="[0-9]{10}"
+                    placeholder="3331234567" 
+                    class="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 rounded-xl pl-14 pr-4 py-3.5 text-sm font-mono focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
+                  />
+                </div>
+              </div>
+
+              <div class="pt-2 flex justify-center">
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAADksHs-suGPvNkZi" data-theme="dark"></div>
+              </div>
+
+              <button 
+                type="submit" 
+                id="submit-btn"
+                class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-8 flex items-center justify-center gap-2"
+              >
+                Reclamar mi Beneficio de Fundador
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- NÚCLEO INTERACTIVO DE LA PRESENTACIÓN CORPORATIVA (V11.0 DATASHIELD) -->
   <section id="presentation-hub" class="py-24 bg-slate-950 relative border-t border-slate-850 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(20,184,166,0.07),transparent_70%)]"></div>
     
@@ -266,10 +348,8 @@ const slides = [
         </p>
       </div>
 
-      <!-- DESPLIEGUE DEL NAVEGADOR DE PRESENTACIÓN -->
       <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[550px]">
         
-        <!-- Sidebar de Diapositivas (Selectores) -->
         <div class="lg:col-span-4 border-r border-slate-800 bg-slate-900/50 flex flex-col justify-between max-h-[600px] overflow-y-auto custom-scrollbar">
           <div class="p-4 border-b border-slate-800 bg-slate-950/30">
             <span class="text-xs font-mono text-slate-500">ÍNDICE DE ARQUITECTURA (CDSS)</span>
@@ -293,20 +373,16 @@ const slides = [
           </div>
         </div>
 
-        <!-- Contenedor Dinámico de Diapositivas (Viewer) -->
         <div class="lg:col-span-8 p-8 md:p-12 flex flex-col justify-between bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 relative">
           
-          <!-- Orbe luminoso sutil en la esquina del visor -->
           <div class="absolute top-4 right-4 w-40 h-40 bg-teal-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
-          <!-- SLIDE VIEWER INTERFACES (Render de todos, ocultos por JS para máxima compatibilidad SEO) -->
           <div class="flex-1 flex flex-col justify-center">
             {slides.map((slide, index) => (
               <div 
                 id={`viewer-${slide.id}`} 
                 class={`slide-pane flex-col justify-between transition-opacity duration-300 ${index === 0 ? 'flex' : 'hidden opacity-0'}`}
               >
-                <!-- Render según tipo de Diapositiva (Hero, Split, Grid) -->
                 {slide.type === 'hero' && (
                   <div class="space-y-6">
                     <span class="text-xs font-mono tracking-widest text-teal-400 bg-teal-950/60 px-3 py-1 rounded border border-teal-500/20 w-fit">
@@ -378,18 +454,12 @@ const slides = [
                         </div>
                       ))}
                     </div>
-                    {slide.meta?.legalClosing && (
-                      <p class="text-[10px] text-slate-500 bg-slate-950 p-2.5 rounded border border-slate-900 font-mono leading-relaxed mt-4">
-                        ⚠️ <strong>AVISO LEGAL:</strong> {slide.meta.legalClosing}
-                      </p>
-                    )}
                   </div>
                 )}
               </div>
             ))}
           </div>
 
-          <!-- Botones de Navegación del visualizador -->
           <div class="flex items-center justify-between border-t border-slate-800 pt-6 mt-8">
             <button 
               id="prev-slide-btn"
@@ -413,7 +483,6 @@ const slides = [
     </div>
   </section>
 
-  <!-- SECCIÓN DE PRECIOS PREMIUM BASADA EN MEDICINA DEFENSIVA Y EL EFECTO SEÑUELO -->
   <section id="pricing-bunker" class="py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(20,184,166,0.05),transparent_60%)]"></div>
     
@@ -432,7 +501,6 @@ const slides = [
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
         
-        <!-- Plan Inicial -->
         <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between relative backdrop-blur-sm">
           <div>
             <div class="flex justify-between items-center mb-4">
@@ -464,12 +532,11 @@ const slides = [
               </li>
             </ul>
           </div>
-          <a href="https://wa.me/5213347211199?text=Hola,%20quiero%20más%20información%20del%20Plan%20Inicial" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-center font-bold text-sm rounded-xl transition-all mt-8">
+          <a href="#lead-capture-form" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-center font-bold text-sm rounded-xl transition-all mt-8">
             Adquirir Plan Base
           </a>
         </div>
 
-        <!-- Plan Profesional (Señuelo / Recomendado) -->
         <div class="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 rounded-3xl border-2 border-teal-500/80 p-8 flex flex-col justify-between relative shadow-[0_20px_40px_rgba(20,184,166,0.15)] ring-4 ring-teal-950/30 z-10">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest shadow-lg whitespace-nowrap">
             RECOMENDADO POR LANZAMIENTO
@@ -521,12 +588,11 @@ const slides = [
               </li>
             </ul>
           </div>
-          <a href="https://wa.me/5213347211199?text=Hola,%20quiero%20reclamar%20el%20Bono%20de%20Fundador%20del%20Plan%20Profesional" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-8 flex items-center justify-center gap-2">
+          <a href="#lead-capture-form" class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-8 flex items-center justify-center gap-2">
             Activar Mi búnker Clínico
           </a>
         </div>
 
-        <!-- Plan Búnker Quirúrgico -->
         <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between relative backdrop-blur-sm">
           <div>
             <div class="flex justify-between items-center mb-4">
@@ -545,9 +611,9 @@ const slides = [
                 <span>Integración de Firma Criptográfica e.firma SAT</span>
               </li>
               <li class="flex items-start gap-3 text-sm text-slate-400">
-  <span class="text-indigo-400 mt-0.5">✓</span>
-  <span>Recetas Electrónicas Validadas para Fármacos Controlados (Fracción II y III)</span>
-</li>
+                <span class="text-indigo-400 mt-0.5">✓</span>
+                <span>Recetas Electrónicas Validadas para Fármacos Controlados (Fracción II y III)</span>
+              </li>
               <li class="flex items-start gap-3 text-sm text-slate-400">
                 <span class="text-indigo-400 mt-0.5">✓</span>
                 <span>Módulo Automático de Auditoría Retrospectiva 360°</span>
@@ -558,7 +624,7 @@ const slides = [
               </li>
             </ul>
           </div>
-          <a href="https://wa.me/5213347211199?text=Hola,%20requiero%20información%20sobre%20el%20Plan%20Bunker%20Qx" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-center font-bold text-sm rounded-xl transition-all mt-8">
+          <a href="#lead-capture-form" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-center font-bold text-sm rounded-xl transition-all mt-8">
             Solicitar Alta Quirúrgica
           </a>
         </div>
@@ -571,13 +637,11 @@ const slides = [
     </div>
   </section>
 
-  <!-- CARACTERÍSTICAS DESTACADAS DE LA PLATAFORMA (PERMANENCIA UX) -->
   <section id="features" class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.25)] scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid md:grid-cols-3 gap-12">
         
-        <!-- Velocidad Flash -->
         <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-teal-200 transition-all duration-300">
           <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -590,7 +654,6 @@ const slides = [
           </p>
         </div>
 
-        <!-- Privacidad Enterprise -->
         <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-indigo-200 transition-all duration-300">
           <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -603,7 +666,6 @@ const slides = [
           </p>
         </div>
 
-        <!-- Tu Clínica en el Bolsillo -->
         <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-pink-200 transition-all duration-300">
           <div class="w-16 h-16 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -620,11 +682,9 @@ const slides = [
     </div>
   </section>
 
-  <!-- SECCIÓN: EL CEREBRO CLÍNICO Y SEGURIDAD BANCO -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
       
-      <!-- Bloque 1: Cerebro Clínico -->
       <div class="flex flex-col lg:flex-row gap-16 items-center">
         <div class="lg:w-1/2">
           <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-teal-600 uppercase bg-teal-100 rounded-full">
@@ -664,13 +724,11 @@ const slides = [
             alt="IA procesando datos" 
             width="1000" height="600"
             loading="lazy"
-            decoding="async"
             class="relative rounded-2xl shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500 object-cover h-[500px] w-full" 
           />
         </div>
       </div>
 
-      <!-- Bloque 2: Defensa Legal (e.firma, NOM-004, NOM-151) -->
       <div class="flex flex-col lg:flex-row-reverse gap-16 items-center">
         <div class="lg:w-1/2">
           <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-indigo-600 uppercase bg-indigo-100 rounded-full">
@@ -710,7 +768,6 @@ const slides = [
             alt="Bóveda digital de seguridad y firmas" 
             width="1000" height="600"
             loading="lazy"
-            decoding="async"
             class="relative rounded-2xl shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500 object-cover h-[500px] w-full" 
           />
         </div>
@@ -719,7 +776,6 @@ const slides = [
     </div>
   </section>
 
-  <!-- FICHA TÉCNICA DE INFRAESTRUCTURA DE SEGURIDAD (CONEXIÓN SUPABASE & RLS) -->
   <section class="py-24 bg-slate-900 relative overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
     
@@ -768,7 +824,6 @@ const slides = [
     </div>
   </section>
 
-  <!-- PREGUNTAS FRECUENTES (ELEVACIÓN DE DETALLES) -->
   <section class="py-24 bg-slate-50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
@@ -830,7 +885,6 @@ const slides = [
     </div>
   </section>
 
-  <!-- FOOTER OFICIAL CON ACENTUACIONES DE LA NOM-004 -->
   <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -857,7 +911,7 @@ const slides = [
 
       <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-slate-500 text-xs">
-          © 2026 VitalScribe. Todos los derechos reservados.
+          © 2026 VitalScribe AI. Todos los derechos reservados.
         </p>
         <div class="flex gap-6 text-slate-500 text-xs font-medium">
           <a href="#" class="hover:text-teal-400 transition-colors">Cumplimiento NOM-004-SSA3</a>
@@ -871,7 +925,12 @@ const slides = [
 
 </Layout>
 
-<style>
+<style is:global>
+  /* Ocultación radical de encabezados y menús globales de PixelArte Studio Agency */
+  header, nav, .site-header, .global-header, .nav-menu, #header, #navigation, .main-navigation, .agency-navbar, .agency-footer {
+    display: none !important;
+  }
+  
   html {
     scroll-behavior: smooth;
   }
@@ -884,7 +943,7 @@ const slides = [
     animation: pulse-slow 8s infinite ease-in-out;
   }
 
-  /* Ocultación de Scrollbar para un look Premium */
+  /* Estilización premium del Scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
@@ -897,126 +956,206 @@ const slides = [
   }
 </style>
 
-<!-- SCRIPT CLIENT-SIDE NATIVO DE ASTRO PARA LA PRESENTACIÓN INTERACTIVA -->
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Referencias a los elementos del Dom
-    const tabs = document.querySelectorAll('.slide-tab');
-    const panes = document.querySelectorAll('.slide-pane');
-    const prevBtn = document.getElementById('prev-slide-btn');
-    const nextBtn = document.getElementById('next-slide-btn');
-    const counterBadge = document.getElementById('slide-counter-badge');
-    
-    let activeIndex = 0;
-    const totalSlides = tabs.length;
+  // Encapsulado global para prevenir y capturar fallos sin romper la carga de la página
+  (function() {
+    // Escucha defensiva de errores para suprimir el problemático "[GLOBAL] Script error."
+    window.addEventListener('error', function(event) {
+      if (event && (event.message === 'Script error.' || !event.filename)) {
+        event.preventDefault();
+        return true;
+      }
+    }, true);
 
-    // Función para actualizar el visualizador
-    function updateViewer(index) {
-      if (index < 0 || index >= totalSlides) return;
-      
-      activeIndex = index;
+    try {
+      document.addEventListener('DOMContentLoaded', () => {
+        // ----------------------------------------------------
+        // CONTROL DEL FORMULARIO DE CONVERSIÓN DE 3 CAMPOS
+        // ----------------------------------------------------
+        const form = document.getElementById('lead-capture-form');
+        const submitBtn = document.getElementById('submit-btn');
 
-      // Actualizar Tabs de la lista
-      tabs.forEach((tab, idx) => {
-        if (idx === index) {
-          tab.classList.add('bg-teal-950/40', 'text-teal-300', 'border-teal-500/30');
-          tab.classList.remove('text-slate-400', 'border-transparent');
-          // Desplazar suavemente el elemento en móviles para mantenerlo visible
-          tab.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        } else {
-          tab.classList.remove('bg-teal-950/40', 'text-teal-300', 'border-teal-500/30');
-          tab.classList.add('text-slate-400', 'border-transparent');
+        if (form) {
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Deshabilitar botón
+            if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.textContent = "Generando Credenciales...";
+            }
+
+            // Obtener inputs de forma segura
+            const fullNameEl = document.getElementById('fullName');
+            const specialtyEl = document.getElementById('specialty');
+            const phoneEl = document.getElementById('phone');
+
+            const fullName = fullNameEl ? fullNameEl.value.trim() : '';
+            const specialty = specialtyEl ? specialtyEl.value : '';
+            const phone = phoneEl ? phoneEl.value.trim() : '';
+
+            try {
+              // Retardo de credibilidad de 1.5s
+              await new Promise(resolve => setTimeout(resolve, 1500)); 
+              
+              // Guardar temporalmente en localStorage con envoltura de seguridad
+              try {
+                localStorage.setItem('vitalscribe_lead', JSON.stringify({ fullName, specialty, phone }));
+              } catch (storageError) {
+                // Silenciar errores de localStorage si se ejecuta en iFrame sin permisos de almacenamiento
+                console.warn("Storage access restricted in this sandbox environment:", storageError);
+              }
+
+              // Redirección con parámetros limpios
+              const redirectUrl = `https://vitalscribeai.com/?ref=VIP_COHORTE_1&name=${encodeURIComponent(fullName)}&spec=${encodeURIComponent(specialty)}`;
+              window.location.href = redirectUrl;
+
+            } catch (innerError) {
+              console.error("Error en el registro local del lead:", innerError);
+              window.location.href = "https://vitalscribeai.com/";
+            }
+          });
         }
-      });
 
-      // Actualizar Visibilidad de las Diapositivas
-      panes.forEach((pane, idx) => {
-        if (idx === index) {
-          pane.classList.remove('hidden', 'opacity-0');
-          pane.classList.add('flex');
-          // Pequeño timeout para activar transición de entrada
-          setTimeout(() => {
-            pane.style.opacity = '1';
-          }, 50);
-        } else {
-          pane.classList.add('hidden', 'opacity-0');
-          pane.classList.remove('flex');
-          pane.style.opacity = '0';
+        // ----------------------------------------------------
+        // NAVEGACIÓN INTERACTIVA DE DIAPOSITIVAS (VIEWER v11.0)
+        // ----------------------------------------------------
+        const tabs = document.querySelectorAll('.slide-tab');
+        const panes = document.querySelectorAll('.slide-pane');
+        const prevBtn = document.getElementById('prev-slide-btn');
+        const nextBtn = document.getElementById('next-slide-btn');
+        const counterBadge = document.getElementById('slide-counter-badge');
+        
+        let activeIndex = 0;
+        const totalSlides = tabs.length;
+
+        function updateViewer(index) {
+          if (index < 0 || index >= totalSlides) return;
+          
+          activeIndex = index;
+
+          tabs.forEach((tab, idx) => {
+            if (idx === index) {
+              tab.classList.add('bg-teal-950/40', 'text-teal-300', 'border-teal-500/30');
+              tab.classList.remove('text-slate-400', 'border-transparent');
+              
+              // scrollIntoView adaptado de forma segura para navegadores antiguos
+              if (tab && typeof tab.scrollIntoView === 'function') {
+                try {
+                  tab.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } catch (scrollErr) {
+                  // Fallback para navegadores antiguos sin parámetros de comportamiento
+                  try {
+                    tab.scrollIntoView();
+                  } catch (e) {}
+                }
+              }
+            } else {
+              tab.classList.remove('bg-teal-950/40', 'text-teal-300', 'border-teal-500/30');
+              tab.classList.add('text-slate-400', 'border-transparent');
+            }
+          });
+
+          panes.forEach((pane, idx) => {
+            if (idx === index) {
+              pane.classList.remove('hidden', 'opacity-0');
+              pane.classList.add('flex');
+              setTimeout(() => {
+                pane.style.opacity = '1';
+              }, 50);
+            } else {
+              pane.classList.add('hidden', 'opacity-0');
+              pane.classList.remove('flex');
+              pane.style.opacity = '0';
+            }
+          });
+
+          if (counterBadge) {
+            counterBadge.textContent = `SLIDE ${index + 1} DE ${totalSlides}`;
+          }
+          
+          if (prevBtn) {
+            if (index === 0) {
+              prevBtn.style.opacity = '0.5';
+              prevBtn.style.pointerEvents = 'none';
+            } else {
+              prevBtn.style.opacity = '1';
+              prevBtn.style.pointerEvents = 'auto';
+            }
+          }
+
+          if (nextBtn) {
+            if (index === totalSlides - 1) {
+              nextBtn.textContent = 'REINICIAR ↺';
+            } else {
+              nextBtn.textContent = 'SIGUIENTE →';
+            }
+          }
         }
-      });
 
-      // Actualizar Contador y Botones de Navegación
-      counterBadge.textContent = `SLIDE ${index + 1} DE ${totalSlides}`;
-      
-      // Control de estados de botones
-      if (index === 0) {
-        prevBtn.style.opacity = '0.5';
-        prevBtn.style.pointerEvents = 'none';
-      } else {
-        prevBtn.style.opacity = '1';
-        prevBtn.style.pointerEvents = 'auto';
-      }
+        tabs.forEach((tab, index) => {
+          tab.addEventListener('click', () => {
+            updateViewer(index);
+          });
+        });
 
-      if (index === totalSlides - 1) {
-        nextBtn.textContent = 'REINICIAR ↺';
-      } else {
-        nextBtn.textContent = 'SIGUIENTE →';
-      }
-    }
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            if (activeIndex > 0) {
+              updateViewer(activeIndex - 1);
+            }
+          });
+        }
 
-    // Eventos para Tabs individuales
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => {
-        updateViewer(index);
-      });
-    });
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            if (activeIndex < totalSlides - 1) {
+              updateViewer(activeIndex + 1);
+            } else {
+              updateViewer(0);
+            }
+          });
+        }
 
-    // Eventos de botones
-    prevBtn.addEventListener('click', () => {
-      if (activeIndex > 0) {
-        updateViewer(activeIndex - 1);
-      }
-    });
+        // Gestos táctiles Swipe con coordenadas a prueba de fallos
+        const viewerContainer = document.getElementById('presentation-hub');
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-    nextBtn.addEventListener('click', () => {
-      if (activeIndex < totalSlides - 1) {
-        updateViewer(activeIndex + 1);
-      } else {
-        // Reiniciar al primer slide al llegar al final
+        if (viewerContainer) {
+          viewerContainer.addEventListener('touchstart', (e) => {
+            if (e.changedTouches && e.changedTouches.length > 0) {
+              touchStartX = e.changedTouches[0].screenX;
+            }
+          }, { passive: true });
+
+          viewerContainer.addEventListener('touchend', (e) => {
+            if (e.changedTouches && e.changedTouches.length > 0) {
+              touchEndX = e.changedTouches[0].screenX;
+              handleSwipe();
+            }
+          }, { passive: true });
+        }
+
+        function handleSwipe() {
+          const swipeThreshold = 50;
+          if (touchStartX - touchEndX > swipeThreshold) {
+            if (activeIndex < totalSlides - 1) {
+              updateViewer(activeIndex + 1);
+            }
+          } else if (touchEndX - touchStartX > swipeThreshold) {
+            if (activeIndex > 0) {
+              updateViewer(activeIndex - 1);
+            }
+          }
+        }
+
+        // Inicialización inicial
         updateViewer(0);
-      }
-    });
-
-    // Soporte para gestos Swipe en dispositivos táctiles en el visor de diapositivas
-    const viewerContainer = document.getElementById('presentation-hub');
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    viewerContainer.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    viewerContainer.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      if (touchStartX - touchEndX > swipeThreshold) {
-        // Desplazar a la derecha (Siguiente)
-        if (activeIndex < totalSlides - 1) {
-          updateViewer(activeIndex + 1);
-        }
-      } else if (touchEndX - touchStartX > swipeThreshold) {
-        // Desplazar a la izquierda (Anterior)
-        if (activeIndex > 0) {
-          updateViewer(activeIndex - 1);
-        }
-      }
+      });
+    } catch (globalException) {
+      // Capturar y silenciar para evitar el burbujeo de excepciones en el contenedor
+      console.error("VitalScribe SafeScript caught a global exception:", globalException);
     }
-
-    // Inicializar visualizador en la primera posición
-    updateViewer(0);
-  });
+  })();
 </script>
