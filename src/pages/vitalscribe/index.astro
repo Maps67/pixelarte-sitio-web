@@ -1,6 +1,6 @@
 ---
 // Archivo: src/pages/vitalscribe/index.astro
-// PROTOCOLO VITALSCRIBE v5.4: INTEGRACIÓN COMPLETA DE PRESENTACIÓN v11.0 CON AJUSTES REGULATORIOS Y MATRIZ DE PRECIOS
+// PROTOCOLO VITALSCRIBE v5.4: INTEGRACIÓN COMPLETA DE PRESENTACIÓN v11.0 CON AJUSTES REGULATORIOS Y EMBUDO VIP WHATSAPP
 // ESTADO: PRODUCCIÓN (Estricto, Saneado, Monolítico, Libre de Alertas de COFEPRIS/DGIS)
 
 import Layout from '../../layouts/Layout.astro';
@@ -20,7 +20,7 @@ const SPEED_IMG = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?
 const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=2000";
 
 // ==========================================
-// DATA DE PRESENTACIÓN CORPORATIVA (Mapeada para Render Dinámico)
+// DATA DE PRESENTACIÓN CORPORATIVA (Saneada Médico-Legalmente)
 // ==========================================
 const slides = [
   {
@@ -801,7 +801,7 @@ const slides = [
 
           <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Autoverificación Federal</div>
           <div class="p-6 border-b border-slate-700 text-white font-mono">SEP RNP API + RENAPO (CURP API)</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Validación biométrica e identitaria en tiempo real para nulidad de usurpaciones médicas.</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Validación biométrica e identitaria en tiempo real para demeritar usurpaciones médicas.</div>
 
           <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Cloud IA & CDSS</div>
           <div class="p-6 border-b border-slate-700 text-white font-mono">Google Cloud Vertex AI (Gemini 3.0 Flash)</div>
@@ -904,7 +904,7 @@ const slides = [
           <span class="text-slate-300 text-sm font-mono text-[11px] text-teal-400 font-bold">Verificación Federal SEP/CURP Live v11.0</span>
           <div class="mt-2 pt-2 border-t border-slate-800/80 text-xs text-slate-400">
             <span class="block text-slate-500 font-mono text-[10px] uppercase">Contacto Oficial:</span>
-            <a href="mailto:contacto@pixelartestudio.art" class="text-teal-400 hover:underline font-semibold font-mono">contacto@pixelartestudio.art</a>
+            <a href="mailto:soporte@vitalscribeai.com" class="text-teal-400 hover:underline font-semibold font-mono">soporte@vitalscribeai.com</a>
           </div>
         </div>
       </div>
@@ -926,7 +926,6 @@ const slides = [
 </Layout>
 
 <style is:global>
-  /* Ocultación radical de encabezados y menús globales de PixelArte Studio Agency */
   header, nav, .site-header, .global-header, .nav-menu, #header, #navigation, .main-navigation, .agency-navbar, .agency-footer {
     display: none !important;
   }
@@ -943,7 +942,6 @@ const slides = [
     animation: pulse-slow 8s infinite ease-in-out;
   }
 
-  /* Estilización premium del Scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
@@ -957,9 +955,7 @@ const slides = [
 </style>
 
 <script is:inline>
-  // Encapsulado global para prevenir y capturar fallos sin romper la carga de la página
   (function() {
-    // Escucha defensiva de errores para suprimir el problemático "[GLOBAL] Script error."
     window.addEventListener('error', function(event) {
       if (event && (event.message === 'Script error.' || !event.filename)) {
         event.preventDefault();
@@ -970,7 +966,7 @@ const slides = [
     try {
       document.addEventListener('DOMContentLoaded', () => {
         // ----------------------------------------------------
-        // CONTROL DEL FORMULARIO DE CONVERSIÓN DE 3 CAMPOS
+        // EMBUDO VIP OPTIMIZADO: CAPTURA EN RESGUARDO Y CIERRE EN WHATSAPP
         // ----------------------------------------------------
         const form = document.getElementById('lead-capture-form');
         const submitBtn = document.getElementById('submit-btn');
@@ -979,13 +975,11 @@ const slides = [
           form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Deshabilitar botón
             if (submitBtn) {
               submitBtn.disabled = true;
-              submitBtn.textContent = "Generando Credenciales...";
+              submitBtn.textContent = "Abriendo Canal VIP de WhatsApp...";
             }
 
-            // Obtener inputs de forma segura
             const fullNameEl = document.getElementById('fullName');
             const specialtyEl = document.getElementById('specialty');
             const phoneEl = document.getElementById('phone');
@@ -995,20 +989,30 @@ const slides = [
             const phone = phoneEl ? phoneEl.value.trim() : '';
 
             try {
-              // Retardo de credibilidad de 1.5s
+              // Retardo de credibilidad institucional (Simula generación de llaves criptográficas)
               await new Promise(resolve => setTimeout(resolve, 1500)); 
               
-              // Guardar temporalmente en localStorage con envoltura de seguridad
               try {
                 localStorage.setItem('vitalscribe_lead', JSON.stringify({ fullName, specialty, phone }));
               } catch (storageError) {
-                // Silenciar errores de localStorage si se ejecuta en iFrame sin permisos de almacenamiento
                 console.warn("Storage access restricted in this sandbox environment:", storageError);
               }
 
-              // Redirección con parámetros limpios
-              const redirectUrl = `https://vitalscribeai.com/?ref=VIP_COHORTE_1&name=${encodeURIComponent(fullName)}&spec=${encodeURIComponent(specialty)}`;
-              window.location.href = redirectUrl;
+              // 🏛️ ARQUITECTURA DE ATRIBUCIÓN COMERCIAL: MENSAJE CON METADATA CORE
+              const baseMessage = `Hola, soy el *Dr(a). ${fullName}*, especialista en *${specialty}*.\n\nAcabo de realizar mi registro en el Búnker de Acceso VIP de la Cohorte 1 de VitalScribe AI.\n\nSolicito la activación de mi *Prueba Premium de 15 Días* y pido que se vincule a mi cuenta el *Bono de Fundador permanente del módulo Balance 360°* de forma gratuita. Mi número de contacto es ${phone}.`;
+              
+              // Enrutador síncrono al WhatsApp Oficial de Cierre
+              const whatsappUrl = `https://wa.me/5213347211199?text=${encodeURIComponent(baseMessage)}`;
+              window.open(whatsappUrl, '_blank');
+
+              // Restauración limpia del formulario
+              setTimeout(() => {
+                if (submitBtn) {
+                  submitBtn.disabled = false;
+                  submitBtn.textContent = "Reclamar mi Beneficio de Fundador";
+                }
+                form.reset();
+              }, 2000);
 
             } catch (innerError) {
               console.error("Error en el registro local del lead:", innerError);
@@ -1039,12 +1043,10 @@ const slides = [
               tab.classList.add('bg-teal-950/40', 'text-teal-300', 'border-teal-500/30');
               tab.classList.remove('text-slate-400', 'border-transparent');
               
-              // scrollIntoView adaptado de forma segura para navegadores antiguos
               if (tab && typeof tab.scrollIntoView === 'function') {
                 try {
                   tab.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 } catch (scrollErr) {
-                  // Fallback para navegadores antiguos sin parámetros de comportamiento
                   try {
                     tab.scrollIntoView();
                   } catch (e) {}
@@ -1117,7 +1119,6 @@ const slides = [
           });
         }
 
-        // Gestos táctiles Swipe con coordenadas a prueba de fallos
         const viewerContainer = document.getElementById('presentation-hub');
         let touchStartX = 0;
         let touchEndX = 0;
@@ -1150,11 +1151,9 @@ const slides = [
           }
         }
 
-        // Inicialización inicial
         updateViewer(0);
       });
     } catch (globalException) {
-      // Capturar y silenciar para evitar el burbujeo de excepciones en el contenedor
       console.error("VitalScribe SafeScript caught a global exception:", globalException);
     }
   })();
