@@ -37,7 +37,7 @@ const slides = [
     type: "split",
     title: "Cerebro Clínico vs. Agenda Digital",
     content: [
-      "Marketplaces: Optimizan el marketing y la cita. Son repositorios de datos pasivos.",
+      "Marketplaces: Optimizan el marketing and la cita. Son repositorios de datos pasivos.",
       "VitalScribe AI: Optimiza la vida del paciente y el blindaje del doctor. Es un socio cognitivo activo.",
       "Transición: Del trabajo clerical al contacto visual empático mediante Inteligencia Ambiental."
     ],
@@ -133,7 +133,7 @@ const slides = [
       "Autoverificación RNP-SEP en Vivo: Interconexión directa con el Registro Nacional de Profesionistas para validar la cédula en el alta.",
       "Validación de Identidad CURP Directa: Consulta en tiempo real ante el Padrón Nacional de Población (RENAPO) mediante APIMarket.",
       "Cloudflare Turnstile (Modo Gestionado): Escudo anti-bots perimetral que emite tokens criptográficos asíncronos.",
-      "Acreditación NOM-024 Obligatoria: Bloqueo de identidades sintéticas y exportación universal legible por máquinas en formato HL7 CDA R2."
+      "Acreditación NOM-024 Obligatoria: Bloqueo de identidades sintéticas and exportación universal legible por máquinas en formato HL7 CDA R2."
     ],
     image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=2000"
   },
@@ -281,21 +281,17 @@ const slides = [
               </div>
 
               <div>
-                <label for="specialty" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Especialidad Médica</label>
-                <select 
-                  id="specialty" 
-                  name="specialty" 
+                <label for="cedula" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Cédula Profesional Federal</label>
+                <input 
+                  type="text" 
+                  id="cedula" 
+                  name="cedula" 
                   required 
-                  class="w-full bg-slate-950/60 border border-slate-800 text-slate-300 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all appearance-none cursor-pointer"
-                >
-                  <option value="" disabled selected>Seleccione su especialidad...</option>
-                  <option value="Cirugía General">Cirugía General / Quirúrgica</option>
-                  <option value="Anestesiología">Anestesiología / Algología</option>
-                  <option value="Ginecología y Obstetricia">Ginecología y Obstetricia</option>
-                  <option value="Nutrición Clínica">Nutrición Clínica / Endocrinología</option>
-                  <option value="Medicina General">Medicina General / Familiar</option>
-                  <option value="Otra Especialidad">Otra Especialidad Médica</option>
-                </select>
+                  inputmode="numeric"
+                  pattern="[0-9]{7,8}"
+                  placeholder="12345678" 
+                  class="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 rounded-xl px-4 py-3.5 text-sm font-mono focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
+                />
               </div>
 
               <div>
@@ -809,7 +805,7 @@ const slides = [
 
           <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Base de Datos</div>
           <div class="p-6 border-b border-slate-700 text-white font-mono">Supabase PostgreSQL RLS Shielded</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Políticas estrictas Row Level Security. Cada médico posee una clave simétrica única para aislar sus expedientes.</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Políticas de seguridad Row Level Security de Supabase para aislar expedientes[cite: 1].</div>
 
           <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Infraestructura Edge</div>
           <div class="p-6 border-b border-slate-700 text-white font-mono">Deno Edge Functions + Turnstile Shield</div>
@@ -841,7 +837,7 @@ const slides = [
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>Sí, es 100% seguro.</strong> VitalScribe implementa un Sandbox Web local en tu navegador. Tus llaves privadas (`.key`), certificados (`.cer`) y contraseñas NUNCA se transmiten a internet ni a nuestros servidores. La firma y el cifrado ocurren estrictamente de manera local antes de subir el documento firmado.
+            <strong>Sí, es 100% seguro.</strong> VitalScribe cumple las directivas de seguridad para proteger los secretos criptográficos. Sus llaves privadas (`.key`), certificados (`.cer`) y contraseñas NUNCA se transmiten a internet ni a nuestros servidores. La firma y el cifrado ocurren estrictamente de manera local antes de subir el documento firmado.
           </p>
         </details>
 
@@ -877,7 +873,7 @@ const slides = [
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>Bajo ninguna circunstancia.</strong> Contamos con un búnker de IA privado en Google Vertex AI corporativo. Google tiene prohibido contractualmente utilizar tus datos para entrenamiento. Del mismo modo, el cifrado RLS de base de datos asegura que solo el médico en posesión de su contraseña puede descifrar los registros médicos.
+            <strong>Bajo ninguna circunstancia.</strong> Contamos con un búnker de IA privado en Google Vertex AI corporativo. Google tiene prohibido contractualmente utilizar tus datos para entrenamiento. Del mismo modo, el cifrado de base de datos asegura la soberanía absoluta de tu información.
           </p>
         </details>
 
@@ -900,7 +896,7 @@ const slides = [
           <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Nodos de Red y Seguridad</span>
           <span class="text-slate-300 text-sm font-medium">Plataforma Cloud secured by Google Vertex AI</span>
           <span class="text-slate-300 text-sm font-medium">Gemini 3.0 Flash Cognitive Engine</span>
-          <span class="text-slate-300 text-sm font-medium">Supabase Enterprise Database with RLS</span>
+          <span class="text-slate-300 text-sm font-medium">Supabase Enterprise Database with RLS[cite: 1]</span>
           <span class="text-slate-300 text-sm font-mono text-[11px] text-teal-400 font-bold">Verificación Federal SEP/CURP Live v11.0</span>
           <div class="mt-2 pt-2 border-t border-slate-800/80 text-xs text-slate-400">
             <span class="block text-slate-500 font-mono text-[10px] uppercase">Contacto Oficial:</span>
@@ -926,6 +922,7 @@ const slides = [
 </Layout>
 
 <style is:global>
+  /* Ocultación radical de encabezados y menús globales de PixelArte Studio Agency */
   header, nav, .site-header, .global-header, .nav-menu, #header, #navigation, .main-navigation, .agency-navbar, .agency-footer {
     display: none !important;
   }
@@ -942,6 +939,7 @@ const slides = [
     animation: pulse-slow 8s infinite ease-in-out;
   }
 
+  /* Estilización premium del Scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
@@ -955,7 +953,9 @@ const slides = [
 </style>
 
 <script is:inline>
+  // Encapsulado global para prevenir y capturar fallos sin romper la carga de la página
   (function() {
+    // Escucha defensiva de errores para suprimir el problemático "[GLOBAL] Script error."
     window.addEventListener('error', function(event) {
       if (event && (event.message === 'Script error.' || !event.filename)) {
         event.preventDefault();
@@ -966,7 +966,7 @@ const slides = [
     try {
       document.addEventListener('DOMContentLoaded', () => {
         // ----------------------------------------------------
-        // EMBUDO VIP OPTIMIZADO: CAPTURA EN RESGUARDO Y CIERRE EN WHATSAPP
+        // EMBUDO ÉLITE VIP OPTIMIZADO: ENRUTAMIENTO DIRECTO POR CÉDULA A WHATSAPP
         // ----------------------------------------------------
         const form = document.getElementById('lead-capture-form');
         const submitBtn = document.getElementById('submit-btn');
@@ -975,31 +975,34 @@ const slides = [
           form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            // Deshabilitar botón para evitar envíos duplicados
             if (submitBtn) {
               submitBtn.disabled = true;
               submitBtn.textContent = "Abriendo Canal VIP de WhatsApp...";
             }
 
+            // Obtener inputs de forma segura
             const fullNameEl = document.getElementById('fullName');
-            const specialtyEl = document.getElementById('specialty');
+            const cedulaEl = document.getElementById('cedula');
             const phoneEl = document.getElementById('phone');
 
             const fullName = fullNameEl ? fullNameEl.value.trim() : '';
-            const specialty = specialtyEl ? specialtyEl.value : '';
+            const cedula = cedulaEl ? cedulaEl.value.trim() : '';
             const phone = phoneEl ? phoneEl.value.trim() : '';
 
             try {
               // Retardo de credibilidad institucional (Simula generación de llaves criptográficas)
               await new Promise(resolve => setTimeout(resolve, 1500)); 
               
+              // Guardar temporalmente en localStorage con envoltura de seguridad
               try {
-                localStorage.setItem('vitalscribe_lead', JSON.stringify({ fullName, specialty, phone }));
+                localStorage.setItem('vitalscribe_lead', JSON.stringify({ fullName, cedula, phone }));
               } catch (storageError) {
                 console.warn("Storage access restricted in this sandbox environment:", storageError);
               }
 
-              // 🏛️ ARQUITECTURA DE ATRIBUCIÓN COMERCIAL: MENSAJE CON METADATA CORE
-              const baseMessage = `Hola, soy el *Dr(a). ${fullName}*, especialista en *${specialty}*.\n\nAcabo de realizar mi registro en el Búnker de Acceso VIP de la Cohorte 1 de VitalScribe AI.\n\nSolicito la activación de mi *Prueba Premium de 15 Días* y pido que se vincule a mi cuenta el *Bono de Fundador permanente del módulo Balance 360°* de forma gratuita. Mi número de contacto es ${phone}.`;
+              // 🏛️ MENSAJERÍA AUTOMATIZADA CON CÉDULA FEDERAL (MÁXIMO CONTEXTO VIP)
+              const baseMessage = `Hola, soy el *Dr(a). ${fullName}*.\n\nAcabo de registrar mi Cédula Profesional *${cedula}* en el Búnker de Acceso VIP de la Cohorte 1 de VitalScribe AI.\n\nSolicito la activación de mi *Prueba Premium de 15 Días* y pido que se vincule a mi cuenta el *Bono de Fundador permanente del módulo Balance 360°* de forma gratuita. Mi número de contacto es ${phone}.`;
               
               // Enrutador síncrono al WhatsApp Oficial de Cierre
               const whatsappUrl = `https://wa.me/5213347211199?text=${encodeURIComponent(baseMessage)}`;
