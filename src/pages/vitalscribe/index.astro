@@ -1,6 +1,6 @@
 ---
 // Archivo: src/pages/vitalscribe/index.astro
-// PROTOCOLO VITALSCRIBE v5.4: INTEGRACIÓN COMPLETA DE PRESENTACIÓN v11.0 CON AJUSTES REGULATORIOS Y EMBUDO VIP WHATSAPP
+// PROTOCOLO VITALSCRIBE v5.4: INTEGRACIÓN COMPLETA DE PRESENTACIÓN v11.0 CON AJUSTES REGULATORIOS Y CENTRO DE LEGALIDAD
 // ESTADO: PRODUCCIÓN (Estricto, Saneado, Monolítico, Libre de Alertas de COFEPRIS/DGIS)
 
 import Layout from '../../layouts/Layout.astro';
@@ -9,7 +9,7 @@ import Layout from '../../layouts/Layout.astro';
 // CONFIGURACIÓN Y METADATOS (Elevados a v11.0 con Alineación Normativa)
 // ==========================================
 const title = "Acceso VIP | VitalScribe AI v11.0 - Prueba de 15 Días";
-const description = "Reclame su Prueba Premium de 15 días en la Bóveda de Grado Forense VitalScribe AI™ v11.0. Cupos Limitados para la Primera Cohorte en México.";
+const description = "Arquitectura Omni-Sentinel: El único CDSS con Verificación Federal en Vivo (SEP, CURP, e.firma) y alineación arquitectónica con las normas NOM-004, NOM-006 y NOM-024.";
 const APP_URL = "https://vitalscribeai.com/";
 
 // ==========================================
@@ -20,7 +20,7 @@ const SPEED_IMG = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?
 const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=2000";
 
 // ==========================================
-// DATA DE PRESENTACIÓN CORPORATIVA (Saneada Médico-Legalmente)
+// DATA DE PRESENTACIÓN CORPORATIVA (Saneada Médico-Legalmente - Auditada v11.0)
 // ==========================================
 const slides = [
   {
@@ -37,7 +37,7 @@ const slides = [
     type: "split",
     title: "Cerebro Clínico vs. Agenda Digital",
     content: [
-      "Marketplaces: Optimizan el marketing and la cita. Son repositorios de datos pasivos.",
+      "Marketplaces: Optimizan el marketing y la cita. Son repositorios de datos pasivos.",
       "VitalScribe AI: Optimiza la vida del paciente y el blindaje del doctor. Es un socio cognitivo activo.",
       "Transición: Del trabajo clerical al contacto visual empático mediante Inteligencia Ambiental."
     ],
@@ -91,6 +91,18 @@ const slides = [
     ]
   },
   {
+    id: "cdss_support",
+    type: "grid",
+    title: "Suite de Soporte Clínico (CDSS)",
+    content: "Motor matemático determinista para Medicina Defensiva y Trazabilidad Forense. Cero alucinaciones.",
+    items: [
+      { icon: "🧮", title: "Algoritmos Validados", text: "Integración de Gupta MICA, RCRI, Caprini, Wells, MDRD-4 y CHA2DS2-VASc con cita bibliográfica exacta para auditorías." },
+      { icon: "👨‍⚕️", title: "Soberanía Médica", text: "Input manual obligatorio (Human-in-the-loop) que garantiza la autoría del specialist y bloquea el riesgo de Liability por IA." },
+      { icon: "🩸", title: "Riesgo Tromboembólico", text: "Estratificación de TVP y cardio-protección para fundamentar legalmente decisiones de profilaxis en el expediente." },
+      { icon: "📋", title: "Dictamen Normativo (GPC)", text: "Inyección automática de bloques forenses con referenciación explícita a Guías de Práctica Clínica (ej. IMSS-425-11) en la nota evolutiva." }
+    ]
+  },
+  {
     id: "nutrition",
     type: "grid",
     title: "Nutrición Clínica Multimodal",
@@ -99,7 +111,7 @@ const slides = [
       { icon: "👁️", title: "OCR Vision (InBody)", text: "Lectura inteligente de tickets de bioimpedancia. Extracción inmediata de masa y grasa." },
       { icon: "🧮", title: "Cálculo USDA", text: "Suma de macros y kilocalorías automáticas basadas en bases de datos globales." },
       { icon: "⚠️", title: "Filtro de Alérgenos", text: "Alerta asistida de alérgenos en planes dietéticos basado en historial clínico estructurado en formato JSON." },
-      { icon: "🍽️", title: "Anexo Dietético", text: "Generación de menús personalizados vinculados legalmente a la receta oficial." }
+      { icon: "🍽️", title: "Anexo Dietético", text: "Generación de menus personalizados vinculados legalmente a la receta oficial." }
     ]
   },
   {
@@ -108,7 +120,7 @@ const slides = [
     title: "Omni-Sentinel: El Firewall Humano",
     content: [
       "Asistencia Proactiva: Interrupción Segura Asistida para fármacos nefrotóxicos basados en TFG dictada.",
-      "Triangulación de Datos: Cruza laboratorios, antecedentes y alergias en milisegundos.",
+      "Triangulación de Datos: Cruza laboratorios, antecedentes and alergias en milisegundos.",
       "Sanitización Documental: El PDF final solo muestra fármacos validados por el motor de seguridad."
     ],
     image: "https://images.unsplash.com/photo-1583912267550-d44d7a125e7e?auto=format&fit=crop&q=80&w=2000",
@@ -120,20 +132,20 @@ const slides = [
     content: [
       "Row Level Security (RLS): Cada médico es el dueño unívoco de su bóveda de datos con aislamiento perimetral estricto.",
       "Búnker Edge IA: Código y algoritmos de Inteligencia Ambiental ejecutados de manera aislada en Edge Functions (Deno) para máxima privacidad de datos PHI.",
-      "Bóveda de Firma Criptográfica (SAT): Integración de la e.firma (FIEL). Procesamiento estricto en el lado del cliente (Local Web Sandbox), garantizando el No Repudio.",
-      "Firma Autógrafa/Manual Digitalizada: Captura y vectorización directa de la rúbrica manual del médico con estampado cronológico vinculante bajo la NOM-151."
+      "Bóveda de Firma Criptográfica (SAT): Integración nativa de la e.firma (FIEL). Procesamiento estricto en el lado del cliente (Local Web Sandbox), garantizando el No Repudio.",
+      "Firma Autógrafa/Manual Digitalizada: Captura y vectorización directa de la rúbrica manual del médico en la pantalla. Estampado cronológico vinculante que se fusiona con el hash del expediente bajo el esquema de la NOM-151."
     ],
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=2070"
   },
   {
     id: "interoperability",
     type: "split",
-    title: "Pasarela Criptográfica, Identidad Federal y CURP",
+    title: "Pasarela Criptográfica, Identidad y Auditoría DGIS",
     content: [
-      "Autoverificación RNP-SEP en Vivo: Interconexión directa con el Registro Nacional de Profesionistas para validar la cédula en el alta.",
-      "Validación de Identidad CURP Directa: Consulta en tiempo real ante el Padrón Nacional de Población (RENAPO) mediante APIMarket.",
+      "Autoverificación RNP-SEP en Vivo: Interconexión directa con el Registro Nacional de Profesionistas desde el formulario de alta médica para validar la existencia y homologación de la cédula.",
+      "Validación de Identidad CURP Directa: Consulta automatizada en tiempo real ante el Padrón Nacional de Población (RENAPO) mediante APIMarket.",
       "Cloudflare Turnstile (Modo Gestionado): Escudo anti-bots perimetral que emite tokens criptográficos asíncronos.",
-      "Acreditación NOM-024 Obligatoria: Bloqueo de identidades sintéticas and exportación universal legible por máquinas en formato HL7 CDA R2."
+      "Acreditación NOM-024 Obligatoria: Exportación universal y legible por máquinas en formato HL7 CDA R2, bloqueando identidades sintéticas."
     ],
     image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=2000"
   },
@@ -170,8 +182,11 @@ const slides = [
       { icon: "🕸️", title: "Mapeo Farmacológico", text: "Mapeo de interacciones complejas en polifarmacia referenciando bases de datos de farmacovigilancia internacional." },
       { icon: "👥", title: "Espejos Fisiológicos", text: "Espejos Fisiológicos de referencia para ilustrar escenarios de riesgo clínico basados en Guías de Práctica Clínica." },
       { icon: "🧠", title: "Investigación Delegada", text: "Agentes de Investigación Delegada (RAG) para rastreo, lectura y síntesis de literatura médica bajo demanda." },
-      { icon: "🔬", title: "Alertas Genómicas", text: "Integración de alertas fármaco-genómicas que exponen consideraciones de dosificación para cada fenotipo." }
-    ]
+      { icon: "🔬", title: "Alertas Genómicas", text: "Integración de alertas fármaco-genómicas que exponen las consideraciones de dosificación documentadas para cada fenotipo celular." }
+    ],
+    meta: {
+      legalClosing: "VitalScribe AI is un CDSS. Ningún modelo algorítmico sustituye el juicio clínico del especialista ni genera indicaciones vinculantes."
+    }
   },
   {
     id: "closing",
@@ -211,12 +226,12 @@ const slides = [
       
       <div class="flex items-center gap-3 mb-10 select-none">
         <img 
-          src="/apple-touch-icon.png" 
+          src="/pwa-512x512.png" 
           alt="Icono Institucional VitalScribe" 
           width="48"
           height="48"
-          class="w-12 h-12 rounded-2xl shadow-[0_4px_20px_rgba(20,184,166,0.15)] border border-slate-800/80 bg-white p-0.5 object-contain"
-          onerror="this.onerror=null; this.src='/pwa-192x192.png';"
+          class="w-12 h-12 rounded-2xl shadow-[0_4px_20px_rgba(20,184,166,0.15)] border border-slate-800/80 bg-white p-0.5 object-contain [image-rendering:high-quality]"
+          onerror="this.onerror=null; this.src='/apple-touch-icon.png';"
         />
         <div class="flex flex-col">
           <span class="text-2xl font-black tracking-tight text-white font-sans leading-none flex items-center">
@@ -314,21 +329,19 @@ const slides = [
                 <div class="cf-turnstile" data-sitekey="0x4AAAAAADksHs-suGPvNkZi" data-theme="dark"></div>
               </div>
 
-              <button 
-                type="submit" 
-                id="submit-btn"
-                class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-8 flex items-center justify-center gap-2"
-              >
-                Reclamar mi Beneficio de Fundador
+              <button type="submit" id="submit-btn" class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-4 flex items-center justify-center gap-2">
+                Reclame Su Beneficio de Fundador
               </button>
             </form>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <section id="presentation-hub" class="py-24 bg-slate-950 relative border-t border-slate-850 overflow-hidden">
+  <!-- NÚCLEO INTERACTIVO DE LA PRESENTACIÓN CORPORATIVA (V11.0 DATASHIELD) -->
+  <section id="presentation-hub" class="py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(20,184,166,0.07),transparent_70%)]"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -344,8 +357,10 @@ const slides = [
         </p>
       </div>
 
+      <!-- DESPLIEGUE DEL NAVEGADOR DE PRESENTACIÓN -->
       <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[550px]">
         
+        <!-- Sidebar de Diapositivas (Selectores) -->
         <div class="lg:col-span-4 border-r border-slate-800 bg-slate-900/50 flex flex-col justify-between max-h-[600px] overflow-y-auto custom-scrollbar">
           <div class="p-4 border-b border-slate-800 bg-slate-950/30">
             <span class="text-xs font-mono text-slate-500">ÍNDICE DE ARQUITECTURA (CDSS)</span>
@@ -353,7 +368,7 @@ const slides = [
           <div class="p-2 space-y-1 flex-1">
             {slides.map((slide, index) => (
               <button 
-                class={`slide-tab w-full text-left p-3.5 rounded-xl transition-all flex items-center gap-3 border ${index === 0 ? 'bg-teal-950/40 text-teal-300 border-teal-500/30' : 'text-slate-400 border-transparent hover:bg-slate-800/50 hover:text-white'}`}
+                class={`slide-tab w-full text-left p-3.5 rounded-xl transition-all flex items-center gap-3 border-b ${index === 0 ? 'bg-teal-950/40 text-teal-300 border-teal-500/30' : 'text-slate-400 border-transparent hover:bg-slate-800/50 hover:text-white'}`}
                 data-slide-id={slide.id}
                 data-index={index}
               >
@@ -369,16 +384,20 @@ const slides = [
           </div>
         </div>
 
+        <!-- Contenedor Dinámico de Diapositivas (Viewer) -->
         <div class="lg:col-span-8 p-8 md:p-12 flex flex-col justify-between bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 relative">
           
+          <!-- Orbe luminoso sutil en la esquina del visor -->
           <div class="absolute top-4 right-4 w-40 h-40 bg-teal-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
+          <!-- SLIDE VIEWER INTERFACES (Render de todos, ocultos por JS para máxima compatibilidad SEO) -->
           <div class="flex-1 flex flex-col justify-center">
             {slides.map((slide, index) => (
               <div 
                 id={`viewer-${slide.id}`} 
                 class={`slide-pane flex-col justify-between transition-opacity duration-300 ${index === 0 ? 'flex' : 'hidden opacity-0'}`}
               >
+                <!-- Render según tipo de Diapositiva (Hero, Split, Grid) -->
                 {slide.type === 'hero' && (
                   <div class="space-y-6">
                     <span class="text-xs font-mono tracking-widest text-teal-400 bg-teal-950/60 px-3 py-1 rounded border border-teal-500/20 w-fit">
@@ -393,7 +412,7 @@ const slides = [
                     {slide.image && (
                       <div class="rounded-xl overflow-hidden border border-slate-800 h-44 w-full relative mt-4 shadow-inner">
                         <img src={slide.image} alt={slide.title} class="w-full h-full object-cover opacity-60" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-955 to-transparent"></div>
                       </div>
                     )}
                   </div>
@@ -450,6 +469,11 @@ const slides = [
                         </div>
                       ))}
                     </div>
+                    {slide.meta?.legalClosing && (
+                      <p class="text-[10px] text-slate-500 bg-slate-950 p-2.5 rounded border border-slate-900 font-mono leading-relaxed mt-4">
+                        ⚠️ <strong>AVISO LEGAL:</strong> {slide.meta.legalClosing}
+                      </p>
+                    )}
                   </div>
                 )}
               </div>
@@ -479,6 +503,7 @@ const slides = [
     </div>
   </section>
 
+  <!-- ZONA DE PRECIOS PREMIUM -->
   <section id="pricing-bunker" class="py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(20,184,166,0.05),transparent_60%)]"></div>
     
@@ -497,6 +522,7 @@ const slides = [
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
         
+        <!-- Plan Inicial -->
         <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between relative backdrop-blur-sm">
           <div>
             <div class="flex justify-between items-center mb-4">
@@ -533,6 +559,7 @@ const slides = [
           </a>
         </div>
 
+        <!-- Plan Profesional (Señuelo / Recomendado) -->
         <div class="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 rounded-3xl border-2 border-teal-500/80 p-8 flex flex-col justify-between relative shadow-[0_20px_40px_rgba(20,184,166,0.15)] ring-4 ring-teal-950/30 z-10">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest shadow-lg whitespace-nowrap">
             RECOMENDADO POR LANZAMIENTO
@@ -589,6 +616,7 @@ const slides = [
           </a>
         </div>
 
+        <!-- Plan Búnker Quirúrgico -->
         <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between relative backdrop-blur-sm">
           <div>
             <div class="flex justify-between items-center mb-4">
@@ -633,11 +661,13 @@ const slides = [
     </div>
   </section>
 
+  <!-- CARACTERÍSTICAS DESTACADAS DE LA PLATAFORMA (PERMANENCIA UX) -->
   <section id="features" class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.25)] scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid md:grid-cols-3 gap-12">
         
+        <!-- Velocidad Flash -->
         <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-teal-200 transition-all duration-300">
           <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -650,6 +680,7 @@ const slides = [
           </p>
         </div>
 
+        <!-- Privacidad Enterprise -->
         <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-indigo-200 transition-all duration-300">
           <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -662,6 +693,7 @@ const slides = [
           </p>
         </div>
 
+        <!-- Tu Clínica en el Bolsillo -->
         <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-pink-200 transition-all duration-300">
           <div class="w-16 h-16 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -681,6 +713,7 @@ const slides = [
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
       
+      <!-- Bloque 1: Cerebro Clínico -->
       <div class="flex flex-col lg:flex-row gap-16 items-center">
         <div class="lg:w-1/2">
           <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-teal-600 uppercase bg-teal-100 rounded-full">
@@ -725,6 +758,7 @@ const slides = [
         </div>
       </div>
 
+      <!-- Bloque 2: Defensa Legal (e.firma, NOM-004, NOM-151) -->
       <div class="flex flex-col lg:flex-row-reverse gap-16 items-center">
         <div class="lg:w-1/2">
           <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-indigo-600 uppercase bg-indigo-100 rounded-full">
@@ -772,6 +806,7 @@ const slides = [
     </div>
   </section>
 
+  <!-- FICHA TÉCNICA DE INFRAESTRUCTURA DE SEGURIDAD (CONEXIÓN SUPABASE & RLS) -->
   <section class="py-24 bg-slate-900 relative overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
     
@@ -805,7 +840,7 @@ const slides = [
 
           <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Base de Datos</div>
           <div class="p-6 border-b border-slate-700 text-white font-mono">Supabase PostgreSQL RLS Shielded</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Políticas de seguridad Row Level Security de Supabase para aislar expedientes[cite: 1].</div>
+          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Políticas de seguridad Row Level Security de Supabase para aislar expedientes.</div>
 
           <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Infraestructura Edge</div>
           <div class="p-6 border-b border-slate-700 text-white font-mono">Deno Edge Functions + Turnstile Shield</div>
@@ -820,6 +855,7 @@ const slides = [
     </div>
   </section>
 
+  <!-- PREGUNTAS FRECUENTES -->
   <section class="py-24 bg-slate-50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
@@ -861,7 +897,7 @@ const slides = [
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            Actúa como una barrera de farmacovigilancia preventiva. Si el médico prescribe un fármaco nefrotóxico y la última Tasa de Filtración Glomerular registrada es baja, el sistema emite una alerta visual de seguridad y asiste en la interrupción segura del proceso, requiriendo que el médico valide y confirme la acción manualmente en pantalla para continuar.
+            Actúa como una barrera de farmacovigilancia preventiva. Si el médico prescribe un fármaco nefrotóxico y la última Tasa de Filtración Glomerular registrada es baja, el sistema emite una alerta visual de seguridad y asiste en la interrupción segura del proceso, requiriendo que el médico valide and confirme la acción manualmente en pantalla para continuar.
           </p>
         </details>
 
@@ -881,6 +917,7 @@ const slides = [
     </div>
   </section>
 
+  <!-- FOOTER OFICIAL CON ACENTUACIONES DE LA NOM-004 -->
   <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -896,7 +933,7 @@ const slides = [
           <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Nodos de Red y Seguridad</span>
           <span class="text-slate-300 text-sm font-medium">Plataforma Cloud secured by Google Vertex AI</span>
           <span class="text-slate-300 text-sm font-medium">Gemini 3.0 Flash Cognitive Engine</span>
-          <span class="text-slate-300 text-sm font-medium">Supabase Enterprise Database with RLS[cite: 1]</span>
+          <span class="text-slate-300 text-sm font-medium">Supabase Enterprise Database with RLS</span>
           <span class="text-slate-300 text-sm font-mono text-[11px] text-teal-400 font-bold">Verificación Federal SEP/CURP Live v11.0</span>
           <div class="mt-2 pt-2 border-t border-slate-800/80 text-xs text-slate-400">
             <span class="block text-slate-500 font-mono text-[10px] uppercase">Contacto Oficial:</span>
@@ -909,15 +946,163 @@ const slides = [
         <p class="text-slate-500 text-xs">
           © 2026 VitalScribe AI. Todos los derechos reservados.
         </p>
-        <div class="flex gap-6 text-slate-500 text-xs font-medium">
-          <a href="#" class="hover:text-teal-400 transition-colors">Cumplimiento NOM-004-SSA3</a>
-          <a href="#" class="hover:text-teal-400 transition-colors">Aviso de Privacidad Ley Federal de Datos</a>
-          <a href="#" class="hover:text-teal-400 transition-colors">Cumplimiento NOM-024</a>
+        <div class="flex gap-6 text-slate-500 text-xs font-medium select-none">
+          <button id="trigger-privacy-btn" class="hover:text-teal-400 transition-colors cursor-pointer">Aviso de Privacidad (v5.4)</button>
+          <span class="text-slate-700">•</span>
+          <button id="trigger-terms-btn" class="hover:text-teal-400 transition-colors cursor-pointer">Términos y Condiciones (v5.4)</button>
         </div>
       </div>
 
     </div>
   </footer>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL INTERACTIVO: CENTRO DE TRANSPARENCIA Y LEGALIDAD (V5.4 OVERLAY) -->
+  <!-- ========================================================================= -->
+  <div id="legal-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl w-full max-w-4xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[90vh]">
+      
+      <!-- HEADER DE SEGURIDAD - Blindaje v5.4 -->
+      <div class="bg-slate-900 p-8 text-white relative overflow-hidden shrink-0">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+        <div class="flex items-center justify-between relative z-10">
+          <div class="flex items-center gap-4">
+            <div class="p-3 bg-teal-50 rounded-2xl shadow-lg">
+              <span class="text-2xl">🛡️</span>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold tracking-tight">Centro de Transparencia y Legalidad</h1>
+              <p class="text-teal-400 font-mono text-xs mt-0.5 uppercase tracking-widest">Protocolo Omni-Sentinel v5.4</p>
+            </div>
+          </div>
+          <button id="close-legal-modal" class="text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold transition-all transform active:scale-90">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE PESTAÑAS (TABS) -->
+      <div class="bg-slate-100 px-8 py-3 border-b border-slate-200 flex gap-4 shrink-0">
+        <button id="tab-privacy-btn" class="px-4 py-2 text-sm font-bold rounded-lg transition-all bg-slate-900 text-white shadow">
+          Aviso de Privacidad
+        </button>
+        <button id="tab-terms-btn" class="px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-600 hover:bg-slate-200 hover:text-slate-900">
+          Términos de Servicio
+        </button>
+      </div>
+
+      <!-- CONTENIDO DE LAS PESTAÑAS (SCROLLABLE) -->
+      <div id="legal-modal-body" class="p-8 overflow-y-auto text-slate-700 leading-relaxed text-sm space-y-6">
+        
+        <!-- PESTAÑA 1: AVISO DE PRIVACIDAD INTEGRAL -->
+        <div id="tab-privacy-content" class="space-y-6">
+          <div class="p-5 bg-sky-50 rounded-2xl border border-sky-100">
+            <p class="text-base font-medium text-slate-800">
+              <strong>VitalScribe AI™</strong>, desarrollado por PixelArte Studio, actúa como encargado del tratamiento de datos bajo los más altos estándares de <strong>Soberanía Tecnológica</strong>. El Médico Usuario mantiene la propiedad absoluta y responsabilidad legal del expediente clínico.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-slate-950 font-bold text-base flex items-center gap-2">
+              <span>🔒</span> 1. Blindaje de Datos (Cifrado Grado Bancario)
+            </h3>
+            <p>
+              Implementamos cifrado <strong>AES-256</strong> para proteger la información sensible tanto en reposo como en tránsito. Cumplimos estrictamente con la normativa de confidencialidad de la <strong>NOM-004-SSA3-2012</strong>.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-3">
+                <span class="text-lg mt-0.5">🛡️</span>
+                <p class="text-xs"><strong>Supabase Security:</strong> Aislamiento por Row Level Security (RLS) que impide accesos no autorizados a nivel motor de base de datos.</p>
+              </div>
+              <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-3">
+                <span class="text-lg mt-0.5">⚙️</span>
+                <p class="text-xs"><strong>Inmutabilidad:</strong> Bitácoras forenses que registran cada interacción, garantizando la trazabilidad clínica completa.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-slate-950 font-bold text-base flex items-center gap-2">
+              <span>📊</span> 2. Procesamiento de IA Privado
+            </h3>
+            <p>
+              La generación de notas clínicas y análisis de riesgo utiliza modelos <strong>Google Gemini™ Enterprise</strong> desplegados en infraestructura <strong>Vertex AI Secure Node</strong>.
+            </p>
+            <div class="bg-teal-50 p-5 rounded-2xl border border-teal-100 text-teal-950 text-xs shadow-inner">
+              <strong class="block mb-1 text-teal-800">GARANTÍA DE NO-ENTRENAMIENTO:</strong> 
+              Sus datos y los de sus pacientes <strong>NO</strong> se utilizan para el entrenamiento de los modelos públicos de Google. El procesamiento es efímero, aislado y se rige por acuerdos de confidencialidad empresarial (BAA) compatibles con HIPAA/GDPR.
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-slate-950 font-bold text-base flex items-center gap-2">
+              <span>📄</span> 3. Soberanía de Datos y Derechos ARCO
+            </h3>
+            <p>
+              <strong>Derechos ARCO del Médico (Usuario):</strong> Como titular de su cuenta, usted puede ejercer sus derechos de Acceso, Rectificación, Cancelación u Oposición respecto a sus datos personales de registro y facturación contactando a nuestro Departamento de Privacidad en: 
+              <a href="mailto:contacto@pixelartestudio.art" class="text-teal-600 hover:text-teal-700 font-bold underline transition-all ml-1">contacto@pixelartestudio.art</a>
+            </p>
+            <p>
+              <strong>Derechos ARCO de los Pacientes:</strong> En cumplimiento de la LFPDPPP, las solicitudes ARCO de los pacientes deberán ser atendidas directamente por el Médico Titular (Responsable del Tratamiento). VitalScribe AI™ provee las herramientas tecnológicas nativas para exportar historiales en formatos estructurados (.xlsx, .json, HL7) e inactivar registros, garantizando que usted pueda cumplir con las solicitudes de sus pacientes en los tiempos estipulados por la ley.
+            </p>
+            <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-amber-900 text-xs">
+              <strong class="block mb-1">Aviso de Cumplimiento para el Profesional:</strong>
+              Al utilizar esta plataforma, el Médico Usuario reconoce su obligación de contar con su propio Aviso de Privacidad dirigido a sus pacientes, informando que emplea herramientas tecnológicas en la nube y motores de procesamiento clínico proporcionados por terceros (Encargados) para la gestión del expediente clínico, conforme a la NOM-004-SSA3-2012 y la LFPDPPP.
+            </div>
+          </div>
+        </div>
+
+        <!-- PESTAÑA 2: TÉRMINOS Y CONDICIONES (CON ENFOQUE CDSS EXCLUSIVO DE VITALSCRIBE) -->
+        <div id="tab-terms-content" class="space-y-6 hidden">
+          <div class="p-5 bg-indigo-50 rounded-2xl border border-indigo-100">
+            <p class="text-base font-medium text-slate-800">
+              <strong>Términos de Servicio y Declaración de Responsabilidad Médica.</strong> Al reclamar o contratar VitalScribe AI™, usted acepta las condiciones de exención de responsabilidad clínico-algorítmica estipuladas bajo el marco legal de la Secretaría de Salud y COFEPRIS.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-slate-950 font-bold text-base flex items-center gap-2">
+              <span>⚖️</span> 1. Clasificación CDSS y Soberanía del Facultativo
+            </h3>
+            <p>
+              VitalScribe AI™ se encuentra clasificado ante las autoridades regulatorias mexicanas como un <strong>Sistema de Soporte de Decisiones Clínicas (CDSS)</strong> y una herramienta puramente de gestión administrativa y documental. El sistema **no** es un software como dispositivo médico (SaMD).
+            </p>
+            <p>
+              La última palabra terapéutica, la validación del diagnóstico y la firma de la receta recaen exclusivamente en el médico usuario facultado bajo su cédula profesional federal.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-slate-950 font-bold text-base flex items-center gap-2">
+              <span>🎙️</span> 2. Escucha Ambiental y Consentimiento Informado
+            </h3>
+            <p>
+              El uso de las herramientas de asistencia por voz e Inteligencia Ambiental requiere de manera obligatoria e irrevocable la previa obtención de la autorización y consentimiento expreso (verbal o firmado) del paciente en la consulta. El médico se compromete a salvaguardar los derechos de confidencialidad del paciente según el marco regulatorio de la NOM-004-SSA3-2012.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-slate-950 font-bold text-base flex items-center gap-2">
+              <span>🔒</span> 3. Exención de Responsabilidad por Errores Algorítmicos
+            </h3>
+            <p>
+              Los modelos lingüísticos y matemáticos deterministas integrados operan bajo parámetros estrictos de consistencia (temperatura 0.0); sin embargo, la variabilidad biológica y la complejidad de los datos exigen que cada sugerencia farmacológica o de riesgo sea auditada y validada por un humano ("Human-in-the-loop"). PixelArte Studio y sus subsidiarias se deslindan de cualquier mala praxis o liability derivado de un diagnóstico incorrecto redactado mediante la plataforma.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FOOTER DE MODAL CON LICENCIAS -->
+      <div class="bg-slate-900 text-slate-500 p-6 text-center text-xs border-t border-slate-800 shrink-0">
+        <p className="mb-1">
+          © 2026 <span class="text-white font-bold">VitalScribe AI™</span>. Infraestructura Blindada v5.4.
+        </p>
+        <p className="tracking-widest uppercase font-semibold text-[10px]">Seguridad Clínica | Soberanía de Datos | Cumplimiento NOM-004</p>
+      </div>
+
+    </div>
+  </div>
 
 </Layout>
 
@@ -1155,6 +1340,62 @@ const slides = [
         }
 
         updateViewer(0);
+
+        // ----------------------------------------------------
+        // LÓGICA DE MODAL: CENTRO DE TRANSPARENCIA Y LEGALIDAD
+        // ----------------------------------------------------
+        const modal = document.getElementById('legal-modal');
+        const triggerPrivacy = document.getElementById('trigger-privacy-btn');
+        const triggerTerms = document.getElementById('trigger-terms-btn');
+        const closeModal = document.getElementById('close-legal-modal');
+
+        const tabPrivacyBtn = document.getElementById('tab-privacy-btn');
+        const tabTermsBtn = document.getElementById('tab-terms-btn');
+        const contentPrivacy = document.getElementById('tab-privacy-content');
+        const contentTerms = document.getElementById('tab-terms-content');
+
+        function openModalWithTab(tab) {
+          if (!modal) return;
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
+          switchTab(tab);
+        }
+
+        function handleCloseModal() {
+          if (!modal) return;
+          modal.classList.add('hidden');
+          document.body.style.overflow = ''; // Restaurar scroll
+        }
+
+        function switchTab(tab) {
+          if (tab === 'privacy') {
+            tabPrivacyBtn.className = 'px-4 py-2 text-sm font-bold rounded-lg transition-all bg-slate-900 text-white shadow';
+            tabTermsBtn.className = 'px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-600 hover:bg-slate-200 hover:text-slate-900';
+            contentPrivacy.classList.remove('hidden');
+            contentTerms.classList.add('hidden');
+          } else if (tab === 'terms') {
+            tabTermsBtn.className = 'px-4 py-2 text-sm font-bold rounded-lg transition-all bg-slate-900 text-white shadow';
+            tabPrivacyBtn.className = 'px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-600 hover:bg-slate-200 hover:text-slate-900';
+            contentTerms.classList.remove('hidden');
+            contentPrivacy.classList.add('hidden');
+          }
+        }
+
+        if (triggerPrivacy) triggerPrivacy.addEventListener('click', () => openModalWithTab('privacy'));
+        if (triggerTerms) triggerTerms.addEventListener('click', () => openModalWithTab('terms'));
+        if (closeModal) closeModal.addEventListener('click', handleCloseModal);
+
+        if (tabPrivacyBtn) tabPrivacyBtn.addEventListener('click', () => switchTab('privacy'));
+        if (tabTermsBtn) tabTermsBtn.addEventListener('click', () => switchTab('terms'));
+
+        // Cerrar modal al hacer click fuera del contenedor blanco
+        if (modal) {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              handleCloseModal();
+            }
+          });
+        }
       });
     } catch (globalException) {
       console.error("VitalScribe SafeScript caught a global exception:", globalException);
