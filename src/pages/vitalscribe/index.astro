@@ -10,7 +10,7 @@ import Layout from '../../layouts/Layout.astro';
 // METADATOS Y ELEMENTOS DE MARCA
 // ==========================================
 const title = "Evaluación Asistencial | VitalScribe AI v15.3 - Protocolo Pericial";
-const description = "Infraestructura Omni-Sentinel: Sistema de Soporte para la Decisión Clínica (CDSS) con Verificación Federal en Tiempo Real (SEP, RENAPO) y alineación estricta con las normas NOM-004-SSA3-2012, NOM-006-SSA3-2011 y NOM-024-SSA3-2012.";
+const description = "Infraestructura Omni-Sentinel: Sistema de Soporte para la Decisión Clínica (CDSS) con Verificación Federal en Tiempo Real (SEP, RENAPO) and alineación estricta con las normas NOM-004-SSA3-2012, NOM-006-SSA3-2011 y NOM-024-SSA3-2012.";
 const APP_URL = "https://vitalscribeai.com/";
 
 const HERO_IMG = "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000";
@@ -136,7 +136,7 @@ const slides = [
     type: "grid",
     title: "Suite de Soporte para la Decisión Clínica (CDSS)",
     clinicalTitle: "Respaldo Científico de Grado Clínico en Consulta",
-    content: "Motor matemático determinista para Medicina Defensiva y Trazabilidad de Integridad Garantizada. Mitigación absoluta de alucinaciones lógicas.",
+    content: "Motor matemático determinista para Medicine Defensiva y Trazabilidad de Integridad Garantizada. Mitigación absoluta de alucinaciones lógicas.",
     clinicalContent: "Tome decisiones complejas respaldadas instantáneamente por evidencia médica internacional.",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=2000",
     items: [
@@ -264,7 +264,7 @@ const slides = [
       { title: "Preservación NOM-004", text: "Sincronización de estados remotos dinámicos ('read_only', 'active') para auditorías oficiales sin riesgo de alteración de registros." }
     ],
     clinicalItems: [
-      { icon: "🗄️", title: "Optimización Asistencial", text: "Procesamiento asíncrono y optimizado que evita retrasos técnicos durante la atención al paciente en entornos institucionales o privados." },
+      { icon: "🗄️", title: "Optimización Asistencial", text: "Procesamiento asíncrono y optimizado que evita retrasos técnicos durante la atención al paciente en entornos institucionales u privados." },
       { icon: "🔑", title: "Bóveda Criptográfica Central", text: "Resguardo y encriptación de bases de datos relacionales bajo esquemas de máxima seguridad perimetral (PostgreSQL RLS)." },
       { icon: "🔒", title: "Disponibilidad Hospitalaria", text: "Estructura de servidores redundantes preparada para soportar picos de consulta continua sin degradar el rendimiento del expediente." },
       { icon: "👁️", title: "Solvencia ante Inspecciones", text: "Estructura documental e informes idóneos para solventar con transparencia revisiones regulatorias de la COFEPRIS o autoridades estatales." }
@@ -1227,29 +1227,227 @@ const slides = [
         </button>
       </div>
 
-      <div id="legal-modal-body" class="p-8 overflow-y-auto text-slate-700 leading-relaxed text-sm space-y-6 font-sans">
+      <div id="legal-modal-body" class="p-8 overflow-y-auto text-slate-700 leading-relaxed text-sm space-y-6 font-sans custom-scrollbar">
+        
         <div id="tab-privacy-content" class="space-y-6">
           <div class="p-5 bg-sky-50 rounded-2xl border border-sky-100">
-            <p class="text-base font-medium text-slate-800">
-              <strong>VitalScribe AI™</strong>, bajo el soporte analítico de PixelArte Studio, actúa estrictamente en calidad de encargado de procesamiento documental bajo los lineamientos fundamentales de la <strong>Soberanía Tecnológica Sanitaria</strong>. El Profesional de la Salud titular conserva la autoría, propiedad inalienable y responsabilidad del contenido del expediente clínico.
+            <p class="text-lg font-medium text-slate-800">
+              <strong>VitalScribe AI™</strong>, desarrollado por PixelArte Studio, actúa como encargado del tratamiento de datos bajo los más altos estándares de <strong>Soberanía Tecnológica</strong>. El Médico Usuario mantiene la propiedad absoluta y responsabilidad legal del expediente clínico.
             </p>
           </div>
 
-          <div class="space-y-3">
-            <h3 class="text-slate-950 font-bold text-base flex items-center gap-2">
-              <span>🔒</span> 1. Aislamiento y Blindaje Perimetral de Datos Clínicos
+          <div>
+            <h3 class="flex items-center gap-3 text-slate-900 font-bold text-xl mb-4">
+              <span>🔒</span> 1. Blindaje de Datos (Cifrado Grado Bancario)
             </h3>
-            <p>
-              Implementamos protocolos criptográficos avanzados basados en algoritmos de cifrado simétrico <strong>AES-256</strong> para resguardar la información de salud sensible tanto en reposo como en flujos de tránsito de red. Dando estricto apego a las obligaciones de confidencialidad e integridad mandatadas en la <strong>NOM-004-SSA3-2012</strong>.
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+              <p>
+                Implementamos cifrado <strong>AES-256</strong> para proteger la información sensible tanto en reposo como en tránsito. Cumplimos estrictamente con la normativa de confidencialidad de la <strong>NOM-004-SSA3-2012</strong>.
+              </p>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
+                  <span class="text-teal-500">🛡️</span>
+                  <span class="text-sm"><strong>Supabase Security:</strong> Aislamiento por Row Level Security (RLS) que impide accesos no autorizados a nivel motor de base de datos.</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
+                  <span class="text-teal-500">⚙️</span>
+                  <span class="text-sm"><strong>Inmutabilidad:</strong> Bitácoras forenses que registran cada interacción, garantizando la trazabilidad clínica completa.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="flex items-center gap-3 text-slate-900 font-bold text-xl mb-4">
+              <span>📦</span> 2. Procesamiento de IA Privado
+            </h3>
+            <p class="mb-4">
+              La generation de notas clínicas y análisis de riesgo utiliza modelos <strong>Google Gemini™ Enterprise</strong> desplegados en infraestructura <strong>Vertex AI Secure Node</strong>.
             </p>
+            <div class="bg-teal-50 p-6 rounded-2xl border border-teal-100 text-teal-900 text-sm shadow-inner">
+              <strong class="block mb-2 font-bold text-teal-800">GARANTÍA DE NO-ENTRENAMIENTO:</strong> 
+              Sus datos y los de sus pacientes <strong>NO</strong> se utilizan para el entrenamiento de los modelos públicos de Google. El procesamiento es efímero, aislado y se rige por acuerdos de confidencialidad empresarial (BAA) compatibles con HIPAA/GDPR.
+            </div>
+          </div>
+
+          <div>
+            <h3 class="flex items-center gap-3 text-slate-900 font-bold text-xl mb-4">
+              <span>📄</span> 3. Soberanía de Datos y Derechos ARCO
+            </h3>
+            
+            <div class="space-y-4 text-sm text-slate-700">
+              <p>
+                <strong>Derechos ARCO del Médico (Usuario):</strong> Como titular de su cuenta, usted puede ejercer sus derechos de Acceso, Rectificación, Cancelación u Oposición respecto a sus datos personales de registro y facturación contactando a nuestro Departamento de Privacidad en: 
+                <a href="mailto:contacto@pixelartestudio.art" class="text-teal-600 hover:text-teal-700 font-bold underline transition-all">contacto@pixelartestudio.art</a>
+              </p>
+              
+              <p>
+                <strong>Derechos ARCO de los Pacientes:</strong> En cumplimiento de la LFPDPPP, las solicitudes ARCO de los pacientes deberán ser atendidas directamente por el Médico Titular (Responsable del Tratamiento). VitalScribe AI™ provee las herramientas tecnológicas nativas para exportar historiales en formatos estructurados (.xlsx, .json, HL7) e inactivar registros, garantizando que usted pueda cumplir con las solicitudes de sus pacientes en los tiempos estipulados por la ley.
+              </p>
+
+              <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-amber-900 leading-relaxed text-xs">
+                <strong class="block mb-1 font-bold">Aviso de Cumplimiento para el Profesional:</strong>
+                Al utilizar esta plataforma, el Médico Usuario reconoce su obligación de contar con su propio Aviso de Privacidad dirigido a sus pacientes, informando que emplea herramientas tecnológicas en la nube y motores de procesamiento clínico proporcionados por terceros (Encargados) para la gestión del expediente clínico, conforme a la NOM-004-SSA3-2012 y la LFPDPPP.
+              </div>
+            </div>
           </div>
         </div>
 
         <div id="tab-terms-content" class="space-y-6 hidden">
-          <div class="p-5 bg-indigo-50 rounded-2xl border border-indigo-100">
-            <p class="text-base font-medium text-slate-800">
-              <strong>Términos de Servicio y Declaración de Responsabilidad del Criterio Médico.</strong> Al inicializar el entorno seguro o activar los periodos de evaluación asistencial de VitalScribe AI™, el profesional médico manifiesta comprender y aceptar de manera tácita que la plataforma opera de forma exclusiva como un Sistema de Soporte para la Decisión Clínica (CDSS). La responsabilidad del diagnóstico, dictamen terapéutico y prescripción recae unívocamente sobre el facultativo, conforme al marco legal estipulado por la Secretaría de Salud y COFEPRIS en la República Mexicana.
-            </p>
+          
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
+              <span>🖥️</span> DOSSIER TÉCNICO Y NORMATIVO
+            </h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-bold text-slate-800 text-base">Resumen Ejecutivo de Arquitectura</h4>
+                <p class="text-slate-600 text-sm leading-relaxed mt-1">
+                  <strong>VitalScribe AI™ (v5.4)</strong> es una plataforma de <strong>Inteligencia Ambiental Clínica</strong> diseñada para mitigar el <em>burnout</em> médico. Opera bajo una arquitectura <strong>Hybrid-Cloud</strong> segura y cumple con las normativas <strong>NOM-004</strong> y <strong>NOM-024</strong> como Software de Apoyo a la Gestión Administrativa, garantizando la soberanía de datos y la responsabilidad clínica humana.
+                </p>
+              </div>
+
+              <div class="flex gap-4 items-start bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                <span class="text-teal-600 font-bold">✓</span>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Clasificación Regulatoria (COFEPRIS/México)</h4>
+                  <p class="text-slate-500 text-xs mt-1 leading-relaxed">
+                    VitalScribe AI™ se clasifica como <strong>Software de Gestión Administrativa y Documental</strong>. No realiza diagnósticos autónomos. Cumple con la <strong>NOM-004-SSA3-2012</strong> para la integración de la Historia Clínica y la <strong>NOM-024-SSA3-2012</strong> mediante el uso de estándares de interoperabilidad y seguridad.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                <span class="text-teal-600 font-bold">✓</span>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Infraestructura de Cifrado AES-256</h4>
+                  <p class="text-slate-500 text-xs mt-1 leading-relaxed">
+                    Toda la información sensible se encuentra cifrada bajo el estándar <strong>Advanced Encryption Standard (AES-256)</strong>. Los datos del paciente están aislados mediante <strong>Row Level Security (RLS)</strong> en Supabase, impidiendo técnicamente cualquier fuga de información entre cuentas médicas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                  <h5 class="font-bold text-slate-700 text-xs uppercase tracking-wider mb-1">Procesamiento IA Privado</h5>
+                  <p class="text-xs text-slate-500 leading-relaxed">
+                    Utilizamos <strong>Google Vertex AI</strong> con nodos privados. Sus datos no son compartidos con modelos públicos ni se utilizan para el entrenamiento de algoritmos externos, preservando el secreto profesional médico en todo momento.
+                  </p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                  <h5 class="font-bold text-slate-700 text-xs uppercase tracking-wider mb-1">Portabilidad y Soberanía</h5>
+                  <p class="text-xs text-slate-500 leading-relaxed">
+                    Garantizamos la propiedad del médico sobre sus datos. Exportación disponible en <strong>JSON y PDF estructurado</strong> para facilitar la migración de expedientes o auditorías clínicas externas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+            <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
+              <span>⚖️</span> TÉRMINOS Y RESPONSABILIDAD
+            </h3>
+            <p class="text-xs text-slate-400 uppercase">Última actualización: Enero 2026</p>
+
+            <div class="p-4 bg-red-50 rounded-xl border border-red-100">
+              <h4 class="font-bold text-red-800 mb-3 flex items-center gap-2 text-sm uppercase">
+                ⚠️ CLÁUSULA DE NO-DISPOSITIVO MÉDICO (IMPORTANTE)
+              </h4>
+              <div class="space-y-3 text-xs text-red-900 leading-relaxed">
+                <p>
+                  <strong>1. NATURALEZA ADMINISTRATIVA:</strong> El USUARIO reconoce que VitalScribe AI™ es una herramienta de 
+                  <strong> gestión documental y referencia bibliográfica automatizada</strong>. 
+                  NO es un Dispositivo Médico (SaMD) ni sustituye el juicio clínico.
+                </p>
+                <p>
+                  <strong>2. ALERTA DE "ESPEJO DIGITAL":</strong> Las alertas de seguridad, cálculos de dosis y sugerencias de bloqueo 
+                  generadas por el sistema son meras <strong>referencias informativas</strong> basadas en guías estándar. 
+                  NO constituyen una orden médica ni una prohibición técnica. El Médico tiene la facultad técnica y la obligación legal 
+                  de ignorar estas sugerencias si su juicio clínico así lo dicta.
+                </p>
+                <p>
+                  <strong>3. OBLIGACIÓN DE VERIFICACIÓN:</strong> Al hacer clic en "Guardar", "Imprimir" o "Finalizar", el USUARIO certifica 
+                  que ha verificado personalmente todos los datos (incluyendo dosis pediátricas y diagnósticos). VitalScribe se deslinda 
+                  de cualquier daño derivado de la omisión de revisión humana.
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-sm text-slate-600">
+              <section>
+                <h4 class="font-bold text-slate-800 mb-1">1. Capacidad del Usuario</h4>
+                <p class="text-xs md:text-sm leading-relaxed">El servicio está restringido a profesionales de la salud debidamente acreditados con cédula profesional vigente en México. El usuario es responsable de la veracidad de sus credenciales.</p>
+              </section>
+
+              <section>
+                <h4 class="font-bold text-slate-800 mb-1">2. Uso de la IA y Consentimiento</h4>
+                <p class="text-xs md:text-sm leading-relaxed">El médico debe obtener el consentimiento verbal del paciente antes de utilizar la función de escucha activa. El software genera un "borrador" que debe ser supervisado por el ojo humano antes de ser legalizado.</p>
+              </section>
+
+              <section class="p-4 bg-indigo-50 rounded-xl border border-indigo-100">
+                <h4 class="font-bold text-indigo-900 mb-2 flex items-center gap-2 text-sm">
+                  <span>📝</span> 3. Propiedad Intelectual y Uso de IA
+                </h4>
+                <div class="space-y-2 text-indigo-900/90 text-xs leading-relaxed">
+                  <p>
+                    La marca <strong>"VitalScribe AI™"</strong>, así como el logotipo, interfaces visuales, 
+                    código fuente (incluyendo algoritmos de estructuración clínica) y la 
+                    arquitectura del sistema, son propiedad exclusiva de los desarrolladores 
+                    y se encuentran en proceso de registro ante el Instituto Mexicano de la 
+                    Propiedad Industrial (IMPI) y protegidos por derechos de autor.
+                  </p>
+                  <p>
+                    <strong>USO DE INTELIGENCIA ARTIFICIAL:</strong> El Usuario reconoce que VitalScribe AI™ utiliza modelos de lenguaje avanzados 
+                    (Google Gemini) para asistir en la redacción clínica. Las sugerencias de 
+                    tratamiento, análisis de riesgo y notas generadas son herramientas 
+                    de apoyo y <strong>NO sustituyen el juicio clínico profesional</strong> del médico.
+                  </p>
+                  <p>
+                    El médico usuario asume total responsabilidad por la verificación, edición y 
+                    validación de cualquier contenido generado automáticamente antes de guardarlo 
+                    en el expediente clínico o emitir una receta, liberando a VitalScribe AI™ de 
+                    responsabilidad por decisiones médicas basadas en dichas sugerencias automatizadas.
+                  </p>
+                </div>
+              </section>
+
+              <section class="p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+                <h4 class="font-bold text-emerald-900 mb-2 flex items-center gap-2 text-sm">
+                  <span>📊</span> 4. Calculadoras de Riesgo y Algoritmos Clínicos
+                </h4>
+                <div class="space-y-2 text-emerald-900/90 text-xs leading-relaxed">
+                  <p>
+                    VitalScribe AI™ incluye herramientas de cálculo automatizado (como Gupta MICA, RCRI, entre otros) 
+                    basadas estrictamente en fórmulas publicadas en literatura científica revisada por pares.
+                  </p>
+                  <div class="text-xs font-mono bg-white/50 p-3 rounded border border-emerald-200/50 space-y-1 text-[11px]">
+                    <p class="font-bold mb-1">LIMITACIÓN DE RESPONSABILIDAD ESPECÍFICA:</p>
+                    <ul class="list-disc pl-4 space-y-1">
+                      <li>Estas herramientas son auxiliares para la estratificación de riesgo y <strong>NO constituyen un pronóstico de certeza</strong>.</li>
+                      <li>Los resultados son estimaciones estadísticas poblacionales y pueden no reflejar la fisiología única de un paciente individual.</li>
+                      <li><strong>El médico usuario es responsable de verificar que los datos de entrada (inputs) sean correctos</strong> antes de tomar decisiones quirúrgicas.</li>
+                      <li>VitalScribe AI™ no asume responsabilidad por eventos adversos, complicaciones o desenlaces clínicos derivados del uso de estos puntajes.</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2 text-sm">
+                  <span>👥</span> 5. Soberanía de Datos y Derechos ARCO
+                </h4>
+                <div class="space-y-2 text-xs text-slate-700 leading-relaxed">
+                  <p>
+                    <strong>Derechos ARCO del Médico (Usuario):</strong> Como titular de su cuenta, usted puede ejercer sus derechos de Acceso, Rectificación, Cancelación u Oposición respecto a sus datos personales de registro y facturación contactando a nuestro Departamento de Privacidad en: 
+                    <a href="mailto:contacto@pixelartestudio.art" class="text-teal-600 font-bold underline transition-all">contacto@pixelartestudio.art</a>
+                  </p>
+                  <p>
+                    <strong>Derechos ARCO de los Pacientes:</strong> En cumplimiento de la LFPDPPP, las solicitudes ARCO de los pacientes deberán ser atendidas directamente por el Médico Titular (Responsable del Tratamiento). VitalScribe AI™ provee las herramientas tecnológicas nativas para exportar historiales en formatos estructurados e inactivar registros, garantizando que usted pueda cumplir con las solicitudes de sus pacientes en los tiempos estipulados por la ley.
+                  </p>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
       </div>
