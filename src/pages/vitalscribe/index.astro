@@ -10,7 +10,7 @@ import Layout from '../../layouts/Layout.astro';
 // METADATOS Y ELEMENTOS DE MARCA
 // ==========================================
 const title = "Evaluación Asistencial | VitalScribe AI v15.3 - Protocolo Pericial";
-const description = "Infraestructura Omni-Sentinel: Sistema de Soporte para la Decisión Clínica (CDSS) con Verificación Federal en Tiempo Real (SEP, RENAPO) and alineación estricta con las normas NOM-004-SSA3-2012, NOM-006-SSA3-2011 y NOM-024-SSA3-2012.";
+const description = "Infraestructura Omni-Sentinel: Sistema de Soporte para la Decisión Clínica (CDSS) con Verificación Federal en Tiempo Real (SEP, RENAPO, CLUES) y alineación estricta con las normas NOM-004-SSA3-2012, NOM-006-SSA3-2011 y NOM-024-SSA3-2012.";
 const APP_URL = "https://vitalscribeai.com/";
 
 const HERO_IMG = "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000";
@@ -18,7 +18,7 @@ const SPEED_IMG = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?
 const SECURITY_IMG = "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=2000";
 
 // ==========================================
-// MATRIZ DE DATOS ASINCRÓNICA EMBEBIDA (SOT v15.3 PERFECTA)
+// MATRIZ DE DATOS ASINCRÓNICA EMBEBIDA (SOT v15.3 PERFECTA Y SANITIZADA)
 // Fusión estructurada entre Especificación de TI y Beneficio Clínico Evidencial
 // ==========================================
 const slides = [
@@ -29,7 +29,7 @@ const slides = [
     clinicalTitle: "Optimización de la Práctica Asistencial Especializada",
     subtitle: "Clinical Decision Support System (CDSS) & Identity Shield",
     clinicalSubtitle: "Soporte Cognitivo Activo de Grado Pericial",
-    content: "Infraestructura Omni-Sentinel: Ecosistema relacional con políticas de aislamiento de datos (RLS) y verificación automatizada en tiempo real ante el Registro Nacional de Profesionistas e Infraestructura de Firma Electrónica Avanzada.",
+    content: "Arquitectura Omni-Sentinel: El único ecosistema de Blindaje Pericial y Seguridad Activa con Verificación Federal en Vivo ante la SEP, RENAPO (CURP), CLUES (SSA) e Infraestructura de Firma Avanzada (NOM-151 / HL7 CDA R2).",
     clinicalContent: "Preserve la relación médico-paciente recuperando el contacto visual y la escucha activa durante la consulta. La herramienta estructura notas de evolución de alta fidelidad diagnóstica en segundos, fortaleciendo la evidencia documental ante riesgos de arbitraje legal.",
     image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000",
     meta: { gradient: "from-teal-600 to-slate-900" }
@@ -37,12 +37,12 @@ const slides = [
   {
     id: "moat",
     type: "split",
-    title: "Soberanía Médica frente a la Gestión Administrativa",
+    title: "Cerebro Clínico vs. Agenda Digital",
     clinicalTitle: "Continuidad Asistencial Integral vs. Agendas Pasivas",
     content: [
-      "Plataformas Externas: Los marketplaces externos optimizan exclusivamente la captación de pacientes y la calendarización básica de consultas de forma aislada.",
-      "VitalScribe AI: Consolida de manera integrada la continuidad asistencial, la integridad documental del expediente clínico y la trazabilidad pericial de la consulta.",
-      "Evolución Estructural: Transicione de la captura manual de información hacia un entorno de Inteligencia Ambiental que mitiga la carga documental y resguarda el prestigio profesional."
+      "Marketplaces: Optimizan el marketing y la cita. Son repositorios de datos pasivos.",
+      "VitalScribe AI: Optimiza la vida del paciente y el blindaje del doctor. Es un socio cognitivo activo.",
+      "Transición: Del trabajo clerical al contacto visual empático mediante Inteligencia Ambiental."
     ],
     clinicalContent: [
       "Sistemas Convencionales: La gestión asistencial tradicional obliga al profesional de la salud a realizar tareas mecánicas de captura, induciendo fatiga cognitiva en el consultorio.",
@@ -54,12 +54,12 @@ const slides = [
   {
     id: "problem",
     type: "split",
-    title: "Fatiga Cognitiva Documental y Riesgo Clínico",
+    title: "La Trampa del Error y el Burnout",
     clinicalTitle: "Mitigación de la Sobrecarga Administrativa en Consulta",
     content: [
-      "Desgaste Profesional: Factor condicionante en la omisión involuntaria de contraindicaciones farmacológicas en pacientes con polifarmacia de alta complejidad.",
-      "Resguardo Pericial Deficiente: Una nota clínica elaborada con premura omite detalles de exploración requeridos por comisiones de arbitraje y auditorías institucionales.",
-      "Exposición de Información Sensible: Riesgo inherente al uso de herramientas corporativas que carecen de aislamiento perimetral criptográfico para datos de salud protegidos (PHI)."
+      "Fatiga Cognitiva: Causa del 40% de omisiones involuntarias en interacciones farmacológicas.",
+      "Indefensión Jurídica: Notas ambiguas que facilitan reclamos por mala praxis ante auditorías o arbitrajes.",
+      "Fuga de Datos: Sistemas multi-inquilino sin aislamiento real (RLS) en bases de datos para datos de salud protegidos (PHI)."
     ],
     clinicalContent: [
       "Sobrecarga Asistencial: Tras jornadas prolongadas, la capacidad de registrar con exhaustividad cada variable diagnóstica disminuye de forma crítica.",
@@ -71,16 +71,16 @@ const slides = [
   {
     id: "engine",
     type: "grid",
-    title: "Pilar 1: Integridad Documental Avanzada (CDI)",
+    title: "Pilar 1: Integridad Documental (CDI)",
     clinicalTitle: "Estructuración Automatizada de la Evidencia Clínica",
     content: "Cumplimiento estricto del consentimiento informado y auditoría constante antialucinación mediante algoritmos de temperatura 0.0 determinista.",
     clinicalContent: "Habilite el procesamiento ambiental durante la interacción médica y obtenga registros clínicos de alta fidelidad en formato SOAP estructurado.",
     image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=2000",
     items: [
-      { title: "Balance 360°", text: "Auditoría retrospectiva asistida que identifica discrepancias en el razonamiento diagnóstico y omisiones en la nota de evolución." },
-      { title: "Ambient Intelligence", text: "Procesamiento de voz clínico activo, condicionado a la autorización explícita y firma de consentimiento del paciente." },
-      { title: "Vital Snapshot", text: "Síntesis estructurada del historial clínico y factores de riesgo prioritarios del paciente previo al acto asistencial." },
-      { title: "Determinismo IA", text: "Modelos cognitivos fijados en temperatura 0.0 que garantizan que el desarrollo documental se adhiera estrictamente a la evidencia científica." }
+      { title: "Balance 360°", text: "Auditoría retrospectiva que detecta brechas diagnósticas y omisiones críticas en la nota." },
+      { title: "Ambient Intelligence", text: "Escucha asistida activada bajo estricta autorización y firma de consentimiento expreso del paciente." },
+      { title: "Vital Snapshot", text: "Resumen ejecutivo inmediato. Conozca al paciente y sus riesgos antes de saludar." },
+      { title: "Determinismo IA", text: "Parámetros de temperatura 0.0 en Búnker IA para evitar variabilidad diagnóstica." }
     ],
     clinicalItems: [
       { icon: "🛡️", title: "Auditoría de Nota", text: "La herramienta valida en tiempo real que se registren todos los signos vitales e indicadores asistenciales obligatorios por norma." },
@@ -92,16 +92,16 @@ const slides = [
   {
     id: "anesthesia",
     type: "grid",
-    title: "Anestesiología: Trazabilidad Quirúrgica Integral",
+    title: "Anestesiología: La 'Caja Negra'",
     clinicalTitle: "Seguridad y Control Documental en Quirófano",
-    content: "Alineación y cumplimiento de las especificaciones de registro estipuladas en la norma NOM-006-SSA3-2011.",
+    content: "Cumplimiento milimétrico de la NOM-006-SSA3-2011.",
     clinicalContent: "Documentación anestésica exacta y cronológica sin desviar la atención de los monitores de signos vitales.",
     image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=2000",
     items: [
-      { title: "Triple Registro Quirúrgico", text: "Segmentación hermética de la integridad documental: valoración preanestésica, registro transoperatorio y recuperación UCPA." },
-      { title: "Soporte de Escalas", text: "Automatización de criterios de Aldrete Score and variables predictivas para el alta segura a hospitalización." },
-      { title: "Cronometría Médica", text: "Trazabilidad exacta de tiempos de inducción, incisión, eventos transoperatorios críticos y reversión anestésica." },
-      { title: "Evidencia de Resguardo", text: "Integración de registros inmutables ante eventos adversos para fundamentar el actuar profesional del anestesiólogo." }
+      { title: "Triple Registro", text: "Segmentación pericial: Valoración Pre, Registro Trans y Recuperación UCPA." },
+      { title: "Asistencia en Recuperación", text: "Soporte en Aldrete Score: Asistencia visual para la evaluación de criterios de alta a piso post-quirúrgico." },
+      { title: "Cronometría Médica", text: "Trazabilidad exacta de inducción, incisión y eventos transoperatorios críticos." },
+      { title: "Defensa Activa", text: "Documentación inexpugnable ante eventos adversos para blindar la responsabilidad." }
     ],
     clinicalItems: [
       { icon: "📊", title: "Hoja de Anestesia Eficiente", text: "Reducción significativa de la carga documental escrita en las tres fases de control obligatorio intraquirúrgico." },
@@ -113,16 +113,16 @@ const slides = [
   {
     id: "surgical",
     type: "grid",
-    title: "Cirugía y Estratificación de Riesgo Perioperatorio",
+    title: "Cirugía y Riesgo Perioperatorio",
     clinicalTitle: "Sustento Legal Quirúrgico",
-    content: "Modelado matemático integrado para la toma de decisiones y validación pericial de la nota postoperatoria.",
+    content: "Matemática médica integrada para el consentimiento informado.",
     clinicalContent: "Optimice el desarrollo documental postquirúrgico; el sistema estructura la descripción de su técnica quirúrgica de forma inmediata.",
     image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000",
     items: [
-      { title: "Doble Validación", text: "Cálculo simultáneo de índices Gupta MICA (NSQIP) y RCRI de Lee para máxima precisión estadística en la nota prequirúrgica." },
-      { title: "Op-Scribe", text: "Extracción automatizada de técnica quirúrgica, hallazgos anatómicos e inventario de insumos mediante dictado ambiental." },
-      { title: "Blindaje Normativo Qx", text: "Generación de notas postoperatorias detalladas bajo el rigor metodológico y plazos exigidos por la NOM-004-SSA3-2012." },
-      { title: "Evidencia Iconográfica", text: "Incorporación protegida de registro fotográfico intraoperatorio al expediente clínico para soporte de peritajes." }
+      { title: "Doble Validation", text: "Cálculo simultáneo de Gupta MICA (NSQIP) y RCRI de Lee para precisión estadística." },
+      { title: "Op-Scribe", text: "Extracción automática de técnica quirúrgica, hallazgos e insumos desde el dictado." },
+      { title: "Blindaje Legal Qx", text: "Generación de notas post-operatorias bajo el rigor de la NOM-004." },
+      { title: "Evidencia Fotográfica", text: "Incapacidad médica vinculada a fotos intraoperatorias para soporte de peritaje." }
     ],
     clinicalItems: [
       { icon: "🧮", title: "Valoración Pre-Quirúrgica", text: "Obtenga la estratificación de riesgo cardiovascular en segundos mediante calculadoras científicas validadas e integradas." },
@@ -134,37 +134,37 @@ const slides = [
   {
     id: "cdss_support",
     type: "grid",
-    title: "Suite de Soporte para la Decisión Clínica (CDSS)",
+    title: "Suite de Soporte Clínico (CDSS)",
     clinicalTitle: "Respaldo Científico de Grado Clínico en Consulta",
-    content: "Motor matemático determinista para Medicine Defensiva y Trazabilidad de Integridad Garantizada. Mitigación absoluta de alucinaciones lógicas.",
+    content: "Motor matemático determinista para Medicina Defensiva y Trazabilidad Pericial de Integridad Garantizada. Cero alucinaciones.",
     clinicalContent: "Tome decisiones complejas respaldadas instantáneamente por evidencia médica internacional.",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=2000",
     items: [
-      { title: "Algoritmos Validados", text: "Integración nativa de Gupta MICA, RCRI, Caprini, Wells, MDRD-4 y CHA2DS2-VASc con citación bibliográfica explícita para auditorías." },
-      { title: "Soberanía Médica", text: "Entrada analítica y validación obligatoria (Human-in-the-loop) que garantiza la autoría del especialista y anula el riesgo de responsabilidad automatizada." },
-      { title: "Riesgo Tromboembólico", text: "Estratificación dinámica de TVP para fundamentar legalmente las decisiones de profilaxis antitrombótica en el expediente." },
-      { title: "Dictamen de Guías (GPC)", text: "Inyección automática de bloques de validez pericial con referenciación explícita a las Guías de Práctica Clínica vigentes en la nota médica." }
+      { title: "Algoritmos Validados", text: "Integración de Gupta MICA, RCRI, Caprini, Wells, MDRD-4 y CHA2DS2-VASc con cita bibliográfica exacta para auditorías." },
+      { title: "Soberanía Médica", text: "Input manual obligatorio (Human-in-the-loop) que garantiza la autoría del especialista y bloquea el riesgo de Liability por IA." },
+      { title: "Riesgo Tromboembólico", text: "Estratificación de TVP y cardio-protección para fundamentar legalmente decisiones de profilaxis en el expediente." },
+      { title: "Dictamen Normativo (GPC)", text: "Inyección automática de bloques periciales con referenciación explícita a Guías de Práctica Clínica (ej. IMSS-425-11) en la nota evolutiva." }
     ],
     clinicalItems: [
       { icon: "🧮", title: "Calculadoras Especializadas", text: "Todas las escalas clínico-predictivas que utiliza diariamente (Wells, Caprini) a un clic de distancia, precargadas con los datos del paciente." },
       { icon: "👨‍⚕️", title: "Control Autónomo Final", text: "La plataforma asiste y sugiere, pero usted decide. Conservará en todo momento la autoridad final sobre el diagnóstico y la conducta terapéutica." },
-      { icon: "🩸", title: "Justificación de Criterios", text: "Documente con rigor metodológico la justificación de treatments preventivos, robusteciendo la calidad de la atención." },
+      { icon: "🩸", title: "Justificación de Criterios", text: "Documente con rigor metodológico la justificación de tratamientos preventivos, robusteciendo la calidad de la atención." },
       { icon: "📋", title: "Sustento Científico Normativo", text: "Incorpore de manera automatizada citas de las Guías de Práctica Clínica (GPC), validando científicamente su actuar médico." }
     ]
   },
   {
     id: "nutrition",
     type: "grid",
-    title: "Nutrición Clínica y Soporte Metabólico",
+    title: "Nutrición Clínica Multimodal",
     clinicalTitle: "Intervención Dietética Basada en Evidencia",
-    content: "Fusión de visión computacional de alta precisión y dietética clínica avanzada. Reducción del cálculo calórico manual iterativo.",
+    content: "Fusión de visión computacional y dietética basada en evidencia.",
     clinicalContent: "Estructure planes alimentarios y macronutrientes adaptados al diagnóstico patológico específico de su paciente.",
     image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=2000",
     items: [
-      { title: "OCR Vision (InBody)", text: "Lectura inteligente de reportes impresos de bioimpedancia y extracción inmediata de composición corporal (masa magra y adiposa)." },
-      { title: "Cálculo USDA Integrado", text: "Cuantificación automatizada de micronutrientes y kilocalorías basada en bases de datos de referencia global alimentaria." },
-      { title: "Filtro de Alérgenos", text: "Alertamiento asistido de alérgenos y contraindicaciones metabólicas cruzadas en planes dietéticos basado en el expediente JSON." },
-      { title: "Anexo Dietoterapéutico", text: "Generación de menús personalizados vinculados de manera legal e indisoluble a la receta de indicaciones médicas oficial." }
+      { title: "OCR Vision (InBody)", text: "Lectura inteligente de tickets de bioimpedancia. Extracción inmediata de masa y grasa." },
+      { title: "Cálculo USDA", text: "Suma de macros y kilocalorías automáticas basadas en bases de datos globales." },
+      { title: "Filtro de Alérgenos", text: "Alerta asistida de alérgenos en planes dietéticos basado en historial clínico estructurado en formato JSON." },
+      { title: "Anexo Dietético", text: "Generación de menús personalizados vinculados legalmente a la receta oficial." }
     ],
     clinicalItems: [
       { icon: "👁️", title: "Digitalización de Bioimpedancia", text: "Extraiga de forma fidedigna los indicadores antropométricos al expediente mediante análisis visual del ticket del analizador." },
@@ -176,12 +176,12 @@ const slides = [
   {
     id: "omni_sentinel",
     type: "split",
-    title: "Omni-Sentinel: Interrupción Segura Asistida",
+    title: "Omni-Sentinel: El Firewall Humano",
     clinicalTitle: "Seguridad Activa en la Prescripción Médica",
     content: [
-      "Asistencia Proactiva: Interrupción Segura Asistida para la dosificación de fármacos basada en la tasa de filtración glomerular dictada.",
-      "Triangulación de Información: Cruza parámetros de laboratorio clínico, analiza omisiones críticas de dosificación y detecta interacciones en milisegundos.",
-      "Sanitización Documental: El documento final solo refleja fármacos validados por las reglas de seguridad relacional del sistema."
+      "Mapeo Farmacológico Estricto: Escaneo e inspección iterativa inmediata (prescriptions.forEach) de cada componente atómico de la receta generada.",
+      "Bloqueo Criptográfico de Fuerza Bruta: Interrupción y sustitución asistida en tiempo real (BLOCKED_BY_SENTINEL) ante colisiones toxicológicas fatales.",
+      "Defensa Automatizada: Inyección inmediata de alertas críticas en el CDSS ante el uso de sustancias de lista negra (ej. Warfarina combinada con AINEs)."
     ],
     clinicalContent: [
       "Prevención de Alergias: Detección proactiva de contraindicaciones cruzadas o reacciones adversas severas durante la prescripción de medicamentos.",
@@ -193,13 +193,13 @@ const slides = [
   {
     id: "security_slide",
     type: "split",
-    title: "Aislamiento Criptográfico y Principio de No Repudio",
+    title: "Aislamiento Criptográfico y Dualidad de Firma",
     clinicalTitle: "Privacidad Inquebrantable e Integridad Documental",
     content: [
-      "Row Level Security (RLS): El profesional médico es el propietario exclusivo de su esquema relacional de datos, garantizando aislamiento perimetral estricto.",
-      "Búnker Edge IA: Procesamiento y tokenización de Inteligencia Ambiental ejecutados en entornos aislados (Deno Edge Functions) para la privacidad de datos PHI.",
-      "Bóveda de Firma Criptográfica (SAT): Integración nativa de la e.firma. Procesamiento ejecutado estrictamente en el cliente (Local Web Sandbox), garantizando el No Repudio legal.",
-      "Rúbrica Digital Vectorizada: Captura directa de la firma manuscrita en pantalla con estampado cronológico vinculante que se asocia al hash del expediente clínico bajo la NOM-151."
+      "Row Level Security (RLS): Aislamiento perimetral estricto por ID de usuario autenticado en PostgreSQL y cubeta privada clinic-assets para datos sensibles PHI.",
+      "Búnker Edge IA: Código y algoritmos de Inteligencia Ambiental ejecutados en Edge Functions (Deno) para máxima privacidad de datos médicos.",
+      "Bóveda de Firma Criptográfica SAT (XML-DSig): Certificación con e.firma (FIEL). Descifrado de archivos .key y .cer en Sandbox local del navegador (RAM efímera), garantizando el principio de No Repudio sin fuga de credenciales.",
+      "Firma Autógrafa / NOM-151: Vectorización en pantalla de la rúbrica manual del médico con estampado cronológico e inmutabilidad del hash del expediente."
     ],
     clinicalContent: [
       "Propiedad Exclusiva del Registro: Solo el profesional de la salud acreditado posee acceso criptográfico exclusivo a la información clínica de sus pacientes.",
@@ -212,13 +212,13 @@ const slides = [
   {
     id: "interoperability",
     type: "split",
-    title: "Verificación de Identidad Federal y Auditoría DGIS",
+    title: "Interoperabilidad HL7 CDA R2, Identidad Federal y Auditoría DGIS",
     clinicalTitle: "Validación Identitaria y Cumplimiento Normativo Federal",
     content: [
-      "Autoverificación RNP-SEP en Vivo: Interconexión directa con el Registro Nacional de Profesionistas desde el formulario de alta médica para validar la vigencia de la cédula de especialidad.",
-      "Validación Identitaria CURP: Consulta automatizada en tiempo real ante el Padrón Nacional de Población (RENAPO) mediante canales seguros de APIMarket.",
-      "Trazabilidad de Urgencia (DGIS): Registro inmutable en clinical_audit_logs del metadato 'emergency_bypass', justificando legalmente la atención provisional de urgencia.",
-      "Acreditación Obligatoria NOM-024: Estructuración de datos interoperables exportables de forma universal en formato HL7 CDA R2 legible por máquinas."
+      "Expediente Clínico Electrónico HL7 CDA R2: Exportación estructurada XML bajo la guía GIIS-A001-01-05 (NOM-024-SSA3-2012) lista para interoperabilidad hospitalaria oficial.",
+      "Identidad Federal Médica Integrada: Inyección automatizada de Cédula Profesional, CURP del facultativo y Clave CLUES (SSA) en los nodos <author>, <custodian> y <legalAuthenticator>.",
+      "Autoverificación SEP y RENAPO en Vivo: Consulta asíncrona en tiempo real con el Registro Nacional de Profesionistas y el Padrón Nacional de Población.",
+      "Trazabilidad de Urgencia (DGIS): Registro inmutable en clinical_audit_logs del metadato 'emergency_bypass', justificando legalmente la atención provisional de urgencia."
     ],
     clinicalContent: [
       "Validación Profesional en Tiempo Real: Confirmación institucional e inmediata ante la SEP sobre la autenticidad y homologación de la cédula profesional de especialidad.",
@@ -231,16 +231,16 @@ const slides = [
   {
     id: "legal_prob",
     type: "grid",
-    title: "Certeza Jurídica y Resguardo Inmutable del Expediente",
+    title: "Medicina Defensiva (NOM-004)",
     clinicalTitle: "Fortalecimiento de la Evidencia Documental Médica",
-    content: "Transformamos la documentación clínica en un soporte pericial inexpugnable bajo el control del facultativo.",
+    content: "Transformamos el expediente en una fortaleza jurídica bajo el control estricto del facultativo.",
     clinicalContent: "Garantice la máxima solidez en sus registros documentales frente a inspecciones sanitarias u arbitrajes institucionales.",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=2000",
     items: [
-      { title: "Lenguaje de Resguardo Clínico", text: "Mapeo de sospecha médica a términos de protección legal (ej. 'Compatible con...')" },
+      { title: "Lenguaje Probabilístico", text: "Mapeo de sospecha médica a términos de protección legal (ej. 'Compatible con...')" },
       { title: "Bitácora Inalterable", text: "Registro de auditoría perpetuo (Append-only) con sistema de inactivación lógica (Soft-Delete) conforme a estándares de control pericial sanitario." },
-      { title: "Estatus de Soporte", text: "Clasificación estricta como Sistema de Soporte de Decisiones Clínicas (CDSS), preservando la autonomía y criterio del médico." },
-      { title: "Motor CIE-11 Nativo", text: "Búsqueda asíncrona directa conectada a la API oficial de la Organización Mundial de la Salud (OMS) con almacenamiento Bearer dinámico." }
+      { title: "Soporte de Decisiones", text: "Clasificado como Sistema de Soporte de Decisiones Clínicas (CDSS). La última palabra diagnóstica y terapéutica recae en el médico." },
+      { title: "Motor Dual CIE-11 Nativo", text: "Búsqueda asíncrona directa conectada a la API de la OMS con almacenamiento Bearer dinámico." }
     ],
     clinicalItems: [
       { icon: "⚖️", title: "Léxico de Mitigación Jurídica", text: "Sugerencia de terminología científica prudencial (ej. 'Compatible con...') para evitar asunciones deterministas en controversias legales." },
@@ -252,16 +252,16 @@ const slides = [
   {
     id: "admin_gatekeeper",
     type: "grid",
-    title: "Infraestructura Edge y Estabilidad del Entorno",
+    title: "Pasarela Edge Functions y Control de Integridad",
     clinicalTitle: "Pasarela y Orquestación Asíncrona en Consulta",
-    content: "Orquestación de microservicios e inyección segura de secretos cifrados en entornos de cómputo distribuidos de Supabase.",
+    content: "Orquestación de microservicios públicos regulados en Supabase e inyección de secretos.",
     clinicalContent: "Infraestructura robusta de baja latencia que responde a la velocidad del pensamiento del especialista en consulta.",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000",
     items: [
-      { title: "Bypass JWT Control", text: "Despliegue perimetral optimizado con la directiva 'verify_jwt = false' en la nube para permitir interconexiones de verificación pre-registro seguras." },
-      { title: "Inyección Vault Terminal", text: "Almacenamiento inexpugnable de secretos criptográficos de producción (TURNSTILE_SECRET_KEY) en el clúster de base de datos." },
-      { title: "CORS Anti-DeDoS Patched", text: "Restricciones rígidas de orígenes cruzados y mitigación proactiva de denegación de servicio para resguardo de la infraestructura." },
-      { title: "Preservación NOM-004", text: "Sincronización de estados remotos dinámicos ('read_only', 'active') para auditorías oficiales sin riesgo de alteración de registros." }
+      { title: "Bypass JWT Control", text: "Despliegue estructural con la directiva 'verify_jwt = false' en la nube para permitir consultas pre-registro seguras." },
+      { title: "Inyección Vault Terminal", text: "Almacenamiento inexpugnable de secretos de producción (TURNSTILE_SECRET_KEY) directo en el clúster remoto de Supabase." },
+      { title: "CORS Anti-DeDoS Patched", text: "Filtro de orígenes cruzados que tolera handshakes emulados en localhost y restricciones rígidas." },
+      { title: "Preservación NOM-004", text: "Estatus remotos dinámicos ('read_only', 'active') sincronizados para auditorías de cumplimiento sin pérdida de datos." }
     ],
     clinicalItems: [
       { icon: "🗄️", title: "Optimización Asistencial", text: "Procesamiento asíncrono y optimizado que evita retrasos técnicos durante la atención al paciente en entornos institucionales u privados." },
@@ -273,16 +273,16 @@ const slides = [
   {
     id: "roadmap",
     type: "grid",
-    title: "V15.4: Arquitectura Temática y Modelado Bio-Bibliográfico",
+    title: "Hacia el Futuro de la Precisión Absoluta",
     clinicalTitle: "Vanguardia en Salud Digital y Precisión Asistencial",
-    content: "Hiper-personalización algorítmica y sincronización de agentes RAG para la lectura y síntesis de literatura indexada.",
+    content: "Líneas de expansión tecnológica destinadas al modelado bio-bibliográfico avanzado.",
     clinicalContent: "Capacidades de alta especialización integradas de forma progresiva a su entorno clínico permanente.",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=1000",
     items: [
-      { title: "Mapas Fármaco-Genómicos", text: "Integración de mapas fármaco-genómicos complejos para alertas de dosificación automatizadas basadas en el fenotipo celular del paciente." },
-      { title: "Espejos Fisiológicos Predictivos", text: "Modelado predictivo de curvas de depuración hepática y renal en tiempo real basado en la telemetría histórica de laboratorios." },
-      { title: "Investigación Delegada (RAG)", text: "Sincronización nativa de agentes de conocimiento autónomos para el rastreo y síntesis analítica de literatura médica indexada en PubMed." },
-      { title: "Interconexión HL7 Gateway", text: "Acoplamiento asíncrono con gateways hospitalarios institucionales para el intercambio automatizado de expedientes clínicos electrónicos." }
+      { title: "Mapas Fármaco-Genómicos", text: "Integración automatizada de mapas fármaco-genómicos complejos para alertas automáticas de dosificación basadas en el fenotipo celular del paciente." },
+      { title: "Investigación Delegada (RAG)", text: "Sincronización nativa de agentes autónomos RAG para el rastreo, lectura y síntesis de literatura médica indexada internacional bajo demanda." },
+      { title: "Interconexión HL7 Gateway", text: "Acoplamiento asíncrono con gateways hospitalarios institucionales para la inyección e intercambio automatizado de expedientes estructurados." },
+      { title: "Espejos Fisiológicos Predictivos", text: "Modelado algorítmico de curvas de depuración hepática y renal en tiempo real basado en telemetría histórica de laboratorio." }
     ],
     clinicalItems: [
       { icon: "🕸️", title: "Auditoría de Polifarmacia", text: "Detección proactiva de efectos adversos y sinergias contraindicadas cuando el paciente se encuentra bajo esquemas multiterapéuticos." },
@@ -291,17 +291,17 @@ const slides = [
       { icon: "🔬", title: "Ajuste Farmacogenético", text: "Alertamiento activo si la dosificación estándar requiere modificaciones según los antecedentes genómicos del paciente." }
     ],
     meta: {
-      legalClosing: "VitalScribe AI opera estrictamente como un Sistema de Soporte para la Decisión Clínica (CDSS). Ningún modelo algorítmico sustituye el juicio clínico autónomo del especialista ni genera indicaciones diagnósticas con validez pericial de forma independiente."
+      legalClosing: "VitalScribe AI es un sistema de soporte a la decisión clínica (CDSS). Ningún modelo algorítmico sustituye el juicio clínico del especialista ni genera indicaciones vinculantes."
     }
   },
   {
     id: "closing",
     type: "hero",
-    title: "VitalScribe AI: Inteligencia que Resguarda la Práctica Médica.",
+    title: "VitalScribe AI: Inteligencia que Defiende.",
     clinicalTitle: "El Nuevo Estándar en Medicina Especializada Privada",
     subtitle: "v15.3 Global Sentinel Shielded",
     clinicalSubtitle: "Súmese a la Evolución del Acto Clínico",
-    content: "Infraestructura inspirada en los más altos estándares hospitalarios globales. Autoverificación de identidad profesional (SEP, CURP), dualidad de firma (e.firma, Rúbrica Digital) y estricto cumplimiento normativo de integridad garantizada.",
+    content: "Arquitectura inspirada en la Clínica Mayo. Autoverificación de identidad profesional (SEP, CURP, CLUES), doble firma (e.firma, Autógrafa), interoperabilidad HL7 CDA R2, cumplimiento normativo y resguardo patrimonial. El nuevo estándar de oro en salud digital.",
     clinicalContent: "Elimine la fatiga documental de su consulta. Permita que VitalScribe asista en la carga documental mientras usted se enfoca firmemente en lo verdaderamente prioritario: el juicio clínico, la relación médico-paciente y la protección de su prestigio profesional.",
     image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=1964",
     meta: { gradient: "from-teal-600 to-blue-900" }
@@ -313,6 +313,7 @@ const slides = [
 
 <Layout title={title} description={description}>
 
+  <!-- HERO CORE CAPTURE -->
   <section class="relative overflow-hidden bg-slate-900 min-h-screen flex flex-col justify-center pt-24 pb-20">
     <div class="absolute inset-0 z-0">
       <img 
@@ -332,6 +333,7 @@ const slides = [
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       
+      <!-- LOGOTIPO CORPORATIVO OFICIAL RESTAURADO -->
       <div class="flex items-center gap-3 mb-10 select-none">
         <img 
           src="/pwa-512x512.png" 
@@ -456,6 +458,7 @@ const slides = [
     </div>
   </section>
 
+  <!-- SECCIÓN DINÁMICA DE ENTORNO CLÍNICO -->
   <section class="py-24 bg-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
@@ -467,6 +470,7 @@ const slides = [
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
+        <!-- Escenario 1 -->
         <div class="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
           <div class="p-6 bg-teal-900 flex items-center gap-4">
             <span class="w-12 h-12 rounded-full bg-teal-800 flex items-center justify-center text-2xl">🗣️</span>
@@ -487,6 +491,7 @@ const slides = [
           </div>
         </div>
 
+        <!-- Escenario 2 -->
         <div class="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
           <div class="p-6 bg-indigo-900 flex items-center gap-4">
             <span class="w-12 h-12 rounded-full bg-indigo-800 flex items-center justify-center text-2xl">⚠️</span>
@@ -507,6 +512,7 @@ const slides = [
           </div>
         </div>
 
+        <!-- Escenario 3 -->
         <div class="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
           <div class="p-6 bg-slate-900 flex items-center gap-4">
             <span class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-2xl">⚖️</span>
@@ -531,6 +537,7 @@ const slides = [
     </div>
   </section>
 
+  <!-- INTERACTIVO PRESENTATION CONSOLE -->
   <section id="presentation-hub" class="py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden presentation-mode-clinical">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(20,184,166,0.07),transparent_70%)]"></div>
     
@@ -547,6 +554,7 @@ const slides = [
         </p>
       </div>
 
+      <!-- UX SWITCHER DE ENFOQUE NATIVO -->
       <div class="flex justify-center mb-12">
         <div class="bg-slate-900 p-1.5 rounded-full border border-slate-700 flex shadow-lg items-center relative">
           <button id="mode-clinical-btn" class="relative z-10 px-6 py-2.5 rounded-full bg-teal-50 text-slate-950 font-bold text-sm transition-colors duration-300 flex items-center gap-2">
@@ -558,8 +566,10 @@ const slides = [
         </div>
       </div>
 
+      <!-- ENTORNO INTEGRADO DEL VISUALIZADOR -->
       <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[580px]">
         
+        <!-- Sidebar de Diapositivas -->
         <div class="lg:col-span-4 border-r border-slate-800 bg-slate-900/50 flex flex-col justify-between max-h-[600px] overflow-y-auto custom-scrollbar">
           <div class="p-4 border-b border-slate-800 bg-slate-950/30">
             <span class="text-xs font-mono text-slate-500">ÍNDICE DE PLATAFORMA</span>
@@ -585,6 +595,7 @@ const slides = [
           </div>
         </div>
 
+        <!-- Contenedor Dinámico con Solución de Altura e Hidratación Segura -->
         <div class="lg:col-span-8 p-8 md:p-12 flex flex-col justify-between bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 relative min-h-[450px]">
           <div class="absolute top-4 right-4 w-40 h-40 bg-teal-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
@@ -595,8 +606,10 @@ const slides = [
                 class={`slide-pane w-full flex-col justify-between transition-opacity duration-300 ${index === 0 ? 'relative flex opacity-100 animate-pulse-slow' : 'hidden opacity-0 absolute pointer-events-none h-0'}`}
                 data-index={index}
               >
+                <!-- CONTENEDOR ELÁSTICO DE SEGURIDAD -->
                 <div class="w-full overflow-y-auto max-h-[360px] lg:max-h-[420px] custom-scrollbar pr-2 space-y-6 scroll-smooth">
                   
+                  <!-- Render tipo: HERO -->
                   {slide.type === 'hero' && (
                     <div class="space-y-6 w-full">
                       <span class="text-xs font-mono tracking-widest text-teal-400 bg-teal-950/60 px-3 py-1 rounded border border-teal-500/20 w-fit block">
@@ -620,6 +633,7 @@ const slides = [
                     </div>
                   )}
 
+                  <!-- Render tipo: SPLIT -->
                   {slide.type === 'split' && (
                     <div class="space-y-6 w-full">
                       <h3 class="text-2xl md:text-3xl font-extrabold text-white flex items-center gap-2">
@@ -664,6 +678,7 @@ const slides = [
                     </div>
                   )}
 
+                  <!-- Render tipo: GRID -->
                   {slide.type === 'grid' && (
                     <div class="space-y-6 w-full">
                       <h3 class="text-2xl md:text-3xl font-extrabold text-white flex items-center gap-2">
@@ -718,6 +733,7 @@ const slides = [
             ))}
           </div>
 
+          <!-- BOTONES DE CONTROL DE PLATAFORMA -->
           <div class="flex items-center justify-between border-t border-slate-800 pt-6 mt-8">
             <button 
               id="prev-slide-btn"
@@ -741,6 +757,7 @@ const slides = [
     </div>
   </section>
 
+  <!-- SECCIÓN DE PRECIOS PREMIUM -->
   <section id="pricing-bunker" class="py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(20,184,166,0.05),transparent_60%)]"></div>
     
@@ -759,6 +776,7 @@ const slides = [
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
         
+        <!-- Plan Inicial -->
         <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between relative backdrop-blur-sm">
           <div>
             <div class="flex justify-between items-center mb-4">
@@ -791,6 +809,7 @@ const slides = [
           </a>
         </div>
 
+        <!-- Plan Profesional (PLAN GENERAL + CAJA DE LANZAMIENTO + SUBSECCIÓN SOCIO FUNDADOR) -->
         <div class="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 rounded-3xl border-2 border-teal-500/80 p-8 flex flex-col justify-between relative shadow-[0_20px_40px_rgba(20,184,166,0.15)] ring-4 ring-teal-950/30 z-10">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest shadow-lg whitespace-nowrap">
             PREFERENCIA ASISTENCIAL INSTITUCIONAL
@@ -801,6 +820,7 @@ const slides = [
             </div>
             <p class="text-slate-400 text-sm mb-4">Automatización integral de formatos SOAP y expedientes clínicos electrónicos.</p>
 
+            <!-- 🎁 PROTOCOLO DE LANZAMIENTO ACTIVO (Para todo clínico inicial del Plan Profesional) -->
             <div class="mb-6 bg-teal-950/40 border border-teal-500/30 rounded-2xl p-4 text-xs leading-relaxed text-teal-200">
               <div class="flex items-center gap-2 font-black text-teal-400 tracking-wide uppercase">
                 <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
@@ -837,6 +857,7 @@ const slides = [
                 <span>Verificación de Identidad Federal en Vivo (CURP y SEP)</span>
               </li>
               
+              <!-- INTEGRACIÓN INTELIGENTE: COHORTE EXCLUSIVA DE SOCIO FUNDADOR -->
               <li class="mt-4 pt-4 border-t border-dashed border-teal-800/80 bg-slate-950/40 p-3 rounded-xl border border-teal-900/40">
                 <div class="flex items-center gap-2 text-[10px] uppercase font-black text-teal-400 tracking-widest mb-2.5">
                   <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -867,6 +888,7 @@ const slides = [
           </a>
         </div>
 
+        <!-- Plan Alta Especialidad (Ancla) -->
         <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between relative backdrop-blur-sm">
           <div>
             <div class="flex justify-between items-center mb-4">
@@ -911,6 +933,7 @@ const slides = [
     </div>
   </section>
 
+  <!-- CARACTERÍSTICAS DESTACADAS DE LA PLATAFORMA -->
   <section id="features" class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.25)] scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -956,9 +979,11 @@ const slides = [
     </div>
   </section>
 
+  <!-- SECCIÓN FIJA DE CONTENIDO CLÍNICO (GRID CONTROLADO SANEADO) -->
   <section class="py-20 bg-white font-sans">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
       
+      <!-- Bloque 1: Cerebro Clínico -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-6">
           <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-teal-600 uppercase bg-teal-100 rounded-full">
@@ -1003,6 +1028,7 @@ const slides = [
         </div>
       </div>
 
+      <!-- Bloque 2: Defensa Legal -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="lg:order-2 space-y-6">
           <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-indigo-600 uppercase bg-indigo-100 rounded-full">
@@ -1197,6 +1223,7 @@ const slides = [
     </div>
   </footer>
 
+  <!-- MODAL INTERACTIVO: CENTRO DE TRANSPARENCIA Y LEGALIDAD -->
   <div id="legal-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl w-full max-w-4xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[90vh]">
       
@@ -1229,6 +1256,7 @@ const slides = [
 
       <div id="legal-modal-body" class="p-8 overflow-y-auto text-slate-700 leading-relaxed text-sm space-y-6 font-sans custom-scrollbar">
         
+        <!-- PESTAÑA: AVISO DE PRIVACIDAD INTEGRAL -->
         <div id="tab-privacy-content" class="space-y-6">
           <div class="p-5 bg-sky-50 rounded-2xl border border-sky-100">
             <p class="text-lg font-medium text-slate-800">
@@ -1236,13 +1264,14 @@ const slides = [
             </p>
           </div>
 
+          <!-- SECCIÓN 1: CIFRADO Y DATOS -->
           <div>
             <h3 class="flex items-center gap-3 text-slate-900 font-bold text-xl mb-4">
               <span>🔒</span> 1. Blindaje de Datos (Cifrado Grado Bancario)
             </h3>
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
               <p>
-                Implementamos cifrado <strong>AES-256</strong> para proteger la información sensible tanto en reposo como en tránsito. Cumplimos estrictamente con la normativa de confidencialidad de la <strong>NOM-004-SSA3-2012</strong>.
+                Implementamos cifrado <strong>AES-256</strong> para proteger la información sensible tanto en reposo como en tránsito. Cumplimos strictly con la normativa de confidencialidad de la <strong>NOM-004-SSA3-2012</strong>.
               </p>
               <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
@@ -1251,18 +1280,19 @@ const slides = [
                 </li>
                 <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
                   <span class="text-teal-500">⚙️</span>
-                  <span class="text-sm"><strong>Inmutabilidad:</strong> Bitácoras forenses que registran cada interacción, garantizando la trazabilidad clínica completa.</span>
+                  <span class="text-sm"><strong>Inmutabilidad:</strong> Bitácoras de auditoría inmutables que registran cada interacción, garantizando la trazabilidad clínica completa.</span>
                 </li>
               </ul>
             </div>
           </div>
 
+          <!-- SECCIÓN 2: PROCESAMIENTO IA -->
           <div>
             <h3 class="flex items-center gap-3 text-slate-900 font-bold text-xl mb-4">
               <span>📦</span> 2. Procesamiento de IA Privado
             </h3>
             <p class="mb-4">
-              La generation de notas clínicas y análisis de riesgo utiliza modelos <strong>Google Gemini™ Enterprise</strong> desplegados en infraestructura <strong>Vertex AI Secure Node</strong>.
+              La generación de notas clínicas y análisis de riesgo utiliza modelos <strong>Google Gemini™ Enterprise</strong> desplegados en infraestructura <strong>Vertex AI Secure Node</strong>.
             </p>
             <div class="bg-teal-50 p-6 rounded-2xl border border-teal-100 text-teal-900 text-sm shadow-inner">
               <strong class="block mb-2 font-bold text-teal-800">GARANTÍA DE NO-ENTRENAMIENTO:</strong> 
@@ -1270,6 +1300,7 @@ const slides = [
             </div>
           </div>
 
+          <!-- SECCIÓN 3: DERECHOS ARCO Y OBLIGACIONES DEL RESPONSABLE -->
           <div>
             <h3 class="flex items-center gap-3 text-slate-900 font-bold text-xl mb-4">
               <span>📄</span> 3. Soberanía de Datos y Derechos ARCO
@@ -1293,8 +1324,10 @@ const slides = [
           </div>
         </div>
 
+        <!-- PESTAÑA: CENTRO DE TRANSPARENCIA Y TÉRMINOS -->
         <div id="tab-terms-content" class="space-y-6 hidden">
           
+          <!-- DOSSIER TÉCNICO Y NORMATIVO -->
           <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
             <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span>🖥️</span> DOSSIER TÉCNICO Y NORMATIVO
@@ -1344,6 +1377,7 @@ const slides = [
             </div>
           </div>
 
+          <!-- TÉRMINOS Y RESPONSABILIDAD -->
           <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
             <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span>⚖️</span> TÉRMINOS Y RESPONSABILIDAD
@@ -1454,6 +1488,108 @@ const slides = [
 
       <div class="bg-slate-900 text-slate-500 p-6 text-center text-xs border-t border-slate-800 shrink-0 font-sans">
         <p>© 2026 <span class="text-white font-bold">VitalScribe AI™</span>. Infraestructura de Cómputo Clínico Blindada v15.3.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÓN FLOTANTE DISCRETO: TRADUCTOR DE CRITERIO ASISTENCIAL -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <button 
+      id="trigger-reflection-btn" 
+      class="flex items-center gap-2.5 px-5 py-3.5 bg-slate-900/90 hover:bg-slate-800 text-teal-300 border border-teal-500/40 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all transform hover:scale-105 backdrop-blur-md group"
+    >
+      <span class="text-xl">👨‍⚕️</span>
+      <span class="text-xs font-bold uppercase tracking-wider text-white group-hover:text-teal-300 transition-colors">Criterio Médico: ¿Por qué VitalScribe?</span>
+    </button>
+  </div>
+
+  <!-- PANEL LATERAL FLOTANTE (SLIDE-OVER DRAWER): TRADUCCIÓN DE VALOR ASISTENCIAL -->
+  <div id="reflection-drawer" class="hidden fixed inset-0 z-50 overflow-hidden">
+    <!-- Backdrop de atenuación -->
+    <div id="reflection-backdrop" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity duration-300"></div>
+
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-lg bg-slate-900 border-l border-slate-800 text-slate-200 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+        
+        <!-- Drawer Header -->
+        <div class="p-6 md:p-8 bg-slate-950 border-b border-slate-800 relative shrink-0">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="p-2.5 bg-teal-950 border border-teal-500/30 rounded-xl text-teal-400">
+                <span class="text-xl">👨‍⚕️</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white leading-tight">Criterio y Valor Asistencial</h3>
+                <p class="text-xs text-teal-400 font-mono mt-0.5">Reflexión de Colega a Colega</p>
+              </div>
+            </div>
+            <button id="close-reflection-drawer" class="text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-9 h-9 rounded-full flex items-center justify-center text-lg font-bold transition-all transform active:scale-90">
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- Drawer Body -->
+        <div class="p-6 md:p-8 overflow-y-auto space-y-6 text-sm leading-relaxed custom-scrollbar flex-1 font-sans">
+          
+          <div class="p-4 bg-teal-950/40 border border-teal-500/30 rounded-2xl text-xs text-teal-200 leading-relaxed">
+            <strong class="text-teal-300 font-bold block mb-1 uppercase tracking-wider text-[10px]">Sin Jerga Tecnológica ni Discursos Comerciales:</strong>
+            Entendemos la realidad del ejercicio médico privado. Esta breve guía explica por qué esta plataforma transforma la dinámica diaria en el consultorio y en quirófano.
+          </div>
+
+          <!-- Pilar 1: El Valor del Acto Médico -->
+          <div class="space-y-2">
+            <h4 class="font-bold text-white text-base flex items-center gap-2">
+              <span class="text-teal-400">01.</span> Recuperación del Acto Médico Puro
+            </h4>
+            <p class="text-slate-300 text-xs md:text-sm">
+              El mayor desgaste en la consulta actual proviene de la obligación de transcribir manualmente cada detalle al teclado. La Inteligencia Ambiental actúa como un facilitador silencioso: escucha el diálogo médico-paciente, filtra comentarios irrelevantes y traduce la interacción en una nota de evolución formal en formato SOAP. El beneficio inmediato es recuperar el contacto visual, la escucha activa y la dignidad de la relación médico-paciente.
+            </p>
+          </div>
+
+          <!-- Pilar 2: Resguardo Pericial y Cédula -->
+          <div class="space-y-2">
+            <h4 class="font-bold text-white text-base flex items-center gap-2">
+              <span class="text-indigo-400">02.</span> Blindaje Pericial y Protección Patrimonial
+            </h4>
+            <p class="text-slate-300 text-xs md:text-sm">
+              Ante una eventual controversia legal o revisión por comisiones de arbitraje médico, una nota elaborada con prisa o imprecisa constituye la principal vulnerabilidad del facultativo. VitalScribe sugiere terminología de resguardo científico (ej. <em>"Hallazgos compatibles con..."</em>), inyecta referencias explícitas a Guías de Práctica Clínica y permite el sellado digital con e.firma (SAT) o rúbrica manuscrita inmutable bajo la NOM-151 y NOM-004.
+            </p>
+          </div>
+
+          <!-- Pilar 3: Red de Seguridad Asistencial -->
+          <div class="space-y-2">
+            <h4 class="font-bold text-white text-base flex items-center gap-2">
+              <span class="text-amber-400">03.</span> Farmacovigilancia y Mitigación de Errores
+            </h4>
+            <p class="text-slate-300 text-xs md:text-sm">
+              Tras jornadas prolongadas de consulta o guardia, la fatiga cognitiva incrementa el riesgo de obviar alergias cruzadas o dosificaciones nefrotóxicas en pacientes complejos. El módulo Omni-Sentinel evalúa de forma analítica los parámetros paraclínicos (como la TFG) y emite un alertamiento visual preventivo antes de consolidar o imprimir la prescripción.
+            </p>
+          </div>
+
+          <!-- Pilar 4: Ecuación Económica -->
+          <div class="p-5 bg-slate-950 rounded-2xl border border-slate-800 space-y-3">
+            <h4 class="font-bold text-teal-300 text-xs uppercase tracking-wider">El Cálculo Real de Inversión Asistencial</h4>
+            <div class="text-xs text-slate-300 space-y-2">
+              <p>• <strong>Costo del Sistema:</strong> $2,199 MXN / mes (equivale al honorario de <strong>una sola consulta privada</strong> al mes).</p>
+              <p>• <strong>Tiempo Recuperado:</strong> ~35 a 40 horas al mes de redacción manual mecanizada, permitiendo ampliar el cupo de atención o concluir la jornada a tiempo.</p>
+              <p>• <strong>Valor Legal:</strong> Tranquilidad absoluta respecto a la inmutabilidad y solidez técnica del expediente clínico electrónico.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Drawer Footer -->
+        <div class="p-6 bg-slate-950 border-t border-slate-800 shrink-0">
+          <a 
+            href="#lead-capture-form" 
+            id="drawer-cta-btn"
+            class="w-full py-3.5 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-xs uppercase tracking-wider rounded-xl transition-all block shadow-md transform active:scale-95"
+          >
+            Inicializar Evaluación de Práctica Privada
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1638,6 +1774,34 @@ const slides = [
             tabPrivacyBtn.className = "px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-600 hover:bg-slate-200 hover:text-slate-900";
             tabTermsContent.classList.remove('hidden');
             tabPrivacyContent.classList.add('hidden');
+          });
+        }
+
+        // 5. CONTROL DEL PANEL LATERAL DE CRITERIO ASISTENCIAL (REFLEXIÓN DE COLEGA A COLEGA)
+        const reflectionDrawer = document.getElementById('reflection-drawer');
+        const triggerReflection = document.getElementById('trigger-reflection-btn');
+        const closeReflection = document.getElementById('close-reflection-drawer');
+        const reflectionBackdrop = document.getElementById('reflection-backdrop');
+        const drawerCta = document.getElementById('drawer-cta-btn');
+
+        if (triggerReflection) {
+          triggerReflection.addEventListener('click', () => {
+            reflectionDrawer?.classList.remove('hidden');
+          });
+        }
+        if (closeReflection) {
+          closeReflection.addEventListener('click', () => {
+            reflectionDrawer?.classList.add('hidden');
+          });
+        }
+        if (reflectionBackdrop) {
+          reflectionBackdrop.addEventListener('click', () => {
+            reflectionDrawer?.classList.add('hidden');
+          });
+        }
+        if (drawerCta) {
+          drawerCta.addEventListener('click', () => {
+            reflectionDrawer?.classList.add('hidden');
           });
         }
 
