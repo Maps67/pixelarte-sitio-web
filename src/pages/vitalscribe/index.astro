@@ -410,7 +410,7 @@ const slides = [
           <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl"></div>
             <h3 class="text-xl font-bold text-white mb-2">Inicialización de Entorno Seguro</h3>
-            <p class="text-slate-400 text-xs mb-6">Valide sus datos profesionales para generar sus credenciales criptográficas de acceso local.</p>
+            <p class="text-slate-400 text-xs mb-6">Valide sus datos profesionales para activar sus 15 días de prueba sin costo y generar sus credenciales criptográficas de acceso local.</p>
 
             <form id="lead-capture-form" class="space-y-4">
               <div>
@@ -459,8 +459,12 @@ const slides = [
                 <div class="cf-turnstile" data-sitekey="0x4AAAAAADksHs-suGPvNkZi" data-theme="dark"></div>
               </div>
 
+              <p class="text-[11px] text-teal-400 font-semibold text-center mt-2 flex items-center justify-center gap-1.5">
+                <span>🔒</span> 15 días de acceso total sin costo • Sin tarjeta de crédito • Cancelación libre
+              </p>
+
               <button type="submit" id="submit-btn" class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-4 flex items-center justify-center gap-2">
-                Activar Periodo de Evaluación Asistencial
+                Activar Prueba Gratuita por 15 Días
               </button>
             </form>
           </div>
@@ -924,7 +928,7 @@ const slides = [
             </ul>
           </div>
           <a href="#lead-capture-form" class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-8 flex items-center justify-center gap-2">
-            Solicitar Acceso al Plan Profesional
+            Comenzar Prueba de 15 Días Sin Costo &rarr;
           </a>
         </div>
 
@@ -968,7 +972,7 @@ const slides = [
       </div>
 
       <p class="text-center text-xs text-slate-500 max-w-md mx-auto">
-        Esquema flexible sin plazos forzosos en modalidad de suscripción mensual. Transicione de nivel asistencial bajo demanda. Moneda Nacional (MXN). Puede cancelar en cualquier momento sin penalizaciones.
+        Incluye 15 días de prueba gratuita sin compromiso ni tarjeta de crédito. Esquema flexible sin plazos forzosos. Moneda Nacional (MXN). Cancelación libre en cualquier momento.
       </p>
     </div>
   </section>
@@ -1181,7 +1185,7 @@ const slides = [
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed font-normal">
-            <strong>El procedimiento es absolutamente seguro y de ejecución local.</strong> VitalScribe implementa un esquema de Privacidad por Diseño (Privacy by Design). Sus archivos criptográficos privados (`.key`), certificados (`.cer`) y contraseñas asociadas jamás se transmiten a servidores externos ni viajan por internet. El proceso de estampado digital y generación del hash vinculante ocurre strictly dentro de la memoria temporal del navegador (Local Web Sandbox), preservando de forma fidedigna el principio de No Repudio legal.
+            <strong>El procedimiento es absolutamente seguro y de ejecución local.</strong> VitalScribe implementa un esquema de Privacidad por Diseño (Privacy by Design). Sus archivos criptográficos privados (`.key`), certificados (`.cer`) y contraseñas asociadas jamás se transmiten a servidores externos ni viajan por internet. El proceso de estampado digital y generación del hash vinculante ocurre estrictamente dentro de la memoria temporal del navegador (Local Web Sandbox), preservando de forma fidedigna el principio de No Repudio legal.
           </p>
         </details>
 
@@ -1861,7 +1865,7 @@ const slides = [
               setTimeout(() => {
                 if (submitBtn) {
                   submitBtn.disabled = false;
-                  submitBtn.textContent = "Activar Periodo de Evaluación Asistencial";
+                  submitBtn.textContent = "Activar Prueba Gratuita por 15 Días";
                 }
                 form.reset();
               }, 2000);
