@@ -1,7 +1,7 @@
 ---
 // Archivo: src/pages/vitalscribe/index.astro
 // PROTOCOLO VITALSCRIBE v15.3: ENTORNO MONOLÍTICO DE ALTA CONVERSIÓN CORPORATIVA
-// ARQUITECTURA: CAPA DE PRESENTACIÓN AISLADA DE ERRORES SSR / PRECARGA ACTIVA DE IMÁGENES
+// ARQUITECTURA: CAPA DE PRESENTACIÓN AISLADA DE ERRORES SSR / OPTIMIZACIÓN RESPONSIVA MULTI-DISPOSITIVO
 // ESTADO: ESTABLE / PRODUCCIÓN (Grado Pericial, Cumplimiento NOM-004 y NOM-024)
 
 import Layout from '../../layouts/Layout.astro';
@@ -314,7 +314,7 @@ const slides = [
 <Layout title={title} description={description}>
 
   <!-- HERO CORE CAPTURE -->
-  <section class="relative overflow-hidden bg-slate-900 min-h-screen flex flex-col justify-center pt-24 pb-20">
+  <section class="relative overflow-hidden bg-slate-900 min-h-screen flex flex-col justify-center pt-20 sm:pt-24 pb-16 sm:pb-20">
     <div class="absolute inset-0 z-0">
       <img 
         src={HERO_IMG} 
@@ -328,27 +328,27 @@ const slides = [
       <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/95 to-slate-900/70"></div>
     </div>
 
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-500/10 rounded-full mix-blend-overlay filter blur-[140px] pointer-events-none will-change-transform"></div>
-    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full mix-blend-overlay filter blur-[120px] pointer-events-none will-change-transform"></div>
+    <div class="absolute top-0 right-0 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-teal-500/10 rounded-full mix-blend-overlay filter blur-[100px] sm:blur-[140px] pointer-events-none will-change-transform"></div>
+    <div class="absolute bottom-0 left-0 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-indigo-500/10 rounded-full mix-blend-overlay filter blur-[90px] sm:blur-[120px] pointer-events-none will-change-transform"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       
-      <!-- LOGOTIPO CORPORATIVO Y BOTÓN DE ENLACE COMPLIANCE & TRUST -->
-      <div class="flex items-center justify-between gap-4 mb-10 select-none">
+      <!-- LOGOTIPO CORPORATIVO Y BOTÓN DE ENLACE COMPLIANCE & TRUST (RESPONSIVO MULTI-DISPOSITIVO) -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 sm:mb-10 select-none">
         <div class="flex items-center gap-3">
           <img 
             src="/pwa-512x512.png" 
             alt="Logotipo Oficial VitalScribe AI" 
             width="48"
             height="48"
-            class="w-12 h-12 rounded-2xl shadow-[0_4px_20px_rgba(20,184,166,0.15)] border border-slate-800/80 bg-white p-0.5 object-contain [image-rendering:high-quality]"
+            class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl shadow-[0_4px_20px_rgba(20,184,166,0.15)] border border-slate-800/80 bg-white p-0.5 object-contain [image-rendering:high-quality]"
             onerror="this.onerror=null; this.src='/apple-touch-icon.png';"
           />
           <div class="flex flex-col">
-            <span class="text-2xl font-black tracking-tight text-white font-sans leading-none flex items-center">
+            <span class="text-xl sm:text-2xl font-black tracking-tight text-white font-sans leading-none flex items-center">
               VitalScribe<span class="text-teal-400 font-bold ml-0.5">AI®</span>
             </span>
-            <span class="text-[9px] text-slate-400 tracking-widest font-mono uppercase mt-1">Soporte Clínico Certificado</span>
+            <span class="text-[8px] sm:text-[9px] text-slate-400 tracking-widest font-mono uppercase mt-1">Soporte Clínico Certificado</span>
           </div>
         </div>
 
@@ -356,49 +356,49 @@ const slides = [
         <button 
           id="nav-compliance-btn"
           type="button"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-800/90 hover:bg-slate-700 text-teal-300 hover:text-white border border-teal-500/40 text-xs font-bold font-mono uppercase tracking-widest backdrop-blur-md shadow-lg transition-all transform hover:scale-105 cursor-pointer"
+          class="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-slate-800/90 hover:bg-slate-700 text-teal-300 hover:text-white border border-teal-500/40 text-[11px] sm:text-xs font-bold font-mono uppercase tracking-widest backdrop-blur-md shadow-lg transition-all transform hover:scale-105 cursor-pointer self-stretch sm:self-auto justify-center"
         >
           <span>🏛️</span> Compliance & Trust
         </button>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center text-left">
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-teal-500/40 text-teal-300 text-xs font-bold uppercase tracking-widest backdrop-blur-md shadow-lg">
-            <span class="w-2.5 h-2.5 rounded-full bg-teal-400 animate-ping"></span>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center text-left">
+        <div class="lg:col-span-7 space-y-4 sm:space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-slate-800/80 border border-teal-500/40 text-teal-300 text-[10px] sm:text-xs font-bold uppercase tracking-widest backdrop-blur-md shadow-lg">
+            <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-teal-400 animate-ping"></span>
             ENTORNO CERTIFICADO PARA PRÁCTICA CLÍNICA ESPECIALIZADA
           </div>
 
-          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight drop-shadow-2xl">
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight drop-shadow-2xl">
             Implemente el Resguardo Pericial en su <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400">Consulta Especializada.</span>
           </h1>
 
-          <p class="text-lg md:text-xl text-slate-200 leading-relaxed font-light">
+          <p class="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed font-light">
             <strong>Priorice el acto médico y la escucha activa. Nos ocupamos de estructurar y resguardar su evidencia documental.</strong> Acceda a su entorno seguro de evaluación asistencial VitalScribe AI® v15.3.
           </p>
 
-          <div class="space-y-4 pt-4 border-t border-slate-800/60">
+          <div class="space-y-3 sm:space-y-4 pt-4 border-t border-slate-800/60">
             <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
-              <p class="text-slate-300 text-sm">Cédulas de especialidad validadas en tiempo real ante el 
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+              <p class="text-slate-300 text-xs sm:text-sm">Cédulas de especialidad validadas en tiempo real ante el 
                 <span class="group relative inline-block cursor-help border-b border-dotted border-teal-500/50 text-teal-300">Registro Nacional de Profesionistas
-                  <span class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-800 text-white text-xs rounded-xl shadow-xl z-50 pointer-events-none">Conexión automatizada en tiempo real para demeritar usurpaciones identitarias profesionales y certificar el alta médica.</span>
+                  <span class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 sm:w-64 p-3 bg-slate-800 text-white text-xs rounded-xl shadow-xl z-50 pointer-events-none">Conexión automatizada en tiempo real para demeritar usurpaciones identitarias profesionales y certificar el alta médica.</span>
                 </span>.
               </p>
             </div>
             <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
-              <p class="text-slate-300 text-sm">Alineación estructural inmediata a los criterios regulatorios obligatorios de la 
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+              <p class="text-slate-300 text-xs sm:text-sm">Alineación estructural inmediata a los criterios regulatorios obligatorios de la 
                 <span class="group relative inline-block cursor-help border-b border-dotted border-teal-500/50 text-teal-300">NOM-004-SSA3-2012
-                  <span class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-800 text-white text-xs rounded-xl shadow-xl z-50 pointer-events-none">Criterios científicos y administrativos obligatorios en la integración del expediente clínico electrónico.</span>
+                  <span class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 sm:w-64 p-3 bg-slate-800 text-white text-xs rounded-xl shadow-xl z-50 pointer-events-none">Criterios científicos y administrativos obligatorios en la integración del expediente clínico electrónico.</span>
                 </span>.
               </p>
             </div>
             <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
-              <p class="text-slate-300 text-sm">Aislamiento perimetral criptográfico. Información clínica de pacientes 
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+              <p class="text-slate-300 text-xs sm:text-sm">Aislamiento perimetral criptográfico. Información clínica de pacientes 
                 <span class="group relative inline-block cursor-help border-b border-dotted border-teal-500/50 text-teal-300">Soberana y Protegida
-                  <span class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-800 text-white text-xs rounded-xl shadow-xl z-50 pointer-events-none">Protected Health Information (PHI): Datos clínicos aislados criptográficamente que nunca son expuestos a modelos de entrenamiento público.</span>
+                  <span class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 sm:w-64 p-3 bg-slate-800 text-white text-xs rounded-xl shadow-xl z-50 pointer-events-none">Protected Health Information (PHI): Datos clínicos aislados criptográficamente que nunca son expuestos a modelos de entrenamiento público.</span>
                 </span> 
                 bajo llaves de cifrado AES-256.
               </p>
@@ -407,10 +407,10 @@ const slides = [
         </div>
 
         <div class="lg:col-span-5">
-          <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+          <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-5 sm:p-8 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl"></div>
-            <h3 class="text-xl font-bold text-white mb-2">Inicialización de Entorno Seguro</h3>
-            <p class="text-slate-400 text-xs mb-6">Valide sus datos profesionales para activar sus 15 días de prueba sin costo y generar sus credenciales criptográficas de acceso local.</p>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Inicialización de Entorno Seguro</h3>
+            <p class="text-slate-400 text-xs mb-5 sm:mb-6">Valide sus datos profesionales para activar sus 15 días de prueba sin costo y generar sus credenciales criptográficas de acceso local.</p>
 
             <form id="lead-capture-form" class="space-y-4">
               <div>
@@ -421,7 +421,7 @@ const slides = [
                   name="fullName" 
                   required 
                   placeholder="Dr(a). Nombre Apellido" 
-                  class="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
+                  class="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 rounded-xl px-4 py-3 sm:py-3.5 text-sm focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
                 />
               </div>
 
@@ -435,7 +435,7 @@ const slides = [
                   inputmode="numeric"
                   pattern="[0-9]{7,8}"
                   placeholder="12345678" 
-                  class="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 rounded-xl px-4 py-3.5 text-sm font-mono focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
+                  class="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 rounded-xl px-4 py-3 sm:py-3.5 text-sm font-mono focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
                 />
               </div>
 
@@ -450,7 +450,7 @@ const slides = [
                     required 
                     pattern="[0-9]{10}"
                     placeholder="3331234567" 
-                    class="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 rounded-xl pl-14 pr-4 py-3.5 text-sm font-mono focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
+                    class="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 rounded-xl pl-14 pr-4 py-3 sm:py-3.5 text-sm font-mono focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/20 transition-all"
                   />
                 </div>
               </div>
@@ -459,11 +459,11 @@ const slides = [
                 <div class="cf-turnstile" data-sitekey="0x4AAAAAADksHs-suGPvNkZi" data-theme="dark"></div>
               </div>
 
-              <p class="text-[11px] text-teal-400 font-semibold text-center mt-2 flex items-center justify-center gap-1.5">
+              <p class="text-[10px] sm:text-[11px] text-teal-400 font-semibold text-center mt-2 flex items-center justify-center gap-1.5 leading-snug">
                 <span>🔒</span> 15 días de acceso total sin costo • Sin tarjeta de crédito • Cancelación libre
               </p>
 
-              <button type="submit" id="submit-btn" class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-4 flex items-center justify-center gap-2">
+              <button type="submit" id="submit-btn" class="w-full py-3.5 sm:py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-xs sm:text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-4 flex items-center justify-center gap-2 cursor-pointer">
                 Activar Prueba Gratuita por 15 Días
               </button>
             </form>
@@ -474,17 +474,17 @@ const slides = [
   </section>
 
   <!-- TARJETA DESTACADA EN LANDING PRINCIPAL: ACCESO A MANIFIESTO EN PESTAÑA MODAL -->
-  <section class="py-12 bg-slate-900 border-y border-slate-800 relative overflow-hidden">
+  <section class="py-8 sm:py-12 bg-slate-900 border-y border-slate-800 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 rounded-3xl border border-teal-500/30 p-8 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+      <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 rounded-3xl border border-teal-500/30 p-6 sm:p-8 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 shadow-2xl">
         <div class="space-y-3 text-left max-w-2xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950 border border-teal-500/30 text-teal-300 font-mono text-xs font-bold uppercase tracking-wider">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950 border border-teal-500/30 text-teal-300 font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider">
             🏛️ GOBIERNO TECNOLÓGICO Y CUMPLIMIENTO REGULATORIO
           </div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight">
             Manifiesto Ejecutivo de Arquitectura y Licenciamiento (v15.3)
           </h3>
-          <p class="text-slate-300 text-sm leading-relaxed font-light">
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
             Conozca en detalle nuestra declaración oficial de Soberanía Médica Human-in-the-Loop, aislamiento relacional RLS, zero copyleft GPL (100% código cerrado) y acreditación federal NOM-004, NOM-006 y NOM-024.
           </p>
         </div>
@@ -492,7 +492,7 @@ const slides = [
           <button 
             id="card-manifest-btn"
             type="button"
-            class="px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl transition-all text-center shadow-lg transform active:scale-95 whitespace-nowrap cursor-pointer"
+            class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl transition-all text-center shadow-lg transform active:scale-95 whitespace-nowrap cursor-pointer"
           >
             Abrir Manifiesto v15.3 &rarr;
           </button>
@@ -502,76 +502,76 @@ const slides = [
   </section>
 
   <!-- SECCIÓN DINÁMICA DE ENTORNO CLÍNICO -->
-  <section class="py-24 bg-slate-50 border-t border-slate-200">
+  <section class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Soberanía Diagnóstica y Flujo Asistencial Optimizado</h2>
-        <p class="text-slate-600 mt-4 text-lg max-w-2xl mx-auto">
+      <div class="text-center mb-12 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Soberanía Diagnóstica y Flujo Asistencial Optimizado</h2>
+        <p class="text-slate-600 mt-3 sm:mt-4 text-base sm:text-lg max-w-2xl mx-auto">
           Análisis comparativo del impacto de la Inteligencia Ambiental en la mitigación del desgaste profesional y el fortalecimiento de la evidencia documental médica.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         
         <!-- Escenario 1 -->
         <div class="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-          <div class="p-6 bg-teal-900 flex items-center gap-4">
-            <span class="w-12 h-12 rounded-full bg-teal-800 flex items-center justify-center text-2xl">🗣️</span>
+          <div class="p-5 sm:p-6 bg-teal-900 flex items-center gap-4">
+            <span class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-teal-800 flex items-center justify-center text-xl sm:text-2xl shrink-0">🗣️</span>
             <div>
-              <h4 class="font-bold text-lg leading-tight text-white animate-fade-in-up">Anamnesis Compleja y Gestión Documental</h4>
-              <span class="text-teal-300 text-xs font-mono font-bold tracking-wider">PROTECCIÓN DEL TIEMPO CLÍNICO</span>
+              <h4 class="font-bold text-base sm:text-lg leading-tight text-white animate-fade-in-up">Anamnesis Compleja y Gestión Documental</h4>
+              <span class="text-teal-300 text-[10px] sm:text-xs font-mono font-bold tracking-wider">PROTECCIÓN DEL TIEMPO CLÍNICO</span>
             </div>
           </div>
-          <div class="p-8 space-y-6">
+          <div class="p-6 sm:p-8 space-y-6">
             <div class="opacity-75 relative pl-4 border-l-2 border-slate-300">
               <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">Registro Convencional</span>
-              <p class="text-sm text-slate-600 font-medium">La captura manual de la nota de evolución demerita el tiempo dedicado a la exploración, forzando la transcripción mecánica y la búsqueda diferida de códigos CIE-11.</p>
+              <p class="text-xs sm:text-sm text-slate-600 font-medium">La captura manual de la nota de evolución demerita el tiempo dedicado a la exploración, forzando la transcripción mecánica y la búsqueda diferida de códigos CIE-11.</p>
             </div>
             <div class="relative pl-4 border-l-2 border-teal-500 bg-teal-50/70 p-4 rounded-r-xl">
               <span class="text-[10px] font-black text-teal-700 uppercase tracking-widest block mb-1">Entorno VitalScribe</span>
-              <p class="text-sm text-slate-900 font-bold leading-relaxed">Priorice la interacción clínica. La Inteligencia Ambiental procesa el diálogo médico, aísla ruidos de fondo, estructura el formato SOAP y sugiere la codificación diagnóstica en tiempo real.</p>
+              <p class="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">Priorice la interacción clínica. La Inteligencia Ambiental procesa el diálogo médico, aísla ruidos de fondo, estructura el formato SOAP y sugiere la codificación diagnóstica en tiempo real.</p>
             </div>
           </div>
         </div>
 
         <!-- Escenario 2 -->
         <div class="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-          <div class="p-6 bg-indigo-900 flex items-center gap-4">
-            <span class="w-12 h-12 rounded-full bg-indigo-800 flex items-center justify-center text-2xl">⚠️</span>
+          <div class="p-5 sm:p-6 bg-indigo-900 flex items-center gap-4">
+            <span class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-800 flex items-center justify-center text-xl sm:text-2xl shrink-0">⚠️</span>
             <div>
-              <h4 class="font-bold text-lg leading-tight text-white animate-fade-in-up">Farmacovigilancia y Seguridad del Paciente</h4>
-              <span class="text-indigo-300 text-xs font-mono font-bold tracking-wider">MITIGACIÓN DE RIESGOS</span>
+              <h4 class="font-bold text-base sm:text-lg leading-tight text-white animate-fade-in-up">Farmacovigilancia y Seguridad del Paciente</h4>
+              <span class="text-indigo-300 text-[10px] sm:text-xs font-mono font-bold tracking-wider">MITIGACIÓN DE RIESGOS</span>
             </div>
           </div>
-          <div class="p-8 space-y-6">
+          <div class="p-6 sm:p-8 space-y-6">
             <div class="opacity-75 relative pl-4 border-l-2 border-slate-300">
               <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">Registro Convencional</span>
-              <p class="text-sm text-slate-600 font-medium">Bajo fatiga asistencial por jornadas prolongadas, el riesgo relativo de obviar interacciones farmacológicas o alergias cruzadas ocultas en el historial clínico aumenta sustancialmente.</p>
+              <p class="text-xs sm:text-sm text-slate-600 font-medium">Bajo fatiga asistencial por jornadas prolongadas, el riesgo relativo de obviar interacciones farmacológicas o alergias cruzadas ocultas en el historial clínico aumenta sustancialmente.</p>
             </div>
             <div class="relative pl-4 border-l-2 border-indigo-500 bg-indigo-50/70 p-4 rounded-r-xl">
               <span class="text-[10px] font-black text-indigo-700 uppercase tracking-widest block mb-1">Entorno VitalScribe</span>
-              <p class="text-sm text-slate-900 font-bold leading-relaxed">El firewall Omni-Sentinel evalúa los parámetros analíticos (como la TFG) y emite un alertamiento visual de seguridad clínica previo a la validación de la receta.</p>
+              <p class="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">El firewall Omni-Sentinel evalúa los parámetros analíticos (como la TFG) y emite un alertamiento visual de seguridad clínica previo a la validación de la receta.</p>
             </div>
           </div>
         </div>
 
         <!-- Escenario 3 -->
         <div class="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-          <div class="p-6 bg-slate-900 flex items-center gap-4">
-            <span class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-2xl">⚖️</span>
+          <div class="p-5 sm:p-6 bg-slate-900 flex items-center gap-4">
+            <span class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 flex items-center justify-center text-xl sm:text-2xl shrink-0">⚖️</span>
             <div>
-              <h4 class="font-bold text-lg leading-tight text-white animate-fade-in-up">Sustento Pericial ante Controversias Médicas</h4>
-              <span class="text-slate-300 text-xs font-mono font-bold tracking-wider">RESGUARDO PERICIAL</span>
+              <h4 class="font-bold text-base sm:text-lg leading-tight text-white animate-fade-in-up">Sustento Pericial ante Controversias Médicas</h4>
+              <span class="text-slate-300 text-[10px] sm:text-xs font-mono font-bold tracking-wider">RESGUARDO PERICIAL</span>
             </div>
           </div>
-          <div class="p-8 space-y-6">
+          <div class="p-6 sm:p-8 space-y-6">
             <div class="opacity-75 relative pl-4 border-l-2 border-slate-300">
               <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">Registro Convencional</span>
-              <p class="text-sm text-slate-600 font-medium">Ante un requerimiento de comisiones dictaminadoras, las notas clínicas incompletas u la redacción inadecuada comprometen la solidez del sustento de la defensa pericial.</p>
+              <p class="text-xs sm:text-sm text-slate-600 font-medium">Ante un requerimiento de comisiones dictaminadoras, las notas clínicas incompletas u la redacción inadecuada comprometen la solidez del sustento de la defensa pericial.</p>
             </div>
             <div class="relative pl-4 border-l-2 border-slate-700 bg-slate-100 p-4 rounded-r-xl">
               <span class="text-[10px] font-black text-slate-800 uppercase tracking-widest block mb-1">Entorno VitalScribe</span>
-              <p class="text-sm text-slate-900 font-bold leading-relaxed">La herramienta sugiere una redacción científica probabilística, incorpora citas de Guías de Práctica Clínica y asocia firma electrónica de forma inmutable. Caso cerrado.</p>
+              <p class="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">La herramienta sugiere una redacción científica probabilística, incorpora citas de Guías de Práctica Clínica y asocia firma electrónica de forma inmutable. Caso cerrado.</p>
             </div>
           </div>
         </div>
@@ -581,57 +581,57 @@ const slides = [
   </section>
 
   <!-- INTERACTIVO PRESENTATION CONSOLE -->
-  <section id="presentation-hub" class="py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden presentation-mode-clinical">
+  <section id="presentation-hub" class="py-16 sm:py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden presentation-mode-clinical">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(20,184,166,0.07),transparent_70%)]"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-8">
-        <span class="px-3 py-1 text-xs font-semibold tracking-wider text-teal-300 uppercase bg-teal-950/80 border border-teal-500/30 rounded-full">
+        <span class="px-3 py-1 text-[10px] sm:text-xs font-semibold tracking-wider text-teal-300 uppercase bg-teal-950/80 border border-teal-500/30 rounded-full">
           CONSOLA DE ARQUITECTURA E INTEGRIDAD v15.3
         </span>
-        <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
           Navegue por el Entorno Clínico Estructurado
         </h2>
-        <p class="text-slate-400 text-lg max-w-3xl mx-auto mt-4">
+        <p class="text-slate-400 text-sm sm:text-lg max-w-3xl mx-auto mt-4">
           Explore los mecanismos criptográficos y asistenciales que garantizan la continuidad asistencial y el resguardo institucional de su práctica médica.
         </p>
       </div>
 
       <!-- UX SWITCHER DE ENFOQUE NATIVO -->
-      <div class="flex justify-center mb-12">
-        <div class="bg-slate-900 p-1.5 rounded-full border border-slate-700 flex shadow-lg items-center relative">
-          <button id="mode-clinical-btn" class="relative z-10 px-6 py-2.5 rounded-full bg-teal-50 text-slate-950 font-bold text-sm transition-colors duration-300 flex items-center gap-2">
+      <div class="flex justify-center mb-8 sm:mb-12">
+        <div class="bg-slate-900 p-1.5 rounded-3xl sm:rounded-full border border-slate-700 flex flex-col sm:flex-row shadow-lg items-center relative w-full sm:w-auto gap-1 sm:gap-0">
+          <button id="mode-clinical-btn" class="w-full sm:w-auto relative z-10 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-teal-50 text-slate-950 font-bold text-xs sm:text-sm transition-colors duration-300 flex items-center justify-center gap-2">
             👨‍⚕️ Criterio Clínico y Asistencial
           </button>
-          <button id="mode-technical-btn" class="relative z-10 px-6 py-2.5 rounded-full text-slate-400 hover:text-white font-medium text-sm transition-colors duration-300 flex items-center gap-2">
+          <button id="mode-technical-btn" class="w-full sm:w-auto relative z-10 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-slate-400 hover:text-white font-medium text-xs sm:text-sm transition-colors duration-300 flex items-center justify-center gap-2">
             ⚙️ Infraestructura y Cumplimiento Técnico
           </button>
         </div>
       </div>
 
       <!-- ENTORNO INTEGRADO DEL VISUALIZADOR -->
-      <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[580px]">
+      <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[500px] sm:min-h-[580px]">
         
         <!-- Sidebar de Diapositivas -->
-        <div class="lg:col-span-4 border-r border-slate-800 bg-slate-900/50 flex flex-col justify-between max-h-[600px] overflow-y-auto custom-scrollbar">
-          <div class="p-4 border-b border-slate-800 bg-slate-950/30">
-            <span class="text-xs font-mono text-slate-500">ÍNDICE DE PLATAFORMA</span>
+        <div class="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-slate-800 bg-slate-900/50 flex flex-col justify-between max-h-[220px] sm:max-h-[300px] lg:max-h-[600px] overflow-y-auto custom-scrollbar">
+          <div class="p-3 sm:p-4 border-b border-slate-800 bg-slate-950/30">
+            <span class="text-[10px] sm:text-xs font-mono text-slate-500">ÍNDICE DE PLATAFORMA</span>
           </div>
           <div class="p-2 space-y-1 flex-1">
             {slides.map((slide, index) => (
               <button 
-                class={`slide-tab w-full text-left p-3.5 rounded-xl transition-all flex items-center gap-3 border-b ${index === 0 ? 'bg-teal-950/40 text-teal-300 border-teal-500/30' : 'text-slate-400 border-transparent hover:bg-slate-800/50 hover:text-white'}`}
+                class={`slide-tab w-full text-left p-2.5 sm:p-3.5 rounded-xl transition-all flex items-center gap-2.5 sm:gap-3 border-b ${index === 0 ? 'bg-teal-950/40 text-teal-300 border-teal-500/30' : 'text-slate-400 border-transparent hover:bg-slate-800/50 hover:text-white'}`}
                 data-slide-id={slide.id}
                 data-index={index}
               >
-                <span class="font-mono text-xs text-teal-400/70 bg-slate-950/60 w-6 h-6 rounded-md flex items-center justify-center font-bold shrink-0">
+                <span class="font-mono text-[10px] sm:text-xs text-teal-400/70 bg-slate-950/60 w-5 h-5 sm:w-6 sm:h-6 rounded-md flex items-center justify-center font-bold shrink-0">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <div class="truncate font-sans">
-                  <p class="font-bold text-sm leading-none truncate block technical-text text-white">{slide.title}</p>
-                  <p class="text-[10px] text-slate-500 font-mono mt-1 capitalize technical-text">Especificación de TI</p>
-                  <p class="font-bold text-sm leading-none truncate hidden clinical-text text-white">{slide.clinicalTitle || slide.title}</p>
-                  <p class="text-[10px] text-teal-500/80 font-mono mt-1 uppercase hidden clinical-text">Criterio Asistencial</p>
+                  <p class="font-bold text-xs sm:text-sm leading-none truncate block technical-text text-white">{slide.title}</p>
+                  <p class="text-[9px] sm:text-[10px] text-slate-500 font-mono mt-0.5 sm:mt-1 capitalize technical-text">Especificación de TI</p>
+                  <p class="font-bold text-xs sm:text-sm leading-none truncate hidden clinical-text text-white">{slide.clinicalTitle || slide.title}</p>
+                  <p class="text-[9px] sm:text-[10px] text-teal-500/80 font-mono mt-0.5 sm:mt-1 uppercase hidden clinical-text">Criterio Asistencial</p>
                 </div>
               </button>
             ))}
@@ -639,7 +639,7 @@ const slides = [
         </div>
 
         <!-- Contenedor Dinámico con Solución de Altura e Hidratación Segura -->
-        <div class="lg:col-span-8 p-8 md:p-12 flex flex-col justify-between bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 relative min-h-[450px]">
+        <div class="lg:col-span-8 p-5 sm:p-8 md:p-12 flex flex-col justify-between bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 relative min-h-[380px] sm:min-h-[450px]">
           <div class="absolute top-4 right-4 w-40 h-40 bg-teal-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
           <div class="flex-1 flex flex-col justify-start relative w-full h-full font-sans">
@@ -650,25 +650,25 @@ const slides = [
                 data-index={index}
               >
                 <!-- CONTENEDOR ELÁSTICO DE SEGURIDAD -->
-                <div class="w-full overflow-y-auto max-h-[360px] lg:max-h-[420px] custom-scrollbar pr-2 space-y-6 scroll-smooth">
+                <div class="w-full overflow-y-auto max-h-[300px] sm:max-h-[360px] lg:max-h-[420px] custom-scrollbar pr-1 sm:pr-2 space-y-4 sm:space-y-6 scroll-smooth">
                   
                   <!-- Render tipo: HERO -->
                   {slide.type === 'hero' && (
-                    <div class="space-y-6 w-full">
-                      <span class="text-xs font-mono tracking-widest text-teal-400 bg-teal-950/60 px-3 py-1 rounded border border-teal-500/20 w-fit block">
+                    <div class="space-y-4 sm:space-y-6 w-full">
+                      <span class="text-[10px] sm:text-xs font-mono tracking-widest text-teal-400 bg-teal-950/60 px-2.5 py-1 rounded border border-teal-500/20 w-fit block">
                         <span class="technical-text block">{slide.subtitle}</span>
                         <span class="clinical-text hidden">{slide.clinicalSubtitle || slide.subtitle}</span>
                       </span>
-                      <h3 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                      <h3 class="text-2xl sm:text-3xl md:text-5xl font-black text-white leading-tight">
                         <span class="technical-text block">{slide.title}</span>
                         <span class="clinical-text hidden text-teal-300">{slide.clinicalTitle || slide.title}</span>
                       </h3>
-                      <p class="text-slate-300 text-lg leading-relaxed font-light">
+                      <p class="text-slate-300 text-sm sm:text-lg leading-relaxed font-light">
                         <span class="technical-text block">{slide.content}</span>
                         <span class="clinical-text hidden">{slide.clinicalContent || slide.content}</span>
                       </p>
                       {slide.image && (
-                        <div class="rounded-xl overflow-hidden border border-slate-800 h-52 w-full relative mt-4 shadow-inner bg-slate-950">
+                        <div class="rounded-xl overflow-hidden border border-slate-800 h-40 sm:h-52 w-full relative mt-4 shadow-inner bg-slate-950">
                           <img src={slide.image} alt={slide.title} class="w-full h-full object-cover opacity-60 transition-transform duration-700" loading="eager" />
                           <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
                         </div>
@@ -678,43 +678,43 @@ const slides = [
 
                   <!-- Render tipo: SPLIT -->
                   {slide.type === 'split' && (
-                    <div class="space-y-6 w-full">
-                      <h3 class="text-2xl md:text-3xl font-extrabold text-white flex items-center gap-2">
-                        <span class="w-1.5 h-6 bg-indigo-500 rounded-full shrink-0"></span>
+                    <div class="space-y-4 sm:space-y-6 w-full">
+                      <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white flex items-center gap-2">
+                        <span class="w-1.5 h-5 sm:h-6 bg-indigo-500 rounded-full shrink-0"></span>
                         <span class="technical-text block">{slide.title}</span>
                         <span class="clinical-text hidden text-indigo-300">{slide.clinicalTitle || slide.title}</span>
                       </h3>
                       
-                      <ul class="space-y-4 technical-text block">
+                      <ul class="space-y-3 sm:space-y-4 technical-text block">
                         {Array.isArray(slide.content) && slide.content.map((bullet) => {
                           const parts = bullet.split(':');
                           const header = parts.length > 1 ? parts.shift() : '';
                           const rest = parts.join(':') || bullet;
                           return (
-                            <li class="flex items-start gap-3 bg-slate-900/60 p-3 rounded-lg border border-slate-800/60">
-                              <span class="text-teal-400 mt-1 shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></span>
-                              <p class="text-slate-300 text-sm">{header ? <><strong class="text-white">{header}:</strong> {rest}</> : rest}</p>
+                            <li class="flex items-start gap-2.5 sm:gap-3 bg-slate-900/60 p-2.5 sm:p-3 rounded-lg border border-slate-800/60">
+                              <span class="text-teal-400 mt-0.5 shrink-0"><svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></span>
+                              <p class="text-slate-300 text-xs sm:text-sm">{header ? <><strong class="text-white">{header}:</strong> {rest}</> : rest}</p>
                             </li>
                           );
                         })}
                       </ul>
 
-                      <ul class="space-y-4 clinical-text hidden">
+                      <ul class="space-y-3 sm:space-y-4 clinical-text hidden">
                         {Array.isArray(slide.clinicalContent) && slide.clinicalContent.map((bullet) => {
                           const parts = bullet.split(':');
                           const header = parts.length > 1 ? parts.shift() : '';
                           const rest = parts.join(':') || bullet;
                           return (
-                            <li class="flex items-start gap-3 bg-slate-900/60 p-3 rounded-lg border border-slate-800/60">
-                              <span class="text-teal-400 mt-1 shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg></span>
-                              <p class="text-slate-200 text-sm font-medium">{header ? <><strong class="text-teal-300">{header}:</strong> {rest}</> : rest}</p>
+                            <li class="flex items-start gap-2.5 sm:gap-3 bg-slate-900/60 p-2.5 sm:p-3 rounded-lg border border-slate-800/60">
+                              <span class="text-teal-400 mt-0.5 shrink-0"><svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg></span>
+                              <p class="text-slate-200 text-xs sm:text-sm font-medium">{header ? <><strong class="text-teal-300">{header}:</strong> {rest}</> : rest}</p>
                             </li>
                           );
                         })}
                       </ul>
 
                       {slide.image && (
-                        <div class="rounded-xl overflow-hidden border border-slate-800 h-52 w-full mt-4 bg-slate-950">
+                        <div class="rounded-xl overflow-hidden border border-slate-800 h-40 sm:h-52 w-full mt-4 bg-slate-950">
                           <img src={slide.image} alt={slide.title} class="w-full h-full object-cover opacity-50" loading="eager" />
                         </div>
                       )}
@@ -723,49 +723,49 @@ const slides = [
 
                   <!-- Render tipo: GRID -->
                   {slide.type === 'grid' && (
-                    <div class="space-y-6 w-full">
-                      <h3 class="text-2xl md:text-3xl font-extrabold text-white flex items-center gap-2">
-                        <span class="w-1.5 h-6 bg-teal-500 rounded-full shrink-0"></span>
+                    <div class="space-y-4 sm:space-y-6 w-full">
+                      <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white flex items-center gap-2">
+                        <span class="w-1.5 h-5 sm:h-6 bg-teal-500 rounded-full shrink-0"></span>
                         <span class="technical-text block">{slide.title}</span>
                         <span class="clinical-text hidden text-teal-300">{slide.clinicalTitle || slide.title}</span>
                       </h3>
-                      <p class="text-slate-400 text-sm italic">
+                      <p class="text-slate-400 text-xs sm:text-sm italic">
                         <span class="technical-text block">{slide.content}</span>
                         <span class="clinical-text hidden text-slate-300 font-medium not-italic">{slide.clinicalContent || slide.content}</span>
                       </p>
                       
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 technical-text">
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mt-2 technical-text">
                         {slide.items?.map((item) => (
-                          <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 hover:border-teal-500/30 transition-all">
-                            <div class="flex items-center gap-2 mb-2">
-                              <span class="text-xl">⚙️</span>
-                              <h4 class="font-bold text-teal-300 text-sm">{item.title}</h4>
+                          <div class="p-3.5 sm:p-4 bg-slate-900/80 rounded-xl border border-slate-800 hover:border-teal-500/30 transition-all">
+                            <div class="flex items-center gap-2 mb-1.5 sm:mb-2">
+                              <span class="text-lg sm:text-xl">⚙️</span>
+                              <h4 class="font-bold text-teal-300 text-xs sm:text-sm">{item.title}</h4>
                             </div>
-                            <p class="text-slate-400 text-xs leading-relaxed">{item.text}</p>
+                            <p class="text-slate-400 text-[11px] sm:text-xs leading-relaxed">{item.text}</p>
                           </div>
                         ))}
                       </div>
 
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 clinical-text hidden">
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mt-2 clinical-text hidden">
                         {slide.clinicalItems?.map((item) => (
-                          <div class="p-4 bg-slate-800/80 rounded-xl border border-teal-900 hover:border-teal-500/50 transition-all shadow-md">
-                            <div class="flex items-center gap-2 mb-2">
-                              <span class="text-xl">{item.icon}</span>
-                              <h4 class="font-bold text-white text-sm">{item.title}</h4>
+                          <div class="p-3.5 sm:p-4 bg-slate-800/80 rounded-xl border border-teal-900 hover:border-teal-500/50 transition-all shadow-md">
+                            <div class="flex items-center gap-2 mb-1.5 sm:mb-2">
+                              <span class="text-lg sm:text-xl">{item.icon}</span>
+                              <h4 class="font-bold text-white text-xs sm:text-sm">{item.title}</h4>
                             </div>
-                            <p class="text-slate-300 text-xs leading-relaxed">{item.text}</p>
+                            <p class="text-slate-300 text-[11px] sm:text-xs leading-relaxed">{item.text}</p>
                           </div>
                         ))}
                       </div>
 
                       {slide.image && (
-                        <div class="rounded-xl overflow-hidden border border-slate-800 h-52 w-full mt-4 bg-slate-950">
+                        <div class="rounded-xl overflow-hidden border border-slate-800 h-40 sm:h-52 w-full mt-4 bg-slate-950">
                           <img src={slide.image} alt={slide.title} class="w-full h-full object-cover opacity-50" loading="eager" />
                         </div>
                       )}
 
                       {slide.meta?.legalClosing && (
-                        <p class="text-[10px] text-slate-500 bg-slate-950 p-2.5 rounded border border-slate-900 font-mono leading-relaxed mt-4">
+                        <p class="text-[9px] sm:text-[10px] text-slate-500 bg-slate-950 p-2 sm:p-2.5 rounded border border-slate-900 font-mono leading-relaxed mt-4">
                           ⚠️ <strong>AVISO DE EXENCIÓN DE RESPONSABILIDAD:</strong> {slide.meta.legalClosing}
                         </p>
                       )}
@@ -777,21 +777,21 @@ const slides = [
           </div>
 
           <!-- BOTONES DE CONTROL DE PLATAFORMA -->
-          <div class="flex items-center justify-between border-t border-slate-800 pt-6 mt-8">
+          <div class="flex items-center justify-between border-t border-slate-800 pt-4 sm:pt-6 mt-6 sm:mt-8 gap-2">
             <button 
               id="prev-slide-btn"
-              class="px-5 py-2.5 bg-slate-950 hover:bg-slate-800 text-slate-300 hover:text-white rounded-lg text-xs font-mono border border-slate-800 transition-all flex items-center gap-2"
+              class="px-3 sm:px-5 py-2 sm:py-2.5 bg-slate-950 hover:bg-slate-800 text-slate-300 hover:text-white rounded-lg text-[10px] sm:text-xs font-mono border border-slate-800 transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
             >
-              &larr; ANTERIOR
+              &larr; <span class="hidden sm:inline">ANTERIOR</span>
             </button>
-            <span id="slide-counter-badge" class="text-xs font-mono text-slate-500">
+            <span id="slide-counter-badge" class="text-[10px] sm:text-xs font-mono text-slate-500 text-center">
               SLIDE 1 DE {slides.length}
             </span>
             <button 
               id="next-slide-btn"
-              class="px-5 py-2.5 bg-teal-500 hover:bg-teal-400 text-slate-950 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(20,184,166,0.3)]"
+              class="px-3 sm:px-5 py-2 sm:py-2.5 bg-teal-500 hover:bg-teal-400 text-slate-950 rounded-lg text-[10px] sm:text-xs font-mono font-bold transition-all flex items-center gap-1.5 shadow-[0_0_15px_rgba(20,184,166,0.3)] cursor-pointer shrink-0"
             >
-              SIGUIENTE &rarr;
+              <span class="hidden sm:inline">SIGUIENTE &rarr;</span><span class="sm:hidden">&rarr;</span>
             </button>
           </div>
 
@@ -801,116 +801,116 @@ const slides = [
   </section>
 
   <!-- SECCIÓN DE PRECIOS PREMIUM -->
-  <section id="pricing-bunker" class="py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden">
+  <section id="pricing-bunker" class="py-16 sm:py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(20,184,166,0.05),transparent_60%)]"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-16 font-sans">
-        <span class="px-3 py-1 text-xs font-semibold tracking-wider text-teal-300 uppercase bg-teal-950/80 border border-teal-500/30 rounded-full">
+      <div class="text-center mb-12 sm:mb-16 font-sans">
+        <span class="px-3 py-1 text-[10px] sm:text-xs font-semibold tracking-wider text-teal-300 uppercase bg-teal-950/80 border border-teal-500/30 rounded-full">
           PLANES DE PROTECCIÓN ACTIVA ASISTENCIAL
         </span>
-        <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
           Sustente y Resguarde su Ejercicio Profesional
         </h2>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto mt-4 font-light">
+        <p class="text-slate-400 text-sm sm:text-lg max-w-2xl mx-auto mt-3 sm:mt-4 font-light">
           Proteja su cédula, mitigue riesgos patrimoniales y optimice su tiempo de consulta mediante esquemas de documentación clínica avanzada.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch mb-8 sm:mb-12">
         
         <!-- Plan Inicial -->
-        <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between relative backdrop-blur-sm">
+        <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-6 sm:p-8 flex flex-col justify-between relative backdrop-blur-sm">
           <div>
             <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-bold text-slate-300">Práctica Ambulatoria</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-slate-300">Práctica Ambulatoria</h3>
               <span class="text-[10px] font-bold bg-slate-800 text-slate-400 px-2.5 py-1 rounded-full uppercase tracking-wider">Base</span>
             </div>
-            <p class="text-slate-500 text-sm mb-6">Optimización documental estructurada para consultorios de volumen moderado.</p>
+            <p class="text-slate-500 text-xs sm:text-sm mb-6">Optimización documental estructurada para consultorios de volumen moderado.</p>
             <div class="mb-6">
-              <span class="text-4xl font-black text-white">$1,499</span>
-              <span class="text-slate-500 text-sm font-medium ml-1">MXN / mes</span>
+              <span class="text-3xl sm:text-4xl font-black text-white">$1,499</span>
+              <span class="text-slate-500 text-xs sm:text-sm font-medium ml-1">MXN / mes</span>
               <span class="text-[10px] text-slate-500 block mt-1">+ IVA • Emisión de Comprobantes Fiscales</span>
             </div>
-            <ul class="space-y-4 border-t border-slate-800/80 pt-6">
-              <li class="flex items-start gap-3 text-sm text-slate-400">
+            <ul class="space-y-3 sm:space-y-4 border-t border-slate-800/80 pt-6">
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-400">
                 <span class="text-teal-400 font-bold mt-0.5">✓</span>
                 <span>Procesamiento mensual acotado de consultas clínicas</span>
               </li>
-              <li class="flex items-start gap-3 text-sm text-slate-400">
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-400">
                 <span class="text-teal-400 font-bold mt-0.5">✓</span>
                 <span>Organización asistencial mediante Agenda Nativa Soberana</span>
               </li>
-              <li class="flex items-start gap-3 text-sm text-slate-400">
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-400">
                 <span class="text-teal-400 font-bold mt-0.5">✓</span>
                 <span>Procesamiento básico de dictado y notas SOAP estructuradas</span>
               </li>
             </ul>
           </div>
-          <a href="#lead-capture-form" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-center font-bold text-sm rounded-xl transition-all mt-8">
+          <a href="#lead-capture-form" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-center font-bold text-xs sm:text-sm rounded-xl transition-all mt-8">
             Iniciar Práctica Ambulatoria
           </a>
         </div>
 
         <!-- Plan Profesional (PLAN GENERAL + CAJA DE LANZAMIENTO + SUBSECCIÓN SOCIO FUNDADOR) -->
-        <div class="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 rounded-3xl border-2 border-teal-500/80 p-8 flex flex-col justify-between relative shadow-[0_20px_40px_rgba(20,184,166,0.15)] ring-4 ring-teal-950/30 z-10">
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest shadow-lg whitespace-nowrap">
+        <div class="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 rounded-3xl border-2 border-teal-500/80 p-6 sm:p-8 flex flex-col justify-between relative shadow-[0_20px_40px_rgba(20,184,166,0.15)] ring-4 ring-teal-950/30 z-10">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest shadow-lg whitespace-nowrap">
             PREFERENCIA ASISTENCIAL INSTITUCIONAL
           </div>
           <div>
             <div class="flex justify-between items-center mb-4 mt-2">
-              <h3 class="text-2xl font-black text-white">Plan Profesional</h3>
+              <h3 class="text-xl sm:text-2xl font-black text-white">Plan Profesional</h3>
             </div>
-            <p class="text-slate-400 text-sm mb-4">Automatización integral de formatos SOAP y expedientes clínicos electrónicos.</p>
+            <p class="text-slate-400 text-xs sm:text-sm mb-4">Automatización integral de formatos SOAP y expedientes clínicos electrónicos.</p>
 
             <!-- 🎁 PROTOCOLO DE LANZAMIENTO ACTIVO (Para todo clínico inicial del Plan Profesional) -->
-            <div class="mb-6 bg-teal-950/40 border border-teal-500/30 rounded-2xl p-4 text-xs leading-relaxed text-teal-200">
-              <div class="flex items-center gap-2 font-black text-teal-400 tracking-wide uppercase">
+            <div class="mb-6 bg-teal-950/40 border border-teal-500/30 rounded-2xl p-3.5 sm:p-4 text-xs leading-relaxed text-teal-200">
+              <div class="flex items-center gap-2 font-black text-teal-400 tracking-wide uppercase text-[10px] sm:text-xs">
                 <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                 🎁 PROTOCOLO DE LANZAMIENTO ACTIVO
               </div>
-              <p class="mt-1.5 text-slate-300 font-medium">
+              <p class="mt-1.5 text-slate-300 font-medium text-[11px] sm:text-xs">
                 Los registros iniciales de este arancel incorporan acceso prioritario e integrado al módulo de <strong class="text-white font-bold">Auditoría Clínica Balance 360°</strong> dentro de su capacidad asistencial de alta cobertura, sin costos adicionales diferidos.
               </p>
               <div class="mt-3 flex items-center gap-3">
                 <div class="flex-1 bg-slate-900 h-1.5 rounded-full overflow-hidden">
                   <div class="bg-gradient-to-r from-teal-500 to-emerald-400 h-full w-[73%] rounded-full"></div>
                 </div>
-                <span class="font-mono font-bold text-red-400 shrink-0">Solo quedan 4 lugares</span>
+                <span class="font-mono font-bold text-red-400 shrink-0 text-[10px] sm:text-xs">Solo quedan 4 lugares</span>
               </div>
             </div>
 
             <div class="mb-6">
-              <span class="text-5xl font-black text-white tracking-tight">$2,199</span>
-              <span class="text-slate-400 text-base font-bold ml-1.5">MXN / mes</span>
+              <span class="text-4xl sm:text-5xl font-black text-white tracking-tight">$2,199</span>
+              <span class="text-slate-400 text-sm sm:text-base font-bold ml-1.5">MXN / mes</span>
               <span class="text-[10px] text-teal-400 font-semibold block mt-1">~ $73 MXN al día (menos que el honorario de 1 consulta al mes)</span>
               <span class="text-[10px] text-slate-500 block mt-0.5">+ IVA • Capacidad Asistencial de Alta Cobertura (~1,200 Consultas/Mes)</span>
             </div>
             
-            <ul class="space-y-4 border-t border-teal-950 pt-6">
-              <li class="flex items-start gap-3 text-sm text-slate-200 font-medium">
+            <ul class="space-y-3 sm:space-y-4 border-t border-teal-950 pt-6">
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
                 <span>Consultas e informes SOAP con Capacidad Asistencial de Alta Cobertura (~1,200 Consultas/Mes)</span>
               </li>
-              <li class="flex items-start gap-3 text-sm text-slate-200 font-medium">
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
                 <span>Asistente de IA Avanzado entrenado por Especialidad</span>
               </li>
-              <li class="flex items-start gap-3 text-sm text-slate-200 font-medium">
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
                 <span>Verificación de Identidad Federal en Vivo (CURP y SEP)</span>
               </li>
               
               <!-- INTEGRACIÓN INTELIGENTE: COHORTE EXCLUSIVA DE SOCIO FUNDADOR -->
               <li class="mt-4 pt-4 border-t border-dashed border-teal-800/80 bg-slate-950/40 p-3 rounded-xl border border-teal-900/40">
-                <div class="flex items-center gap-2 text-[10px] uppercase font-black text-teal-400 tracking-widest mb-2.5">
+                <div class="flex items-center gap-2 text-[10px] uppercase font-black text-teal-400 tracking-widest mb-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                   🌟 COHORTE SELECTA: SOCIO FUNDADOR
                 </div>
-                <p class="text-[11px] text-slate-400 leading-normal mb-3 font-light">
+                <p class="text-[10px] sm:text-[11px] text-slate-400 leading-normal mb-2.5 font-light">
                   Adicionalmente, para un grupo determinado de médicos especialistas fundadores, el plan profesional anexa de forma vitalicia los siguientes módulos de grado pericial quirúrgico:
                 </p>
-                <ul class="space-y-2 text-xs text-slate-300">
+                <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-300">
                   <li class="flex items-center gap-2">
                     <span class="text-teal-400 font-bold">✓</span> Integración local del motor criptográfico e.firma SAT
                   </li>
@@ -927,94 +927,94 @@ const slides = [
               </li>
             </ul>
           </div>
-          <a href="#lead-capture-form" class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-8 flex items-center justify-center gap-2">
+          <a href="#lead-capture-form" class="w-full py-3.5 sm:py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-xs sm:text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-8 flex items-center justify-center gap-2">
             Comenzar Prueba de 15 Días Sin Costo &rarr;
           </a>
         </div>
 
         <!-- Plan Alta Especialidad (Ancla) -->
-        <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-8 flex flex-col justify-between relative backdrop-blur-sm">
+        <div class="bg-slate-900/40 rounded-3xl border border-slate-800 p-6 sm:p-8 flex flex-col justify-between relative backdrop-blur-sm">
           <div>
             <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-bold text-slate-300">Alta Especialidad Qx</h3>
+              <h3 class="text-lg sm:text-xl font-bold text-slate-300">Alta Especialidad Qx</h3>
               <span class="text-[10px] font-bold bg-indigo-950 text-indigo-400 px-2.5 py-1 rounded-full uppercase tracking-wider">Precio Regular</span>
             </div>
-            <p class="text-slate-500 text-sm mb-6">Contratación ordinaria para cirujanos y anestesiólogos fuera de la ventana de apertura institucional.</p>
+            <p class="text-slate-500 text-xs sm:text-sm mb-6">Contratación ordinaria para cirujanos y anestesiólogos fuera de la ventana de apertura institucional.</p>
             <div class="mb-6">
-              <span class="text-4xl font-black text-white">$3,499</span>
-              <span class="text-slate-500 text-sm font-medium ml-1">MXN / mes</span>
+              <span class="text-3xl sm:text-4xl font-black text-white">$3,499</span>
+              <span class="text-slate-500 text-xs sm:text-sm font-medium ml-1">MXN / mes</span>
               <span class="text-[10px] text-slate-500 block mt-1">+ IVA • Costo General de Licenciamiento</span>
             </div>
-            <ul class="space-y-4 border-t border-slate-800/80 pt-6">
-              <li class="flex items-start gap-3 text-sm text-slate-400">
+            <ul class="space-y-3 sm:space-y-4 border-t border-slate-800/80 pt-6">
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-400">
                 <span class="text-indigo-400 mt-0.5">✓</span>
                 <span>Todas las funciones de e.firma y recetas controladas de forma nativa</span>
               </li>
-              <li class="flex items-start gap-3 text-sm text-slate-400">
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-400">
                 <span class="text-indigo-400 mt-0.5">✓</span>
                 <span>Auditoría clínica retrospectiva y resguardo inmutable avanzado</span>
               </li>
-              <li class="flex items-start gap-3 text-sm text-slate-400">
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-400">
                 <span class="text-indigo-400 mt-0.5">✓</span>
                 <span>Reportes quirúrgicos NOM-006-SSA3-2011 automatizados</span>
               </li>
-              <li class="flex items-start gap-3 text-sm text-slate-400">
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-400">
                 <span class="text-indigo-400 mt-0.5">✓</span>
                 <span>Soporte prioritario corporativo y canales de red asignados</span>
               </li>
             </ul>
           </div>
-          <a href="#lead-capture-form" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-center font-bold text-sm rounded-xl transition-all mt-8">
+          <a href="#lead-capture-form" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 text-center font-bold text-xs sm:text-sm rounded-xl transition-all mt-8">
             Solicitar Alta Especialidad Quirúrgica
           </a>
         </div>
 
       </div>
 
-      <p class="text-center text-xs text-slate-500 max-w-md mx-auto">
+      <p class="text-center text-[11px] sm:text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
         Incluye 15 días de prueba gratuita sin compromiso ni tarjeta de crédito. Esquema flexible sin plazos forzosos. Moneda Nacional (MXN). Cancelación libre en cualquier momento.
       </p>
     </div>
   </section>
 
   <!-- CARACTERÍSTICAS DESTACADAS DE LA PLATAFORMA -->
-  <section id="features" class="py-24 bg-white relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.25)] scroll-mt-20">
+  <section id="features" class="py-16 sm:py-24 bg-white relative z-20 -mt-10 rounded-t-[2.5rem] sm:rounded-t-[3rem] shadow-[0_-20px_60px_rgba(0,0,0,0.25)] scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid md:grid-cols-3 gap-12">
+      <div class="grid md:grid-cols-3 gap-8 sm:gap-12">
         
-        <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-teal-200 transition-all duration-300">
-          <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
-            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="group p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-teal-200 transition-all duration-300">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 transition-transform shadow-sm">
+            <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">Baja Latencia Asistencial</h3>
-          <p class="text-slate-600 leading-relaxed">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-teal-600 transition-colors">Baja Latencia Asistencial</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
             Potenciado mediante la integración del motor cognitivo de última generación en Vertex AI. La estructuración de la información clínica y las notas de evolución se procesa en tiempo real, erradicando retrasos técnicos en la consulta.
           </p>
         </div>
 
-        <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-indigo-200 transition-all duration-300">
-          <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
-            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="group p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-indigo-200 transition-all duration-300">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 transition-transform shadow-sm">
+            <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">Soberanía de Datos Clínicos</h3>
-          <p class="text-slate-600 leading-relaxed">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-indigo-600 transition-colors">Soberanía de Datos Clínicos</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
             Alojamiento en infraestructura cifrada perimetralmente con aislamiento estricto de expedientes (PHI). Los registros institucionales e información clínica jamás se exponen ni se utilizan para el entrenamiento de modelos públicos externos.
           </p>
         </div>
 
-        <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-pink-200 transition-all duration-300">
-          <div class="w-16 h-16 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
-            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="group p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-pink-200 transition-all duration-300">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 transition-transform shadow-sm">
+            <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-pink-600 transition-colors">Continuidad Multiplataforma</h3>
-          <p class="text-slate-600 leading-relaxed">
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-pink-600 transition-colors">Continuidad Multiplataforma</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
             Diseño arquitectónico responsivo de alta fidelidad. Inicie la estructuración documental de la consulta en su estación de trabajo y concluya la validación pericial en dispositivos móviles de manera síncrona e ininterrumpida.
           </p>
         </div>
@@ -1024,38 +1024,38 @@ const slides = [
   </section>
 
   <!-- SECCIÓN FIJA DE CONTENIDO CLÍNICO (GRID CONTROLADO SANEADO) -->
-  <section class="py-20 bg-white font-sans">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
+  <section class="py-16 sm:py-20 bg-white font-sans">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-32">
       
       <!-- Bloque 1: Cerebro Clínico -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="space-y-6">
-          <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-teal-600 uppercase bg-teal-100 rounded-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div class="space-y-4 sm:space-y-6">
+          <div class="inline-block px-3 py-1 text-[10px] sm:text-xs font-semibold tracking-wider text-teal-600 uppercase bg-teal-100 rounded-full">
             🧠 APOYO ANALÍTICO
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Herramienta de Soporte al Juicio Clínico</h2>
-          <p class="text-lg text-slate-600 font-medium">Asistencia analítica pasiva y determinista en el punto de atención.</p>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Herramienta de Soporte al Juicio Clínico</h2>
+          <p class="text-base sm:text-lg text-slate-600 font-medium">Asistencia analítica pasiva y determinista en el punto de atención.</p>
           
-          <ul class="space-y-8">
+          <ul class="space-y-6 sm:space-y-8">
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 font-bold mt-1 shadow-md shadow-teal-200">1</div>
-              <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Redacción Estructurada y Metódica</h4>
-                <p class="text-slate-500 mt-1">Sintetiza descripciones verbales complejas e impresiones diagnósticas en registros SOAP rigurosos, conformes con la nomenclatura médica internacional.</p>
+              <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 font-bold text-xs sm:text-sm mt-1 shadow-md shadow-teal-200">1</div>
+              <div class="ml-3 sm:ml-4">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">Redacción Estructurada y Metódica</h4>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Sintetiza descripciones verbales complejas e impresiones diagnósticas en registros SOAP rigurosos, conformes con la nomenclatura médica internacional.</p>
               </div>
             </li>
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600 font-bold mt-1 shadow-md shadow-red-200">2</div>
-              <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Monitoreo de Contraindicaciones en Vivo</h4>
-                <p class="text-slate-500 mt-1">Identifica discrepancias terapéuticas críticas, como alergias cruzadas a fármacos y comorbilidades severas, desplegando un <span class="text-red-600 font-bold bg-red-50 px-1 rounded">Alertamiento Clínico Activo</span> inmediato.</p>
+              <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600 font-bold text-xs sm:text-sm mt-1 shadow-md shadow-red-200">2</div>
+              <div class="ml-3 sm:ml-4">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">Monitoreo de Contraindicaciones en Vivo</h4>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Identifica discrepancias terapéuticas críticas, como alergias cruzadas a fármacos y comorbilidades severas, desplegando un <span class="text-red-600 font-bold bg-red-50 px-1 rounded">Alertamiento Clínico Activo</span> inmediato.</p>
               </div>
             </li>
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 font-bold mt-1 shadow-md shadow-teal-200">3</div>
-              <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Síntesis Informativa de Antecedentes</h4>
-                <p class="text-slate-500 mt-1">Antes del encuentro clínico, el sistema examina de manera retrospectiva el expediente e inyecta un resumen analítico con las variables de riesgo fundamentales del paciente.</p>
+              <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 font-bold text-xs sm:text-sm mt-1 shadow-md shadow-teal-200">3</div>
+              <div class="ml-3 sm:ml-4">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">Síntesis Informativa de Antecedentes</h4>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Antes del encuentro clínico, el sistema examina de manera retrospectiva el expediente e inyecta un resumen analítico con las variables de riesgo fundamentales del paciente.</p>
               </div>
             </li>
           </ul>
@@ -1067,40 +1067,40 @@ const slides = [
             alt="Procesamiento determinista de información clínica" 
             width="1000" height="600"
             loading="lazy"
-            class="relative rounded-2xl shadow-2xl border-4 border-white object-cover h-[450px] w-full" 
+            class="relative rounded-2xl shadow-2xl border-4 border-white object-cover h-[300px] sm:h-[450px] w-full" 
           />
         </div>
       </div>
 
       <!-- Bloque 2: Defensa Legal -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="lg:order-2 space-y-6">
-          <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-indigo-600 uppercase bg-indigo-100 rounded-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div class="lg:order-2 space-y-4 sm:space-y-6">
+          <div class="inline-block px-3 py-1 text-[10px] sm:text-xs font-semibold tracking-wider text-indigo-600 uppercase bg-indigo-100 rounded-full">
             🛡️ BLINDAJE CRIPTOGRÁFICO v15.3 SECURED
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Seguridad Médico-Legal de Nivel Institucional</h2>
-          <p class="text-lg text-slate-600 font-medium">Resguardo absoluto de la evidencia documental y la identidad profesional bajo normatividad federal.</p>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Seguridad Médico-Legal de Nivel Institucional</h2>
+          <p class="text-base sm:text-lg text-slate-600 font-medium">Resguardo absoluto de la evidencia documental y la identidad profesional bajo normatividad federal.</p>
           
-          <ul class="space-y-8">
+          <ul class="space-y-6 sm:space-y-8">
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
-              <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Dualidad Auténtica de Certificación Digital</h4>
-                <p class="text-slate-500 mt-1">Compatibilidad técnica completa con firmas manuscritas digitalizadas y la e.firma oficial del SAT. Los archivos y llaves criptográficas secretas se manipulan exclusivamente en un Sandbox local en el cliente, impidiendo la transferencia de llaves privadas a la red.</p>
+              <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xs sm:text-sm mt-1 shadow-md shadow-indigo-200">✓</div>
+              <div class="ml-3 sm:ml-4">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">Dualidad Auténtica de Certificación Digital</h4>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Compatibilidad técnica completa con firmas manuscritas digitalizadas y la e.firma oficial del SAT. Los archivos y llaves criptográficas secretas se manipulan exclusivamente en un Sandbox local en el cliente, impidiendo la transferencia de llaves privadas a la red.</p>
               </div>
             </li>
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
-              <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Arquitectura Cero Confianza y Supabase RLS</h4>
-                <p class="text-slate-500 mt-1">Seguridad robusta a nivel de registros relacionales (Row Level Security). Únicamente el token cifrado del profesional médico titular posee privilegios de lectura para descifrar expedientes en la base de datos.</p>
+              <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xs sm:text-sm mt-1 shadow-md shadow-indigo-200">✓</div>
+              <div class="ml-3 sm:ml-4">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">Arquitectura Cero Confianza y Supabase RLS</h4>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Seguridad robusta a nivel de registros relacionales (Row Level Security). Únicamente el token cifrado del profesional médico titular posee privilegios de lectura para descifrar expedientes en la base de datos.</p>
               </div>
             </li>
             <li class="flex items-start">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold mt-1 shadow-md shadow-indigo-200">✓</div>
-              <div class="ml-4">
-                <h4 class="text-lg font-bold text-slate-900">Validación de Identidades Profesionales y de Pacientes</h4>
-                <p class="text-slate-500 mt-1">Prevención proactiva de usurpaciones identitarias mediante interconexión síncrona en vivo con el Registro Nacional de Profesionistas de la SEP y el padrón de población de RENAPO.</p>
+              <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xs sm:text-sm mt-1 shadow-md shadow-indigo-200">✓</div>
+              <div class="ml-3 sm:ml-4">
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">Validación de Identidades Profesionales y de Pacientes</h4>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Prevención proactiva de usurpaciones identitarias mediante interconexión síncrona en vivo con el Registro Nacional de Profesionistas de la SEP y el padrón de población de RENAPO.</p>
               </div>
             </li>
           </ul>
@@ -1112,7 +1112,7 @@ const slides = [
             alt="Bóveda digital de resguardo de información clínica y firmas criptográficas" 
             width="1000" height="600"
             loading="lazy"
-            class="relative rounded-2xl shadow-2xl border-4 border-white object-cover h-[450px] w-full" 
+            class="relative rounded-2xl shadow-2xl border-4 border-white object-cover h-[300px] sm:h-[450px] w-full" 
           />
         </div>
       </div>
@@ -1120,16 +1120,16 @@ const slides = [
     </div>
   </section>
 
-  <section class="py-24 bg-slate-900 relative overflow-hidden font-sans">
+  <section class="py-16 sm:py-24 bg-slate-900 relative overflow-hidden font-sans">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-16">
-        <span class="px-3 py-1 text-xs font-semibold tracking-wider text-teal-400 uppercase bg-teal-950/80 border border-teal-500/20 rounded-full">
+      <div class="text-center mb-12 sm:mb-16">
+        <span class="px-3 py-1 text-[10px] sm:text-xs font-semibold tracking-wider text-teal-400 uppercase bg-teal-950/80 border border-teal-500/20 rounded-full">
           MÓDULO DE AUDITORÍA TECNOLÓGICA Y BIOMÉDICA
         </span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-4">Especificaciones Técnicas de la Infraestructura</h2>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mt-4 mb-3 sm:mb-4">Especificaciones Técnicas de la Infraestructura</h2>
+        <p class="text-slate-400 text-sm sm:text-lg max-w-2xl mx-auto">
           Ficha de ingeniería de sistemas de salud para evaluaciones institucionales, dictámenes jurídicos y auditorías oficiales.
         </p>
       </div>
@@ -1143,85 +1143,85 @@ const slides = [
             <div class="p-6 border-b border-slate-700">Mecanismo de Resguardo Asistencial</div>
           </div>
 
-          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Autoverificación Identitaria Federal</div>
-          <div class="p-6 border-b border-slate-700 text-white font-mono">SEP RNP API Interconnection + RENAPO Web Service</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Validación documental en tiempo real para demeritar identidades sintéticas o apócrifas en el alta médica.</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Autoverificación Identitaria Federal</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">SEP RNP API Interconnection + RENAPO Web Service</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Validación documental en tiempo real para demeritar identidades sintéticas o apócrifas en el alta médica.</div>
 
-          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Procesamiento Cognitivo de Consulta</div>
-          <div class="p-6 border-b border-slate-700 text-white font-mono">Google Cloud Vertex AI Enterprise (Gemini Engine Temp 0.0)</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Aislamiento contractual de datos PHI. Respuestas formalmente deterministas con latencia inferior a 800ms.</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Procesamiento Cognitivo de Consulta</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Google Cloud Vertex AI Enterprise (Gemini Engine Temp 0.0)</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Aislamiento contractual de datos PHI. Respuestas formalmente deterministas con latencia inferior a 800ms.</div>
 
-          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Persistencia y Base de Datos Relacional</div>
-          <div class="p-6 border-b border-slate-700 text-white font-mono">Supabase PostgreSQL Encrypted Node (RLS Active)</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Políticas rigurosas Row Level Security (RLS) amarradas al rol authenticated para el aislamiento total de historiales clínicos.</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Persistencia y Base de Datos Relacional</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Supabase PostgreSQL Encrypted Node (RLS Active)</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Políticas rigurosas Row Level Security (RLS) amarradas al rol authenticated para el aislamiento total de historiales clínicos.</div>
 
-          <div class="p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold">Capa de Extracción e Inyección Edge</div>
-          <div class="p-6 border-b border-slate-700 text-white font-mono">Deno Edge Functions Aisladas + Cloudflare Turnstile Verification</div>
-          <div class="p-6 border-b border-slate-700 text-slate-300 text-sm">Ejecución perimetral con directiva 'verify_jwt = false' para interconexión pre-registro protegiendo llaves en Vault de Supabase.</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Capa de Extracción e Inyección Edge</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Deno Edge Functions Aisladas + Cloudflare Turnstile Verification</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Ejecución perimetral con directiva 'verify_jwt = false' para interconexión pre-registro protegiendo llaves en Vault de Supabase.</div>
 
-          <div class="p-6 md:bg-slate-800/50 text-teal-400 font-bold">Homologación e Interoperabilidad Sanitaria</div>
-          <div class="p-6 text-white font-mono">NOM-004-SSA3-2012, NOM-006 & NOM-024 HL7 CDA Compliant</div>
-          <div class="p-6 text-slate-300 text-sm">Arquitectura append-only con bitácoras de auditoría inmutables, inactivación lógica (Soft-Delete) y serialización estructurada en HL7 XML.</div>
+          <div class="p-4 sm:p-6 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Homologación e Interoperabilidad Sanitaria</div>
+          <div class="p-4 sm:p-6 text-white font-mono text-xs sm:text-sm">NOM-004-SSA3-2012, NOM-006 & NOM-024 HL7 CDA Compliant</div>
+          <div class="p-4 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed">Arquitectura append-only con bitácoras de auditoría inmutables, inactivación lógica (Soft-Delete) y serialización estructurada en HL7 XML.</div>
 
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-24 bg-slate-50 font-sans">
+  <section class="py-16 sm:py-24 bg-slate-50 font-sans">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 font-sans">Resolución de Dudas Técnico-Regulatorias</h2>
-        <p class="text-slate-500 mt-2">Respuestas institucionales relativas a los marcos operativos médico-legales en México.</p>
+      <div class="text-center mb-8 sm:mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-sans">Resolución de Dudas Técnico-Regulatorias</h2>
+        <p class="text-slate-500 text-xs sm:text-base mt-2">Respuestas institucionales relativas a los marcos operativos médico-legales en México.</p>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-3 sm:space-y-4">
         
-        <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
-          <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+        <details class="group bg-white p-4 sm:p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-base text-slate-800 list-none gap-2">
             ¿Cómo se garantiza la seguridad e inmutabilidad al ingresar mi e.firma del SAT en el sistema?
-            <span class="transition group-open:rotate-180">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            <span class="transition group-open:rotate-180 shrink-0">
+              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed font-normal">
+          <p class="text-xs sm:text-sm text-slate-600 mt-3 sm:mt-4 leading-relaxed font-normal">
             <strong>El procedimiento es absolutamente seguro y de ejecución local.</strong> VitalScribe implementa un esquema de Privacidad por Diseño (Privacy by Design). Sus archivos criptográficos privados (`.key`), certificados (`.cer`) y contraseñas asociadas jamás se transmiten a servidores externos ni viajan por internet. El proceso de estampado digital y generación del hash vinculante ocurre estrictamente dentro de la memoria temporal del navegador (Local Web Sandbox), preservando de forma fidedigna el principio de No Repudio legal.
           </p>
         </details>
 
-        <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
-          <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+        <details class="group bg-white p-4 sm:p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-base text-slate-800 list-none gap-2">
             ¿De qué forma cumple la plataforma con la exportación de datos bajo la NOM-024-SSA3-2012?
-            <span class="transition group-open:rotate-180">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            <span class="transition group-open:rotate-180 shrink-0">
+              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed font-normal">
+          <p class="text-xs sm:text-sm text-slate-600 mt-3 sm:mt-4 leading-relaxed font-normal">
             La base de datos relacional del sistema está normalizada para estructurar los registros clínicos y las notas de evolución bajo esquemas legibles por máquinas conformes al estándar internacional HL7 CDA R2. Esto garantiza que la información clínica de los pacientes pueda interoperar con propiedad técnica ante requerimientos oficiales de la Secretaría de Salud o auditorías institucionales.
           </p>
         </details>
 
-        <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
-          <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+        <details class="group bg-white p-4 sm:p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-base text-slate-800 list-none gap-2">
             ¿Cómo interviene el firewall Omni-Sentinel para prevenir desviaciones o errores de prescripción?
-            <span class="transition group-open:rotate-180">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            <span class="transition group-open:rotate-180 shrink-0">
+              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed font-normal">
+          <p class="text-xs sm:text-sm text-slate-600 mt-3 sm:mt-4 leading-relaxed font-normal">
             Opera como un supervisor de farmacovigilancia pasivo en el punto de atención. Si el profesional de la salud intenta prescribir un principio activo con potencial nefrotóxico o contraindicación severa, y la base de datos detecta un indicador de riesgo paraclínico previo (ej. una Tasa de Filtración Glomerular deprimida), el sistema despliega un alertamiento clínico de interrupción segura, deteniendo el flujo documental hasta que el especialista valide y confirme explícitamente su juicio terapéutico.
           </p>
         </details>
 
-        <details class="group bg-white p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
-          <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+        <details class="group bg-white p-4 sm:p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-base text-slate-800 list-none gap-2">
             ¿La información clínica de mis pacientes es examinada por entidades externas u motores de IA públicos?
-            <span class="transition group-open:rotate-180">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            <span class="transition group-open:rotate-180 shrink-0">
+              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed font-normal">
-            <strong>Bajo ninguna circunstancia.</strong> La arquitectura de VitalScribe AI se enlaza de forma exclusiva con endpoints corporativos aislados en Google Cloud Vertex AI mediante contratos de confidencialidad estrictamente para el sector salud. Existe una restricción absoluta que impide el uso de metadatos o registros PHI para el entrenamiento de algoritmos públicos. La soberanía y propiedad exclusiva del expediente clínico electrónico permanece inalterable bajo el control del médico titular.
+          <p class="text-xs sm:text-sm text-slate-600 mt-3 sm:mt-4 leading-relaxed font-normal">
+            <strong>Bajo ninguna circunstancia.</strong> La arquitectura de VitalScribe AI se enlaza de forma exclusiva con endpoints corporativos aislados en Google Cloud Vertex AI mediante contratos de confidencialidad strictly para el sector salud. Existe una restricción absoluta que impide el uso de metadatos o registros PHI para el entrenamiento de algoritmos públicos. La soberanía y propiedad exclusiva del expediente clínico electrónico permanece inalterable bajo el control del médico titular.
           </p>
         </details>
 
@@ -1229,35 +1229,35 @@ const slides = [
     </div>
   </section>
 
-  <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8 font-sans">
+  <footer class="bg-slate-900 border-t border-slate-800 pt-12 sm:pt-16 pb-8 font-sans">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row justify-between items-start mb-12">
-        <div class="mb-8 md:mb-0 max-w-sm">
-          <h2 class="text-2xl font-bold text-white tracking-tighter">VitalScribe<span class="text-teal-400">AI®</span></h2>
-          <p class="text-slate-400 text-sm mt-4 leading-relaxed font-light">
+      <div class="flex flex-col md:flex-row justify-between items-start mb-8 sm:mb-12">
+        <div class="mb-6 md:mb-0 max-w-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tighter">VitalScribe<span class="text-teal-400">AI®</span></h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-3 sm:mt-4 leading-relaxed font-light">
             Sistemas de Soporte para la Decisión Clínica (CDSS) con protección criptográfica de la identidad profesional. Marca Registrada ante el IMPI (Reg. No. 3083008). El estándar de referencia en resguardo de integridad garantizada y salud digital especializada en los Estados Unidos Mexicanos.
           </p>
         </div>
         
-        <div class="flex flex-col gap-3 text-left md:text-right w-full md:w-auto shrink-0 border-t md:border-t-0 border-slate-800 pt-6 md:pt-0">
-          <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Nodos de Red y Capas de Seguridad</span>
-          <span class="text-slate-300 text-sm font-medium">Entorno Corporativo en la Nube via Google Vertex AI</span>
-          <span class="text-slate-300 text-sm font-medium font-sans">Motor Cognitivo Determinista (v15.3 Strict)</span>
-          <span class="text-slate-300 text-sm font-medium">Supabase Relational Database Architecture with RLS</span>
-          <span class="text-slate-300 text-sm font-mono text-[11px] text-teal-400 font-bold">Validación Federal en Vivo SEP / RENAPO Activa</span>
+        <div class="flex flex-col gap-2 sm:gap-3 text-left md:text-right w-full md:w-auto shrink-0 border-t md:border-t-0 border-slate-800 pt-6 md:pt-0">
+          <span class="text-slate-500 text-[10px] sm:text-xs font-mono uppercase tracking-widest">Nodos de Red y Capas de Seguridad</span>
+          <span class="text-slate-300 text-xs sm:text-sm font-medium">Entorno Corporativo en la Nube via Google Vertex AI</span>
+          <span class="text-slate-300 text-xs sm:text-sm font-medium font-sans">Motor Cognitivo Determinista (v15.3 Strict)</span>
+          <span class="text-slate-300 text-xs sm:text-sm font-medium">Supabase Relational Database Architecture with RLS</span>
+          <span class="text-slate-300 text-xs sm:text-sm font-mono text-[10px] sm:text-[11px] text-teal-400 font-bold">Validación Federal en Vivo SEP / RENAPO Activa</span>
           <div class="mt-2 pt-2 border-t border-slate-800/80 text-xs text-slate-400">
-            <span class="block text-slate-500 font-mono text-[10px] uppercase">Línea de Enlace Institucional:</span>
-            <a href="mailto:contacto.pixelarte.studio@gmail.com" class="text-teal-400 hover:underline font-semibold font-mono">contacto.pixelarte.studio@gmail.com</a>
+            <span class="block text-slate-500 font-mono text-[9px] sm:text-[10px] uppercase">Línea de Enlace Institucional:</span>
+            <a href="mailto:contacto.pixelarte.studio@gmail.com" class="text-teal-400 hover:underline font-semibold font-mono text-xs">contacto.pixelarte.studio@gmail.com</a>
           </div>
         </div>
       </div>
 
-      <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-slate-500 text-xs font-light">
+      <div class="border-t border-slate-800 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-slate-500 text-[10px] sm:text-xs font-light text-center md:text-left">
           © 2026 VitalScribe AI®. Desarrollado por PixelArte Studio. Marca Registrada ante el IMPI (Reg. No. 3083008). Todos los derechos reservados. Cumplimiento normativo de expedientes de integridad garantizada.
         </p>
-        <div class="flex gap-6 text-slate-500 text-xs font-medium select-none">
+        <div class="flex gap-4 sm:gap-6 text-slate-500 text-[10px] sm:text-xs font-medium select-none">
           <button id="trigger-privacy-btn" class="hover:text-teal-400 transition-colors cursor-pointer bg-transparent border-none p-0">Aviso de Privacidad (v15.3)</button>
           <span class="text-slate-700">•</span>
           <button id="trigger-terms-btn" class="hover:text-teal-400 transition-colors cursor-pointer bg-transparent border-none p-0">Términos y Declaración de Responsabilidad (v15.3)</button>
@@ -1268,67 +1268,67 @@ const slides = [
   </footer>
 
   <!-- MODAL INTERACTIVO: CENTRO DE TRANSPARENCIA Y LEGALIDAD CON TRIPLE PESTAÑA INTEGRADA -->
-  <div id="legal-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl w-full max-w-4xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[90vh]">
+  <div id="legal-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4">
+    <div class="bg-white rounded-2xl sm:rounded-3xl w-full max-w-4xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh]">
       
-      <div class="bg-slate-900 p-8 text-white relative overflow-hidden shrink-0">
+      <div class="bg-slate-900 p-5 sm:p-8 text-white relative overflow-hidden shrink-0">
         <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
         <div class="flex items-center justify-between relative z-10">
-          <div class="flex items-center gap-4">
-            <div class="p-3 bg-teal-50 rounded-2xl shadow-lg">
-              <span class="text-2xl">🛡️</span>
+          <div class="flex items-center gap-3 sm:gap-4">
+            <div class="p-2 sm:p-3 bg-teal-50 rounded-xl sm:rounded-2xl shadow-lg">
+              <span class="text-xl sm:text-2xl">🛡️</span>
             </div>
             <div>
-              <h1 class="text-2xl font-bold tracking-tight text-white">Centro de Transparencia, Regulación y Legalidad</h1>
-              <p class="text-teal-400 font-mono text-xs mt-0.5 uppercase tracking-widest">Protocolo Omni-Sentinel v15.3 Compliance</p>
+              <h1 class="text-lg sm:text-2xl font-bold tracking-tight text-white leading-snug">Centro de Transparencia, Regulación y Legalidad</h1>
+              <p class="text-teal-400 font-mono text-[9px] sm:text-xs mt-0.5 uppercase tracking-widest">Protocolo Omni-Sentinel v15.3 Compliance</p>
             </div>
           </div>
-          <button id="close-legal-modal" class="text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold transition-all transform active:scale-90">
+          <button id="close-legal-modal" class="text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-lg sm:text-xl font-bold transition-all transform active:scale-90 shrink-0 ml-2">
             ✕
           </button>
         </div>
       </div>
 
       <!-- NAVEGACIÓN DE TRES PESTAÑAS HORMIGONADA -->
-      <div class="bg-slate-100 px-6 py-3 border-b border-slate-200 flex gap-2 md:gap-4 shrink-0 font-sans overflow-x-auto custom-scrollbar">
-        <button id="tab-privacy-btn" class="px-4 py-2 text-sm font-bold rounded-lg transition-all bg-slate-900 text-white shadow whitespace-nowrap">
+      <div class="bg-slate-100 px-4 sm:px-6 py-2.5 sm:py-3 border-b border-slate-200 flex gap-2 md:gap-4 shrink-0 font-sans overflow-x-auto custom-scrollbar">
+        <button id="tab-privacy-btn" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rounded-lg transition-all bg-slate-900 text-white shadow whitespace-nowrap">
           Aviso de Privacidad
         </button>
-        <button id="tab-terms-btn" class="px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-600 hover:bg-slate-200 hover:text-slate-900 whitespace-nowrap">
+        <button id="tab-terms-btn" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all text-slate-600 hover:bg-slate-200 hover:text-slate-900 whitespace-nowrap">
           Términos de Servicio
         </button>
-        <button id="tab-manifest-btn" class="px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-600 hover:bg-slate-200 hover:text-slate-900 whitespace-nowrap flex items-center gap-1.5">
+        <button id="tab-manifest-btn" class="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all text-slate-600 hover:bg-slate-200 hover:text-slate-900 whitespace-nowrap flex items-center gap-1.5">
           <span>🏛️</span> Manifiesto Ejecutivo v15.3
         </button>
       </div>
 
-      <div id="legal-modal-body" class="p-8 overflow-y-auto text-slate-700 leading-relaxed text-sm space-y-6 font-sans custom-scrollbar">
+      <div id="legal-modal-body" class="p-5 sm:p-8 overflow-y-auto text-slate-700 leading-relaxed text-xs sm:text-sm space-y-6 font-sans custom-scrollbar">
         
         <!-- PESTAÑA 1: AVISO DE PRIVACIDAD INTEGRAL -->
         <div id="tab-privacy-content" class="space-y-6">
-          <div class="p-5 bg-sky-50 rounded-2xl border border-sky-100">
-            <p class="text-lg font-medium text-slate-800">
+          <div class="p-4 sm:p-5 bg-sky-50 rounded-2xl border border-sky-100">
+            <p class="text-sm sm:text-lg font-medium text-slate-800">
               <strong>VitalScribe AI®</strong>, desarrollado por PixelArte Studio (Marca Registrada ante el IMPI, Reg. No. 3083008), actúa como encargado del tratamiento de datos bajo los más altos estándares de <strong>Soberanía Tecnológica</strong>. El Médico Usuario mantiene la propiedad absoluta y responsabilidad legal del expediente clínico.
             </p>
           </div>
 
           <!-- SECCIÓN 1: CIFRADO Y DATOS -->
           <div>
-            <h3 class="flex items-center gap-3 text-slate-900 font-bold text-xl mb-4">
+            <h3 class="flex items-center gap-2 sm:gap-3 text-slate-900 font-bold text-lg sm:text-xl mb-3 sm:mb-4">
               <span>🔒</span> 1. Blindaje de Datos (Cifrado Grado Bancario)
             </h3>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
               <p>
                 Implementamos cifrado <strong>AES-256</strong> para proteger la información sensible tanto en reposo como en tránsito. Cumplimos estrictamente con la normativa de confidencialidad de la <strong>NOM-004-SSA3-2012</strong>.
               </p>
-              <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
                   <span class="text-teal-500">🛡️</span>
-                  <span class="text-sm"><strong>Supabase Security:</strong> Aislamiento por Row Level Security (RLS) que impide accesos no autorizados a nivel motor de base de datos.</span>
+                  <span class="text-xs sm:text-sm"><strong>Supabase Security:</strong> Aislamiento por Row Level Security (RLS) que impide accesos no autorizados a nivel motor de base de datos.</span>
                 </li>
                 <li class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
                   <span class="text-teal-500">⚙️</span>
-                  <span class="text-sm"><strong>Inmutabilidad:</strong> Bitácoras de auditoría inmutables que registran cada interacción, garantizando la trazabilidad clínica completa.</span>
+                  <span class="text-xs sm:text-sm"><strong>Inmutabilidad:</strong> Bitácoras de auditoría inmutables que registran cada interacción, garantizando la trazabilidad clínica completa.</span>
                 </li>
               </ul>
             </div>
@@ -1336,13 +1336,13 @@ const slides = [
 
           <!-- SECCIÓN 2: PROCESAMIENTO IA -->
           <div>
-            <h3 class="flex items-center gap-3 text-slate-900 font-bold text-xl mb-4">
+            <h3 class="flex items-center gap-2 sm:gap-3 text-slate-900 font-bold text-lg sm:text-xl mb-3 sm:mb-4">
               <span>📦</span> 2. Procesamiento de IA Privado
             </h3>
-            <p class="mb-4">
+            <p class="mb-3 sm:mb-4">
               La generación de notas clínicas y análisis de riesgo utiliza modelos <strong>Google Gemini™ Enterprise</strong> desplegados en infraestructura <strong>Vertex AI Secure Node</strong>.
             </p>
-            <div class="bg-teal-50 p-6 rounded-2xl border border-teal-100 text-teal-900 text-sm shadow-inner">
+            <div class="bg-teal-50 p-4 sm:p-6 rounded-2xl border border-teal-100 text-teal-900 text-xs sm:text-sm shadow-inner">
               <strong class="block mb-2 font-bold text-teal-800">GARANTÍA DE NO-ENTRENAMIENTO:</strong> 
               Sus datos y los de sus pacientes <strong>NO</strong> se utilizan para el entrenamiento de los modelos públicos de Google. El procesamiento es efímero, aislado y se rige por acuerdos de confidencialidad empresarial (BAA) compatibles con HIPAA/GDPR.
             </div>
@@ -1350,11 +1350,11 @@ const slides = [
 
           <!-- SECCIÓN 3: DERECHOS ARCO Y OBLIGACIONES DEL RESPONSABLE -->
           <div>
-            <h3 class="flex items-center gap-3 text-slate-900 font-bold text-xl mb-4">
+            <h3 class="flex items-center gap-2 sm:gap-3 text-slate-900 font-bold text-lg sm:text-xl mb-3 sm:mb-4">
               <span>📄</span> 3. Soberanía de Datos y Derechos ARCO
             </h3>
             
-            <div class="space-y-4 text-sm text-slate-700">
+            <div class="space-y-4 text-xs sm:text-sm text-slate-700">
               <p>
                 <strong>Derechos ARCO del Médico (Usuario):</strong> Como titular de su cuenta, usted puede ejercer sus derechos de Acceso, Rectificación, Cancelación u Oposición respecto a sus datos personales de registro y facturación contactando a nuestro Departamento de Privacidad en: 
                 <a href="mailto:contacto@pixelartestudio.art" class="text-teal-600 hover:text-teal-700 font-bold underline transition-all">contacto@pixelartestudio.art</a>
@@ -1376,46 +1376,46 @@ const slides = [
         <div id="tab-terms-content" class="space-y-6 hidden">
           
           <!-- DOSSIER TÉCNICO Y NORMATIVO -->
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
-            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
+          <div class="bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 space-y-4">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span>🖥️</span> DOSSIER TÉCNICO Y NORMATIVO
             </h3>
             <div class="space-y-4">
               <div>
-                <h4 class="font-bold text-slate-800 text-base">Resumen Ejecutivo de Arquitectura</h4>
-                <p class="text-slate-600 text-sm leading-relaxed mt-1">
+                <h4 class="font-bold text-slate-800 text-sm sm:text-base">Resumen Ejecutivo de Arquitectura</h4>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-1">
                   <strong>VitalScribe AI® (v5.4)</strong> es una plataforma de <strong>Inteligencia Ambiental Clínica</strong> diseñada para mitigar el <em>burnout</em> médico. Opera bajo una arquitectura <strong>Hybrid-Cloud</strong> segura y cumple con las normativas <strong>NOM-004</strong> y <strong>NOM-024</strong> como Software de Apoyo a la Gestión Administrativa, garantizando la soberanía de datos y la responsabilidad clínica humana.
                 </p>
               </div>
 
-              <div class="flex gap-4 items-start bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                <span class="text-teal-600 font-bold">✓</span>
+              <div class="flex gap-3 sm:gap-4 items-start bg-white p-3.5 sm:p-4 rounded-xl border border-slate-100 shadow-sm">
+                <span class="text-teal-600 font-bold mt-0.5">✓</span>
                 <div>
-                  <h4 class="font-bold text-slate-800 text-sm">Clasificación Regulatoria (COFEPRIS/México)</h4>
+                  <h4 class="font-bold text-slate-800 text-xs sm:text-sm">Clasificación Regulatoria (COFEPRIS/México)</h4>
                   <p class="text-slate-500 text-xs mt-1 leading-relaxed">
                     VitalScribe AI® se clasifica como <strong>Software de Gestión Administrativa y Documental</strong>. No realiza diagnósticos autónomos. Cumple con la <strong>NOM-004-SSA3-2012</strong> para la integración de la Historia Clínica y la <strong>NOM-024-SSA3-2012</strong> mediante el uso de estándares de interoperabilidad y seguridad.
                   </p>
                 </div>
               </div>
 
-              <div class="flex gap-4 items-start bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                <span class="text-teal-600 font-bold">✓</span>
+              <div class="flex gap-3 sm:gap-4 items-start bg-white p-3.5 sm:p-4 rounded-xl border border-slate-100 shadow-sm">
+                <span class="text-teal-600 font-bold mt-0.5">✓</span>
                 <div>
-                  <h4 class="font-bold text-slate-800 text-sm">Infraestructura de Cifrado AES-256</h4>
+                  <h4 class="font-bold text-slate-800 text-xs sm:text-sm">Infraestructura de Cifrado AES-256</h4>
                   <p class="text-slate-500 text-xs mt-1 leading-relaxed">
                     Toda la información sensible se encuentra cifrada bajo el estándar <strong>Advanced Encryption Standard (AES-256)</strong>. Los datos del paciente están aislados mediante <strong>Row Level Security (RLS)</strong> en Supabase, impidiendo técnicamente cualquier fuga de información entre cuentas médicas.
                   </p>
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                <div class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-100 shadow-sm">
                   <h5 class="font-bold text-slate-700 text-xs uppercase tracking-wider mb-1">Procesamiento IA Privado</h5>
                   <p class="text-xs text-slate-500 leading-relaxed">
                     Utilizamos <strong>Google Vertex AI</strong> con nodos privados. Sus datos no son compartidos con modelos públicos ni se utilizan para el entrenamiento de algoritmos externos, preservando el secreto profesional médico en todo momento.
                   </p>
                 </div>
-                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                <div class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-100 shadow-sm">
                   <h5 class="font-bold text-slate-700 text-xs uppercase tracking-wider mb-1">Portabilidad y Soberanía</h5>
                   <p class="text-xs text-slate-500 leading-relaxed">
                     Garantizamos la propiedad del médico sobre sus datos. Exportación disponible en <strong>JSON y PDF estructurado</strong> para facilitar la migración de expedientes o auditorías clínicas externas.
@@ -1426,17 +1426,17 @@ const slides = [
           </div>
 
           <!-- TÉRMINOS Y RESPONSABILIDAD -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
-            <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
+          <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4 sm:space-y-6">
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span>⚖️</span> TÉRMINOS Y RESPONSABILIDAD
             </h3>
-            <p class="text-xs text-slate-400 uppercase">Última actualización: Enero 2026</p>
+            <p class="text-[10px] sm:text-xs text-slate-400 uppercase">Última actualización: Enero 2026</p>
 
-            <div class="p-4 bg-red-50 rounded-xl border border-red-100">
-              <h4 class="font-bold text-red-800 mb-3 flex items-center gap-2 text-sm uppercase">
+            <div class="p-3.5 sm:p-4 bg-red-50 rounded-xl border border-red-100">
+              <h4 class="font-bold text-red-800 mb-2 sm:mb-3 flex items-center gap-2 text-xs sm:text-sm uppercase">
                 ⚠️ CLÁUSULA DE NO-DISPOSITIVO MÉDICO (IMPORTANTE)
               </h4>
-              <div class="space-y-3 text-xs text-red-900 leading-relaxed">
+              <div class="space-y-2.5 sm:space-y-3 text-xs text-red-900 leading-relaxed">
                 <p>
                   <strong>1. NATURALEZA ADMINISTRATIVA:</strong> El USUARIO reconoce que VitalScribe AI® es una herramienta de 
                   <strong> gestión documental y referencia bibliográfica automatizada</strong>. 
@@ -1456,19 +1456,19 @@ const slides = [
               </div>
             </div>
 
-            <div class="space-y-4 text-sm text-slate-600">
+            <div class="space-y-4 text-xs sm:text-sm text-slate-600">
               <section>
                 <h4 class="font-bold text-slate-800 mb-1">1. Capacidad del Usuario</h4>
-                <p class="text-xs md:text-sm leading-relaxed">El servicio está restringido a profesionales de la salud debidamente acreditados con cédula profesional vigente en México. El usuario es responsable de la veracidad de sus credenciales.</p>
+                <p class="text-xs sm:text-sm leading-relaxed">El servicio está restringido a profesionales de la salud debidamente acreditados con cédula profesional vigente en México. El usuario es responsable de la veracidad de sus credenciales.</p>
               </section>
 
               <section>
                 <h4 class="font-bold text-slate-800 mb-1">2. Uso de la IA y Consentimiento</h4>
-                <p class="text-xs md:text-sm leading-relaxed">El médico debe obtener el consentimiento verbal del paciente antes de utilizar la función de escucha activa. El software genera un "borrador" que debe ser supervisado por el ojo humano antes de ser legalizado.</p>
+                <p class="text-xs sm:text-sm leading-relaxed">El médico debe obtener el consentimiento verbal del paciente antes de utilizar la función de escucha activa. El software genera un "borrador" que debe ser supervisado por el ojo humano antes de ser legalizado.</p>
               </section>
 
-              <section class="p-4 bg-indigo-50 rounded-xl border border-indigo-100">
-                <h4 class="font-bold text-indigo-900 mb-2 flex items-center gap-2 text-sm">
+              <section class="p-3.5 sm:p-4 bg-indigo-50 rounded-xl border border-indigo-100">
+                <h4 class="font-bold text-indigo-900 mb-2 flex items-center gap-2 text-xs sm:text-sm">
                   <span>📝</span> 3. Propiedad Intelectual y Registro de Marca
                 </h4>
                 <div class="space-y-2 text-indigo-900/90 text-xs leading-relaxed">
@@ -1493,8 +1493,8 @@ const slides = [
                 </div>
               </section>
 
-              <section class="p-4 bg-emerald-50 rounded-xl border border-emerald-100">
-                <h4 class="font-bold text-emerald-900 mb-2 flex items-center gap-2 text-sm">
+              <section class="p-3.5 sm:p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+                <h4 class="font-bold text-emerald-900 mb-2 flex items-center gap-2 text-xs sm:text-sm">
                   <span>📊</span> 4. Calculadoras de Riesgo y Algoritmos Clínicos
                 </h4>
                 <div class="space-y-2 text-emerald-900/90 text-xs leading-relaxed">
@@ -1502,7 +1502,7 @@ const slides = [
                     VitalScribe AI® incluye herramientas de cálculo automatizado (como Gupta MICA, RCRI, entre otros) 
                     basadas estrictamente en fórmulas publicadas en literatura científica revisada por pares.
                   </p>
-                  <div class="text-xs font-mono bg-white/50 p-3 rounded border border-emerald-200/50 space-y-1 text-[11px]">
+                  <div class="text-xs font-mono bg-white/50 p-2.5 sm:p-3 rounded border border-emerald-200/50 space-y-1 text-[10px] sm:text-[11px]">
                     <p class="font-bold mb-1">LIMITACIÓN DE RESPONSABILIDAD ESPECÍFICA:</p>
                     <ul class="list-disc pl-4 space-y-1">
                       <li>Estas herramientas son auxiliares para la estratificación de riesgo y <strong>NO constituyen un pronóstico de certeza</strong>.</li>
@@ -1514,8 +1514,8 @@ const slides = [
                 </div>
               </section>
 
-              <section class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2 text-sm">
+              <section class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200">
+                <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2 text-xs sm:text-sm">
                   <span>👥</span> 5. Soberanía de Datos y Derechos ARCO
                 </h4>
                 <div class="space-y-2 text-xs text-slate-700 leading-relaxed">
@@ -1535,12 +1535,12 @@ const slides = [
         <!-- PESTAÑA 3: MANIFIESTO EJECUTIVO DE ARQUITECTURA, CUMPLIMIENTO Y LICENCIAMIENTO (v15.3) -->
         <div id="tab-manifest-content" class="space-y-6 hidden font-sans">
           
-          <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-6 md:p-8 rounded-2xl text-white border border-teal-500/30 shadow-xl space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-              <div class="flex items-center gap-2 text-teal-400 font-mono text-xs font-bold uppercase tracking-widest">
+          <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-4 sm:p-6 md:p-8 rounded-2xl text-white border border-teal-500/30 shadow-xl space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 gap-2">
+              <div class="flex items-center gap-2 text-teal-400 font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest">
                 <span>🏛️</span> MANIFIESTO EJECUTIVO CUMPLIMIENTO Y LICENCIAMIENTO
               </div>
-              <span class="px-2.5 py-0.5 bg-teal-950 text-teal-300 border border-teal-500/40 rounded-full font-mono text-[10px]">v15.3 Blindado</span>
+              <span class="px-2 py-0.5 bg-teal-950 text-teal-300 border border-teal-500/40 rounded-full font-mono text-[9px] sm:text-[10px] shrink-0">v15.3 Blindado</span>
             </div>
             <p class="text-xs text-slate-300 leading-relaxed font-light">
               <strong>Propiedad Intelectual:</strong> PixelArte Studio (Marca Registrada ante IMPI Reg. No. 3083008) | <strong>Clasificación:</strong> Documento Oficial de Control de Políticas, Seguridad Perimetral y Licenciamiento del Software.
@@ -1549,7 +1549,7 @@ const slides = [
               <button 
                 type="button" 
                 id="tab-manifest-switch-btn"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-teal-500 hover:bg-teal-400 text-slate-950 text-xs font-bold font-mono rounded-lg transition-all cursor-pointer"
+                class="inline-flex items-center gap-2 px-3.5 py-2 bg-teal-500 hover:bg-teal-400 text-slate-950 text-xs font-bold font-mono rounded-lg transition-all cursor-pointer"
               >
                 Ver Manifiesto Completo en esta Pestaña &rarr;
               </button>
@@ -1557,21 +1557,21 @@ const slides = [
           </div>
 
           <!-- SECCIÓN 1: IDENTIDAD Y FILOSOFÍA -->
-          <div id="manifest-details-start" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
+          <div id="manifest-details-start" class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span class="text-teal-600">1.</span> Identidad y Filosofía del Software
             </h3>
-            <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
               VitalScribe AI® no es un ERP administrativo ni una agenda médica pasiva. Es un <strong>Socio Cognitivo Activo</strong> y un <strong>Ecosistema de Defensa Legal</strong> diseñado para el personal de salud. Operamos bajo dos principios fundamentales:
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
-              <div class="p-4 bg-teal-50/60 rounded-xl border border-teal-100 space-y-1">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 pt-1">
+              <div class="p-3.5 sm:p-4 bg-teal-50/60 rounded-xl border border-teal-100 space-y-1">
                 <strong class="text-xs font-bold text-teal-900 block">Soberanía Médica (Human-in-the-Loop)</strong>
                 <p class="text-xs text-teal-950/80 leading-relaxed">
                   La Inteligencia Artificial actúa como copiloto de documentación. El diagnóstico, plan terapéutico y validación final pertenecen inalterablemente al médico tratante, anulando riesgos de responsabilidad automatizada.
                 </p>
               </div>
-              <div class="p-4 bg-sky-50/60 rounded-xl border border-sky-100 space-y-1">
+              <div class="p-3.5 sm:p-4 bg-sky-50/60 rounded-xl border border-sky-100 space-y-1">
                 <strong class="text-xs font-bold text-sky-900 block">Privacidad por Diseño (Privacy by Design)</strong>
                 <p class="text-xs text-sky-950/80 leading-relaxed">
                   Los datos PHI (Protected Health Information) están aislados mediante perímetros criptográficos y filtros de Row Level Security (RLS) en el motor relacional.
@@ -1581,12 +1581,12 @@ const slides = [
           </div>
 
           <!-- SECCIÓN 2: PILARES TÉCNICOS Y SEGURIDAD -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
+          <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span class="text-teal-600">2.</span> Pilares de Arquitectura Técnica y Seguridad v15.3
             </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <strong class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
                   <span class="text-teal-600">Pilar 1:</span> Motor Cognitivo Determinista
                 </strong>
@@ -1594,7 +1594,7 @@ const slides = [
                   Consumo directo de endpoints de Google AI Studio (Gemini Engine) a <strong>Temperatura 0.0 obligatoria</strong>. Garantiza reproducibilidad diagnóstica y elimina alucinaciones en notas clínicas.
                 </p>
               </div>
-              <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <strong class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
                   <span class="text-teal-600">Pilar 2:</span> Búnker Relacional y RLS
                 </strong>
@@ -1602,7 +1602,7 @@ const slides = [
                   Acceso amarrado al rol <code class="text-teal-600 font-mono bg-slate-200 px-1 rounded">authenticated</code>. Las funciones elevadas (<code class="text-teal-600 font-mono bg-slate-200 px-1 rounded">SECURITY DEFINER</code>) inyectan <code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">SET search_path = public, pg_temp;</code> contra secuestro de esquemas.
                 </p>
               </div>
-              <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <strong class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
                   <span class="text-teal-600">Pilar 3:</span> Cubeta <code class="text-teal-600 font-mono">clinic-assets</code> Privada
                 </strong>
@@ -1610,7 +1610,7 @@ const slides = [
                   Aislamiento perimetral de archivos médicos (estudios e imágenes) validado en SQL vía <code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">storage.foldername(name)[1]</code>, restringido al ID del médico firmado.
                 </p>
               </div>
-              <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <strong class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
                   <span class="text-teal-600">Pilar 4:</span> Dualidad de Firma Digital
                 </strong>
@@ -1622,31 +1622,31 @@ const slides = [
           </div>
 
           <!-- SECCIÓN 3: CUMPLIMIENTO REGULATORIO -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
+          <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span class="text-teal-600">3.</span> Marco de Cumplimiento Regulatorio y Sanitario
             </h3>
-            <ul class="space-y-3 text-xs text-slate-700">
-              <li class="flex items-start gap-2.5 p-3 bg-slate-50 rounded-xl border border-slate-100">
-                <span class="text-teal-600 font-bold">✓</span>
+            <ul class="space-y-2.5 sm:space-y-3 text-xs text-slate-700">
+              <li class="flex items-start gap-2.5 p-2.5 sm:p-3 bg-slate-50 rounded-xl border border-slate-100">
+                <span class="text-teal-600 font-bold mt-0.5">✓</span>
                 <div>
                   <strong class="text-slate-900">NOM-004-SSA3-2012:</strong> Estándares científicos, tecnológicos y administrativos obligatorios para la integración y confidencialidad del expediente clínico electrónico.
                 </div>
               </li>
-              <li class="flex items-start gap-2.5 p-3 bg-slate-50 rounded-xl border border-slate-100">
-                <span class="text-teal-600 font-bold">✓</span>
+              <li class="flex items-start gap-2.5 p-2.5 sm:p-3 bg-slate-50 rounded-xl border border-slate-100">
+                <span class="text-teal-600 font-bold mt-0.5">✓</span>
                 <div>
                   <strong class="text-slate-900">NOM-024-SSA3-2012:</strong> Garantía de confidencialidad, inmutabilidad, trazabilidad y capacidad de exportación interoperable bajo el estándar internacional HL7 CDA R2.
                 </div>
               </li>
-              <li class="flex items-start gap-2.5 p-3 bg-slate-50 rounded-xl border border-slate-100">
-                <span class="text-teal-600 font-bold">✓</span>
+              <li class="flex items-start gap-2.5 p-2.5 sm:p-3 bg-slate-50 rounded-xl border border-slate-100">
+                <span class="text-teal-600 font-bold mt-0.5">✓</span>
                 <div>
                   <strong class="text-slate-900">NOM-006-SSA3-2011:</strong> Registro pericial obligatorio del triple estado anestésico (Pre, Trans y UCPA / Criterios Aldrete Score).
                 </div>
               </li>
-              <li class="flex items-start gap-2.5 p-3 bg-slate-50 rounded-xl border border-slate-100">
-                <span class="text-teal-600 font-bold">✓</span>
+              <li class="flex items-start gap-2.5 p-2.5 sm:p-3 bg-slate-50 rounded-xl border border-slate-100">
+                <span class="text-teal-600 font-bold mt-0.5">✓</span>
                 <div>
                   <strong class="text-slate-900">Interconexión Federal (DGIS / SEP / RENAPO):</strong> Conciliación asíncrona de cédulas ante el Registro Nacional de Profesionistas (RNP-SEP) y validación identitaria vía CURP.
                 </div>
@@ -1655,8 +1655,8 @@ const slides = [
           </div>
 
           <!-- SECCIÓN 4: MATRIZ DE LICENCIAMIENTO DEL STACK -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
+          <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span class="text-teal-600">4.</span> Matriz de Inventario y Licenciamiento del Stack (Protección IP)
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed">
@@ -1680,15 +1680,15 @@ const slides = [
                 Tailwind CSS (MIT), Lucide (ISC), pdf-lib (MIT)
               </div>
             </div>
-            <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-emerald-950 font-medium">
+            <div class="p-3.5 sm:p-4 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-emerald-950 font-medium">
               <strong class="block mb-1 font-bold text-emerald-900">Estatus Global de Propiedad Intelectual:</strong>
               0% de contaminación GPL / AGPL. Paquetes con licenciamiento dual (node-forge, jszip) ejercen formalmente la opción permisiva (BSD-3-Clause / MIT). El sistema es 100% de propiedad intelectual privada y código cerrado.
             </div>
           </div>
 
           <!-- SECCIÓN 5: DIRECTIVAS DE INTEGRIDAD -->
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
+          <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span class="text-teal-600">5.</span> Directivas de Integridad de Código y Mantenimiento
             </h3>
             <div class="space-y-2 text-xs text-slate-700">
@@ -1702,89 +1702,89 @@ const slides = [
 
       </div>
 
-      <div class="bg-slate-900 text-slate-500 p-6 text-center text-xs border-t border-slate-800 shrink-0 font-sans">
+      <div class="bg-slate-900 text-slate-500 p-4 sm:p-6 text-center text-[10px] sm:text-xs border-t border-slate-800 shrink-0 font-sans">
         <p>© 2026 <span class="text-white font-bold">VitalScribe AI®</span>. Desarrollado por PixelArte Studio. Marca Registrada ante el IMPI (Reg. No. 3083008). Infraestructura de Cómputo Clínico Blindada v15.3.</p>
       </div>
     </div>
   </div>
 
-  <!-- BOTÓN FLOTANTE DISCRETO: TRADUCTOR DE CRITERIO ASISTENCIAL -->
-  <div class="fixed bottom-6 right-6 z-40">
+  <!-- BOTÓN FLOTANTE DISCRETO: TRADUCTOR DE CRITERIO ASISTENCIAL (RESPONSIVO MULTI-DISPOSITIVO) -->
+  <div class="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-40 max-w-[calc(100vw-1.5rem)] sm:max-w-none">
     <button 
       id="trigger-reflection-btn" 
-      class="flex items-center gap-2.5 px-5 py-3.5 bg-slate-900/90 hover:bg-slate-800 text-teal-300 border border-teal-500/40 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all transform hover:scale-105 backdrop-blur-md group"
+      class="flex items-center gap-2 sm:gap-2.5 px-3.5 py-2.5 sm:px-5 sm:py-3.5 bg-slate-900/95 hover:bg-slate-800 text-teal-300 border border-teal-500/40 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all transform hover:scale-105 backdrop-blur-md group cursor-pointer"
     >
-      <span class="text-xl">👨‍⚕️</span>
-      <span class="text-xs font-bold uppercase tracking-wider text-white group-hover:text-teal-300 transition-colors">Criterio Médico: ¿Por qué VitalScribe?</span>
+      <span class="text-lg sm:text-xl shrink-0">👨‍⚕️</span>
+      <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white group-hover:text-teal-300 transition-colors truncate max-w-[200px] sm:max-w-none">Criterio Médico: ¿Por qué VitalScribe?</span>
     </button>
   </div>
 
-  <!-- PANEL LATERAL FLOTANTE (SLIDE-OVER DRAWER): TRADUCCIÓN DE VALOR ASISTENCIAL -->
+  <!-- PANEL LATERAL FLOTANTE (SLIDE-OVER DRAWER): TRADUCCIÓN DE VALOR ASISTENCIAL (RESPONSIVO MULTI-DISPOSITIVO) -->
   <div id="reflection-drawer" class="hidden fixed inset-0 z-50 overflow-hidden">
     <!-- Backdrop de atenuación -->
     <div id="reflection-backdrop" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity duration-300"></div>
 
-    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-2 sm:pl-10">
       <div class="w-screen max-w-lg bg-slate-900 border-l border-slate-800 text-slate-200 shadow-2xl flex flex-col justify-between relative overflow-hidden">
         
         <!-- Drawer Header -->
-        <div class="p-6 md:p-8 bg-slate-950 border-b border-slate-800 relative shrink-0">
+        <div class="p-5 sm:p-8 bg-slate-950 border-b border-slate-800 relative shrink-0">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <div class="p-2.5 bg-teal-950 border border-teal-500/30 rounded-xl text-teal-400">
-                <span class="text-xl">👨‍⚕️</span>
+              <div class="p-2 sm:p-2.5 bg-teal-950 border border-teal-500/30 rounded-xl text-teal-400">
+                <span class="text-lg sm:text-xl">👨‍⚕️</span>
               </div>
               <div>
-                <h3 class="text-lg font-bold text-white leading-tight">Criterio y Valor Asistencial</h3>
-                <p class="text-xs text-teal-400 font-mono mt-0.5">Reflexión de Colega a Colega</p>
+                <h3 class="text-base sm:text-lg font-bold text-white leading-tight">Criterio y Valor Asistencial</h3>
+                <p class="text-[10px] sm:text-xs text-teal-400 font-mono mt-0.5">Reflexión de Colega a Colega</p>
               </div>
             </div>
-            <button id="close-reflection-drawer" class="text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-9 h-9 rounded-full flex items-center justify-center text-lg font-bold transition-all transform active:scale-90">
+            <button id="close-reflection-drawer" class="text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-base sm:text-lg font-bold transition-all transform active:scale-90 cursor-pointer">
               ✕
             </button>
           </div>
         </div>
 
         <!-- Drawer Body -->
-        <div class="p-6 md:p-8 overflow-y-auto space-y-6 text-sm leading-relaxed custom-scrollbar flex-1 font-sans">
+        <div class="p-5 sm:p-8 overflow-y-auto space-y-5 sm:space-y-6 text-xs sm:text-sm leading-relaxed custom-scrollbar flex-1 font-sans">
           
-          <div class="p-4 bg-teal-950/40 border border-teal-500/30 rounded-2xl text-xs text-teal-200 leading-relaxed">
+          <div class="p-3.5 sm:p-4 bg-teal-950/40 border border-teal-500/30 rounded-2xl text-xs text-teal-200 leading-relaxed">
             <strong class="text-teal-300 font-bold block mb-1 uppercase tracking-wider text-[10px]">Sin Jerga Tecnológica ni Discursos Comerciales:</strong>
             Entendemos la realidad del ejercicio médico privado. Esta breve guía explica por qué esta plataforma transforma la dinámica diaria en el consultorio y en quirófano.
           </div>
 
           <!-- Pilar 1: El Valor del Acto Médico -->
-          <div class="space-y-2">
-            <h4 class="font-bold text-white text-base flex items-center gap-2">
+          <div class="space-y-1.5 sm:space-y-2">
+            <h4 class="font-bold text-white text-sm sm:text-base flex items-center gap-2">
               <span class="text-teal-400">01.</span> Recuperación del Acto Médico Puro
             </h4>
-            <p class="text-slate-300 text-xs md:text-sm">
+            <p class="text-slate-300 text-xs sm:text-sm">
               El mayor desgaste en la consulta actual proviene de la obligación de transcribir manualmente cada detalle al teclado. La Inteligencia Ambiental actúa como un facilitador silencioso: escucha el diálogo médico-paciente, filtra comentarios irrelevantes y traduce la interacción en una nota de evolución formal en formato SOAP. El beneficio inmediato es recuperar el contacto visual, la escucha activa y la dignidad de la relación médico-paciente.
             </p>
           </div>
 
           <!-- Pilar 2: Resguardo Pericial y Cédula -->
-          <div class="space-y-2">
+          <div class="space-y-1.5 sm:space-y-2">
             <h4 class="font-bold text-white text-base flex items-center gap-2">
               <span class="text-indigo-400">02.</span> Blindaje Pericial y Protección Patrimonial
             </h4>
-            <p class="text-slate-300 text-xs md:text-sm">
+            <p class="text-slate-300 text-xs sm:text-sm">
               Ante una eventual controversia legal o revisión por comisiones de arbitraje médico, una nota elaborada con prisa o imprecisa constituye la principal vulnerabilidad del facultativo. VitalScribe sugiere terminología de resguardo científico (ej. <em>"Hallazgos compatibles con..."</em>), inyecta referencias explícitas a Guías de Práctica Clínica y permite el sellado digital con e.firma (SAT) o rúbrica manuscrita inmutable bajo la NOM-151 y NOM-004.
             </p>
           </div>
 
           <!-- Pilar 3: Red de Seguridad Asistencial -->
-          <div class="space-y-2">
+          <div class="space-y-1.5 sm:space-y-2">
             <h4 class="font-bold text-white text-base flex items-center gap-2">
               <span class="text-amber-400">03.</span> Farmacovigilancia y Mitigación de Errores
             </h4>
-            <p class="text-slate-300 text-xs md:text-sm">
+            <p class="text-slate-300 text-xs sm:text-sm">
               Tras jornadas prolongadas de consulta o guardia, la fatiga cognitiva incrementa el riesgo de obviar alergias cruzadas o dosificaciones nefrotóxicas en pacientes complejos. El módulo Omni-Sentinel evalúa de forma analítica los parámetros paraclínicos (como la TFG) y emite un alertamiento visual preventivo antes de consolidar o imprimir la prescripción.
             </p>
           </div>
 
           <!-- Pilar 4: Ecuación Económica -->
-          <div class="p-5 bg-slate-950 rounded-2xl border border-slate-800 space-y-3">
+          <div class="p-4 sm:p-5 bg-slate-950 rounded-2xl border border-slate-800 space-y-2.5 sm:space-y-3">
             <h4 class="font-bold text-teal-300 text-xs uppercase tracking-wider">El Cálculo Real de Inversión Asistencial</h4>
             <div class="text-xs text-slate-300 space-y-2">
               <p>• <strong>Costo del Sistema:</strong> $2,199 MXN / mes (apenas <strong>~ $73 MXN al día</strong>, o el honorario de <strong>una sola consulta privada</strong> al mes).</p>
@@ -1796,7 +1796,7 @@ const slides = [
         </div>
 
         <!-- Drawer Footer -->
-        <div class="p-6 bg-slate-950 border-t border-slate-800 shrink-0">
+        <div class="p-5 sm:p-6 bg-slate-950 border-t border-slate-800 shrink-0">
           <a 
             href="#lead-capture-form" 
             id="drawer-cta-btn"
@@ -1885,16 +1885,16 @@ const slides = [
         if (presentationHub && btnClinical && btnTechnical) {
           btnClinical.addEventListener('click', () => {
             presentationHub.setAttribute('data-ux-mode', 'clinical');
-            btnClinical.className = "px-6 py-2.5 rounded-full bg-teal-50 text-slate-950 font-bold text-sm transition-colors duration-300 flex items-center gap-2";
-            btnTechnical.className = "px-6 py-2.5 rounded-full text-slate-400 hover:text-white font-medium text-sm transition-colors duration-300 flex items-center gap-2";
+            btnClinical.className = "w-full sm:w-auto relative z-10 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-teal-50 text-slate-950 font-bold text-xs sm:text-sm transition-colors duration-300 flex items-center justify-center gap-2";
+            btnTechnical.className = "w-full sm:w-auto relative z-10 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-slate-400 hover:text-white font-medium text-xs sm:text-sm transition-colors duration-300 flex items-center justify-center gap-2";
             document.querySelectorAll('.technical-text').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.clinical-text').forEach(el => el.classList.remove('hidden'));
           });
 
           btnTechnical.addEventListener('click', () => {
             presentationHub.setAttribute('data-ux-mode', 'technical');
-            btnTechnical.className = "px-6 py-2.5 rounded-full bg-teal-50 text-slate-950 font-bold text-sm transition-colors duration-300 flex items-center gap-2";
-            btnClinical.className = "px-6 py-2.5 rounded-full text-slate-400 hover:text-white font-medium text-sm transition-colors duration-300 flex items-center gap-2";
+            btnTechnical.className = "w-full sm:w-auto relative z-10 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-teal-50 text-slate-950 font-bold text-xs sm:text-sm transition-colors duration-300 flex items-center justify-center gap-2";
+            btnClinical.className = "w-full sm:w-auto relative z-10 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-slate-400 hover:text-white font-medium text-xs sm:text-sm transition-colors duration-300 flex items-center justify-center gap-2";
             document.querySelectorAll('.clinical-text').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.technical-text').forEach(el => el.classList.remove('hidden'));
           });
@@ -1943,7 +1943,10 @@ const slides = [
             prevBtn.style.opacity = index === 0 ? '0.5' : '1';
             prevBtn.style.pointerEvents = index === 0 ? 'none' : 'auto';
           }
-          if (nextBtn) nextBtn.textContent = index === totalSlides - 1 ? 'REINICIAR INTERFAZ ↺' : 'SIGUIENTE SECCIÓN →';
+          if (nextBtn) {
+            const isLast = index === totalSlides - 1;
+            nextBtn.innerHTML = isLast ? '<span class="hidden sm:inline">REINICIAR INTERFAZ ↺</span><span class="sm:hidden">↺</span>' : '<span class="hidden sm:inline">SIGUIENTE SECCIÓN →</span><span class="sm:hidden">&rarr;</span>';
+          }
         }
 
         tabs.forEach((tab, index) => {
@@ -1972,9 +1975,9 @@ const slides = [
           [tabPrivacyBtn, tabTermsBtn, tabManifestBtn].forEach(btn => {
             if (btn) {
               if (btn === activeBtn) {
-                btn.className = "px-4 py-2 text-sm font-bold rounded-lg transition-all bg-slate-900 text-white shadow whitespace-nowrap";
+                btn.className = "px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rounded-lg transition-all bg-slate-900 text-white shadow whitespace-nowrap";
               } else {
-                btn.className = "px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-600 hover:bg-slate-200 hover:text-slate-900 whitespace-nowrap";
+                btn.className = "px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all text-slate-600 hover:bg-slate-200 hover:text-slate-900 whitespace-nowrap";
               }
             }
           });
