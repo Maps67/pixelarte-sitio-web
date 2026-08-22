@@ -1,9 +1,7 @@
 ---
-// src/layouts/Layout.astro (VERSIÓN LIMPIA - SIN TOAST)
+// src/layouts/Layout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-// Se ha eliminado la importación de ToastNotification
-
 import '../styles/global.css';
 
 interface Props {
@@ -16,21 +14,40 @@ interface Props {
 
 const { 
     title, 
-    description,
-    canonicalUrl,
+    description, 
+    canonicalUrl, 
     ogImage, 
     ogImageAlt 
 } = Astro.props;
 
-const siteUrl = Astro.site; 
+const siteUrl = Astro.site || new URL('https://pixelartestudio.art'); 
 const pageTitle = `${title} | Pixelarte Studio`;
 const currentUrl = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 
 const fallbackImageUrl = new URL('/images/social-cover-default.png', siteUrl).href;
-const fallbackImageAlt = 'Pixelarte Studio - Estrategia Digital Insider';
+const fallbackImageAlt = 'Pixelarte Studio - Soluciones Creativas y Estrategia Visual';
 
 const finalSocialImageUrl = ogImage ? new URL(ogImage, siteUrl).href : fallbackImageUrl;
 const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Pixelarte Studio",
+  "url": typeof siteUrl === 'string' ? siteUrl : siteUrl.href,
+  "logo": new URL('/favicon.svg', siteUrl).href,
+  "image": finalSocialImageUrl,
+  "description": description,
+  "telephone": "+523347211199",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "MX"
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61578631474398",
+    "https://www.instagram.com/pixel.arte.studio"
+  ]
+};
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -63,6 +80,9 @@ const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={finalSocialImageUrl} />
     <meta name="twitter:image:alt" content={finalSocialImageAlt} />
+
+    <!-- Schema.org Datos Estructurados -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
 </head>
 <body>
     <Header />
@@ -70,6 +90,5 @@ const finalSocialImageAlt = ogImageAlt || fallbackImageAlt;
         <slot />
     </main>
     <Footer />
-
-    </body>
+</body>
 </html>
