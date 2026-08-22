@@ -1,18 +1,9 @@
 /*
-  # 1. PROTECCIÓN CONTRA SNIFFING DE CONTENIDO
-  X-Content-Type-Options: nosniff
-
-  # 2. PROTECCIÓN CONTRA CLICKJACKING
-  X-Frame-Options: SAMEORIGIN
-
-  # 3. FILTRO XSS PARA NAVEGADORES COMPATIBLES
-  X-XSS-Protection: 1; mode=block
-
-  # 4. POLÍTICA DE REFERENCIA SEGURA
-  Referrer-Policy: strict-origin-when-cross-origin
-
-  # 5. RESTRICCIÓN DE PERMISOS DE HARDWARE NO UTILIZADOS
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-
-  # 6. FORZADO DE HTTPS (HSTS - 1 AÑO + SUBDOMINIOS)
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-Permitted-Cross-Domain-Policies: none
+  Cross-Origin-Opener-Policy: same-origin
