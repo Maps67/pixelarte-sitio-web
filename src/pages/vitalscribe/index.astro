@@ -10,7 +10,7 @@ import Layout from '../../layouts/Layout.astro';
 // METADATOS Y ELEMENTOS DE MARCA
 // ==========================================
 const title = "Evaluación Asistencial | VitalScribe AI v15.3 - Protocolo Pericial";
-const description = "Infraestructura Omni-Sentinel: Sistema de Soporte para la Decisión Clínica (CDSS) con Verificación Federal en Tiempo Real (SEP, RENAPO, CLUES) y alineación estricta con las normas NOM-004-SSA3-2012, NOM-006-SSA3-2011 y NOM-024-SSA3-2012.";
+const description = "Infraestructura Omni-Sentinel: Sistema de Soporte para la Decisión Clínica (CDSS) con Verificación Federal en Tiempo Real (SEP, RENAPO, CLUES), Importador Blindado Masivo v8.0 (Word e Imágenes) y alineación estricta con las normas NOM-004-SSA3-2012, NOM-006-SSA3-2011 y NOM-024-SSA3-2012.";
 const APP_URL = "https://vitalscribeai.com/";
 
 const HERO_IMG = "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000";
@@ -67,6 +67,23 @@ const slides = [
       "Seguridad de la Información: Nuestra herramienta garantiza que solo el profesional médico titular tenga acceso descifrado a la información clínica de sus pacientes."
     ],
     image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=2000",
+  },
+  {
+    id: "importer_v8",
+    type: "split",
+    title: "Importador Blindado Masivo v8.0: Cero Vendor Lock-in",
+    clinicalTitle: "Migración Histórica de Archivos Word e Imagenología",
+    content: [
+      "Destrucción del Vendor Lock-in: Ingesta masiva y procesamiento asíncrono de carpetas completas con archivos históricos de Word (.docx) y cualquier formato de imagen.",
+      "Estructuración Normativa SOAP: Transformación cognitiva determinista (Gemini Temp 0.0) que clasifica y alinea el contenido histórico al estándar SOAP institucional.",
+      "Rotulado Forense de Seguridad (NOM-004): Etiquetado criptográfico e inmutable como 'Registro Previo / Migrado', diferenciándolo de notas de evolución en vivo para estricto apego regulatorio."
+    ],
+    clinicalContent: [
+      "Transición Documental Sin Fricción: Incorpore en segundos todo el historial clínico acumulado en documentos de Word o notas escaneadas sin recaptura manual mecanizada.",
+      "Cronología Clínica Limpia: La Inteligencia Ambiental organiza antecedentes patológicos y evoluciones históricas en una línea de tiempo estructurada y legible.",
+      "Blindaje Legal Garantizado: Cumplimiento riguroso de la NOM-004-SSA3-2012. Sus registros anteriores se conservan íntegros con validez documental pericial sin riesgo de alteración."
+    ],
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=2000"
   },
   {
     id: "engine",
@@ -410,7 +427,7 @@ const slides = [
           <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-5 sm:p-8 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl"></div>
             <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Inicialización de Entorno Seguro</h3>
-            <p class="text-slate-400 text-xs mb-5 sm:mb-6">Valide sus datos profesionales para activar sus 15 días de prueba sin costo y generar sus credenciales criptográficas de acceso local.</p>
+            <p class="text-slate-400 text-xs mb-5 sm:mb-6">Valide sus datos profesionales para activar sus 15 días de evaluación clínica y generar sus credenciales criptográficas de acceso local.</p>
 
             <form id="lead-capture-form" class="space-y-4">
               <div>
@@ -460,11 +477,11 @@ const slides = [
               </div>
 
               <p class="text-[10px] sm:text-[11px] text-teal-400 font-semibold text-center mt-2 flex items-center justify-center gap-1.5 leading-snug">
-                <span>🔒</span> 15 días de acceso total sin costo • Sin tarjeta de crédito • Cancelación libre
+                <span>🔒</span> Entorno Seguro v15.3 • Activación mediante Cédula Profesional • Soberanía y Exportación de Expedientes Garantizada
               </p>
 
               <button type="submit" id="submit-btn" class="w-full py-3.5 sm:py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-xs sm:text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-4 flex items-center justify-center gap-2 cursor-pointer">
-                Activar Prueba Gratuita por 15 Días
+                Activar Periodo de Evaluación Clínica y Acreditación Asistencial (15 Días)
               </button>
             </form>
           </div>
@@ -870,7 +887,7 @@ const slides = [
                 🎁 PROTOCOLO DE LANZAMIENTO ACTIVO
               </div>
               <p class="mt-1.5 text-slate-300 font-medium text-[11px] sm:text-xs">
-                Los registros iniciales de este arancel incorporan acceso prioritario e integrado al módulo de <strong class="text-white font-bold">Auditoría Clínica Balance 360°</strong> dentro de su capacidad asistencial de alta cobertura, sin costos adicionales diferidos.
+                Los registros iniciales de este arancel incorporan acceso prioritario e integrado al módulo de <strong class="text-white font-bold">Auditoría Clínica Balance 360°</strong> y al <strong class="text-white font-bold">Importador Blindado Masivo v8.0</strong> dentro de su capacidad asistencial de alta cobertura, sin costos adicionales diferidos.
               </p>
               <div class="mt-3 flex items-center gap-3">
                 <div class="flex-1 bg-slate-900 h-1.5 rounded-full overflow-hidden">
@@ -884,17 +901,21 @@ const slides = [
               <span class="text-4xl sm:text-5xl font-black text-white tracking-tight">$2,199</span>
               <span class="text-slate-400 text-sm sm:text-base font-bold ml-1.5">MXN / mes</span>
               <span class="text-[10px] text-teal-400 font-semibold block mt-1">~ $73 MXN al día (menos que el honorario de 1 consulta al mes)</span>
-              <span class="text-[10px] text-slate-500 block mt-0.5">+ IVA • Capacidad Asistencial de Alta Cobertura (~1,200 Consultas/Mes)</span>
+              <span class="text-[10px] text-slate-500 block mt-0.5">+ IVA • 15 Días de Inmersión Asistencial con Cobertura Total (~600 Consultas de Evaluación)</span>
             </div>
             
             <ul class="space-y-3 sm:space-y-4 border-t border-teal-950 pt-6">
               <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
-                <span>Consultas e informes SOAP con Capacidad Asistencial de Alta Cobertura (~1,200 Consultas/Mes)</span>
+                <span>15 Días de Inmersión Asistencial con Cobertura Total (~600 Consultas de Evaluación)</span>
               </li>
               <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
                 <span>Asistente de IA Avanzado entrenado por Especialidad</span>
+              </li>
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
+                <span class="text-teal-400 font-black">✓</span>
+                <span>Importador Blindado Masivo v8.0: Conversión Word (.docx) e imágenes a SOAP</span>
               </li>
               <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
@@ -928,7 +949,7 @@ const slides = [
             </ul>
           </div>
           <a href="#lead-capture-form" class="w-full py-3.5 sm:py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 text-center font-black text-xs sm:text-sm uppercase tracking-wider rounded-xl transition-all shadow-md transform active:scale-95 mt-8 flex items-center justify-center gap-2">
-            Comenzar Prueba de 15 Días Sin Costo &rarr;
+            Iniciar Evaluación Asistencial del Plan Profesional &rarr;
           </a>
         </div>
 
@@ -972,7 +993,7 @@ const slides = [
       </div>
 
       <p class="text-center text-[11px] sm:text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
-        Incluye 15 días de prueba gratuita sin compromiso ni tarjeta de crédito. Esquema flexible sin plazos forzosos. Moneda Nacional (MXN). Cancelación libre en cualquier momento.
+        Incluye 15 días de evaluación asistencial sin compromiso ni captura de medios de pago. Esquema flexible sin plazos forzosos. Moneda Nacional (MXN). Soberanía total de datos y exportación de expedientes.
       </p>
     </div>
   </section>
@@ -1151,6 +1172,10 @@ const slides = [
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Google Cloud Vertex AI Enterprise (Gemini Engine Temp 0.0)</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Aislamiento contractual de datos PHI. Respuestas formalmente deterministas con latencia inferior a 800ms.</div>
 
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Importador Blindado Masivo v8.0</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Parser Ingestor Word (.docx) & Multi-Image OCR (Temp 0.0)</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Destrucción de Vendor Lock-in con normalización a formato SOAP y rotulado pericial 'Registro Previo / Migrado' (NOM-004).</div>
+
           <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Persistencia y Base de Datos Relacional</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Supabase PostgreSQL Encrypted Node (RLS Active)</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Políticas rigurosas Row Level Security (RLS) amarradas al rol authenticated para el aislamiento total de historiales clínicos.</div>
@@ -1177,6 +1202,18 @@ const slides = [
 
       <div class="space-y-3 sm:space-y-4">
         
+        <details class="group bg-white p-4 sm:p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-base text-slate-800 list-none gap-2">
+            ¿Cómo garantiza el Importador Blindado Masivo v8.0 la migración segura de expedientes antiguos en Word o imágenes?
+            <span class="transition group-open:rotate-180 shrink-0">
+              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 mt-3 sm:mt-4 leading-relaxed font-normal">
+            El sistema rompe el <strong>Vendor Lock-in</strong> permitiendo la carga masiva de carpetas históricas en documentos de Microsoft Word (`.docx`) y cualquier formato de imagen clínica escaneada. El backend cognitivo (IA determinista a Temperatura 0.0) extrae los datos semiológicos y los formatea estrictamente en notas estructuradas bajo el estándar <strong>SOAP</strong>. Para salvaguardar la responsabilidad jurídica del médico conforme a la <strong>NOM-004-SSA3-2012</strong>, cada registro importado se rotula e indexa de forma inmutable como <strong>"Registro Previo / Migrado"</strong>, garantizando que nunca se confunda con notas de evolución firmadas en tiempo real.
+          </p>
+        </details>
+
         <details class="group bg-white p-4 sm:p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
           <summary class="flex justify-between items-center font-bold text-xs sm:text-base text-slate-800 list-none gap-2">
             ¿Cómo se garantiza la seguridad e inmutabilidad al ingresar mi e.firma del SAT en el sistema?
@@ -1364,6 +1401,10 @@ const slides = [
                 <strong>Derechos ARCO de los Pacientes:</strong> En cumplimiento de la LFPDPPP, las solicitudes ARCO de los pacientes deberán ser atendidas directamente por el Médico Titular (Responsable del Tratamiento). VitalScribe AI® provee las herramientas tecnológicas nativas para exportar historiales en formatos estructurados (.xlsx, .json, HL7) e inactivar registros, garantizando que usted pueda cumplir con las solicitudes de sus pacientes en los tiempos estipulados por la ley.
               </p>
 
+              <p class="bg-teal-50/80 p-3 rounded-xl border border-teal-200 text-teal-950 font-medium text-xs">
+                <strong>Soberanía durante y posterior al Periodo de Evaluación:</strong> Si al término de los 15 días de evaluación asistencial el médico decide no activar la suscripción recurrente, sus expedientes clínicos generados permanecen bajo su absoluta soberanía y resguardo criptográfico, pudiendo ser exportados íntegramente en formatos estructurados (.json, .pdf, HL7 CDA R2) sin cobros de retención ni penalizaciones.
+              </p>
+
               <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-amber-900 leading-relaxed text-xs">
                 <strong class="block mb-1 font-bold">Aviso de Cumplimiento para el Profesional:</strong>
                 Al utilizar esta plataforma, el Médico Usuario reconoce su obligación de contar con su propio Aviso de Privacidad dirigido a sus pacientes, informando que emplea herramientas tecnológicas en la nube y motores de procesamiento clínico proporcionados por terceros (Encargados) para la gestión del expediente clínico, conforme a la NOM-004-SSA3-2012 y la LFPDPPP.
@@ -1430,7 +1471,7 @@ const slides = [
             <h3 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span>⚖️</span> TÉRMINOS Y RESPONSABILIDAD
             </h3>
-            <p class="text-[10px] sm:text-xs text-slate-400 uppercase">Última actualización: Enero 2026</p>
+            <p class="text-[10px] sm:text-xs text-slate-400 uppercase">Úastima actualización: Enero 2026</p>
 
             <div class="p-3.5 sm:p-4 bg-red-50 rounded-xl border border-red-100">
               <h4 class="font-bold text-red-800 mb-2 sm:mb-3 flex items-center gap-2 text-xs sm:text-sm uppercase">
@@ -1787,9 +1828,10 @@ const slides = [
           <div class="p-4 sm:p-5 bg-slate-950 rounded-2xl border border-slate-800 space-y-2.5 sm:space-y-3">
             <h4 class="font-bold text-teal-300 text-xs uppercase tracking-wider">El Cálculo Real de Inversión Asistencial</h4>
             <div class="text-xs text-slate-300 space-y-2">
-              <p>• <strong>Costo del Sistema:</strong> $2,199 MXN / mes (apenas <strong>~ $73 MXN al día</strong>, o el honorario de <strong>una sola consulta privada</strong> al mes).</p>
+              <p>• <strong>Periodo de Evaluación (15 Días):</strong> Diseñado para que usted mida en su propia consulta el balance real: una inversión de apenas <strong>~ $73 MXN al día</strong> frente a recuperar más de <strong>35 a 40 horas al mes</strong> de redacción mecanizada.</p>
+              <p>• <strong>Costo del Sistema:</strong> $2,199 MXN / mes (el equivalente al honorario de <strong>una sola consulta privada</strong> al mes).</p>
               <p>• <strong>Tiempo Recuperado:</strong> ~35 a 40 horas al mes de redacción manual mecanizada, permitiendo ampliar el cupo de atención o concluir la jornada a tiempo.</p>
-              <p>• <strong>Valor Legal:</strong> Tranquilidad absoluta respecto a la inmutabilidad y solidez técnica del expediente clínico electrónico.</p>
+              <p>• <strong>Valor Legal e Inmutabilidad:</strong> Tranquilidad jurídica permanente con expedientes clínicos estructurados bajo la NOM-004 y NOM-024.</p>
             </div>
           </div>
 
@@ -1865,7 +1907,7 @@ const slides = [
               setTimeout(() => {
                 if (submitBtn) {
                   submitBtn.disabled = false;
-                  submitBtn.textContent = "Activar Prueba Gratuita por 15 Días";
+                  submitBtn.textContent = "Activar Periodo de Evaluación Clínica y Acreditación Asistencial (15 Días)";
                 }
                 form.reset();
               }, 2000);
