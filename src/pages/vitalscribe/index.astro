@@ -10,7 +10,7 @@ import Layout from '../../layouts/Layout.astro';
 // METADATOS Y ELEMENTOS DE MARCA
 // ==========================================
 const title = "Evaluación Asistencial | VitalScribe AI v15.3 - Protocolo de Integridad y Certificación";
-const description = "Infraestructura Omni-Sentinel: Sistema de Soporte para la Decisión Clínica (CDSS) con Verificación Federal en Tiempo Real (SEP, RENAPO, CLUES), Pipeline DICOM-Lite (Exento SaMD), Ingesta Multimodal (Word, PDF, DCM), Búnker Vectorial RAG y alineación estricta con las normas NOM-004-SSA3-2012, NOM-006-SSA3-2011 y NOM-024-SSA3-2012.";
+const description = "Infraestructura Omni-Sentinel: Sistema de Soporte para la Decisión Clínica (CDSS) con Verificación Federal en Tiempo Real (SEP, RENAPO, CLUES), Pipeline Cine-Loop DICOM-Lite (Exento SaMD), Ingesta Multimodal (Word, PDF, DCM), Búnker Vectorial RAG y alineación estricta con las normas NOM-004-SSA3-2012, NOM-006-SSA3-2011 y NOM-024-SSA3-2012.";
 const APP_URL = "https://vitalscribeai.com/";
 
 const HERO_IMG = "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000";
@@ -29,8 +29,8 @@ const slides = [
     clinicalTitle: "Optimización de la Práctica Asistencial Especializada",
     subtitle: "Clinical Decision Support System (CDSS) & Identity Shield",
     clinicalSubtitle: "Soporte Cognitivo Activo de Integridad y Certificación",
-    content: "Arquitectura Omni-Sentinel: El único ecosistema de Blindaje Normativo y Seguridad Activa con Verificación Federal en Vivo ante la SEP, RENAPO (CURP), CLUES (SSA), Ingesta Multimodal DICOM-Lite e Infraestructura de Firma Avanzada (NOM-151 / HL7 CDA R2).",
-    clinicalContent: "Preserve la relación médico-paciente recuperando el contacto visual y la escucha activa durante la consulta. La herramienta estructura notas de evolución de alta fidelidad diagnóstica en segundos con soporte DICOM-Lite y RAG determinista, fortaleciendo la evidencia documental ante riesgos de arbitraje legal.",
+    content: "Arquitectura Omni-Sentinel: El único ecosistema de Blindaje Normativo y Seguridad Activa con Verificación Federal en Vivo ante la SEP, RENAPO (CURP), CLUES (SSA), Ingesta Multimodal con Cine-Loop DICOM-Lite e Infraestructura de Firma Avanzada (NOM-151 / HL7 CDA R2).",
+    clinicalContent: "Preserve la relación médico-paciente recuperando el contacto visual y la escucha activa durante la consulta. La herramienta estructura notas de evolución de alta fidelidad diagnóstica en segundos con soporte Cine-Loop DICOM-Lite y RAG determinista, fortaleciendo la evidencia documental ante riesgos de arbitraje legal.",
     image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000",
     meta: { gradient: "from-teal-600 to-slate-900" }
   },
@@ -71,17 +71,17 @@ const slides = [
   {
     id: "importer_v8",
     type: "split",
-    title: "Ingesta Multimodal Activa & Pipeline DICOM-Lite v15.3",
-    clinicalTitle: "Ingesta en Vivo (Word, PDF) y Resguardo DICOM-Lite (Exento SaMD)",
+    title: "Ingesta Multimodal en Vivo & Motor Cine-Loop DICOM-Lite",
+    clinicalTitle: "Ingesta en Vivo (Word, PDF) y Reproductor Cine-Loop DICOM (Exento SaMD)",
     content: [
       "Ingesta Multimodal en Vivo (Word + PDF): Procesamiento activo de expedientes previos (.docx y .pdf) directo a la memoria de trabajo (liveDocumentContext) sin sobreescribir la exploración actual.",
-      "Pipeline DICOM-Lite en Memoria: Parseo de archivos .dcm con dicomParser.ts en cliente, miniatura WebP (<500 KB) e inyección reactiva de parámetros técnicos al campo Objetivo (SOAP).",
-      "Blindaje Normativo Anti-SaMD (NOM-004): Resguardo documental pasivo en cubeta privada clinic-assets (hasta 50 MB) bajo RLS; exento 100% de regulación como Dispositivo Médico Clase II ante COFEPRIS e IMDRF."
+      "Motor Cine-Loop en Memoria Volátil: Desempaquetado dinámico de series multifotograma (.dcm de 96+ cuadros en angiografía XA y ecocardiografía US) a 10/15/30 fps con scrubber cuadro por cuadro e inversión fotométrica en cliente.",
+      "Blindaje Anti-SaMD y Profilaxis Jetsam: Visualizador documental pasivo (FDA MDDS 21 CFR 892.2050 / SIRES Clase I NOM-024 / NOM-004) exento de herramientas cuantitativas invasivas, con purga de memoria 1x1 Canvas para WebKit iOS Safari."
     ],
     clinicalContent: [
       "Transición Documental Sin Fricción: Incorpore notas previas en Word o expedientes PDF durante la consulta sin recaptura manual mecanizada, alimentando el contexto de la IA a Temperatura 0.0.",
-      "Visualización y Resguardo de Gabinete: Adjunte estudios paraclínicos DICOM (.dcm) en segundos; el sistema extrae la telemetría y resguarda el binario original con validez probatoria.",
-      "Blindaje Legal y Cero SaMD: Cumplimiento riguroso de la NOM-004-SSA3-2012 y NOM-024. Archivo pasivo sin riesgos regulatorios de dispositivo médico ni alucinaciones de visión artificial."
+      "Visualización Dinámica de Gabinete: Reproduzca secuencias cine-loop de cateterismos o ultrasonidos en tiempo real directamente en la consulta, con resguardo inmutable del archivo original.",
+      "Blindaje Legal y Cero SaMD: Cumplimiento riguroso de la NOM-004-SSA3-2012 y NOM-024. Archivo documental pasivo sin riesgos regulatorios de dispositivo médico ni sobrecarga en servidor."
     ],
     image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=2000"
   },
@@ -502,7 +502,7 @@ const slides = [
             Manifiesto Ejecutivo de Arquitectura y Licenciamiento (v15.3)
           </h3>
           <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-            Conozca en detalle nuestra declaración oficial de Soberanía Médica Human-in-the-Loop, aislamiento relacional RLS, zero copyleft GPL (100% código cerrado), pipeline DICOM-Lite pasivo y acreditación federal NOM-004, NOM-006 y NOM-024.
+            Conozca en detalle nuestra declaración oficial de Soberanía Médica Human-in-the-Loop, aislamiento relacional RLS, zero copyleft GPL (100% código cerrado), motor Cine-Loop DICOM-Lite pasivo y acreditación federal NOM-004, NOM-006 y NOM-024.
           </p>
         </div>
         <div class="shrink-0 flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
@@ -887,7 +887,7 @@ const slides = [
                 🎁 PROTOCOLO DE LANZAMIENTO ACTIVO
               </div>
               <p class="mt-1.5 text-slate-300 font-medium text-[11px] sm:text-xs">
-                Los registros iniciales de este arancel incorporan acceso prioritario e integrado al módulo de <strong class="text-white font-bold">Auditoría Clínica Balance 360°</strong> y a la <strong class="text-white font-bold">Ingesta Multimodal v15.3 (Word, PDF y DICOM-Lite)</strong> dentro de su capacidad asistencial de alta cobertura, sin costos adicionales diferidos.
+                Los registros iniciales de este arancel incorporan acceso prioritario e integrado al módulo de <strong class="text-white font-bold">Auditoría Clínica Balance 360°</strong> y a la <strong class="text-white font-bold">Ingesta Multimodal v15.3 (Word, PDF y Motor Cine-Loop DICOM-Lite)</strong> dentro de su capacidad asistencial de alta cobertura, sin costos adicionales diferidos.
               </p>
               <div class="mt-3 flex items-center gap-3">
                 <div class="flex-1 bg-slate-900 h-1.5 rounded-full overflow-hidden">
@@ -915,7 +915,7 @@ const slides = [
               </li>
               <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
-                <span>Ingesta Multimodal v15.3: Word (.docx), PDF clínicos y Pipeline DICOM-Lite (.dcm)</span>
+                <span>Ingesta Multimodal v15.3: Word (.docx), PDF clínicos y Motor Cine-Loop DICOM-Lite (.dcm)</span>
               </li>
               <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
@@ -936,7 +936,7 @@ const slides = [
                     <span class="text-teal-400 font-bold">✓</span> Integración local del motor criptográfico e.firma SAT
                   </li>
                   <li class="flex items-center gap-2">
-                    <span class="text-teal-400 font-bold">✓</span> Ingesta y visualizador DICOM-Lite pasivo WebP (&lt;500 KB) exento de SaMD
+                    <span class="text-teal-400 font-bold">✓</span> Ingesta y reproductor Cine-Loop DICOM-Lite pasivo multifotograma exento de SaMD (10/15/30 fps)
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="text-teal-400 font-bold">✓</span> Validación de recetas electrónicas para psicotrópicos y estupefacientes
@@ -1176,9 +1176,9 @@ const slides = [
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Google Cloud Vertex AI Enterprise (Gemini Engine Temp 0.0)</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Aislamiento contractual de datos PHI. Respuestas formalmente deterministas con latencia inferior a 800ms.</div>
 
-          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Ingesta Multimodal en Vivo & DICOM-Lite v15.3</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">dicomParser.ts (Memoria Volátil) + Ingestor Word/PDF (Temp 0.0)</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Parseo en cliente de cabeceras .dcm, generación de WebP pasivo (&lt;500 KB), inyección directa a SOAP Objetivo y persistencia en clinic-assets bajo RLS (Exento SaMD NOM-004 / NOM-024).</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Ingesta Multimodal en Vivo & Motor Cine-Loop DICOM-Lite v15.3</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">dicomParser.ts + Descompresores Wasm en Memoria Volátil (Cine-Loop 10/15/30 fps) + Ingestor Word/PDF</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Desempaquetado en cliente de series multifotograma (.dcm de 96+ frames), miniaturas WebP (&lt;500 KB), inyección directa a SOAP Objetivo, purga Jetsam (1x1 Canvas) y persistencia en clinic-assets bajo RLS (Exento SaMD NOM-004 / NOM-024 / FDA MDDS).</div>
 
           <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Búnker Vectorial RAG (Harmonized CDSS)</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">pgvector 0.8.0 (768 dims) + text-embedding-004</div>
@@ -1219,7 +1219,7 @@ const slides = [
             </span>
           </summary>
           <p class="text-xs sm:text-sm text-slate-600 mt-3 sm:mt-4 leading-relaxed font-normal">
-            El sistema rompe el <strong>Vendor Lock-in</strong> permitiendo la ingesta activa tanto de notas históricas en Word (`.docx`) y reportes en PDF, como de estudios biomédicos en formato nativo DICOM (`.dcm`). El backend cognitivo (IA determinista a Temperatura 0.0) extrae los datos semiológicos y los formatea estrictamente en notas estructuradas bajo el estándar <strong>SOAP</strong>. Para estudios DICOM, la utilidad <code>dicomParser.ts</code> extrae metadatos administrativos y parámetros de telemetría en el navegador, genera una miniatura pasiva WebP (&lt;500 KB) y resguarda el archivo crudo en almacenamiento privado con RLS (NOM-004 / NOM-024), manteniéndose 100% <strong>exento de regulación como Dispositivo Médico (SaMD)</strong>.
+            El sistema rompe el <strong>Vendor Lock-in</strong> permitiendo la ingesta activa tanto de notas históricas en Word (`.docx`) y reportes en PDF, como de estudios biomédicos en formato nativo DICOM (`.dcm`). El backend cognitivo (IA determinista a Temperatura 0.0) extrae los datos semiológicos y los formatea estrictamente en notas estructuradas bajo el estándar <strong>SOAP</strong>. Para estudios DICOM, la plataforma desempaqueta dinámicamente series multifotograma en la memoria volátil del navegador mediante decodificadores Wasm y <code>dicomParser.ts</code>, integrando un reproductor <strong>Cine-Loop pasivo a 10/15/30 fps</strong> (cateterismos XA de 96+ frames, ultrasonidos) con purga de memoria 1x1 Canvas para WebKit iOS y resguardo seguro en la cubeta privada <code>clinic-assets</code> con RLS (NOM-004 / NOM-024). Al excluir intencionalmente herramientas métricas y cuantitativas invasivas, la plataforma opera estrictamente como Sistema de Datos de Dispositivos Médicos (MDDS de la FDA bajo 21 CFR 892.2050 / 21st Century Cures Act Sec. 520(o)) y repositorio SIRES Clase I, manteniéndose 100% <strong>exento de regulación como Dispositivo Médico (SaMD Clase II)</strong>.
           </p>
         </details>
 
@@ -1591,7 +1591,7 @@ const slides = [
               <div class="flex items-center gap-2 text-teal-400 font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest">
                 <span>🏛️</span> MANIFIESTO EJECUTIVO CUMPLIMIENTO Y LICENCIAMIENTO
               </div>
-              <span class="px-2 py-0.5 bg-teal-950 text-teal-300 border border-teal-500/40 rounded-full font-mono text-[9px] sm:text-[10px] shrink-0">v15.3 Harmonized RAG & DICOM-Lite</span>
+              <span class="px-2 py-0.5 bg-teal-950 text-teal-300 border border-teal-500/40 rounded-full font-mono text-[9px] sm:text-[10px] shrink-0">v15.3 Harmonized RAG & Cine-Loop DICOM-Lite</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs border-b border-slate-800 pb-4">
               <div>
@@ -1611,7 +1611,7 @@ const slides = [
               </div>
             </div>
             <p class="text-xs text-slate-300 leading-relaxed font-light">
-              Este documento constituye el Manifiesto Ejecutivo y Técnico oficial de <strong>VitalScribe AI®</strong>. Define los lineamientos arquitectónicos, criptográficos, de resguardo documental probatorio, de recuperación semántica vectorial (RAG), de imagenología pasiva (DICOM-Lite) y sanitarios que rigen el software, garantizando el cumplimiento estricto ante COFEPRIS, CONAMED y las Normas Oficiales Mexicanas vigentes.
+              Este documento constituye el Manifiesto Ejecutivo y Técnico oficial de <strong>VitalScribe AI®</strong>. Define los lineamientos arquitectónicos, criptográficos, de resguardo documental probatorio, de recuperación semántica vectorial (RAG), de imagenología pasiva cine-loop (DICOM-Lite) y sanitarios que rigen el software, garantizando el cumplimiento estricto ante COFEPRIS, CONAMED, la FDA (MDDS) y las Normas Oficiales Mexicanas vigentes.
             </p>
           </div>
 
@@ -1740,7 +1740,7 @@ const slides = [
           <!-- SECCIÓN 04: INGESTIÓN MULTIMODAL EN VIVO Y PIPELINE DICOM-LITE (EXENTO SaMD) -->
           <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
             <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
-              <span class="text-teal-600 font-mono">04.</span> Ingestión Multimodal en Vivo y Pipeline DICOM-Lite (Exento SaMD)
+              <span class="text-teal-600 font-mono">04.</span> Ingestión Multimodal en Vivo y Pipeline DICOM-Lite Cine-Loop (Exento SaMD)
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed">
               Capacidad perimetral de ingesta y procesamiento activo diseñada para absorber expedientes clínicos históricos acumulados en documentos PDF (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">.pdf</code>), Microsoft Word (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">.docx</code>), imágenes médicas (JPG, PNG, WEBP) y estudios de gabinete en formato biomédico nativo DICOM (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">.dcm</code>), eliminando la fricción de migración y resguardando la evidencia paraclínica bajo la NOM-004-SSA3-2012:
@@ -1755,22 +1755,28 @@ const slides = [
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <span class="text-[9px] font-mono text-teal-700 uppercase font-bold tracking-wider">Imagenología Biomédica</span>
-                <strong class="text-xs font-bold text-slate-900 block">Pipeline DICOM-Lite en Memoria</strong>
+                <strong class="text-xs font-bold text-slate-900 block">Pipeline DICOM-Lite & Motor Cine-Loop</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Procesa archivos .dcm directamente en el navegador del cliente mediante la utilidad en memoria <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">dicomParser.ts</code>. Extrae metadatos administrativos (modalidad, estudio, fecha, centro emisor y telemetría de FC), genera una miniatura pasiva en formato WebP (&lt;500 KB) e inyecta los hallazgos de forma reactiva en la sección <strong>Objetivo (O)</strong> de la nota SOAP.
+                  Procesa archivos .dcm directamente en el cliente mediante <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">dicomParser.ts</code> y descompresión de fotogramas en memoria volátil. Extrae metadatos clínicos, genera miniaturas WebP (&lt;500 KB) e integra un reproductor <strong>Cine-Loop en tiempo real</strong> para series multifotograma (cateterismos XA de 96+ frames, ecocardiogramas US) con cadencia regulable (10/15/30 fps), scrubber e inversión fotométrica sin latencia ni carga en servidor.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <span class="text-[9px] font-mono text-teal-700 uppercase font-bold tracking-wider">Blindaje Regulatorio</span>
-                <strong class="text-xs font-bold text-slate-900 block">Estatus Exento SaMD (Clase I)</strong>
+                <strong class="text-xs font-bold text-slate-900 block">Estatus Exento SaMD (FDA MDDS / SIRES Clase I)</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Al no ejecutar algoritmos cuantitativos automatizados (calipers, cálculo de volúmenes, densitometría o diagnóstico por visión artificial), VitalScribe opera estrictamente como visualizador y resguardo documental pasivo (SIRES Clase I bajo NOM-024). Queda 100% desmarcado de la regulación restrictiva de Dispositivos Médicos Clase II ante COFEPRIS e IMDRF.
+                  Al no ejecutar algoritmos cuantitativos automatizados (calipers, cálculo métrico de estenosis, volumetría 3D o diagnóstico por visión artificial), la reproducción secuencial y visualización pasiva opera estrictamente como Sistema de Datos de Dispositivos Médicos (MDDS de la FDA bajo 21 CFR 892.2050 / 21st Century Cures Act Sec. 520(o)) y repositorio documental SIRES Clase I (NOM-024 / NOM-004). Queda 100% desmarcado de la regulación restrictiva de Dispositivos Médicos Clase II ante COFEPRIS e IMDRF.
                 </p>
               </div>
             </div>
-            <div class="p-3 bg-slate-100 rounded-xl border border-slate-300 text-xs text-slate-700 flex items-center gap-2">
-              <span class="text-base">🩻</span>
-              <p><strong>Cintillo Legal Obligatorio en Visor de Estudios:</strong> Cada visualización de estudios biomédicos en <code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">ImageViewerModal.tsx</code> proyecta el descargo legal estipulado por la norma: <em>"Visualización documental de referencia para expediente clínico (NOM-004-SSA3-2012). No apto para diagnóstico primario ni sustituto de estación radiológica/PACS dedicada."</em> salvaguardando la responsabilidad del facultativo.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 pt-1">
+              <div class="p-3 bg-slate-100 rounded-xl border border-slate-300 text-xs text-slate-700 flex items-center gap-2">
+                <span class="text-base">🩻</span>
+                <p><strong>Cintillo Legal Obligatorio en Visor de Estudios:</strong> Cada visualización de estudios biomédicos en <code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">ImageViewerModal.tsx</code> proyecta el descargo legal estipulado por la norma: <em>"Visualización documental de referencia para expediente clínico (NOM-004-SSA3-2012). No apto para diagnóstico primario ni sustituto de estación radiológica/PACS dedicada."</em> salvaguardando la responsabilidad del facultativo.</p>
+              </div>
+              <div class="p-3 bg-slate-100 rounded-xl border border-slate-300 text-xs text-slate-700 flex items-center gap-2">
+                <span class="text-base">📱</span>
+                <p><strong>Profilaxis de Memoria Hardware WebKit iOS (Anti-Jetsam):</strong> Para neutralizar las terminaciones forzadas del navegador inducidas por el demonio Jetsam en Safari móvil durante cine-loops de hasta 100 fotogramas, el ciclo de desmontaje de React colapsa proactivamente el Canvas a 1x1 píxeles (<code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">canvas.width = 1; canvas.height = 1; ctx.clearRect(0,0,1,1)</code>) y revoca todos los ObjectURLs efímeros, garantizando estabilidad total en dispositivos móviles Apple y Android.</p>
+              </div>
             </div>
           </div>
 
@@ -1850,9 +1856,9 @@ const slides = [
                     <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">Google Developer API Terms / MIT SDK</td>
                   </tr>
                   <tr>
-                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Imagenología Biomédica & DICOM-Lite</td>
-                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">dicom-parser, browser-image-compression</td>
-                    <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">MIT License / Apache 2.0</td>
+                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Imagenología Biomédica & Cine-Loop DICOM-Lite</td>
+                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">@cornerstonejs/core, @cornerstonejs/dicom-image-loader, dicom-parser, browser-image-compression, OpenJPH (Wasm), CharLS (Wasm)</td>
+                    <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">MIT License / BSD-2-Clause / BSD-3-Clause / Apache 2.0</td>
                   </tr>
                   <tr>
                     <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Criptografía, PDF & Generación Documental</td>
@@ -1863,8 +1869,8 @@ const slides = [
               </table>
             </div>
             <div class="p-3.5 sm:p-4 bg-teal-50 rounded-xl border border-teal-200 text-xs text-teal-950 font-medium">
-              <strong class="block mb-1 font-bold text-teal-900">Resolución Jurídica de Paquetes con Licenciamiento Dual:</strong>
-              Las librerías de manipulación criptográfica, compresión y parseo DICOM (<code class="text-slate-800 font-mono bg-white px-1 rounded">node-forge</code>, <code class="text-slate-800 font-mono bg-white px-1 rounded">jszip</code>, <code class="text-slate-800 font-mono bg-white px-1 rounded">dicom-parser</code>) operan contractualmente bajo su vertiente permisiva (BSD-3-Clause / MIT), descartando cláusulas restrictivas GPL.
+              <strong class="block mb-1 font-bold text-teal-900">Resolución Jurídica de Paquetes con Licenciamiento Dual y Motores Wasm:</strong>
+              Las librerías de manipulación criptográfica, compresión y parseo DICOM (<code class="text-slate-800 font-mono bg-white px-1 rounded">@cornerstonejs/core</code>, <code class="text-slate-800 font-mono bg-white px-1 rounded">@cornerstonejs/dicom-image-loader</code>, <code class="text-slate-800 font-mono bg-white px-1 rounded">node-forge</code>, <code class="text-slate-800 font-mono bg-white px-1 rounded">jszip</code>, <code class="text-slate-800 font-mono bg-white px-1 rounded">dicom-parser</code>) junto con los binarios Wasm embebidos de descompresión (<code class="text-slate-800 font-mono bg-white px-1 rounded">OpenJPH</code> bajo BSD-2-Clause y <code class="text-slate-800 font-mono bg-white px-1 rounded">CharLS</code> bajo BSD-3-Clause) operan contractualmente bajo licencias estrictamente permisivas (MIT / BSD / Apache 2.0). Se excluye de raíz <code class="text-slate-800 font-mono bg-white px-1 rounded">@cornerstonejs/tools</code> para anular dependencias secundarias y sellar el blindaje SaMD.
               <span class="block mt-1 font-bold text-teal-800 uppercase tracking-wider">Dictamen de Integridad de Propiedad Intelectual: 0% de contaminación viral GPL / AGPL. El código fuente es 100% propietario, comercializable y de código cerrado.</span>
             </div>
           </div>
@@ -1897,6 +1903,10 @@ const slides = [
               <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2.5">
                 <span class="text-teal-600 font-bold font-mono">5.</span>
                 <div><strong class="text-slate-900">Gobernanza Semántica de Integridad Documental:</strong> Queda vetado el uso de la palabra "forense" en la interfaz de usuario, títulos comerciales o documentación cara al facultativo, homologándose estrictamente hacia <em>"Plan Médico y Certificación Documental"</em> o <em>"Resguardo de Integridad"</em> para evitar connotaciones negativas en la práctica médica privada.</div>
+              </div>
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2.5">
+                <span class="text-teal-600 font-bold font-mono">6.</span>
+                <div><strong class="text-slate-900">Profilaxis de Memoria Móvil y Blindaje SaMD:</strong> Todo componente de visualización gráfica debe implementar el colapso de canvas a 1x1 píxeles en su cleanup de desmontaje y mantener bloqueada la importación de librerías métricas (<code class="text-slate-700 font-mono bg-slate-200 px-1 rounded">@cornerstonejs/tools</code>) para proteger la exención regulatoria ante COFEPRIS y FDA.</div>
               </div>
             </div>
           </div>
