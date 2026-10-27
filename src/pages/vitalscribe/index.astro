@@ -6,6 +6,9 @@
 
 import Layout from '../../layouts/Layout.astro';
 
+// Declaración de seguridad para evitar colapsos de compilación estática en Astro (SSR)
+const mmHg = "mmHg";
+
 // ==========================================
 // METADATOS Y ELEMENTOS DE MARCA
 // ==========================================
@@ -610,7 +613,7 @@ const slides = [
           Navegue por el Entorno Clínico Estructurado
         </h2>
         <p class="text-slate-400 text-sm sm:text-lg max-w-3xl mx-auto mt-4">
-          Explore los mecanismos criptográficos, la suite determinista White-Box, la interoperabilidad HL7 FHIR R5 y las herramientas CDSS que garantizan la continuidad asistencial y el resguardo institucional de su práctica médica.
+          Explore los mecanismos criptográficos, la suite determinista White-Box, la interoperabilidad HL7 FHIR R5 y las herramientas CDSS que garantizan la continuity asistencial y el resguardo institucional de su práctica médica.
         </p>
       </div>
 
@@ -1233,7 +1236,7 @@ const slides = [
 
           <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Ingesta Multimodal & Cine-Loop DICOM-Lite</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">dicomParser.ts + Descompresores Wasm (10/15/30 fps) + Ingestor Word/PDF</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Desempaquetado en cliente de series multifotograma (XA 96+ frames), miniaturas WebP (&lt;500 KB), inyección a SOAP y purga Jetsam (Exento SaMD).</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Desempaquetado en cliente de series multifotograma (XA 96+ frames), miniaturas WebP (menores a 500 KB), inyección a SOAP y purga Jetsam (Exento SaMD).</div>
 
           <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Persistencia y Base de Datos Relacional</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Supabase PostgreSQL Encrypted Node (RLS Active)</div>
@@ -1780,8 +1783,8 @@ const slides = [
                 <ul class="text-xs text-slate-600 space-y-1 list-disc list-inside">
                   <li><strong>CENETEC (GPC):</strong> IMSS-034-08, IMSS-031-08, IMSS-239-09, CENETEC 2010.</li>
                   <li><strong>NOM-015-SSA2-2010:</strong> Tamizaje mandatorio de microalbuminuria persistente y metas de HbA1c.</li>
-                  <li><strong>NOM-030-SSA2-2009:</strong> Control estricto de HTA, metas &lt; 130/80 mmHg y daño a órgano blanco.</li>
-                  <li><strong>NOM-220-SSA1-2016:</strong> Farmacovigilancia activa, reporte de RAMs y auditoría de polifarmacia ($\ge 5$ fármacos).</li>
+                  <li><strong>NOM-030-SSA2-2009:</strong> Control estricto de HTA, metas inferiores a 130/80 mmHg y daño a órgano blanco.</li>
+                  <li><strong>NOM-220-SSA1-2016:</strong> Farmacovigilancia activa, reporte de RAMs y auditoría de polifarmacia (5 o más fármacos).</li>
                 </ul>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
@@ -1792,7 +1795,7 @@ const slides = [
                 <strong class="text-xs font-bold text-slate-900 block">Consensos y Guías Clínicas Internacionales</strong>
                 <ul class="text-xs text-slate-600 space-y-1 list-disc list-inside">
                   <li><strong>WSES 2020 / 2022:</strong> Peritonitis, duodenorrafia de Graham, límites de lavado peritoneal y control de daños.</li>
-                  <li><strong>Surviving Sepsis Campaign 2021:</strong> Carga de betalactámicos en choque y metas de PAM $\ge 65\text{ mmHg}$.</li>
+                  <li><strong>Surviving Sepsis Campaign 2021:</strong> Carga de betalactámicos en choque y metas de PAM de 65 mmHg o superior.</li>
                   <li><strong>ACC/AHA 2022:</strong> Límites de reversión de anticoagulantes orales directos (apixabán) según TFG y ventana horaria.</li>
                   <li><strong>KDIGO 2024:</strong> Estratificación matemática de lesión renal aguda y desescalamiento nefrotóxico.</li>
                 </ul>
@@ -1896,7 +1899,7 @@ const slides = [
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border-l-4 border-teal-500 space-y-1">
                 <strong class="text-xs font-bold text-slate-900 block font-mono">NOM-220-SSA1-2016</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Instalación y operación de la farmacovigilancia, detección de reacciones adversas graves, centinela de polifarmacia ($\ge 5$ fármacos) y Aduana Sanitaria con justificación $\ge 30$ caracteres.
+                  Instalación y operación de la farmacovigilancia, detección de reacciones adversas graves, centinela de polifarmacia (5 o más fármacos) y Aduana Sanitaria con justificación $\ge 30$ caracteres.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border-l-4 border-teal-500 space-y-1">
