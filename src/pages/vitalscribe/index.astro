@@ -32,7 +32,7 @@ const slides = [
     clinicalTitle: "Optimización de la Práctica Asistencial Especializada (TRL 7-8)",
     subtitle: "Clinical Decision Support System (CDSS) • Multicentric Research Grade",
     clinicalSubtitle: "Soporte Cognitivo Activo de Integridad y Certificación Sanitaria",
-    content: "Arquitectura Omni-Sentinel: Plataforma CDSS / SaMD Clase I Exento con Suite Determinista Desacoplada (White-Box Logic), Citas Bibliográficas Resilientes sin Error 404, Exportación Dual HL7 FHIR R5 Document Bundle & HL7 CDA R2 XML-DSig, Búsqueda Semántica Híbrida RRF (k=60), Verificación Federal en Vivo ante la SEP, RENAPO (CURP), CLUES (SSA), Normalización CSG, Ingesta Multimodal con Cine-Loop DICOM-Lite, Bóveda Biométrica WebAuthn FIDO2 AES-GCM-256 e Infraestructura de Doble Firma (NOM-151 / e.firma SAT en RAM).",
+    content: "Arquitectura Omni-Sentinel: Plataforma CDSS / SaMD Clase I Exento con Suite Determinista Desacoplada (White-Box Logic), Citas Bibliográficas Resilientes sin Error 404, Exportación Dual HL7 FHIR R5 Document Bundle & HL7 CDA R2 XML-DSig, Búsqueda Semántica Híbrida RRF (k=60), Verificación Federal en Vivo ante la SEP, RENAPO (CURP), CLUES (SSA), Normalización CSG, Despacho AcroForm Multiaseguradora (GNP, AXA, MetLife, SMNYL) con Copiloto Anti-Glosa RCM, Ingesta Multimodal con Cine-Loop DICOM-Lite, Bóveda Biométrica WebAuthn FIDO2 AES-GCM-256 e Infraestructura de Doble Firma (NOM-151 / e.firma SAT en RAM).",
     clinicalContent: "Preserve la relación médico-paciente recuperando el contacto visual y la escucha activa durante la consulta. La herramienta estructura notas de evolución de alta fidelidad diagnóstica en segundos con soporte Cine-Loop DICOM-Lite, RAG híbrido determinista (Gemini 3.8 Flash a Temp 0.0) e interoperabilidad FHIR R5 para ensayos clínicos y Evidencia del Mundo Real (RWE).",
     image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000",
     meta: { gradient: "from-teal-600 to-slate-900" }
@@ -43,13 +43,13 @@ const slides = [
     title: "Cerebro Clínico vs. Agenda Digital",
     clinicalTitle: "Continuidad Asistencial Integral vs. Agendas Pasivas",
     content: [
-      "Marketplaces: Optimizan el marketing y la cita comercial. Son repositorios de datos pasivos que aumentan la captura manual.",
-      "VitalScribe AI: Suite de Blindaje Médico-Legal Pericial y Certeza Prescriptiva. Neutraliza la Carga Dinámica de la Prueba (SCJN Tesis 93/2011) y ahorra más de 2 horas diarias de papeleo administrativo.",
+      "Marketplaces Tradicionales: Optimizan el marketing y la cita comercial. Son repositorios de datos pasivos que aumentan la captura manual.",
+      "VitalScribe AI: Suite de Blindaje Médico-Legal Pericial, Certeza Prescriptiva y Revenue Cycle Management (RCM). Neutraliza la Carga Dinámica de la Prueba (SCJN Tesis 93/2011), automatiza el llenado de informes para aseguradoras (GNP, AXA, MetLife, SMNYL) con copiloto anti-glosa y reduce más de 2 horas diarias de captura.",
       "Transición Asistencial: Del trabajo clerical al contacto visual empático mediante Inteligencia Ambiental calibrada a Temperatura 0.0 y motor determinista en RAM."
     ],
     clinicalContent: [
       "Sistemas Convencionales: La gestión asistencial tradicional obliga al profesional de la salud a realizar tareas mecánicas de captura, induciendo fatiga cognitiva en el consultorio.",
-      "VitalScribe AI: El sistema de soporte clínico analiza proactivamente reportes paraclínicos, audita polifarmacia bajo NOM-220, previene interacciones y estructura la nota de forma inmediata.",
+      "VitalScribe AI: El sistema de soporte clínico analiza proactivamente reportes paraclínicos, audita polifarmacia bajo NOM-220, previene interacciones, mitiga glosas administrativas y estructura la nota de forma inmediata.",
       "Protección del Tiempo Clínico: Devuelva el valor fundamental al acto médico; elimine las barreras del teclado y priorice el razonamiento diagnóstico y la empatía con el paciente."
     ],
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2000",
@@ -61,8 +61,8 @@ const slides = [
     clinicalTitle: "Mitigación de la Sobrecarga Administrativa en Consulta",
     content: [
       "Fatiga Cognitiva: Causa raíz de más del 40% de omisiones involuntarias en interacciones farmacológicas y antecedentes patológicos.",
-      "Fallas de LLMs en Salud: Modelos probabilísticos que alucinan divisiones matemáticas (KDIGO, SOFA), inventan enlaces con error 404 e inducen notas con lenguaje sentencioso desfavorables ante CONAMED.",
-      "Silos de Información y Sesgo Manual: Plataformas comunes sin interoperabilidad FHIR R5 con tasas de error del 8% al 15% en extracción manual de datos para investigación médica."
+      "Fallas de LLMs en Salud: Modelos probabilísticos generalistas que alucinan cálculos matemáticos (KDIGO, SOFA), inventan enlaces con error 404 e inducen notas apresuradas desfavorables ante arbitrajes de CONAMED.",
+      "Aislamiento de Datos y Silos PHI: Sistemas convencionales sin interoperabilidad internacional (FHIR R5) que impiden la investigación clínica y exponen credenciales en navegadores no seguros."
     ],
     clinicalContent: [
       "Sobrecarga Asistencial: Tras jornadas prolongadas, la capacidad de registrar con exhaustividad cada variable diagnóstica disminuye de forma crítica.",
@@ -211,6 +211,27 @@ const slides = [
     image: "https://images.unsplash.com/photo-1583912267550-d44d7a125e7e?auto=format&fit=crop&q=80&w=2000",
   },
   {
+    id: "insurance_rcm",
+    type: "grid",
+    title: "Pilar 7: Blindaje Financiero RCM & Despacho AcroForm",
+    clinicalTitle: "Defensa Financiera y Mitigación de Glosas Administrativas",
+    content: "Desacoplamiento modular de informes médicos para aseguradoras bajo patrón Strategy y copiloto anti-glosa predictivo para erradicar retrasos de 30 a 90 días en el cobro de honorarios.",
+    clinicalContent: "Automatice el llenado burocrático de informes para aseguradoras directamente desde su nota médica, auditando en tiempo real la congruencia diagnóstica para asegurar la autorización y el pronto pago de sus procedimientos.",
+    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=2000",
+    items: [
+      { title: "Arquitectura Satélite Strategy", text: "Orquestador central desacoplado con mappers independientes (GNP, AXA, MetLife, SMNYL) que garantizan cero regresiones cruzadas." },
+      { title: "Calibración Pericial AcroForm", text: "Inyección nativa en PDFs interactivos con purga física de diccionarios residuales (/AP), tipografía dinámica y control tabular complejo." },
+      { title: "Copiloto Anti-Glosa Predictivo", text: "Evaluador de pre-vuelo que calcula el riesgo de rechazo (denial_risk_score), auditando congruencia CIE-10, Criterios de Tokio y escalas ASA/RCRI." },
+      { title: "Pre-Vuelo Human-in-the-Loop", text: "Pasarela de confirmación obligatoria previa a la descarga que alerta sobre discrepancias clínicas y previene objeciones de pago administrativas." }
+    ],
+    clinicalItems: [
+      { icon: "📄", title: "Llenado Automático Oficial", text: "Generación instantánea de los formatos oficiales vigentes de las 4 principales aseguradoras del país a partir de su evaluación clínica." },
+      { icon: "🛡️", title: "Auditoría Predictiva de Glosa", text: "El sistema escanea su reporte buscando incongruencias de códigos CIE o falta de justificación antes de que la aseguradora pueda rechazar el pago." },
+      { icon: "⏱️", title: "Recuperación de Tiempo", text: "Elimine los 30 a 45 minutos no remunerados que consume el llenado manual de la papelería de cada paciente asegurado." },
+      { icon: "💰", title: "Aceleración de Cobranza", text: "Reportes clínicos metodológicos y exactos que agilizan el proceso de dictamen y erradican las devoluciones administrativas." }
+    ]
+  },
+  {
     id: "security_slide",
     type: "split",
     title: "Bóveda Biométrica FIDO2 & Dualidad de Firma",
@@ -321,7 +342,7 @@ const slides = [
     clinicalTitle: "El Nuevo Estándar en Medicina Especializada Privada",
     subtitle: "v15.3 Global Sentinel Shielded • TRL 7-8 Research Ready",
     clinicalSubtitle: "Súmese a la Evolución del Acto Clínico",
-    content: "Arquitectura inspirada en los estándares de excelencia médica global: Suite determinista desacoplada White-Box, citas resilientes seguras, autoverificación identitaria federal, Bóveda Biométrica FIDO2 AES-GCM-256, doble firma, exportación dual HL7 FHIR R5 / CDA R2, cumplimiento normativo y resguardo patrimonial. El nuevo estándar de oro en salud digital.",
+    content: "Arquitectura inspirada en los estándares de excelencia médica global: Suite determinista desacoplada White-Box, citas resilientes seguras, autoverificación identitaria federal, Bóveda Biométrica FIDO2 AES-GCM-256, doble firma, exportación dual HL7 FHIR R5 / CDA R2, Despacho AcroForm RCM (GNP/AXA/MetLife/SMNYL), cumplimiento normativo y resguardo patrimonial. El nuevo estándar de oro en salud digital.",
     clinicalContent: "Elimine la fatiga documental de su consulta. Permita que VitalScribe asista en la carga documental mientras usted se enfoca firmemente en lo verdaderamente prioritario: el juicio clínico, la relación médico-paciente y la protección de su prestigio profesional.",
     image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=1964",
     meta: { gradient: "from-teal-600 to-blue-900" }
@@ -394,7 +415,7 @@ const slides = [
           </h1>
 
           <p class="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed font-light">
-            <strong>Priorice el acto médico y la escucha activa. Nos ocupamos de estructurar y resguardar su evidencia documental.</strong> Acceda a su entorno seguro de evaluación asistencial VitalScribe AI® v15.3 con Suite Determinista Desacoplada, citas resilientes sin error 404, interoperabilidad dual HL7 FHIR R5 / CDA R2 y búsqueda semántica híbrida RRF k=60.
+            <strong>Priorice el acto médico y la escucha activa. Nos ocupamos de estructurar y resguardar su evidencia documental.</strong> Acceda a su entorno seguro de evaluación asistencial VitalScribe AI® v15.3 con Suite Determinista Desacoplada, citas resilientes sin error 404, interoperabilidad dual HL7 FHIR R5 / CDA R2, Despacho AcroForm para Aseguradoras y búsqueda semántica híbrida RRF k=60.
           </p>
 
           <div class="space-y-3 sm:space-y-4 pt-4 border-t border-slate-800/60">
@@ -505,7 +526,7 @@ const slides = [
             Manifiesto Ejecutivo de Arquitectura, Interoperabilidad FHIR R5 y Licenciamiento (v15.3)
           </h3>
           <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-            Conozca en detalle nuestra declaración oficial de Soberanía Médica Human-in-the-Loop, Suite Determinista Desacoplada (White-Box), Bóveda Biométrica FIDO2 Passkeys, búsqueda híbrida RRF k=60 con citas resilientes, exportador dual HL7 FHIR R5 / CDA R2, normalización CSG, motor Cine-Loop DICOM-Lite pasivo y acreditación federal NOM-004, NOM-006, NOM-024, NOM-151, NOM-220 y NOM-241.
+            Conozca en detalle nuestra declaración oficial de Soberanía Médica Human-in-the-Loop, Suite Determinista Desacoplada (White-Box), Bóveda Biométrica FIDO2 Passkeys, búsqueda híbrida RRF k=60 con citas resilientes, exportador dual HL7 FHIR R5 / CDA R2, normalización CSG, motor Cine-Loop DICOM-Lite pasivo, despacho RCM y acreditación federal NOM-004, NOM-006, NOM-024, NOM-151, NOM-220 y NOM-241.
           </p>
         </div>
         <div class="shrink-0 flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
@@ -635,7 +656,7 @@ const slides = [
         <!-- Sidebar de Diapositivas -->
         <div class="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-slate-800 bg-slate-900/50 flex flex-col justify-between max-h-[220px] sm:max-h-[300px] lg:max-h-[600px] overflow-y-auto custom-scrollbar">
           <div class="p-3 sm:p-4 border-b border-slate-800 bg-slate-950/30">
-            <span class="text-[10px] sm:text-xs font-mono text-slate-500">ÍNDICE DE PLATAFORMA (16 MÓDULOS)</span>
+            <span class="text-[10px] sm:text-xs font-mono text-slate-500">ÍNDICE DE PLATAFORMA (17 MÓDULOS)</span>
           </div>
           <div class="p-2 space-y-1 flex-1">
             {slides.map((slide, index) => (
@@ -833,7 +854,7 @@ const slides = [
           Sustente y Resguarde su Ejercicio Profesional
         </h2>
         <p class="text-slate-400 text-sm sm:text-lg max-w-2xl mx-auto mt-3 sm:mt-4 font-light">
-          Proteja su cédula, mitigue riesgos patrimoniales y optimice su tiempo de consulta mediante esquemas de documentación clínica avanzada con exportación HL7 FHIR R5 y CDA R2.
+          Proteja su cédula, erradique las glosas de aseguradoras y optimice su tiempo de consulta mediante esquemas de documentación clínica avanzada con exportación HL7 FHIR R5 y CDA R2.
         </p>
       </div>
 
@@ -881,7 +902,7 @@ const slides = [
             <div class="flex justify-between items-center mb-4 mt-2">
               <h3 class="text-xl sm:text-2xl font-black text-white">Plan Profesional</h3>
             </div>
-            <p class="text-slate-400 text-xs sm:text-sm mb-4">Automatización integral de formatos SOAP, Suite Determinista CDSS SaMD Clase I Exento e interoperabilidad HL7 FHIR R5.</p>
+            <p class="text-slate-400 text-xs sm:text-sm mb-4">Automatización integral de formatos SOAP, Despacho RCM Multiaseguradora e interoperabilidad HL7 FHIR R5.</p>
 
             <!-- 🎁 PROTOCOLO DE LANZAMIENTO ACTIVO -->
             <div class="mb-6 bg-teal-950/40 border border-teal-500/30 rounded-2xl p-3.5 sm:p-4 text-xs leading-relaxed text-teal-200">
@@ -890,7 +911,7 @@ const slides = [
                 🎁 PROTOCOLO DE LANZAMIENTO ACTIVO
               </div>
               <p class="mt-1.5 text-slate-300 font-medium text-[11px] sm:text-xs">
-                Los registros iniciales de este arancel incorporan acceso prioritario e integrado a la <strong class="text-white font-bold">Suite Determinista CDSS de 34 Especialidades</strong>, <strong class="text-white font-bold">Citas Resilientes sin Error 404</strong>, <strong class="text-white font-bold">Bóveda Biométrica FIDO2 Cero-Contraseñas</strong>, <strong class="text-white font-bold">Exportación Dual HL7 FHIR R5 / CDA R2</strong>, <strong class="text-white font-bold">Búsqueda Híbrida RRF k=60</strong> y a la <strong class="text-white font-bold">Ingesta Multimodal v15.3 (Word, PDF y Motor Cine-Loop DICOM-Lite)</strong> dentro de su capacidad asistencial de alta cobertura, sin costos adicionales diferidos.
+                Los registros iniciales de este arancel incorporan acceso prioritario e integrado a la <strong class="text-white font-bold">Suite Determinista CDSS de 34 Especialidades</strong>, <strong class="text-white font-bold">Bóveda Biométrica FIDO2 Cero-Contraseñas</strong>, <strong class="text-white font-bold">Despacho AcroForm para Aseguradoras (GNP, AXA, MetLife, SMNYL) con Copiloto Anti-Glosa</strong>, <strong class="text-white font-bold">Exportación Dual HL7 FHIR R5 / CDA R2</strong> y a la <strong class="text-white font-bold">Ingesta Multimodal v15.3 (Cine-Loop DICOM-Lite)</strong> dentro de su capacidad asistencial de alta cobertura, sin costos adicionales diferidos.
               </p>
               <div class="mt-3 flex items-center gap-3">
                 <div class="flex-1 bg-slate-900 h-1.5 rounded-full overflow-hidden">
@@ -918,6 +939,10 @@ const slides = [
               </li>
               <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
+                <span>Despacho AcroForm automatizado (GNP, AXA, MetLife, SMNYL) con auditoría Anti-Glosa pre-vuelo</span>
+              </li>
+              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
+                <span class="text-teal-400 font-black">✓</span>
                 <span>Citas Bibliográficas Resilientes en Google Scholar y PubMed erradicando pantallas de error 404</span>
               </li>
               <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
@@ -931,10 +956,6 @@ const slides = [
               <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
                 <span>Ingesta Multimodal v15.3: Word (.docx), PDF clínicos y Motor Cine-Loop DICOM-Lite (.dcm)</span>
-              </li>
-              <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
-                <span class="text-teal-400 font-black">✓</span>
-                <span>Verificación de Identidad Federal en Vivo (CURP y SEP) y Normalización CSG</span>
               </li>
               
               <!-- COHORTE EXCLUSIVA DE SOCIO FUNDADOR -->
@@ -955,9 +976,6 @@ const slides = [
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="text-teal-400 font-bold">✓</span> Búsqueda Semántica Híbrida RRF (k=60) sobre GPC CENETEC y consensos mundiales
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span class="text-teal-400 font-bold">✓</span> Ingesta y reproductor Cine-Loop DICOM-Lite pasivo multifotograma exento de SaMD (10/15/30 fps)
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="text-teal-400 font-bold">✓</span> Validación de recetas electrónicas con claves de 4 bloques del Consejo de Salubridad General (CSG)
@@ -1245,6 +1263,10 @@ const slides = [
           <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Capa de Extracción e Inyección Edge</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Deno Edge Functions Aisladas + DPoP (RFC 9449) + Turnstile</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Ejecución perimetral con directiva '--no-verify-jwt' para soportar pruebas DPoP efímeras y proteger secretos en Vault.</div>
+
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Blindaje Financiero RCM & AcroForm Multiaseguradora</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">InsurancePDFService.ts (Patrón Strategy: GNP, AXA, MetLife, SMNYL)</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Despacho automatizado de informes interactivos con inyección pdf-lib nativa, purga física de apariencias (/AP) y copiloto de riesgo de glosa (evaluateInsuranceRisk).</div>
 
           <div class="p-4 sm:p-6 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Homologación e Interoperabilidad Sanitaria</div>
           <div class="p-4 sm:p-6 text-white font-mono text-xs sm:text-sm">NOM-004, NOM-006, NOM-024, NOM-151, NOM-220 & NOM-241 Compliant</div>
@@ -1706,7 +1728,7 @@ const slides = [
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
                 <strong class="text-xs font-bold text-teal-900 block">Privacidad de Grado Clínico-Normativo por Diseño</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  El secreto médico es inviolable. Los datos sensibles PHI se procesan bajo consentimiento informado expreso y se resguardan bajo aislamiento perimetral estricto (RLS) en PostgreSQL, autenticación biométrica FIDO2 Passkeys y ejecución en memoria volátil (RAM efímera), anulando fugas de información.
+                  El secreto médico es inviolable. Los datos sensibles PHI se procesan bajo consentimiento informado expreso y se resguardan bajo aislamiento perimetral estricto (RLS) en PostgreSQL, autenticación biométrica FIDO2 Passkeys y ejecución en memoria volátil (RAM efímera), anulando fugas de information.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
@@ -2025,6 +2047,10 @@ const slides = [
                 <span class="text-teal-600 font-bold font-mono">8.</span>
                 <div><strong class="text-slate-900">Gobernanza Semántica de Integridad Documental:</strong> Uso exclusivo de la expresión <em>"Plan Médico y Certificación Documental"</em> o <em>"Resguardo de Integridad"</em> en la documentación comercial para preservar la relación médico-paciente.</div>
               </div>
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2.5">
+                <span class="text-teal-600 font-bold font-mono">9.</span>
+                <div><strong class="text-slate-900">Desacoplamiento Estanco en Aseguradoras (Patrón Strategy):</strong> Todo ajuste a campos, coordenadas o lógica de formularios de aseguradoras debe realizarse exclusivamente en su archivo satélite correspondiente dentro de <code class="text-teal-300">src/services/insurance/mappers/</code> (gnpMap.ts, axaMap.ts, metlifeMap.ts, smnylMap.ts). Queda terminantemente prohibido reintroducir condicionales empíricos o lógicas cruzadas en el orquestador central <code class="text-teal-300">InsurancePDFService.ts</code>.</div>
+              </div>
             </div>
           </div>
 
@@ -2109,7 +2135,7 @@ const slides = [
               <span class="text-amber-400">03.</span> Farmacovigilancia y Mitigación de Errores (NOM-220 / LGS 225)
             </h4>
             <p class="text-slate-300 text-xs sm:text-sm">
-              Tras jornadas prolongadas de consulta o guardia, la fatiga cognitiva incrementa el riesgo de obviar alergias cruzadas o dosificaciones nefrotóxicas en pacientes complejos. La Aduana Sanitaria normaliza claves CSG, aplica retención simétrica bidireccional (A + B) en colisiones críticas y audita polifarmacia ($\ge 5$ fármacos) antes de consolidar o imprimir la prescripción limpia para farmacia.
+              Tras jornadas prolongadas de consulta o guardia, la fatiga cognitiva incrementa el riesgo de obviar alergias cruzadas o dosificaciones nefrotóxicas en pacientes complejos. La Aduana Sanitaria normaliza claves CSG, aplica retención simétrica bidireccional (A + B) en colisiones críticas y audita polifarmacia (5 o más fármacos) antes de consolidar o imprimir la prescripción limpia para farmacia.
             </p>
           </div>
 
@@ -2120,6 +2146,7 @@ const slides = [
               <p>• <strong>Periodo de Evaluación (15 Días):</strong> Diseñado para que usted mida en su propia consulta el balance real: una inversión de apenas <strong>~ $73 MXN al día</strong> frente a recuperar más de <strong>35 a 40 horas al mes</strong> de redacción mecanizada.</p>
               <p>• <strong>Costo del Sistema:</strong> $2,199 MXN / mes (el equivalente al honorario de <strong>una sola consulta privada</strong> al mes).</p>
               <p>• <strong>Tiempo Recuperado:</strong> ~35 a 40 horas al mes de redacción manual mecanizada, permitiendo ampliar el cupo de atención o concluir la jornada a tiempo.</p>
+              <p>• <strong>Erradicación de Glosas (RCM):</strong> Automatización nativa de informes para GNP, AXA, MetLife y SMNYL con auditoría anti-glosa, acabando con los retrasos de 30 a 90 días en el pago de honorarios.</p>
               <p>• <strong>Interoperabilidad Universal:</strong> Exportación dual en HL7 FHIR R5 Document Bundle y HL7 CDA R2 XML-DSig bajo la NOM-024 para vincularse con redes hospitalarias y protocolos de investigación multicéntrica (TRL 7-8).</p>
             </div>
           </div>
