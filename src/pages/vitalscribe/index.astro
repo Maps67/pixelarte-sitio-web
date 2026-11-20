@@ -2,7 +2,7 @@
 // Archivo: src/pages/vitalscribe/index.astro
 // PROTOCOLO VITALSCRIBE v15.3: ENTORNO MONOLÍTICO DE ALTA CONVERSIÓN CORPORATIVA & TRL 7-8 RESEARCH GRADE
 // ARQUITECTURA: CAPA DE PRESENTACIÓN AISLADA DE ERRORES SSR / OPTIMIZACIÓN RESPONSIVA MULTI-DISPOSITIVO
-// ESTADO: ESTABLE / PRODUCCIÓN (Certificación Documental, Cumplimiento NOM-004, NOM-006, NOM-024, NOM-151, NOM-220 y NOM-241)
+// ESTADO: ESTABLE / PRODUCCIÓN (Certificación Documental, Cumplimiento NOM-004, NOM-006, NOM-024, NOM-151, NOM-220, NOM-241 y LGS 225/226)
 
 import Layout from '../../layouts/Layout.astro';
 
@@ -13,7 +13,7 @@ const mmHg = "mmHg";
 // METADATOS Y ELEMENTOS DE MARCA
 // ==========================================
 const title = "Evaluación Asistencial | VitalScribe AI v15.3 - Protocolo de Integridad, CDSS TRL 7-8 y Certificación";
-const description = "Infraestructura Omni-Sentinel: Sistema de Soporte para la Decisión Clínica (CDSS / SaMD Clase I Exento) con 34 Especialidades Normalizadas, Suite Determinista White-Box, Citas Resilientes sin Error 404, Exportación Dual HL7 FHIR R5 Document Bundle & HL7 CDA R2 XML-DSig, Búsqueda Semántica Híbrida RRF k=60 (pgvector + BM25), Normalización CSG, Verificación Federal en Tiempo Real (SEP, RENAPO, CLUES), Pipeline Cine-Loop DICOM-Lite, Bóveda Biométrica WebAuthn FIDO2 AES-GCM-256, Ingesta Multimodal (Word, PDF, DCM) y alineación estricta con las normas NOM-004-SSA3-2012, NOM-006-SSA3-2011, NOM-024-SSA3-2012, NOM-151-SCFI-2016, NOM-220-SSA1-2016 y NOM-241-SSA1-2025.";
+const description = "Infraestructura Omni-Sentinel: Sistema de Soporte para la Decisión Clínica Transparente (White-Box / Non-Device SaMD Clase I Exento) con 34 Especialidades Normalizadas, Motor Determinista White-Box de 6 Ejes Transversales (0 ms) y Matriz de 17 Pares Críticos CYP450/P-gp, RAG Híbrido Resiliente en Supabase (public.hybrid_search_gpc), Aduana Sanitaria SSoT con Conciliación Terapéutica Cuádruple y Veto LGS Art. 225/226, Motor Cognitivo Gemini 4 Hydrogen, Exportación Dual HL7 FHIR R5 Document Bundle & HL7 CDA R2 XML-DSig, Normalización CSG, Verificación Federal en Tiempo Real (SEP, RENAPO, CLUES), Pipeline Cine-Loop DICOM-Lite, Bóveda Biométrica WebAuthn FIDO2 AES-GCM-256 y alineación estricta con las normas NOM-004-SSA3-2012, NOM-006-SSA3-2011, NOM-024-SSA3-2012, NOM-151-SCFI-2016, NOM-220-SSA1-2016 y NOM-241-SSA1-2025.";
 const APP_URL = "https://vitalscribeai.com/";
 
 const HERO_IMG = "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000";
@@ -32,20 +32,20 @@ const slides = [
     clinicalTitle: "Optimización de la Práctica Asistencial Especializada (TRL 7-8)",
     subtitle: "Clinical Decision Support System (CDSS) • Multicentric Research Grade",
     clinicalSubtitle: "Soporte Cognitivo Activo de Integridad y Certificación Sanitaria",
-    content: "Arquitectura Omni-Sentinel: Plataforma CDSS / SaMD Clase I Exento con Suite Determinista Desacoplada (White-Box Logic), Citas Bibliográficas Resilientes sin Error 404, Exportación Dual HL7 FHIR R5 Document Bundle & HL7 CDA R2 XML-DSig, Búsqueda Semántica Híbrida RRF (k=60), Verificación Federal en Vivo ante la SEP, RENAPO (CURP), CLUES (SSA), Normalización CSG, Despacho AcroForm Multiaseguradora (GNP, AXA, MetLife, SMNYL) con Copiloto Anti-Glosa RCM, Ingesta Multimodal con Cine-Loop DICOM-Lite, Bóveda Biométrica WebAuthn FIDO2 AES-GCM-256 e Infraestructura de Doble Firma (NOM-151 / e.firma SAT en RAM).",
-    clinicalContent: "Preserve la relación médico-paciente recuperando el contacto visual y la escucha activa durante la consulta. La herramienta estructura notas de evolución de alta fidelidad diagnóstica en segundos con soporte Cine-Loop DICOM-Lite, RAG híbrido determinista (Gemini 3.8 Flash a Temp 0.0) e interoperabilidad FHIR R5 para ensayos clínicos y Evidencia del Mundo Real (RWE).",
+    content: "Arquitectura Híbrida Omni-Sentinel: Plataforma CDSS Transparente (White-Box / Non-Device SaMD Clase I Exento bajo FDA Criterio 4 — Independent Review) con Motor Determinista de 6 Ejes Transversales (0 ms) y Matriz de 17 Pares Críticos CYP450/P-gp, RAG Híbrido Resiliente en Supabase (public.hybrid_search_gpc), Aduana Sanitaria SSoT con Conciliación Terapéutica Cuádruple y Veto LGS Art. 225/226, Motor Gemini 4 Hydrogen, Exportación Dual HL7 FHIR R5 & HL7 CDA R2 (POCD_HD000040), Verificación Federal en Vivo (SEP, RENAPO, CLUES), Despacho AcroForm Multiaseguradora (GNP, AXA, MetLife, SMNYL) con Copiloto Anti-Glosa RCM, Cine-Loop DICOM-Lite, Bóveda Biométrica FIDO2 AES-GCM-256 y Doble Firma (NOM-151 / e.firma SAT en RAM).",
+    clinicalContent: "Preserve la relación médico-paciente recuperando el contacto visual y la escucha activa durante la consulta. La herramienta estructura notas de evolución de alta fidelidad diagnóstica en segundos con soporte Cine-Loop DICOM-Lite, RAG híbrido determinista (Gemini 4 Hydrogen a Temp 0.0) e interoperabilidad FHIR R5 / CDA R2 para ensayos clínicos y Evidencia del Mundo Real (RWE).",
     image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000",
     meta: { gradient: "from-teal-600 to-slate-900" }
   },
   {
     id: "moat",
     type: "split",
-    title: "Cerebro Clínico vs. Agenda Digital",
+    title: "Cerebro Clínico Híbrido vs. Agenda Digital",
     clinicalTitle: "Continuidad Asistencial Integral vs. Agendas Pasivas",
     content: [
-      "Marketplaces Tradicionales: Optimizan el marketing y la cita comercial. Son repositorios de datos pasivos que aumentan la captura manual.",
-      "VitalScribe AI: Suite de Blindaje Médico-Legal Pericial, Certeza Prescriptiva y Revenue Cycle Management (RCM). Neutraliza la Carga Dinámica de la Prueba (SCJN Tesis 93/2011), automatiza el llenado de informes para aseguradoras (GNP, AXA, MetLife, SMNYL) con copiloto anti-glosa y reduce más de 2 horas diarias de captura.",
-      "Transición Asistencial: Del trabajo clerical al contacto visual empático mediante Inteligencia Ambiental calibrada a Temperatura 0.0 y motor determinista en RAM."
+      "Marketplaces y Dictadores Genéricos: Optimizan la cita comercial o transcriben texto plano sin validación farmacocinética ni regulatoria, multiplicando la carga administrativa y el riesgo legal.",
+      "VitalScribe AI: Suite de Blindaje Médico-Legal Pericial, Certeza Prescriptiva (17 pares CYP450/P-gp evaluados en 0 ms) y Revenue Cycle Management (RCM). Neutraliza la Carga Dinámica de la Prueba (SCJN Tesis 93/2011), automatiza el llenado de informes para aseguradoras (GNP, AXA, MetLife, SMNYL) con copiloto anti-glosa y reduce más de 2 horas diarias de captura.",
+      "Transición Asistencial: Del trabajo clerical al contacto visual empático mediante Inteligencia Ambiental calibrada a Temperatura 0.0 con cierre seco en la voluntad del facultativo y motor determinista de 6 ejes en RAM."
     ],
     clinicalContent: [
       "Sistemas Convencionales: La gestión asistencial tradicional obliga al profesional de la salud a realizar tareas mecánicas de captura, induciendo fatiga cognitiva en el consultorio.",
@@ -60,9 +60,9 @@ const slides = [
     title: "La Trampa del Error, Alucinaciones y Burnout",
     clinicalTitle: "Mitigación de la Sobrecarga Administrativa en Consulta",
     content: [
-      "Fatiga Cognitiva: Causa raíz de más del 40% de omisiones involuntarias en interacciones farmacológicas y antecedentes patológicos.",
-      "Fallas de LLMs en Salud: Modelos probabilísticos generalistas que alucinan cálculos matemáticos (KDIGO, SOFA), inventan enlaces con error 404 e inducen notas apresuradas desfavorables ante arbitrajes de CONAMED.",
-      "Aislamiento de Datos y Silos PHI: Sistemas convencionales sin interoperabilidad internacional (FHIR R5) que impiden la investigación clínica y exponen credenciales en navegadores no seguros."
+      "Fatiga Cognitiva: Causa raíz de más del 40% de omisiones involuntarias en interacciones enzimáticas (CYP450), ajustes renales (CKD-EPI/KDIGO) y antecedentes patológicos críticos.",
+      "Fallas de LLMs en Salud: Modelos probabilísticos de caja negra que alucinan cálculos matemáticos, mezclan cifras paraclínicas con dosis de medicamentos o emiten recetas sin principio activo ni miligramos.",
+      "Aislamiento de Datos y Silos PHI: Sistemas convencionales sin interoperabilidad hospitalaria (HL7 CDA R2 / FHIR R5) que impiden la investigación clínica y exponen credenciales en navegadores no seguros."
     ],
     clinicalContent: [
       "Sobrecarga Asistencial: Tras jornadas prolongadas, la capacidad de registrar con exhaustividad cada variable diagnóstica disminuye de forma crítica.",
@@ -82,7 +82,7 @@ const slides = [
       "Blindaje Anti-SaMD y Profilaxis Jetsam: Visualizador documental pasivo (FDA MDDS 21 CFR 892.2050 / SIRES Clase I NOM-024 / NOM-004 / NOM-241) exento de herramientas cuantitativas invasivas, con purga de memoria 1x1 Canvas para WebKit iOS Safari."
     ],
     clinicalContent: [
-      "Transición Documental Sin Fricción: Incorpore notas previas en Word o expedientes PDF durante la consulta sin recaptura manual mecanizada, alimentando el contexto del motor determinista Gemini 3.8 Flash.",
+      "Transición Documental Sin Fricción: Incorpore notas previas en Word o expedientes PDF durante la consulta sin recaptura manual mecanizada, alimentando el contexto del motor determinista Gemini 4 Hydrogen.",
       "Visualización Dinámica de Gabinete: Reproduzca secuencias cine-loop de cateterismos o ultrasonidos en tiempo real directamente en la consulta, con resguardo inmutable del archivo original.",
       "Blindaje Legal y Cero SaMD: Cumplimiento riguroso de la NOM-004-SSA3-2012 y NOM-024. Archivo documental pasivo sin riesgos regulatorios de dispositivo médico invasivo ni sobrecarga en servidor."
     ],
@@ -91,16 +91,16 @@ const slides = [
   {
     id: "engine",
     type: "grid",
-    title: "Pilar 1: Integridad Documental (CDI) & Gemini 3.8 Flash",
+    title: "Pilar 1: Integridad Documental (CDI) & Gemini 4 Hydrogen",
     clinicalTitle: "Estructuración Automatizada de la Evidencia Clínica",
-    content: "Cumplimiento estricto del consentimiento informado y auditoría constante antialucinación mediante el motor Gemini 3.8 Flash bajo el cuarteto determinista (seed, responseSchema, topK: 1, thinkingBudget: 0).",
+    content: "Cumplimiento estricto del consentimiento informado y auditoría constante antialucinación mediante el motor Gemini 4 Hydrogen (respaldo Gemini 3.8 Flash) bajo el cuarteto determinista (seed, responseSchema, topK: 1, thinkingLevel: LOW/HIGH).",
     clinicalContent: "Habilite el procesamiento ambiental durante la interacción médica y obtenga registros clínicos de alta fidelidad en formato SOAP estructurado conforme a la NOM-004.",
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=2000",
     items: [
-      { title: "Cuarteto Determinista (Gemini 3.8)", text: "Semilla fija, esquema estricto, colapso muestral topK: 1 y thinkingBudget: 0 a Temp 0.0 para reproducibilidad matemática." },
-      { title: "Cadena Farmacocinética (CYP450 CoT)", text: "Razonamiento enzimático hepático previo que bloquea colisiones graves como Omeprazol con Clopidogrel en stent coronario." },
-      { title: "Balance 360°", text: "Auditoría retrospectiva que detecta brechas diagnósticas y omisiones críticas en la nota antes de su firma." },
-      { title: "Ambient Intelligence", text: "Escucha asistida activada bajo estricta autorización y firma de consentimiento informado expreso del paciente." }
+      { title: "Cuarteto Determinista & Cortafuegos Anti-Bucle", text: "Gemini 4 Hydrogen con semilla fija, esquema estricto, colapso muestral topK: 1 a Temp 0.0, cierre seco en plan_dictado y safeJSONParse anti-bucle de hasta 700 caracteres." },
+      { title: "17 Pares Críticos CYP450 / P-gp Atómicos", text: "Evaluación determinista desacoplada (CYP1A2 Teofilina/Tizanidina, CYP2C9 Warfarina, CYP2C19 Clopidogrel) previo a emitir receta, evitando colisiones letales." },
+      { title: "Auditoría Clínica Balance 360°", text: "Escaneo automatizado que detecta brechas diagnósticas, seguimiento paraclínico pendiente y banderas rojas con exportación documental firmable." },
+      { title: "Voluntad Inmutable del Facultativo", text: "Escucha asistida bajo consentimiento expreso que preserva verbatim el plan_dictado sin relleno burocrático ni alteración de órdenes." }
     ],
     clinicalItems: [
       { icon: "🛡️", title: "Auditoría de Nota", text: "La herramienta valida en tiempo real que se registren todos los signos vitales e indicadores asistenciales obligatorios por norma." },
@@ -154,16 +154,16 @@ const slides = [
   {
     id: "cdss_support",
     type: "grid",
-    title: "Suite Determinista Desacoplada & Búsqueda Híbrida RRF",
+    title: "Motor Determinista White-Box (6 Ejes) & RAG Híbrido",
     clinicalTitle: "Respaldo Científico de Grado Clínico en Consulta (34 Especialidades)",
-    content: "Fusión de motor determinista White-Box en RAM, citas bibliográficas resilientes sin error 404, recuperación híbrida RRF k=60 y 34 Especialidades Normalizadas. Cero alucinaciones.",
+    content: "Arquitectura híbrida de 0 ms de latencia determinista (6 Ejes Transversales + 17 Pares CYP450/P-gp) combinada con RAG Híbrido Resiliente en Supabase (public.hybrid_search_gpc) y 34 Especialidades Normalizadas.",
     clinicalContent: "Tome decisiones complejas respaldadas instantáneamente por evidencia médica internacional, guías nacionales vinculantes y exportación en Diapositivas Ejecutivas de Alta Definición.",
     image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=2000",
     items: [
-      { title: "Motor Determinista White-Box", text: "Cálculo matemático en RAM de KDIGO 2012 y scores clínicos. El LLM recibe premisas inmutables y no calcula de memoria." },
-      { title: "Citas Resilientes sin Error 404", text: "Enrutamiento semántico en Google Scholar y PubMed para DOIs, referencias ministeriales y consensos mundiales." },
-      { title: "Reciprocal Rank Fusion (k=60)", text: "Función RPC en modo SECURITY INVOKER fusionando distancia coseno y relevancia léxica BM25." },
-      { title: "Soberanía Médica SaMD Clase I", text: "Cumplimiento de guías regulatorias; transparencia total que no sustituye el juicio médico tratante." }
+      { title: "6 Ejes Transversales White-Box (0 ms)", text: "Renal CKD-EPI 2021/KDIGO, Electrolítico K+ y bloqueo QTc, Hemostasia/DOACs, Poblaciones Vulnerables (Beers/Embarazo/Pediatría), 17 Pares CYP450/P-gp y Fricción Segura." },
+      { title: "Fisiología Crítica & Trazabilidad DOF", text: "Evaluadores Sepsis-3, Fórmula de Winter (bloqueo acidosis sin PaCO2), Boey y homologación heurística automática hacia NOM-220-SSA1-2016 y KDIGO 2024." },
+      { title: "RAG Híbrido Resiliente (public.hybrid_search_gpc)", text: "Guías en public.clinical_guidelines con índice GIN tsv que omite vectores nulos (768 ceros) y conmuta a coincidencia léxica OR, más catálogo RLS de interacciones." },
+      { title: "Soberanía Médica SaMD Clase I", text: "Cumplimiento del Criterio 4 FDA CDSS Guidance (Independent Review) y NOM-241-SSA1-2025; cero cajas negras y control total del médico tratante." }
     ],
     clinicalItems: [
       { icon: "🩺", title: "34 Ramas Homologadas", text: "Interconsultas inmediatas con lenguaje semiológico avanzado adaptado a cada especialidad médica y quirúrgica." },
@@ -196,12 +196,12 @@ const slides = [
   {
     id: "omni_sentinel",
     type: "split",
-    title: "Aduana Sanitaria, Resolución Mexicana y Desacoplamiento de Receta",
+    title: "Aduana Sanitaria SSoT, Conciliación Cuádruple y Veto LGS 225/226",
     clinicalTitle: "Seguridad Activa en la Prescripción Médica (NOM-220 / LGS 225)",
     content: [
-      "La Regla de Oro Farmacológica (Art. 225 LGS): Prescripción genérica pura con neutralidad comercial absoluta (brand_reference = null). En marcas solicitadas, antepone la sal genérica oficial y preserva el nombre comercial nominativo con claves CSG y psicotrópicos.",
-      "Desacoplamiento Pericial de Receta (Arts. 28-30 RIS): Emisión limpia de la receta física sin cintillos de alarma interna para erradicar el pánico iatrogénico en el paciente, custodiando las alertas en el expediente clínico, XML HL7 CDA R2 y Bundle FHIR R5.",
-      "Aduana Sanitaria Human-in-the-Loop: Retención preventiva obligatoria en colisiones críticas (CYP1A2, Ceftriaxona + Calcio, dosificación pediátrica) exigiendo sobreescritura médica justificada para autorizar la emisión."
+      "Conciliación Terapéutica Cuádruple (PrescriptionReviewModal.tsx): Segrega simultáneamente CONTINUAR (Continuación de esquema), SUSPENDER (Sugerencia de revisión por el médico), NUEVO y CDSS_WARNING_PENDING_REVIEW (Sujeto a valoración clínica) con clinical_rationale diferenciada, blindando dosis mediante safeClinicalDoseRegex contra cifras paraclínicas (mg/dL, mL/min, mEq/L, mmHg).",
+      "Veto Regulatorio LGS Art. 225/226 & Claves CSG: Excluye de la receta formal toda muestra médica o sustancia indeterminada que carezca de denominación genérica (principio activo) y concentración cuantificada en miligramos, asignando claves oficiales del Compendio Nacional de Insumos (CSG) y neutralidad comercial.",
+      "Dictamen CDSS Paginado & Desacoplamiento de Receta (Arts. 28-30 RIS): Emisión limpia de receta impresa sin cintillos de alarma interna para evitar pánico iatrogénico, exigiendo justificación médica >= 30 caracteres en excepciones y generando dictámenes paginados en PDF (CDSSReportDocument.tsx) respaldados en HL7 CDA R2."
     ],
     clinicalContent: [
       "Prevención de Alergias e Interacciones: Detección proactiva de contraindicaciones cruzadas o reacciones adversas severas durante la prescripción de medicamentos.",
@@ -257,7 +257,7 @@ const slides = [
     clinicalTitle: "Validación Identitaria, Interoperabilidad Dual y Cumplimiento Federal",
     content: [
       "Bundle Documental HL7 FHIR R5 (JSON): Exportación en memoria con secciones SOAP granulares, diagnósticos CIE-10 y prescripciones estructuradas para ingesta directa en lagos de datos globales.",
-      "Expediente Clínico Electrónico HL7 CDA R2 (XML-DSig): Sellado XML con firma electrónica avanzada e.firma SAT para intercambio seguro en redes hospitalarias públicas y privadas.",
+      "Expediente Clínico Electrónico HL7 CDA R2 (POCD_HD000040 / XML-DSig): Sellado XML con firma electrónica avanzada e.firma SAT para intercambio seguro en redes hospitalarias públicas y privadas con claves oficiales LOINC, CIE-10, CIE-11 (OMS) y CSG.",
       "Identificadores Federales Canónicos (OIDs): Mapeo formal de CURP ante RENAPO, Cédula Profesional SEP DGP, CLUES y Claves CSG.",
       "Validación Identitaria en Tiempo Real: Consulta asíncrona ante la DGP-SEP y RENAPO con protocolo normado de bypass de urgencia médica declarada."
     ],
@@ -314,16 +314,16 @@ const slides = [
   {
     id: "roadmap",
     type: "grid",
-    title: "Madurez Científica TRL 7-8 & Ensayos Multicéntricos",
-    clinicalTitle: "Vanguardia en Salud Digital y Madurez TRL 7-8",
-    content: "Evolución tecnológica validada ante comités de bioética e investigación médica para la generación de Evidencia del Mundo Real (RWE).",
-    clinicalContent: "Capacidades de alta especialización integradas de forma progresiva a su entorno clínico permanente.",
+    title: "Madurez TRL 7-8 & Validación en 9 Escenarios Clínicos",
+    clinicalTitle: "Vanguardia en Salud Digital y Validación Clínica Auditada",
+    content: "Validación empírica documentada en entornos multicéntricos y stress tests adversarios de alta complejidad en múltiples especialidades médicas.",
+    clinicalContent: "Capacidades de alta especialización validadas en escenarios clínicos complejos e integradas a su entorno permanente.",
     image: "https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&q=80&w=1000",
     items: [
-      { title: "Madurez TRL 7-8 Demostrada", text: "Sistema completamente integrado y operable en entornos clínicos reales, listo para protocolos de investigación y ensayos multicéntricos." },
-      { title: "Ontologías Médicas Interoperables", text: "Datos estandarizados en formatos universales (FHIR, LOINC, CIE-10), reduciendo drásticamente la discrepancia en la captura de bases de datos de investigación." },
-      { title: "Mapas Fármaco-Genómicos Futuros", text: "Integración orientada a alertas de dosificación basadas en fenotipos celulares y variabilidad enzimática documentada." },
-      { title: "Minería Segura de Datos Clínicos", text: "Capacidad de agregación anonimizada para cohortes retrospectivas sin vulnerar el secreto médico ni la privacidad individual (LFPDPPP)." }
+      { title: "Línea Base Fundacional (5 Casos)", text: "Ginecología (veto TAC y beta-hCG), Pediatría (hernia inguinal sin alucinación), Cardiología (QTc 520 ms / Torsades de Pointes e IC/FA) y Cirugía General (obstrucción/Bologna)." },
+      { title: "Stress Tests Psiquiatría y Endocrinología", text: "Triple colisión serotoninérgica (IMAO+ISRS+Tramadol), litio en ERC y C-SSRS Alto Riesgo con exportación HL7 CDA R2; conciliación cuádruple DM2 y veto LGS 225/226 a muestra médica." },
+      { title: "Stress Tests Neumología y Reumatología", text: "Inhibición CYP1A2 (Ciprofloxacino + Teofilina 17.4 mcg/mL), bloqueo Propranolol en asma (SpO2 91%), mielosupresión Metotrexato + TMP/SMX en ERC Estadio 4 y Warfarina CYP2C9." },
+      { title: "Evidencia del Mundo Real (RWE)", text: "Ontologías FHIR R5, LOINC, CIE-10/11 y CSG con agregación anonimizada bajo LFPDPPP y hoja de ruta farmacogenómica (CYP2D6, CYP2C19, VKORC1)." }
     ],
     clinicalItems: [
       { icon: "🕸️", title: "Auditoría de Polifarmacia", text: "Detección proactiva de efectos adversos y sinergias contraindicadas cuando el paciente se encuentra bajo esquemas multiterapéuticos." },
@@ -342,7 +342,7 @@ const slides = [
     clinicalTitle: "El Nuevo Estándar en Medicina Especializada Privada",
     subtitle: "v15.3 Global Sentinel Shielded • TRL 7-8 Research Ready",
     clinicalSubtitle: "Súmese a la Evolución del Acto Clínico",
-    content: "Arquitectura inspirada en los estándares de excelencia médica global: Suite determinista desacoplada White-Box, citas resilientes seguras, autoverificación identitaria federal, Bóveda Biométrica FIDO2 AES-GCM-256, doble firma, exportación dual HL7 FHIR R5 / CDA R2, Despacho AcroForm RCM (GNP/AXA/MetLife/SMNYL), cumplimiento normativo y resguardo patrimonial. El nuevo estándar de oro en salud digital.",
+    content: "Arquitectura Híbrida de 3 Capas: Motor Determinista White-Box de 6 Ejes Transversales (0 ms) con Matriz de 17 Pares Críticos CYP450/P-gp, RAG Híbrido Resiliente en Supabase, Aduana Sanitaria SSoT con Conciliación Terapéutica Cuádruple y Veto LGS Art. 225/226, motor Gemini 4 Hydrogen a Temperatura 0.0, Bóveda Biométrica FIDO2 AES-GCM-256, doble firma, exportación dual HL7 FHIR R5 / CDA R2 (POCD_HD000040), Despacho AcroForm RCM (GNP/AXA/MetLife/SMNYL), cumplimiento normativo y resguardo patrimonial. El nuevo estándar de oro en salud digital.",
     clinicalContent: "Elimine la fatiga documental de su consulta. Permita que VitalScribe asista en la carga documental mientras usted se enfoca firmemente en lo verdaderamente prioritario: el juicio clínico, la relación médico-paciente y la protección de su prestigio profesional.",
     image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=1964",
     meta: { gradient: "from-teal-600 to-blue-900" }
@@ -399,7 +399,7 @@ const slides = [
           type="button"
           class="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-slate-800/90 hover:bg-slate-700 text-teal-300 hover:text-white border border-teal-500/40 text-[11px] sm:text-xs font-bold font-mono uppercase tracking-widest backdrop-blur-md shadow-lg transition-all transform hover:scale-105 cursor-pointer self-stretch sm:self-auto justify-center"
         >
-          <span>🏛️</span> Compliance & Trust (v15.3)
+          <span>🏛️</span> Compliance &amp; Trust (v15.3)
         </button>
       </div>
 
@@ -415,7 +415,7 @@ const slides = [
           </h1>
 
           <p class="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed font-light">
-            <strong>Priorice el acto médico y la escucha activa. Nos ocupamos de estructurar y resguardar su evidencia documental.</strong> Acceda a su entorno seguro de evaluación asistencial VitalScribe AI® v15.3 con Suite Determinista Desacoplada, citas resilientes sin error 404, interoperabilidad dual HL7 FHIR R5 / CDA R2, Despacho AcroForm para Aseguradoras y búsqueda semántica híbrida RRF k=60.
+            <strong>Priorice el acto médico y la escucha activa. Nos ocupamos de estructurar y resguardar su evidencia documental.</strong> Acceda a su entorno seguro de evaluación asistencial VitalScribe AI® v15.3 con Motor Híbrido White-Box de 6 Ejes Transversales (0 ms), Matriz de 17 Pares Críticos CYP450/P-gp, Aduana Sanitaria SSoT (Conciliación Cuádruple y Veto LGS Art. 225/226), interoperabilidad dual HL7 FHIR R5 / CDA R2, Despacho AcroForm para Aseguradoras y RAG híbrido resiliente.
           </p>
 
           <div class="space-y-3 sm:space-y-4 pt-4 border-t border-slate-800/60">
@@ -526,7 +526,7 @@ const slides = [
             Manifiesto Ejecutivo de Arquitectura, Interoperabilidad FHIR R5 y Licenciamiento (v15.3)
           </h3>
           <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-            Conozca en detalle nuestra declaración oficial de Soberanía Médica Human-in-the-Loop, Suite Determinista Desacoplada (White-Box), Bóveda Biométrica FIDO2 Passkeys, búsqueda híbrida RRF k=60 con citas resilientes, exportador dual HL7 FHIR R5 / CDA R2, normalización CSG, motor Cine-Loop DICOM-Lite pasivo, despacho RCM y acreditación federal NOM-004, NOM-006, NOM-024, NOM-151, NOM-220 y NOM-241.
+            Conozca en detalle nuestra declaración oficial de Soberanía Médica Human-in-the-Loop, Motor Híbrido White-Box de 6 Ejes Transversales (0 ms) con Matriz de 17 Pares Críticos CYP450/P-gp, Bóveda Biométrica FIDO2 Passkeys, RAG híbrido resiliente con citas verificables, Aduana Sanitaria SSoT (Conciliación Cuádruple y Veto LGS Art. 225/226), exportador dual HL7 FHIR R5 / CDA R2, motor Cine-Loop DICOM-Lite pasivo, despacho RCM y acreditación federal NOM-004, NOM-006, NOM-024, NOM-151, NOM-220 y NOM-241.
           </p>
         </div>
         <div class="shrink-0 flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
@@ -548,7 +548,7 @@ const slides = [
       <div class="text-center mb-12 sm:mb-16">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Soberanía Diagnóstica y Flujo Asistencial Optimizado</h2>
         <p class="text-slate-600 mt-3 sm:mt-4 text-base sm:text-lg max-w-2xl mx-auto">
-          Análisis comparativo del impacto de la Inteligencia Ambiental, la suite determinista y la búsqueda híbrida RRF en la mitigación del desgaste profesional y el fortalecimiento probatorio del expediente médico.
+          Análisis comparativo del impacto de la Inteligencia Ambiental, el Motor Determinista White-Box de 6 Ejes y el RAG híbrido resiliente en la mitigación del desgaste profesional y el fortalecimiento probatorio del expediente médico.
         </p>
       </div>
 
@@ -570,7 +570,7 @@ const slides = [
             </div>
             <div class="relative pl-4 border-l-2 border-teal-500 bg-teal-50/70 p-4 rounded-r-xl">
               <span class="text-[10px] font-black text-teal-700 uppercase tracking-widest block mb-1">Entorno VitalScribe v15.3</span>
-              <p class="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">Priorice la interacción clínica. La Inteligencia Ambiental procesa el diálogo médico, aísla ruidos de fondo, estructura el formato SOAP y exporta automáticamente a HL7 FHIR R5 y CDA R2 en tiempo real.</p>
+              <p class="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">Priorice la interacción clínica. La Inteligencia Ambiental procesa el diálogo médico, preserva verbatim la voluntad del facultativo (plan_dictado), estructura el formato SOAP y exporta automáticamente a HL7 FHIR R5 y CDA R2 en tiempo real.</p>
             </div>
           </div>
         </div>
@@ -581,7 +581,7 @@ const slides = [
             <span class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-800 flex items-center justify-center text-xl sm:text-2xl shrink-0">⚠️</span>
             <div>
               <h4 class="font-bold text-base sm:text-lg leading-tight text-white animate-fade-in-up">Farmacovigilancia y Seguridad del Paciente</h4>
-              <span class="text-indigo-300 text-[10px] sm:text-xs font-mono font-bold tracking-wider">ADUANA SANITARIA & CSG (NOM-220 / LGS 225)</span>
+              <span class="text-indigo-300 text-[10px] sm:text-xs font-mono font-bold tracking-wider">ADUANA SANITARIA SSoT &amp; LGS 225/226</span>
             </div>
           </div>
           <div class="p-6 sm:p-8 space-y-6">
@@ -591,7 +591,7 @@ const slides = [
             </div>
             <div class="relative pl-4 border-l-2 border-indigo-500 bg-indigo-50/70 p-4 rounded-r-xl">
               <span class="text-[10px] font-black text-indigo-700 uppercase tracking-widest block mb-1">Entorno VitalScribe v15.3</span>
-              <p class="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">La Regla de Oro Farmacológica normaliza claves CSG, aplica la sal genérica obligatoria (LGS 225), desacopla alertas de la receta física y retiene colisiones críticas (A + B) bajo control médico.</p>
+              <p class="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">Evalúa 17 pares críticos CYP450/P-gp en 0 ms, ejecuta conciliación cuádruple (Continuar, Suspender, Nuevo, Revisión), veta muestras médicas sin principio activo ni miligramos (LGS Art. 225/226) y blinda dosis contra cifras paraclínicas.</p>
             </div>
           </div>
         </div>
@@ -612,7 +612,7 @@ const slides = [
             </div>
             <div class="relative pl-4 border-l-2 border-slate-700 bg-slate-100 p-4 rounded-r-xl">
               <span class="text-[10px] font-black text-slate-800 uppercase tracking-widest block mb-1">Entorno VitalScribe v15.3</span>
-              <p class="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">El módulo de Adenda Legal inmutable (Fe de Erratas append-only) desarma la Carga Dinámica de la Prueba (SCJN Tesis 93/2011), asociando citas resilientes y e.firma SAT en RAM Sandbox (NOM-151).</p>
+              <p class="text-xs sm:text-sm text-slate-900 font-bold leading-relaxed">El módulo de Adenda Legal inmutable (Fe de Erratas append-only) desarma la Carga Dinámica de la Prueba (SCJN Tesis 93/2011), asociando dictámenes paginados CDSS (PDF), trazabilidad DOF y e.firma SAT en RAM Sandbox (NOM-151).</p>
             </div>
           </div>
         </div>
@@ -634,7 +634,7 @@ const slides = [
           Navegue por el Entorno Clínico Estructurado
         </h2>
         <p class="text-slate-400 text-sm sm:text-lg max-w-3xl mx-auto mt-4">
-          Explore los mecanismos criptográficos, la suite determinista White-Box, la interoperabilidad HL7 FHIR R5 y las herramientas CDSS que garantizan la continuity asistencial y el resguardo institucional de su práctica médica.
+          Explore los mecanismos criptográficos, el Motor Determinista White-Box de 6 Ejes, la interoperabilidad HL7 FHIR R5 / CDA R2 y la Aduana Sanitaria SSoT que garantizan la continuidad asistencial y el resguardo institucional de su práctica médica.
         </p>
       </div>
 
@@ -935,7 +935,7 @@ const slides = [
               </li>
               <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
-                <span>Suite Determinista White-Box (KDIGO, Sepsis-3, Winter, Boey, DOACs) sin alucinación matemática</span>
+                <span>Motor Determinista White-Box de 6 Ejes (0 ms) y 17 Pares Críticos CYP450 / P-gp sin alucinación</span>
               </li>
               <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-200 font-medium">
                 <span class="text-teal-400 font-black">✓</span>
@@ -972,7 +972,7 @@ const slides = [
                     <span class="text-teal-400 font-bold">✓</span> Integración local del motor criptográfico e.firma SAT en RAM Sandbox (NOM-151)
                   </li>
                   <li class="flex items-center gap-2">
-                    <span class="text-teal-400 font-bold">✓</span> Exportación hospitalaria dual HL7 FHIR R5 Document Bundle & HL7 CDA R2 XML-DSig
+                    <span class="text-teal-400 font-bold">✓</span> Exportación hospitalaria dual HL7 FHIR R5 Document Bundle &amp; HL7 CDA R2 XML-DSig
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="text-teal-400 font-bold">✓</span> Búsqueda Semántica Híbrida RRF (k=60) sobre GPC CENETEC y consensos mundiales
@@ -1049,9 +1049,9 @@ const slides = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-teal-600 transition-colors">Baja Latencia & Gemini 3.8 Flash</h3>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-teal-600 transition-colors">Baja Latencia &amp; Gemini 4 Hydrogen</h3>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Potenciado mediante el motor cognitivo Gemini 3.8 Flash bajo el cuarteto determinista (semilla fija, respuesta guiada, topK: 1 y thinkingBudget: 0). La estructuración de las notas SOAP se procesa en tiempo real con latencias sub-segundo, erradicando retrasos en la consulta.
+            Potenciado mediante el motor cognitivo Gemini 4 Hydrogen (respaldo Gemini 3.8 Flash) bajo el cuarteto determinista (semilla fija, respuesta guiada, topK: 1 y thinkingLevel: LOW/HIGH) y 0 ms de latencia determinista en los 6 Ejes White-Box.
           </p>
         </div>
 
@@ -1061,9 +1061,9 @@ const slides = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
           </div>
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-indigo-600 transition-colors">Soberanía de Datos, FIDO2 & FHIR R5</h3>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-indigo-600 transition-colors">Soberanía de Datos, FIDO2 &amp; FHIR R5</h3>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Alojamiento en infraestructura cifrada perimetralmente con aislamiento estricto de expedientes (PHI), políticas RLS en PostgreSQL, Bóveda Biométrica WebAuthn (AES-GCM-256) sin contraseñas y exportación abierta en HL7 FHIR R5 Document Bundle sin vendor lock-in.
+            Alojamiento en infraestructura cifrada perimetralmente con aislamiento estricto de expedientes (PHI), políticas RLS en PostgreSQL, Bóveda Biométrica WebAuthn (AES-GCM-256) sin contraseñas y exportación abierta en HL7 FHIR R5 Document Bundle y HL7 CDA R2 sin vendor lock-in.
           </p>
         </div>
 
@@ -1101,21 +1101,21 @@ const slides = [
               <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 font-bold text-xs sm:text-sm mt-1 shadow-md shadow-teal-200">1</div>
               <div class="ml-3 sm:ml-4">
                 <h4 class="text-base sm:text-lg font-bold text-slate-900">Redacción Estructurada y Metódica (SOAP)</h4>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Sintetiza descripciones verbales complejas e impresiones diagnósticas en registros SOAP rigurosos bajo la NOM-004, codificados automáticamente hacia CIE-11 y LOINC.</p>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Sintetiza descripciones verbales complejas e impresiones diagnósticas en registros SOAP rigurosos bajo la NOM-004, preservando verbatim la voluntad del facultativo y codificando automáticamente hacia CIE-11 y LOINC.</p>
               </div>
             </li>
             <li class="flex items-start">
               <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600 font-bold text-xs sm:text-sm mt-1 shadow-md shadow-red-200">2</div>
               <div class="ml-3 sm:ml-4">
-                <h4 class="text-base sm:text-lg font-bold text-slate-900">Aduana Sanitaria y Retención de Fármacos</h4>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Identifica discrepancias terapéuticas críticas, alergias cruzadas y colisiones toxicológicas (ej. Metotrexato + TMP-SMX, duplicidad de AINEs), pausando ambos fármacos hasta su validación consciente.</p>
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">Aduana Sanitaria SSoT y Conciliación Cuádruple</h4>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Identifica colisiones críticas en 17 pares CYP450/P-gp, segrega Continuar/Suspender/Nuevo/Revisión, excluye muestras médicas sin principio activo ni miligramos (LGS Art. 225/226) y blinda dosis contra valores de laboratorio.</p>
               </div>
             </li>
             <li class="flex items-start">
               <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 font-bold text-xs sm:text-sm mt-1 shadow-md shadow-teal-200">3</div>
               <div class="ml-3 sm:ml-4">
-                <h4 class="text-base sm:text-lg font-bold text-slate-900">Búsqueda Híbrida RRF k=60 con Trazabilidad</h4>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Recupera instantáneamente guías ministeriales CENETEC y consensos internacionales con score matemático reproducible, justificando documentalmente cada decisión terapéutica.</p>
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">RAG Híbrido Resiliente con Trazabilidad DOF</h4>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Recupera instantáneamente guías ministeriales CENETEC y consensos internacionales vía public.hybrid_search_gpc con fallback léxico OR, justificando documentalmente cada decisión terapéutica.</p>
               </div>
             </li>
           </ul>
@@ -1159,8 +1159,8 @@ const slides = [
             <li class="flex items-start">
               <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xs sm:text-sm mt-1 shadow-md shadow-indigo-200">✓</div>
               <div class="ml-3 sm:ml-4">
-                <h4 class="text-base sm:text-lg font-bold text-slate-900">Interoperabilidad Dual HL7 FHIR R5 & CDA R2</h4>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Exportación directa en Document Bundle FHIR R5 (JSON) y HL7 CDA R2 (XML-DSig) con los 4 OIDs oficiales de México (CURP, Cédula DGP, CLUES, CSG) bajo la NOM-024-SSA3-2012.</p>
+                <h4 class="text-base sm:text-lg font-bold text-slate-900">Interoperabilidad Dual HL7 FHIR R5 &amp; CDA R2</h4>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Exportación directa en Document Bundle FHIR R5 (JSON) y HL7 CDA R2 (POCD_HD000040 / XML-DSig) con los 4 OIDs oficiales de México (CURP, Cédula DGP, CLUES, CSG) bajo la NOM-024-SSA3-2012.</p>
               </div>
             </li>
           </ul>
@@ -1208,31 +1208,31 @@ const slides = [
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">TRL 7-8 (Sistema Integrado y Operable en Entornos Reales)</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Apto para investigación médica multicéntrica, ensayos clínicos y lagos de datos (OMOP CDM, i2b2, REDCap).</div>
 
-          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Suite Determinista Desacoplada (SaMD Clase I Exento)</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">src/services/deterministic/ (ClinicalCalculators.ts)</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Pre-cálculo en RAM de KDIGO 2012, Sepsis-3 (JAMA 2016), equilibrio ácido-base Winter, score Boey y hemostasia DOACs. Cumple Criterio 4 FDA CDSS y NOM-241.</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Motor Determinista White-Box de 6 Ejes (0 ms)</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">src/services/deterministic/ (ClinicalCalculators.ts &amp; deterministic.ts)</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Pre-cálculo en RAM de CKD-EPI 2021, KDIGO 2012, electrolitos/QTc, hemostasia/DOACs, poblaciones vulnerables, 17 pares CYP450/P-gp atómicos, Sepsis-3, Winter y Boey. Cumple Criterio 4 FDA CDSS y NOM-241.</div>
 
           <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Citas Bibliográficas Resilientes</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Fallback Semántico Google Scholar / PubMed Central</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Erradicación de enlaces caídos y error 404 en DOIs alucinados o rotura de URLs gubernamentales CENETEC, con botones interactivos para consensos mundiales.</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Erradicación de enlaces caídos y error 404 en DOIs alucinados o rotura de URLs gubernamentales CENETEC, con homologación heurística hacia NOM-220-SSA1-2016 y KDIGO 2024.</div>
 
-          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Resolución Farmacológica y Regla de Oro</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">mexicanDrugResolver.ts (Art. 225 LGS / Art. 62 LFPPI)</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Neutralidad comercial (brand_reference = null) ante genéricos puros; denominación genérica obligatoria y marca nominativa en receta, mapeando claves CSG y psicotrópicos Fracc. II/III.</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Aduana Sanitaria SSoT &amp; Veto LGS Art. 225/226</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">PrescriptionReviewModal.tsx &amp; CDSSReportDocument.tsx</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Conciliación cuádruple (CONTINUAR, SUSPENDER, NUEVO, CDSS_WARNING_PENDING_REVIEW), exclusión de muestras médicas sin principio activo ni mg, safeClinicalDoseRegex y dictámenes paginados PDF.</div>
 
           <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Módulo de Adenda Legal (Fe de Erratas)</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Arquitectura Append-Only inmutable (NOM-004 5.4 / 5.5)</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Bloqueo de UPDATE destructivo en notas firmadas y registro cronológico pericial foliado para neutralizar la Carga Dinámica de la Prueba (SCJN Tesis 93/2011).</div>
 
           <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Interoperabilidad Hospitalaria Dual</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">HL7 FHIR R5 (JSON Document Bundle) + HL7 CDA R2 (XML-DSig)</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">HL7 FHIR R5 (JSON Document Bundle) + HL7 CDA R2 (POCD_HD000040)</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Composition LOINC 34109-9 con cuadrantes SOAP y OIDs federales de México (CURP, Cédula DGP, CLUES, CSG) bajo NOM-024.</div>
 
           <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Búsqueda Semántica Híbrida RRF</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Reciprocal Rank Fusion k=60 (pgvector HNSW 768d + BM25 GIN)</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">RPC public.hybrid_search_gpc en modo SECURITY INVOKER con citación pericial falsable de GPC CENETEC y consensos internacionales.</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">RPC public.hybrid_search_gpc (public.clinical_guidelines GIN tsv)</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Omisión de vectores nulos (768 ceros) con conmutación a coincidencia léxica flexible OR y catálogo relacional public.clinical_drug_interactions blindado con RLS.</div>
 
-          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Aduana Sanitaria & Desacoplamiento de Receta</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Aduana Sanitaria &amp; Desacoplamiento de Receta</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Retención Simétrica A + B + RIS Arts. 28-30</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Erradicación del pánico iatrogénico en farmacia (receta limpia) con custodia inmutable de justificación médica en búnker NOM-004 y farmacovigilancia NOM-220.</div>
 
@@ -1245,14 +1245,14 @@ const slides = [
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Validación documental en tiempo real para demeritar identidades sintéticas o apócrifas en el alta médica.</div>
 
           <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Procesamiento Cognitivo de Consulta</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Google AI Studio / Vertex AI (Gemini 3.8 Flash • Cuarteto Determinista)</div>
-          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Aislamiento contractual de datos PHI. Respuestas formalmente deterministas bajo Temp 0.0, seed, schema y thinkingBudget: 0.</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Google AI Studio / Vertex AI (Gemini 4 Hydrogen • Cuarteto Determinista)</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Aislamiento contractual de datos PHI. Respuestas formalmente deterministas bajo Temp 0.0, seed, schema, topK: 1, thinkingLevel LOW/HIGH, cierre seco en plan_dictado y safeJSONParse anti-bucle (700 chars).</div>
 
-          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Suite CDSS & Presentación Ejecutiva HD</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Suite CDSS &amp; Presentación Ejecutiva HD</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">34 Especialidades Normalizadas + Canvas Retina 2X</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Soporte a la decisión clínica con escalas validadas, citación de guías CENETEC y exportación en diapositivas ejecutivas para WhatsApp.</div>
 
-          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Ingesta Multimodal & Cine-Loop DICOM-Lite</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Ingesta Multimodal &amp; Cine-Loop DICOM-Lite</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">dicomParser.ts + Descompresores Wasm (10/15/30 fps) + Ingestor Word/PDF</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Desempaquetado en cliente de series multifotograma (XA 96+ frames), miniaturas WebP (menores a 500 KB), inyección a SOAP y purga Jetsam (Exento SaMD).</div>
 
@@ -1264,13 +1264,13 @@ const slides = [
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">Deno Edge Functions Aisladas + DPoP (RFC 9449) + Turnstile</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Ejecución perimetral con directiva '--no-verify-jwt' para soportar pruebas DPoP efímeras y proteger secretos en Vault.</div>
 
-          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Blindaje Financiero RCM & AcroForm Multiaseguradora</div>
+          <div class="p-4 sm:p-6 border-b border-slate-700 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Blindaje Financiero RCM &amp; AcroForm Multiaseguradora</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-white font-mono text-xs sm:text-sm">InsurancePDFService.ts (Patrón Strategy: GNP, AXA, MetLife, SMNYL)</div>
           <div class="p-4 sm:p-6 border-b border-slate-700 text-slate-300 text-xs sm:text-sm leading-relaxed">Despacho automatizado de informes interactivos con inyección pdf-lib nativa, purga física de apariencias (/AP) y copiloto de riesgo de glosa (evaluateInsuranceRisk).</div>
 
           <div class="p-4 sm:p-6 md:bg-slate-800/50 text-teal-400 font-bold text-xs sm:text-base">Homologación e Interoperabilidad Sanitaria</div>
-          <div class="p-4 sm:p-6 text-white font-mono text-xs sm:text-sm">NOM-004, NOM-006, NOM-024, NOM-151, NOM-220 & NOM-241 Compliant</div>
-          <div class="p-4 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed">Arquitectura append-only con bitácoras inmutables, e.firma SAT en RAM Sandbox, SaMD Clase I Exento y exportación dual FHIR R5 / CDA R2.</div>
+          <div class="p-4 sm:p-6 text-white font-mono text-xs sm:text-sm">NOM-004, NOM-006, NOM-024, NOM-151, NOM-220, NOM-241 &amp; LGS 225/226 Compliant</div>
+          <div class="p-4 sm:p-6 text-slate-300 text-xs sm:text-sm leading-relaxed">Arquitectura append-only con bitácoras inmutables, e.firma SAT en RAM Sandbox, Non-Device SaMD Clase I Exento y exportación dual FHIR R5 / CDA R2.</div>
 
         </div>
       </div>
@@ -1319,7 +1319,7 @@ const slides = [
             </span>
           </summary>
           <p class="text-xs sm:text-sm text-slate-600 mt-3 sm:mt-4 leading-relaxed font-normal">
-            El sistema rompe el <strong>Vendor Lock-in</strong> permitiendo la ingesta activa de notas históricas en Word (`.docx`) y reportes en PDF, como de estudios biomédicos en formato nativo DICOM (`.dcm`). El motor cognitivo <strong>Gemini 3.8 Flash</strong> bajo determinismo estricto extrae los antecedentes y los formatea en notas estructuradas SOAP. Para estudios DICOM, la plataforma desempaqueta dinámicamente series multifotograma en la memoria volátil del navegador mediante decodificadores Wasm y <code>dicomParser.ts</code>, integrando un reproductor <strong>Cine-Loop pasivo a 10/15/30 fps</strong> (cateterismos XA de 96+ frames, ultrasonidos) con purga de memoria 1x1 Canvas para WebKit iOS y resguardo seguro en la cubeta privada <code>clinic-assets</code> con RLS (NOM-004 / NOM-024). Al excluir intencionalmente herramientas métricas y cuantitativas invasivas, la plataforma opera estrictamente como Sistema de Datos de Dispositivos Médicos (MDDS de la FDA bajo 21 CFR 892.2050 / 21st Century Cures Act Sec. 520(o)) y repositorio SIRES Clase I, manteniéndose 100% <strong>exento de regulación como Dispositivo Médico invasivo (SaMD Clase II)</strong>.
+            El sistema rompe el <strong>Vendor Lock-in</strong> permitiendo la ingesta activa de notas históricas en Word (`.docx`) y reportes en PDF, como de estudios biomédicos en formato nativo DICOM (`.dcm`). El motor cognitivo <strong>Gemini 4 Hydrogen</strong> bajo determinismo estricto extrae los antecedentes y los formatea en notas estructuradas SOAP. Para estudios DICOM, la plataforma desempaqueta dinámicamente series multifotograma en la memoria volátil del navegador mediante decodificadores Wasm y <code>dicomParser.ts</code>, integrando un reproductor <strong>Cine-Loop pasivo a 10/15/30 fps</strong> (cateterismos XA de 96+ frames, ultrasonidos) con purga de memoria 1x1 Canvas para WebKit iOS y resguardo seguro en la cubeta privada <code>clinic-assets</code> con RLS (NOM-004 / NOM-024). Al excluir intencionalmente herramientas métricas y cuantitativas invasivas, la plataforma opera estrictamente como Sistema de Datos de Dispositivos Médicos (MDDS de la FDA bajo 21 CFR 892.2050 / 21st Century Cures Act Sec. 520(o)) y repositorio SIRES Clase I, manteniéndose 100% <strong>exento de regulación como Dispositivo Médico invasivo (SaMD Clase II)</strong>.
           </p>
         </details>
 
@@ -1337,13 +1337,13 @@ const slides = [
 
         <details class="group bg-white p-4 sm:p-6 rounded-xl border border-slate-200 cursor-pointer open:ring-2 open:ring-teal-500/20 transition-all shadow-sm">
           <summary class="flex justify-between items-center font-bold text-xs sm:text-base text-slate-800 list-none gap-2">
-            ¿Cómo interviene la Aduana Sanitaria y la Búsqueda Híbrida RRF k=60 para prevenir errores de prescripción?
+            ¿Cómo interviene la Aduana Sanitaria SSoT y el Motor Determinista de 6 Ejes para prevenir errores de prescripción?
             <span class="transition group-open:rotate-180 shrink-0">
               <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-xs sm:text-sm text-slate-600 mt-3 sm:mt-4 leading-relaxed font-normal">
-            La plataforma opera bajo el principio de <strong>Única Fuente de Verdad (SSoT)</strong>. Ante combinaciones de fármacos con interacción de riesgo moderado o crítico (como Metotrexato + TMP-SMX o duplicidad de AINEs), la Aduana Sanitaria aplica <strong>retención simétrica bidireccional (A + B)</strong>, impidiendo que cualquier fármaco se fugue silenciosamente a la receta activa sin una justificación médica explícita (mínimo 30 caracteres bajo NOM-004). Simultáneamente, la función matemática de Fusión de Rangos Recíprocos (RRF k=60) contrasta los medicamentos contra el Compendio Nacional CSG y las Guías de Práctica Clínica CENETEC, asociando la evidencia toxicológica directamente en pantalla.
+            La plataforma opera bajo el principio de <strong>Única Fuente de Verdad (SSoT)</strong>. Antes de invocar al LLM, el Motor Determinista White-Box de 6 Ejes evalúa en 0 ms depuración renal CKD-EPI 2021/KDIGO, potasio/QTc, hemostasia/DOACs, poblaciones vulnerables y <strong>17 pares críticos CYP450/P-gp</strong>. En la Aduana Sanitaria (`PrescriptionReviewModal.tsx`), el sistema ejecuta conciliación cuádruple (`CONTINUAR`, `SUSPENDER`, `NUEVO`, `CDSS_WARNING_PENDING_REVIEW`), veta muestras médicas sin principio activo ni miligramos conforme a los <strong>Artículos 225 y 226 de la Ley General de Salud</strong> y exige justificación médica explícita (&ge; 30 caracteres) para autorizar excepciones.
           </p>
         </details>
 
@@ -1371,16 +1371,16 @@ const slides = [
         <div class="mb-6 md:mb-0 max-w-sm">
           <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tighter">VitalScribe<span class="text-teal-400">AI®</span></h2>
           <p class="text-slate-400 text-xs sm:text-sm mt-3 sm:mt-4 leading-relaxed font-light">
-            Sistemas de Soporte para la Decisión Clínica (CDSS / SaMD Clase I Exento) con protección criptográfica de la identidad profesional. Marca Registrada ante el IMPI (Reg. No. 3083008) y Registro de Obra INDAUTOR (Reg. No. 03-2026-082011151700-01). Nivel de Madurez Tecnológica TRL 7-8. El estándar de referencia en salud digital especializada en los Estados Unidos Mexicanos.
+            Sistemas de Soporte para la Decisión Clínica (CDSS / Non-Device SaMD Clase I Exento) con protección criptográfica de la identidad profesional. Marca Registrada ante el IMPI (Reg. No. 3083008) y Registro de Obra INDAUTOR (Reg. No. 03-2026-082011151700-01). Nivel de Madurez Tecnológica TRL 7-8. El estándar de referencia en salud digital especializada en los Estados Unidos Mexicanos.
           </p>
         </div>
         
         <div class="flex flex-col gap-2 sm:gap-3 text-left md:text-right w-full md:w-auto shrink-0 border-t md:border-t-0 border-slate-800 pt-6 md:pt-0">
           <span class="text-slate-500 text-[10px] sm:text-xs font-mono uppercase tracking-widest">Nodos de Red y Capas de Seguridad</span>
           <span class="text-slate-300 text-xs sm:text-sm font-medium">Bóveda Biométrica WebAuthn / FIDO2 Passkeys (AES-GCM-256)</span>
-          <span class="text-slate-300 text-xs sm:text-sm font-medium font-sans">Suite Determinista Desacoplada (White-Box SaMD Clase I)</span>
-          <span class="text-slate-300 text-xs sm:text-sm font-medium">Interoperabilidad Dual HL7 FHIR R5 & CDA R2 XML-DSig</span>
-          <span class="text-slate-300 text-xs sm:text-sm font-medium">Búsqueda Semántica Híbrida RRF k=60 (pgvector + BM25)</span>
+          <span class="text-slate-300 text-xs sm:text-sm font-medium font-sans">Motor Determinista White-Box de 6 Ejes (0 ms) &amp; 17 Pares CYP450/P-gp</span>
+          <span class="text-slate-300 text-xs sm:text-sm font-medium">Interoperabilidad Dual HL7 FHIR R5 &amp; CDA R2 XML-DSig</span>
+          <span class="text-slate-300 text-xs sm:text-sm font-medium">RAG Híbrido Resiliente (public.hybrid_search_gpc) &amp; Aduana SSoT</span>
           <span class="text-slate-300 text-xs sm:text-sm font-mono text-[10px] sm:text-[11px] text-teal-400 font-bold">Validación Federal en Vivo SEP / RENAPO Activa</span>
           <div class="mt-2 pt-2 border-t border-slate-800/80 text-xs text-slate-400">
             <span class="block text-slate-500 font-mono text-[9px] sm:text-[10px] uppercase">Línea de Enlace Institucional:</span>
@@ -1391,7 +1391,7 @@ const slides = [
 
       <div class="border-t border-slate-800 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-slate-500 text-[10px] sm:text-xs font-light text-center md:text-left">
-          © 2026 VitalScribe AI®. Desarrollado por PixelArte Studio. Marca Registrada ante el IMPI (Reg. No. 3083008) y Registro de Obra INDAUTOR (Reg. No. 03-2026-082011151700-01). Todos los derechos reservados. Cumplimiento normativo NOM-004, NOM-006, NOM-024, NOM-151, NOM-220 y NOM-241.
+          © 2026 VitalScribe AI®. Desarrollado por PixelArte Studio. Marca Registrada ante el IMPI (Reg. No. 3083008) y Registro de Obra INDAUTOR (Reg. No. 03-2026-082011151700-01). Todos los derechos reservados. Cumplimiento normativo NOM-004, NOM-006, NOM-024, NOM-151, NOM-220, NOM-241 y LGS Art. 225/226.
         </p>
         <div class="flex gap-4 sm:gap-6 text-slate-500 text-[10px] sm:text-xs font-medium select-none">
           <button id="trigger-privacy-btn" class="hover:text-teal-400 transition-colors cursor-pointer bg-transparent border-none p-0">Aviso de Privacidad (v15.3)</button>
@@ -1473,10 +1473,10 @@ const slides = [
           <!-- SECCIÓN 2: PROCESAMIENTO IA -->
           <div>
             <h3 class="flex items-center gap-2 sm:gap-3 text-slate-900 font-bold text-lg sm:text-xl mb-3 sm:mb-4">
-              <span>📦</span> 2. Procesamiento de IA Privado y Determinista (Gemini 3.8 Flash)
+              <span>📦</span> 2. Procesamiento de IA Privado y Determinista (Gemini 4 Hydrogen)
             </h3>
             <p class="mb-3 sm:mb-4">
-              La generación de notas clínicas y análisis de riesgo utiliza el motor <strong>Gemini 3.8 Flash</strong> calibrado bajo <strong>Determinismo Criptográfico Estricto</strong> (Temperatura 0.0, semilla fija, decodificación guiada por esquema y thinkingBudget: 0) para anular alucinaciones y desplegado en infraestructura segura.
+              La generación de notas clínicas y análisis de riesgo utiliza el motor <strong>Gemini 4 Hydrogen</strong> (con respaldo configurable hacia Gemini 3.8 Flash) calibrado bajo <strong>Determinismo Criptográfico Estricto</strong> (Temperatura 0.0, semilla fija, decodificación guiada por esquema, topK: 1 y thinkingLevel: LOW/HIGH) para anular alucinaciones y desplegado en infraestructura segura.
             </p>
             <div class="bg-teal-50 p-4 sm:p-6 rounded-2xl border border-teal-100 text-teal-900 text-xs sm:text-sm shadow-inner">
               <strong class="block mb-2 font-bold text-teal-800">GARANTÍA DE NO-ENTRENAMIENTO:</strong> 
@@ -1524,7 +1524,7 @@ const slides = [
               <div>
                 <h4 class="font-bold text-slate-800 text-sm sm:text-base">Resumen Ejecutivo de Arquitectura (TRL 7-8)</h4>
                 <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-1">
-                  <strong>VitalScribe AI® (v15.3)</strong> es una plataforma de <strong>Inteligencia Ambiental Clínica y CDSS</strong> diseñada para mitigar el <em>burnout</em> médico. Opera bajo una arquitectura <strong>Hybrid-Cloud</strong> segura, nivel de madurez TRL 7-8 para investigación multicéntrica y cumple con las normativas <strong>NOM-004</strong>, <strong>NOM-006</strong>, <strong>NOM-024</strong>, <strong>NOM-151</strong>, <strong>NOM-220</strong> y <strong>NOM-241</strong> como Software de Apoyo a la Gestión Documental y Soporte de Decisión Clínica pasivo, garantizando la soberanía de datos y la responsabilidad clínica humana.
+                  <strong>VitalScribe AI® (v15.3)</strong> es una plataforma de <strong>Inteligencia Ambiental Clínica y CDSS Híbrido</strong> diseñada para mitigar el <em>burnout</em> médico. Opera bajo una arquitectura <strong>Hybrid-Cloud</strong> segura de 3 capas (Motor Determinista White-Box de 6 Ejes a 0 ms, RAG Híbrido Resiliente y Aduana Sanitaria SSoT), nivel de madurez TRL 7-8 para investigación multicéntrica y cumple con las normativas <strong>NOM-004</strong>, <strong>NOM-006</strong>, <strong>NOM-024</strong>, <strong>NOM-151</strong>, <strong>NOM-220</strong>, <strong>NOM-241</strong> y <strong>LGS Art. 225/226</strong> como Non-Device SaMD Clase I Exento (FDA Criterio 4 — Independent Review).
                 </p>
               </div>
 
@@ -1552,7 +1552,7 @@ const slides = [
                 <div class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-100 shadow-sm">
                   <h5 class="font-bold text-slate-700 text-xs uppercase tracking-wider mb-1">Procesamiento IA Privado</h5>
                   <p class="text-xs text-slate-500 leading-relaxed">
-                    Utilizamos <strong>Google AI Studio / Vertex AI</strong> con nodos privados y el motor Gemini 3.8 Flash bajo determinismo estricto a Temp 0.0. Sus datos no son compartidos con modelos públicos ni se utilizan para el entrenamiento de algoritmos externos, preservando el secreto profesional médico en todo momento.
+                    Utilizamos <strong>Google AI Studio / Vertex AI</strong> con nodos privados y el motor Gemini 4 Hydrogen bajo determinismo estricto a Temp 0.0. Sus datos no son compartidos con modelos públicos ni se utilizan para el entrenamiento de algoritmos externos, preservando el secreto profesional médico en todo momento.
                   </p>
                 </div>
                 <div class="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-100 shadow-sm">
@@ -1570,7 +1570,7 @@ const slides = [
             <h3 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
               <span>⚖️</span> TÉRMINOS Y RESPONSABILIDAD
             </h3>
-            <p class="text-[10px] sm:text-xs text-slate-400 uppercase">Última actualización: Octubre 2026</p>
+            <p class="text-[10px] sm:text-xs text-slate-400 uppercase">Última actualización: Noviembre 2026</p>
 
             <div class="p-3.5 sm:p-4 bg-red-50 rounded-xl border border-red-100">
               <h4 class="font-bold text-red-800 mb-2 sm:mb-3 flex items-center gap-2 text-xs sm:text-sm uppercase">
@@ -1580,7 +1580,7 @@ const slides = [
                 <p>
                   <strong>1. NATURALEZA ADMINISTRATIVA Y CDSS:</strong> El USUARIO reconoce que VitalScribe AI® es una herramienta de 
                   <strong>gestión documental, visualización pasiva y soporte de decisión clínica referencial</strong>. 
-                  NO es un Dispositivo Médico invasivo (SaMD Clase II) ni sustituye el juicio clínico del profesional. Opera como SaMD Clase I Exento bajo NOM-241-SSA1-2025.
+                  NO es un Dispositivo Médico invasivo (SaMD Clase II) ni sustituye el juicio clínico del profesional. Opera como Non-Device SaMD Clase I Exento bajo NOM-241-SSA1-2025 y FDA Criterio 4.
                 </p>
                 <p>
                   <strong>2. ALERTA DE SOPORTE CLÍNICO NO VINCULANTE:</strong> Las alertas de seguridad, cálculos de dosis y sugerencias de retención 
@@ -1614,13 +1614,13 @@ const slides = [
                 <div class="space-y-2 text-indigo-900/90 text-xs leading-relaxed">
                   <p>
                     La marca <strong>"VitalScribe AI®"</strong>, así como el logotipo, interfaces visuales, 
-                    código fuente (incluyendo algoritmos de estructuración clínica y búsqueda híbrida RRF) y la 
+                    código fuente (incluyendo algoritmos de estructuración clínica, Motor Determinista White-Box de 6 Ejes y RAG híbrido) y la 
                     arquitectura del sistema, son propiedad exclusiva de los desarrolladores (PixelArte Studio) 
                     y se encuentran <strong>debidamente registrados ante el Instituto Mexicano de la Propiedad Industrial (IMPI) bajo el Registro No. 3083008</strong> y protegidos por la Ley Federal del Derecho de Autor ante el INDAUTOR bajo el Registro de Obra No. 03-2026-082011151700-01.
                   </p>
                   <p>
                     <strong>USO DE INTELIGENCIA ARTIFICIAL:</strong> El Usuario reconoce que VitalScribe AI® utiliza el motor de razonamiento avanzado 
-                    Gemini 3.8 Flash configurado deterministamente bajo semilla fija y esquema estructurado para asistir en la redacción clínica. Las sugerencias de 
+                    Gemini 4 Hydrogen (con respaldo Gemini 3.8 Flash) configurado deterministamente bajo semilla fija y esquema estructurado para asistir en la redacción clínica. Las sugerencias de 
                     tratamiento, análisis de riesgo y notas generadas son herramientas 
                     de apoyo y <strong>NO sustituyen el juicio clínico profesional</strong> del médico.
                   </p>
@@ -1639,7 +1639,7 @@ const slides = [
                 </h4>
                 <div class="space-y-2 text-emerald-900/90 text-xs leading-relaxed">
                   <p>
-                    VitalScribe AI® incluye herramientas de cálculo automatizado (como Gupta MICA, RCRI, Caprini, Wells, CHA2DS2-VASc, KDIGO 2012, Sepsis-3) 
+                    VitalScribe AI® incluye herramientas de cálculo automatizado (como CKD-EPI 2021, KDIGO 2012, Gupta MICA, RCRI, Caprini, Wells, CHA2DS2-VASc, Fórmula de Winter, Boey y Sepsis-3) 
                     basadas estrictamente en fórmulas publicadas en literatura científica revisada por pares y Guías de Práctica Clínica (CENETEC).
                   </p>
                   <div class="text-xs font-mono bg-white/50 p-2.5 sm:p-3 rounded border border-emerald-200/50 space-y-1 text-[10px] sm:text-[11px]">
@@ -1680,7 +1680,7 @@ const slides = [
               <div class="flex items-center gap-2 text-teal-400 font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest">
                 <span>🏛️</span> MANIFIESTO EJECUTIVO CUMPLIMIENTO Y LICENCIAMIENTO (TRL 7-8)
               </div>
-              <span class="px-2 py-0.5 bg-teal-950 text-teal-300 border border-teal-500/40 rounded-full font-mono text-[9px] sm:text-[10px] shrink-0">v15.3 FHIR R5 & Suite Determinista</span>
+              <span class="px-2 py-0.5 bg-teal-950 text-teal-300 border border-teal-500/40 rounded-full font-mono text-[9px] sm:text-[10px] shrink-0">v15.3 Arquitectura Híbrida White-Box &amp; SSoT</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs border-b border-slate-800 pb-4">
               <div>
@@ -1691,16 +1691,16 @@ const slides = [
               <div>
                 <span class="text-slate-500 font-mono uppercase text-[9px]">Clasificación</span>
                 <p class="font-bold text-slate-200 mt-0.5">Documento de Control de Políticas y Arquitectura</p>
-                <p class="text-[10px] text-slate-400">SaMD Clase I Exento (FDA CDSS Criterio 4 / NOM-241), Interoperabilidad FHIR R5, RRF Híbrido, FIDO2 y EULA</p>
+                <p class="text-[10px] text-slate-400">Non-Device SaMD Clase I Exento (FDA CDSS Criterio 4 / NOM-241), Interoperabilidad FHIR R5 / CDA R2, FIDO2 y EULA</p>
               </div>
               <div>
                 <span class="text-slate-500 font-mono uppercase text-[9px]">Versión de Repositorio</span>
-                <p class="font-bold text-teal-400 font-mono mt-0.5">Monolito v15.3 Blindado & Auditado</p>
-                <p class="text-[10px] text-slate-400">Estado: Prototipo Legal, TRL 7-8 Multicéntrico y Gemini 3.8 Flash</p>
+                <p class="font-bold text-teal-400 font-mono mt-0.5">Monolito v15.3 Blindado &amp; Auditado</p>
+                <p class="text-[10px] text-slate-400">Estado: 6 Ejes White-Box (0 ms), 17 Pares CYP450/P-gp, Conciliación Cuádruple SSoT y Gemini 4 Hydrogen</p>
               </div>
             </div>
             <p class="text-xs text-slate-300 leading-relaxed font-light">
-              Este documento constituye el Manifiesto Ejecutivo y Técnico oficial de <strong>VitalScribe AI®</strong>. Define los lineamientos arquitectónicos, criptográficos, de resguardo documental probatorio, de interoperabilidad hospitalaria internacional (HL7 FHIR R5 & CDA R2), de recuperación semántica híbrida vectorial (RRF k=60), de imagenología pasiva cine-loop (DICOM-Lite), de autenticación biométrica de hardware (FIDO2 Passkeys) y sanitarios que rigen el software, garantizando el cumplimiento estricto ante COFEPRIS, CONAMED, la SCJN, la FDA (MDDS / CDSS Criterio 4) y las Normas Oficiales Mexicanas vigentes.
+              Este documento constituye el Manifiesto Ejecutivo y Técnico oficial de <strong>VitalScribe AI®</strong>. Define los lineamientos arquitectónicos de su <strong>Motor Híbrido de 3 Capas</strong> (Motor Determinista White-Box de 6 Ejes Transversales a 0 ms, RAG Híbrido Resiliente en Supabase y Aduana Sanitaria SSoT), el control criptográfico, la interoperabilidad hospitalaria internacional (HL7 FHIR R5 &amp; CDA R2), la imagenología pasiva cine-loop (DICOM-Lite), la autenticación biométrica de hardware (FIDO2 Passkeys) y las barreras sanitarias que rigen el software, garantizando el cumplimiento estricto ante COFEPRIS, CONAMED, la SCJN, la FDA (MDDS / CDSS Criterio 4) y las Normas Oficiales Mexicanas vigentes.
             </p>
           </div>
 
@@ -1716,19 +1716,19 @@ const slides = [
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
                 <strong class="text-xs font-bold text-teal-900 block">Soberanía Médica (Human-in-the-Loop)</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  El Criterio Clínico es Soberano: la IA documenta, analiza y estructura la evidencia médica; la autoridad diagnóstica y terapéutica pertenece de manera indelegable al médico especialista. VitalScribe jamás impone conductas clínicas ni automatiza decisiones sobre la salud del paciente, mitigando cualquier riesgo de responsabilidad civil automatizada bajo la NOM-004-SSA3-2012 y NOM-241-SSA1-2025.
+                  El Criterio Clínico es Soberano: la IA documenta, analiza y estructura la evidencia médica; la autoridad diagnóstica y terapéutica pertenece de manera indelegable al médico especialista. VitalScribe jamás impone conductas clínicas ni automatiza decisiones sobre la salud del paciente, mitigando cualquier riesgo de responsabilidad civil automatizada bajo la NOM-004-SSA3-2012, NOM-241-SSA1-2025 y el Criterio 4 de la FDA (Independent Review).
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
-                <strong class="text-xs font-bold text-teal-900 block">Cero Tolerancia a la Alucinación Diagnóstica (Gemini 3.8 Flash)</strong>
+                <strong class="text-xs font-bold text-teal-900 block">Cero Tolerancia a la Alucinación Diagnóstica (Gemini 4 Hydrogen)</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  En la medicina de alta especialidad no cabe la improvisación algorítmica. Nuestro motor <strong>Gemini 3.8 Flash</strong> trabaja calibrado bajo el <strong>cuarteto determinista</strong>: semilla criptográfica fija (seed), decodificación guiada por esquema (responseSchema), colapso muestral (topK: 1) y control de razonamiento (thinkingBudget: 0) a <strong>Temperatura 0.0</strong> obligatoria, asegurando exactitud y reproducibilidad pericial inmutable.
+                  En la medicina de alta especialidad no cabe la improvisación algorítmica. Nuestro motor <strong>Gemini 4 Hydrogen</strong> (con respaldo Gemini 3.8 Flash) trabaja calibrado bajo el <strong>cuarteto determinista</strong>: semilla criptográfica fija (seed), decodificación guiada por esquema (responseSchema), colapso muestral (topK: 1) y gobernanza de razonamiento (thinkingLevel: LOW/HIGH) a <strong>Temperatura 0.0</strong> obligatoria, con cierre seco en plan_dictado y safeJSONParse anti-bucle de 700 caracteres.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
                 <strong class="text-xs font-bold text-teal-900 block">Privacidad de Grado Clínico-Normativo por Diseño</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  El secreto médico es inviolable. Los datos sensibles PHI se procesan bajo consentimiento informado expreso y se resguardan bajo aislamiento perimetral estricto (RLS) en PostgreSQL, autenticación biométrica FIDO2 Passkeys y ejecución en memoria volátil (RAM efímera), anulando fugas de information.
+                  El secreto médico es inviolable. Los datos sensibles PHI se procesan bajo consentimiento informado expreso y se resguardan bajo aislamiento perimetral estricto (RLS) en PostgreSQL, autenticación biométrica FIDO2 Passkeys y ejecución en memoria volátil (RAM efímera), anulando fugas de información.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
@@ -1743,39 +1743,39 @@ const slides = [
           <!-- SECCIÓN 02: PILARES DE ARQUITECTURA TÉCNICA Y SEGURIDAD v15.3 -->
           <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
             <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
-              <span class="text-teal-600 font-mono">02.</span> Pilares de Arquitectura Técnica, Suite Determinista y Seguridad v15.3
+              <span class="text-teal-600 font-mono">02.</span> Arquitectura Central Híbrida (6 Ejes White-Box + RAG + SSoT) v15.3
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed">
-              La infraestructura de VitalScribe AI v15.3 se sostiene en pilares perimetrales inmutables de ingeniería defensiva y un <strong>motor determinista desacoplado en RAM</strong>:
+              La infraestructura de VitalScribe AI v15.3 se sostiene en pilares perimetrales inmutables de ingeniería defensiva y un <strong>Motor Determinista White-Box de 6 Ejes Transversales (0 ms de latencia)</strong>:
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <strong class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
-                  <span class="text-teal-600">Pilar 1:</span> Suite Determinista Desacoplada (White-Box SaMD Clase I)
+                  <span class="text-teal-600">Capa 1:</span> Motor Determinista White-Box de 6 Ejes Transversales (0 ms)
                 </strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Extracción determinista en RAM de KDIGO 2012 exacto, criterios Sepsis-3 condicionados a volumen previo, fórmula de Winter para gasometría sin PaCO2, Boey quirúrgico y hemostasia DOACs. El LLM recibe hechos matemáticos inmutables en su prompt y tiene estrictamente prohibido calcular de memoria.
+                  Ejecución matemática en RAM (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">ClinicalCalculators.ts</code>): (1) CKD-EPI 2021 sin factor racial, KDIGO 2012 y topes renales; (2) Hiperkalemia crítica (K<sup>+</sup> &ge; 5.3 mEq/L o &gt; 5.0 mEq/L con TFGe &lt; 30 mL/min) con ECG obligatorio y bloqueo QTc (&gt; 450 ms H / &gt; 460 ms M / &ge; 500 ms crítico); (3) Hemostasia y DOACs (Andexanet alfa / CCoP-4F); (4) AGS Beers / STOPP-START (&ge; 65 años), escudo teratogénico y pediatría ponderal; (5) Matriz de 17 Pares Críticos CYP450/P-gp atómicos; y (6) Fricción Segura ante datos faltantes, más Sepsis-3, Fórmula de Winter, Boey y Control de Daños.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <strong class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
-                  <span class="text-teal-600">Pilar 2:</span> Módulo de Adenda Legal Inmutable (NOM-004) & RLS Hardened
+                  <span class="text-teal-600">Capa 2:</span> Módulo de Adenda Legal Inmutable (NOM-004) &amp; RLS Hardened
                 </strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Aislamiento relacional estricto amarrado a <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">authenticated</code>. Incorpora la arquitectura append-only de Adenda Legal (numerales 5.4 y 5.5 de la NOM-004) bloqueando operaciones UPDATE destructivas en notas firmadas para salvaguardar la buena fe procesal.
+                  Aislamiento relacional estricto amarrado a <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">authenticated</code> en pacientes, logs, <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">public.clinical_guidelines</code> y <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">public.clinical_drug_interactions</code>. Incorpora la arquitectura append-only de Adenda Legal (NOM-004 5.4 y 5.5) bloqueando operaciones UPDATE destructivas.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <strong class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
-                  <span class="text-teal-600">Pilar 3:</span> Cubeta clinic-assets Privada con Aislamiento Jerárquico
+                  <span class="text-teal-600">Capa 3:</span> Aduana Sanitaria SSoT (Conciliación Cuádruple &amp; Veto LGS 225/226)
                 </strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Segregación perimetral de evidencia gráfica, reportes y estudios paraclínicos. Se valida a nivel motor de base de datos en la tabla interna <code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">storage.objects</code> mediante la comprobación estricta <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">(storage.foldername(name))[1] = auth.uid()::text</code>, restringiendo la visibilidad y descarga exclusivamente al médico titular de la consulta.
+                  Reconciliador bidireccional (<code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">PrescriptionReviewModal.tsx</code>) que segrega CONTINUAR, SUSPENDER, NUEVO y CDSS_WARNING_PENDING_REVIEW, excluye muestras médicas sin principio activo ni miligramos (LGS Art. 225/226), blinda dosis con <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">safeClinicalDoseRegex</code> y genera dictámenes paginados PDF (<code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">CDSSReportDocument.tsx</code>).
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <strong class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
-                  <span class="text-teal-600">Pilar 4:</span> Bóveda Biométrica FIDO2 Passkeys & Dualidad de Firma (SAT + NOM-151)
+                  <span class="text-teal-600">Capa 4:</span> Bóveda Biométrica FIDO2 Passkeys &amp; Dualidad de Firma (SAT + NOM-151)
                 </strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
                   Autenticación WebAuthn FIDO2 en hardware (Windows Hello / Touch ID / Samsung Pass) enlazada a bóveda criptográfica AES-GCM-256 no extraíble en el navegador. Se complementa con descifrado de e.firma del SAT (.key, .cer) en memoria RAM volátil para el principio de No Repudio y rúbrica autógrafa en pantalla bajo NOM-151.
@@ -1787,13 +1787,13 @@ const slides = [
           <!-- SECCIÓN 03: BÚSQUEDA HÍBRIDA RRF Y CITAS RESILIENTES -->
           <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
             <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
-              <span class="text-teal-600 font-mono">03.</span> Búsqueda Semántica Híbrida RRF (k=60) y Citas Resilientes sin Error 404
+              <span class="text-teal-600 font-mono">03.</span> RAG Híbrido Resiliente (public.hybrid_search_gpc) y Trazabilidad DOF
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed">
-              VitalScribe AI v15.3 integra una tubería de Recuperación Aumentada por Generación (RAG) híbrida determinista (pgvector 768d + BM25 GIN bajo fórmula RRF k=60), blindada mediante <strong>enrutamiento semántico estructurado en Google Scholar y PubMed Central</strong>:
+              Guías de Práctica Clínica consolidadas en <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">public.clinical_guidelines</code> con índice GIN (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">tsv</code>) y búsqueda híbrida resiliente (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">public.hybrid_search_gpc</code>) que omite vectores nulos (768 ceros) y conmuta a coincidencia léxica flexible (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">OR</code>), desplegando píldoras oficiales <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">Norma DOF: NOM-220-SSA1-2016</code> y <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">KDIGO 2024</code>:
             </p>
             <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 text-center font-mono text-xs text-indigo-300 overflow-x-auto">
-              Score_RRF(d) = (1.0 / (60 + Rank_Densa(d))) + (1.0 / (60 + Rank_Léxica(d)))
+              Score_RRF(d) = (1.0 / (60 + Rank_Densa(d))) + (1.0 / (60 + Rank_Léxica_OR(d)))
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
@@ -1828,7 +1828,7 @@ const slides = [
           <!-- SECCIÓN 04: INTEROPERABILIDAD HOSPITALARIA DUAL (FHIR R5 & CDA R2) -->
           <div class="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
             <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-200 pb-2">
-              <span class="text-teal-600 font-mono">04.</span> Interoperabilidad Hospitalaria Dual & OIDs Federales
+              <span class="text-teal-600 font-mono">04.</span> Interoperabilidad Hospitalaria Dual &amp; OIDs Federales
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed">
               VitalScribe AI v15.3 consolida un Exportador Dual de Salud Digital ejecutado 100% en el cliente sin costos de servidor ni riesgo de fuga de datos PHI:
@@ -1843,9 +1843,9 @@ const slides = [
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <span class="text-[9px] font-mono text-blue-700 uppercase font-bold tracking-wider">Normativa Federal</span>
-                <strong class="text-xs font-bold text-slate-900 block">Expediente Certificado HL7 CDA R2 (XML-DSig)</strong>
+                <strong class="text-xs font-bold text-slate-900 block">Expediente Certificado HL7 CDA R2 (POCD_HD000040 / XML-DSig)</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Exportación XML bajo la guía GIIS-A001-01-05 (NOM-024-SSA3-2012) con sellado digital mediante firma electrónica avanzada del SAT en RAM volátil, no repudio legal (NOM-151) e inyección de los 4 OIDs canónicos de México: CURP (2.16.840.1.113883.4.629), Cédula DGP (2.16.840.1.113883.3.215.12.18), CLUES SSA (2.16.840.1.113883.2.14.2.1) y Clave CSG (2.16.840.1.113883.2.14.2.5).
+                  Exportación XML bajo la guía GIIS-A001-01-05 (NOM-024-SSA3-2012) con sellado digital mediante firma electrónica avanzada del SAT en RAM volátil, no repudio legal (NOM-151) e inyección de claves oficiales LOINC, CIE-10, CIE-11 (OMS) y CSG junto con los 4 OIDs canónicos de México: CURP (2.16.840.1.113883.4.629), Cédula DGP (2.16.840.1.113883.3.215.12.18), CLUES SSA (2.16.840.1.113883.2.14.2.1) y Clave CSG (2.16.840.1.113883.2.14.2.5).
                 </p>
               </div>
             </div>
@@ -1862,14 +1862,14 @@ const slides = [
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <span class="text-[9px] font-mono text-teal-700 uppercase font-bold tracking-wider">Interoperabilidad</span>
-                <strong class="text-xs font-bold text-slate-900 block">Ingesta Activa Word & PDF</strong>
+                <strong class="text-xs font-bold text-slate-900 block">Ingesta Activa Word &amp; PDF</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
                   Permite anexar expedientes y notas previas acumuladas en formatos .docx y .pdf directamente a la memoria de trabajo activa (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">liveDocumentContext</code>) durante la consulta sin sobreescribir la exploración física actual.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <span class="text-[9px] font-mono text-teal-700 uppercase font-bold tracking-wider">Imagenología Biomédica</span>
-                <strong class="text-xs font-bold text-slate-900 block">Pipeline DICOM-Lite & Motor Cine-Loop</strong>
+                <strong class="text-xs font-bold text-slate-900 block">Pipeline DICOM-Lite &amp; Motor Cine-Loop</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
                   Procesa archivos .dcm directamente en el cliente mediante <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">dicomParser.ts</code> y descompresión Wasm. Integra un reproductor <strong>Cine-Loop en tiempo real</strong> para series multifotograma (cateterismos XA de 96+ frames, ecocardiogramas US) con cadencia regulable (10/15/30 fps) y purga Jetsam en iOS.
                 </p>
@@ -1892,15 +1892,15 @@ const slides = [
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-3">
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
-                <strong class="text-xs font-bold text-slate-900 block">La Regla de Oro Farmacológica Mexicana (LGS 225 / LFPPI 62)</strong>
+                <strong class="text-xs font-bold text-slate-900 block">La Regla de Oro Farmacológica Mexicana (LGS 225 / 226)</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Prescripción genérica pura con neutralidad comercial absoluta (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">brand_reference = null</code>). Ante marcas solicitadas por el médico, antepone la Denominación Genérica oficial y preserva la marca como sugerencia referencial nominativa con claves CSG y psicotrópicos Fracc. II/III.
+                  Prescripción genérica pura con neutralidad comercial absoluta (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">brand_reference = null</code>). Excluye de la receta formal toda muestra médica o sustancia indeterminada sin denominación genérica ni concentración cuantificada en miligramos, asignando claves oficiales CSG y psicotrópicos Fracc. II/III.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
                 <strong class="text-xs font-bold text-slate-900 block">Desacoplamiento Pericial de Receta (Arts. 28 a 30 RIS)</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Emisión limpia de la receta impresa entregada al paciente sin cintillos de alarma interna del CDSS para erradicar el pánico iatrogénico y bloqueos en farmacia, custodiando las alertas en el expediente clínico (NOM-004), XML HL7 CDA R2 y Bundle FHIR R5.
+                  Emisión limpia de la receta impresa entregada al paciente sin cintillos de alarma interna del CDSS para erradicar el pánico iatrogénico y bloqueos en farmacia, custodiando las alertas en el expediente clínico (NOM-004), dictámenes paginados PDF (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">CDSSReportDocument.tsx</code>) y HL7 CDA R2.
                 </p>
               </div>
             </div>
@@ -1909,7 +1909,7 @@ const slides = [
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border-l-4 border-teal-500 space-y-1">
                 <strong class="text-xs font-bold text-slate-900 block font-mono">NOM-004-SSA3-2012</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Criterios de integración, inmutabilidad de notas médicas, protocolo de Confianza Cero en exploración física no dictada y archivo de anexos paraclínicos.
+                  Criterios de integración, inmutabilidad de notas médicas (plan_dictado verbatim), protocolo de Confianza Cero en exploración física no dictada y archivo de anexos paraclínicos.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border-l-4 border-teal-500 space-y-1">
@@ -1921,7 +1921,7 @@ const slides = [
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border-l-4 border-teal-500 space-y-1">
                 <strong class="text-xs font-bold text-slate-900 block font-mono">NOM-220-SSA1-2016</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Instalación y operación de la farmacovigilancia, detección de reacciones adversas graves, centinela de polifarmacia (5 o más fármacos) y Aduana Sanitaria con justificación $\ge 30$ caracteres.
+                  Instalación y operación de la farmacovigilancia, 17 pares críticos CYP450/P-gp, centinela de polifarmacia (5 o más fármacos) y Aduana Sanitaria con justificación &ge; 30 caracteres.
                 </p>
               </div>
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border-l-4 border-teal-500 space-y-1">
@@ -1939,7 +1939,7 @@ const slides = [
               <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border-l-4 border-teal-500 space-y-1">
                 <strong class="text-xs font-bold text-slate-900 block font-mono">NOM-241-SSA1-2025</strong>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Buenas prácticas de software como dispositivo médico (SaMD Clase I Exento) operando bajo soporte de decisión clínica pasiva no vinculante (FDA CDSS Criterio 4).
+                  Buenas prácticas de software como dispositivo médico (Non-Device SaMD Clase I Exento) operando bajo soporte de decisión clínica pasiva no vinculante (FDA CDSS Criterio 4).
                 </p>
               </div>
             </div>
@@ -1961,13 +1961,13 @@ const slides = [
                 </thead>
                 <tbody class="divide-y divide-slate-200 bg-white">
                   <tr>
-                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Frontend & UI Core</td>
-                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">React, Vite, Next.js Components, Astro, Tailwind CSS, Lucide React, WebAuthn API</td>
+                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Frontend, UI Core &amp; PWA</td>
+                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">React, Vite, Workbox v1.2.0, Astro, Tailwind CSS, Lucide React, WebAuthn API</td>
                     <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">MIT License / W3C Standard</td>
                   </tr>
                   <tr>
-                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Suite Determinista Desacoplada</td>
-                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">src/services/deterministic/ (ClinicalCalculators.ts, deterministic.ts)</td>
+                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Motor Determinista White-Box (6 Ejes)</td>
+                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">src/services/deterministic/ (ClinicalCalculators.ts, deterministic.ts), PrescriptionReviewModal.tsx, CDSSReportDocument.tsx</td>
                     <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">Código Propietario © 2026 VitalScribe AI®</td>
                   </tr>
                   <tr>
@@ -1976,27 +1976,27 @@ const slides = [
                     <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">Apache License 2.0</td>
                   </tr>
                   <tr>
-                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Base de Datos & Búsqueda Híbrida RRF</td>
-                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">PostgreSQL 15+, pgvector 0.8.0 (HNSW), tsvector BM25 (GIN), Supabase JS SDK, Edge Functions (Deno Runtime)</td>
+                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Base de Datos &amp; RAG Híbrido Resiliente</td>
+                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">PostgreSQL 15+, pgvector 0.8.0 (HNSW), tsvector GIN (public.clinical_guidelines, public.hybrid_search_gpc), Supabase JS SDK, Edge Functions (Deno)</td>
                     <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">PostgreSQL License / MIT / Apache 2.0</td>
                   </tr>
                   <tr>
-                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Motor Cognitivo & Embeddings</td>
-                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">Google AI Studio REST Endpoints, text-embedding-004 (768d), Gemini 3.8 Flash (Seed / Schema / Thinking Budget / Temp 0.0)</td>
+                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Motor Cognitivo &amp; Embeddings</td>
+                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">Google AI Studio REST Endpoints, text-embedding-004 (768d), Gemini 4 Hydrogen / 3.8 Flash (Seed / Schema / Thinking Level / Temp 0.0)</td>
                     <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">Google Developer API Terms / MIT SDK</td>
                   </tr>
                   <tr>
                     <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Interoperabilidad Hospitalaria Dual</td>
-                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">FHIRExportService (HL7 FHIR R5 JSON Document Bundle), CDAExportService (HL7 CDA R2 XML-DSig)</td>
+                    <td class="p-2.5 sm:p-3 font-mono text-slate-600">FHIRExportService (HL7 FHIR R5 JSON Document Bundle), CDAExportService (HL7 CDA R2 XML POCD_HD000040)</td>
                     <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">HL7 International Standards / MIT Code</td>
                   </tr>
                   <tr>
-                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Imagenología Biomédica & Cine-Loop DICOM-Lite</td>
+                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Imagenología Biomédica &amp; Cine-Loop DICOM-Lite</td>
                     <td class="p-2.5 sm:p-3 font-mono text-slate-600">@cornerstonejs/core, @cornerstonejs/dicom-image-loader, dicom-parser, OpenJPH (Wasm), CharLS (Wasm)</td>
                     <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">MIT License / BSD-2-Clause / BSD-3-Clause / Apache 2.0</td>
                   </tr>
                   <tr>
-                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Criptografía, PDF & Generación Documental</td>
+                    <td class="p-2.5 sm:p-3 font-semibold text-slate-900">Criptografía, PDF &amp; Generación Documental</td>
                     <td class="p-2.5 sm:p-3 font-mono text-slate-600">xmldsigjs, node-forge, @react-pdf/renderer, pdf-lib, jszip, WebCrypto API</td>
                     <td class="p-2.5 sm:p-3 font-mono text-teal-700 font-bold">MIT / BSD-3-Clause / Apache 2.0</td>
                   </tr>
@@ -2025,7 +2025,7 @@ const slides = [
               </div>
               <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2.5">
                 <span class="text-teal-600 font-bold font-mono">3.</span>
-                <div><strong class="text-slate-900">Desacoplamiento Determinista Obligatorio:</strong> Prohibido solicitar al LLM que realice operaciones aritméticas de laboratorio, estadios KDIGO o clasificaciones Sepsis-3 de memoria. Los cálculos provienen de la Suite Determinista White-Box en RAM e ingresan como premisas inmutables.</div>
+                <div><strong class="text-slate-900">Desacoplamiento Determinista de 6 Ejes Obligatorio:</strong> Prohibido solicitar al LLM que realice operaciones aritméticas de TFGe (CKD-EPI 2021), estadios KDIGO, QTc, Fórmula de Winter, Boey o clasificaciones Sepsis-3 de memoria. Los cálculos provienen del Motor White-Box en RAM (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">ClinicalCalculators.ts</code>), manteniendo las reglas CYP1A2 desacopladas de forma atómica.</div>
               </div>
               <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2.5">
                 <span class="text-teal-600 font-bold font-mono">4.</span>
@@ -2033,7 +2033,7 @@ const slides = [
               </div>
               <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2.5">
                 <span class="text-teal-600 font-bold font-mono">5.</span>
-                <div><strong class="text-slate-900">Paridad Numérica Prescriptiva:</strong> La IA no tiene facultades para purgar medicamentos dictados por el médico. Todo fármaco con colisión se retiene en aduana sanitaria para decisión médica soberana.</div>
+                <div><strong class="text-slate-900">Conciliación Cuádruple SSoT y Veto LGS Art. 225/226:</strong> La IA no elimina medicamentos dictados por el médico. El modal SSoT segrega <code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">CONTINUAR</code>, <code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">SUSPENDER</code>, <code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">NUEVO</code> y <code class="text-slate-800 font-mono bg-slate-200 px-1 rounded">CDSS_WARNING_PENDING_REVIEW</code>, excluye de receta toda muestra médica sin denominación genérica ni miligramos (LGS Art. 225/226) y blinda dosis contra cifras paraclínicas (<code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">safeClinicalDoseRegex</code>).</div>
               </div>
               <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2.5">
                 <span class="text-teal-600 font-bold font-mono">6.</span>
@@ -2041,7 +2041,7 @@ const slides = [
               </div>
               <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2.5">
                 <span class="text-teal-600 font-bold font-mono">7.</span>
-                <div><strong class="text-slate-900">Determinismo y Anti-Alucinación (Gemini 3.8 Flash):</strong> El motor Gemini 3.8 Flash opera bajo semilla fija (seed), esquema estructurado (responseSchema), colapso muestral (topK: 1) y thinkingBudget: 0 a Temperatura 0.0 obligatoria.</div>
+                <div><strong class="text-slate-900">Determinismo y Anti-Alucinación (Gemini 4 Hydrogen):</strong> El motor Gemini 4 Hydrogen (respaldo Gemini 3.8 Flash) opera bajo semilla fija (seed), esquema estructurado (responseSchema), colapso muestral (topK: 1), thinkingLevel: LOW/HIGH, cierre seco en <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">plan_dictado</code> y <code class="text-teal-700 font-mono bg-slate-200 px-1 rounded">safeJSONParse</code> anti-bucle de 700 caracteres a Temperatura 0.0 obligatoria.</div>
               </div>
               <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2.5">
                 <span class="text-teal-600 font-bold font-mono">8.</span>
@@ -2125,7 +2125,7 @@ const slides = [
               <span class="text-indigo-400">02.</span> Resguardo de Integridad y Protección Patrimonial
             </h4>
             <p class="text-slate-300 text-xs sm:text-sm">
-              Ante una eventual controversia legal o revisión por comisiones de arbitraje médico, una nota elaborada con prisa o imprecisa constituye la principal vulnerabilidad del facultativo. VitalScribe sugiere terminología de resguardo científico (ej. <em>"Hallazgos compatibles con..."</em>), inyecta referencias explícitas a Guías de Práctica Clínica mediante búsqueda híbrida RRF k=60 con citas resilientes sin error 404, anexa estudios DICOM y permite el sellado digital con e.firma (SAT en RAM) o rúbrica manuscrita inmutable bajo la NOM-151 y NOM-004.
+              Ante una eventual controversia legal o revisión por comisiones de arbitraje médico, una nota elaborada con prisa o imprecisa constituye la principal vulnerabilidad del facultativo. VitalScribe sugiere terminología de resguardo científico (ej. <em>"Hallazgos compatibles con..."</em>), inyecta referencias explícitas a Guías de Práctica Clínica mediante RAG híbrido resiliente con trazabilidad DOF, anexa estudios DICOM y permite el sellado digital con e.firma (SAT en RAM) o rúbrica manuscrita inmutable bajo la NOM-151 y NOM-004.
             </p>
           </div>
 
@@ -2135,7 +2135,7 @@ const slides = [
               <span class="text-amber-400">03.</span> Farmacovigilancia y Mitigación de Errores (NOM-220 / LGS 225)
             </h4>
             <p class="text-slate-300 text-xs sm:text-sm">
-              Tras jornadas prolongadas de consulta o guardia, la fatiga cognitiva incrementa el riesgo de obviar alergias cruzadas o dosificaciones nefrotóxicas en pacientes complejos. La Aduana Sanitaria normaliza claves CSG, aplica retención simétrica bidireccional (A + B) en colisiones críticas y audita polifarmacia (5 o más fármacos) antes de consolidar o imprimir la prescripción limpia para farmacia.
+              Tras jornadas prolongadas de consulta o guardia, la fatiga cognitiva incrementa el riesgo de obviar alergias cruzadas o dosificaciones nefrotóxicas en pacientes complejos. El Motor Determinista de 6 Ejes evalúa en 0 ms 17 pares críticos CYP450/P-gp, ejecuta conciliación cuádruple, veta muestras médicas sin principio activo ni miligramos (LGS Art. 225/226) y audita polifarmacia antes de emitir la receta limpia para farmacia.
             </p>
           </div>
 
